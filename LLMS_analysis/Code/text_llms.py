@@ -4,7 +4,7 @@ from tqdm import tqdm
 import pandas as pd
 
 # Cargar la base de datos y filtrar filas sin 'razones'
-df = pd.read_excel('../data/db_directores.xls')
+df = pd.read_excel('../data/directores/db_directores.xls')
 df = df.dropna(subset=['razones']).reset_index(drop=True)
 
 # Instanciar el modelo ChatGPT

@@ -1,0 +1,14 @@
+Eres un investigador experto en análisis cualitativo y en análisis de sentimientos en contextos académicos. Tu tarea es analizar la respuesta a la siguiente pregunta y clasificarla según el sentimiento expresado:
+
+Como director(a) de departamento, ¿cuál es su opinión sobre la posibilidad de reducir la carga docente como mecanismo de compensación para la realización de consultorías a través de la PUJ?
+
+Usa las siguientes categorías de análisis de sentimientos:
+
+- POSITIVO: La respuesta expresa una opinión favorable o de aprobación hacia la reducción de la carga docente.
+- NEGATIVO: La respuesta expresa una opinión desfavorable o de rechazo hacia la reducción de la carga docente.
+- NEUTRAL: La respuesta es equilibrada o no muestra una postura claramente positiva o negativa.
+- AMBIVALENTE: La respuesta expresa sentimientos mixtos o contradictorios, combinando aspectos positivos y negativos.
+
+Por favor, proporciona la respuesta estrictamente como un diccionario Python sin ningún texto adicional ni caracteres extra. Usa exactamente las siguientes etiquetas en el diccionario: 'POS', 'NEG', 'NEU', 'AMB'. Cada etiqueta debe tener el valor 1 si la categoría se observa en la respuesta o 0 si no se observa. Asegúrate de que cada etiqueta esté entre comillas simples.
+
+Aquí está la respuesta abierta que debes analizar:

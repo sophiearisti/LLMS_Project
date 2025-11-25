@@ -1,0 +1,708 @@
+session,country,Subject,communication,delay,role,numrolls,numins,firstquest,secondquest,Belief,Belief2,Belief2nd,BeliefOtherGroup,age,female,time,risk,Message,Recalled_Message,recall_missing,is_promise,recalled_as_promise,is_efficiency,is_ethics,Early,Late,ImmNoComm,EarlyNoComm,LateNoComm,ImmComm,EarlyComm,LateComm
+141110_1315,0,1,1,1,1,10,,1,1,0,,,,24,0,10,7,"I will choose roll on all the desicions, in order for both of us to have the chance to get more money if you are interested.",I will choose roll to all the decision tasks in order both of us to get more money if you are interested.,0,1,1,1,0,1,0,0,0,0,0,1,0
+141110_1315,0,2,1,1,1,5,,1,1,94,,,70,25,1,6,5,"Hello person A! So according to probabilities, if you choose IN and I ROLL, then  there is 83.33% probability that you will get 36 chf and  I will get 30 CHF at each time (that is the probabiliy that the dice shows 2,3,4,5 or 6). So each time I roll there is 84% (=5/6) probability that we will get maximum profit. Therefore, please choose always IN and I will always choose ROLL!","Hello! if you choose IN and I choose Roll, there is each time 84% probability that we will have maximum profit, you 36 and me 30 Chf. So always choose In and I will always choose Roll. Cheers!",0,1,1,1,0,1,0,0,0,0,0,1,0
+141110_1315,0,4,1,1,1,8,,1,1,100,,,82,22,0,11,10,We should agree on choosing in and rolling otherwise its not going to be fair for one of us. ,We should select in and roll.,0,0,1,0,1,1,0,0,0,0,0,1,0
+141110_1315,0,5,1,1,1,10,,1,1,39,,,50,23,0,7,5,"I will choose ""ROLL"". Regards.","I will choose ""ROLL"". Regards.",0,1,1,0,0,1,0,0,0,0,0,1,0
+141110_1315,0,6,1,1,1,10,,1,1,75,,,75,20,0,10,7,"I promise to ""ROLL"" if you choose ""IN"". This way we would both win. Your expectation would be 5/6 * 36 = 30 and mine 30, too. Hence we could double our payoff. This is a win-win-situation. ","I promise to ""ROLL"" if you go for ""IN"". This way, we would both win as your expectation would be 5/6*36=30 and mine 30. Hence this would be a win-win-situation.",0,1,1,1,0,1,0,0,0,0,0,1,0
+141110_1315,0,8,1,1,1,0,,1,1,74,,,40,26,1,11,8,,,0,0,0,0,0,1,0,0,0,0,0,1,0
+141110_1315,0,11,1,1,1,10,,1,1,80,,,85,22,0,10,7,"Hi so, I guess we are both here to get the most money out of it. I suggest we make it simple, 15 CHF is not the best we can get, also it would not be fair for me to choose ""DON'T ROLL"" because that would mean you get nothing. I will go for ""ROLL"" in all 10 decisions, and we can both be happy :D Thanks, I hope I can count on you! You can certainly count on me!","Hi, let's Keep it simple, I think we are both here to get the most out of it, 15 CHF is not a lot, therefore I suggest that you choose ? ""IN"" for all your decisions and I will choose ""ROLL"", so we both have a high chance of getting a higher income. I hope I can count on you! You can certainly yount on me! :D",0,1,1,1,1,1,0,0,0,0,0,1,0
+141110_1315,0,12,1,1,1,10,,1,1,81,,,74,20,1,7,6,"Hi there, I hope you will always go for IN, because I will click on ROLL. So you will have a high probability to receive 36 CHF and I may receive 30CHF. I think that is the best strategy to make the most out of this study. best regards person B","hi there, i hope you will always go for In, because i will click on roll. So you would have a high chance to receive 36 CHF and i will get 30CHF. it would be the best strategy to make the most out of this study. best regards person B",0,1,1,1,0,1,0,0,0,0,0,1,0
+141110_1315,0,13,1,1,1,9,,1,1,50,,,50,25,0,0,11,"dear A. If we cooperate we can both get more than 15 francs. If you choose IN I will always choose ROLL, so your chance to get 36 francs will be very high. Since I would not want to be screwed over for the price of a beer and a pack of cigarettes (12 francs) if I was A, I won't choose DONT ROLL, so don't worry.  cheers, yours sincerely, B","dear A, if we cooperate we can both get more than 15 francs. if you choose IN I will always choose ROLL. don't worry, i wouldn't want to be screwed over for the price of a beer and a pack of cigarettes (12francs) if i was A, so i wont screw you over. cheers, sincerely B",0,1,1,1,1,1,0,0,0,0,0,1,0
+141110_1315,0,15,1,1,1,10,,1,1,0,,,0,23,0,7,7,"We could both win if you choose IN all the time and I roll. You will only have a 1/6 chance of not getting paid. Trust me, or not.. Good luck!","You should choose IN for every decision, in order for both of us to win. If you do so, you will only have a 1/6 percent chance to lose. Good luck!",0,1,0,1,0,1,0,0,0,0,0,1,0
+141110_1315,0,19,1,1,1,10,,1,1,81,,,75,25,0,7,8,"Hey A, I think the way to maxmize both our profits here is that I would trust that you make the IN decision and  you trust that I make the ROLL decision , which I think have better earnings than just a mere 15 CH, cheers","Hey A, I would trust that you 'd choose IN and that you'd have to trust me to choose roll in order to maximize our benefits, not just a mere 15 CH",0,1,0,1,0,1,0,0,0,0,0,1,0
+141110_1315,0,21,1,1,1,0,,1,1,10,,,,20,0,10,5,"choose ""in"", i will then roll, the chance will be 5 in 6 that you will get 36.- and i will get 30.- thats maximum pay off for you. and i will be making 30.- so you will in any case still end up with more money than me: 36 CHF!","Choose ""in"", i will then choose roll, there will then be a 5in6 chance that you will recieve 26.- and i wil recieve 30.-, / thats maximizes the payoff for you.",0,1,1,1,0,1,0,0,0,0,0,1,0
+141110_1315,0,22,1,1,1,10,,1,1,50,,,50,22,1,10,6,if you chose IN i will always chose ROLL so both our chances will be as high as possible to earn more than 15 chf. so the chance for you to win 36 and me 30 chf will be high and not just 15chf if you choose out. hope that's fine ,"if you take IN, the chance of us both earning more then 15 chf is quite big, because i will choose ROLL, so your payment would be 36chf and mine 30chf. so we both get something out of this, hope thats fine",0,1,1,1,0,1,0,0,0,0,0,1,0
+141110_1315,0,26,1,1,1,10,,1,1,18,,,12,23,0,10,5,"Hello Person A, I just wanted to inform you that I will take 10 times ROLL, since I can't lose anything anyway, and it's the best outcome for both of us.",Hello Person A. I just wanted to tell you that I'm going to ROLL 10 times anyway. It's the best decision for both of us.,0,1,1,1,0,1,0,0,0,0,0,1,0
+141110_1315,0,28,1,1,1,10,,1,1,59,,,34,20,0,10,7,"I promise that I will choose ROLL in every decision. If you choose IN in every decision, the profit will be maximized for both of us.","I promise that I will only choose ROLL. If you only choose IN, our profits will be both maximized.",0,1,1,1,0,1,0,0,0,0,0,1,0
+141110_1515,0,1,1,2,1,10,,1,1,45,,,80,19,1,9,10,Let's make this fair. I guess we BOTH want some money. ,,1,0,1,0,1,0,1,0,0,0,0,0,1
+141110_1515,0,7,1,2,1,10,,1,1,75,,,90,22,0,7,5,"I'll be nice and always chose role, as otherwise you risk a payoff of only 15 or even 0. With In and Roll the chance for a nice payment is the highest.",,1,1,1,1,0,0,1,0,0,0,0,0,1
+141110_1515,0,11,1,2,1,5,,1,1,76,,,44,19,1,11,3,"hey, you should always choose IN and i will always choose Roll so in that way, we will have more chances of receiving more money.",,1,1,1,1,0,0,1,0,0,0,0,0,1
+141110_1515,0,12,1,2,1,0,,1,1,55,,,42,24,1,10,7,I case you choose IN - I'll always choose ROLL. Since it's more money for both of us.,,1,1,1,1,0,0,1,0,0,0,0,0,1
+141110_1515,0,13,1,2,1,0,,1,1,12,,,19,25,1,7,5,if you chose IN I will chose ROLL so you could earn 36 in the best case,,1,1,1,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,14,1,2,1,4,,1,1,50,,,50,20,1,10,8,"hi, will choose roll. if you want, press out for maybe 5/10 times. That way you will definitely get something  hopefully. ",,1,1,1,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,15,1,2,1,10,,1,1,55,,,60,25,1,11,6,Hey there. :) I hope the dice when rolled give any number but one. :),,1,0,1,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,16,1,2,1,10,,1,1,91,,,90,20,1,10,9,"I will always choose roll and you choose IN, so our chances are at highest for getting good money. I will not choose dont roll, i promise!",,1,1,1,1,0,0,1,0,0,0,0,0,1
+141110_1515,0,17,1,2,1,0,,1,1,10,,,15,24,1,9,9,if you choose in i will roll so that we both have chances for 30 francs or more,,1,1,1,1,0,0,1,0,0,0,0,0,1
+141110_1515,0,21,1,2,1,2,,1,1,70,,,65,26,0,11,6,"we can choose IN and choose roll 2, 3, 4, 5 or 6...",,1,1,1,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,22,1,2,1,10,,1,1,81,,,100,27,0,11,7,"Hello A, nice to meet you. As far as I know, it would be the best if you choose IN and I choose ROLL. Then the income can be maximized. Thank you very much. Have a nice day.",,1,1,1,1,0,0,1,0,0,0,0,0,1
+141110_1515,0,23,1,2,1,6,,1,1,61,,,50,19,0,9,5,Hello and good luck. I hope we both get a decent amount of money. It's my first time in such an experiment and I have no idea what's going to happen.,,1,0,1,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,26,1,2,1,10,,1,1,100,,,86,23,0,10,8,"Hello A. I will always choose ""Roll"". You can either trust me and we both might get a lot of money, or choose ""Out"". Your call. But I will always choose ""Roll"", because I want to have 30fr. instead of 15.-. It's much better if we both earn at least 30.- money than just me. :)",,1,1,1,1,1,0,1,0,0,0,0,0,1
+141110_1515,0,27,1,2,1,0,,1,1,30,,,9,24,0,10,6,"Hello. :) If you feel like taking the risk of die = 1, go for IN and I will go for ROLL. I believe it is best for both!",,1,1,1,1,0,0,1,0,0,0,0,0,1
+141110_1515,0,28,1,2,1,0,,1,1,20,,,70,26,0,10,6,Hallo! I think we would be better off if you choose IN. I intend to choose ROLL in the second phase.  The probability of both of us getting  30something CHF is 5 out of 6,,1,1,1,1,0,0,1,0,0,0,0,0,1
+141110_1515,0,30,1,2,1,9,,1,1,65,,,75,21,1,10,5,"Hallo I m your Person B, I m going to choose ROLL everytime. I know my earning are going to be about 33% lower but I think this way we can both earn a bit more. Make good choises!",,1,1,1,1,0,0,1,0,0,0,0,0,1
+141110_1515,0,34,1,2,1,7,,1,1,45,,,34,18,1,10,7,"I think, the probability that both of us get a lot of money is the highest, when you enter IN and I choose ROLL. (You would even get more than  me :))",,1,1,1,1,0,0,1,0,0,0,0,0,1
+150303_1315,0,2,1,2,1,10,,1,1,80,9,,30,18,0,10,8,I will always choose ROLL,I will always choose ROLL,0,1,1,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,3,1,2,1,0,,1,1,71,,,29,19,1,10,6,"Hey! It would be best if you always decide for IN and I always decide for ROLL, this would mean a very high chance that both of us earn a lot of money :)","Hey! If you choose IN and I choose ROLL, we can both win the highest possible amount.",0,1,1,1,0,0,1,0,0,0,0,0,1
+150303_1315,0,6,1,2,1,5,,1,1,70,9,,70,23,0,5,6,"Hi, so here's the catch. From a probabilistic point of view best option would be A choses IN and B chooses ROLL, since there's a high chance of getting high payback on both sides. Therefore just know I'll always put ROLL. It's up to you if you wanna take the risk. Best.",I will always ROLL so that if you are IN we can maximize the total income.,0,1,1,1,0,0,1,0,0,0,0,0,1
+150303_1315,0,7,1,2,1,1,,1,1,40,3,,40,20,1,7,5,"please use a lot of ""in"" ",Please choose a lot of in :),0,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,8,1,2,1,10,,1,1,41,4,,65,23,0,10,11,"I know for sure I will earn 15 each round at least, I want to double the earnings and that is reasonably fair earning for me.I  will cooperate and I don't care about earning 12 more CHF than I could by cooperating","I will win at least 15 CHF, no matter what the outcome of the game is. I want to double my earnings and I don't care about the 12 CHF bonus I would get choosing DON'T ROLL.",0,1,1,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,10,1,2,1,0,,1,1,50,,,20,19,1,9,5,,,0,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,14,1,2,1,10,,1,1,40,10,,51,25,1,7,8,"Hi Person A! If you choose IN i promise you i will choose ROLL and not DON'T ROLL. Try to do this as often as possible, so the chances that the dice will roll 1 is little and we both earn a little more than 15 CHF ",If you choose in i will choose roll in all the 10 decisions,0,1,1,1,0,0,1,0,0,0,0,0,1
+150303_1315,0,17,1,2,1,8,,1,1,19,8,,50,25,1,9,7,"Always choose IN, and I will go for ROLL so we both can win more than 15 CHF ","Always choose IN, I will go for the option ROLL so we both can win more than 15 CHF",0,1,1,1,0,0,1,0,0,0,0,0,1
+150303_1315,0,19,1,2,1,9,,1,1,30,7,,37,20,1,10,7,i'm going to press ROLL. So there are chances that we both get more money than 15 francs.,I will always roll. So we can both get more money than 15 francs.,0,1,1,1,0,0,1,0,0,0,0,0,1
+150303_1315,0,22,1,2,1,3,,1,1,71,4,,40,20,0,10,6,"i hope you will be IN enough times for me to DON'T ROLL.    just kidding, have fun, and play fair ;)","Choose IN as many as possible, so I can DON'T ROLL enough to win more money... just kidding, have fun and play fair",0,0,0,0,1,0,1,0,0,0,0,0,1
+150303_1315,0,24,1,2,1,0,,1,1,34,4,,18,21,1,10,6,,,0,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,27,1,2,1,10,,1,1,87,10,,100,28,1,8,6,i will chose roll (2-6) ,I will chose roll (2-6 ),0,1,1,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,28,1,2,1,9,,1,1,30,9,,30,31,1,10,7,hi. good luck. ,hi. good luck.,0,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,29,1,2,1,10,,1,1,65,6,,40,25,0,10,7,"Hi! I suggest we go for the last option - you go ""IN"" and I will go with ""ROLL"" for all decisions. That way we have the best chance for both of us to get some good money. Good luck! :)  ","Hi! I suggest you go with the ""IN"" option and I will go with the ""ROLL"" option. That way both of us can earn some decent amount of money. Good luck! :)",0,1,1,1,0,0,1,0,0,0,0,0,1
+150303_1315,0,32,1,2,1,0,,1,1,76,1,,86,25,1,9,6,"Hey, I think it would be rather boring to just always get 15. Right? Plus if you choose IN, you have a 2/3 chance of getting more than double the 15. I promise (weird to promise to a computer) to always pick ROLL, just a heads up :D","It would be boring to not roll so I promise that if you are in, I will always roll.",0,1,1,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,33,1,2,1,9,,1,1,60,7,,75,21,1,11,7,"Hi! Let's take risks! I guess I won't use don't roll so, its up to the die.",Let's be risky!,0,1,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,34,1,2,1,0,,1,1,68,9,,73,23,1,7,6,"I think our best chance is if you choose IN, then I will always choose ROLL. It's then more probable  we get 2-6 so we make the most money each. Ballin' ",I think our best chance of both making the most money is if you choose IN everytime. If I then choose roll out chances are the best.,0,1,1,1,0,0,1,0,0,0,0,0,1
+150303_1515,0,3,1,1,1,10,,1,1,50,9,,30,23,0,10,7,"Hi! Please choose IN, I'll choose ROLL and let's hope on the chance :)","Hi! Please choose IN, I'll choose ROLL and let's hope on the chance :)",0,1,1,0,0,1,0,0,0,0,0,1,0
+150303_1515,0,5,1,1,1,10,,1,1,18,10,,6,28,0,10,8,i will roll the dice for you :),i will roll the dice for you :),0,1,1,0,0,1,0,0,0,0,0,1,0
+150303_1515,0,7,1,1,1,10,,1,1,50,8,,40,21,0,7,9,In and Roll. Best for both of us.,In and Roll. Best for both of us.,0,1,1,1,0,1,0,0,0,0,0,1,0
+150303_1515,0,9,1,1,1,10,,1,1,70,9,,67,25,0,8,5,"Hey, This is our stretegy for a win win solution. You always choose IN and always choose ROLL.This way I get 30 and you based on probabilty will get between 27 and 36. because the chances of 1 is very low in these ten decisions. So, lets do it. I assure you be happy at the end.","Hey, this is our strategy for a win-win solution. You always choose IN and I always choose ROLL. This way, I get CHF 30 and you based on probability will get between 27 to 36. Note that chances of dice 1 is very low in these 10 trials. So, let's do it. I assure you'll be happy at the end.",0,1,1,1,0,1,0,0,0,0,0,1,0
+150303_1515,0,10,1,1,1,0,,1,1,5,0,,15,25,0,10,5,"I promise I will choose ROLL, so that we both will earn more money. By that I will earn  show up fee+30CH which is totally ok with me. You have high chance to win 36+show up fee.","I promise to choose ROLL. I will earn show up fee + 30CHF, which is totally ok with me. You will have a high chance to win show up fee + 36CHF.",0,1,1,1,0,1,0,0,0,0,0,1,0
+150303_1515,0,11,1,1,1,3,,1,1,40,10,,68,21,0,9,8,,i did not write anything,0,0,0,0,0,1,0,0,0,0,0,1,0
+150303_1515,0,12,1,1,1,10,,1,1,91,10,,60,28,0,10,8,"Hi. I think it makes more sense for both of us to choose ROLL at all times. in this case, you will get 36chf with 5/6 probability or 0 with 1/6 probability. I will get 30 chf. This is the case if you choose IN and you believe that I will choose ROLL. ",Hi. I think it makes more sense for both of us if you select IN in all cases and I select ROLL in all cases. In this way we will get 36 chf with 5/6 probability or 0 with 1/6 probability. I will get 30 chf and this is the case if you believe my intention to choose ROLL.,0,1,1,1,0,1,0,0,0,0,0,1,0
+150303_1515,0,15,1,1,1,0,,1,1,17,0,,16,21,0,10,8,"Hello, lets go for rolling the dice. For me, I would like to get more than 15 CHF. For you the chance is big that you will get 36 francs if we roll. You can trust me on rolling. I dont really care about the additional extra 12 francs. But 15 francs is a little bit small to spend one hour on. Damn, this keyboard sucks. Haha. Ok, hope you pick IN.","Hello, lets go for rolling the dice. I don't want the 15 francs. For you, the chance of getting 36 francs is really big. For me, it doesn't really matter, I don't care about the extra 12 francs. You can trust me on rolling. Damn, this keyboard sucks, haha",0,1,1,1,0,1,0,0,0,0,0,1,0
+150303_1515,0,16,1,1,1,5,,1,1,65,8,,75,23,1,11,8,"If A always chooses in and B always chooses ROLL, there is a large possibility for both  A and B to get at least  30CHF for this part.","If A always chooses IN and B always chooses ROLL, there is a large chance for both A and B to get at least 30CHF.",0,0,0,1,0,1,0,0,0,0,0,1,0
+150303_1515,0,17,1,1,1,2,,1,1,31,3,,18,24,1,8,8,Be free to choose IN. I promise I'll never choose don't roll to make sure that we both earn more money.,Be free to choose IN. I promise I'll never choose Don't Roll to make sure that we both earn more money.,0,1,1,1,0,1,0,0,0,0,0,1,0
+150303_1515,0,18,1,1,1,10,,1,1,60,10,,50,25,0,10,8,"I will always choose ROLL. That way we both will maximize our earnings if you always choose IN. I will be paid always 30CHF and you will be paid 36CHF 83% possibility (5 out of 6 numbers of the dice), which is equivaltent to 30CHF.","I will always choose ROLL. If you always choose IN we will both maximize our earnings. I will always win 30CHF, you will win 36CHF with 83% possibility which is equivalent to 30CHF.",0,1,1,1,0,1,0,0,0,0,0,1,0
+150303_1515,0,19,1,1,1,0,,1,1,25,7,,15,22,0,10,8,"Hi !! Go for ""IN"" ALL THE 10 TIMES. Then we can Roll and have a chance to win more. MUCH MORE and MUCH BETTER CHANCE. Thanks and All the Best.",Hi !! Go for IN ALL THE TIME. Then we can go for rolling the dice. That way we have a better chance at earning more money. MUCH MORE MONEY AND MUCH BETTER CHANCE. Thanks and all the best.,0,0,1,1,0,1,0,0,0,0,0,1,0
+150303_1515,0,27,1,1,1,0,,1,1,30,7,,19,20,0,10,9,"Hi there, I will press ROLL if you press IN. This will give you a 83% chance of winning 36 CHF instead of just 15 CHF and it will give me 30 CHF instead of just 15CHF, Thanks :)","Hi there, I press ROLL if you press IN. This way you have an 83% chance of winning 36 CHF instead of just 15 CHF and it will give me 30 CHF instead of 15 CHF. Thanks :)",0,1,1,1,0,1,0,0,0,0,0,1,0
+150303_1515,0,31,1,1,1,3,,1,1,35,2,,25,21,0,6,7,"I will always chose Roll, so I hope you will always chose In ;) Then we can both make a good load of money :)","I will press roll at all decisions, so both of us can make a good load of money. It would be nice if you chose in everytime :)",0,1,1,1,0,1,0,0,0,0,0,1,0
+150303_1515,0,32,1,1,1,0,,1,1,5,0,,35,25,1,11,8,"Dear Partner A, I can't do more than honestly promise you that i'll press ROLL in every of the 10 decisions. In that way we can get the most out of this for the two of us. For this to work you should go for IN, so let's do this together. Have a nice day and best wishes, your Partner B","Dear Partner A. I can't do more than honestly promise you to choose ROLL every time. In that way we can get the best out of this for the two of us. In order for this to work out I beg you to choose IN at least in a few of the 10 cases. Have a nice day and best wishes, your Partner B",0,1,1,1,0,1,0,0,0,0,0,1,0
+150303_1515,0,33,1,1,1,7,,1,1,75,10,,86,20,1,9,8,"hey :-) i guess it would be best for the both of us, if you would always chose IN so  when I always chose Roll the chance of us becoming more then only the 15 CHF are highes. Despite your descision I will always chose Roll. Promise! ",hey :-) I guess it would be best if you always choose IN so that i can choose roll and both of us have tha chance to earn more then the 15CHF.,0,1,1,1,0,1,0,0,0,0,0,1,0
+150303_1515,0,34,1,1,1,10,,1,1,34,10,,44,19,1,10,9,hi... i think it's best to choose in and then roll... i promise you not to choose don't roll! lets do that in all 10 decisions. its best for you and me ;),I think it's best to choose in all 10 decisions in and roll. I promise not to choose don't roll! That's best for you and me...,0,1,1,1,0,1,0,0,0,0,0,1,0
+170404_1008,1,1,1,1,1,0,,1,1,20,2,0,28,28,1,9,5,Hi,hi,0,0,0,0,0,1,0,0,0,0,0,1,0
+170404_1008,1,3,1,1,1,7,,1,1,65,7,7,81,22,1,10,8,"Hello, I understand that if you choose OUT you would be guaranteed a payment, but , I'm hoping that you would be willing to make this gamble with me so that we both receive a higher payout (since at the end of the day, neither of us would be technically losing money). I'm agreeing now to choose ROLL so you have a 5/6 chance of earning more money than if you chose OUT.","I understand that if you choose OUT you are guaranteed a payment, but I am agreeing to choose ROLL if you choose IN. I'm hoping you'll be willing to take that gamble with me since technically neither of us would be losing money, and we have the potential to both earn more if we cooperate.",0,1,1,1,0,1,0,0,0,0,0,1,0
+170404_1008,1,4,1,1,1,0,,1,1,10,3,6,30,30,0,10,9,Let's roll!!!!!!!!,Let's roll!!!!!,0,1,1,0,0,1,0,0,0,0,0,1,0
+170404_1008,1,8,1,1,1,5,,1,1,60,6,10,60,28,0,11,5,"Hi - this seems to be a classic game theory experiment. If you choose out, then we both are ""at a loss and get only $15"". Alternatively, if you choose IN, then I will be incentivized to choose Roll because that will result in $30 to each of us (5/6*36 and 1/6*30 + 5/6*30). I wouldn't choose Don't Roll because that will incentivize you to choose Out and nobody gains anything from that.","This is a classic game theory experiment - if you choose Out, then we both get $15 and none of us are better off. However, if you choose In, then I will choose Roll and based on probability calculations, both of us stand to earn $30. I will not be incentivized to choose Don't roll because then you will be incentivized to choose Out in which case both of us lose.",0,1,1,1,0,1,0,0,0,0,0,1,0
+170404_1008,1,9,1,1,1,0,,1,1,50,5,5,50,25,1,5,6,Hi,hi,0,0,0,0,0,1,0,0,0,0,0,1,0
+170404_1008,1,12,1,1,1,10,,1,1,0,,5,48,38,0,9,7,"If you pick IN, I will roll every time. Your risk but also your reward. I will not choose DON'T ROLL.","If you pick in, I will always roll. You still have to trust that I will roll but I will not pick ""Don't Roll"".",0,1,1,0,0,1,0,0,0,0,0,1,0
+170404_1106,1,2,1,2,1,10,,1,1,50,5,5,50,45,1,11,5,,I didn't write a message.,0,0,0,0,0,0,1,0,0,0,0,0,1
+170404_1106,1,4,1,2,1,9,,1,1,50,5,5,50,45,0,0,0,working hard or we all go home. There is nothing to it but to do it.,Don't remember,0,0,0,0,0,0,1,0,0,0,0,0,1
+170404_1106,1,5,1,2,1,10,,1,1,70,4,8,81,35,0,10,8,Good luck!  I love Las Vegas so you can figure out what I am going to choose,I like to go to Las Vegas if you know what I mean,0,0,0,0,0,0,1,0,0,0,0,0,1
+170404_1106,1,6,1,2,1,10,,1,1,80,10,10,90,40,0,11,11,"Pleased to meet you, virtually. Have a great day! :)",Pleased to meet you and I look forward to collaborating with you on this. Have a great day!,0,0,1,0,0,0,1,0,0,0,0,0,1
+170404_1106,1,8,1,2,1,6,,1,1,45,6,8,50,22,1,10,7,"I will choose ROLL every time, so you should choose IN",If you choose in every time I will choose roll,0,1,1,0,0,0,1,0,0,0,0,0,1
+170404_1106,1,9,1,2,1,0,,1,1,90,9,5,100,24,1,10,8,,,0,0,0,0,0,0,1,0,0,0,0,0,1
+170404_1106,1,11,1,2,1,0,,1,1,0,0,,51,23,1,10,5,I will choose roll. ,I will choose Roll,0,1,1,0,0,0,1,0,0,0,0,0,1
+170406_1144,1,2,1,2,1,10,,1,1,45,0,10,51,26,0,10,7,"Ok, here's how I see it. I want us both to get more than $15 so I want you to feel safe to choose IN every time. I will guarantee choosing roll every time, and make a note of it. Then we both have basically a 5/6 chance of getting $30 or more. I know you would get 6 more but I would rather us both feel safe getting more than 15. Thanks, I hope you agree = )","Okay, here's what I think. I would rather get $30 than $15 and I know you would rather get more than $15. I would not mind that you get $6 more than me, but to give us both more than $15, I will guarantee to choose roll every time in 3 weeks. I'll make a note so I don't forget. I hope you agree : )",0,1,1,1,0,0,1,0,0,0,0,0,1
+170406_1144,1,3,1,2,1,0,,1,1,0,,,,27,1,10,8,I will choose roll for all decisions. ,I will always roll,0,1,1,0,0,0,1,0,0,0,0,0,1
+170406_1144,1,5,1,2,1,10,,1,1,85,10,9,90,30,0,10,7,"I think that the best way to ensure that we both earn an appreciable amount of money is through trust. If you choose IN for all 10 times, I can roll ten times. Thus the odds that we both receive $30 or $36 are pretty high. You will have only a 1 and 6 chance of earning zero dollaars. a 5 out of 6 chance that you get $36.","Based on the payout structure, it seems to be in the best interests of both of us to trust each other. This is the best way to ensure that we both earn an appreciable amount of money. If you play IN for all ten turns, I will opt to ROLL for all ten turns. This way you will earn $36 while I earn $30. You will have a 5 in 6 chance of earning $36 under that scenario.",0,1,1,1,0,0,1,0,0,0,0,0,1
+170406_1144,1,7,1,2,1,10,,1,1,100,10,10,100,29,1,10,6,Hi! Would you like to work together? If you choose IN everytime I will select roll. This will give us the best chance to make the most money. Since we will only get paid for 1 out of 10 times. This will help you earn $36 and myself $30 most likley. Good luck!,Hi! Let's work together. If you say in I will roll in each time. It gives us both the best odds to both make the most money.,0,1,1,1,0,0,1,0,0,0,0,0,1
+170406_1144,1,12,1,2,1,1,,1,1,69,7,2,62,59,0,4,9,my goal is to earn 50 dollars.good luck to boyh of us!,My goal was to make 40 dollars,0,0,0,0,0,0,1,0,0,0,0,0,1
+170406_1144,1,13,1,2,1,10,,1,1,90,9,10,60,19,0,10,8,"Hey! I'm taking a game theory class right now and the best outcome for both of us is for you to choose IN and I'll choose to roll (5/6 of the time, we both get a great payoff). I promise to roll all 10 times -- hope you're IN :)","Something about being in a game theory class and maximizing both of our payoffs if they chose IN and I chose ROLL, and I promised to choose ROLL",0,1,1,1,0,0,1,0,0,0,0,0,1
+170406_1144,1,14,1,2,1,0,,1,1,62,5,5,65,39,1,11,7,looking forward to making some money,Let's make money,0,0,0,0,0,0,1,0,0,0,0,0,1
+170406_1252,1,1,1,1,1,10,,1,1,90,9,10,75,19,1,9,10,"Hi! The way I see it, this money was never mine in the first place. The difference between $42 and $30 is not large enough to constitute a decision for me to choose 'Don't Roll,' therefore I highly encourage you to choose IN rather than OUT so that we can both gain. Thanks! ","Hi! The way I see it, this money was never mine in the first place. The difference between $42 and $30 is big enough to ever constitute choosing Don't Roll, so I highly encourage you to choose IN rather than OUT so that we can both gain. Thanks!",0,1,1,1,0,1,0,0,0,0,0,1,0
+170406_1252,1,2,1,1,1,0,,1,1,9,1,10,15,19,1,9,7,"Hi! I will be choosing ROLL for all 10 decisions. This gaurantees me $30, which I am very happy with. I understand this means a 1/6 chance you get $0, but you also have a very high chance of getting $36 instead of $15. I understand if you don't want to take this chance, and am happy with $15 as well. I assure you I will choose ROLL every time, however.","Hi! I will choose ROLL for all 10 of my decisions. This guarantees me $30, which I am very happy with. I understand this means a 1/6 chance that you get $0, but also a very high chance you get $36. I understand if you don't want to take this risk, and am happy with $15. I assure you I will choose ROLL every time, however.",0,1,1,1,0,1,0,0,0,0,0,1,0
+170406_1252,1,3,1,1,1,0,,1,1,27,2,5,30,25,0,5,5,"Hey, I am going to choose Don't Roll each time and that will garuntee both of us $15.","Hey, I am going to choose Don't Roll so we are both guaranteed $15.",0,0,0,0,0,1,0,0,0,0,0,1,0
+170406_1252,1,5,1,1,1,0,,1,1,30,5,6,50,29,0,5,7,The best way to maximize payment would be for you to choose IN every turn and then I will respond with ROLL to try to get the $30-$36 payoff for both of us. We have 5/6 chance of getting the max payoff ($66). ,"The best outcome would be for you to opt IN on every turn and then I will ""ROLL"" which will maximize the payout as we would have 5/6 chance of getting the top payout of $66",0,1,1,1,0,1,0,0,0,0,0,1,0
+170406_1252,1,8,1,1,1,10,,1,1,5,,0,10,28,1,10,8,Hey person A! FYI I will always choose Roll (definitely rather have the $30 then $15 and don't want to be greedy). But totally understand if you're not willing to take the risk! ,Hey Person A! FYI I'll choose Roll for all my choices (I'm happy to have the 30 instead of 15 and don't need to be greedy!). But totally understand if you don't want to take the risk.,0,1,1,0,1,1,0,0,0,0,0,1,0
+170411_0936,1,2,1,2,1,0,,1,0,0,,,,67,1,11,11,I will choose roll for all ten ,,0,1,0,0,0,0,1,0,0,0,0,0,1
+170411_0936,1,3,1,2,1,10,,1,1,68,5,7,79,21,1,11,9,"Since choosing ""roll"" provides a better chance of both of us getting payment, and since the payment will be above zero, I can tell you that I'm much more likey to choose roll over don't roll. Of course, there's still the possibility of you not getting anything if a 1 appears, but that chance is 1/6 every turn. You'd also be earning more than if you choose out if a 2-6 is rolled. :)","I will be sure to choose roll for every option because there's a higher chance that rolling will benefit us both. There's still a higher likelihood of you gaining something if I were to choose roll, as there are 5 chances for you to get 30+ and only one chance for you to not receive anything :)",0,1,1,1,0,0,1,0,0,0,0,0,1
+170411_0936,1,6,1,2,1,10,,1,1,100,6,0,80,20,1,10,8,"I would really like for both us to maximize our earnings. I would propose that for all 10 decisions, you could choose IN and I could choose ROLL, because there is a very high chance that you'll get $36 and I'll get $30. I know it's hard to trust me, and it seems suspicious especially since I could choose DON'T ROLL, but I would rather get $30 than $15, and I don't mind that you would get more","The ideal situation that maximises both of our earnings is if you choose in and I roll. I know that it's hard to trust me but I would rather get $30 than $15, so I hope we can choose in / roll all 10 times",0,1,1,1,0,0,1,0,0,0,0,0,1
+170411_0936,1,8,1,2,1,0,,1,1,56,7,8,65,20,1,0,5,"I am compassionate to a fault (my mom calls it compassion devoid of wisdom), and therefore have absolutely no intention or desire to screw you over in any way. I will choose ROLL no matter what, because the $12 isn't that important in the grand scheme of things, but it is your choice to play your odds as to whether you want to be IN or OUT. Just know that I pinky promise that I will ROLL.","Basically that I would never try to screw someone over, and that I am compassionate and trustworthy to a fault",0,1,0,0,1,0,1,0,0,0,0,0,1
+170411_0936,1,9,1,2,1,0,,1,1,0,,,29,20,1,7,5,I will be choosing Don't Roll for all 10 decisions. I recommend that you choose Out for all 10 decisions.,"I will be choosing ""don't roll"" on all options. I highly suggest you choose ""out"" on all options.",0,0,0,0,0,0,1,0,0,0,0,0,1
+170411_1058,1,2,1,1,1,7,,1,1,50,6,3,33,38,1,1,5,Hi Hope we will have some fun doing this experiement,Hi hope we will have some fun playing this experiement,0,0,0,0,0,1,0,0,0,0,0,1,0
+170411_1058,1,3,1,1,1,10,,1,1,100,10,10,100,48,1,7,5,i will always choose roll,i will always choose roll,0,1,1,0,0,1,0,0,0,0,0,1,0
+170411_1058,1,4,1,1,1,0,,1,1,10,1,0,10,23,0,3,8,"Hello! I'm trying to mess with the experiment results by showing mutual cooperation (heh) so I'm gonna be choosing ROLL and I think it will be a really interesting case study for the researchers to figure out how 2 strangers can cooperate, so hopefully you choose IN!!! ","Hello! I am trying to mess up the results of the experiment (heh) so I am going to choose ROLL, and I think it will be a really interesting case study for the researchers to figure out why two strangers will cooperate so please choose IN as well!",0,1,1,0,0,1,0,0,0,0,0,1,0
+170411_1058,1,5,1,1,1,8,,1,1,50,6,7,56,26,1,1,5,"I would recommend we max our potential earnings, I will be choosing a roll , since we both get paid the most when the die rolls a 2.3.4.5.6. and as for the die rolling 1 the probability is too low. If you wish to make the most out of the experiment i suggest you play IN and I play ROLL. Thanks. ","I reccomend that we try to maximize our gains , I will roll to make which has greater returns for both of us.",0,1,1,1,0,1,0,0,0,0,0,1,0
+170411_1058,1,6,1,1,1,0,,1,1,10,1,1,,20,1,10,7,"I assume you're not acutally a participant in this room that I am paired with, but please choose IN!","(well I was right to my matched person A) I am thinking you are not actually a participant that I am matched with, but please choose IN!",0,0,0,0,0,1,0,0,0,0,0,1,0
+170411_1058,1,10,1,1,1,10,,1,1,37,9,10,81,28,0,9,7,"It is in your best interest to choose IN because: your expected value, if you think it's 50/50 whether I roll, is $15 either way (5/6th chance for $36, 1/6th for $0). since my expected value increases no matter what if you choose IN, I would like to reward you by guaranteeing a 100% chance I will ROLL.  That raises your expected value to $30. Thanks for choosing in and getting us both more $$ :)","It is in your best interest to choose IN.  Your expected value is $15 if you believe there is a 50/50 chance I will choose roll or don't roll, and my expected value increases regardless if you choose IN.  For that reason, I will guarantee 100% that I will choose ROLL if you choose in, as it increases my expected value as well as yours.",0,1,1,0,0,1,0,0,0,0,0,1,0
+170413_1156,1,2,1,1,1,0,,1,1,30,,,20,28,1,10,7,,(I didn't write anything because A) I thought typing would give away that I was Person B and B) I didn't want to lead A to think I was intentionally deceiving them),0,0,0,0,0,1,0,0,0,0,0,1,0
+170413_1156,1,6,1,1,1,2,,1,1,40,5,5,65,27,1,10,5,,I am Person B. I chose not to write a message to Person A.,0,0,0,0,0,1,0,0,0,0,0,1,0
+170413_1156,1,7,1,1,1,10,,1,1,60,10,10,29,22,0,10,8,"Hi there person A partner,  I totally understand if you don't trust someone on the internet and want to choose OUT. however, I am broke and assume you are too if you're here ;) so I figure i'll go for some good karma and roll on all ten picks.Obviously then we both do better if you choose IN. have a great day!","Hi Person A partner, I totally understand if you don't trust someone on the internet and choose OUT. However, i'm pretty broke and since you're here you probably are too;) so I figure I'll go for some good karma and select Role for all 10 picks. Obviously then we both do better if you select IN for your picks.",0,1,1,1,0,1,0,0,0,0,0,1,0
+170413_1156,1,8,1,1,1,10,,1,1,22,10,10,18,19,1,10,6,"As a person A you are worried right now that I'll promise to choose Roll, and then when I go home and take the survey I will pick ""Don't Roll"" because no-one will be watching. All I can do is promise that I will choose Roll. I don't appreciate time inconsistant behavior in anyone, especially myself, and I would much rather two people walk away from this happy. ","As Person A you are probably worried that I will promise to choose Roll, and then when I go home I will choose ""Don't Roll."" All I can do is promise to choose Roll. I do not appreciate time inconsistent behavior, especially in myself, and I would rather we both walk away from this happy.",0,1,1,1,1,1,0,0,0,0,0,1,0
+170413_1156,1,10,1,1,1,0,,1,1,100,10,0,40,18,1,7,6,You should opt IN and then if I choose to Roll and theres a good chance you will make 36 dollars which is the highest payout you can get. ,"you should choose IN, because if I choose ROLL you will have a chance at the highest pay out",0,0,0,1,0,1,0,0,0,0,0,1,0
+170413_1156,1,12,1,1,1,0,,0,0,0,,,,27,1,10,7,Hello -- shall we try to cooperate and roll?,,0,0,0,0,0,1,0,0,0,0,0,1,0
+170413_1156,1,16,1,1,1,0,,1,1,6,1,0,,22,1,10,7,"If you choose to roll IN for all 10 rolls, I will promise to roll IN as well for all 10 rolls so that you have a 5/6 chance of making $36 instead of $0 or only $15. If you do not roll IN for all 10 rolls, I will choose DONT ROLL and you will for sure make $0. Thanks :) ","If you choose to roll in for all 10 decisions, I will also choose to roll in for all 10 decisions. This will give you a 5/6 chance to make $36 instead of $0 or $15. If you do not choose to roll in for all 10 decisions I will choose to roll out and you will get $0. Thanks",0,1,1,1,0,1,0,0,0,0,0,1,0
+170413_1257,1,2,1,2,1,10,,1,1,40,6,8,50,26,1,3,5,"I will choose ROLL on the basis that, if you have chosen IN, you are risking receiving no payoff in order to maximise our collective potential payoff. I therefore think you deserve a good chance of earning $36.","I will choose ROLL when I have to make my decisions, because I think if you trust me by choosing IN then you deserve the chance to win something.",0,1,1,0,1,0,1,0,0,0,0,0,1
+170413_1257,1,3,1,2,1,0,,1,1,70,7,8,80,20,1,10,8,"Pick IN -- Let's take a gamble and be generous! The odds are good for 36/30, so let's go for it! ",Let's go for it and be generous! The odds are in our favor.,0,0,0,0,1,0,1,0,0,0,0,0,1
+170413_1257,1,6,1,2,1,0,,1,1,29,5,7,73,22,1,9,7,"Hey, I think the best move here would be to roll, it's the highest payoff for both of us, and while $42 is enticing if you don't roll, $30 is still a lot of money and it doesn't leave me high and dry with nothing. Thanks!","If you choose IN then I have the option to choose the option that benefits us both the most ($30 and $36), the difference between $36 and $42 isn't really worth it.",0,1,1,0,0,0,1,0,0,0,0,0,1
+170413_1257,1,8,1,2,1,0,,1,1,60,8,0,87,20,1,3,7,"Hello Person A, this is a very complicated study, I haven't done one like this before. There's so many different choices to make. and so many different elements of risk. I hope you're having a great day and this works out well for the both of us!",Hi...this is an intereting study...I'm not sure what I'm going to pick but I hope we both do well...,0,0,0,0,0,0,1,0,0,0,0,0,1
+170413_1257,1,10,1,2,1,10,,1,1,70,10,10,85,21,1,10,8,"Hello - I promise you that I will choose ""Roll"" in all ten trials. I want to maximize the amount of money that both of us will earn from the experiment. :-)",I promise I will roll in for all 10 trials. I want to maximize the amount that we both earn :-),0,1,1,1,0,0,1,0,0,0,0,0,1
+170920_1157,1,2,1,0,1,6,,1,1,20,5,5,70,24,0,6,10,hi this is person B lol,this is person B lol,0,0,0,0,0,0,0,0,0,0,1,0,0
+170920_1157,1,4,1,0,1,7,,1,1,39,5,10,70,23,1,5,8,,,0,0,0,0,0,0,0,0,0,0,1,0,0
+170920_1157,1,6,1,0,1,5,,1,1,70,5,3,9,30,1,9,7,you choose to be In or Out?,You choose to be In/Out,0,0,0,0,0,0,0,0,0,0,1,0,0
+170920_1157,1,8,1,0,1,10,,1,1,45,5,10,82,44,1,10,5,Hi!,Hi!,0,0,0,0,0,0,0,0,0,0,1,0,0
+170920_1157,1,10,1,0,1,10,,1,1,35,1,10,35,21,1,11,7,Hello person A. I just wanted to let you know that I plan to act in a way that is mutually beneficial.,Hello person A. I just wanted to let you know that I plan on acting in a way that is mutually beneficial.,0,1,1,0,0,0,0,0,0,0,1,0,0
+170920_1157,1,12,1,0,1,0,,1,1,13,0,0,5,20,1,10,9,,,0,0,0,0,0,0,0,0,0,0,1,0,0
+170920_1157,1,14,1,0,1,10,,1,1,100,10,10,,19,0,11,1,"I promise to choose roll every time, so choose in.","I promise to choose roll, so choose in.",0,1,1,0,0,0,0,0,0,0,1,0,0
+170920_1157,1,16,1,0,1,2,,1,1,39,2,8,18,18,0,10,5,"Hello, ok so this game is based on economics game theory. In order for us to work together and ""win"", you would have to choose in and I choose roll. This guarantees you at least the chance to win 36 dollars and me to win 30, whereas if you choose out you can only ever win 15. The odds are that you'd win 36 dollars and I'm perfectly fine with 30 instead of 42, so I think that you should choose in.","Ok, so this game is based on game theory in economics and the only way to ""win"" is for us to work together. If you choose in, you are guaranteed at least a chance to win 36 dollars and the odds would favor that, whereas if you choose out, you can only win 15 dollars. I'm perfectly happy choosing roll so that you could win 36 and I win 30 instead of 42 to maximize winnings, so I think you should choose in.",0,1,1,1,0,0,0,0,0,0,1,0,0
+170922_1146,1,2,1,0,1,10,,1,1,11,,,5,19,0,10,8,Who dares wins,who dares wins,0,0,0,0,0,0,0,0,0,0,1,0,0
+170922_1146,1,4,1,0,1,10,,1,1,90,10,10,62,19,0,10,7,"I am more than happy with the 30$ payout. I'm not going to a be a jerk and try to take 12$ more, that's silly. It is up to you if you are willing to risk the 5/6 odds for 36$ or just take the 15$ for both. I will be choosing roll for all 10. ","I am more than happy with 30$. I'm not going to try and take 12$ more, that's silly. If you want to take the 5/6 risk to win 36$ that is your decision. I am going to pick roll all 10 times.",0,1,1,0,0,0,0,0,0,0,1,0,0
+170922_1146,1,6,1,0,1,10,,1,1,10,8,10,41,46,1,0,5,"Hello! I am not strong on logic/math problems, so I will trust you to make the best decisions for both of us. :) ","Hi! I'm not the strongest on math/logic problems, so I'll trust you to make the best decisions for both of us. :)",0,0,0,0,0,0,0,0,0,0,1,0,0
+170922_1146,1,8,1,0,1,10,,1,1,60,3,10,100,38,1,11,6,,,0,0,0,0,0,0,0,0,0,0,1,0,0
+170922_1146,1,10,1,0,1,1,,1,1,20,2,2,9,27,0,10,5,"Here's the best way to make the most for either of us: Choose OUT for the first 8 decisions and we will gamble with the 2,3,4,5,6 for the last 2. You're likely to make a little more but that's alright.",Here's the best way to mamixmise the pay for either of us: / Choose OUT for 8 decisions and we will experiment with the last 2 decisions.,0,1,0,1,0,0,0,0,0,0,1,0,0
+170922_1146,1,12,1,0,1,10,,1,1,75,8,10,53,18,1,10,7,I will always choose roll ,i will always choose roll,0,1,1,0,0,0,0,0,0,0,1,0,0
+170922_1146,1,14,1,0,1,3,,1,1,45,5,5,29,19,1,7,7,"Hi, I believe this is a matter of trust. You have no reason to believe me but all I ask is that you make the decision that works for you and trust me. That said, nice to meet you, sort of. ","Hi, This is a matter of trust. and I know you have no reason to trust me but all  I ask is for you to make the decision that would be the best for us both. That said, nice to meet you, sort of.",0,0,0,0,0,0,0,0,0,0,1,0,0
+170922_1146,1,16,1,0,1,9,,1,1,50,3,8,60,18,1,6,5,"hi! make sure to choose, ""IN"" and I'll roll too","hi! Choose ""IN"" every time and I will roll every time.",0,1,1,0,0,0,0,0,0,0,1,0,0
+170922_1246,1,2,1,0,1,0,,1,1,33,3,4,15,19,1,10,5,"Hey, I feel like IN and ROLL is our best bet for optimizing each of our payments","Hey, I think IN and ROLL is our best bet for optimizing each of our payments.",0,0,1,1,0,0,0,0,0,0,1,0,0
+170922_1246,1,4,1,0,1,10,,1,1,37,4,7,77,18,1,10,6,"Hello, I plan on making mutually beneficial decisions. ","Hello, I plan on making mutually beneficial decisions :)",0,1,1,0,0,0,0,0,0,0,1,0,0
+170922_1246,1,6,1,0,1,0,,1,1,100,10,10,50,19,1,9,5,"If you choose IN, I promise to never choose ""don't roll""...that way we will both have a 5/6 chance of making $30 or more ($36 in your case). ","If you choose ""IN"" I promise to never choose ""Don't Roll"" giving us both a 5/6 chance of winning $30 or more ($36 in your case)",0,1,1,1,0,0,0,0,0,0,1,0,0
+170922_1246,1,8,1,0,1,8,,1,1,40,6,6,20,22,1,9,5,we both get maximum payout if you pick in and I pick roll,if you always choose in and I always choose roll we both will get maximum payout,0,0,1,1,0,0,0,0,0,0,1,0,0
+170922_1246,1,10,1,0,1,3,,1,1,50,5,5,37,20,0,7,7,"Hi! If you want, choose to be IN the first 5 times and OUT the next five and I'll choose roll the first 5 and don't roll the next 5. I think that might be fun. Or do what you want! Potstickers are delicious!",Hi! Choose in the first five times and out the next five times. Or do w/e you want! Potstickers are delicious.,0,1,0,0,0,0,0,0,0,0,1,0,0
+170922_1246,1,12,1,0,1,6,,1,1,40,4,8,30,19,1,10,8,"if you choose in, I'll choose roll","if you choose in, i'll choose roll",0,1,1,0,0,0,0,0,0,0,1,0,0
+170922_1246,1,14,1,0,1,4,,1,1,35,3,2,30,17,1,6,8,"Hi! If you were to play it safe, you would go ahead and pick ""OUT."" But hey, it's a Friday afternoon and you have nothing to lose, so we should work together to increase our chances of winning more money. I'll assume you pick IN and will choose to Roll so we can both earn more money!","Hi! If you want to play it safe, you'd go ahead and pick ""OUT."" But hey, it's a Friday and you've got nothing to lose, so you should pick ""IN."" I'll assume you picked In and I'll pick roll so we can both win some more money.",0,1,1,1,0,0,0,0,0,0,1,0,0
+170922_1246,1,16,1,0,1,0,,1,1,28,2,5,20,19,1,7,7,Hello,Hello,0,0,0,0,0,0,0,0,0,0,1,0,0
+170927_0934,1,2,1,0,1,0,,1,1,73,7,9,30,19,0,9,6,"Hi! Looking at the table, it's pretty clear that IN/ROLL is the best combo. If you average out the dice rolls, it's $30 for both A and B, so $60 total. This is the best payoff in the game. I'll choose ROLL for all answers, and I suggest you choose IN for all of them, that way we both can get the most money from the study. ","Hi! Looking at the chart, it's pretty clear that the best choice is IN/ROLL. When you average out he dice rolls, both people get $30. That's a total of $60, which is the most it's possible to get in the game. I'll choose ROLL for all answers, and if you choose IN for all answers we can both get the most money possible from the study.",0,1,1,1,0,0,0,0,0,0,1,0,0
+170927_0934,1,4,1,0,1,0,,1,1,82,8,8,70,26,1,11,6,If you choose IN i will choose ROLL,"If you choose IN, i will choose ROLL",0,1,1,0,0,0,0,0,0,0,1,0,0
+170927_0934,1,6,1,0,1,10,,1,0,30,10,10,,18,0,10,8,"Ok, this is simple. I'm not too thrilled by this kind of game-theory-behavior studies fooling people around. I won't pretend I don't prefer 42 to 30 if it's my mother giving me the money, but here I just want to see the case where experimenter have to pay the most, so I will choose ""ROLL"" all along, and I hope you can choose ""IN"" and help us all.","Ok, this is simple. I'm not too thrilled with this kind of game-strategy-behavior study fooling people around. I won't pretend that I don't prefer 42 to 30 if it is my mother giving the money, but here I just want to see the case where the experimenters have to pay the most. I will choose roll all along, and I just hope that you will choose in and help us all.",0,1,1,1,0,0,0,0,0,0,1,0,0
+170927_0934,1,8,1,0,1,0,,1,1,10,0,0,10,21,0,11,8,"Pick In.  I'll Roll and then you have a 5/6 chance of winning $36, which is an expected $30 payoff, same as me.  It's your best option, game theoretically","Pick In.  I'll roll and then you have a 5/6 chance of getting $36, which is an expected payout of $30, same as me.  Game theoretically, it's your best option",0,1,1,0,0,0,0,0,0,0,1,0,0
+170927_0934,1,10,1,0,1,6,,1,0,29,4,5,,48,1,6,6,hello how are you,hi how are you,0,0,0,0,0,0,0,0,0,0,1,0,0
+170927_1058,1,2,1,0,1,10,,1,1,86,9,10,62,52,1,11,6,To increase our odds for higher payout I'm going to roll every single time.,To increase our odds for payment I will choose roll every single time.,0,1,1,1,0,0,0,0,0,0,1,0,0
+170927_1058,1,4,1,0,1,10,,1,1,65,10,10,62,29,0,10,8,"Hi A, the way for us to make the most out of this experiment is to work together and trust each other, with you choosing 'In' for all the 10 decisions, and me choosing ""Roll"". Best, B","Hi A, the way for us to make the most of this experiment is to work together and trust each other, with you choosing 'In' for all ten decisions and me choosing 'Roll'. Best, B",0,1,1,1,0,0,0,0,0,0,1,0,0
+170927_1058,1,6,1,0,1,10,,1,1,85,10,10,90,26,0,10,8,"Hi there! I'm into game theory and also into sharing, so (in the words of Barry Nalebuff), let's expand this pie! I'll choose ""Roll"" every time, and I hope you choose ""In"" :-)","Hi there, I'm interested in game theory and psychology, so (like Barry Nalebuff says) let's try to expand the pie. I will choose ROLL each time, and I hope you choose ""In"" :-)",0,1,1,1,0,0,0,0,0,0,1,0,0
+170927_1058,1,8,1,0,1,3,,1,1,30,4,6,65,27,0,4,2,Good luck to you.,Good luck to you.,0,0,0,0,0,0,0,0,0,0,1,0,0
+170927_1058,1,10,1,0,1,10,,1,1,70,10,10,100,59,1,10,11,"Since I am starting with 0, willing to take the rolls.  Already a winner as I'm not sitting at my desk.  :0",I am willing to choose roll as we are starting with 0 anyway.  Already a winner since i am not sitting at my desk. :0,0,1,1,0,0,0,0,0,0,0,1,0,0
+170927_1058,1,12,1,0,1,5,,1,1,9,2,10,38,18,1,10,8,"I understand that $15 is the safest route to go here, but I am planning on rolling each time. I will be getting money no matter what, and $30 is definitely enough for me. I'd like you to get the opportunity for more than $15 too!","Hi there, I know that choosing ""Out"" is the safest option, but I am letting you know that I will be rolling each time. I will be getting money no matter what, and $30 is good enough for me, so I want you to get something too!",0,1,1,1,0,0,0,0,0,0,1,0,0
+170929_1046,1,2,1,0,1,0,,1,1,30,4,10,10,24,1,10,5,"A classic prisoner's dilemma! Obviously the ideal is A choose In, B choose Roll Die=2,3,4,5,6. But there is a chance with die = 1 that payoff for A is 0, though it is slim. You should select In for at least some of the 10 and I will select Roll for all.","A classic prisoner's dilemma! Obviously the best outcome is for A to choose in and B to choose roll, with die = 2,3,4,5,6. But there is a chance die=1 in which case A gets 0, though it is slim. You should choose In for at least some of the choices, and I will choose roll for all.",0,1,1,1,0,0,0,0,0,0,1,0,0
+170929_1046,1,4,1,0,1,10,,1,1,50,5,10,10,19,1,11,8,"Hi!! I'm promising to choose roll for all 10 decisions; I think it's more fun if we both get something and this gives us the maximum possible net gain ($66 total). Out of the 10 decisions, then, there's like an 80 percent chance of not getting the last outcome, but if you aren't comfortable with the chance of rolling a 1 or don't think I'm trustworthy it's totally cool if you pick out. ","Hi!! I'm promising to choose roll for all 10 decisions; I think it's more fun if we both get something and this gives us the highest possible net gain ($66). With 10 rolls there's about an 80 percent chance of getting the fourth outcome, if you aren't comfortable with the possibility of the roll being a 1 or don't think I'm trustworthy, it's totally cool if you choose out.",0,1,1,1,0,0,0,0,0,0,1,0,0
+170929_1046,1,6,1,0,1,0,,1,1,25,3,5,50,19,1,11,6,"Hi Person A, I think the best outcome would be if you choose In and I choose Roll, as it's likely we'll both get paid at least $30. I tend to trust people more than distrust them, so if you choose In, I will be choosing Roll. hopefully we leave this session with a lot of money!","Hi Person A, I think the best possible outcome is if you choose In and I choose Roll, as we will both get a least $30. I tend to trust people more than distrust them, so if you choose In, I will choose Roll. hopefully we will leave this session with a lot of money!",0,1,1,1,0,0,0,0,0,0,1,0,0
+170929_1046,1,8,1,0,1,1,,1,1,80,8,8,100,18,1,10,5,"Hi, please please choose in, and I swear that I'll choose ROLL; therefore you have a 5/6 chance of getting $36 instead of $15 and Ill get $30 instead of $15... it's a win win situation for both of us (unless it lands on 1, but since they choose 1 of 10 decisions that's very unlikely) so pleeease choose in","Hi, please please choose in! I swear I will choose roll so that you will have a 5/6 chance of getting 36 instead of 15 and ill get 30 instead of 15 so it's a win win for both of us! also since they choose 1 out of 10 decisions, your chances of getting 36 is even greater! so pleeease choose in",0,1,1,1,0,0,0,0,0,0,1,0,0
+170929_1046,1,10,1,0,1,0,,1,1,30,6,6,25,17,0,10,7,"A difference of $12 really isn't that much. I'll roll for all the decisions, no matter what, $30 is good enough with me.",a difference of 12 dollars isn't that much. I will choose Roll and am content with the 30$,0,1,1,0,0,0,0,0,0,0,1,0,0
+170929_1046,1,12,1,0,1,10,,1,1,80,10,8,80,55,1,11,10,Good luck!,Good luck!,0,0,0,0,0,0,0,0,0,0,1,0,0
+170929_1046,1,14,1,0,1,8,,1,1,72,7,7,76,27,1,8,6,I will always choose roll since payoff will most likely be the same for me,I will always choose roll because payoff of don't roll is not as much different compared to roll,0,1,1,0,0,0,0,0,0,0,1,0,0
+170929_1253,1,2,1,0,1,5,,1,1,75,5,5,75,45,1,11,10,,,0,0,0,0,0,0,0,0,0,0,1,0,0
+170929_1253,1,4,1,0,1,10,,1,1,25,6,10,15,22,0,10,8,"I'm picking roll all 10 times. I'm guaranteed a floor of $15, but would love $30. I get zero pleasure out of scamming you by picking don't roll, and would rather have the satisfaction of knowing I doubled my own payment (and knowing you made out well too). So if you're willing to take the chance of the roll, opt in! :)","I will choose roll all ten times. My floor for the experiment is $15. I am guaranteed to double that if you opt in. I get zero additional satisfaction from going from $30 to $42 (and no satisfaction from scamming you. If you would like to take the chance with the roll, opt in! :)",0,1,1,1,1,0,0,0,0,0,1,0,0
+170929_1253,1,6,1,0,1,0,,1,1,68,8,8,34,25,0,10,8,"Hi there :) It seems to me like we should work together. I'll always choose to roll and you always choose in. That way, you'll have a 5/6 chance of more than doubling your money and I'll do better too! Looking forward to playing with you","Hi there :) It seems to me as if we should work together on this. If you always choose In and I always choose to roll, you'll have a 5/6 chance of more than doubling your money and I'll do better too. Look forward to playing with you",0,1,1,1,0,0,0,0,0,0,1,0,0
+170929_1253,1,8,1,0,1,10,,1,0,60,6,8,,21,1,10,7,"Hello! if you choose in, I promise to roll every time!! I want us both to make money from this SOM study :) Happy Friday!!","Hello! if you choose in, I promise to roll every time. i want us to both make money at SOM today!!! Happy Friday :)",0,1,1,1,0,0,0,0,0,0,1,0,0
+170929_1253,1,10,1,0,1,10,,1,1,30,3,10,35,18,1,10,6,"To me, the difference of $30-42 is not worth screwing you over, so in each decision I will choose ROLL and hope that we both get money.  It's up to you whether you would like to gamble and get $15 or $36.  5/6 chance, your choice.","To me, the difference between $30-42 is not worth screwing you over.  I will choose ROLL each of the 10 times.  It is up to you whether or not you want to gamble for $36.  5/6, your choice.",0,1,1,0,1,0,0,0,0,0,1,0,0
+170929_1253,1,12,1,0,1,0,,1,1,54,7,0,65,20,1,10,10,It's important that I maintain your trust so that we both get more money so I guarantee that I will click roll and I hope you that you will choose In. ,It is important to maintain your trust throughout this task so I guarantee that I will choose roll and I hope that you will choose In.,0,1,1,1,0,0,0,0,0,0,1,0,0
+170929_1253,1,14,1,0,1,10,,1,1,100,10,8,82,22,1,10,4,"a singer in a smoky room, the smell of wine and cheap perfume","a singer in a smoky room, the smell of wine and cheap perfume",0,0,0,0,0,0,0,0,0,0,1,0,0
+170929_1253,1,16,1,0,1,10,,1,1,90,10,10,93,18,1,10,8,Hi! I will roll every time.,Hi! I will roll every time.,0,1,1,0,0,0,0,0,0,0,1,0,0
+171006_1126,1,2,1,0,1,0,,1,1,23,2,1,0,26,0,7,5,"I commit to choosing to ROLL in each chance. So, if you decide to choose IN, with a very high probability, we maximise our payoffs.","I commit to choosing ROLL every time. In this way, if you choose IN, we can maximise our mutual payoffs.",0,1,1,1,0,0,0,0,0,0,1,0,0
+171006_1126,1,4,1,0,1,10,,1,1,82,8,9,40,21,1,7,8,"Hi, I'm going to play ROLL every time so we both get 30 dollars or more!","Hi, I'm going to choose ROLL every time so we both get 30 dollars or more!",0,1,1,1,0,0,0,0,0,0,1,0,0
+171006_1126,1,6,1,0,1,10,,1,0,22,3,4,,55,1,5,7,Lets go,Let's go.,0,0,0,0,0,0,0,0,0,0,1,0,0
+171006_1126,1,8,1,0,1,9,,1,1,51,6,7,28,18,1,10,7,I am going to roll. ,I am going to roll.,0,1,1,0,0,0,0,0,0,0,1,0,0
+171006_1126,1,10,1,0,1,0,,1,1,30,,,72,21,0,10,5,"Hi, it's in both of our best interets' if I roll and you go in. That way, we are both almost certainly guaranteed $30+ dollars. It's unlikely that I'll roll 1 and that will be the decision chosen. You'll have well over an 80% chance of making $36.","Hi, it's in both of our best interests' if you go in and I roll. We're both pretty much guaranteed $30+ dollars. There's over an 80% chance that you'll get $36!",0,1,1,1,0,0,0,0,0,0,1,0,0
+171006_1126,1,12,1,0,1,10,,1,1,85,9,10,74,27,1,11,6,I will always choose to ROLL if you choose IN,I will choose to ROLL if you choose IN,0,1,1,0,0,0,0,0,0,0,1,0,0
+171006_1126,1,14,1,0,1,0,,1,1,15,1,2,15,21,1,11,5,"Good luck! Since I'm not gong to be able to see your decisions, I guess I'll try to make decisions that will give the best outcome.","Good luck! Since I don't think I'll be able to see your decisions before I make mine, I guess I'll just make my decisions to achieve the best outcome.",0,0,0,0,0,0,0,0,0,0,1,0,0
+171006_1126,1,16,1,0,1,0,,1,1,12,,1,20,19,0,9,5,,,0,0,0,0,0,0,0,0,0,0,1,0,0
+141110_1315,0,3,1,1,0,,10,1,1,66,,,41,21,0,11,7,,,,0,0,0,0,1,0,0,0,0,0,1,0
+141110_1315,0,7,1,1,0,,9,1,1,60,,,90,18,1,10,5,,,,0,0,0,0,1,0,0,0,0,0,1,0
+141110_1315,0,9,1,1,0,,10,1,1,36,,,100,26,1,10,7,,,,0,0,0,0,1,0,0,0,0,0,1,0
+141110_1315,0,10,1,1,0,,6,1,1,100,,,100,22,1,11,7,,,,0,0,0,0,1,0,0,0,0,0,1,0
+141110_1315,0,14,1,1,0,,5,1,1,25,,,20,26,0,1,8,,,,0,0,0,0,1,0,0,0,0,0,1,0
+141110_1315,0,16,1,1,0,,10,1,1,90,,,70,19,0,9,6,,,,0,0,0,0,1,0,0,0,0,0,1,0
+141110_1315,0,17,1,1,0,,5,1,1,71,,,73,21,1,10,9,,,,0,0,0,0,1,0,0,0,0,0,1,0
+141110_1315,0,18,1,1,0,,0,1,1,35,,,19,19,1,11,7,,,,0,0,0,0,1,0,0,0,0,0,1,0
+141110_1315,0,20,1,1,0,,10,1,1,81,,,60,20,1,11,6,,,,0,0,0,0,1,0,0,0,0,0,1,0
+141110_1315,0,23,1,1,0,,10,1,1,50,,,50,22,1,10,8,,,,0,0,0,0,1,0,0,0,0,0,1,0
+141110_1315,0,24,1,1,0,,10,1,1,65,,,62,23,0,11,8,,,,0,0,0,0,1,0,0,0,0,0,1,0
+141110_1315,0,25,1,1,0,,10,1,1,90,,,100,36,0,10,11,,,,0,0,0,0,1,0,0,0,0,0,1,0
+141110_1315,0,27,1,1,0,,10,1,1,80,,,75,20,0,11,10,,,,0,0,0,0,1,0,0,0,0,0,1,0
+141110_1315,0,29,1,1,0,,8,1,1,35,,,9,21,0,11,8,,,,0,0,0,0,1,0,0,0,0,0,1,0
+141110_1315,0,30,1,1,0,,10,1,1,72,,,80,23,1,10,11,,,,0,0,0,0,1,0,0,0,0,0,1,0
+141110_1515,0,2,1,2,0,,7,1,1,67,,,71,22,1,9,6,,,,0,0,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,3,1,2,0,,10,1,1,85,,,67,31,0,11,8,,,,0,0,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,4,1,2,0,,10,1,1,44,,,37,20,1,11,8,,,,0,0,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,5,1,2,0,,10,1,1,90,,,93,20,1,4,8,,,,0,0,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,6,1,2,0,,9,1,1,65,,,80,21,1,10,7,,,,0,0,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,8,1,2,0,,10,1,1,38,,,65,26,1,10,8,,,,0,0,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,9,1,2,0,,0,1,1,90,,,10,41,0,8,5,,,,0,0,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,10,1,2,0,,2,1,1,35,,,50,24,0,10,6,,,,0,0,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,18,1,2,0,,10,1,1,95,,,68,23,0,5,7,,,,0,0,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,19,1,2,0,,10,1,1,100,,,50,33,0,10,6,,,,0,0,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,20,1,2,0,,10,1,1,90,,,39,23,0,10,7,,,,0,0,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,24,1,2,0,,5,1,1,20,,,29,24,1,10,8,,,,0,0,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,25,1,2,0,,10,1,1,81,,,60,25,1,10,5,,,,0,0,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,29,1,2,0,,10,1,1,57,,,66,26,0,8,8,,,,0,0,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,31,1,2,0,,5,1,1,12,,,16,23,1,7,7,,,,0,0,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,32,1,2,0,,2,1,1,20,,,21,21,1,10,7,,,,0,0,0,0,0,1,0,0,0,0,0,1
+141110_1515,0,33,1,2,0,,4,1,1,35,,,30,19,0,10,7,,,,0,0,0,0,0,1,0,0,0,0,0,1
+141111_1315,0,1,0,1,0,,6,1,1,50,,,49,21,1,10,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,2,0,1,1,10,,1,1,90,,,80,20,0,11,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,3,0,1,0,,4,1,1,60,,,41,20,1,10,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,4,0,1,1,6,,1,1,35,,,36,35,0,7,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,5,0,1,1,5,,1,1,38,,,38,19,1,10,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,6,0,1,1,0,,1,1,10,,,9,19,1,10,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,7,0,1,0,,10,1,1,30,,,61,19,0,0,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,8,0,1,1,0,,1,1,10,,,30,24,1,10,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,9,0,1,1,0,,1,1,7,,,24,24,1,11,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,10,0,1,0,,0,1,1,0,,,,23,0,11,5,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,11,0,1,0,,0,1,1,66,,,17,21,1,10,4,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,12,0,1,1,10,,1,1,80,,,60,24,0,10,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,13,0,1,0,,0,1,1,60,,,80,23,0,10,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,14,0,1,0,,10,1,1,40,,,40,25,1,8,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,15,0,1,0,,0,1,1,100,,,50,26,0,11,10,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,16,0,1,0,,2,1,1,15,,,21,18,1,10,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,17,0,1,1,0,,1,1,32,,,71,20,1,10,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,18,0,1,0,,0,1,1,6,,,14,20,1,10,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,19,0,1,1,5,,1,1,30,,,30,25,1,6,5,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,20,0,1,1,8,,1,1,27,,,49,37,1,10,5,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,21,0,1,1,5,,1,1,58,,,60,19,1,8,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,22,0,1,1,0,,1,1,91,,,4,20,1,10,3,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,23,0,1,1,5,,1,1,35,,,72,25,1,10,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,24,0,1,0,,3,1,1,20,,,50,26,0,6,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,25,0,1,0,,10,1,1,28,,,30,20,0,9,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,26,0,1,1,0,,1,1,9,,,25,18,1,10,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,27,0,1,0,,5,1,1,20,,,47,23,1,7,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,28,0,1,0,,4,1,1,36,,,56,22,1,7,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,29,0,1,1,7,,1,1,75,,,66,25,1,11,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,30,0,1,1,10,,1,1,36,,,20,23,1,11,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,31,0,1,0,,0,1,1,10,,,30,22,0,3,5,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,32,0,1,1,7,,1,1,40,,,35,24,0,10,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,33,0,1,0,,6,1,1,46,,,44,19,1,10,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1315,0,34,0,1,0,,0,1,1,4,,,100,23,0,3,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+141111_1515,0,1,0,2,0,,7,1,1,85,,,77,26,1,10,10,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,2,0,2,1,0,,1,1,0,,,1,24,0,10,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,3,0,2,0,,5,1,1,10,,,20,23,0,11,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,4,0,2,1,0,,1,1,50,,,15,18,1,10,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,5,0,2,1,10,,1,1,95,,,100,28,0,11,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,6,0,2,0,,4,1,1,20,,,26,24,0,9,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,7,0,2,1,10,,1,1,90,,,85,24,0,10,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,8,0,2,0,,0,1,1,25,,,25,18,1,10,4,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,9,0,2,1,0,,1,1,25,,,20,23,0,10,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,10,0,2,1,0,,1,1,62,,,28,22,1,10,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,11,0,2,1,0,,1,1,88,,,100,21,1,11,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,12,0,2,0,,5,1,1,76,,,40,19,1,10,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,13,0,2,0,,10,1,1,60,,,60,30,0,11,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,14,0,2,1,4,,1,1,50,,,80,26,0,10,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,15,0,2,1,10,,1,1,70,,,35,20,1,7,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,16,0,2,0,,0,1,1,10,,,20,23,1,10,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,17,0,2,0,,5,1,1,40,,,39,24,0,11,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,18,0,2,0,,0,1,1,85,,,40,25,0,10,10,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,19,0,2,1,0,,1,1,10,,,10,22,1,10,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,20,0,2,0,,1,1,1,30,,,90,25,1,9,1,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,21,0,2,1,0,,1,1,70,,,39,23,0,5,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,22,0,2,1,10,,1,1,19,,,16,21,0,10,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,23,0,2,0,,10,1,1,81,,,50,25,0,6,11,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,24,0,2,0,,0,1,1,0,,,10,22,0,11,11,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,25,0,2,1,10,,1,1,20,,,30,21,1,9,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,26,0,2,0,,10,1,1,80,,,70,19,1,10,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,27,0,2,0,,0,1,1,40,,,34,32,0,11,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,28,0,2,1,0,,1,1,7,,,5,23,0,10,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,29,0,2,1,0,,1,1,9,,,4,36,0,10,4,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,30,0,2,0,,6,1,1,30,,,35,22,1,6,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,31,0,2,0,,0,1,1,0,,,25,25,0,10,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,32,0,2,1,0,,1,1,23,,,16,26,0,10,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,33,0,2,1,0,,1,1,9,,,9,21,1,10,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+141111_1515,0,34,0,2,0,,5,1,1,50,,,40,19,1,10,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,1,0,2,1,10,,1,1,66,5,,25,21,1,10,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,2,0,2,0,,0,1,1,35,2,,29,26,1,10,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,3,0,2,0,,0,1,1,10,3,,15,21,1,11,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,4,0,2,1,0,,1,1,0,0,,0,21,1,10,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,5,0,2,0,,0,1,1,10,0,,14,25,1,10,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,6,0,2,0,,1,1,1,19,3,,15,19,1,10,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,7,0,2,0,,0,1,1,10,0,,10,21,1,10,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,8,0,2,1,10,,1,1,0,8,,85,20,1,6,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,9,0,2,0,,10,1,1,9,2,,20,30,1,11,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,10,0,2,0,,0,1,1,9,,,82,22,0,11,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,11,0,2,1,3,,1,1,45,5,,40,23,1,10,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,12,0,2,1,0,,1,1,28,2,,30,23,0,10,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,13,0,2,1,10,,1,1,80,7,,49,23,0,9,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,14,0,2,0,,2,1,1,20,3,,10,21,1,11,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,15,0,2,0,,10,1,1,65,7,,65,22,0,5,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,16,0,2,1,10,,1,1,37,9,,81,24,0,9,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,17,0,2,0,,4,1,1,70,7,,40,19,1,11,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,18,0,2,0,,0,1,1,30,2,,20,30,0,5,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,19,0,2,1,10,,1,1,65,9,,30,35,0,11,11,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,20,0,2,1,0,,1,1,10,,,9,20,1,10,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,21,0,2,0,,5,1,1,29,3,,40,27,0,10,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,22,0,2,1,0,,1,1,32,1,,51,18,1,10,10,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,23,0,2,0,,10,1,1,45,4,,40,26,0,11,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,24,0,2,1,10,,1,1,40,4,,50,27,0,5,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,25,0,2,1,0,,1,1,30,1,,30,19,1,10,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,26,0,2,1,10,,1,1,10,1,,10,23,1,10,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,27,0,2,0,,10,1,1,100,10,,40,36,0,11,11,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,28,0,2,0,,0,1,1,20,1,,15,29,1,5,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,29,0,2,1,0,,1,1,37,0,,60,23,0,10,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,30,0,2,1,0,,1,1,10,,,,24,0,7,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,31,0,2,0,,10,1,1,80,10,,72,24,0,0,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,32,0,2,0,,10,1,1,83,8,,71,23,1,10,10,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,33,0,2,1,,,1,0,76,,,,20,0,10,10,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1315,0,34,0,2,1,0,,1,1,20,0,,,23,0,9,11,,,,0,0,0,0,0,1,0,0,1,0,0,0
+150302_1515,0,1,0,1,1,0,,1,1,10,,,9,22,1,11,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,2,0,1,1,0,,1,1,5,1,,9,26,1,10,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,3,0,1,0,,5,1,1,50,5,,60,24,0,6,9,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,4,0,1,0,,5,1,1,80,3,,50,25,0,7,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,5,0,1,1,0,,1,1,35,2,,20,21,0,10,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,6,0,1,0,,4,1,1,59,7,,37,19,1,7,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,7,0,1,1,0,,1,1,9,0,,39,20,0,11,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,8,0,1,0,,0,1,1,35,1,,19,29,1,10,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,9,0,1,1,0,,1,1,25,2,,30,22,0,9,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,10,0,1,1,10,,1,1,75,9,,91,31,1,11,3,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,11,0,1,1,0,,1,1,35,0,,17,30,0,9,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,12,0,1,1,0,,1,1,25,3,,20,21,1,11,9,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,13,0,1,0,,0,1,1,38,4,,9,25,1,10,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,14,0,1,1,0,,1,1,9,1,,21,24,0,7,3,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,15,0,1,0,,2,1,1,28,3,,82,20,1,11,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,16,0,1,0,,1,1,1,18,2,,12,23,0,10,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,17,0,1,0,,0,1,0,13,1,,,28,0,10,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,18,0,1,1,0,,1,1,10,,,19,28,0,10,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,19,0,1,0,,7,1,1,40,4,,76,20,0,7,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,20,0,1,1,10,,1,1,15,0,,10,29,0,10,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,21,0,1,0,,4,1,1,30,5,,81,22,1,4,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,22,0,1,1,0,,1,1,7,1,,10,22,1,10,5,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,23,0,1,1,0,,1,1,10,0,,0,22,0,0,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,24,0,1,1,10,,1,1,39,10,,9,23,1,10,1,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,25,0,1,0,,10,1,1,87,10,,85,28,0,10,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,26,0,1,0,,4,1,1,75,7,,30,22,0,6,4,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,27,0,1,0,,10,1,1,71,6,,18,26,0,10,10,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,28,0,1,1,0,,1,1,9,1,,5,20,1,10,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,29,0,1,0,,0,1,1,18,2,,20,21,1,11,5,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,30,0,1,0,,0,1,1,25,0,,20,24,0,11,11,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,31,0,1,0,,8,1,1,65,7,,81,24,0,10,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,32,0,1,1,2,,1,1,19,2,,27,21,1,11,9,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,33,0,1,1,0,,1,1,28,3,,33,31,1,10,11,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150302_1515,0,34,0,1,0,,1,1,1,14,2,,9,19,0,10,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+150303_1315,0,1,1,2,0,,0,1,1,9,5,,30,20,1,11,6,,,,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,4,1,2,0,,0,1,1,38,0,,34,21,0,10,10,,,,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,5,1,2,0,,0,1,1,90,10,,90,25,0,10,7,,,,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,9,1,2,0,,5,1,1,20,3,,25,18,0,6,7,,,,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,11,1,2,0,,7,1,1,70,7,,70,20,0,6,8,,,,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,12,1,2,0,,0,1,1,0,,,100,19,1,10,5,,,,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,13,1,2,0,,0,1,1,60,0,,70,23,0,10,5,,,,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,15,1,2,0,,10,1,1,85,10,,90,23,1,5,5,,,,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,16,1,2,0,,4,1,1,35,4,,71,29,1,6,6,,,,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,18,1,2,0,,10,1,1,52,10,,25,20,0,11,10,,,,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,20,1,2,0,,0,1,1,75,,,50,22,0,9,6,,,,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,21,1,2,0,,7,1,1,63,6,,0,25,0,8,8,,,,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,23,1,2,0,,1,1,1,40,10,,29,23,0,10,5,,,,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,25,1,2,0,,7,1,1,90,10,,90,23,0,10,5,,,,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,26,1,2,0,,10,1,1,85,10,,91,21,0,10,10,,,,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,30,1,2,0,,10,1,1,50,10,,71,20,1,10,7,,,,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1315,0,31,1,2,0,,10,1,1,87,10,,72,24,1,10,11,,,,0,0,0,0,0,1,0,0,0,0,0,1
+150303_1515,0,1,1,1,0,,1,1,1,30,2,,20,25,0,10,6,,,,0,0,0,0,1,0,0,0,0,0,1,0
+150303_1515,0,2,1,1,0,,10,1,1,81,10,,100,20,1,3,6,,,,0,0,0,0,1,0,0,0,0,0,1,0
+150303_1515,0,4,1,1,0,,0,1,1,5,0,,13,19,0,10,6,,,,0,0,0,0,1,0,0,0,0,0,1,0
+150303_1515,0,6,1,1,0,,8,1,1,76,10,,83,21,1,10,7,,,,0,0,0,0,1,0,0,0,0,0,1,0
+150303_1515,0,8,1,1,0,,10,1,1,45,10,,40,24,0,10,5,,,,0,0,0,0,1,0,0,0,0,0,1,0
+150303_1515,0,13,1,1,0,,6,1,1,80,6,,80,19,1,11,8,,,,0,0,0,0,1,0,0,0,0,0,1,0
+150303_1515,0,14,1,1,0,,0,1,1,60,5,,40,23,0,10,3,,,,0,0,0,0,1,0,0,0,0,0,1,0
+150303_1515,0,20,1,1,0,,5,1,1,17,2,,41,22,1,10,5,,,,0,0,0,0,1,0,0,0,0,0,1,0
+150303_1515,0,21,1,1,0,,10,1,1,85,10,,90,20,1,10,6,,,,0,0,0,0,1,0,0,0,0,0,1,0
+150303_1515,0,22,1,1,0,,10,1,0,93,10,,,22,0,9,5,,,,0,0,0,0,1,0,0,0,0,0,1,0
+150303_1515,0,23,1,1,0,,10,1,1,8,0,,5,19,0,7,8,,,,0,0,0,0,1,0,0,0,0,0,1,0
+150303_1515,0,24,1,1,0,,10,1,1,81,10,,78,20,0,4,8,,,,0,0,0,0,1,0,0,0,0,0,1,0
+150303_1515,0,25,1,1,0,,10,1,1,60,0,,75,23,0,10,7,,,,0,0,0,0,1,0,0,0,0,0,1,0
+150303_1515,0,26,1,1,0,,9,1,0,70,10,,,21,1,11,6,,,,0,0,0,0,1,0,0,0,0,0,1,0
+150303_1515,0,28,1,1,0,,3,1,1,57,6,,29,19,1,6,7,,,,0,0,0,0,1,0,0,0,0,0,1,0
+150303_1515,0,29,1,1,0,,4,1,1,30,4,,20,23,0,7,7,,,,0,0,0,0,1,0,0,0,0,0,1,0
+150303_1515,0,30,1,1,0,,10,1,1,100,10,,91,22,1,11,11,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170404_1008,1,2,1,1,0,,8,1,1,70,2,,80,29,1,6,5,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170404_1008,1,5,1,1,0,,1,1,1,50,5,,20,24,0,9,5,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170404_1008,1,6,1,1,0,,10,1,1,50,1,,20,22,1,11,7,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170404_1008,1,7,1,1,0,,0,1,1,22,,,69,21,1,10,6,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170404_1008,1,10,1,1,0,,1,1,1,70,7,,50,21,1,7,8,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170404_1008,1,11,1,1,0,,8,1,1,48,5,,61,20,1,9,1,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170404_1106,1,1,1,2,0,,8,0,1,0,,,78,45,0,10,5,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170404_1106,1,3,1,2,0,,4,1,1,22,2,,7,22,1,10,8,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170404_1106,1,7,1,2,0,,0,1,1,20,,,25,19,1,10,5,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170404_1106,1,10,1,2,0,,5,1,1,60,4,,70,24,1,10,7,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170404_1106,1,12,1,2,0,,5,1,1,45,4,,34,25,0,10,6,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170404_1106,1,13,1,2,0,,0,1,1,0,0,,70,27,1,10,5,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170404_1106,1,14,1,2,0,,6,1,1,100,10,,40,33,1,11,3,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170404_1151,1,1,0,1,1,5,,1,1,50,5,,30,54,1,10,5,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170404_1151,1,2,0,1,0,,0,1,1,0,0,,5,29,0,10,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170404_1151,1,3,0,1,0,,3,1,1,50,7,,50,18,0,9,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170404_1151,1,4,0,1,1,10,,1,1,95,10,2,70,36,1,11,5,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170404_1151,1,5,0,1,0,,6,1,0,66,4,,,21,1,3,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170404_1151,1,6,0,1,1,5,,1,1,39,3,5,52,47,1,10,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170404_1151,1,7,0,1,1,10,,1,1,50,5,5,55,47,1,7,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170404_1151,1,8,0,1,0,,0,1,1,25,3,,30,24,0,10,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170404_1151,1,9,0,1,0,,0,1,1,0,,,0,20,1,10,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170404_1151,1,10,0,1,0,,5,1,1,50,5,,50,46,1,10,5,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170404_1151,1,11,0,1,0,,5,1,1,0,8,,,27,1,3,10,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170404_1151,1,12,0,1,1,5,,1,1,19,4,3,71,22,0,10,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170404_1151,1,13,0,1,1,0,,1,1,27,2,3,24,32,0,9,4,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170404_1151,1,14,0,1,1,10,,1,1,70,10,9,70,24,1,10,9,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170404_1252,1,1,0,2,0,,6,1,1,77,7,,66,28,1,10,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170404_1252,1,2,0,2,1,4,,1,1,59,6,5,50,54,1,11,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170404_1252,1,3,0,2,1,4,,1,1,55,4,6,54,21,1,9,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170404_1252,1,4,0,2,1,10,,1,1,50,6,4,60,28,1,9,11,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170404_1252,1,5,0,2,0,,10,1,1,70,6,,60,23,1,1,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170404_1252,1,6,0,2,0,,0,1,1,50,0,,75,18,0,10,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170404_1252,1,7,0,2,1,0,,1,1,20,2,,20,20,1,10,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170404_1252,1,8,0,2,0,,0,1,1,20,2,,10,29,1,9,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170404_1252,1,9,0,2,0,,0,1,1,10,0,,60,59,1,10,3,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170404_1252,1,10,0,2,1,10,,1,1,50,5,5,50,36,1,10,4,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170404_1252,1,11,0,2,1,10,,1,1,19,2,4,18,19,0,10,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170404_1252,1,12,0,2,0,,10,1,1,70,6,,34,39,1,11,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170404_1252,1,13,0,2,0,,0,0,0,0,,,,44,1,10,0,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170404_1252,1,14,0,2,0,,0,1,1,0,0,,0,23,1,10,3,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170404_1252,1,15,0,2,1,0,,1,1,20,2,,30,22,1,3,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170404_1252,1,16,0,2,1,10,,1,1,82,8,7,80,20,1,10,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170406_0940,1,1,0,2,0,,10,1,0,30,3,,,20,1,10,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170406_0940,1,2,0,2,1,0,,1,1,8,1,0,8,19,1,10,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170406_0940,1,3,0,2,1,6,,1,1,50,5,6,50,29,1,10,4,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170406_0940,1,4,0,2,1,10,,1,1,84,6,5,80,22,1,10,9,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170406_0940,1,5,0,2,0,,4,1,1,50,5,,50,21,1,11,4,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170406_0940,1,6,0,2,0,,10,1,1,86,10,,90,23,1,10,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170406_0940,1,7,0,2,1,10,,1,1,30,3,5,30,23,0,10,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170406_0940,1,8,0,2,0,,5,1,1,50,5,,50,26,1,7,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170406_0940,1,9,0,2,1,0,,1,1,30,3,,60,28,0,9,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170406_0940,1,10,0,2,1,0,,1,1,17,,0,25,22,1,10,4,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170406_0940,1,11,0,2,1,0,,0,0,0,,,,32,1,10,1,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170406_0940,1,12,0,2,0,,2,1,1,26,4,,29,21,1,9,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170406_0940,1,13,0,2,0,,0,1,1,0,,,70,22,1,10,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170406_0940,1,14,0,2,0,,0,1,1,4,,,,23,1,10,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170406_1054,1,1,0,1,1,0,,1,1,15,2,3,29,23,1,9,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170406_1054,1,2,0,1,0,,0,1,1,10,,,92,21,1,10,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170406_1054,1,3,0,1,0,,0,1,1,10,,,20,22,1,10,5,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170406_1054,1,4,0,1,0,,7,1,0,31,6,,,28,0,11,9,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170406_1054,1,5,0,1,1,0,,0,0,0,,,,30,1,9,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170406_1054,1,6,0,1,0,,8,1,1,34,4,,56,23,1,10,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170406_1054,1,7,0,1,1,0,,1,1,9,2,0,17,25,1,10,5,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170406_1054,1,8,0,1,0,,0,1,1,70,7,,60,20,1,10,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170406_1054,1,9,0,1,1,7,,1,1,70,5,6,50,31,1,10,3,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170406_1054,1,10,0,1,0,,5,1,0,56,7,,,26,1,11,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170406_1054,1,11,0,1,1,10,,1,1,90,10,10,90,19,0,10,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170406_1054,1,12,0,1,0,,0,0,0,0,,,,22,1,10,5,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170406_1054,1,13,0,1,1,0,,1,1,30,3,5,25,22,1,10,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170406_1054,1,14,0,1,1,9,,1,0,14,1,1,,21,1,10,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170406_1144,1,1,1,2,0,,10,1,1,50,9,,45,22,1,7,5,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170406_1144,1,4,1,2,0,,10,1,1,95,10,,85,26,0,10,7,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170406_1144,1,6,1,2,0,,2,1,1,9,0,,92,27,1,10,5,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170406_1144,1,8,1,2,0,,4,1,1,50,5,,49,34,1,10,10,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170406_1144,1,9,1,2,0,,0,1,1,64,10,,27,32,0,10,6,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170406_1144,1,10,1,2,0,,10,1,1,100,10,,100,53,1,11,10,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170406_1144,1,11,1,2,0,,10,1,1,100,10,,60,49,1,10,7,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170406_1252,1,4,1,1,0,,10,1,1,99,10,,98,37,0,11,5,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170406_1252,1,6,1,1,0,,0,1,1,100,10,,81,57,1,7,8,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170406_1252,1,7,1,1,0,,0,1,1,0,0,,100,31,1,10,7,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170406_1252,1,9,1,1,0,,10,1,1,70,10,,70,22,1,5,5,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170406_1252,1,10,1,1,0,,10,1,1,100,10,,100,20,0,10,8,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170411_0936,1,1,1,2,0,,0,1,1,0,,,,21,1,10,5,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170411_0936,1,4,1,2,0,,3,1,1,29,3,,60,22,1,10,9,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170411_0936,1,5,1,2,0,,0,1,1,9,0,,30,28,1,10,4,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170411_0936,1,7,1,2,0,,0,1,1,100,10,,100,26,0,10,8,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170411_0936,1,10,1,2,0,,3,1,1,100,10,,100,22,0,3,5,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170411_1058,1,1,1,1,0,,10,1,1,100,,,80,19,0,7,7,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170411_1058,1,7,1,1,0,,1,1,1,40,4,,53,20,0,11,5,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170411_1058,1,8,1,1,0,,0,1,1,10,1,,10,20,1,7,6,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170411_1058,1,9,1,1,0,,0,1,1,81,2,,100,28,1,7,5,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170411_1058,1,11,1,1,0,,0,1,1,9,0,,16,22,0,10,8,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170411_1058,1,12,1,1,0,,10,1,1,100,10,,100,46,0,7,6,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170411_1146,1,1,0,2,0,,0,1,1,37,3,,39,19,0,10,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170411_1146,1,2,0,2,0,,0,1,1,70,7,,51,25,0,10,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170411_1146,1,3,0,2,1,0,,1,1,90,10,3,91,21,0,6,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170411_1146,1,4,0,2,1,0,,1,1,12,,1,4,20,1,9,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170411_1146,1,5,0,2,1,2,,1,1,91,8,10,96,25,1,5,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170411_1146,1,6,0,2,1,0,,1,0,0,,,,22,0,3,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170411_1146,1,7,0,2,0,,0,1,0,0,,,,22,1,9,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170411_1146,1,8,0,2,1,4,,1,1,50,6,4,71,19,1,9,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170411_1146,1,9,0,2,0,,0,1,1,13,,,,22,1,10,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170411_1146,1,10,0,2,1,0,,1,1,10,4,5,40,30,1,10,1,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170411_1146,1,11,0,2,0,,10,1,1,85,8,,80,27,0,10,10,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170411_1146,1,12,0,2,0,,9,1,1,71,9,,80,19,1,7,10,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170411_1146,1,13,0,2,1,0,,1,1,0,0,,,26,0,10,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170411_1146,1,14,0,2,1,0,,1,1,51,5,2,66,20,1,5,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170411_1146,1,15,0,2,0,,0,1,1,0,,,100,30,1,1,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170411_1146,1,16,0,2,0,,4,1,1,60,3,,50,31,0,9,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170411_1239,1,1,0,1,1,10,,1,1,30,0,,32,19,0,11,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170411_1239,1,2,0,1,0,,0,1,1,0,,,,32,0,4,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170411_1239,1,3,0,1,1,0,,1,0,20,2,,,28,1,8,10,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170411_1239,1,4,0,1,1,0,,1,1,6,0,2,30,25,1,4,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170411_1239,1,5,0,1,0,,0,1,1,10,2,,50,20,0,2,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170411_1239,1,6,0,1,1,0,,1,1,60,7,4,65,21,0,5,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170411_1239,1,7,0,1,1,0,,1,1,29,5,0,25,28,1,10,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170411_1239,1,8,0,1,0,,10,1,1,19,8,,30,40,1,9,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170411_1239,1,9,0,1,0,,2,1,1,15,1,,67,18,1,9,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170411_1239,1,10,0,1,0,,0,1,1,10,0,,10,19,0,10,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170411_1239,1,11,0,1,1,10,,1,1,35,5,10,70,20,0,10,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170411_1239,1,12,0,1,1,0,,1,1,50,5,5,80,28,1,10,10,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170411_1239,1,13,0,1,0,,0,1,1,0,0,,0,21,0,3,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170411_1239,1,14,0,1,0,,0,1,1,16,,,17,23,0,10,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170411_1239,1,15,0,1,1,0,,1,1,29,3,2,20,23,0,5,5,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170411_1239,1,16,0,1,0,,0,1,1,0,,,9,19,1,10,5,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170413_0927,1,1,0,1,1,0,,1,1,39,4,4,50,23,1,10,5,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170413_0927,1,2,0,1,0,,10,1,1,39,,,50,34,1,3,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170413_0927,1,3,0,1,0,,0,1,1,28,3,,29,23,1,11,11,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170413_0927,1,4,0,1,0,,5,1,1,67,6,,40,21,0,11,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170413_0927,1,5,0,1,1,10,,1,1,70,7,5,75,61,1,11,5,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170413_0927,1,6,0,1,1,0,,1,0,50,5,,,26,1,10,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170413_0927,1,7,0,1,0,,10,0,0,0,,,,29,1,11,11,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170413_0927,1,8,0,1,1,8,,1,1,50,5,4,70,26,1,5,6,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170413_0927,1,9,0,1,0,,0,1,1,90,9,,100,30,1,10,1,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170413_0927,1,10,0,1,1,10,,1,1,25,2,,10,20,0,10,8,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170413_0927,1,11,0,1,0,,1,1,0,14,2,,,22,1,3,7,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170413_0927,1,12,0,1,1,0,,1,1,82,7,5,80,21,1,11,5,,,,0,0,0,0,1,0,0,1,0,0,0,0
+170413_1101,1,1,0,2,0,,4,1,1,60,6,,70,32,1,3,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170413_1101,1,2,0,2,1,0,,1,1,58,4,5,60,33,1,4,2,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170413_1101,1,3,0,2,1,0,,1,1,20,3,2,30,26,0,10,6,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170413_1101,1,5,0,2,0,,10,1,1,85,8,,49,23,1,10,7,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170413_1101,1,6,0,2,1,0,,1,1,9,,0,9,19,1,10,4,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170413_1101,1,7,0,2,1,10,,1,1,38,3,8,39,30,1,10,5,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170413_1101,1,8,0,2,1,0,,1,1,35,1,,8,27,0,11,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170413_1101,1,9,0,2,0,,3,1,1,70,6,,65,20,1,3,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170413_1101,1,10,0,2,0,,0,1,1,10,1,,,23,1,10,9,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170413_1101,1,11,0,2,1,0,,1,1,25,3,4,60,28,0,11,8,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170413_1101,1,12,0,2,0,,0,0,0,0,,,,33,0,0,1,,,,0,0,0,0,0,1,0,0,1,0,0,0
+170413_1156,1,1,1,1,0,,0,1,1,70,10,,75,18,1,10,5,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170413_1156,1,3,1,1,0,,0,1,1,38,,,10,29,0,10,7,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170413_1156,1,4,1,1,0,,0,1,1,18,2,,33,25,0,3,7,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170413_1156,1,5,1,1,0,,9,1,1,65,8,,65,21,1,8,6,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170413_1156,1,13,1,1,0,,0,1,1,25,0,,20,19,0,10,8,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170413_1156,1,14,1,1,0,,0,1,1,9,0,,39,19,0,10,8,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170413_1156,1,15,1,1,0,,0,1,1,10,0,,90,24,0,10,8,,,,0,0,0,0,1,0,0,0,0,0,1,0
+170413_1257,1,1,1,2,0,,3,1,1,80,8,,2,21,1,10,7,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170413_1257,1,4,1,2,0,,10,1,1,80,10,,70,20,0,10,5,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170413_1257,1,5,1,2,0,,10,1,1,100,10,,90,21,1,10,10,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170413_1257,1,7,1,2,0,,10,1,1,85,10,,85,31,1,10,7,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170413_1257,1,9,1,2,0,,6,1,1,66,6,,80,29,1,10,6,,,,0,0,0,0,0,1,0,0,0,0,0,1
+170920_1058,1,1,0,0,0,,6,1,1,50,4,,53,19,1,5,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1058,1,2,0,0,1,5,,1,1,50,5,5,51,37,1,10,7,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1058,1,3,0,0,0,,5,1,1,37,10,,30,28,1,10,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1058,1,4,0,0,1,0,,1,1,55,5,,82,27,1,8,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1058,1,5,0,0,0,,0,1,1,49,5,,51,31,0,5,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1058,1,6,0,0,1,10,,1,0,62,4,8,,44,1,0,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1058,1,7,0,0,0,,0,1,1,34,,,8,25,1,7,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1058,1,8,0,0,1,0,,1,1,0,,,24,21,1,11,4,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1058,1,9,0,0,0,,10,1,1,70,7,,80,49,1,10,10,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1058,1,10,0,0,1,10,,1,1,77,10,10,28,25,0,9,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1058,1,11,0,0,0,,3,1,1,40,4,,30,18,1,10,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1058,1,12,0,0,1,10,,1,0,85,10,10,,21,1,10,7,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1058,1,13,0,0,0,,8,1,1,82,7,,80,33,1,4,7,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1058,1,14,0,0,1,0,,1,1,50,5,5,80,26,1,1,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1058,1,15,0,0,0,,1,1,1,52,3,,73,22,1,0,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1058,1,16,0,0,1,2,,1,0,2,1,4,,22,0,0,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1157,1,1,1,0,0,,0,1,1,0,0,,0,30,0,10,7,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170920_1157,1,3,1,0,0,,5,1,1,49,4,,20,35,1,10,4,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170920_1157,1,5,1,0,0,,0,1,1,55,2,,52,19,1,10,7,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170920_1157,1,7,1,0,0,,0,0,1,0,,,51,20,1,10,8,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170920_1157,1,9,1,0,0,,10,1,1,90,10,,0,31,1,10,10,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170920_1157,1,11,1,0,0,,10,1,1,90,10,,100,39,1,11,7,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170920_1157,1,13,1,0,0,,10,1,1,100,10,,66,18,1,10,7,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170920_1157,1,15,1,0,0,,10,0,1,0,,,83,37,1,8,5,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170920_1245,1,1,0,0,0,,0,1,1,5,,,5,25,1,11,10,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1245,1,2,0,0,1,1,,1,1,8,1,2,30,29,1,7,7,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1245,1,3,0,0,0,,4,1,1,70,7,,70,32,0,10,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1245,1,4,0,0,1,0,,1,1,10,1,,10,18,0,10,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1245,1,5,0,0,0,,0,1,1,5,0,,5,21,0,9,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1245,1,6,0,0,1,0,,1,1,5,0,,10,20,0,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1245,1,7,0,0,0,,5,1,1,50,5,,40,24,0,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1245,1,8,0,0,1,4,,1,1,60,8,4,62,29,1,10,7,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1245,1,9,0,0,0,,2,1,1,9,1,,100,19,1,10,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1245,1,10,0,0,1,10,,1,1,80,8,6,40,18,0,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1245,1,11,0,0,0,,4,1,1,34,5,,82,20,0,8,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1245,1,12,0,0,1,9,,1,1,80,8,5,60,25,0,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1245,1,13,0,0,0,,10,1,1,84,10,,49,35,1,10,9,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1245,1,14,0,0,1,4,,1,1,8,1,2,30,19,1,10,9,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1245,1,15,0,0,0,,0,1,1,75,5,,31,26,0,9,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170920_1245,1,16,0,0,1,0,,1,1,10,,,0,19,0,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_0927,1,1,0,0,0,,4,1,1,65,6,,50,30,0,5,7,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_0927,1,2,0,0,1,10,,1,1,75,6,5,30,29,1,9,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_0927,1,3,0,0,0,,10,1,1,30,3,,30,30,0,10,4,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_0927,1,4,0,0,1,0,,1,1,5,0,0,10,28,1,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_0927,1,5,0,0,0,,0,1,1,9,1,,9,18,1,9,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_0927,1,6,0,0,1,3,,1,1,40,2,1,50,27,0,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_0927,1,7,0,0,0,,10,1,1,40,5,,73,29,1,10,9,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_0927,1,8,0,0,1,0,,1,1,92,7,4,73,22,1,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_0927,1,9,0,0,0,,3,1,1,50,5,,55,32,0,8,2,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_0927,1,10,0,0,1,2,,1,1,19,2,1,25,27,1,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_0927,1,11,0,0,0,,0,1,1,7,0,,41,19,0,10,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_0927,1,12,0,0,1,0,,1,1,23,4,5,21,22,0,3,10,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_1053,1,1,0,0,0,,5,1,0,51,5,,,22,1,10,11,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_1053,1,2,0,0,1,0,,1,1,15,1,1,15,18,1,10,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_1053,1,3,0,0,0,,3,1,1,67,7,,65,18,1,9,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_1053,1,4,0,0,1,0,,1,1,20,2,,15,24,0,10,4,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_1053,1,5,0,0,0,,6,1,1,45,4,,41,17,1,9,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_1053,1,6,0,0,1,0,,1,1,20,2,0,0,27,0,10,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_1053,1,7,0,0,0,,2,1,1,40,4,,32,20,1,9,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_1053,1,8,0,0,1,10,,1,1,70,7,7,40,18,0,9,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_1053,1,9,0,0,0,,10,1,1,50,10,,80,21,1,10,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_1053,1,10,0,0,1,0,,1,1,10,1,1,10,19,1,10,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_1053,1,11,0,0,0,,0,1,1,13,,,19,19,1,10,7,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_1053,1,12,0,0,1,0,,1,1,50,5,0,70,27,0,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_1053,1,13,0,0,0,,5,1,1,15,5,,33,19,1,6,7,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_1053,1,14,0,0,1,6,,1,1,50,5,3,40,18,1,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_1053,1,15,0,0,0,,10,1,1,70,8,,75,20,0,11,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_1053,1,16,0,0,1,6,,1,1,19,4,8,18,19,1,4,7,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170922_1146,1,1,1,0,0,,0,1,1,10,1,,18,18,1,10,1,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170922_1146,1,3,1,0,0,,10,1,1,88,10,,70,19,0,10,11,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170922_1146,1,5,1,0,0,,10,1,1,70,8,,61,18,0,10,8,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170922_1146,1,7,1,0,0,,3,1,1,40,4,,25,18,1,11,7,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170922_1146,1,9,1,0,0,,2,1,1,20,2,,20,18,0,10,5,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170922_1146,1,11,1,0,0,,10,1,1,83,10,,40,18,0,11,8,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170922_1146,1,13,1,0,0,,0,1,1,9,0,,100,18,0,10,5,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170922_1146,1,15,1,0,0,,5,1,0,100,10,,,36,1,9,1,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170922_1246,1,1,1,0,0,,10,1,1,85,10,,80,20,0,9,7,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170922_1246,1,3,1,0,0,,10,1,1,75,8,,40,18,1,10,8,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170922_1246,1,5,1,0,0,,5,1,1,70,8,,33,18,0,10,4,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170922_1246,1,7,1,0,0,,9,1,1,95,9,,70,18,0,9,7,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170922_1246,1,9,1,0,0,,5,1,1,50,5,,50,18,0,5,6,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170922_1246,1,11,1,0,0,,3,1,1,10,1,,30,18,1,9,8,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170922_1246,1,13,1,0,0,,0,1,1,9,,,39,18,1,10,5,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170922_1246,1,15,1,0,0,,7,1,1,60,8,,76,22,1,6,8,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170927_0934,1,1,1,0,0,,10,1,1,100,10,,60,19,1,7,7,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170927_0934,1,3,1,0,0,,0,1,1,9,,,34,32,0,9,5,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170927_0934,1,5,1,0,0,,10,1,1,90,9,,67,29,1,10,5,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170927_0934,1,7,1,0,0,,5,1,1,50,5,,50,46,1,5,10,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170927_0934,1,9,1,0,0,,2,1,1,90,9,,80,23,0,6,5,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170927_1058,1,1,1,0,0,,10,1,1,50,5,,100,30,0,11,8,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170927_1058,1,3,1,0,0,,3,1,0,18,2,,,18,0,3,7,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170927_1058,1,5,1,0,0,,10,1,1,90,10,,100,28,0,7,6,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170927_1058,1,7,1,0,0,,0,1,1,49,,,25,18,1,9,7,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170927_1058,1,9,1,0,0,,10,1,1,65,9,,50,50,0,10,6,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170927_1058,1,11,1,0,0,,2,1,1,100,10,,69,18,1,7,6,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170927_1249,1,1,0,0,0,,0,1,1,20,0,,12,18,0,10,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170927_1249,1,2,0,0,1,10,,1,0,16,2,2,,25,1,11,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170927_1249,1,3,0,0,0,,0,1,1,14,0,,6,26,1,0,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170927_1249,1,4,0,0,1,0,,1,1,30,3,5,62,36,0,11,9,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170927_1249,1,5,0,0,0,,3,1,1,40,4,,85,19,1,10,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170927_1249,1,6,0,0,1,5,,1,1,50,3,5,51,36,1,7,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170927_1249,1,7,0,0,0,,1,1,1,96,9,,77,21,1,4,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170927_1249,1,8,0,0,1,0,,1,1,25,,0,20,27,0,10,9,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170927_1249,1,9,0,0,0,,5,1,1,60,9,,60,33,1,7,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170927_1249,1,10,0,0,1,3,,1,1,10,1,0,16,19,1,10,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170927_1249,1,11,0,0,0,,8,1,1,80,8,,20,25,1,9,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170927_1249,1,12,0,0,1,10,,1,1,57,5,9,,21,1,10,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170927_1249,1,13,0,0,0,,5,1,1,50,5,,50,33,1,8,7,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170927_1249,1,14,0,0,1,6,,1,1,38,4,8,42,32,1,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170927_1249,1,15,0,0,0,,10,1,1,82,,,93,40,0,11,11,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170927_1249,1,16,0,0,1,1,,1,1,12,2,0,30,18,0,9,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_0925,1,1,0,0,0,,8,1,0,70,9,,,20,0,11,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_0925,1,2,0,0,1,2,,1,1,30,3,7,79,19,1,0,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_0925,1,3,0,0,0,,1,1,1,15,1,,9,22,0,10,7,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_0925,1,4,0,0,1,0,,1,1,25,3,1,10,28,0,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_0925,1,5,0,0,0,,10,1,0,86,7,,,23,0,10,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_0925,1,6,0,0,1,7,,1,1,19,3,2,21,27,1,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_0925,1,7,0,0,0,,0,1,1,9,1,,24,23,0,10,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_0925,1,8,0,0,1,10,,1,1,90,9,9,23,18,0,1,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_0925,1,9,0,0,0,,0,1,1,5,0,,20,27,0,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_0925,1,10,0,0,1,0,,1,0,5,1,,,20,0,9,7,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_0925,1,11,0,0,0,,4,1,0,96,9,,,21,1,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_0925,1,12,0,0,1,4,,1,1,70,7,6,70,24,0,0,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_1046,1,1,1,0,0,,1,1,1,80,10,,61,19,1,10,5,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170929_1046,1,3,1,0,0,,0,1,0,100,10,,,22,0,10,7,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170929_1046,1,5,1,0,0,,10,1,1,70,10,,78,34,0,8,5,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170929_1046,1,7,1,0,0,,10,1,1,63,10,,50,18,1,10,5,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170929_1046,1,9,1,0,0,,5,1,1,90,10,,,19,0,10,8,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170929_1046,1,11,1,0,0,,0,1,1,12,,,12,18,1,10,5,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170929_1046,1,13,1,0,0,,7,1,1,90,7,,59,18,1,6,7,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170929_1149,1,1,0,0,0,,5,1,1,35,4,,40,22,0,10,7,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_1149,1,2,0,0,1,0,,1,1,13,0,,,18,0,5,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_1149,1,3,0,0,0,,0,1,1,18,2,,29,19,0,0,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_1149,1,4,0,0,1,9,,1,1,10,,,10,25,0,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_1149,1,5,0,0,0,,10,1,1,100,10,,22,26,1,10,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_1149,1,6,0,0,1,6,,1,1,50,5,5,30,19,1,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_1149,1,7,0,0,0,,10,1,1,100,10,,92,49,1,11,11,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_1149,1,8,0,0,1,0,,1,1,5,1,,100,25,0,9,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_1149,1,9,0,0,0,,0,1,1,22,,,76,19,1,10,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_1149,1,10,0,0,1,10,,1,1,19,1,6,10,30,1,11,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_1149,1,11,0,0,0,,7,0,0,0,,,,50,1,7,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_1149,1,12,0,0,1,0,,1,1,10,1,,10,25,1,10,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_1149,1,13,0,0,0,,10,1,1,66,10,,40,18,0,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_1149,1,14,0,0,1,0,,1,1,8,1,2,5,18,1,10,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+170929_1253,1,1,1,0,0,,0,1,0,0,0,,,26,1,10,5,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170929_1253,1,3,1,0,0,,1,1,1,100,10,,100,18,1,7,6,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170929_1253,1,5,1,0,0,,7,1,1,70,8,,64,20,0,7,8,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170929_1253,1,7,1,0,0,,10,1,1,95,8,,43,57,1,11,11,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170929_1253,1,9,1,0,0,,10,1,1,80,9,,10,29,1,10,8,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170929_1253,1,11,1,0,0,,9,1,0,70,8,,,18,0,10,9,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170929_1253,1,13,1,0,0,,4,1,0,29,0,,,19,1,4,9,,,,0,0,0,0,0,0,0,0,0,1,0,0
+170929_1253,1,15,1,0,0,,0,1,1,0,,,67,32,0,10,6,,,,0,0,0,0,0,0,0,0,0,1,0,0
+171006_1126,1,1,1,0,0,,10,1,0,80,9,,,20,1,9,6,,,,0,0,0,0,0,0,0,0,0,1,0,0
+171006_1126,1,3,1,0,0,,10,1,1,100,10,,100,44,1,11,5,,,,0,0,0,0,0,0,0,0,0,1,0,0
+171006_1126,1,5,1,0,0,,10,1,1,82,7,,29,20,1,9,7,,,,0,0,0,0,0,0,0,0,0,1,0,0
+171006_1126,1,7,1,0,0,,5,1,1,29,3,,28,28,1,10,8,,,,0,0,0,0,0,0,0,0,0,1,0,0
+171006_1126,1,9,1,0,0,,10,1,1,90,10,,51,40,0,10,11,,,,0,0,0,0,0,0,0,0,0,1,0,0
+171006_1126,1,11,1,0,0,,10,1,1,90,10,,90,27,1,10,5,,,,0,0,0,0,0,0,0,0,0,1,0,0
+171006_1126,1,13,1,0,0,,10,1,1,65,7,,70,34,1,9,7,,,,0,0,0,0,0,0,0,0,0,1,0,0
+171006_1126,1,15,1,0,0,,5,1,1,50,5,,51,27,1,11,7,,,,0,0,0,0,0,0,0,0,0,1,0,0
+171006_1250,1,1,0,0,0,,0,1,1,5,1,,8,19,0,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+171006_1250,1,2,0,0,1,0,,1,1,10,0,,,18,1,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+171006_1250,1,3,0,0,0,,0,1,1,15,9,,50,23,1,9,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+171006_1250,1,4,0,0,1,10,,1,1,60,6,10,60,20,1,9,6,,,,0,0,0,0,0,0,1,0,0,0,0,0
+171006_1250,1,5,0,0,0,,0,1,1,10,1,,85,19,1,10,4,,,,0,0,0,0,0,0,1,0,0,0,0,0
+171006_1250,1,6,0,0,1,0,,1,1,30,3,3,20,17,1,10,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+171006_1250,1,7,0,0,0,,0,1,1,70,6,,50,19,1,11,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+171006_1250,1,8,0,0,1,0,,1,1,10,1,,10,19,1,10,5,,,,0,0,0,0,0,0,1,0,0,0,0,0
+171006_1250,1,9,0,0,0,,0,1,0,0,0,,,22,1,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+171006_1250,1,10,0,0,1,10,,1,1,75,7,8,70,20,1,10,8,,,,0,0,0,0,0,0,1,0,0,0,0,0
+171006_1250,1,11,0,0,0,,5,1,1,50,4,,25,18,1,10,7,,,,0,0,0,0,0,0,1,0,0,0,0,0
+171006_1250,1,12,0,0,1,10,,1,1,60,1,8,50,21,0,10,7,,,,0,0,0,0,0,0,1,0,0,0,0,0

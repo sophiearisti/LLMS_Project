@@ -1,0 +1,1254 @@
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	0	30	0	0	1	0	1	2	180	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	0	1	1	-17.462	0	1	2	-17.462	1	4	1	1	0	30	2	2	-1	0	0	47	-9958.727999999999	-99.58727999999999	0	-15	
+160512_1420	1	subjects	0	2	1	-17.462	0	1	1	-17.462	2	4	1	1	0	12	2	2	-	-	-	49	-	-	0	-13	
+160512_1420	1	subjects	0	3	2	-17.462	0	1	4	-17.462	1	4	1	1	0	12	2	2	-	-	-	45	-	-	12	-11	
+160512_1420	1	subjects	0	4	2	-17.462	0	1	3	-17.462	2	4	1	1	0	43	2	2	-	-	-	45	-	-	0	8	
+160512_1420	1	subjects	0	5	3	-17.462	0	1	6	-17.462	1	4	1	1	0	44	2	2	-	-	-	46	-	-	0	6	
+160512_1420	1	subjects	0	6	3	-17.462	0	1	5	-17.462	2	4	1	1	0	44	2	2	-	-	-	39	-	-	0	-14	
+160512_1420	1	subjects	0	7	4	-17.462	0	1	8	-17.462	1	4	1	1	0	33	2	2	-	-	-	44	-	-	0	-15	
+160512_1420	1	subjects	0	8	4	-17.462	0	1	7	-17.462	2	4	1	1	0	45	2	2	-	-	-	48	-	-	0	-14	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	0	0	0	4	-28	-28	150	-	
+160512_1420	1	simulations	0	0	0	1	-28	-28	149	-	
+160512_1420	1	simulations	0	0	0	3	-28	-28	148	-	
+160512_1420	1	simulations	0	0	0	8	-28	-28	148	-	
+160512_1420	1	simulations	0	0	0	5	-28	-28	148	-	
+160512_1420	1	simulations	0	0	0	2	-28	-28	148	-	
+160512_1420	1	simulations	0	0	0	7	-28	-28	144	-	
+160512_1420	1	simulations	0	2	2	4	-17.462	-17.462	120	-	
+160512_1420	1	simulations	0	1	1	6	-22.6235	-22.6235	114	-	
+160512_1420	1	simulations	0	2	2	7	-17.462	-17.462	113	-	
+160512_1420	1	simulations	0	2	2	2	-17.462	-17.462	111	-	
+160512_1420	1	simulations	0	2	2	8	-17.462	-17.462	110	-	
+160512_1420	1	simulations	0	2	2	5	-17.462	-17.462	109	-	
+160512_1420	1	simulations	0	2	2	1	-17.462	-17.462	109	-	
+160512_1420	1	simulations	0	2	2	4	-17.462	-17.462	105	-	
+160512_1420	1	simulations	0	2	2	3	-17.462	-17.462	101	-	
+160512_1420	1	simulations	0	2	1	6	-19.94873464867142	-20.08824019652163	75	-	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	0	1	1	1	"Bonjour"	-	56	
+160512_1420	1	chat	0	4	2	2	"bonjour"	-	55	
+160512_1420	1	chat	0	5	3	1	"bonjour"	-	52	
+160512_1420	1	chat	0	7	4	1	"bonjour"	-	41	
+160512_1420	1	chat	0	2	1	2	"bonjour"	-	35	
+160512_1420	1	chat	0	3	2	1	"Bonjour"	-	35	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	1	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	1	1	1	41.94012500000002	10041.940125	0	2	41.94012500000002	1	4	0	0	-	0	25.5	25.5	-	-	-	41	-	-	14	-	
+160512_1420	1	subjects	1	2	1	41.94012500000002	10041.940125	0	1	41.94012500000002	2	4	0	0	-	0	25.5	25.5	-	-	-	55	-	-	10	-	
+160512_1420	1	subjects	1	3	2	41.27200000000001	10041.272	0	4	41.27200000000001	1	4	0	0	-	0	28	28	-	-	-	58	-	-	5	-	
+160512_1420	1	subjects	1	4	2	41.27200000000001	10041.272	0	3	41.27200000000001	2	4	0	0	-	0	28	28	-	-	-	47	-	-	9	-	
+160512_1420	1	subjects	1	5	3	-6.573543445014897	9993.426456554986	0	6	63.18654809451351	1	4	1	0	-	12	28	2	-	-	-	49	-	-	0	-	
+160512_1420	1	subjects	1	6	3	63.18654809451351	10063.18654809451	0	5	-6.573543445014897	2	4	0	1	-	0	2	28	-	-	-	49	-	-	0	-	
+160512_1420	1	subjects	1	7	4	-16.9591852250592	9983.04081477494	0	8	-16.95637376874852	1	4	0	0	-	0	2	2.2	-	-	-	21	-	-	2	-	
+160512_1420	1	subjects	1	8	4	-16.95637376874852	9983.043626231252	0	7	-16.9591852250592	2	4	0	0	-	0	2.2	2	-	-	-	55	-	-	11	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	1	28	28	2	41.27200000000001	41.27200000000001	42	0	
+160512_1420	1	simulations	1	25.5	25.5	2	41.94012500000002	41.94012500000002	26	0	
+160512_1420	1	simulations	1	2.1	1	6	-19.69025144222945	-19.83220812045414	15	0	
+160512_1420	1	simulations	1	2	2	7	-17.462	-17.462	6	0	
+160512_1420	1	simulations	1	2.2	2.2	8	-16.4555	-16.4555	2	0	
+160512_1420	1	simulations	1	28	28	4	41.27200000000001	41.27200000000001	2	0	
+160512_1420	1	simulations	1	28	0	5	-8.97813931567535	60.29386068432461	0	0	
+160512_1420	1	simulations	1	25.5	25.5	1	41.94012500000002	41.94012500000002	0	56	
+160512_1420	1	simulations	1	28	28	4	41.27200000000001	41.27200000000001	0	52	
+160512_1420	1	simulations	1	25.5	14	1	16.89356618754583	59.1700105356734	0	44	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	1	3	2	1	"salut!"	-	57	
+160512_1420	1	chat	1	1	1	1	"Bonjour"	-	56	
+160512_1420	1	chat	1	4	2	2	"salut"	-	51	
+160512_1420	1	chat	1	2	1	2	"salut"	-	45	
+160512_1420	1	chat	1	1	1	1	"Je pense que pour qu'on gagne tous les 2 le maximum il faut qu'on mette 14 chacun"	-	37	
+160512_1420	1	chat	1	7	4	1	"bonjour"	-	34	
+160512_1420	1	chat	1	1	1	1	"t'es d'accord?"	-	33	
+160512_1420	1	chat	1	5	3	1	"je met 28, tu met 0?"	-	33	
+160512_1420	1	chat	1	3	2	1	"On a que 1 m donc il faut aller vite, comme il y a 30 périodes on a tout intéret à se donner 28 chacun"	-	33	
+160512_1420	1	chat	1	8	4	2	"bonjour"	-	28	
+160512_1420	1	chat	1	4	2	2	"ok"	-	25	
+160512_1420	1	chat	1	7	4	1	"2.2"	-	23	
+160512_1420	1	chat	1	4	2	2	"je met 28"	-	22	
+160512_1420	1	chat	1	2	1	2	"si on met 25.5"	-	15	
+160512_1420	1	chat	1	8	4	2	"ok"	-	14	
+160512_1420	1	chat	1	2	1	2	"on a tous les deux 41.94"	-	6	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	2	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	2	1	1	41.94012500000002	10083.88025	0	2	41.94012500000002	1	4	0	0	-	0	25.5	25.5	25.5	25.5	41.94012500000002	36	-	-	14	-	
+160512_1420	1	subjects	2	2	1	41.94012500000002	10083.88025	0	1	41.94012500000002	2	4	0	0	-	0	25.5	25.5	25.5	25.5	41.94012500000002	53	-	-	14	-	
+160512_1420	1	subjects	2	3	2	41.914	10083.186	0	4	41.914	1	4	0	1	-	0	26	26	28	28	41.27200000000001	45	-	-	11	-	
+160512_1420	1	subjects	2	4	2	41.914	10083.186	0	3	41.914	2	4	1	0	-	0	26	26	28	28	41.27200000000001	54	-	-	9	-	
+160512_1420	1	subjects	2	5	3	-2.338620843681052	9991.087835711305	0	6	4.072230751325884	1	4	0	0	-	0	10	2	28	2	-6.573543445014897	60	-	-	0	-	
+160512_1420	1	subjects	2	6	3	4.072230751325884	10067.25877884584	0	5	-2.338620843681052	2	4	0	0	-	0	2	10	2	28	63.18654809451351	58	-	-	1	-	
+160512_1420	1	subjects	2	7	4	-11.86561840316558	9971.175196371774	0	8	-12.2166600952599	1	4	0	1	-	0	2.2	4	2	2.2	-16.9591852250592	-10	-	-	6	-	
+160512_1420	1	subjects	2	8	4	-12.2166600952599	9970.826966135992	0	7	-11.86561840316558	2	4	1	0	-	9	4	2.2	2.2	2	-16.95637376874852	58	-	-	13	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	2	4	4	8	-7.784000000000002	-7.784000000000002	23	0	
+160512_1420	1	simulations	2	4	4	7	-7.784000000000002	-7.784000000000002	18	0	
+160512_1420	1	simulations	2	10	28	5	68.21669505098673	4.867455106465268	17	0	
+160512_1420	1	simulations	2	4	3	6	-10.26481509249944	-9.986159752693617	13	0	
+160512_1420	1	simulations	2	6	26	2	60.10063983795044	2.257422084829778	11	0	
+160512_1420	1	simulations	2	26	26	4	41.914	41.914	2	0	
+160512_1420	1	simulations	2	26	26	1	41.914	41.914	0	58	
+160512_1420	1	simulations	2	27	27	1	41.70049999999999	41.70049999999999	0	49	
+160512_1420	1	simulations	2	25.7	25.7	1	41.93612499999998	41.93612499999998	0	42	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	2	3	2	1	"Parfait!"	-	54	
+160512_1420	1	chat	2	4	2	2	"on continu avec 28 ?"	-	53	
+160512_1420	1	chat	2	7	4	1	"bonjour"	-	52	
+160512_1420	1	chat	2	1	1	1	"On met tous les deux 25.5"	-	47	
+160512_1420	1	chat	2	3	2	1	"Ya plus qu'à contonuer c'est comme ça qu'on maximise notre gain à 2"	-	41	
+160512_1420	1	chat	2	8	4	2	"bonjour 4.0"	-	37	
+160512_1420	1	chat	2	2	1	2	"on essaye d'autres combines, si on arrive pas a mieux on reste sur 25.5"	-	34	
+160512_1420	1	chat	2	4	2	2	"ou 26 pour essayer ? "	-	33	
+160512_1420	1	chat	2	7	4	1	"ok"	-	31	
+160512_1420	1	chat	2	1	1	1	"propose je te suis"	-	24	
+160512_1420	1	chat	2	4	2	2	"okay 28 encore "	-	19	
+160512_1420	1	chat	2	3	2	1	"ah ouais j'avais pas vu on peut faire 26 si tu veux"	-	14	
+160512_1420	1	chat	2	7	4	1	"2.2"	-	10	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	3	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	3	1	1	41.94012500000002	10125.820375	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	61	-	-	14	-	
+160512_1420	1	subjects	3	2	1	41.94012500000002	10125.820375	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	57	-	-	13	-	
+160512_1420	1	subjects	3	3	2	8.417932714041402	10091.60393271404	0	4	54.69250691653794	1	4	1	1	0	5	24	8	26	26	41.914	55	-	-	12	-	
+160512_1420	1	subjects	3	4	2	54.69250691653794	10137.87850691654	0	3	8.417932714041402	2	4	1	1	0	2	8	24	26	26	41.914	48	-	-	13	-	
+160512_1420	1	subjects	3	5	3	-2.338620843681052	9988.749214867625	0	6	4.072230751325884	1	4	0	0	0	0	10	2	10	2	-2.338620843681052	46	-	-	7	-	
+160512_1420	1	subjects	3	6	3	4.072230751325884	10071.33100959717	0	5	-2.338620843681052	2	4	0	0	0	0	2	10	2	10	4.072230751325884	60	-	-	12	-	
+160512_1420	1	subjects	3	7	4	-11.86561840316558	9959.309577968608	0	8	-12.2166600952599	1	4	1	1	0	5	2.2	4	2.2	4	-11.86561840316558	50	-	-	11	-	
+160512_1420	1	subjects	3	8	4	-12.2166600952599	9958.610306040731	0	7	-11.86561840316558	2	4	1	1	0	7	4	2.2	4	2.2	-12.2166600952599	51	-	-	15	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	3	26.1	26.1	2	41.90232500000001	41.90232500000001	52	-	
+160512_1420	1	simulations	3	2.2	2.2	7	-16.4555	-16.4555	37	-	
+160512_1420	1	simulations	3	2.2	2.2	8	-16.4555	-16.4555	35	-	
+160512_1420	1	simulations	3	10	28	5	68.21669505098673	4.867455106465268	25	-	
+160512_1420	1	simulations	3	5	3	6	-8.177645252105934	-7.411254128666269	17	-	
+160512_1420	1	simulations	3	8	24	4	54.69250691653794	8.417932714041402	17	-	
+160512_1420	1	simulations	3	2.2	2.2	7	-16.4555	-16.4555	15	-	
+160512_1420	1	simulations	3	25.5	25.5	1	41.94012500000002	41.94012500000002	12	-	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	3	4	2	2	"je prend 8"	-	54	
+160512_1420	1	chat	3	1	1	1	"j'ai fait des tests après 25.5 ça diminue"	-	53	
+160512_1420	1	chat	3	7	4	1	"2.2"	-	52	
+160512_1420	1	chat	3	4	2	2	"prend 24"	-	51	
+160512_1420	1	chat	3	1	1	1	"faut rester sur 25.5"	-	49	
+160512_1420	1	chat	3	8	4	2	"ok"	-	47	
+160512_1420	1	chat	3	1	1	1	"ça te va?"	-	45	
+160512_1420	1	chat	3	4	2	2	"sa va faire 54"	-	40	
+160512_1420	1	chat	3	4	2	2	""	-	40	
+160512_1420	1	chat	3	2	1	2	"avec 26.1 on a 41.9"	-	24	
+160512_1420	1	chat	3	3	2	1	"ok on essaie mais je suis pas sur que ça marche"	-	22	
+160512_1420	1	chat	3	5	3	1	"met 28"	-	19	
+160512_1420	1	chat	3	2	1	2	"mais c'est moins "	-	13	
+160512_1420	1	chat	3	1	1	1	"41.94 avec 25.5"	-	6	
+160512_1420	1	chat	3	1	1	1	"c'est plus"	-	2	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	4	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	4	1	1	41.94012500000002	10167.7605	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	63	-	-	14	-	
+160512_1420	1	subjects	4	2	1	41.94012500000002	10167.7605	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	60	-	-	13	-	
+160512_1420	1	subjects	4	3	2	41.914	10133.51793271404	0	4	41.914	1	4	1	1	0	5	26	26	24	8	8.417932714041402	60	-	-	14	-	
+160512_1420	1	subjects	4	4	2	41.914	10179.79250691654	0	3	41.914	2	4	1	1	0	2	26	26	8	24	54.69250691653794	53	-	-	10	-	
+160512_1420	1	subjects	4	5	3	-6.573543445014897	9982.17567142261	0	6	63.18654809451351	1	4	0	1	0	0	28	2	10	2	-2.338620843681052	44	-	-	1	-	
+160512_1420	1	subjects	4	6	3	63.18654809451351	10134.51755769168	0	5	-6.573543445014897	2	4	1	0	0	14	2	28	2	10	4.072230751325884	33	-	-	13	-	
+160512_1420	1	subjects	4	7	4	-7.784000000000002	9951.525577968609	0	8	-7.784000000000002	1	4	1	1	0	27	4	4	2.2	4	-11.86561840316558	59	-	-	13	-	
+160512_1420	1	subjects	4	8	4	-7.784000000000002	9950.826306040732	0	7	-7.784000000000002	2	4	1	1	0	34	4	4	4	2.2	-12.2166600952599	58	-	-	15	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	4	4	4	8	-7.784000000000002	-7.784000000000002	44	0	
+160512_1420	1	simulations	4	26	26	1	41.914	41.914	39	0	
+160512_1420	1	simulations	4	16	10	6	18.23569411800916	31.82521145504106	38	0	
+160512_1420	1	simulations	4	4	4	7	-7.784000000000002	-7.784000000000002	37	0	
+160512_1420	1	simulations	4	18	2	5	2.319794017786223	28.52264561279314	12	0	
+160512_1420	1	simulations	4	26	26	4	41.914	41.914	0	60	
+160512_1420	1	simulations	4	4	2	6	-12.70006480827792	-12.35183457249428	0	38	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	4	4	2	2	"mince je me suis trompé "	-	56	
+160512_1420	1	chat	4	8	4	2	"4.0"	-	55	
+160512_1420	1	chat	4	4	2	2	"on continu avec 28 "	-	53	
+160512_1420	1	chat	4	7	4	1	"ok"	-	51	
+160512_1420	1	chat	4	1	1	1	"restons comme ça on prend pas de risques au moins"	-	49	
+160512_1420	1	chat	4	1	1	1	":)"	-	47	
+160512_1420	1	chat	4	2	1	2	"oui, ca va être long ! "	-	37	
+160512_1420	1	chat	4	3	2	1	"C'est bien ce que j'avais compris... Pas grave on reprend 26 chacun on se fait à peine plus qu'avec le 28"	-	32	
+160512_1420	1	chat	4	1	1	1	"et on sort enrichis :D"	-	32	
+160512_1420	1	chat	4	1	1	1	"ouais "	-	25	
+160512_1420	1	chat	4	3	2	1	"on met 26 tous les deux"	-	17	
+160512_1420	1	chat	4	1	1	1	"mais au moins on est pas seuls face à notre ordi cette fois"	-	14	
+160512_1420	1	chat	4	1	1	1	"on peut discuter mdr"	-	10	
+160512_1420	1	chat	4	4	2	2	"ok"	-	8	
+160512_1420	1	chat	4	2	1	2	"haha"	-	3	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	5	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	5	1	1	41.94012500000002	10209.700625	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	61	-	-	13	-	
+160512_1420	1	subjects	5	2	1	41.94012500000002	10209.700625	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	59	-	-	13	-	
+160512_1420	1	subjects	5	3	2	41.914	10175.43193271404	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	60	-	-	14	-	
+160512_1420	1	subjects	5	4	2	41.914	10221.70650691654	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	58	-	-	14	-	
+160512_1420	1	subjects	5	5	3	-22.87799546015032	9959.29767596246	0	6	-22.38990392062188	1	4	0	1	0	0	0	2	28	2	-6.573543445014897	63	-	-	10	-	
+160512_1420	1	subjects	5	6	3	-22.38990392062188	10112.12765377106	0	5	-22.87799546015032	2	4	1	0	0	18	2	0	2	28	63.18654809451351	41	-	-	5	-	
+160512_1420	1	subjects	5	7	4	16.09	9967.615577968609	0	8	16.09	1	4	1	1	0	24	10	10	4	4	-7.784000000000002	49	-	-	12	-	
+160512_1420	1	subjects	5	8	4	16.09	9966.916306040732	0	7	16.09	2	4	1	1	0	32	10	10	4	4	-7.784000000000002	30	-	-	13	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	5	2	2	5	-17.462	-17.462	52	0	
+160512_1420	1	simulations	5	25.6	25.6	2	41.93920000000001	41.93920000000001	47	0	
+160512_1420	1	simulations	5	0	2	5	-22.87799546015032	-22.38990392062188	41	0	
+160512_1420	1	simulations	5	10	10	8	16.09	16.09	37	0	
+160512_1420	1	simulations	5	0	2	6	-22.87799546015032	-22.38990392062188	34	0	
+160512_1420	1	simulations	5	10	10	7	16.09	16.09	27	0	
+160512_1420	1	simulations	5	26	26	4	41.914	41.914	11	0	
+160512_1420	1	simulations	5	5	8	6	4.439458203566089	1.721768189696466	0	47	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	5	8	4	2	"10.0"	-	52	
+160512_1420	1	chat	5	1	1	1	"t'as fait l'expérience où il fallait passer 45 mins sur internet toi?"	-	50	
+160512_1420	1	chat	5	7	4	1	"ok"	-	44	
+160512_1420	1	chat	5	3	2	1	"Bon ben y a pas qu'a enchaîner comme ça avec 26 pour les deux"	-	44	
+160512_1420	1	chat	5	1	1	1	"ça c'était chiant :p"	-	43	
+160512_1420	1	chat	5	4	2	2	"avec 10 et 28 sa fait 60 cst bizzarre"	-	40	
+160512_1420	1	chat	5	2	1	2	"non"	-	38	
+160512_1420	1	chat	5	4	2	2	"et le tableau on lutilise pas ? "	-	31	
+160512_1420	1	chat	5	1	1	1	"heureusement que t'as trouvé le truc dessuite au moins on perd pas des sous ^^"	-	29	
+160512_1420	1	chat	5	2	1	2	"haha mais c'est pas mal"	-	27	
+160512_1420	1	chat	5	1	1	1	"c'était il y a une semaine ou deux je sais plus"	-	16	
+160512_1420	1	chat	5	3	2	1	"le max à 2 c'est 26 y a rien d'autres si tu gagnes plus je perd plus"	-	12	
+160512_1420	1	chat	5	4	2	2	"ok donc 26 "	-	1	
+160512_1420	1	chat	5	3	2	1	"regarde ce que ca a donné"	-	1	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	6	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	6	1	1	41.94012500000002	10251.64075	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	63	-	-	12	-	
+160512_1420	1	subjects	6	2	1	41.94012500000002	10251.64075	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	58	-	-	14	-	
+160512_1420	1	subjects	6	3	2	41.914	10217.34593271404	0	4	41.914	1	4	1	1	0	33	26	26	26	26	41.914	58	-	-	6	-	
+160512_1420	1	subjects	6	4	2	41.914	10263.62050691654	0	3	41.914	2	4	1	1	0	29	26	26	26	26	41.914	57	-	-	14	-	
+160512_1420	1	subjects	6	5	3	-22.87799546015032	9936.419680502309	0	6	-22.38990392062188	1	4	0	1	0	0	0	2	0	2	-22.87799546015032	-2	-	-	10	-	
+160512_1420	1	subjects	6	6	3	-22.38990392062188	10089.73774985044	0	5	-22.87799546015032	2	4	1	0	0	33	2	0	2	0	-22.38990392062188	58	-	-	0	-	
+160512_1420	1	subjects	6	7	4	35.88200000000001	10003.49757796861	0	8	35.88200000000001	1	4	1	1	0	29	18	18	10	10	16.09	59	-	-	9	-	
+160512_1420	1	subjects	6	8	4	35.88200000000001	10002.79830604073	0	7	35.88200000000001	2	4	1	1	0	38	18	18	10	10	16.09	58	-	-	15	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	6	26	26	4	41.914	41.914	53	0	
+160512_1420	1	simulations	6	18	18	8	35.88200000000001	35.88200000000001	40	0	
+160512_1420	1	simulations	6	28	2	6	-6.573543445014897	63.18654809451351	37	0	
+160512_1420	1	simulations	6	28	2	5	-6.573543445014897	63.18654809451351	36	0	
+160512_1420	1	simulations	6	18	18	7	35.88200000000001	35.88200000000001	34	0	
+160512_1420	1	simulations	6	26	26	4	41.914	41.914	30	0	
+160512_1420	1	simulations	6	2	2	5	-17.462	-17.462	22	0	
+160512_1420	1	simulations	6	3	4	6	-9.986159752693617	-10.26481509249944	19	0	
+160512_1420	1	simulations	6	10	1	6	-4.437154253896867	1.834191793259863	0	0	
+160512_1420	1	simulations	6	18	2	5	2.319794017786223	28.52264561279314	0	53	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	6	1	1	1	"6 sur 30 --'"	-	53	
+160512_1420	1	chat	6	8	4	2	"18.0"	-	48	
+160512_1420	1	chat	6	4	2	2	"26 encore "	-	47	
+160512_1420	1	chat	6	2	1	2	"tu sais dans quel cadre ils font les experiences ? "	-	45	
+160512_1420	1	chat	6	7	4	1	"ok"	-	44	
+160512_1420	1	chat	6	4	2	2	":) "	-	44	
+160512_1420	1	chat	6	3	2	1	"yes on echaîne"	-	41	
+160512_1420	1	chat	6	3	2	1	":)"	-	39	
+160512_1420	1	chat	6	2	1	2	"C'est pour leur thèse ou la recherche ? "	-	32	
+160512_1420	1	chat	6	1	1	1	"pour tester leurs hypothèses sur l'économie"	-	31	
+160512_1420	1	chat	6	1	1	1	"comme quoi les gens ne prennent pas forcément les décisions les plus rationnelles je crois"	-	15	
+160512_1420	1	chat	6	2	1	2	"Je me demande quelle est l'hypo derriere celle ci "	-	10	
+160512_1420	1	chat	6	1	1	1	"j'ai entendu ça la dernière fois que je suis venue"	-	9	
+160512_1420	1	chat	6	2	1	2	"ahh"	-	4	
+160512_1420	1	chat	6	1	1	1	"c'est la fille qui racontait ça"	-	3	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	7	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	7	1	1	41.94012500000002	10293.58087499999	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	63	-	-	15	-	
+160512_1420	1	subjects	7	2	1	41.94012500000002	10293.58087499999	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	60	-	-	12	-	
+160512_1420	1	subjects	7	3	2	41.914	10259.25993271405	0	4	41.914	1	4	1	1	0	21	26	26	26	26	41.914	60	-	-	7	-	
+160512_1420	1	subjects	7	4	2	41.914	10305.53450691654	0	3	41.914	2	4	1	1	0	2	26	26	26	26	41.914	54	-	-	13	-	
+160512_1420	1	subjects	7	5	3	1.298707123909048	9937.718387626219	0	6	15.93291516829184	1	4	0	0	0	0	14	2	0	2	-22.87799546015032	1	-	-	6	-	
+160512_1420	1	subjects	7	6	3	15.93291516829184	10105.67066501873	0	5	1.298707123909048	2	4	0	0	0	0	2	14	2	0	-22.38990392062188	39	-	-	0	-	
+160512_1420	1	subjects	7	7	4	40.61799999999998	10044.11557796861	0	8	40.61799999999998	1	4	1	1	0	6	22	22	18	18	35.88200000000001	52	-	-	8	-	
+160512_1420	1	subjects	7	8	4	40.61799999999998	10043.41630604073	0	7	40.61799999999998	2	4	1	1	0	16	22	22	18	18	35.88200000000001	58	-	-	15	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	7	10	28	4	68.21669505098673	4.867455106465268	50	0	
+160512_1420	1	simulations	7	28	2	5	-6.573543445014897	63.18654809451351	43	0	
+160512_1420	1	simulations	7	14	8	6	13.68217678097726	24.76272879207296	37	0	
+160512_1420	1	simulations	7	22	22	8	40.61799999999998	40.61799999999998	22	0	
+160512_1420	1	simulations	7	22	22	7	40.61799999999998	40.61799999999998	14	0	
+160512_1420	1	simulations	7	16	18	6	37.25129164109795	31.04880897812986	8	0	
+160512_1420	1	simulations	7	26	26	4	41.914	41.914	0	56	
+160512_1420	1	simulations	7	4	4	6	-7.784000000000002	-7.784000000000002	0	48	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	7	8	4	2	"qu'est-ce que tu propose?"	-	47	
+160512_1420	1	chat	7	3	2	1	"on enchaine? avec 26 toujours"	-	46	
+160512_1420	1	chat	7	1	1	1	"c'est ta première fois dans ces expériences?"	-	45	
+160512_1420	1	chat	7	2	1	2	"oui"	-	41	
+160512_1420	1	chat	7	4	2	2	"oui oui "	-	37	
+160512_1420	1	chat	7	7	4	1	"22.0"	-	36	
+160512_1420	1	chat	7	1	1	1	"moi je viens souvent"	-	33	
+160512_1420	1	chat	7	8	4	2	"ok"	-	33	
+160512_1420	1	chat	7	7	4	1	"ok"	-	29	
+160512_1420	1	chat	7	4	2	2	"comme sa on gagne le meme montant "	-	28	
+160512_1420	1	chat	7	1	1	1	"tu gagnes des sous à rien faire c'est sympa :p"	-	23	
+160512_1420	1	chat	7	3	2	1	"cool c'est partie :)"	-	23	
+160512_1420	1	chat	7	4	2	2	"mais je veux quon trouve un moyen davoir 68 "	-	18	
+160512_1420	1	chat	7	4	2	2	"au prochain "	-	12	
+160512_1420	1	chat	7	2	1	2	"a chaque fois je pouvais pas venir ou c'était deja complet"	-	9	
+160512_1420	1	chat	7	3	2	1	"y a pas moyen regarde"	-	8	
+160512_1420	1	chat	7	1	1	1	"ah d'accord"	-	3	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	8	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	8	1	1	41.94012500000002	10335.52099999999	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	62	-	-	14	-	
+160512_1420	1	subjects	8	2	1	41.94012500000002	10335.52099999999	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	60	-	-	13	-	
+160512_1420	1	subjects	8	3	2	41.914	10301.17393271405	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	62	-	-	8	-	
+160512_1420	1	subjects	8	4	2	41.914	10347.44850691654	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	52	-	-	11	-	
+160512_1420	1	subjects	8	5	3	-22.87799546015032	9914.840392166068	0	6	-22.38990392062188	1	4	0	0	0	0	0	2	14	2	1.298707123909048	20	-	-	14	-	
+160512_1420	1	subjects	8	6	3	-22.38990392062188	10083.28076109811	0	5	-22.87799546015032	2	4	0	0	0	0	2	0	2	14	15.93291516829184	34	-	-	12	-	
+160512_1420	1	subjects	8	7	4	41.914	10086.02957796861	0	8	41.914	1	4	1	1	0	23	26	26	22	22	40.61799999999998	52	-	-	10	-	
+160512_1420	1	subjects	8	8	4	41.914	10085.33030604073	0	7	41.914	2	4	1	1	0	28	26	26	22	22	40.61799999999998	60	-	-	15	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	8	16	16	4	32.224	32.224	38	0	
+160512_1420	1	simulations	8	12	13	6	24.83070224453246	22.67032291027449	38	0	
+160512_1420	1	simulations	8	26	26	8	41.914	41.914	30	0	
+160512_1420	1	simulations	8	26	26	7	41.914	41.914	28	0	
+160512_1420	1	simulations	8	5	6	6	-0.7440793088655973	-1.440895536327455	25	0	
+160512_1420	1	simulations	8	4	6	4	-2.685673684838252	-3.87022569593395	7	0	
+160512_1420	1	simulations	8	22	14	6	22.47351785257413	48.9560920550707	7	0	
+160512_1420	1	simulations	8	24	26	4	46.67593519172208	37.12816542750571	0	57	
+160512_1420	1	simulations	8	2	2	6	-17.462	-17.462	0	50	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	8	7	4	1	"que proposes tu"	-	51	
+160512_1420	1	chat	8	1	1	1	"ouais les gens sont très réactifs à chaque nouvel expérience"	-	51	
+160512_1420	1	chat	8	8	4	2	"226.0"	-	51	
+160512_1420	1	chat	8	8	4	2	"26.0"	-	46	
+160512_1420	1	chat	8	1	1	1	"parce que tu gagnes au moins 5euros fixe"	-	43	
+160512_1420	1	chat	8	2	1	2	"c'était quoi les autres expriences que t'as fait ? "	-	43	
+160512_1420	1	chat	8	7	4	1	"ok"	-	41	
+160512_1420	1	chat	8	3	2	1	"pour chopper le 69 ça veut dire que l'autre gagne seulement 4.87"	-	38	
+160512_1420	1	chat	8	2	1	2	"c'est trop bien les 5euros "	-	33	
+160512_1420	1	chat	8	1	1	1	"euh il y a eu pas mal"	-	32	
+160512_1420	1	chat	8	2	1	2	"haha"	-	32	
+160512_1420	1	chat	8	4	2	2	"ah ouai "	-	26	
+160512_1420	1	chat	8	4	2	2	"bon 26 "	-	24	
+160512_1420	1	chat	8	1	1	1	"ouais surtout si t'es de st jean"	-	22	
+160512_1420	1	chat	8	2	1	2	"la plus marquante ? "	-	19	
+160512_1420	1	chat	8	1	1	1	"il y a une à la fin il y avait des calculs mentales à faire mdr"	-	4	
+160512_1420	1	chat	8	3	2	1	"yes en vrai le tableau est complexe pour qu'on se casse la tête mùais y a pas de meilleure solution"	-	3	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	9	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	9	1	1	41.94012500000002	10377.46112499999	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	63	-	-	14	-	
+160512_1420	1	subjects	9	2	1	41.94012500000002	10377.46112499999	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	61	-	-	14	-	
+160512_1420	1	subjects	9	3	2	41.914	10343.08793271405	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	59	-	-	14	-	
+160512_1420	1	subjects	9	4	2	41.914	10389.36250691654	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	58	-	-	12	-	
+160512_1420	1	subjects	9	5	3	-22.87799546015032	9891.962396705918	0	6	-22.38990392062188	1	4	1	0	0	49	0	2	0	2	-22.87799546015032	1	-	-	14	-	
+160512_1420	1	subjects	9	6	3	-22.38990392062188	10060.89085717748	0	5	-22.87799546015032	2	4	0	1	0	0	2	0	2	0	-22.38990392062188	15	-	-	10	-	
+160512_1420	1	subjects	9	7	4	41.27200000000001	10127.30157796861	0	8	41.27200000000001	1	4	1	1	0	20	28	28	26	26	41.914	38	-	-	8	-	
+160512_1420	1	subjects	9	8	4	41.27200000000001	10126.60230604073	0	7	41.27200000000001	2	4	1	1	0	29	28	28	26	26	41.914	61	-	-	15	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	9	26	28	4	46.8820960793781	36.4980045398497	51	0	
+160512_1420	1	simulations	9	12	24	4	55.36774179797284	15.64388049422804	36	0	
+160512_1420	1	simulations	9	18	2	5	2.319794017786223	28.52264561279314	33	0	
+160512_1420	1	simulations	9	28	28	8	41.27200000000001	41.27200000000001	31	0	
+160512_1420	1	simulations	9	4	8	6	2.594914137207336	-0.6105116602961282	30	0	
+160512_1420	1	simulations	9	28	28	7	41.27200000000001	41.27200000000001	25	0	
+160512_1420	1	simulations	9	12	24	6	55.36774179797284	15.64388049422804	9	0	
+160512_1420	1	simulations	9	20	2	5	1.849247062082457	35.09090309536954	0	42	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	9	8	4	2	"je t'écoute"	-	55	
+160512_1420	1	chat	9	1	1	1	"sinon c'est souvent à plusieurs"	-	55	
+160512_1420	1	chat	9	2	1	2	"calcul mental l'horreur...."	-	50	
+160512_1420	1	chat	9	7	4	1	"28.0"	-	48	
+160512_1420	1	chat	9	1	1	1	"la dernière fois c'était par groupe de 5"	-	48	
+160512_1420	1	chat	9	3	2	1	"C'est plutot long comme truc en fait"	-	45	
+160512_1420	1	chat	9	3	2	1	":)"	-	43	
+160512_1420	1	chat	9	8	4	2	"ok"	-	40	
+160512_1420	1	chat	9	1	1	1	"ouais mais ça te permettait de gagner un peu plus"	-	38	
+160512_1420	1	chat	9	2	1	2	"j'ai une amie qui l'a fait je crois"	-	33	
+160512_1420	1	chat	9	4	2	2	"lol ouai grave "	-	29	
+160512_1420	1	chat	9	1	1	1	"la plupart du temps c'est une question de chance"	-	19	
+160512_1420	1	chat	9	2	1	2	"c'est cool de pouvoir travailler avec d'autres eleves"	-	12	
+160512_1420	1	chat	9	3	2	1	"ça nous fait marriner et réfléchir"	-	8	
+160512_1420	1	chat	9	4	2	2	"jespere quon va gagner beaucoup "	-	7	
+160512_1420	1	chat	9	1	1	1	"ouais mais bon "	-	1	
+160512_1420	1	chat	9	3	2	1	"à ce rythme là tu vas te faire 18"	-	0	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	10	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	10	1	1	41.94012500000002	10419.40124999999	0	2	41.94012500000002	1	4	0	0	-	0	25.5	25.5	25.5	25.5	41.94012500000002	60	-	-	14	-	
+160512_1420	1	subjects	10	2	1	41.94012500000002	10419.40124999999	0	1	41.94012500000002	2	4	0	0	-	0	25.5	25.5	25.5	25.5	41.94012500000002	60	-	-	13	-	
+160512_1420	1	subjects	10	3	2	41.914	10385.00193271405	0	4	41.914	1	4	0	0	-	0	26	26	26	26	41.914	62	-	-	14	-	
+160512_1420	1	subjects	10	4	2	41.914	10431.27650691654	0	3	41.914	2	4	0	0	-	0	26	26	26	26	41.914	38	-	-	14	-	
+160512_1420	1	subjects	10	5	3	-22.87799546015032	9869.084401245767	0	6	-22.38990392062188	1	4	0	0	-	0	0	2	0	2	-22.87799546015032	54	-	-	12	-	
+160512_1420	1	subjects	10	6	3	-22.38990392062188	10038.50095325686	0	5	-22.87799546015032	2	4	0	0	-	0	2	0	2	0	-22.38990392062188	57	-	-	0	-	
+160512_1420	1	subjects	10	7	4	36.4980045398497	10163.79958250846	0	8	46.8820960793781	1	4	1	0	-	8	28	26	28	28	41.27200000000001	46	-	-	2	-	
+160512_1420	1	subjects	10	8	4	46.8820960793781	10173.48440212011	0	7	36.4980045398497	2	4	0	1	-	0	26	28	28	28	41.27200000000001	57	-	-	10	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	10	26	5	4	0.7530296446413418	59.29306362522386	51	0	
+160512_1420	1	simulations	10	28	28	7	41.27200000000001	41.27200000000001	23	0	
+160512_1420	1	simulations	10	5	28	4	66.2992162064939	-2.624909313617027	19	0	
+160512_1420	1	simulations	10	26	18	6	23.86423075132588	57.03737915631897	16	0	
+160512_1420	1	simulations	10	26	28	8	46.8820960793781	36.4980045398497	7	0	
+160512_1420	1	simulations	10	5	25	4	55.85833539967027	2.196726523109974	0	50	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	10	8	4	2	"26.0"	-	54	
+160512_1420	1	chat	10	1	1	1	"d'habitude déjà tu peux pas leur parler donc tu sais pas ce qu'ils vont faire :/"	-	50	
+160512_1420	1	chat	10	3	2	1	"A ce rythme là tu vas te faire 17euros 50"	-	47	
+160512_1420	1	chat	10	7	4	1	"28.0 "	-	46	
+160512_1420	1	chat	10	1	1	1	"et souvent c'est chacun pour sa pomme"	-	43	
+160512_1420	1	chat	10	2	1	2	"ahh"	-	37	
+160512_1420	1	chat	10	4	2	2	"prend 5 je prend 28 ou le contraire sa va faire 59"	-	36	
+160512_1420	1	chat	10	8	4	2	"ok"	-	34	
+160512_1420	1	chat	10	3	2	1	"0.4 fois 30 + 5 euros de départ"	-	33	
+160512_1420	1	chat	10	1	1	1	"alors que moi souvent j'essaye de faire en sorte qu'on gagne autant"	-	32	
+160512_1420	1	chat	10	2	1	2	"c'est cool ca "	-	24	
+160512_1420	1	chat	10	1	1	1	"on est tous étudiants"	-	22	
+160512_1420	1	chat	10	3	2	1	"non si on fait ça je vais perdre plsu"	-	20	
+160512_1420	1	chat	10	1	1	1	"on en a tous besoin"	-	18	
+160512_1420	1	chat	10	3	2	1	"une fois ça suffit"	-	16	
+160512_1420	1	chat	10	2	1	2	"tous dans la meme merde "	-	13	
+160512_1420	1	chat	10	2	1	2	"hhaa"	-	12	
+160512_1420	1	chat	10	1	1	1	"c'est pas cool de gagner au détriment des autres"	-	10	
+160512_1420	1	chat	10	2	1	2	"j'avoue"	-	5	
+160512_1420	1	chat	10	3	2	1	"26 chacun on voit à la prochaine étape si tu veux"	-	5	
+160512_1420	1	chat	10	4	2	2	"ah ouai pff "	-	4	
+160512_1420	1	chat	10	1	1	1	"ouais c'est ça :p"	-	1	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	11	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	11	1	1	41.94012500000002	10461.34137499999	0	2	41.94012500000002	1	4	0	0	-	0	25.5	25.5	25.5	25.5	41.94012500000002	61	-	-	15	-	
+160512_1420	1	subjects	11	2	1	41.94012500000002	10461.34137499999	0	1	41.94012500000002	2	4	0	0	-	0	25.5	25.5	25.5	25.5	41.94012500000002	52	-	-	14	-	
+160512_1420	1	subjects	11	3	2	41.914	10426.91593271405	0	4	41.914	1	4	0	0	-	0	26	26	26	26	41.914	62	-	-	14	-	
+160512_1420	1	subjects	11	4	2	41.914	10473.19050691654	0	3	41.914	2	4	0	0	-	0	26	26	26	26	41.914	63	-	-	0	-	
+160512_1420	1	subjects	11	5	3	-22.87799546015032	9846.206405785617	0	6	-22.38990392062188	1	4	0	0	-	0	0	2	0	2	-22.87799546015032	47	-	-	12	-	
+160512_1420	1	subjects	11	6	3	-22.38990392062188	10016.11104933624	0	5	-22.87799546015032	2	4	0	0	-	0	2	0	2	0	-22.38990392062188	41	-	-	3	-	
+160512_1420	1	subjects	11	7	4	55.35715449146949	10219.15673699993	0	8	11.9397758506928	1	4	0	1	-	0	10	24	28	26	36.4980045398497	32	-	-	9	-	
+160512_1420	1	subjects	11	8	4	11.9397758506928	10185.42417797081	0	7	55.35715449146949	2	4	1	0	-	8	24	10	26	28	46.8820960793781	54	-	-	10	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	11	4	16	6	25.53988049422804	5.887741797972846	39	-	
+160512_1420	1	simulations	11	24	24	8	41.69599999999999	41.69599999999999	36	-	
+160512_1420	1	simulations	11	8	6	6	4.099613416410017	6.12048720281778	23	-	
+160512_1420	1	simulations	11	24	24	7	41.69599999999999	41.69599999999999	22	-	
+160512_1420	1	simulations	11	0	2	5	-22.87799546015032	-22.38990392062188	15	-	
+160512_1420	1	simulations	11	2	16	6	22.13664963710057	2.136280705061746	10	-	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	11	8	4	2	"24.0"	-	49	
+160512_1420	1	chat	11	3	2	1	"En gros à chaque fois celui qui met le plus petit montant se fait baiser"	-	46	
+160512_1420	1	chat	11	1	1	1	"on arrive presque à la moitié"	-	45	
+160512_1420	1	chat	11	7	4	1	"ok"	-	44	
+160512_1420	1	chat	11	4	2	2	"enfait pour cette experience il na faut pas etre assoiffé dargent "	-	41	
+160512_1420	1	chat	11	4	2	2	"sinon tu perd "	-	39	
+160512_1420	1	chat	11	1	1	1	"ça durera jamais jusqu'à 16h30"	-	38	
+160512_1420	1	chat	11	3	2	1	"évidemment pck l'autre met 0 à chaque fois après"	-	26	
+160512_1420	1	chat	11	2	1	2	"mais on a commencé vachement tard..."	-	24	
+160512_1420	1	chat	11	4	2	2	"ouai "	-	13	
+160512_1420	1	chat	11	1	1	1	"non 40 au lieu de 30 (39 même mdr)"	-	11	
+160512_1420	1	chat	11	3	2	1	"et dans ce cas là tout le monde perd le fric qu'il a accuumulé avant"	-	11	
+160512_1420	1	chat	11	4	2	2	"bon 26 "	-	8	
+160512_1420	1	chat	11	4	2	2	"on y va lol "	-	5	
+160512_1420	1	chat	11	3	2	1	"oui"	-	3	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	12	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	12	1	1	41.94012500000002	10503.28149999999	0	2	41.94012500000002	1	4	0	0	-	0	25.5	25.5	25.5	25.5	41.94012500000002	62	-	-	15	-	
+160512_1420	1	subjects	12	2	1	41.94012500000002	10503.28149999999	0	1	41.94012500000002	2	4	0	0	-	0	25.5	25.5	25.5	25.5	41.94012500000002	61	-	-	14	-	
+160512_1420	1	subjects	12	3	2	41.914	10468.82993271405	0	4	41.914	1	4	0	0	-	0	26	26	26	26	41.914	62	-	-	14	-	
+160512_1420	1	subjects	12	4	2	41.914	10515.10450691655	0	3	41.914	2	4	0	0	-	0	26	26	26	26	41.914	59	-	-	11	-	
+160512_1420	1	subjects	12	5	3	-22.87799546015032	9823.328410325466	0	6	-22.38990392062188	1	4	0	1	-	0	0	2	0	2	-22.87799546015032	59	-	-	12	-	
+160512_1420	1	subjects	12	6	3	-22.38990392062188	9993.721145415615	0	5	-22.87799546015032	2	4	1	0	-	27	2	0	2	0	-22.38990392062188	54	-	-	8	-	
+160512_1420	1	subjects	12	7	4	40.61799999999998	10259.77473699993	0	8	40.61799999999998	1	4	0	1	-	0	22	22	10	24	55.35715449146949	39	-	-	9	-	
+160512_1420	1	subjects	12	8	4	40.61799999999998	10226.04217797081	0	7	40.61799999999998	2	4	1	0	-	8	22	22	24	10	11.9397758506928	54	-	-	13	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	12	0	0	8	-28	-28	37	0	
+160512_1420	1	simulations	12	8	22	6	48.34202827787728	10.77890206428502	32	0	
+160512_1420	1	simulations	12	22	22	8	40.61799999999998	40.61799999999998	10	0	
+160512_1420	1	simulations	12	22	22	7	40.61799999999998	40.61799999999998	0	56	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	12	8	4	2	"0.0"	-	56	
+160512_1420	1	chat	12	3	2	1	"je me demande si les autres ont compris ça^^"	-	49	
+160512_1420	1	chat	12	1	1	1	"Là on va faire 12€ + les 5€ de déplacements"	-	48	
+160512_1420	1	chat	12	2	1	2	"autant pour moi, je croyais que c'etait plus tard que ca "	-	45	
+160512_1420	1	chat	12	1	1	1	"c'est cool ^^"	-	44	
+160512_1420	1	chat	12	7	4	1	"22.0"	-	41	
+160512_1420	1	chat	12	2	1	2	"yeaahh"	-	38	
+160512_1420	1	chat	12	8	4	2	"pk"	-	27	
+160512_1420	1	chat	12	3	2	1	"y en a qui massacrent leur clavier d'ordinateur ça sent le fight"	-	26	
+160512_1420	1	chat	12	5	3	1	"c'est pas drole de parler avec un ordi"	-	25	
+160512_1420	1	chat	12	8	4	2	"ok"	-	22	
+160512_1420	1	chat	12	2	1	2	"je dis pas non a 17euros pour taper devant un ordi"	-	22	
+160512_1420	1	chat	12	7	4	1	"pour avoir plus "	-	18	
+160512_1420	1	chat	12	1	1	1	"grave"	-	16	
+160512_1420	1	chat	12	7	4	1	"partage de gain"	-	13	
+160512_1420	1	chat	12	4	2	2	"mdr surment mais les egoistes vont se battre "	-	12	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	13	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	13	1	1	41.94012500000002	10545.22162499999	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	61	-	-	13	-	
+160512_1420	1	subjects	13	2	1	41.94012500000002	10545.22162499999	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	60	-	-	14	-	
+160512_1420	1	subjects	13	3	2	41.914	10510.74393271405	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	60	-	-	15	-	
+160512_1420	1	subjects	13	4	2	41.914	10557.01850691655	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	63	-	-	9	-	
+160512_1420	1	subjects	13	5	3	-22.87799546015032	9800.450414865316	0	6	-22.38990392062188	1	4	0	0	0	0	0	2	0	2	-22.87799546015032	47	-	-	13	-	
+160512_1420	1	subjects	13	6	3	-22.38990392062188	9971.331241494992	0	5	-22.87799546015032	2	4	0	0	0	0	2	0	2	0	-22.38990392062188	59	-	-	7	-	
+160512_1420	1	subjects	13	7	4	32.224	10291.99873699993	0	8	32.224	1	4	1	1	0	12	16	16	22	22	40.61799999999998	48	-	-	12	-	
+160512_1420	1	subjects	13	8	4	32.224	10258.26617797081	0	7	32.224	2	4	1	1	0	21	16	16	22	22	40.61799999999998	60	-	-	14	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	13	16	16	8	32.224	32.224	42	-	
+160512_1420	1	simulations	13	4	6	6	-2.685673684838252	-3.87022569593395	37	-	
+160512_1420	1	simulations	13	16	16	7	32.224	32.224	31	-	
+160512_1420	1	simulations	13	14	4	6	5.244268836047951	19.5302466446471	8	-	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	13	5	3	1	":)"	-	57	
+160512_1420	1	chat	13	7	4	1	"propose"	-	55	
+160512_1420	1	chat	13	8	4	2	"16.0"	-	49	
+160512_1420	1	chat	13	1	1	1	"en plus moi j'ai fini les partiels donc ça empiète sur rien du tout"	-	48	
+160512_1420	1	chat	13	1	1	1	"^^"	-	46	
+160512_1420	1	chat	13	1	1	1	""	-	46	
+160512_1420	1	chat	13	7	4	1	"ok"	-	43	
+160512_1420	1	chat	13	2	1	2	"Pareil ! "	-	39	
+160512_1420	1	chat	13	1	1	1	"on peut envoyer des messages vides mdr :O"	-	35	
+160512_1420	1	chat	13	1	1	1	""	-	33	
+160512_1420	1	chat	13	1	1	1	""	-	33	
+160512_1420	1	chat	13	1	1	1	""	-	33	
+160512_1420	1	chat	13	1	1	1	""	-	33	
+160512_1420	1	chat	13	1	1	1	""	-	32	
+160512_1420	1	chat	13	1	1	1	""	-	32	
+160512_1420	1	chat	13	3	2	1	"C'est des vicieux pck'avec le 26 chacun ont se fait à peine meieux que le 28 du coup tu te dis tiens est-ce que y a pas moyen..."	-	32	
+160512_1420	1	chat	13	1	1	1	"mdr"	-	30	
+160512_1420	1	chat	13	2	1	2	"XDD"	-	29	
+160512_1420	1	chat	13	2	1	2	"grande decouverte"	-	21	
+160512_1420	1	chat	13	3	2	1	"mais non y a pas moyen^^"	-	20	
+160512_1420	1	chat	13	1	1	1	"on peut faire une bataille de smiley d'ailleurs si tu veux "	-	20	
+160512_1420	1	chat	13	4	2	2	"ouui jai  remarqué "	-	17	
+160512_1420	1	chat	13	1	1	1	"on a que ça a faire "	-	14	
+160512_1420	1	chat	13	3	2	1	"tu sais à quel tour on est?"	-	12	
+160512_1420	1	chat	13	4	2	2	"lol vraiment pas "	-	11	
+160512_1420	1	chat	13	2	1	2	"smiley d'aillleurs ? "	-	9	
+160512_1420	1	chat	13	4	2	2	"13"	-	8	
+160512_1420	1	chat	13	4	2	2	"depuis pff "	-	3	
+160512_1420	1	chat	13	2	1	2	"ahh"	-	1	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	14	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	14	1	1	41.94012500000002	10587.16174999999	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	62	-	-	11	-	
+160512_1420	1	subjects	14	2	1	41.94012500000002	10587.16174999999	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	59	-	-	13	-	
+160512_1420	1	subjects	14	3	2	41.914	10552.65793271405	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	62	-	-	3	-	
+160512_1420	1	subjects	14	4	2	41.914	10598.93250691655	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	59	-	-	10	-	
+160512_1420	1	subjects	14	5	3	-22.87799546015032	9777.572419405165	0	6	-22.38990392062188	1	4	0	0	0	0	0	2	0	2	-22.87799546015032	39	-	-	12	-	
+160512_1420	1	subjects	14	6	3	-22.38990392062188	9948.94133757437	0	5	-22.87799546015032	2	4	0	0	0	0	2	0	2	0	-22.38990392062188	58	-	-	8	-	
+160512_1420	1	subjects	14	7	4	41.27200000000001	10333.27073699993	0	8	41.27200000000001	1	4	1	1	0	16	28	28	16	16	32.224	53	-	-	14	-	
+160512_1420	1	subjects	14	8	4	41.27200000000001	10299.53817797081	0	7	41.27200000000001	2	4	1	1	0	25	28	28	16	16	32.224	56	-	-	14	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	14	4	26	6	58.32197234539022	-0.7057974188261413	43	-	
+160512_1420	1	simulations	14	28	28	8	41.27200000000001	41.27200000000001	41	-	
+160512_1420	1	simulations	14	28	28	7	41.27200000000001	41.27200000000001	35	-	
+160512_1420	1	simulations	14	2	6	6	-7.059407638104732	-8.592189884984064	25	-	
+160512_1420	1	simulations	14	18	6	6	9.616776472036655	34.28684582016424	8	-	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	14	7	4	1	"dis moi"	-	56	
+160512_1420	1	chat	14	8	4	2	"28.0"	-	52	
+160512_1420	1	chat	14	7	4	1	"ok"	-	50	
+160512_1420	1	chat	14	3	2	1	"seulement tour 14^^"	-	49	
+160512_1420	1	chat	14	1	1	1	"ouais t'as raison les smileys faits maison c'est pas top :p"	-	49	
+160512_1420	1	chat	14	3	2	1	"y a plus qu'à passer le temps"	-	42	
+160512_1420	1	chat	14	1	1	1	":-P"	-	34	
+160512_1420	1	chat	14	2	1	2	"je pensais que tu parlais te smileys etrangers "	-	32	
+160512_1420	1	chat	14	2	1	2	"genre pas francais"	-	27	
+160512_1420	1	chat	14	4	2	2	"ouai c'est trop looong "	-	27	
+160512_1420	1	chat	14	1	1	1	"mais les smileys américains c'est juste les notres à l'envers mdr"	-	14	
+160512_1420	1	chat	14	2	1	2	"mon cerveau est en mode vacances "	-	13	
+160512_1420	1	chat	14	3	2	1	"du coup tu as prévu quoi après? promis je drague pas on sait même pas de quel sex on est mdr"	-	8	
+160512_1420	1	chat	14	1	1	1	"ahah"	-	8	
+160512_1420	1	chat	14	1	1	1	"je te comprends"	-	5	
+160512_1420	1	chat	14	3	2	1	"passere le temps"	-	3	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	15	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	15	1	1	41.94012500000002	10629.10187499999	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	63	-	-	15	-	
+160512_1420	1	subjects	15	2	1	41.94012500000002	10629.10187499999	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	61	-	-	14	-	
+160512_1420	1	subjects	15	3	2	41.914	10594.57193271405	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	62	-	-	15	-	
+160512_1420	1	subjects	15	4	2	41.914	10640.84650691655	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	61	-	-	13	-	
+160512_1420	1	subjects	15	5	3	-22.87799546015032	9754.694423945015	0	6	-22.38990392062188	1	4	0	0	0	0	0	2	0	2	-22.87799546015032	52	-	-	13	-	
+160512_1420	1	subjects	15	6	3	-22.38990392062188	9926.551433653747	0	5	-22.87799546015032	2	4	0	0	0	0	2	0	2	0	-22.38990392062188	36	-	-	12	-	
+160512_1420	1	subjects	15	7	4	41.27200000000001	10374.54273699993	0	8	41.27200000000001	1	4	1	1	0	26	28	28	28	28	41.27200000000001	33	-	-	11	-	
+160512_1420	1	subjects	15	8	4	41.27200000000001	10340.81017797081	0	7	41.27200000000001	2	4	1	1	0	31	28	28	28	28	41.27200000000001	58	-	-	15	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	15	14	2	6	1.298707123909048	15.93291516829184	45	0	
+160512_1420	1	simulations	15	28	28	7	41.27200000000001	41.27200000000001	34	0	
+160512_1420	1	simulations	15	28	28	8	41.27200000000001	41.27200000000001	33	0	
+160512_1420	1	simulations	15	18	26	6	57.03737915631897	23.86423075132588	26	0	
+160512_1420	1	simulations	15	2	24	6	48.77420258117386	-1.054027654609778	6	0	
+160512_1420	1	simulations	15	2	2	6	-17.462	-17.462	0	44	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	15	7	4	1	"28.0"	-	56	
+160512_1420	1	chat	15	1	1	1	"(:"	-	55	
+160512_1420	1	chat	15	8	4	2	"à toi l'honneur"	-	55	
+160512_1420	1	chat	15	8	4	2	"ok"	-	51	
+160512_1420	1	chat	15	4	2	2	"je ne sais pas trop lol "	-	49	
+160512_1420	1	chat	15	1	1	1	"c'est un smiley américain ça"	-	47	
+160512_1420	1	chat	15	7	4	1	"c bon ?"	-	46	
+160512_1420	1	chat	15	2	1	2	"je savais pas qu'aux US c'etait a l'opposé de la france "	-	45	
+160512_1420	1	chat	15	8	4	2	"oui"	-	40	
+160512_1420	1	chat	15	3	2	1	"et avec cette IMMENSE somme d'argent tu vas en faire quoi?"	-	34	
+160512_1420	1	chat	15	4	2	2	"mddddddr "	-	29	
+160512_1420	1	chat	15	1	1	1	"moi non plus c'est une pote qui les faisait toujours comme ça"	-	28	
+160512_1420	1	chat	15	2	1	2	"j'ai l'impression d'être de retour en primaire quand on avais pas les emojis "	-	22	
+160512_1420	1	chat	15	4	2	2	"immense vraiment !! "	-	20	
+160512_1420	1	chat	15	2	1	2	"hahha"	-	19	
+160512_1420	1	chat	15	1	1	1	"et je lui ai demandé pourquoi, si elle voulait faire son intéressante mdr"	-	17	
+160512_1420	1	chat	15	3	2	1	"ahah fabuleuse"	-	15	
+160512_1420	1	chat	15	2	1	2	"hahahha"	-	9	
+160512_1420	1	chat	15	1	1	1	"pas faux"	-	9	
+160512_1420	1	chat	15	1	1	1	"mais moi mon tel en a pas des masses"	-	3	
+160512_1420	1	chat	15	4	2	2	"je sais meme pas et toi ? "	-	3	
+160512_1420	1	chat	15	1	1	1	"non plus"	-	2	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	16	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	16	1	1	41.94012500000002	10671.04199999999	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	63	-	-	15	-	
+160512_1420	1	subjects	16	2	1	41.94012500000002	10671.04199999999	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	60	-	-	13	-	
+160512_1420	1	subjects	16	3	2	41.914	10636.48593271405	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	62	-	-	14	-	
+160512_1420	1	subjects	16	4	2	41.914	10682.76050691655	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	58	-	-	10	-	
+160512_1420	1	subjects	16	5	3	-22.87799546015032	9731.816428484864	0	6	-22.38990392062188	1	4	0	0	0	0	0	2	0	2	-22.87799546015032	27	-	-	14	-	
+160512_1420	1	subjects	16	6	3	-22.38990392062188	9904.161529733125	0	5	-22.87799546015032	2	4	0	0	0	0	2	0	2	0	-22.38990392062188	57	-	-	9	-	
+160512_1420	1	subjects	16	7	4	41.69599999999999	10416.23873699993	0	8	41.69599999999999	1	4	1	1	0	19	24	24	28	28	41.27200000000001	50	-	-	12	-	
+160512_1420	1	subjects	16	8	4	41.69599999999999	10382.50617797081	0	7	41.69599999999999	2	4	1	1	0	27	24	24	28	28	41.27200000000001	61	-	-	14	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	16	28	4	6	-3.986686067470609	65.42517523627416	46	-	
+160512_1420	1	simulations	16	24	24	8	41.69599999999999	41.69599999999999	35	-	
+160512_1420	1	simulations	16	24	24	7	41.69599999999999	41.69599999999999	28	-	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	16	2	1	2	"haha moi non plus "	-	55	
+160512_1420	1	chat	16	7	4	1	"à toi de me dire"	-	55	
+160512_1420	1	chat	16	3	2	1	"ahah je sais pas trop, tout ce que je sais c'est qu'elle va partir vite"	-	50	
+160512_1420	1	chat	16	1	1	1	"pareil sur iphone si tu fais ça :)"	-	49	
+160512_1420	1	chat	16	2	1	2	"pas encore passé a l'iPhone "	-	47	
+160512_1420	1	chat	16	8	4	2	"24.0"	-	46	
+160512_1420	1	chat	16	1	1	1	"il te fait pas l'emoji"	-	45	
+160512_1420	1	chat	16	3	2	1	"Très vite^^"	-	45	
+160512_1420	1	chat	16	4	2	2	"ahah "	-	43	
+160512_1420	1	chat	16	1	1	1	"ce que j'ai jamais compris"	-	40	
+160512_1420	1	chat	16	7	4	1	"c'est bon ok"	-	40	
+160512_1420	1	chat	16	2	1	2	"c'est vrai ? "	-	38	
+160512_1420	1	chat	16	1	1	1	"pas encore?"	-	36	
+160512_1420	1	chat	16	1	1	1	"tu rates rien"	-	33	
+160512_1420	1	chat	16	4	2	2	"cst clair quon garde pas 15 euro toute une vie "	-	33	
+160512_1420	1	chat	16	1	1	1	"ouais"	-	32	
+160512_1420	1	chat	16	3	2	1	"mdr"	-	29	
+160512_1420	1	chat	16	1	1	1	"moi j'en avais un"	-	29	
+160512_1420	1	chat	16	1	1	1	"pour le prix j'ai été déçue"	-	24	
+160512_1420	1	chat	16	1	1	1	"parce qu'il beuguait quand même"	-	18	
+160512_1420	1	chat	16	2	1	2	"il faut avoir l'application pour qu'il te le fasse"	-	15	
+160512_1420	1	chat	16	3	2	1	"une semaine c'est déjà très fort"	-	14	
+160512_1420	1	chat	16	1	1	1	"c'est pas aussi perfectionné qu'on veut nous le faire croire"	-	9	
+160512_1420	1	chat	16	4	2	2	"c'est bizzare de parler a quelquun sans savoir "	-	5	
+160512_1420	1	chat	16	4	2	2	"lol "	-	3	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	17	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	17	1	1	41.94012500000002	10712.98212499999	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	42	-	-	15	-	
+160512_1420	1	subjects	17	2	1	41.94012500000002	10712.98212499999	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	59	-	-	13	-	
+160512_1420	1	subjects	17	3	2	41.914	10678.39993271405	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	62	-	-	12	-	
+160512_1420	1	subjects	17	4	2	41.914	10724.67450691655	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	61	-	-	13	-	
+160512_1420	1	subjects	17	5	3	-22.87799546015032	9708.938433024714	0	6	-22.38990392062188	1	4	0	0	0	0	0	2	0	2	-22.87799546015032	62	-	-	11	-	
+160512_1420	1	subjects	17	6	3	-22.38990392062188	9881.771625812502	0	5	-22.87799546015032	2	4	0	0	0	0	2	0	2	0	-22.38990392062188	45	-	-	13	-	
+160512_1420	1	subjects	17	7	4	41.27200000000001	10457.51073699993	0	8	41.27200000000001	1	4	1	1	0	7	28	28	24	24	41.69599999999999	48	-	-	13	-	
+160512_1420	1	subjects	17	8	4	41.27200000000001	10423.77817797081	0	7	41.27200000000001	2	4	1	1	0	12	28	28	24	24	41.69599999999999	54	-	-	15	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	17	28	4	6	-3.986686067470609	65.42517523627416	48	0	
+160512_1420	1	simulations	17	6	20	6	40.46690206428504	8.758028277877283	28	0	
+160512_1420	1	simulations	17	28	28	8	41.27200000000001	41.27200000000001	15	0	
+160512_1420	1	simulations	17	28	28	7	41.27200000000001	41.27200000000001	11	0	
+160512_1420	1	simulations	17	8	12	6	19.32355768783147	12.77284478907974	9	0	
+160512_1420	1	simulations	17	2	1	6	-19.94873464867142	-20.08824019652163	0	53	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	17	8	4	2	"20.0"	-	55	
+160512_1420	1	chat	17	7	4	1	"je propose 28.0"	-	54	
+160512_1420	1	chat	17	1	1	1	"mais moi j'ai pas de bol avec les tels c'est différent :p"	-	48	
+160512_1420	1	chat	17	3	2	1	"j'avoue c'est assez étrange... Comme toutes les expériencess du LEEN en fait"	-	46	
+160512_1420	1	chat	17	8	4	2	"ok"	-	43	
+160512_1420	1	chat	17	7	4	1	"pourquoi 20.0"	-	43	
+160512_1420	1	chat	17	2	1	2	"hahha"	-	42	
+160512_1420	1	chat	17	3	2	1	"t'en a fait d'autres?"	-	37	
+160512_1420	1	chat	17	1	1	1	"mais j'ai un windows phone et j'en suis contente"	-	37	
+160512_1420	1	chat	17	1	1	1	"payé 180€"	-	31	
+160512_1420	1	chat	17	8	4	2	"on reste sur 28.0"	-	29	
+160512_1420	1	chat	17	4	2	2	"oui oui 2 deja ! "	-	28	
+160512_1420	1	chat	17	2	1	2	"pas mal !"	-	25	
+160512_1420	1	chat	17	4	2	2	"et toi ? "	-	24	
+160512_1420	1	chat	17	1	1	1	"écran tactile normal assez grand"	-	23	
+160512_1420	1	chat	17	7	4	1	"c'est bon on reste sur 28.0"	-	20	
+160512_1420	1	chat	17	2	1	2	"tjrs a blackberry "	-	17	
+160512_1420	1	chat	17	1	1	1	"moins d'app mais bon"	-	14	
+160512_1420	1	chat	17	3	2	1	"ah ouais, la première c'était quoi? J'en ai fait 1, celle d'avant"	-	11	
+160512_1420	1	chat	17	2	1	2	"on peut pas tout avoir !"	-	2	
+160512_1420	1	chat	17	1	1	1	"moi je veux repasser sur blackberry mais 400e celui que je veux"	-	2	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	18	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	18	1	1	41.94012500000002	10754.92224999999	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	62	-	-	15	-	
+160512_1420	1	subjects	18	2	1	41.94012500000002	10754.92224999999	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	61	-	-	14	-	
+160512_1420	1	subjects	18	3	2	41.914	10720.31393271405	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	61	-	-	15	-	
+160512_1420	1	subjects	18	4	2	41.914	10766.58850691655	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	62	-	-	12	-	
+160512_1420	1	subjects	18	5	3	-25.46178041843564	9683.476652606278	0	6	-25.11319442675741	1	4	0	0	0	0	0	1	0	2	-22.87799546015032	48	-	-	0	-	
+160512_1420	1	subjects	18	6	3	-25.11319442675741	9856.658431385744	0	5	-25.46178041843564	2	4	0	0	0	0	1	0	2	0	-22.38990392062188	52	-	-	2	-	
+160512_1420	1	subjects	18	7	4	40.61799999999998	10498.12873699993	0	8	40.61799999999998	1	4	1	1	0	22	22	22	28	28	41.27200000000001	60	-	-	13	-	
+160512_1420	1	subjects	18	8	4	40.61799999999998	10464.39617797081	0	7	40.61799999999998	2	4	1	1	0	28	22	22	28	28	41.27200000000001	58	-	-	14	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	18	8	10	6	14.06664809047382	11.20945252875398	49	-	
+160512_1420	1	simulations	18	22	22	8	40.61799999999998	40.61799999999998	44	-	
+160512_1420	1	simulations	18	22	22	7	40.61799999999998	40.61799999999998	35	-	
+160512_1420	1	simulations	18	18	8	6	13.53865995948762	36.18785552120744	28	-	
+160512_1420	1	simulations	18	6	24	6	53.37379907317813	5.07835108427384	15	-	
+160512_1420	1	simulations	18	6	4	6	-3.87022569593395	-2.685673684838252	1	-	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	18	8	4	2	"22.0"	-	53	
+160512_1420	1	chat	18	7	4	1	"que proposes - tu "	-	51	
+160512_1420	1	chat	18	3	2	1	"du coup la première?"	-	50	
+160512_1420	1	chat	18	1	1	1	"et pas de composés recyclés et recylables"	-	49	
+160512_1420	1	chat	18	2	1	2	"c'est un des nouveaux à 400 euros ? "	-	47	
+160512_1420	1	chat	18	7	4	1	"ok"	-	47	
+160512_1420	1	chat	18	1	1	1	"recyclables*"	-	40	
+160512_1420	1	chat	18	1	1	1	"bof"	-	37	
+160512_1420	1	chat	18	3	2	1	"c'était du même style?"	-	33	
+160512_1420	1	chat	18	1	1	1	"il est sorti il y a longtemps je crois"	-	30	
+160512_1420	1	chat	18	4	2	2	"fallait choisir une somme et quelquun dautre choisissait aussi du coup si la personne avait + tu te fsait plumer "	-	17	
+160512_1420	1	chat	18	1	1	1	"mais écran tactile en plus du pavé tactile et de toutes les touches mais c'est pas le torch"	-	14	
+160512_1420	1	chat	18	2	1	2	"ahh y'en a un avec l'écran tactil qui a l'air pas mal"	-	12	
+160512_1420	1	chat	18	2	1	2	"XDDD"	-	5	
+160512_1420	1	chat	18	3	2	1	"ahah c'est tjr la même chose"	-	4	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	19	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	19	1	1	41.94012500000002	10796.86237499998	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	62	-	-	13	-	
+160512_1420	1	subjects	19	2	1	41.94012500000002	10796.86237499998	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	58	-	-	13	-	
+160512_1420	1	subjects	19	3	2	41.914	10762.22793271405	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	62	-	-	11	-	
+160512_1420	1	subjects	19	4	2	41.914	10808.50250691655	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	60	-	-	12	-	
+160512_1420	1	subjects	19	5	3	-25.46178041843564	9658.014872187841	0	6	-25.11319442675741	1	4	0	0	0	0	0	1	0	1	-25.46178041843564	1	-	-	14	-	
+160512_1420	1	subjects	19	6	3	-25.11319442675741	9831.545236958986	0	5	-25.46178041843564	2	4	0	0	0	0	1	0	1	0	-25.11319442675741	59	-	-	9	-	
+160512_1420	1	subjects	19	7	4	41.27200000000001	10539.40073699993	0	8	41.27200000000001	1	4	1	1	0	10	28	28	22	22	40.61799999999998	39	-	-	12	-	
+160512_1420	1	subjects	19	8	4	41.27200000000001	10505.66817797081	0	7	41.27200000000001	2	4	1	1	0	10	28	28	22	22	40.61799999999998	56	-	-	14	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	19	28	28	7	41.27200000000001	41.27200000000001	28	0	
+160512_1420	1	simulations	19	28	28	8	41.27200000000001	41.27200000000001	25	0	
+160512_1420	1	simulations	19	1	1	5	-22.6235	-22.6235	19	0	
+160512_1420	1	simulations	19	28	1	5	-7.798624068705603	61.82196192297259	4	0	
+160512_1420	1	simulations	19	4	4	6	-7.784000000000002	-7.784000000000002	2	0	
+160512_1420	1	simulations	19	0	1	5	-25.46178041843564	-25.11319442675741	0	52	
+160512_1420	1	simulations	19	0.1	1	5	-25.17059419857226	-24.86627542603411	0	36	
+160512_1420	1	simulations	19	0.2	1	5	-24.88104312937994	-24.61890077154361	0	11	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	19	7	4	1	"dis moi"	-	53	
+160512_1420	1	chat	19	8	4	2	"ton choix?"	-	53	
+160512_1420	1	chat	19	1	1	1	"le torch est pas mal aussi mais le côté coulissant ça pète"	-	49	
+160512_1420	1	chat	19	7	4	1	"je propose 28.0"	-	45	
+160512_1420	1	chat	19	8	4	2	"ok"	-	42	
+160512_1420	1	chat	19	7	4	1	"qu est ce que t en penses"	-	40	
+160512_1420	1	chat	19	1	1	1	"et puis j'ai eu des potes qui l'ont eu et qui ont des soucis avec"	-	38	
+160512_1420	1	chat	19	2	1	2	"oui j'avais vu "	-	35	
+160512_1420	1	chat	19	3	2	1	"ca manque d'imagination au LEEN^^ et finalement t'avais bien gagné à l'expérience 1?"	-	33	
+160512_1420	1	chat	19	2	1	2	"ahh shoot "	-	26	
+160512_1420	1	chat	19	1	1	1	"et le bouton de verrouillage au-dessus il finit par plus marcher comme sur le normal"	-	18	
+160512_1420	1	chat	19	1	1	1	"alors que celui dont je te parle c'est un vrai bouton"	-	9	
+160512_1420	1	chat	19	4	2	2	"15 et 13 euro "	-	8	
+160512_1420	1	chat	19	4	2	2	"et toi ? "	-	6	
+160512_1420	1	chat	19	1	1	1	"pas un bouton intégré"	-	4	
+160512_1420	1	chat	19	1	1	1	"comme les autres blackberry"	-	0	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	20	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	20	1	1	41.94012500000002	10838.80249999998	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	62	-	-	14	-	
+160512_1420	1	subjects	20	2	1	41.94012500000002	10838.80249999998	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	60	-	-	12	-	
+160512_1420	1	subjects	20	3	2	41.914	10804.14193271405	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	60	-	-	15	-	
+160512_1420	1	subjects	20	4	2	41.914	10850.41650691655	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	61	-	-	11	-	
+160512_1420	1	subjects	20	5	3	-25.46178041843564	9632.553091769405	0	6	-25.11319442675741	1	4	0	0	0	0	0	1	0	1	-25.46178041843564	59	-	-	0	-	
+160512_1420	1	subjects	20	6	3	-25.11319442675741	9806.432042532228	0	5	-25.46178041843564	2	4	0	0	0	0	1	0	1	0	-25.11319442675741	43	-	-	10	-	
+160512_1420	1	subjects	20	7	4	41.27200000000001	10580.67273699994	0	8	41.27200000000001	1	4	1	1	0	28	28	28	28	28	41.27200000000001	59	-	-	13	-	
+160512_1420	1	subjects	20	8	4	41.27200000000001	10546.94017797081	0	7	41.27200000000001	2	4	1	1	0	30	28	28	28	28	41.27200000000001	61	-	-	15	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	20	28	6	6	-1.217567183042486	67.00974210960658	51	-	
+160512_1420	1	simulations	20	14	8	6	13.68217678097726	24.76272879207296	37	-	
+160512_1420	1	simulations	20	28	28	8	41.27200000000001	41.27200000000001	33	-	
+160512_1420	1	simulations	20	28	28	7	41.27200000000001	41.27200000000001	31	-	
+160512_1420	1	simulations	20	16	4	6	5.887741797972846	25.53988049422804	21	-	
+160512_1420	1	simulations	20	10	4	6	1.995142106913456	8.057763466136761	4	-	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	20	8	4	2	"propose"	-	56	
+160512_1420	1	chat	20	1	1	1	"les autres sont en train de faire des tests"	-	51	
+160512_1420	1	chat	20	7	4	1	"je sais pas proposes toi"	-	49	
+160512_1420	1	chat	20	8	4	2	"28.0"	-	44	
+160512_1420	1	chat	20	2	1	2	"j'ai mon bouon qui commence a s'enlever aussi "	-	41	
+160512_1420	1	chat	20	7	4	1	"ok"	-	41	
+160512_1420	1	chat	20	3	2	1	"14 à l'expérience d'avant je crois. Un truc avec des boules blanches ou noir qu'il fallait compter"	-	40	
+160512_1420	1	chat	20	1	1	1	"ils ont des tableaux de gains potentiels immenses sur leurs écrans"	-	38	
+160512_1420	1	chat	20	2	1	2	"vu que c'est en plastique "	-	36	
+160512_1420	1	chat	20	1	1	1	"ouais normal"	-	33	
+160512_1420	1	chat	20	3	2	1	"genre si tu comptais bien l'autre gagnait"	-	28	
+160512_1420	1	chat	20	1	1	1	"c'est le classique c'est ça"	-	27	
+160512_1420	1	chat	20	1	1	1	"blackberry curve"	-	23	
+160512_1420	1	chat	20	3	2	1	"tu l'as fait celle là?"	-	23	
+160512_1420	1	chat	20	4	2	2	"ouui jai fait sa aussi ! "	-	23	
+160512_1420	1	chat	20	1	1	1	"l'un des premiers?"	-	20	
+160512_1420	1	chat	20	3	2	1	"ahah"	-	19	
+160512_1420	1	chat	20	2	1	2	"c'est ca"	-	15	
+160512_1420	1	chat	20	4	2	2	"cetait chiant "	-	14	
+160512_1420	1	chat	20	2	1	2	"mais ca fait 5 ans "	-	9	
+160512_1420	1	chat	20	1	1	1	"ouais normal moi il marchait plus"	-	6	
+160512_1420	1	chat	20	2	1	2	"que je l'ai "	-	6	
+160512_1420	1	chat	20	3	2	1	"j'avoue^^ mais on avait internet après"	-	4	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	21	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	21	1	1	41.94012500000002	10880.74262499998	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	62	-	-	14	-	
+160512_1420	1	subjects	21	2	1	41.94012500000002	10880.74262499998	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	59	-	-	14	-	
+160512_1420	1	subjects	21	3	2	41.914	10846.05593271406	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	60	-	-	15	-	
+160512_1420	1	subjects	21	4	2	41.914	10892.33050691655	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	59	-	-	11	-	
+160512_1420	1	subjects	21	5	3	-25.46178041843564	9607.091311350969	0	6	-25.11319442675741	1	4	0	0	0	0	0	1	0	1	-25.46178041843564	56	-	-	11	-	
+160512_1420	1	subjects	21	6	3	-25.11319442675741	9781.318848105469	0	5	-25.46178041843564	2	4	0	0	0	0	1	0	1	0	-25.11319442675741	61	-	-	3	-	
+160512_1420	1	subjects	21	7	4	16.09	10596.76273699994	0	8	16.09	1	4	1	1	0	11	10	10	28	28	41.27200000000001	43	-	-	13	-	
+160512_1420	1	subjects	21	8	4	16.09	10563.03017797081	0	7	16.09	2	4	1	1	0	19	10	10	28	28	41.27200000000001	61	-	-	14	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	21	24	8	6	8.417932714041402	54.69250691653794	47	-	
+160512_1420	1	simulations	21	10	10	8	16.09	16.09	40	-	
+160512_1420	1	simulations	21	10	10	7	16.09	16.09	34	-	
+160512_1420	1	simulations	21	20	6	6	8.758028277877283	40.46690206428504	30	-	
+160512_1420	1	simulations	21	16	6	6	9.821464397767782	28.28905108292727	16	-	
+160512_1420	1	simulations	21	18	2	6	2.319794017786223	28.52264561279314	3	-	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	21	8	4	2	"10.0"	-	56	
+160512_1420	1	chat	21	7	4	1	"propose"	-	55	
+160512_1420	1	chat	21	4	2	2	"tu tape super vite !! "	-	52	
+160512_1420	1	chat	21	1	1	1	"moi au bout d'un ou 2 ans je me lasse des téléphones"	-	50	
+160512_1420	1	chat	21	3	2	1	"ahah c'est gentil"	-	47	
+160512_1420	1	chat	21	2	1	2	"hahha "	-	45	
+160512_1420	1	chat	21	4	2	2	"me demande pas comment je sais "	-	43	
+160512_1420	1	chat	21	1	1	1	"société de consommation quand tu nous tiens --'"	-	41	
+160512_1420	1	chat	21	4	2	2	"lol "	-	40	
+160512_1420	1	chat	21	2	1	2	"je prefere acheter autre chose"	-	35	
+160512_1420	1	chat	21	3	2	1	"comment tu sais?"	-	32	
+160512_1420	1	chat	21	2	1	2	"voyager..."	-	30	
+160512_1420	1	chat	21	1	1	1	"ouais je comprends"	-	30	
+160512_1420	1	chat	21	3	2	1	"non je dois pas demander"	-	28	
+160512_1420	1	chat	21	7	4	1	"oj"	-	26	
+160512_1420	1	chat	21	7	4	1	"ok"	-	24	
+160512_1420	1	chat	21	4	2	2	"jai remarqué des choses cst tout "	-	21	
+160512_1420	1	chat	21	2	1	2	"20/30"	-	19	
+160512_1420	1	chat	21	2	1	2	"Presque terminé"	-	14	
+160512_1420	1	chat	21	1	1	1	"yep"	-	14	
+160512_1420	1	chat	21	4	2	2	"rien de bien compliqué !! "	-	14	
+160512_1420	1	chat	21	1	1	1	"ouais enfin :p"	-	10	
+160512_1420	1	chat	21	1	1	1	"au moins on se serra tenu compagnie"	-	3	
+160512_1420	1	chat	21	3	2	1	"ahah le bruit c'est sur"	-	1	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	22	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	22	1	1	41.94012500000002	10922.68274999998	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	61	-	-	15	-	
+160512_1420	1	subjects	22	2	1	41.94012500000002	10922.68274999998	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	61	-	-	13	-	
+160512_1420	1	subjects	22	3	2	41.914	10887.96993271406	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	61	-	-	14	-	
+160512_1420	1	subjects	22	4	2	41.914	10934.24450691655	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	61	-	-	13	-	
+160512_1420	1	subjects	22	5	3	0.3288982236876337	9607.420209574657	0	6	20.18976160787625	1	4	0	0	0	0	16	1	0	1	-25.46178041843564	60	-	-	4	-	
+160512_1420	1	subjects	22	6	3	20.18976160787625	9801.508609713346	0	5	0.3288982236876337	2	4	0	0	0	0	1	16	1	0	-25.11319442675741	39	-	-	0	-	
+160512_1420	1	subjects	22	7	4	41.27200000000001	10638.03473699994	0	8	41.27200000000001	1	4	1	1	0	32	28	28	10	10	16.09	36	-	-	11	-	
+160512_1420	1	subjects	22	8	4	41.27200000000001	10604.30217797081	0	7	41.27200000000001	2	4	1	1	0	41	28	28	10	10	16.09	58	-	-	14	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	22	8	6	6	4.099613416410017	6.12048720281778	46	0	
+160512_1420	1	simulations	22	28	28	8	41.27200000000001	41.27200000000001	42	0	
+160512_1420	1	simulations	22	28	28	7	41.27200000000001	41.27200000000001	42	0	
+160512_1420	1	simulations	22	18	14	6	26.39787946314355	37.96652301376768	34	0	
+160512_1420	1	simulations	22	18	4	6	5.877154491469522	31.7317758506928	18	0	
+160512_1420	1	simulations	22	6	4	6	-3.87022569593395	-2.685673684838252	2	0	
+160512_1420	1	simulations	22	16	28	5	65.12167244984524	15.36194984235566	2	0	
+160512_1420	1	simulations	22	1	1	6	-22.6235	-22.6235	0	49	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	22	7	4	1	"28.0"	-	54	
+160512_1420	1	chat	22	8	4	2	"ok"	-	51	
+160512_1420	1	chat	22	2	1	2	"je me demande comment les autres s'en sorte "	-	49	
+160512_1420	1	chat	22	2	1	2	"*sortent "	-	44	
+160512_1420	1	chat	22	3	2	1	"y avait un jeu au college ou on tapait sur un PC et depuis ça va je tape pas torp mal"	-	42	
+160512_1420	1	chat	22	1	1	1	"franchement c'est mieux que les 45 mins sur internet de la dernière fois"	-	42	
+160512_1420	1	chat	22	3	2	1	"c'était y a très longtemps"	-	32	
+160512_1420	1	chat	22	1	1	1	"ouais ce serait marrant de regarder le fichier de récompenses vite fait à la fin"	-	21	
+160512_1420	1	chat	22	4	2	2	"mdr avec MSN dans le temps jai appris sa "	-	17	
+160512_1420	1	chat	22	4	2	2	"lol "	-	15	
+160512_1420	1	chat	22	1	1	1	"mais bon je pourrais pas te dire "	-	15	
+160512_1420	1	chat	22	2	1	2	"hahha"	-	13	
+160512_1420	1	chat	22	3	2	1	"mdr MSN"	-	11	
+160512_1420	1	chat	22	1	1	1	":p"	-	11	
+160512_1420	1	chat	22	3	2	1	"le truc qui date biiiiieeeeen"	-	5	
+160512_1420	1	chat	22	4	2	2	"lool ouaai "	-	2	
+160512_1420	1	chat	22	2	1	2	"la masse de calculs effectués aussi"	-	0	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	23	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	23	1	1	41.94012500000002	10964.62287499998	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	60	-	-	14	-	
+160512_1420	1	subjects	23	2	1	41.94012500000002	10964.62287499998	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	60	-	-	14	-	
+160512_1420	1	subjects	23	3	2	41.914	10929.88393271406	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	56	-	-	14	-	
+160512_1420	1	subjects	23	4	2	41.914	10976.15850691655	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	57	-	-	13	-	
+160512_1420	1	subjects	23	5	3	-25.46178041843564	9581.958429156221	0	6	-25.11319442675741	1	4	0	0	0	0	0	1	16	1	0.3288982236876337	39	-	-	14	-	
+160512_1420	1	subjects	23	6	3	-25.11319442675741	9776.395415286588	0	5	-25.46178041843564	2	4	0	0	0	0	1	0	1	16	20.18976160787625	50	-	-	2	-	
+160512_1420	1	subjects	23	7	4	41.69599999999999	10679.73073699994	0	8	41.69599999999999	1	4	1	1	0	36	24	24	28	28	41.27200000000001	42	-	-	13	-	
+160512_1420	1	subjects	23	8	4	41.69599999999999	10645.99817797081	0	7	41.69599999999999	2	4	1	1	0	36	24	24	28	28	41.27200000000001	60	-	-	15	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	23	24	24	8	41.69599999999999	41.69599999999999	50	-	
+160512_1420	1	simulations	23	22	14	6	22.47351785257413	48.9560920550707	40	-	
+160512_1420	1	simulations	23	24	24	7	41.69599999999999	41.69599999999999	38	-	
+160512_1420	1	simulations	23	28	16	6	15.36194984235566	65.12167244984524	25	-	
+160512_1420	1	simulations	23	20	4	6	5.212506916537954	38.1059327140414	13	-	
+160512_1420	1	simulations	23	4	14	6	19.5302466446471	5.244268836047951	1	-	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	23	8	4	2	"24.0"	-	58	
+160512_1420	1	chat	23	1	1	1	"ouais :/"	-	58	
+160512_1420	1	chat	23	7	4	1	"ok"	-	52	
+160512_1420	1	chat	23	7	4	1	""	-	52	
+160512_1420	1	chat	23	7	4	1	""	-	51	
+160512_1420	1	chat	23	7	4	1	""	-	51	
+160512_1420	1	chat	23	1	1	1	"mais comment t'as su au fait pour 25.5?"	-	50	
+160512_1420	1	chat	23	1	1	1	"t'as essayé?"	-	46	
+160512_1420	1	chat	23	2	1	2	"oui"	-	42	
+160512_1420	1	chat	23	1	1	1	"moi j'ai juste analysé le tableau"	-	41	
+160512_1420	1	chat	23	3	2	1	"Sur facebook tu tapes moins qu'MSN, moins besoin "	-	40	
+160512_1420	1	chat	23	3	2	1	"les gens regardent plus les photos ou autres"	-	32	
+160512_1420	1	chat	23	2	1	2	"mais aussi tu regardes dans la diagonale de la feuille qu'ils ont donné"	-	25	
+160512_1420	1	chat	23	1	1	1	"je pensais pas aux nombres entre ceux qui nous étaient donné"	-	25	
+160512_1420	1	chat	23	4	2	2	"ouui javoue "	-	21	
+160512_1420	1	chat	23	4	2	2	"tu mentend taper je suppose ? "	-	11	
+160512_1420	1	chat	23	3	2	1	"non en vraie je fais pasgaffe"	-	2	
+160512_1420	1	chat	23	3	2	1	"^^"	-	0	
+160512_1420	1	chat	23	4	2	2	"TEST "	-	0	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	24	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	24	1	1	41.94012500000002	11006.56299999998	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	62	-	-	13	-	
+160512_1420	1	subjects	24	2	1	41.94012500000002	11006.56299999998	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	61	-	-	13	-	
+160512_1420	1	subjects	24	3	2	41.914	10971.79793271406	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	62	-	-	14	-	
+160512_1420	1	subjects	24	4	2	41.914	11018.07250691655	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	61	-	-	7	-	
+160512_1420	1	subjects	24	5	3	-22.87799546015032	9559.08043369607	0	6	-22.38990392062188	1	4	0	0	0	0	0	2	0	1	-25.46178041843564	60	-	-	5	-	
+160512_1420	1	subjects	24	6	3	-22.38990392062188	9754.005511365966	0	5	-22.87799546015032	2	4	0	0	0	0	2	0	1	0	-25.11319442675741	35	-	-	7	-	
+160512_1420	1	subjects	24	7	4	38.68000000000001	10718.41073699994	0	8	38.68000000000001	1	4	1	1	0	30	20	20	24	24	41.69599999999999	50	-	-	13	-	
+160512_1420	1	subjects	24	8	4	38.68000000000001	10684.67817797081	0	7	38.68000000000001	2	4	1	1	0	45	20	20	24	24	41.69599999999999	60	-	-	13	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	24	28	6	6	-1.217567183042486	67.00974210960658	48	0	
+160512_1420	1	simulations	24	20	20	8	38.68000000000001	38.68000000000001	47	0	
+160512_1420	1	simulations	24	20	20	7	38.68000000000001	38.68000000000001	35	0	
+160512_1420	1	simulations	24	2	8	6	-1.584719196831343	-5.138375230118439	26	0	
+160512_1420	1	simulations	24	18	14	6	26.39787946314355	37.96652301376768	12	0	
+160512_1420	1	simulations	24	1	2	6	-20.08824019652163	-19.94873464867142	0	46	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	24	1	1	1	"ah ok"	-	58	
+160512_1420	1	chat	24	8	4	2	"20.0"	-	56	
+160512_1420	1	chat	24	3	2	1	"ok je vais faire attention maitnenant"	-	49	
+160512_1420	1	chat	24	7	4	1	"d'accord"	-	46	
+160512_1420	1	chat	24	4	2	2	"lol "	-	45	
+160512_1420	1	chat	24	1	1	1	"dès le départ tu voulais te mettre d'accord avec l'autre du nombre à mettre c'est ça?"	-	43	
+160512_1420	1	chat	24	2	1	2	"apres faut juste que l'autre personne veuille bien faire la meme"	-	37	
+160512_1420	1	chat	24	3	2	1	"du coup t'atais adept de MSN,"	-	37	
+160512_1420	1	chat	24	3	2	1	","	-	35	
+160512_1420	1	chat	24	3	2	1	","	-	33	
+160512_1420	1	chat	24	2	1	2	"oui"	-	30	
+160512_1420	1	chat	24	4	2	2	"comme tout le monde je pense "	-	27	
+160512_1420	1	chat	24	4	2	2	":( "	-	25	
+160512_1420	1	chat	24	1	1	1	"ok"	-	22	
+160512_1420	1	chat	24	2	1	2	"travaille d'équipe c'est tjrs mieux"	-	14	
+160512_1420	1	chat	24	3	2	1	"ah j'étais pas trop fan"	-	11	
+160512_1420	1	chat	24	1	1	1	"j'avoue"	-	9	
+160512_1420	1	chat	24	4	2	2	"ahah sa se sent "	-	4	
+160512_1420	1	chat	24	2	1	2	"et puis apres tu sais pas ce que l'autre va faire"	-	0	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	25	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	25	1	1	41.94012500000002	11048.50312499998	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	61	-	-	14	-	
+160512_1420	1	subjects	25	2	1	41.94012500000002	11048.50312499998	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	61	-	-	14	-	
+160512_1420	1	subjects	25	3	2	41.914	11013.71193271406	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	60	-	-	14	-	
+160512_1420	1	subjects	25	4	2	41.914	11059.98650691655	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	63	-	-	12	-	
+160512_1420	1	subjects	25	5	3	-22.87799546015032	9536.20243823592	0	6	-22.38990392062188	1	4	0	0	0	0	0	2	0	2	-22.87799546015032	57	-	-	14	-	
+160512_1420	1	subjects	25	6	3	-22.38990392062188	9731.615607445343	0	5	-22.87799546015032	2	4	0	0	0	0	2	0	2	0	-22.38990392062188	51	-	-	13	-	
+160512_1420	1	subjects	25	7	4	41.914	10760.32473699994	0	8	41.914	1	4	1	1	0	35	26	26	20	20	38.68000000000001	53	-	-	13	-	
+160512_1420	1	subjects	25	8	4	41.914	10726.59217797081	0	7	41.914	2	4	1	1	0	45	26	26	20	20	38.68000000000001	59	-	-	14	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	25	8	14	6	24.76272879207296	13.68217678097726	48	-	
+160512_1420	1	simulations	25	26	26	8	41.914	41.914	47	-	
+160512_1420	1	simulations	25	26	26	7	41.914	41.914	38	-	
+160512_1420	1	simulations	25	8	12	6	19.32355768783147	12.77284478907974	37	-	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	25	8	4	2	"26.0"	-	56	
+160512_1420	1	chat	25	7	4	1	"ok"	-	50	
+160512_1420	1	chat	25	1	1	1	"*coucou avec la main*"	-	50	
+160512_1420	1	chat	25	3	2	1	"pas trp le doirt à l'odri ou portable quand t'es gosse^^ ça laisse des sequels?"	-	45	
+160512_1420	1	chat	25	3	2	1	";)"	-	42	
+160512_1420	1	chat	25	3	2	1	"sequels"	-	38	
+160512_1420	1	chat	25	4	2	2	"ouui "	-	31	
+160512_1420	1	chat	25	1	1	1	"ça te laisse perplexe mdr"	-	23	
+160512_1420	1	chat	25	2	1	2	"Hahah"	-	17	
+160512_1420	1	chat	25	4	2	2	"jai gardé les emoticones "	-	10	
+160512_1420	1	chat	25	4	2	2	"lol "	-	9	
+160512_1420	1	chat	25	4	2	2	":) "	-	7	
+160512_1420	1	chat	25	4	2	2	":D"	-	6	
+160512_1420	1	chat	25	4	2	2	" :* "	-	4	
+160512_1420	1	chat	25	3	2	1	"ahah c'est vrai que ça par contre"	-	0	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	26	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	26	1	1	41.94012500000002	11090.44324999998	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	63	-	-	14	-	
+160512_1420	1	subjects	26	2	1	41.94012500000002	11090.44324999998	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	59	-	-	14	-	
+160512_1420	1	subjects	26	3	2	41.914	11055.62593271406	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	61	-	-	15	-	
+160512_1420	1	subjects	26	4	2	41.914	11101.90050691655	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	61	-	-	15	-	
+160512_1420	1	subjects	26	5	3	-25.46178041843564	9510.740657817483	0	6	-25.11319442675741	1	4	0	0	0	0	0	1	0	2	-22.87799546015032	59	-	-	0	-	
+160512_1420	1	subjects	26	6	3	-25.11319442675741	9706.502413018585	0	5	-25.46178041843564	2	4	0	0	0	0	1	0	2	0	-22.38990392062188	43	-	-	10	-	
+160512_1420	1	subjects	26	7	4	41.27200000000001	10801.59673699994	0	8	41.27200000000001	1	4	1	1	0	38	28	28	26	26	41.914	49	-	-	13	-	
+160512_1420	1	subjects	26	8	4	41.27200000000001	10767.86417797081	0	7	41.27200000000001	2	4	1	1	0	47	28	28	26	26	41.914	60	-	-	15	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	26	28	28	8	41.27200000000001	41.27200000000001	49	0	
+160512_1420	1	simulations	26	28	28	7	41.27200000000001	41.27200000000001	41	0	
+160512_1420	1	simulations	26	8	24	6	54.69250691653794	8.417932714041402	40	0	
+160512_1420	1	simulations	26	4	14	6	19.5302466446471	5.244268836047951	20	0	
+160512_1420	1	simulations	26	1	8	6	-3.919808464511265	-7.333958949948155	0	51	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	26	8	4	2	"28.0"	-	57	
+160512_1420	1	chat	26	3	2	1	"les émoticones ça reste"	-	54	
+160512_1420	1	chat	26	3	2	1	"l'habitude"	-	52	
+160512_1420	1	chat	26	7	4	1	"d'acc"	-	52	
+160512_1420	1	chat	26	1	1	1	"je sais que t'as des éléphants sur ton t-shirt"	-	50	
+160512_1420	1	chat	26	4	2	2	"enfin on est a 26 cst pas trop tot "	-	42	
+160512_1420	1	chat	26	2	1	2	"heheh"	-	42	
+160512_1420	1	chat	26	4	2	2	"oui oui "	-	37	
+160512_1420	1	chat	26	3	2	1	"c'est sur que c'est lent"	-	28	
+160512_1420	1	chat	26	2	1	2	"je n'ai pas le droit de dire "	-	24	
+160512_1420	1	chat	26	2	1	2	":P"	-	20	
+160512_1420	1	chat	26	3	2	1	"mais sur la fin tout le mmonde doit avoir compris et faire la même chose je pense"	-	17	
+160512_1420	1	chat	26	1	1	1	"bon on en dit pas trop sinon il risque d'arrêter le truc"	-	15	
+160512_1420	1	chat	26	1	1	1	"et d'annuler nos gains :("	-	9	
+160512_1420	1	chat	26	4	2	2	"jespere qu'ils n'ont pas compris "	-	4	
+160512_1420	1	chat	26	4	2	2	"lol "	-	3	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	27	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	27	1	1	41.94012500000002	11132.38337499998	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	61	-	-	13	-	
+160512_1420	1	subjects	27	2	1	41.94012500000002	11132.38337499998	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	61	-	-	14	-	
+160512_1420	1	subjects	27	3	2	41.914	11097.53993271406	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	62	-	-	14	-	
+160512_1420	1	subjects	27	4	2	41.914	11143.81450691656	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	62	-	-	11	-	
+160512_1420	1	subjects	27	5	3	-25.46178041843564	9485.278877399047	0	6	-25.11319442675741	1	4	1	0	0	11	0	1	0	1	-25.46178041843564	60	-	-	14	-	
+160512_1420	1	subjects	27	6	3	-25.11319442675741	9681.389218591827	0	5	-25.46178041843564	2	4	0	1	0	0	1	0	1	0	-25.11319442675741	44	-	-	13	-	
+160512_1420	1	subjects	27	7	4	41.27200000000001	10842.86873699994	0	8	41.27200000000001	1	4	1	1	0	31	28	28	28	28	41.27200000000001	59	-	-	13	-	
+160512_1420	1	subjects	27	8	4	41.27200000000001	10809.13617797081	0	7	41.27200000000001	2	4	1	1	0	30	28	28	28	28	41.27200000000001	60	-	-	13	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	27	4	18	6	31.7317758506928	5.877154491469522	49	0	
+160512_1420	1	simulations	27	28	28	8	41.27200000000001	41.27200000000001	39	0	
+160512_1420	1	simulations	27	28	28	7	41.27200000000001	41.27200000000001	35	0	
+160512_1420	1	simulations	27	4	16	6	25.53988049422804	5.887741797972846	35	0	
+160512_1420	1	simulations	27	6	24	6	53.37379907317813	5.07835108427384	25	0	
+160512_1420	1	simulations	27	0	1	5	-25.46178041843564	-25.11319442675741	21	0	
+160512_1420	1	simulations	27	2	20	6	35.09090309536954	1.849247062082457	11	0	
+160512_1420	1	simulations	27	4	24	6	51.40103096139011	1.921030961390115	2	0	
+160512_1420	1	simulations	27	1	4	6	-14.88102445940201	-15.08974914733544	0	51	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	27	7	4	1	"28.0"	-	55	
+160512_1420	1	chat	27	3	2	1	"ahah les pauvres"	-	55	
+160512_1420	1	chat	27	4	2	2	"rigole pas lol cst vrai "	-	54	
+160512_1420	1	chat	27	8	4	2	"ton coix"	-	53	
+160512_1420	1	chat	27	3	2	1	"ils vont repartir avec 5 euros"	-	47	
+160512_1420	1	chat	27	8	4	2	"ok"	-	46	
+160512_1420	1	chat	27	2	1	2	"la tombé de la balle a mis un peu d'ambiance "	-	46	
+160512_1420	1	chat	27	3	2	1	"frais de déplacement"	-	42	
+160512_1420	1	chat	27	4	2	2	"ce serait l'ideal "	-	41	
+160512_1420	1	chat	27	1	1	1	"mdr"	-	40	
+160512_1420	1	chat	27	1	1	1	"c'est vrai"	-	37	
+160512_1420	1	chat	27	4	2	2	"mddddr "	-	37	
+160512_1420	1	chat	27	2	1	2	"il devrait la refaire"	-	34	
+160512_1420	1	chat	27	4	2	2	"mechant(e) "	-	31	
+160512_1420	1	chat	27	1	1	1	"xD"	-	28	
+160512_1420	1	chat	27	3	2	1	"ahah (e)"	-	20	
+160512_1420	1	chat	27	1	1	1	"bon 27 sur 30 on devrait survivre"	-	16	
+160512_1420	1	chat	27	2	1	2	"OUUUIII"	-	9	
+160512_1420	1	chat	27	1	1	1	":p"	-	6	
+160512_1420	1	chat	27	4	2	2	"on a pas le droit de preciser donc (e) sinon je ssais "	-	5	
+160512_1420	1	chat	27	4	2	2	"je crois"	-	1	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	28	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	28	1	1	41.94012500000002	11174.32349999998	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	63	-	-	15	-	
+160512_1420	1	subjects	28	2	1	41.94012500000002	11174.32349999998	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	60	-	-	12	-	
+160512_1420	1	subjects	28	3	2	41.914	11139.45393271406	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	60	-	-	8	-	
+160512_1420	1	subjects	28	4	2	41.914	11185.72850691656	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	62	-	-	14	-	
+160512_1420	1	subjects	28	5	3	-22.87799546015032	9462.400881938896	0	6	-22.38990392062188	1	4	0	0	0	0	0	2	0	1	-25.46178041843564	62	-	-	14	-	
+160512_1420	1	subjects	28	6	3	-22.38990392062188	9658.999314671204	0	5	-22.87799546015032	2	4	0	0	0	0	2	0	1	0	-25.11319442675741	45	-	-	9	-	
+160512_1420	1	subjects	28	7	4	41.914	10884.78273699994	0	8	41.914	1	4	1	1	0	33	26	26	28	28	41.27200000000001	60	-	-	14	-	
+160512_1420	1	subjects	28	8	4	41.914	10851.05017797081	0	7	41.914	2	4	1	1	0	37	26	26	28	28	41.27200000000001	57	-	-	14	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	28	4	20	6	38.1059327140414	5.212506916537954	42	-	
+160512_1420	1	simulations	28	26	26	8	41.914	41.914	39	-	
+160512_1420	1	simulations	28	26	26	7	41.914	41.914	35	-	
+160512_1420	1	simulations	28	2	16	6	22.13664963710057	2.136280705061746	28	-	
+160512_1420	1	simulations	28	6	8	6	6.12048720281778	4.099613416410017	8	-	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	28	7	4	1	"ton choix "	-	56	
+160512_1420	1	chat	28	3	2	1	"tu dois avoir raison pas de biais"	-	55	
+160512_1420	1	chat	28	2	1	2	"le compteur me stresse troppp"	-	50	
+160512_1420	1	chat	28	8	4	2	"26.0"	-	48	
+160512_1420	1	chat	28	7	4	1	"ok"	-	45	
+160512_1420	1	chat	28	1	1	1	"ouais surtout pour parler"	-	43	
+160512_1420	1	chat	28	4	2	2	"donc quand on fini je vais voir si je me suis pas trompé "	-	35	
+160512_1420	1	chat	28	3	2	1	"mais le mec(e) qui repars avec 5 euros après 2h d'expérience doit bien avoir les boules"	-	28	
+160512_1420	1	chat	28	1	1	1	"moi aussi au début j'étais là genre faut se dépêcher !!!!!!!!!!!!!!!"	-	27	
+160512_1420	1	chat	28	1	1	1	"xD"	-	22	
+160512_1420	1	chat	28	2	1	2	"hahha"	-	21	
+160512_1420	1	chat	28	3	2	1	"on regardera sur lafeuille en partant pour voir les gains des autres"	-	16	
+160512_1420	1	chat	28	1	1	1	"je suis un peu folle sur les bords"	-	13	
+160512_1420	1	chat	28	3	2	1	":)"	-	10	
+160512_1420	1	chat	28	4	2	2	"ou la meuf !!! mddddddr \q MEC (E) "	-	9	
+160512_1420	1	chat	28	4	2	2	"tu m'a tué "	-	7	
+160512_1420	1	chat	28	2	1	2	"déjà qu'on est en conversation interposée"	-	6	
+160512_1420	1	chat	28	4	2	2	"mdrrrrrr"	-	5	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	29	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	29	1	1	41.94012500000002	11216.26362499998	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	60	-	-	15	-	
+160512_1420	1	subjects	29	2	1	41.94012500000002	11216.26362499998	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	61	-	-	14	-	
+160512_1420	1	subjects	29	3	2	41.914	11181.36793271406	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	61	-	-	14	-	
+160512_1420	1	subjects	29	4	2	41.914	11227.64250691656	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	58	-	-	13	-	
+160512_1420	1	subjects	29	5	3	-25.46178041843564	9436.93910152046	0	6	-25.11319442675741	1	4	0	0	0	0	0	1	0	2	-22.87799546015032	61	-	-	13	-	
+160512_1420	1	subjects	29	6	3	-25.11319442675741	9633.886120244446	0	5	-25.46178041843564	2	4	0	0	0	0	1	0	2	0	-22.38990392062188	61	-	-	8	-	
+160512_1420	1	subjects	29	7	4	41.69599999999999	10926.47873699994	0	8	41.69599999999999	1	4	1	1	0	25	24	24	26	26	41.914	57	-	-	14	-	
+160512_1420	1	subjects	29	8	4	41.69599999999999	10892.74617797081	0	7	41.69599999999999	2	4	1	1	0	25	24	24	26	26	41.914	57	-	-	15	-	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	29	2	16	6	22.13664963710057	2.136280705061746	46	-	
+160512_1420	1	simulations	29	4	12	6	13.70287430195002	3.946735605694817	35	-	
+160512_1420	1	simulations	29	24	24	7	41.69599999999999	41.69599999999999	28	-	
+160512_1420	1	simulations	29	24	24	8	41.69599999999999	41.69599999999999	28	-	
+160512_1420	1	simulations	29	2	14	6	15.93291516829184	1.298707123909048	21	-	
+160512_1420	1	simulations	29	0	4	6	-17.5737294134168	-17.433868109672	10	-	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	29	8	4	2	"tn choix"	-	55	
+160512_1420	1	chat	29	1	1	1	"avant dernier :)"	-	52	
+160512_1420	1	chat	29	7	4	1	"qu est ce que tu proposes"	-	52	
+160512_1420	1	chat	29	7	4	1	"dis moi toi "	-	48	
+160512_1420	1	chat	29	4	2	2	"tu parles a un ogre tu sais pas :D "	-	46	
+160512_1420	1	chat	29	3	2	1	"j'ai faille mettre mec(ette) mais ça fsait un peu gros^^"	-	41	
+160512_1420	1	chat	29	4	2	2	"ou un trole "	-	40	
+160512_1420	1	chat	29	8	4	2	"24.0"	-	38	
+160512_1420	1	chat	29	7	4	1	"ok"	-	35	
+160512_1420	1	chat	29	4	2	2	"mddddrrrrr"	-	34	
+160512_1420	1	chat	29	2	1	2	"je sais plus quoi dire hahah"	-	32	
+160512_1420	1	chat	29	3	2	1	"ahah on verra ça bientôt"	-	30	
+160512_1420	1	chat	29	4	2	2	"mequette toi meme ! "	-	28	
+160512_1420	1	chat	29	1	1	1	"j'ai vu ça"	-	26	
+160512_1420	1	chat	29	2	1	2	"le temps passe trop vite "	-	26	
+160512_1420	1	chat	29	1	1	1	":p"	-	25	
+160512_1420	1	chat	29	3	2	1	"mdr"	-	23	
+160512_1420	1	chat	29	1	1	1	"ouais"	-	22	
+160512_1420	1	chat	29	4	2	2	"mddr c'est du sexisme !!"	-	21	
+160512_1420	1	chat	29	2	1	2	"on peut plus avoir une bonne conversation "	-	16	
+160512_1420	1	chat	29	4	2	2	"tu tape plus la "	-	11	
+160512_1420	1	chat	29	1	1	1	"grave :("	-	9	
+160512_1420	1	chat	29	3	2	1	":)"	-	9	
+160512_1420	1	chat	29	3	2	1	"tu me stalke déjà"	-	4	
+160512_1420	1	chat	29	4	2	2	"ah si "	-	3	
+160512_1420	1	chat	29	3	2	1	"!!"	-	0	
+160512_1420	1	chat	29	1	1	1	"miss you mdr"	-	0	
+160512_1420	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop	
+160512_1420	1	globals	30	30	0	0	1	0	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.27200000000001	5.474	4.938000000000001	0.278	0.0055	0.165	-28	2.968563106796117	2.515436893203883	0.08175753355352886	0.02278268836047946	0.04852515480695058	41.27199999999998	2.968563106796117	2.432563106796116	0.08175753355352886	0.02278268836047946	0.04852515480695058	0	0	
+160512_1420	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK	
+160512_1420	1	subjects	30	1	1	41.94012500000002	11258.20374999998	0	2	41.94012500000002	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	62	1258.203749999976	12.58203749999976	11	-	
+160512_1420	1	subjects	30	2	1	41.94012500000002	11258.20374999998	0	1	41.94012500000002	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.94012500000002	59	1258.203749999976	12.58203749999976	11	-	
+160512_1420	1	subjects	30	3	2	41.914	11223.28193271406	0	4	41.914	1	4	0	0	0	0	26	26	26	26	41.914	61	1223.28193271406	12.2328193271406	12	-	
+160512_1420	1	subjects	30	4	2	41.914	11269.55650691656	0	3	41.914	2	4	0	0	0	0	26	26	26	26	41.914	50	1269.556506916556	12.69556506916556	8	-	
+160512_1420	1	subjects	30	5	3	-25.46178041843564	9411.477321102024	0	6	-25.11319442675741	1	4	0	0	0	0	0	1	0	1	-25.46178041843564	62	-588.5226788979755	-5.885226788979756	1	-	
+160512_1420	1	subjects	30	6	3	-25.11319442675741	9608.772925817688	0	5	-25.46178041843564	2	4	0	0	0	0	1	0	1	0	-25.11319442675741	38	-391.2270741823115	-3.912270741823115	0	-	
+160512_1420	1	subjects	30	7	4	41.27200000000001	10967.75073699994	0	8	41.27200000000001	1	4	1	1	0	37	28	28	24	24	41.69599999999999	49	967.7507369999395	9.677507369999395	0	-	
+160512_1420	1	subjects	30	8	4	41.27200000000001	10934.01817797082	0	7	41.27200000000001	2	4	1	1	0	42	28	28	24	24	41.69599999999999	59	934.0181779708138	9.340181779708138	14	-	
+160512_1420	1	summary	Period	
+160512_1420	1	summary	0	
+160512_1420	1	summary	1	
+160512_1420	1	summary	2	
+160512_1420	1	summary	3	
+160512_1420	1	summary	4	
+160512_1420	1	summary	5	
+160512_1420	1	summary	6	
+160512_1420	1	summary	7	
+160512_1420	1	summary	8	
+160512_1420	1	summary	9	
+160512_1420	1	summary	10	
+160512_1420	1	summary	11	
+160512_1420	1	summary	12	
+160512_1420	1	summary	13	
+160512_1420	1	summary	14	
+160512_1420	1	summary	15	
+160512_1420	1	summary	16	
+160512_1420	1	summary	17	
+160512_1420	1	summary	18	
+160512_1420	1	summary	19	
+160512_1420	1	summary	20	
+160512_1420	1	summary	21	
+160512_1420	1	summary	22	
+160512_1420	1	summary	23	
+160512_1420	1	summary	24	
+160512_1420	1	summary	25	
+160512_1420	1	summary	26	
+160512_1420	1	summary	27	
+160512_1420	1	summary	28	
+160512_1420	1	summary	29	
+160512_1420	1	summary	30	
+160512_1420	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake	
+160512_1420	1	simulations	30	28	28	8	41.27200000000001	41.27200000000001	44	0	
+160512_1420	1	simulations	30	2	16	6	22.13664963710057	2.136280705061746	43	0	
+160512_1420	1	simulations	30	28	28	7	41.27200000000001	41.27200000000001	39	0	
+160512_1420	1	simulations	30	6	28	6	67.00974210960658	-1.217567183042486	25	0	
+160512_1420	1	simulations	30	2	24	6	48.77420258117386	-1.054027654609778	0	43	
+160512_1420	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage	
+160512_1420	1	chat	30	8	4	2	"a toi"	-	56	
+160512_1420	1	chat	30	7	4	1	"je propose 28.0"	-	55	
+160512_1420	1	chat	30	2	1	2	"petite larme, tu vas ma manquer"	-	53	
+160512_1420	1	chat	30	1	1	1	"derniiiiiiiier !!!!!!!!!"	-	53	
+160512_1420	1	chat	30	4	2	2	"tu tape pas "	-	52	
+160512_1420	1	chat	30	4	2	2	"lol "	-	50	
+160512_1420	1	chat	30	8	4	2	"ok"	-	49	
+160512_1420	1	chat	30	3	2	1	"tu sais parceque je tape comme un bourrin(e)"	-	43	
+160512_1420	1	chat	30	1	1	1	"on peut toujours parler après je sais qui tu es mouahmouahmouah"	-	42	
+160512_1420	1	chat	30	4	2	2	"je suis trop fortee ouui "	-	36	
+160512_1420	1	chat	30	3	2	1	"ahah"	-	33	
+160512_1420	1	chat	30	4	2	2	"je vais mener des enquetes jai un don "	-	28	
+160512_1420	1	chat	30	4	2	2	"ah merde "	-	25	
+160512_1420	1	chat	30	1	1	1	"les autres ils sont trop sérieux et nous on déconne depuis le début :p"	-	23	
+160512_1420	1	chat	30	4	2	2	"jai dit forte "	-	22	
+160512_1420	1	chat	30	3	2	1	"attnd je tente clavier de velour"	-	21	
+160512_1420	1	chat	30	2	1	2	"Si tu te trompes je rigole "	-	20	
+160512_1420	1	chat	30	4	2	2	":O"	-	19	
+160512_1420	1	chat	30	3	2	1	"pas l'habitude"	-	16	
+160512_1420	1	chat	30	1	1	1	"on verra bien :p"	-	10	
+160512_1420	1	chat	30	3	2	1	"t'inquiete(e) aps"	-	8	
+160512_1420	1	chat	30	3	2	1	"pas"	-	4	
+160512_1420	1	chat	30	4	2	2	"jentend toujours"	-	4	
+160512_1420	1	chat	30	1	1	1	"je vois ton écran"	-	1	
+160512_1420	1	session	Subject	FinalProfit	ShowUpFee	ShowUpFeeInvested	MoneyAdded	MoneyToPay	MoneyEarned	
+160512_1420	1	session	1	11258.20374999998	0	0	0	11258.20374999998	11258.20374999998	
+160512_1420	1	session	2	11258.20374999998	0	0	0	11258.20374999998	11258.20374999998	
+160512_1420	1	session	3	11223.28193271406	0	0	0	11223.28193271406	11223.28193271406	
+160512_1420	1	session	4	11269.55650691656	0	0	0	11269.55650691656	11269.55650691656	
+160512_1420	1	session	5	9411.477321102024	0	0	0	9411.477321102024	9411.477321102024	
+160512_1420	1	session	6	9608.772925817688	0	0	0	9608.772925817688	9608.772925817688	
+160512_1420	1	session	7	10967.75073699994	0	0	0	10967.75073699994	10967.75073699994	
+160512_1420	1	session	8	10934.01817797082	0	0	0	10934.01817797082	10934.01817797082	
+160512_1420	2	globals	Period	NumPeriods	RepeatTreatment	timeLimitM	timeLimit	numQuestion	essay	goingback	
+160512_1420	2	globals	1	1	0	10	610	16	0	1	
+160512_1420	2	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	question	totalScore	back	prevQuestion	ans[1]	ans[2]	ans[3]	ans[4]	ans[5]	ans[6]	ans[7]	ans[8]	ans[9]	ans[10]	ans[11]	ans[12]	ans[13]	ans[14]	ans[15]	ans[16]	ans[17]	i	TimeOKStageOK	jump	ans	TimeAllerQ1OK	TimeOKQ1OK	TimeQPrcdenteQ1OK	TimeQSuivanteQ1OK	TimeOKComputeScoreOK	
+160512_1420	2	subjects	1	1	1	0	0	1	17	7	0	17	8	1	4	8	2	8	6	5	7	5	2	7	7	5	6	6	0	18	16	0	0	0	153	0	0	26	
+160512_1420	2	subjects	1	2	1	0	0	1	17	10	0	17	8	1	6	8	5	8	6	4	5	5	3	5	7	6	3	1	0	18	12	0	0	0	20	-	0	0	
+160512_1420	2	subjects	1	3	1	0	0	1	13	5	0	13	0	1	6	0	1	4	6	7	5	4	7	8	0	0	0	0	0	18	16	1	0	604	85	-	524	27	
+160512_1420	2	subjects	1	4	1	0	0	1	17	4	0	17	8	1	6	1	1	5	2	5	2	5	5	8	1	3	7	3	0	18	13	2	1	370	358	-	0	17	
+160512_1420	2	subjects	1	5	1	0	0	1	16	11	0	14	8	1	6	8	5	4	6	4	0	4	3	6	7	0	0	0	0	18	15	0	0	0	94	-	44	12	
+160512_1420	2	subjects	1	6	1	0	0	1	17	1	0	17	4	8	8	7	3	1	7	4	4	6	2	4	5	4	5	6	0	18	0	0	0	0	403	-	0	0	
+160512_1420	2	subjects	1	7	1	0	0	1	17	4	0	17	2	1	2	8	7	7	6	8	6	4	5	1	8	3	7	6	0	18	3	0	0	0	358	-	0	24	
+160512_1420	2	subjects	1	8	1	0	0	1	17	1	0	17	7	2	8	8	7	6	2	3	5	7	5	8	1	8	6	8	0	18	0	0	0	0	407	-	0	21	
+160512_1420	2	summary	Period	
+160512_1420	2	summary	1	
+160512_1420	2	contracts	Period	player	question	
+160512_1420	2	contracts	1	1	17	
+160512_1420	2	contracts	1	2	17	
+160512_1420	2	contracts	1	3	13	
+160512_1420	2	contracts	1	4	17	
+160512_1420	2	contracts	1	5	16	
+160512_1420	2	contracts	1	6	17	
+160512_1420	2	contracts	1	7	17	
+160512_1420	2	contracts	1	8	17	
+160512_1420	2	session	Subject	FinalProfit	ShowUpFee	ShowUpFeeInvested	MoneyAdded	MoneyToPay	MoneyEarned	totalScore	
+160512_1420	2	session	1	11258.20374999998	0	0	0	11258.20374999998	11258.20374999998	7	
+160512_1420	2	session	2	11258.20374999998	0	0	0	11258.20374999998	11258.20374999998	10	
+160512_1420	2	session	3	11223.28193271406	0	0	0	11223.28193271406	11223.28193271406	5	
+160512_1420	2	session	4	11269.55650691656	0	0	0	11269.55650691656	11269.55650691656	4	
+160512_1420	2	session	5	9411.477321102024	0	0	0	9411.477321102024	9411.477321102024	11	
+160512_1420	2	session	6	9608.772925817688	0	0	0	9608.772925817688	9608.772925817688	1	
+160512_1420	2	session	7	10967.75073699994	0	0	0	10967.75073699994	10967.75073699994	4	
+160512_1420	2	session	8	10934.01817797082	0	0	0	10934.01817797082	10934.01817797082	1	

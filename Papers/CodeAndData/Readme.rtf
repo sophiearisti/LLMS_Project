@@ -1,0 +1,140 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Oblique;\f2\fswiss\fcharset0 Helvetica-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red252\green90\blue64;\red1\green20\blue69;\red92\green101\blue10;
+\red61\green57\blue1;\red29\green48\blue13;\red196\green255\blue139;\red255\green255\blue232;\red196\green255\blue139;
+\red76\green0\blue1;\red251\green0\blue7;\red253\green139\blue9;\red109\green197\blue255;\red3\green45\blue153;
+}
+{\*\expandedcolortbl;;\cssrgb\c100000\c44604\c31621;\cssrgb\c0\c11664\c34131;\cssrgb\c43486\c46396\c3096;
+\cssrgb\c30438\c28381\c0;\cssrgb\c14810\c24128\c5727;\cssrgb\c80449\c99929\c61180;\cssrgb\c100000\c100000\c92610;\cssrgb\c80504\c100000\c61376;
+\cssrgb\c37646\c1304\c0;\cssrgb\c100000\c12195\c0;\cssrgb\c100000\c61456\c0;\cssrgb\c49051\c81555\c100000;\cssrgb\c0\c25950\c66514;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww21940\viewh18660\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+
+\f0\fs36 \cf0 \
+\cf2 Code and Data reproduction guidelines for \
+\'93
+\f1\i Strategic Environment Effect and Communication
+\f0\i0 \'94 \
+by \
+Nobuyuki Hanaki and Ali Ozkes\
+
+\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2\b\fs26 \cf3 \ul \ulc3 Overview
+\f0\b0 \cf0 \ulnone \
+\
+
+\fs24 There are four folders in this package: \
+\\Data: All experimental data exported from zTree. Furthermore, some interim data files that are created using the code files in the package and that are used elsewhere in the code files, included to help test each code file separately. \
+\\Code: All code files including Mathematica, R, and Stata files. \
+\\Instructions: The original (French) versions and English translations of the experimental instructions that are read aloud and distributed to the subjects. The Appendix A includes the one with chat in English only. \
+\\zTree: zTree program used in the experiments, which is designed using z-Tree version 3.5.1, based on the program used in Potters and Suetens, ReStud, 2009.
+\f2\b\fs28 \
+
+\f0\b0\fs24 \
+
+\f2\b\fs26 \cf4 \ul \ulc5 Environment overview
+\f0\b0\fs24 \cf0 \ulnone \
+\
+The last check of this package following this guideline was done on \
+\
+The RStudio version: RStudio 2022.07.1+554 "Spotted Wakerobin" Release (2022-07-22) for macOS\
+\
+The R version: R 4.2.1 GUI 1.79 High Sierra build (8095)\
+\
+The Mathematica version: Mathematica 13.1.0.0 for Mac\
+\
+The Stata version: Stata/SE 17.0 for Mac (Apple Silicon) Revision 09 Aug 2021\
+\
+System: MacBook Pro (Apple M1 Pro, 14-inch, 2021, 16gb) with macOS Monterey 12.5.1\
+\
+
+\f2\b\fs26 \cf6 \ul \ulc7 Data overview\cf8 \
+\cf9 \ulc9 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b0\fs24 \cf0 \ulnone The experimental data are automatically exported from zTree. They are saved in the form: Date_Time.xls \
+In certain instances Date_Time_.xls are created, because some of the codes (in particular, package updates (zTree) along the way) required resaving the data in a different encoding. The content of the data are untouched during this creation process. \
+The data folder includes some other interim data files that are produced while running the code files below. These are described below as well. 
+\fs26 \cf9 \
+
+\fs24 \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2\b\fs26 \cf10 \ul \ulc10 Follow this sequence for replication\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b0\fs24 \cf0 \ulnone In all code files, detailed comments are added to help replication. This includes descriptions for the computed values that are not presented in tables or figures. In certain instances, the replicating reader needs to alter parameter values (such as Comp for the strategic environment and Chat for the communication treatments). These are described in the code.\
+\
+All required packages are explicitly called in the code files. Additionally Code\\R_pack_versions.txt is listing all the R packages that are used with their relevant versions. \
+\
+Before running a code file, make sure to set the working directory as the Data folder. \
+\
+1 - Run BehaviorCode.R line by line.\
+This will produce the following (line numbers in parentheses): \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf11 Table 2 (256)\
+\cf12 Figure 2 (427)\
+Figure 3 (445)\
+Figure 14 (463)\
+Figures 16-19 (631)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+2 - First clear the environment and run BehaviorCode.R until line 252 (setup and variables).\
+Then run ChatCode.R line by line. \
+This will produce the following (line numbers in parentheses): \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf11 Table 4 (261)\
+Table 5 (296)\
+Table 7 (520)\
+Table 8-19 (814)\
+\cf12 Figure 6 (218)\
+Figure 7 (507)\
+Figure 8 (514)\
+Figure 9 (638)\
+Figure 10 (659)\
+Figure 11 (741)\
+Figure 20 (597)\
+Figure 21-22 (693)\cf0 \
+\
+3 - Run BehaviorCodeExtra.R line by line.\
+This will produce the following (line numbers in parentheses): \
+\cf11 Table 6 (185)\
+\cf12 Figure 15 (147)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+4 - Run RL_MLE_Estimate.R line by line.\
+This executes the maximum likelihood estimation, resulting in lambda =0.1 and omega =0.8 for the RL model. These values are used in the 5th and 7th step to produce Figure 4. \
+\
+5 - Run RL_Sim.nb line by line. \
+This will produce the file \'93Uniform0108.csv\'94 that is used in the 7th step. This file is included in the Data folder for the ease of testing the 7th step.\
+\
+6 - Run RL_Sim_Grid.nb line by line \
+This will produce the file \'93UniformAll.csv\'94 that is used in the 7th step to produce Figure 5. This file is included in the Data folder for the ease of testing the 7th step. This code can take hours to around a day depending on the system. \
+\
+7 - Run RLSimulation.R\
+This will produce the following (line numbers in parentheses): \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf12 Figure 4 (21)\
+Figure 5 (38)\cf0 \
+\
+8 - Run Reciprocity_Reg.smcl (Stata)\
+This follows the exact procedure in Potters and Suetens, ReStud, 2009. \
+The file \'93Data_for_Stata.csv\'94 is produced at step 1 (line 681). This file is included in Data folder, so you can skip Step 1 to test this step. This produces the following: \
+\cf11 Table 3\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2\b\fs26 \cf13 \ul \ulc13 \
+\cf14 Note
+\f0\b0\fs24 \cf0 \ulnone \
+\cf12 Figures 12-13\cf0  are provided in the instructions appendix of the paper. \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2\b\fs28 \cf2 Date of creation of this file: 04 September 2022
+\f0\b0\fs24 \cf0 \
+ }

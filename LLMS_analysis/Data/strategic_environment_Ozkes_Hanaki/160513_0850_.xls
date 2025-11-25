@@ -1,0 +1,1722 @@
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	0	30	0	0	1	1	1	2	180	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	0	1	1	-17.462	0	1	2	-17.462	1	4	1	1	0	69	2	2	-1	0	0	54	-9958.728	-99.58728	0	-17														
+160513_0850	1	subjects	0	2	1	-17.462	0	1	1	-17.462	2	4	1	1	0	66	2	2	-	-	-	48	-	-	-	-17														
+160513_0850	1	subjects	0	3	2	-17.462	0	1	4	-17.462	1	4	1	1	0	60	2	2	-	-	-	52	-	-	-	-1														
+160513_0850	1	subjects	0	4	2	-17.462	0	1	3	-17.462	2	4	1	1	0	60	2	2	-	-	-	54	-	-	-	-18														
+160513_0850	1	subjects	0	5	3	-17.462	0	1	6	-17.462	1	4	1	1	0	66	2	2	-	-	-	51	-	-	-	-21														
+160513_0850	1	subjects	0	6	3	-17.462	0	1	5	-17.462	2	4	1	1	0	67	2	2	-	-	-	54	-	-	-	-19														
+160513_0850	1	subjects	0	7	4	-17.462	0	1	8	-17.462	1	4	1	1	0	26	2	2	-	-	-	52	-	-	-	-16														
+160513_0850	1	subjects	0	8	4	-17.462	0	1	7	-17.462	2	4	1	1	0	65	2	2	-	-	-	52	-	-	-	-17														
+160513_0850	1	subjects	0	9	5	-17.462	0	1	10	-17.462	1	4	1	1	0	66	2	2	-	-	-	53	-	-	-	-17														
+160513_0850	1	subjects	0	10	5	-17.462	0	1	9	-17.462	2	4	1	1	0	67	2	2	-	-	-	53	-	-	-	-18														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	0	0	0	6	-28	-28	145	-																														
+160513_0850	1	simulations	0	0	0	10	-28	-28	145	-																														
+160513_0850	1	simulations	0	0	0	1	-28	-28	145	-																														
+160513_0850	1	simulations	0	0	0	3	-28	-28	145	-																														
+160513_0850	1	simulations	0	0	0	9	-28	-28	145	-																														
+160513_0850	1	simulations	0	0	0	4	-28	-28	145	-																														
+160513_0850	1	simulations	0	0	0	2	-28	-28	145	-																														
+160513_0850	1	simulations	0	0	0	5	-28	-28	145	-																														
+160513_0850	1	simulations	0	0	0	7	-28	-28	143	-																														
+160513_0850	1	simulations	0	0	0	8	-28	-28	143	-																														
+160513_0850	1	simulations	0	2	2	6	-17.462	-17.462	108	-																														
+160513_0850	1	simulations	0	2	2	3	-17.462	-17.462	107	-																														
+160513_0850	1	simulations	0	2	2	1	-17.462	-17.462	107	-																														
+160513_0850	1	simulations	0	2	2	5	-17.462	-17.462	107	-																														
+160513_0850	1	simulations	0	2	2	7	-17.462	-17.462	106	-																														
+160513_0850	1	simulations	0	2	2	10	-17.462	-17.462	106	-																														
+160513_0850	1	simulations	0	2	2	4	-17.462	-17.462	106	-																														
+160513_0850	1	simulations	0	2	2	9	-17.462	-17.462	106	-																														
+160513_0850	1	simulations	0	2	2	2	-17.462	-17.462	105	-																														
+160513_0850	1	simulations	0	2	2	8	-17.462	-17.462	105	-																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	0	9	5	1	Bonjour	-	80																															
+160513_0850	1	chat	0	6	3	2	bonjour	-	78																															
+160513_0850	1	chat	0	2	1	2	bonjour	-	76																															
+160513_0850	1	chat	0	1	1	1	bonjour	-	76																															
+160513_0850	1	chat	0	10	5	2	Bonjour	-	73																															
+160513_0850	1	chat	0	3	2	1	Bonjour	-	73																															
+160513_0850	1	chat	0	5	3	1	Bonjour	-	71																															
+160513_0850	1	chat	0	8	4	2	bonjour	-	69																															
+160513_0850	1	chat	0	4	2	2	Bonjour	-	66																															
+160513_0850	1	chat	0	7	4	1	bonjour	-	35																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	1	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	1	1	1	35.882	10035.882	0	2	35.882	1	4	0	0	-	-	18	18	-	-	-	26	-	-	12	-														
+160513_0850	1	subjects	1	2	1	35.882	10035.882	0	1	35.882	2	4	0	0	-	-	18	18	-	-	-	48	-	-	11	-														
+160513_0850	1	subjects	1	3	2	42.26	10042.26	0	4	31.642	1	4	0	0	-	-	18	20	-	-	-	32	-	-	9	-														
+160513_0850	1	subjects	1	4	2	31.642	10031.642	0	3	42.26	2	4	0	0	-	-	20	18	-	-	-	-10	-	-	6	-														
+160513_0850	1	subjects	1	5	3	8.266	10008.266	0	6	9.914	1	4	0	0	-	-	14	6	-	-	-	48	-	-	5	-														
+160513_0850	1	subjects	1	6	3	9.914	10009.914	0	5	8.266	2	4	0	0	-	-	6	14	-	-	-	37	-	-	9	-														
+160513_0850	1	subjects	1	7	4	41.272	10041.272	0	8	41.272	1	4	0	0	-	-	28	28	-	-	-	33	-	-	0	-														
+160513_0850	1	subjects	1	8	4	41.272	10041.272	0	7	41.272	2	4	0	0	-	-	28	28	-	-	-	27	-	-	10	-														
+160513_0850	1	subjects	1	9	5	32.7095	10032.7095	0	10	37.168	1	4	0	0	-	-	18	17	-	-	-	40	-	-	0	-														
+160513_0850	1	subjects	1	10	5	37.168	10037.168	0	9	32.7095	2	4	0	0	-	-	17	18	-	-	-	1	-	-	6	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	1	28	28	8	41.272	41.272	45	0																														
+160513_0850	1	simulations	1	5	5	5	-3.2675	-3.2675	40	0																														
+160513_0850	1	simulations	1	28	0	7	-92.68	-23.408	36	0																														
+160513_0850	1	simulations	1	14	10	5	17.898	23.258	21	0																														
+160513_0850	1	simulations	1	26	28	8	51.108	31.418	8	0																														
+160513_0850	1	simulations	1	18	24	9	55.148	16.49	8	0																														
+160513_0850	1	simulations	1	2	4	10	-16.716	-9.19	5	0																														
+160513_0850	1	simulations	1	26	0	7	-73.604	-24.022	3	0																														
+160513_0850	1	simulations	1	18	28	1	68.212	-7.558	0	50																														
+160513_0850	1	simulations	1	15	28	10	65.452	-21.9925	0	47																														
+160513_0850	1	simulations	1	18	28	3	68.212	-7.558	0	44																														
+160513_0850	1	simulations	1	17	26	10	61.624	1.0855	0	33																														
+160513_0850	1	simulations	1	20	20	4	38.68	38.68	0	26																														
+160513_0850	1	simulations	1	14	27	10	60.7975	-19.276	0	18																														
+160513_0850	1	simulations	1	17	5	10	-1.0715	8.2045	0	11																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	1	1	1	1	bonjour	-	52																															
+160513_0850	1	chat	1	2	1	2	bonjjour	-	47																															
+160513_0850	1	chat	1	10	5	2	un multiple de 2?	-	31																															
+160513_0850	1	chat	1	2	1	2	moi je choisis des nombres entre 8 et 20	-	23																															
+160513_0850	1	chat	1	1	1	1	notre but c'est d'avoir un max de points donc il faut que mon choix soit de 18 et toi de 28	-	20																															
+160513_0850	1	chat	1	3	2	1	il faut regarder le tableau pour trouver les meilleures combinaisons	-	19																															
+160513_0850	1	chat	1	9	5	1	comment ça un multiple de 2?	-	14																															
+160513_0850	1	chat	1	2	1	2	et toi entre 6 et 28	-	11																															
+160513_0850	1	chat	1	1	1	1	pour qu'on ait 68.21 poinyd 	-	10																															
+160513_0850	1	chat	1	3	2	1	tu devrais lettre 28 et moi 18	-	5																															
+160513_0850	1	chat	1	3	2	1	mettre	-	1																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	2	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	2	1	1	68.212	10104.094	0	2	-7.558	1	4	0	1	-	0	18	28	18	18	35.882	56	-	-	11	-														
+160513_0850	1	subjects	2	2	1	-7.558	10028.324	0	1	68.212	2	4	1	0	-	5	28	18	18	18	35.882	43	-	-	6	-														
+160513_0850	1	subjects	2	3	2	2.12	10044.38	0	4	67.272	1	4	0	0	-	0	28	20	18	20	42.26	53	-	-	0	-														
+160513_0850	1	subjects	2	4	2	67.272	10098.914	0	3	2.12	2	4	0	0	-	0	20	28	20	18	31.642	36	-	-	5	-														
+160513_0850	1	subjects	2	5	3	63.42	10071.686	0	6	-26.782	1	4	0	0	-	0	14	28	14	6	8.266	54	-	-	0	-														
+160513_0850	1	subjects	2	6	3	-26.782	9983.132	0	5	63.42	2	4	0	0	-	0	28	14	6	14	9.914	46	-	-	8	-														
+160513_0850	1	subjects	2	7	4	2.12	10043.392	0	8	67.272	1	4	0	0	-	0	28	20	28	28	41.272	30	-	-	0	-														
+160513_0850	1	subjects	2	8	4	67.272	10108.544	0	7	2.12	2	4	0	0	-	0	20	28	28	28	41.272	58	-	-	8	-														
+160513_0850	1	subjects	2	9	5	24.4555	10057.165	0	10	22.832	1	4	0	0	-	0	12	13	18	17	32.7095	16	-	-	0	-														
+160513_0850	1	subjects	2	10	5	22.832	10060	0	9	24.4555	2	4	0	0	-	0	13	12	17	18	37.168	5	-	-	8	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	2	15	25	10	57.1225	-1.6375	43	0																														
+160513_0850	1	simulations	2	14	20	2	42.748	17.698	41	0																														
+160513_0850	1	simulations	2	18	28	7	68.212	-7.558	41	0																														
+160513_0850	1	simulations	2	10	10	5	16.09	16.09	35	0																														
+160513_0850	1	simulations	2	17	24	10	55.444	12.3275	35	0																														
+160513_0850	1	simulations	2	28	28	8	41.272	41.272	34	0																														
+160513_0850	1	simulations	2	24	28	7	58.72	21.608	26	0																														
+160513_0850	1	simulations	2	14	14	5	27.706	27.706	17	0																														
+160513_0850	1	simulations	2	18	28	1	68.212	-7.558	14	0																														
+160513_0850	1	simulations	2	28	28	7	41.272	41.272	11	0																														
+160513_0850	1	simulations	2	20	26	8	60.058	14.596	11	0																														
+160513_0850	1	simulations	2	28	18	10	-7.558	68.212	7	0																														
+160513_0850	1	simulations	2	28	18	9	-7.558	68.212	5	0																														
+160513_0850	1	simulations	2	18	28	1	68.212	-7.558	0	60																														
+160513_0850	1	simulations	2	28	28	3	41.272	41.272	0	58																														
+160513_0850	1	simulations	2	26	20	6	14.596	60.058	0	57																														
+160513_0850	1	simulations	2	28	18	10	-7.558	68.212	0	52																														
+160513_0850	1	simulations	2	28	18	2	-7.558	68.212	0	50																														
+160513_0850	1	simulations	2	13	25	10	53.4925	-10.2155	0	39																														
+160513_0850	1	simulations	2	20	28	4	67.272	2.12	0	38																														
+160513_0850	1	simulations	2	13	24	10	51.068	-4.2125	0	31																														
+160513_0850	1	simulations	2	13	12	10	22.832	24.4555	0	23																														
+160513_0850	1	simulations	2	13	10	10	18.28	21.4495	0	8																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	2	4	2	2	prend 28	-	43																															
+160513_0850	1	chat	2	1	1	1	on refait 18 pour moi et 28 pour toi ?	-	37																															
+160513_0850	1	chat	2	9	5	1	Si tu fais 28 et moi 18 on aura le max de points	-	37																															
+160513_0850	1	chat	2	2	1	2	okay	-	32																															
+160513_0850	1	chat	2	6	3	2	on peut se mettre d'accord sur les numéros à mettre ? 	-	29																															
+160513_0850	1	chat	2	1	1	1	c'est le max dans le tableau	-	29																															
+160513_0850	1	chat	2	3	2	1	en fait il faut qu'on choississe le meme nombre	-	28																															
+160513_0850	1	chat	2	1	1	1	ok	-	27																															
+160513_0850	1	chat	2	3	2	1	ac chaque fois	-	25																															
+160513_0850	1	chat	2	6	3	2	je met 20	-	22																															
+160513_0850	1	chat	2	3	2	1	on gagnerait pareil	-	22																															
+160513_0850	1	chat	2	2	1	2	parfait	-	20																															
+160513_0850	1	chat	2	10	5	2	ok	-	17																															
+160513_0850	1	chat	2	3	2	1	et personne ne gagnerait moins	-	10																															
+160513_0850	1	chat	2	3	2	1	on met tous les deux 28?	-	4																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	3	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	3	1	1	35.882	10139.976	0	2	35.882	1	4	0	0	0	0	18	18	18	28	68.212	51	-	-	14	-														
+160513_0850	1	subjects	3	2	1	35.882	10064.206	0	1	35.882	2	4	0	0	0	0	18	18	28	18	-7.558	51	-	-	9	-														
+160513_0850	1	subjects	3	3	2	41.914	10086.294	0	4	41.914	1	4	0	0	0	0	26	26	28	20	2.12	55	-	-	12	-														
+160513_0850	1	subjects	3	4	2	41.914	10140.828	0	3	41.914	2	4	0	0	0	0	26	26	20	28	67.272	56	-	-	10	-														
+160513_0850	1	subjects	3	5	3	16.49	10088.176	0	6	55.148	1	4	1	1	0	7	24	18	14	28	63.42	59	-	-	6	-														
+160513_0850	1	subjects	3	6	3	55.148	10038.28	0	5	16.49	2	4	1	1	0	6	18	24	28	14	-26.782	28	-	-	12	-														
+160513_0850	1	subjects	3	7	4	14.618	10058.01	0	8	-1.462	1	4	0	0	0	0	6	18	28	20	2.12	27	-	-	0	-														
+160513_0850	1	subjects	3	8	4	-1.462	10107.082	0	7	14.618	2	4	0	0	0	0	18	6	20	28	67.272	59	-	-	7	-														
+160513_0850	1	subjects	3	9	5	20.756	10077.921	0	10	40.2135	1	4	1	1	0	5	19	14	12	13	24.4555	55	-	-	10	-														
+160513_0850	1	subjects	3	10	5	40.2135	10100.2135	0	9	20.756	2	4	1	1	0	10	14	19	13	12	22.832	43	-	-	12	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	3	7	23	10	26.4005	-22.2555	53	0																														
+160513_0850	1	simulations	3	18	28	8	68.212	-7.558	50	0																														
+160513_0850	1	simulations	3	14	19	10	40.2135	20.756	46	0																														
+160513_0850	1	simulations	3	14	16	7	32.676	26.594	44	0																														
+160513_0850	1	simulations	3	28	18	9	-7.558	68.212	39	0																														
+160513_0850	1	simulations	3	28	28	7	41.272	41.272	35	0																														
+160513_0850	1	simulations	3	24	18	5	16.49	55.148	33	0																														
+160513_0850	1	simulations	3	18	24	6	55.148	16.49	31	0																														
+160513_0850	1	simulations	3	16	28	8	66.928	-17.192	27	0																														
+160513_0850	1	simulations	3	14	14	7	27.706	27.706	26	0																														
+160513_0850	1	simulations	3	26	26	4	41.914	41.914	21	0																														
+160513_0850	1	simulations	3	19	14	9	20.756	40.2135	13	0																														
+160513_0850	1	simulations	3	2	28	7	-4.332	-83.398	10	0																														
+160513_0850	1	simulations	3	13	28	7	60.832	-31.5605	2	0																														
+160513_0850	1	simulations	3	28	28	8	41.272	41.272	2	0																														
+160513_0850	1	simulations	3	18	18	1	35.882	35.882	0	60																														
+160513_0850	1	simulations	3	26	26	3	41.914	41.914	0	59																														
+160513_0850	1	simulations	3	14	19	10	40.2135	20.756	0	51																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	3	5	3	1	je met 24	-	52																															
+160513_0850	1	chat	3	2	1	2	la j'ai perdu des points	-	50																															
+160513_0850	1	chat	3	3	2	1	ecoute il faut qu'on mette 26 tous les deux a chaque fois	-	50																															
+160513_0850	1	chat	3	4	2	2	Prend 28 et je prend 20	-	50																															
+160513_0850	1	chat	3	5	3	1	et toi ?	-	47																															
+160513_0850	1	chat	3	1	1	1	oui j'ai pas compris	-	44																															
+160513_0850	1	chat	3	3	2	1	ca nous fera gagner le max possible à chaque période	-	43																															
+160513_0850	1	chat	3	3	2	1	ok?	-	41																															
+160513_0850	1	chat	3	1	1	1	tu veux qu'on fasse comment la	-	38																															
+160513_0850	1	chat	3	6	3	2	18	-	37																															
+160513_0850	1	chat	3	10	5	2	choisis 19 et moi je choisis 14	-	37																															
+160513_0850	1	chat	3	5	3	1	ok	-	29																															
+160513_0850	1	chat	3	4	2	2	ok	-	28																															
+160513_0850	1	chat	3	9	5	1	ok	-	25																															
+160513_0850	1	chat	3	3	2	1	non parce que moi ca me fait gagner que 2 si on fait comme tu dis	-	19																															
+160513_0850	1	chat	3	2	1	2	on joue tous les deux 18 c'est bon ?	-	9																															
+160513_0850	1	chat	3	3	2	1	alors que si on met tous les deux 26 on gagne pareil	-	9																															
+160513_0850	1	chat	3	3	2	1	donc tous les deux 26 ok?	-	3																															
+160513_0850	1	chat	3	1	1	1	ok	-	1																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	4	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	4	1	1	41.914	10181.89	0	2	41.914	1	4	0	0	-	0	26	26	18	18	35.882	57	-	-	14	-														
+160513_0850	1	subjects	4	2	1	41.914	10106.12	0	1	41.914	2	4	0	0	-	0	26	26	18	18	35.882	53	-	-	13	-														
+160513_0850	1	subjects	4	3	2	41.914	10128.208	0	4	41.914	1	4	1	0	-	39	26	26	26	26	41.914	63	-	-	7	-														
+160513_0850	1	subjects	4	4	2	41.914	10182.742	0	3	41.914	2	4	0	1	-	0	26	26	26	26	41.914	59	-	-	3	-														
+160513_0850	1	subjects	4	5	3	32.676	10120.852	0	6	26.594	1	4	0	0	-	0	14	16	24	18	16.49	56	-	-	12	-														
+160513_0850	1	subjects	4	6	3	26.594	10064.874	0	5	32.676	2	4	0	0	-	0	16	14	18	24	55.148	32	-	-	6	-														
+160513_0850	1	subjects	4	7	4	23.722	10081.732	0	8	4.652	1	4	0	0	-	0	8	18	6	18	14.618	2	-	-	0	-														
+160513_0850	1	subjects	4	8	4	4.652	10111.734	0	7	23.722	2	4	0	0	-	0	18	8	18	6	-1.462	55	-	-	10	-														
+160513_0850	1	subjects	4	9	5	24.648	10102.569	0	10	43.616	1	4	0	0	-	0	20	16	19	14	20.756	47	-	-	14	-														
+160513_0850	1	subjects	4	10	5	43.616	10143.8295	0	9	24.648	2	4	0	0	-	0	16	20	14	19	40.2135	33	-	-	10	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	4	12	1	10	-0.3485	-19.912	54	0																														
+160513_0850	1	simulations	4	25	12	9	-14.488	50.8435	49	0																														
+160513_0850	1	simulations	4	28	28	8	41.272	41.272	47	0																														
+160513_0850	1	simulations	4	2	25	10	-6.2265	-56.608	46	0																														
+160513_0850	1	simulations	4	16	15	5	29.4035	32.728	45	0																														
+160513_0850	1	simulations	4	15	14	7	27.428	30.1855	45	0																														
+160513_0850	1	simulations	4	20	20	9	38.68	38.68	38	0																														
+160513_0850	1	simulations	4	16	20	10	43.616	24.648	37	0																														
+160513_0850	1	simulations	4	22	23	7	44.5055	37.212	37	0																														
+160513_0850	1	simulations	4	26	26	4	41.914	41.914	37	0																														
+160513_0850	1	simulations	4	18	26	8	61.658	5.578	35	0																														
+160513_0850	1	simulations	4	28	28	2	41.272	41.272	32	0																														
+160513_0850	1	simulations	4	12	12	9	22.328	22.328	28	0																														
+160513_0850	1	simulations	4	0	18	7	-26.038	-19.54	27	0																														
+160513_0850	1	simulations	4	20	12	9	10.792	39.656	22	0																														
+160513_0850	1	simulations	4	16	18	8	37.898	29.548	20	0																														
+160513_0850	1	simulations	4	13	13	7	25.1245	25.1245	18	0																														
+160513_0850	1	simulations	4	20	16	9	24.648	43.616	13	0																														
+160513_0850	1	simulations	4	16	24	8	55.184	8.176	11	0																														
+160513_0850	1	simulations	4	17	16	7	31.164	35.0555	9	0																														
+160513_0850	1	simulations	4	14.4	12.7	10	24.368815	28.14086	5	0																														
+160513_0850	1	simulations	4	26	16	8	-3.396	61.034	0	0																														
+160513_0850	1	simulations	4	12	16	5	30.904	21.008	0	0																														
+160513_0850	1	simulations	4	26	26	1	41.914	41.914	0	60																														
+160513_0850	1	simulations	4	26	28	2	51.108	31.418	0	56																														
+160513_0850	1	simulations	4	16	28	6	66.928	-17.192	0	38																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	4	3	2	1	on fait pareil jusqu'a la fin	-	52																															
+160513_0850	1	chat	4	2	1	2	pour gagner tous les 2 un max il faut jouer 28	-	49																															
+160513_0850	1	chat	4	3	2	1	26 tous les deux à chaque fois	-	45																															
+160513_0850	1	chat	4	4	2	2	ok	-	44																															
+160513_0850	1	chat	4	2	1	2	28 pour tous les 2	-	42																															
+160513_0850	1	chat	4	1	1	1	26 regarde 	-	42																															
+160513_0850	1	chat	4	5	3	1	combien mets tu ?	-	35																															
+160513_0850	1	chat	4	2	1	2	non 28	-	25																															
+160513_0850	1	chat	4	1	1	1	ok	-	23																															
+160513_0850	1	chat	4	10	5	2	si tu choisis 20 et moi 16 c'est bon	-	21																															
+160513_0850	1	chat	4	6	3	2	16	-	20																															
+160513_0850	1	chat	4	2	1	2	a non t'as raison	-	12																															
+160513_0850	1	chat	4	2	1	2	26	-	10																															
+160513_0850	1	chat	4	2	1	2	pardon	-	8																															
+160513_0850	1	chat	4	6	3	2	toi?	-	7																															
+160513_0850	1	chat	4	1	1	1	26	-	4																															
+160513_0850	1	chat	4	1	1	1	alors	-	3																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	5	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	5	1	1	41.914	10223.804	0	2	41.914	1	4	0	0	0	0	26	26	26	26	41.914	57	-	-	13	-														
+160513_0850	1	subjects	5	2	1	41.914	10148.034	0	1	41.914	2	4	0	0	0	0	26	26	26	26	41.914	49	-	-	10	-														
+160513_0850	1	subjects	5	3	2	41.914	10170.122	0	4	41.914	1	4	1	1	0	28	26	26	26	26	41.914	62	-	-	14	-														
+160513_0850	1	subjects	5	4	2	41.914	10224.656	0	3	41.914	2	4	1	1	0	39	26	26	26	26	41.914	40	-	-	0	-														
+160513_0850	1	subjects	5	5	3	38.68	10159.532	0	6	38.68	1	4	0	1	0	0	20	20	14	16	32.676	62	-	-	12	-														
+160513_0850	1	subjects	5	6	3	38.68	10103.554	0	5	38.68	2	4	1	0	0	2	20	20	16	14	26.594	60	-	-	13	-														
+160513_0850	1	subjects	5	7	4	35.258	10116.99	0	8	17.012	1	4	0	0	0	0	12	18	8	18	23.722	5	-	-	0	-														
+160513_0850	1	subjects	5	8	4	17.012	10128.746	0	7	35.258	2	4	0	0	0	0	18	12	18	8	4.652	50	-	-	10	-														
+160513_0850	1	subjects	5	9	5	43.46	10146.029	0	10	21.1675	1	4	0	0	0	0	15	20	20	16	24.648	47	-	-	13	-														
+160513_0850	1	subjects	5	10	5	21.1675	10164.997	0	9	43.46	2	4	0	0	0	0	20	15	16	20	43.616	31	-	-	13	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	5	6	5	9	-0.0265	-2.372	57	0																														
+160513_0850	1	simulations	5	14.4	20.7	10	44.926415	16.65926	55	0																														
+160513_0850	1	simulations	5	15	28	7	65.452	-21.9925	52	0																														
+160513_0850	1	simulations	5	13	20	9	41.48	14.2395	51	0																														
+160513_0850	1	simulations	5	13	22	9	46.252	6.1255	44	0																														
+160513_0850	1	simulations	5	14.4	24.3	10	54.407015	-0.11674	44	0																														
+160513_0850	1	simulations	5	9	13	7	19.1125	16.0205	42	0																														
+160513_0850	1	simulations	5	18	28	8	68.212	-7.558	38	0																														
+160513_0850	1	simulations	5	13	10	9	18.28	21.4495	38	0																														
+160513_0850	1	simulations	5	26	26	1	41.914	41.914	38	0																														
+160513_0850	1	simulations	5	18.2	7.2	10	1.5208	20.6267	35	0																														
+160513_0850	1	simulations	5	18	13	7	20.1295	36.752	34	0																														
+160513_0850	1	simulations	5	26	26	4	41.914	41.914	33	0																														
+160513_0850	1	simulations	5	15	20	9	43.46	21.1675	31	0																														
+160513_0850	1	simulations	5	20	20	5	38.68	38.68	29	0																														
+160513_0850	1	simulations	5	16	26	8	61.034	-3.396	28	0																														
+160513_0850	1	simulations	5	26	26	1	41.914	41.914	28	0																														
+160513_0850	1	simulations	5	17.1	14.3	10	25.930565	35.556685	26	0																														
+160513_0850	1	simulations	5	22	18	7	25.178	48.682	25	0																														
+160513_0850	1	simulations	5	20	20	6	38.68	38.68	21	0																														
+160513_0850	1	simulations	5	26	26	1	41.914	41.914	21	0																														
+160513_0850	1	simulations	5	14.3	7	10	10.28598	14.480195	17	0																														
+160513_0850	1	simulations	5	14	16	8	32.676	26.594	15	0																														
+160513_0850	1	simulations	5	26	26	1	41.914	41.914	14	0																														
+160513_0850	1	simulations	5	17	5	10	-1.0715	8.2045	9	0																														
+160513_0850	1	simulations	5	26	26	1	41.914	41.914	7	0																														
+160513_0850	1	simulations	5	13	13	7	25.1245	25.1245	7	0																														
+160513_0850	1	simulations	5	8	14	10	17.698	13.06	2	0																														
+160513_0850	1	simulations	5	14	16	9	32.676	26.594	1	0																														
+160513_0850	1	simulations	5	12	26	8	53.114	-21.212	0	0																														
+160513_0850	1	simulations	5	20	15	10	21.1675	43.46	0	52																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	5	4	2	2	on fait pareil	-	55																															
+160513_0850	1	chat	5	1	1	1	on reste sur 26 	-	54																															
+160513_0850	1	chat	5	3	2	1	oui	-	52																															
+160513_0850	1	chat	5	6	3	2	je met 10	-	52																															
+160513_0850	1	chat	5	2	1	2	on refait ?	-	50																															
+160513_0850	1	chat	5	1	1	1	yes	-	45																															
+160513_0850	1	chat	5	5	3	1	on met 20 ?	-	45																															
+160513_0850	1	chat	5	2	1	2	oui parfait 26	-	44																															
+160513_0850	1	chat	5	6	3	2	ouai c'est bon!	-	30																															
+160513_0850	1	chat	5	5	3	1	ok	-	23																															
+160513_0850	1	chat	5	9	5	1	je chois 15 et toi 20 ?	-	11																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	6	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	6	1	1	41.914	10265.718	0	2	41.914	1	4	0	1	0	0	26	26	26	26	41.914	61	-	-	13	-														
+160513_0850	1	subjects	6	2	1	41.914	10189.948	0	1	41.914	2	4	1	0	0	15	26	26	26	26	41.914	48	-	-	12	-														
+160513_0850	1	subjects	6	3	2	41.914	10212.036	0	4	41.914	1	4	1	1	0	48	26	26	26	26	41.914	63	-	-	14	-														
+160513_0850	1	subjects	6	4	2	41.914	10266.57	0	3	41.914	2	4	1	1	0	41	26	26	26	26	41.914	58	-	-	11	-														
+160513_0850	1	subjects	6	5	3	-14.488	10145.044	0	6	50.8435	1	4	0	0	0	0	25	12	20	20	38.68	58	-	-	11	-														
+160513_0850	1	subjects	6	6	3	50.8435	10154.3975	0	5	-14.488	2	4	0	0	0	0	12	25	20	20	38.68	55	-	-	8	-														
+160513_0850	1	subjects	6	7	4	35.882	10152.872	0	8	35.882	1	4	0	0	0	0	18	18	12	18	35.258	8	-	-	0	-														
+160513_0850	1	subjects	6	8	4	35.882	10164.628	0	7	35.882	2	4	0	0	0	0	18	18	18	12	17.012	57	-	-	7	-														
+160513_0850	1	subjects	6	9	5	41.9125	10187.9415	0	10	41.9125	1	4	0	0	0	0	25	25	15	20	43.46	45	-	-	13	-														
+160513_0850	1	subjects	6	10	5	41.9125	10206.9095	0	9	41.9125	2	4	0	0	0	0	25	25	20	15	21.1675	40	-	-	13	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	6	28	28	9	41.272	41.272	56	0																														
+160513_0850	1	simulations	6	15.6	20.3	10	44.462015	22.30786	55	0																														
+160513_0850	1	simulations	6	18	26	8	61.658	5.578	54	0																														
+160513_0850	1	simulations	6	12	15	7	28.7435	22.172	53	0																														
+160513_0850	1	simulations	6	18	28	8	68.212	-7.558	47	0																														
+160513_0850	1	simulations	6	5	28	7	20.112	-69.3925	45	0																														
+160513_0850	1	simulations	6	14.7	27.9	10	64.626485	-22.666435	44	0																														
+160513_0850	1	simulations	6	27	27	9	41.7005	41.7005	42	0																														
+160513_0850	1	simulations	6	18	16	8	29.548	37.898	39	0																														
+160513_0850	1	simulations	6	6	9	7	4.2815	7.916	35	0																														
+160513_0850	1	simulations	6	25	25	9	41.9125	41.9125	34	0																														
+160513_0850	1	simulations	6	16.2	4.3	10	-0.640925	3.4973	34	0																														
+160513_0850	1	simulations	6	16	26	8	61.034	-3.396	32	0																														
+160513_0850	1	simulations	6	26	26	1	41.914	41.914	31	0																														
+160513_0850	1	simulations	6	20	20	9	38.68	38.68	29	0																														
+160513_0850	1	simulations	6	18	28	6	68.212	-7.558	29	0																														
+160513_0850	1	simulations	6	15	15	7	30.0725	30.0725	27	0																														
+160513_0850	1	simulations	6	28	26	8	31.418	51.108	25	0																														
+160513_0850	1	simulations	6	15.1	3.4	10	-0.1607	-2.725925	23	0																														
+160513_0850	1	simulations	6	28	18	5	-7.558	68.212	20	0																														
+160513_0850	1	simulations	6	28	28	7	41.272	41.272	19	0																														
+160513_0850	1	simulations	6	24	16	8	8.176	55.184	15	0																														
+160513_0850	1	simulations	6	22	28	7	64.108	11.842	11	0																														
+160513_0850	1	simulations	6	16	18	7	37.898	29.548	2	0																														
+160513_0850	1	simulations	6	25	25	10	41.9125	41.9125	0	58																														
+160513_0850	1	simulations	6	20.3	15.6	9	22.30786	44.462015	0	58																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	6	4	2	2	pareil	-	56																															
+160513_0850	1	chat	6	5	3	1	on met à nouveau le même nombre ?	-	52																															
+160513_0850	1	chat	6	6	3	2	je met 18 tu met 28? 	-	51																															
+160513_0850	1	chat	6	3	2	1	oui	-	50																															
+160513_0850	1	chat	6	9	5	1	28 et 28 ?	-	48																															
+160513_0850	1	chat	6	2	1	2	on reste sur ca ? :)	-	44																															
+160513_0850	1	chat	6	1	1	1	oui	-	41																															
+160513_0850	1	chat	6	5	3	1	ok pour ce que tu as dis	-	40																															
+160513_0850	1	chat	6	6	3	2	on peut faire une combinaison ou on gagne plus de points la 	-	37																															
+160513_0850	1	chat	6	1	1	1	parfait	-	34																															
+160513_0850	1	chat	6	5	3	1	ok	-	31																															
+160513_0850	1	chat	6	2	1	2	oui	-	25																															
+160513_0850	1	chat	6	9	5	1	25 et 25 c'est un peu mieux 	-	18																															
+160513_0850	1	chat	6	5	3	1	non je perd	-	14																															
+160513_0850	1	chat	6	10	5	2	je choisis 15.6 et toi 20.3?	-	8																															
+160513_0850	1	chat	6	5	3	1	on met le mêm nombre	-	6																															
+160513_0850	1	chat	6	6	3	2	bizarre sur le tableau tu gagnes	-	6																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	7	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	7	1	1	41.914	10307.632	0	2	41.914	1	4	0	0	0	0	26	26	26	26	41.914	57	-	-	15	-														
+160513_0850	1	subjects	7	2	1	41.914	10231.862	0	1	41.914	2	4	0	0	0	0	26	26	26	26	41.914	56	-	-	14	-														
+160513_0850	1	subjects	7	3	2	41.914	10253.95	0	4	41.914	1	4	1	1	0	38	26	26	26	26	41.914	54	-	-	14	-														
+160513_0850	1	subjects	7	4	2	41.914	10308.484	0	3	41.914	2	4	1	1	0	28	26	26	26	26	41.914	54	-	-	11	-														
+160513_0850	1	subjects	7	5	3	41.9125	10186.9565	0	6	41.9125	1	4	0	1	0	0	25	25	25	12	-14.488	53	-	-	12	-														
+160513_0850	1	subjects	7	6	3	41.9125	10196.31	0	5	41.9125	2	4	1	0	0	32	25	25	12	25	50.8435	56	-	-	14	-														
+160513_0850	1	subjects	7	7	4	30.602	10183.474	0	8	10.81	1	4	0	0	0	0	10	18	18	18	35.882	21	-	-	0	-														
+160513_0850	1	subjects	7	8	4	10.81	10175.438	0	7	30.602	2	4	0	0	0	0	18	10	18	18	35.882	47	-	-	8	-														
+160513_0850	1	subjects	7	9	5	41.272	10229.2135	0	10	41.272	1	4	0	0	0	0	28	28	25	25	41.9125	53	-	-	14	-														
+160513_0850	1	subjects	7	10	5	41.272	10248.1815	0	9	41.272	2	4	0	0	0	0	28	28	25	25	41.9125	60	-	-	13	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	7	5	10	10	1.32	7.3775	55	0																														
+160513_0850	1	simulations	7	18	18	8	35.882	35.882	54	0																														
+160513_0850	1	simulations	7	18.5	28	9	68.1855	-5.142625	48	0																														
+160513_0850	1	simulations	7	17	17	10	34.1605	34.1605	48	0																														
+160513_0850	1	simulations	7	18	10	7	10.81	30.602	47	0																														
+160513_0850	1	simulations	7	18	18	3	35.882	35.882	47	0																														
+160513_0850	1	simulations	7	24	28	8	58.72	21.608	46	0																														
+160513_0850	1	simulations	7	25	25	5	41.9125	41.9125	43	0																														
+160513_0850	1	simulations	7	26	26	1	41.914	41.914	40	0																														
+160513_0850	1	simulations	7	28	28	10	41.272	41.272	40	0																														
+160513_0850	1	simulations	7	25	25	6	41.9125	41.9125	40	0																														
+160513_0850	1	simulations	7	8	12	7	14.752	13.928	40	0																														
+160513_0850	1	simulations	7	18.5	18.5	9	36.662125	36.662125	39	0																														
+160513_0850	1	simulations	7	26	28	8	51.108	31.418	37	0																														
+160513_0850	1	simulations	7	26	26	4	41.914	41.914	34	0																														
+160513_0850	1	simulations	7	19	19	9	37.3885	37.3885	33	0																														
+160513_0850	1	simulations	7	16	26	8	61.034	-3.396	31	0																														
+160513_0850	1	simulations	7	20	20.1	9	39.033055	38.44262	27	0																														
+160513_0850	1	simulations	7	12	28	10	57.688	-36.328	26	0																														
+160513_0850	1	simulations	7	22	22	7	40.618	40.618	25	0																														
+160513_0850	1	simulations	7	18	18	8	35.882	35.882	23	0																														
+160513_0850	1	simulations	7	3	9	10	-9.0895	3.2825	20	0																														
+160513_0850	1	simulations	7	20	20.5	9	40.446375	37.4375	18	0																														
+160513_0850	1	simulations	7	22	28	7	64.108	11.842	17	0																														
+160513_0850	1	simulations	7	3	27	10	3.5645	-69.4195	14	0																														
+160513_0850	1	simulations	7	18	20	8	42.26	31.642	12	0																														
+160513_0850	1	simulations	7	28	28	9	41.272	41.272	12	0																														
+160513_0850	1	simulations	7	12	14	7	26.594	22.78	9	0																														
+160513_0850	1	simulations	7	18	24	8	55.148	16.49	4	0																														
+160513_0850	1	simulations	7	15.2	3.4	10	-0.39954	-2.65216	3	0																														
+160513_0850	1	simulations	7	16	18	7	37.898	29.548	0	0																														
+160513_0850	1	simulations	7	26	26	1	41.914	41.914	0	60																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	7	5	3	1	on met 25 tout les deux	-	53																															
+160513_0850	1	chat	7	1	1	1	on fait 26 jusqu'a la fin ok ?	-	53																															
+160513_0850	1	chat	7	5	3	1	ok ?	-	50																															
+160513_0850	1	chat	7	6	3	2	yes	-	50																															
+160513_0850	1	chat	7	3	2	1	toujours pareil	-	40																															
+160513_0850	1	chat	7	10	5	2	28 et 28?	-	34																															
+160513_0850	1	chat	7	4	2	2	ok	-	30																															
+160513_0850	1	chat	7	2	1	2	oui c'est la meilleure solution pour qu'on gagne tous les 2	-	29																															
+160513_0850	1	chat	7	6	3	2	on a qu'a mettre tout lme temps 25	-	20																															
+160513_0850	1	chat	7	5	3	1	le tableau est faussé je pense car avec les calculs de gains tu vois mieux ce que tu gagnes	-	19																															
+160513_0850	1	chat	7	1	1	1	exactement 	-	17																															
+160513_0850	1	chat	7	9	5	1	ok	-	8																															
+160513_0850	1	chat	7	1	1	1	il y a combien de periodes ?	-	7																															
+160513_0850	1	chat	7	5	3	1	ok on tente	-	7																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	8	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	8	1	1	41.914	10349.546	0	2	41.914	1	4	0	0	0	0	26	26	26	26	41.914	54	-	-	14	-														
+160513_0850	1	subjects	8	2	1	41.914	10273.776	0	1	41.914	2	4	0	0	0	0	26	26	26	26	41.914	61	-	-	14	-														
+160513_0850	1	subjects	8	3	2	41.914	10295.864	0	4	41.914	1	4	1	1	0	24	26	26	26	26	41.914	57	-	-	14	-														
+160513_0850	1	subjects	8	4	2	41.914	10350.398	0	3	41.914	2	4	1	1	0	47	26	26	26	26	41.914	60	-	-	13	-														
+160513_0850	1	subjects	8	5	3	-26.782	10160.1745	0	6	63.42	1	4	0	1	0	0	28	14	25	25	41.9125	47	-	-	9	-														
+160513_0850	1	subjects	8	6	3	63.42	10259.73	0	5	-26.782	2	4	1	0	0	12	14	28	25	25	41.9125	57	-	-	8	-														
+160513_0850	1	subjects	8	7	4	-19.912	10163.562	0	8	-0.3485	1	4	0	0	0	0	1	12	10	18	30.602	7	-	-	0	-														
+160513_0850	1	subjects	8	8	4	-0.3485	10175.0895	0	7	-19.912	2	4	0	0	0	0	12	1	18	10	10.81	59	-	-	10	-														
+160513_0850	1	subjects	8	9	5	25.1245	10254.338	0	10	25.1245	1	4	0	0	0	0	13	13	28	28	41.272	24	-	-	13	-														
+160513_0850	1	subjects	8	10	5	25.1245	10273.306	0	9	25.1245	2	4	0	0	0	0	13	13	28	28	41.272	44	-	-	14	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	8	20	28	9	67.272	2.12	56	0																														
+160513_0850	1	simulations	8	26	26	1	41.914	41.914	55	0																														
+160513_0850	1	simulations	8	13.5	19.9	10	41.937805	16.306445	55	0																														
+160513_0850	1	simulations	8	12	14	7	26.594	22.78	52	0																														
+160513_0850	1	simulations	8	28	28	5	41.272	41.272	52	0																														
+160513_0850	1	simulations	8	10	18	8	30.602	10.81	50	0																														
+160513_0850	1	simulations	8	10	28	9	49.732	-45.83	49	0																														
+160513_0850	1	simulations	8	17.2	9.4	10	11.16646	27.36784	44	0																														
+160513_0850	1	simulations	8	28	10	9	-45.83	49.732	44	0																														
+160513_0850	1	simulations	8	28	26	7	31.418	51.108	42	0																														
+160513_0850	1	simulations	8	16	20	8	43.616	24.648	40	0																														
+160513_0850	1	simulations	8	28	15.3	9	-20.553505	65.95318	37	0																														
+160513_0850	1	simulations	8	25	13	10	-10.2155	53.4925	36	0																														
+160513_0850	1	simulations	8	28	28	6	41.272	41.272	33	0																														
+160513_0850	1	simulations	8	26	20	5	14.596	60.058	33	0																														
+160513_0850	1	simulations	8	12	18	7	35.258	17.012	30	0																														
+160513_0850	1	simulations	8	28	27	9	36.3395	46.468	29	0																														
+160513_0850	1	simulations	8	13	13	10	25.1245	25.1245	29	0																														
+160513_0850	1	simulations	8	16	18	8	37.898	29.548	27	0																														
+160513_0850	1	simulations	8	26	26	1	41.914	41.914	24	0																														
+160513_0850	1	simulations	8	20	20	7	38.68	38.68	22	0																														
+160513_0850	1	simulations	8	2	2	10	-17.462	-17.462	21	0																														
+160513_0850	1	simulations	8	25	23.3	9	34.431395	48.42078	17	0																														
+160513_0850	1	simulations	8	4	4	10	-7.784	-7.784	15	0																														
+160513_0850	1	simulations	8	8	18	7	23.722	4.652	14	0																														
+160513_0850	1	simulations	8	0	1	8	-27.9845	-22.804	14	0																														
+160513_0850	1	simulations	8	20	28	7	67.272	2.12	6	0																														
+160513_0850	1	simulations	8	13	13	9	25.1245	25.1245	1	0																														
+160513_0850	1	simulations	8	12	16	8	30.904	21.008	0	0																														
+160513_0850	1	simulations	8	28	13	9	-31.5605	60.832	0	52																														
+160513_0850	1	simulations	8	25	13	9	-10.2155	53.4925	0	46																														
+160513_0850	1	simulations	8	10	13	9	21.4495	18.28	0	42																														
+160513_0850	1	simulations	8	1	13	9	-19.5995	-1.6595	0	35																														
+160513_0850	1	simulations	8	1.5	13	9	-16.1375	-0.575125	0	26																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	8	4	2	2	pareil	-	56																															
+160513_0850	1	chat	8	2	1	2	il y a 30 périodes	-	52																															
+160513_0850	1	chat	8	5	3	1	on met 28 ?	-	45																															
+160513_0850	1	chat	8	2	1	2	et la on est a la 8eme	-	44																															
+160513_0850	1	chat	8	6	3	2	allez on essaie	-	39																															
+160513_0850	1	chat	8	1	1	1	ok ahah	-	38																															
+160513_0850	1	chat	8	2	1	2	c'est marqué en haut a gauche	-	33																															
+160513_0850	1	chat	8	3	2	1	oui	-	25																															
+160513_0850	1	chat	8	5	3	1	ok	-	25																															
+160513_0850	1	chat	8	2	1	2	ca risque d'etre long mdrr	-	21																															
+160513_0850	1	chat	8	1	1	1	ok	-	19																															
+160513_0850	1	chat	8	1	1	1	mdr	-	16																															
+160513_0850	1	chat	8	1	1	1	c'est clair	-	13																															
+160513_0850	1	chat	8	10	5	2	13 et 13?	-	7																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	9	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	9	1	1	41.914	10391.46	0	2	41.914	1	4	1	0	0	19	26	26	26	26	41.914	47	-	-	14	-														
+160513_0850	1	subjects	9	2	1	41.914	10315.69	0	1	41.914	2	4	0	1	0	0	26	26	26	26	41.914	42	-	-	11	-														
+160513_0850	1	subjects	9	3	2	41.914	10337.778	0	4	41.914	1	4	1	1	0	58	26	26	26	26	41.914	62	-	-	13	-														
+160513_0850	1	subjects	9	4	2	41.914	10392.312	0	3	41.914	2	4	1	1	0	52	26	26	26	26	41.914	59	-	-	14	-														
+160513_0850	1	subjects	9	5	3	17.898	10178.0725	0	6	23.258	1	4	0	0	0	0	14	10	28	14	-26.782	40	-	-	12	-														
+160513_0850	1	subjects	9	6	3	23.258	10282.988	0	5	17.898	2	4	0	0	0	0	10	14	14	28	63.42	46	-	-	10	-														
+160513_0850	1	subjects	9	7	4	-27.35	10136.212	0	8	-1.06	1	4	0	0	0	0	0	10	1	12	-19.912	44	-	-	8	-														
+160513_0850	1	subjects	9	8	4	-1.06	10174.0295	0	7	-27.35	2	4	0	0	0	0	10	0	12	1	-0.3485	52	-	-	8	-														
+160513_0850	1	subjects	9	9	5	38.68	10293.018	0	10	38.68	1	4	0	0	0	0	20	20	13	13	25.1245	30	-	-	13	-														
+160513_0850	1	subjects	9	10	5	38.68	10311.986	0	9	38.68	2	4	0	0	0	0	20	20	13	13	25.1245	14	-	-	12	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	9	1	1	9	-22.6235	-22.6235	58	0																														
+160513_0850	1	simulations	9	5	5	9	-3.2675	-3.2675	54	0																														
+160513_0850	1	simulations	9	26	26	1	41.914	41.914	54	0																														
+160513_0850	1	simulations	9	15.1	13.3	10	25.513465	30.170785	52	0																														
+160513_0850	1	simulations	9	2	18	7	-10.262	-13.558	52	0																														
+160513_0850	1	simulations	9	12	0	8	-2.344	-27.088	51	0																														
+160513_0850	1	simulations	9	9	9	9	12.6485	12.6485	50	0																														
+160513_0850	1	simulations	9	15	15	9	30.0725	30.0725	45	0																														
+160513_0850	1	simulations	9	18.5	19	10	38.2965	35.712875	45	0																														
+160513_0850	1	simulations	9	28	28	7	41.272	41.272	44	0																														
+160513_0850	1	simulations	9	10	0	8	-1.06	-27.35	43	0																														
+160513_0850	1	simulations	9	2	12	5	-13.292	1.658	37	0																														
+160513_0850	1	simulations	9	14	16	7	32.676	26.594	36	0																														
+160513_0850	1	simulations	9	28	0	8	-92.68	-23.408	35	0																														
+160513_0850	1	simulations	9	20	20	9	38.68	38.68	34	0																														
+160513_0850	1	simulations	9	18	20	7	42.26	31.642	27	0																														
+160513_0850	1	simulations	9	10	6	8	9.098	5.386	25	0																														
+160513_0850	1	simulations	9	15	15	10	30.0725	30.0725	23	0																														
+160513_0850	1	simulations	9	19	18.5	9	35.712875	38.2965	21	0																														
+160513_0850	1	simulations	9	10	1	8	0.6055	-20.504	15	0																														
+160513_0850	1	simulations	9	20	20	7	38.68	38.68	11	0																														
+160513_0850	1	simulations	9	20	28	7	67.272	2.12	2	0																														
+160513_0850	1	simulations	9	12	1	8	-0.3485	-19.912	1	0																														
+160513_0850	1	simulations	9	20	20	10	38.68	38.68	0	59																														
+160513_0850	1	simulations	9	12	0	6	-2.344	-27.088	0	55																														
+160513_0850	1	simulations	9	15	12	5	22.172	28.7435	0	52																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	9	4	2	2	rebelotte	-	56																															
+160513_0850	1	chat	9	3	2	1	oui	-	53																															
+160513_0850	1	chat	9	5	3	1	pourquoi tu n'as pas mis pareil ?	-	48																															
+160513_0850	1	chat	9	9	5	1	15 et 15?	-	38																															
+160513_0850	1	chat	9	10	5	2	je fais 18.5 et toi 19?	-	30																															
+160513_0850	1	chat	9	6	3	2	bah après dans le truc de décision c'est chacun son choix non? 	-	30																															
+160513_0850	1	chat	9	5	3	1	ok tu mets combien là ?	-	16																															
+160513_0850	1	chat	9	9	5	1	20 et 20 c'est meiux ?	-	9																															
+160513_0850	1	chat	9	6	3	2	12	-	1																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	10	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	10	1	1	41.914	10433.374	0	2	41.914	1	4	1	1	0	34	26	26	26	26	41.914	56	-	-	15	-														
+160513_0850	1	subjects	10	2	1	41.914	10357.604	0	1	41.914	2	4	1	1	0	20	26	26	26	26	41.914	62	-	-	14	-														
+160513_0850	1	subjects	10	3	2	41.914	10379.692	0	4	41.914	1	4	1	1	0	45	26	26	26	26	41.914	62	-	-	13	-														
+160513_0850	1	subjects	10	4	2	41.914	10434.226	0	3	41.914	2	4	1	1	0	55	26	26	26	26	41.914	60	-	-	13	-														
+160513_0850	1	subjects	10	5	3	41.9125	10219.985	0	6	41.9125	1	4	0	1	0	0	25	25	14	10	17.898	53	-	-	13	-														
+160513_0850	1	subjects	10	6	3	41.9125	10324.9005	0	5	41.9125	2	4	1	0	0	12	25	25	10	14	23.258	55	-	-	13	-														
+160513_0850	1	subjects	10	7	4	5.386	10141.598	0	8	9.098	1	4	0	0	0	0	6	10	0	10	-27.35	9	-	-	0	-														
+160513_0850	1	subjects	10	8	4	9.098	10183.1275	0	7	5.386	2	4	0	0	0	0	10	6	10	0	-1.06	45	-	-	13	-														
+160513_0850	1	subjects	10	9	5	40.618	10333.636	0	10	40.618	1	4	0	0	0	0	22	22	20	20	38.68	30	-	-	13	-														
+160513_0850	1	subjects	10	10	5	40.618	10352.604	0	9	40.618	2	4	0	0	0	0	22	22	20	20	38.68	47	-	-	14	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	10	26	26	1	41.914	41.914	56	0																														
+160513_0850	1	simulations	10	7	9	10	7.6265	9.4825	54	0																														
+160513_0850	1	simulations	10	12	14.2	9	27.02302	22.70288	54	0																														
+160513_0850	1	simulations	10	24	22	7	33.25	48.404	52	0																														
+160513_0850	1	simulations	10	28	0	8	-92.68	-23.408	50	0																														
+160513_0850	1	simulations	10	12	16	9	30.904	21.008	48	0																														
+160513_0850	1	simulations	10	14.4	27.9	10	64.030175	-24.0985	45	0																														
+160513_0850	1	simulations	10	17	17	9	34.1605	34.1605	43	0																														
+160513_0850	1	simulations	10	20	28	7	67.272	2.12	42	0																														
+160513_0850	1	simulations	10	10	18	8	30.602	10.81	39	0																														
+160513_0850	1	simulations	10	18	18.2	9	36.51782	35.55808	38	0																														
+160513_0850	1	simulations	10	15.8	13.6	10	25.69776	32.01374	35	0																														
+160513_0850	1	simulations	10	18	18	9	35.882	35.882	32	0																														
+160513_0850	1	simulations	10	0	16	8	-26.432	-11.584	29	0																														
+160513_0850	1	simulations	10	25	25	5	41.9125	41.9125	28	0																														
+160513_0850	1	simulations	10	20	20	9	38.68	38.68	26	0																														
+160513_0850	1	simulations	10	20	28	7	67.272	2.12	23	0																														
+160513_0850	1	simulations	10	25	25	6	41.9125	41.9125	23	0																														
+160513_0850	1	simulations	10	17	2.5	10	-8.212125	-7.2805	23	0																														
+160513_0850	1	simulations	10	22	22	9	40.618	40.618	21	0																														
+160513_0850	1	simulations	10	14	14	10	27.706	27.706	15	0																														
+160513_0850	1	simulations	10	12	10	8	18.106	19.652	15	0																														
+160513_0850	1	simulations	10	20	28	7	67.272	2.12	15	0																														
+160513_0850	1	simulations	10	23	23	9	41.2645	41.2645	9	0																														
+160513_0850	1	simulations	10	20	28	7	67.272	2.12	6	0																														
+160513_0850	1	simulations	10	22	22	6	40.618	40.618	5	0																														
+160513_0850	1	simulations	10	16	2	8	-6.262	-11.316	4	0																														
+160513_0850	1	simulations	10	14	14	9	27.706	27.706	4	0																														
+160513_0850	1	simulations	10	22	22	10	40.618	40.618	3	0																														
+160513_0850	1	simulations	10	26	26	1	41.914	41.914	0	57																														
+160513_0850	1	simulations	10	23	22	9	37.212	44.5055	0	39																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	10	4	2	2	pareil	-	57																															
+160513_0850	1	chat	10	3	2	1	yes	-	47																															
+160513_0850	1	chat	10	5	3	1	si on met tout les 2 25 on peut gagner plus tout les 2	-	45																															
+160513_0850	1	chat	10	1	1	1	je crois que si t'appuie sur terminer dialogue ca passe plus vite	-	42																															
+160513_0850	1	chat	10	6	3	2	c'est bon on fait ca 	-	29																															
+160513_0850	1	chat	10	2	1	2	d'acc je vais le faire alors	-	23																															
+160513_0850	1	chat	10	5	3	1	sur ?	-	20																															
+160513_0850	1	chat	10	9	5	1	22 et 22?	-	16																															
+160513_0850	1	chat	10	6	3	2	oui!!	-	16																															
+160513_0850	1	chat	10	10	5	2	14 et 14?	-	9																															
+160513_0850	1	chat	10	5	3	1	ok	-	4																															
+160513_0850	1	chat	10	10	5	2	le tien	-	0																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	11	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	11	1	1	41.914	10475.288	0	2	41.914	1	4	1	0	0	53	26	26	26	26	41.914	56	-	-	15	-														
+160513_0850	1	subjects	11	2	1	41.914	10399.518	0	1	41.914	2	4	0	1	0	0	26	26	26	26	41.914	61	-	-	13	-														
+160513_0850	1	subjects	11	3	2	41.914	10421.606	0	4	41.914	1	4	1	1	0	52	26	26	26	26	41.914	63	-	-	14	-														
+160513_0850	1	subjects	11	4	2	41.914	10476.14	0	3	41.914	2	4	1	1	0	55	26	26	26	26	41.914	58	-	-	13	-														
+160513_0850	1	subjects	11	5	3	41.9125	10261.8975	0	6	41.9125	1	4	0	0	0	0	25	25	25	25	41.9125	43	-	-	14	-														
+160513_0850	1	subjects	11	6	3	41.9125	10366.813	0	5	41.9125	2	4	0	0	0	0	25	25	25	25	41.9125	58	-	-	4	-														
+160513_0850	1	subjects	11	7	4	19.652	10161.25	0	8	18.106	1	4	0	0	0	0	10	12	6	10	5.386	10	-	-	2	-														
+160513_0850	1	subjects	11	8	4	18.106	10201.2335	0	7	19.652	2	4	0	0	0	0	12	10	10	6	9.098	25	-	-	10	-														
+160513_0850	1	subjects	11	9	5	52.3135	10385.9495	0	10	28.732	1	4	0	0	0	0	22	25	22	22	40.618	19	-	-	12	-														
+160513_0850	1	subjects	11	10	5	28.732	10381.336	0	9	52.3135	2	4	0	0	0	0	25	22	22	22	40.618	46	-	-	10	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	11	23.3	23.3	9	41.416525	41.416525	57	0																														
+160513_0850	1	simulations	11	26	26	1	41.914	41.914	55	0																														
+160513_0850	1	simulations	11	22	22	10	40.618	40.618	54	0																														
+160513_0850	1	simulations	11	14	12	7	22.78	26.594	50	0																														
+160513_0850	1	simulations	11	20	6	8	-9.662	17.036	48	0																														
+160513_0850	1	simulations	11	16	20	6	43.616	24.648	43	0																														
+160513_0850	1	simulations	11	18	22	7	48.682	25.178	42	0																														
+160513_0850	1	simulations	11	24.4	24.4	9	41.8084	41.8084	41	0																														
+160513_0850	1	simulations	11	22	22	6	40.618	40.618	35	0																														
+160513_0850	1	simulations	11	25.5	25.5	9	41.940125	41.940125	34	0																														
+160513_0850	1	simulations	11	20	28	7	67.272	2.12	34	0																														
+160513_0850	1	simulations	11	10	6	8	9.098	5.386	34	0																														
+160513_0850	1	simulations	11	10	12	7	19.652	18.106	26	0																														
+160513_0850	1	simulations	11	24	16	5	8.176	55.184	22	0																														
+160513_0850	1	simulations	11	14	6	8	8.266	9.914	18	0																														
+160513_0850	1	simulations	11	18	22	7	48.682	25.178	18	0																														
+160513_0850	1	simulations	11	23	23	10	41.2645	41.2645	17	0																														
+160513_0850	1	simulations	11	27.8	27.8	9	41.3749	41.3749	17	0																														
+160513_0850	1	simulations	11	26	26	6	41.914	41.914	14	0																														
+160513_0850	1	simulations	11	28	28	7	41.272	41.272	10	0																														
+160513_0850	1	simulations	11	18	2	8	-13.558	-10.262	9	0																														
+160513_0850	1	simulations	11	28	24	5	21.608	58.72	6	0																														
+160513_0850	1	simulations	11	21	21	6	39.7565	39.7565	3	0																														
+160513_0850	1	simulations	11	22	22	9	40.618	40.618	3	0																														
+160513_0850	1	simulations	11	8	12	7	14.752	13.928	2	0																														
+160513_0850	1	simulations	11	26	26	1	41.914	41.914	0	60																														
+160513_0850	1	simulations	11	25	25	10	41.9125	41.9125	0	58																														
+160513_0850	1	simulations	11	25.5	22	9	26.2645	54.272375	0	58																														
+160513_0850	1	simulations	11	22	25.5	9	54.272375	26.2645	0	49																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	11	4	2	2	26	-	57																															
+160513_0850	1	chat	11	5	3	1	on fait pareil ?	-	54																															
+160513_0850	1	chat	11	3	2	1	yes	-	53																															
+160513_0850	1	chat	11	6	3	2	faut trouver la combi qui nous fait gagner un max de point 	-	50																															
+160513_0850	1	chat	11	9	5	1	23.3 et 23.3?	-	49																															
+160513_0850	1	chat	11	2	1	2	enfait faut attendre tous les autres je pense	-	41																															
+160513_0850	1	chat	11	10	5	2	je me disais qu'au pire si jamais on trouve pas on peut toujours faire la combinaison 22 et 22	-	36																															
+160513_0850	1	chat	11	5	3	1	j'essaie mais si on ne trouve pas on met 25	-	33																															
+160513_0850	1	chat	11	2	1	2	on peut pas aller plus vite...	-	32																															
+160513_0850	1	chat	11	1	1	1	ah oui . je pensais ahah	-	25																															
+160513_0850	1	chat	11	6	3	2	c'est bon je cherche	-	24																															
+160513_0850	1	chat	11	9	5	1	daccord 	-	21																															
+160513_0850	1	chat	11	6	3	2	sinon 25	-	19																															
+160513_0850	1	chat	11	10	5	2	là par exemple c'est mieux 22 et 22	-	4																															
+160513_0850	1	chat	11	2	1	2	on a fait 1/3 de l'experience !!!	-	2																															
+160513_0850	1	chat	11	9	5	1	25.5 et 25.5?	-	1																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	12	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	12	1	1	41.914	10517.202	0	2	41.914	1	4	1	0	0	53	26	26	26	26	41.914	60	-	-	15	-														
+160513_0850	1	subjects	12	2	1	41.914	10441.432	0	1	41.914	2	4	0	1	0	0	26	26	26	26	41.914	57	-	-	13	-														
+160513_0850	1	subjects	12	3	2	41.914	10463.52	0	4	41.914	1	4	1	1	0	49	26	26	26	26	41.914	55	-	-	14	-														
+160513_0850	1	subjects	12	4	2	41.914	10518.054	0	3	41.914	2	4	1	1	0	51	26	26	26	26	41.914	61	-	-	12	-														
+160513_0850	1	subjects	12	5	3	-5.932	10255.9655	0	6	55.5855	1	4	0	1	0	0	25	14	25	25	41.9125	-44	-	-	6	-														
+160513_0850	1	subjects	12	6	3	55.5855	10422.3985	0	5	-5.932	2	4	1	0	0	3	14	25	25	25	41.9125	31	-	-	12	-														
+160513_0850	1	subjects	12	7	4	23.722	10184.972	0	8	4.652	1	4	0	0	0	0	8	18	10	12	19.652	32	-	-	5	-														
+160513_0850	1	subjects	12	8	4	4.652	10205.8855	0	7	23.722	2	4	0	0	0	0	18	8	12	10	18.106	47	-	-	10	-														
+160513_0850	1	subjects	12	9	5	41.9125	10427.862	0	10	41.9125	1	4	0	0	0	0	25	25	22	25	52.3135	41	-	-	14	-														
+160513_0850	1	subjects	12	10	5	41.9125	10423.2485	0	9	41.9125	2	4	0	0	0	0	25	25	25	22	28.732	50	-	-	13	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	12	25	25	9	41.9125	41.9125	58	0																														
+160513_0850	1	simulations	12	26	26	1	41.914	41.914	55	0																														
+160513_0850	1	simulations	12	27	27	9	41.7005	41.7005	54	0																														
+160513_0850	1	simulations	12	25	25	10	41.9125	41.9125	54	0																														
+160513_0850	1	simulations	12	12	4	7	5.704	-1.72	53	0																														
+160513_0850	1	simulations	12	28	27.9	5	40.778255	41.81662	52	0																														
+160513_0850	1	simulations	12	20	28	6	67.272	2.12	52	0																														
+160513_0850	1	simulations	12	16	12	8	21.008	30.904	50	0																														
+160513_0850	1	simulations	12	25.1	25.1	9	41.922325	41.922325	46	0																														
+160513_0850	1	simulations	12	8	8	7	8.992	8.992	44	0																														
+160513_0850	1	simulations	12	16	6	8	4.514	12.244	42	0																														
+160513_0850	1	simulations	12	28	27.5	5	38.804375	43.9395	41	0																														
+160513_0850	1	simulations	12	26.3	26.3	9	41.872525	41.872525	39	0																														
+160513_0850	1	simulations	12	12	18	7	35.258	17.012	36	0																														
+160513_0850	1	simulations	12	0	16	8	-26.432	-11.584	36	0																														
+160513_0850	1	simulations	12	28	28	9	41.272	41.272	30	0																														
+160513_0850	1	simulations	12	20	28	7	67.272	2.12	27	0																														
+160513_0850	1	simulations	12	12	20	6	39.656	10.792	23	0																														
+160513_0850	1	simulations	12	16	10	8	15.466	26.908	22	0																														
+160513_0850	1	simulations	12	28	20	5	2.12	67.272	20	0																														
+160513_0850	1	simulations	12	28	26	7	31.418	51.108	18	0																														
+160513_0850	1	simulations	12	20	16	8	24.648	43.616	15	0																														
+160513_0850	1	simulations	12	11	14	6	25.204	20.3335	13	0																														
+160513_0850	1	simulations	12	8	8	7	8.992	8.992	11	0																														
+160513_0850	1	simulations	12	20	6	8	-9.662	17.036	8	0																														
+160513_0850	1	simulations	12	4	4	7	-7.784	-7.784	2	0																														
+160513_0850	1	simulations	12	25	25	10	41.9125	41.9125	0	59																														
+160513_0850	1	simulations	12	25	22	9	28.732	52.3135	0	50																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	12	4	2	2	pareil	-	54																															
+160513_0850	1	chat	12	3	2	1	oui	-	50																															
+160513_0850	1	chat	12	10	5	2	par exemple on cherche la combinaison qui rapporte le plus et on l'utilise à chaque fois	-	28																															
+160513_0850	1	chat	12	10	5	2	par exemple 25 25	-	22																															
+160513_0850	1	chat	12	9	5	1	D'accord ça me va	-	19																															
+160513_0850	1	chat	12	9	5	1	parfait 25 et 25	-	6																															
+160513_0850	1	chat	12	5	3	1	25 ? je ne trouve pas d'autres combinaisons avantageuses oiur nous deux	-	2																															
+160513_0850	1	chat	12	10	5	2	ok	-	1																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	13	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	13	1	1	41.914	10559.116	0	2	41.914	1	4	1	0	0	48	26	26	26	26	41.914	59	-	-	15	-														
+160513_0850	1	subjects	13	2	1	41.914	10483.346	0	1	41.914	2	4	0	1	0	0	26	26	26	26	41.914	58	-	-	14	-														
+160513_0850	1	subjects	13	3	2	41.914	10505.434	0	4	41.914	1	4	1	1	0	57	26	26	26	26	41.914	62	-	-	15	-														
+160513_0850	1	subjects	13	4	2	41.914	10559.968	0	3	41.914	2	4	1	1	0	59	26	26	26	26	41.914	53	-	-	9	-														
+160513_0850	1	subjects	13	5	3	29.548	10285.5135	0	6	37.898	1	4	0	0	0	0	18	16	25	14	-5.932	20	-	-	7	-														
+160513_0850	1	subjects	13	6	3	37.898	10460.2965	0	5	29.548	2	4	0	0	0	0	16	18	14	25	55.5855	40	-	-	11	-														
+160513_0850	1	subjects	13	7	4	12.572	10197.544	0	8	11.85	1	4	0	0	0	0	10	8	8	18	23.722	9	-	-	0	-														
+160513_0850	1	subjects	13	8	4	11.85	10217.7355	0	7	12.572	2	4	0	0	0	0	8	10	18	8	4.652	49	-	-	11	-														
+160513_0850	1	subjects	13	9	5	41.9125	10469.7745	0	10	41.9125	1	4	0	0	0	0	25	25	25	25	41.9125	49	-	-	11	-														
+160513_0850	1	subjects	13	10	5	41.9125	10465.161	0	9	41.9125	2	4	0	0	0	0	25	25	25	25	41.9125	57	-	-	14	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	13	25.9	25.9	9	41.923525	41.923525	55	0																														
+160513_0850	1	simulations	13	6	8	8	3.188	6.178	53	0																														
+160513_0850	1	simulations	13	14	16	7	32.676	26.594	52	0																														
+160513_0850	1	simulations	13	28	28	10	41.272	41.272	52	0																														
+160513_0850	1	simulations	13	26	26	1	41.914	41.914	49	0																														
+160513_0850	1	simulations	13	17	17	10	34.1605	34.1605	45	0																														
+160513_0850	1	simulations	13	13.3	13.3	9	25.921525	25.921525	44	0																														
+160513_0850	1	simulations	13	8	10	8	11.85	12.572	44	0																														
+160513_0850	1	simulations	13	20	22	7	45.762	32.876	43	0																														
+160513_0850	1	simulations	13	3	3	10	-12.5155	-12.5155	39	0																														
+160513_0850	1	simulations	13	28	28	9	41.272	41.272	36	0																														
+160513_0850	1	simulations	13	8	12	8	14.752	13.928	34	0																														
+160513_0850	1	simulations	13	20	28	7	67.272	2.12	34	0																														
+160513_0850	1	simulations	13	20	20	10	38.68	38.68	31	0																														
+160513_0850	1	simulations	13	21	21	9	39.7565	39.7565	29	0																														
+160513_0850	1	simulations	13	24	24	7	41.696	41.696	24	0																														
+160513_0850	1	simulations	13	19	19	10	37.3885	37.3885	23	0																														
+160513_0850	1	simulations	13	1	16	8	-18.596	-8.9285	21	0																														
+160513_0850	1	simulations	13	17	17	9	34.1605	34.1605	20	0																														
+160513_0850	1	simulations	13	8	28	7	39.552	-55.288	16	0																														
+160513_0850	1	simulations	13	7	7	10	5.1205	5.1205	16	0																														
+160513_0850	1	simulations	13	26.1	26.1	9	41.902325	41.902325	13	0																														
+160513_0850	1	simulations	13	18	18	10	35.882	35.882	8	0																														
+160513_0850	1	simulations	13	12	12	7	22.328	22.328	7	0																														
+160513_0850	1	simulations	13	8	0.6	8	-1.20002	-23.59168	0	0																														
+160513_0850	1	simulations	13	25.9	25	9	37.81642	45.885955	0	55																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	13	3	2	1	pareil	-	59																															
+160513_0850	1	chat	13	5	3	1	tu mets combien ?	-	49																															
+160513_0850	1	chat	13	2	1	2	c'est long quand meme...	-	44																															
+160513_0850	1	chat	13	1	1	1	grave	-	39																															
+160513_0850	1	chat	13	5	3	1	je mets la même chose que toi	-	36																															
+160513_0850	1	chat	13	1	1	1	répétitif	-	33																															
+160513_0850	1	chat	13	6	3	2	je crois qu'il veut pas qu'on se mette d'accord sur le chiffre dans la décision	-	30																															
+160513_0850	1	chat	13	6	3	2	j'ai rien compris	-	17																															
+160513_0850	1	chat	13	5	3	1	j'ai eu un soucis technique lais j'ai rentré 25	-	12																															
+160513_0850	1	chat	13	2	1	2	oui, un peu trop... 10 fois aurait suffit	-	12																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	14	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	14	1	1	41.914	10601.03	0	2	41.914	1	4	1	0	0	0	26	26	26	26	41.914	62	-	-	15	-														
+160513_0850	1	subjects	14	2	1	41.914	10525.26	0	1	41.914	2	4	0	1	0	0	26	26	26	26	41.914	61	-	-	13	-														
+160513_0850	1	subjects	14	3	2	41.914	10547.348	0	4	41.914	1	4	1	1	0	51	26	26	26	26	41.914	63	-	-	14	-														
+160513_0850	1	subjects	14	4	2	41.914	10601.882	0	3	41.914	2	4	1	1	0	53	26	26	26	26	41.914	53	-	-	14	-														
+160513_0850	1	subjects	14	5	3	30.0725	10315.586	0	6	30.0725	1	4	0	1	0	0	15	15	18	16	29.548	56	-	-	12	-														
+160513_0850	1	subjects	14	6	3	30.0725	10490.369	0	5	30.0725	2	4	1	0	0	0	15	15	16	18	37.898	59	-	-	13	-														
+160513_0850	1	subjects	14	7	4	17.898	10215.442	0	8	23.258	1	4	0	0	0	0	14	10	10	8	12.572	5	-	-	0	-														
+160513_0850	1	subjects	14	8	4	23.258	10240.9935	0	7	17.898	2	4	0	0	0	0	10	14	8	10	11.85	49	-	-	11	-														
+160513_0850	1	subjects	14	9	5	41.940125	10511.71463	0	10	41.940125	1	4	0	0	0	0	25.5	25.5	25	25	41.9125	55	-	-	14	-														
+160513_0850	1	subjects	14	10	5	41.940125	10507.10113	0	9	41.940125	2	4	0	0	0	0	25.5	25.5	25	25	41.9125	56	-	-	13	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	14	14	20	9	42.748	17.698	54	-																														
+160513_0850	1	simulations	14	24.9	25	10	42.33982	41.471555	53	-																														
+160513_0850	1	simulations	14	14	14	7	27.706	27.706	52	-																														
+160513_0850	1	simulations	14	15	15	5	30.0725	30.0725	52	-																														
+160513_0850	1	simulations	14	8	8	8	8.992	8.992	50	-																														
+160513_0850	1	simulations	14	14	14	9	27.706	27.706	49	-																														
+160513_0850	1	simulations	14	7	16	6	16.744	7.2355	49	-																														
+160513_0850	1	simulations	14	24.9	24.9	10	41.900525	41.900525	44	-																														
+160513_0850	1	simulations	14	8	6	8	6.178	3.188	44	-																														
+160513_0850	1	simulations	14	18	18	7	35.882	35.882	43	-																														
+160513_0850	1	simulations	14	16.5	16.5	9	33.219125	33.219125	43	-																														
+160513_0850	1	simulations	14	6	2	8	-3.142	-15.926	37	-																														
+160513_0850	1	simulations	14	25.5	25.5	10	41.940125	41.940125	36	-																														
+160513_0850	1	simulations	14	17.4	17.4	9	34.8749	34.8749	35	-																														
+160513_0850	1	simulations	14	22	22	7	40.618	40.618	34	-																														
+160513_0850	1	simulations	14	5	25	6	16.7325	-44.0875	34	-																														
+160513_0850	1	simulations	14	18.5	18.5	9	36.662125	36.662125	29	-																														
+160513_0850	1	simulations	14	25	25	10	41.9125	41.9125	27	-																														
+160513_0850	1	simulations	14	20	28	7	67.272	2.12	26	-																														
+160513_0850	1	simulations	14	15	15	6	30.0725	30.0725	23	-																														
+160513_0850	1	simulations	14	14	12	5	22.78	26.594	22	-																														
+160513_0850	1	simulations	14	21.1	21.1	9	39.852325	39.852325	21	-																														
+160513_0850	1	simulations	14	12	12	7	22.328	22.328	18	-																														
+160513_0850	1	simulations	14	10	12	5	19.652	18.106	12	-																														
+160513_0850	1	simulations	14	10	6	8	9.098	5.386	11	-																														
+160513_0850	1	simulations	14	14	14	7	27.706	27.706	10	-																														
+160513_0850	1	simulations	14	13	28	6	60.832	-31.5605	6	-																														
+160513_0850	1	simulations	14	8	12	5	14.752	13.928	5	-																														
+160513_0850	1	simulations	14	25.5	25.5	9	41.940125	41.940125	5	-																														
+160513_0850	1	simulations	14	10	8	8	12.572	11.85	3	-																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	14	4	2	2	pareil	-	56																															
+160513_0850	1	chat	14	3	2	1	oui	-	52																															
+160513_0850	1	chat	14	1	1	1	faut se dire que plus de periodes ca fait plus de points donc plus de sous ahah	-	45																															
+160513_0850	1	chat	14	5	3	1	on met 15 ?	-	42																															
+160513_0850	1	chat	14	2	1	2	Exactement !!	-	26																															
+160513_0850	1	chat	14	2	1	2	hihii	-	22																															
+160513_0850	1	chat	14	1	1	1	restons positives	-	21																															
+160513_0850	1	chat	14	1	1	1	mdr	-	19																															
+160513_0850	1	chat	14	6	3	2	ok pour 15	-	17																															
+160513_0850	1	chat	14	10	5	2	c'est encore mieux si on fait 25.5	-	16																															
+160513_0850	1	chat	14	9	5	1	ok	-	10																															
+160513_0850	1	chat	14	2	1	2	oui voila :)	-	7																															
+160513_0850	1	chat	14	1	1	1	:)	-	2																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	15	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	15	1	1	41.914	10642.944	0	2	41.914	1	4	1	0	0	37	26	26	26	26	41.914	51	-	-	15	-														
+160513_0850	1	subjects	15	2	1	41.914	10567.174	0	1	41.914	2	4	0	1	0	0	26	26	26	26	41.914	61	-	-	11	-														
+160513_0850	1	subjects	15	3	2	41.914	10589.262	0	4	41.914	1	4	1	1	0	53	26	26	26	26	41.914	64	-	-	15	-														
+160513_0850	1	subjects	15	4	2	41.914	10643.796	0	3	41.914	2	4	1	1	0	55	26	26	26	26	41.914	57	-	-	13	-														
+160513_0850	1	subjects	15	5	3	39.7565	10355.3425	0	6	39.7565	1	4	0	1	0	0	21	21	15	15	30.0725	58	-	-	12	-														
+160513_0850	1	subjects	15	6	3	39.7565	10530.1255	0	5	39.7565	2	4	1	0	0	17	21	21	15	15	30.0725	54	-	-	12	-														
+160513_0850	1	subjects	15	7	4	12.572	10228.014	0	8	11.85	1	4	0	0	0	0	10	8	14	10	17.898	3	-	-	0	-														
+160513_0850	1	subjects	15	8	4	11.85	10252.8435	0	7	12.572	2	4	0	0	0	0	8	10	10	14	23.258	41	-	-	11	-														
+160513_0850	1	subjects	15	9	5	41.940125	10553.65475	0	10	41.940125	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	15	-	-	14	-														
+160513_0850	1	subjects	15	10	5	41.940125	10549.04125	0	9	41.940125	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	50	-	-	13	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	15	11	11	6	19.3165	19.3165	54	0																														
+160513_0850	1	simulations	15	25.7	25.7	9	41.936125	41.936125	54	0																														
+160513_0850	1	simulations	15	22	22	7	40.618	40.618	53	0																														
+160513_0850	1	simulations	15	25.9	25.9	10	41.923525	41.923525	53	0																														
+160513_0850	1	simulations	15	6	8	8	3.188	6.178	47	0																														
+160513_0850	1	simulations	15	25.9	25.9	9	41.923525	41.923525	45	0																														
+160513_0850	1	simulations	15	25	25	10	41.9125	41.9125	44	0																														
+160513_0850	1	simulations	15	16	16	5	32.224	32.224	43	0																														
+160513_0850	1	simulations	15	20	20	7	38.68	38.68	43	0																														
+160513_0850	1	simulations	15	21	21	6	39.7565	39.7565	39	0																														
+160513_0850	1	simulations	15	4	6	8	-6.334	-1.076	39	0																														
+160513_0850	1	simulations	15	20	28	7	67.272	2.12	35	0																														
+160513_0850	1	simulations	15	12.3	1.4	9	0.13766	-17.084885	35	0																														
+160513_0850	1	simulations	15	25.6	25.6	10	41.9392	41.9392	33	0																														
+160513_0850	1	simulations	15	23	23	5	41.2645	41.2645	30	0																														
+160513_0850	1	simulations	15	6	10	8	5.386	9.098	28	0																														
+160513_0850	1	simulations	15	14	16	7	32.676	26.594	27	0																														
+160513_0850	1	simulations	15	11	21	6	39.3265	3.2465	26	0																														
+160513_0850	1	simulations	15	25.7	25.7	10	41.936125	41.936125	26	0																														
+160513_0850	1	simulations	15	26.3	26.3	9	41.872525	41.872525	21	0																														
+160513_0850	1	simulations	15	8	10	8	11.85	12.572	19	0																														
+160513_0850	1	simulations	15	14	16	7	32.676	26.594	18	0																														
+160513_0850	1	simulations	15	21	21	5	39.7565	39.7565	13	0																														
+160513_0850	1	simulations	15	6	12	8	7.628	9.794	13	0																														
+160513_0850	1	simulations	15	25	25.5	9	44.118875	39.6925	11	0																														
+160513_0850	1	simulations	15	22	28	7	64.108	11.842	10	0																														
+160513_0850	1	simulations	15	12	26	6	53.114	-21.212	9	0																														
+160513_0850	1	simulations	15	6	2	8	-3.142	-15.926	5	0																														
+160513_0850	1	simulations	15	25.3	25.4	9	42.38186	41.490915	4	0																														
+160513_0850	1	simulations	15	8	8	7	8.992	8.992	2	0																														
+160513_0850	1	simulations	15	25.6	25.3	9	40.585015	43.27486	0	43																														
+160513_0850	1	simulations	15	25.1	25.4	9	43.2511	40.595275	0	29																														
+160513_0850	1	simulations	15	25.7	25.9	9	42.842985	41.010065	0	20																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	15	4	2	2	pareil	-	57																															
+160513_0850	1	chat	15	3	2	1	oui	-	54																															
+160513_0850	1	chat	15	5	3	1	tu proposes quoi ?	-	53																															
+160513_0850	1	chat	15	1	1	1	la moitié 	-	48																															
+160513_0850	1	chat	15	2	1	2	on est a la moitié !!! 	-	47																															
+160513_0850	1	chat	15	6	3	2	j'essaie avec les chiffres impairs	-	45																															
+160513_0850	1	chat	15	2	1	2	mdrr	-	44																															
+160513_0850	1	chat	15	1	1	1	ahah 	-	44																															
+160513_0850	1	chat	15	6	3	2	21 chacun	-	35																															
+160513_0850	1	chat	15	5	3	1	ok	-	20																															
+160513_0850	1	chat	15	1	1	1	plus que 15	-	15																															
+160513_0850	1	chat	15	2	1	2	ouiiii	-	8																															
+160513_0850	1	chat	15	10	5	2	du coup on reste sur 25.5?	-	3																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	16	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	16	1	1	41.914	10684.858	0	2	41.914	1	4	1	0	0	46	26	26	26	26	41.914	55	-	-	11	-														
+160513_0850	1	subjects	16	2	1	41.914	10609.088	0	1	41.914	2	4	0	1	0	0	26	26	26	26	41.914	62	-	-	6	-														
+160513_0850	1	subjects	16	3	2	41.914	10631.176	0	4	41.914	1	4	1	1	0	58	26	26	26	26	41.914	63	-	-	14	-														
+160513_0850	1	subjects	16	4	2	41.914	10685.71	0	3	41.914	2	4	1	1	0	55	26	26	26	26	41.914	57	-	-	14	-														
+160513_0850	1	subjects	16	5	3	37.212	10392.5545	0	6	44.5055	1	4	0	1	0	0	23	22	21	21	39.7565	45	-	-	10	-														
+160513_0850	1	subjects	16	6	3	44.5055	10574.631	0	5	37.212	2	4	1	0	0	7	22	23	21	21	39.7565	60	-	-	6	-														
+160513_0850	1	subjects	16	7	4	11.85	10239.864	0	8	12.572	1	4	0	0	0	0	8	10	10	8	12.572	8	-	-	0	-														
+160513_0850	1	subjects	16	8	4	12.572	10265.4155	0	7	11.85	2	4	0	0	0	0	10	8	8	10	11.85	57	-	-	9	-														
+160513_0850	1	subjects	16	9	5	41.940125	10595.59488	0	10	41.940125	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	10	-	-	14	-														
+160513_0850	1	subjects	16	10	5	41.940125	10590.98138	0	9	41.940125	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	42	-	-	14	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	16	23	23	5	41.2645	41.2645	56	0																														
+160513_0850	1	simulations	16	14	14	10	27.706	27.706	55	0																														
+160513_0850	1	simulations	16	6	10	8	5.386	9.098	54	0																														
+160513_0850	1	simulations	16	12	16	7	30.904	21.008	53	0																														
+160513_0850	1	simulations	16	26	26	1	41.914	41.914	51	0																														
+160513_0850	1	simulations	16	18	26	6	61.658	5.578	49	0																														
+160513_0850	1	simulations	16	17.5	17.5	10	35.048125	35.048125	47	0																														
+160513_0850	1	simulations	16	10	10	8	16.09	16.09	47	0																														
+160513_0850	1	simulations	16	14	28	7	63.42	-26.782	45	0																														
+160513_0850	1	simulations	16	23	23	6	41.2645	41.2645	41	0																														
+160513_0850	1	simulations	16	25.1	25.2	9	42.36514	41.485535	39	0																														
+160513_0850	1	simulations	16	20.5	20.5	10	39.245125	39.245125	39	0																														
+160513_0850	1	simulations	16	8	8	8	8.992	8.992	38	0																														
+160513_0850	1	simulations	16	8	8	7	8.992	8.992	33	0																														
+160513_0850	1	simulations	16	22.5	22.5	10	40.968125	40.968125	32	0																														
+160513_0850	1	simulations	16	0.8	10	8	-21.82872	0.27152	31	0																														
+160513_0850	1	simulations	16	10	8	5	12.572	11.85	30	0																														
+160513_0850	1	simulations	16	25.2	25.3	9	42.374575	41.4893	30	0																														
+160513_0850	1	simulations	16	18	26	2	61.658	5.578	29	0																														
+160513_0850	1	simulations	16	24	23	6	37.4675	45.328	26	0																														
+160513_0850	1	simulations	16	20	28	7	67.272	2.12	25	0																														
+160513_0850	1	simulations	16	10	0.2	8	-0.72778	-25.93632	22	0																														
+160513_0850	1	simulations	16	25.3	25.4	9	42.38186	41.490915	20	0																														
+160513_0850	1	simulations	16	26.5	26.5	10	41.834125	41.834125	20	0																														
+160513_0850	1	simulations	16	22	23	6	44.5055	37.212	19	0																														
+160513_0850	1	simulations	16	12	10	7	18.106	19.652	17	0																														
+160513_0850	1	simulations	16	10	16	8	26.908	15.466	13	0																														
+160513_0850	1	simulations	16	25.3	26.3	9	46.403825	37.239225	12	0																														
+160513_0850	1	simulations	16	20	20	7	38.68	38.68	9	0																														
+160513_0850	1	simulations	16	25.5	25.5	10	41.940125	41.940125	8	0																														
+160513_0850	1	simulations	16	10	28	8	49.732	-45.83	7	0																														
+160513_0850	1	simulations	16	10	5	5	7.3775	1.32	6	0																														
+160513_0850	1	simulations	16	25.3	24.9	9	40.151285	43.658365	4	0																														
+160513_0850	1	simulations	16	22	22	7	40.618	40.618	1	0																														
+160513_0850	1	simulations	16	27.5	27.5	10	41.513125	41.513125	0	56																														
+160513_0850	1	simulations	16	26.1	26.9	9	45.588725	37.939525	0	50																														
+160513_0850	1	simulations	16	22.2	22.2	9	40.7645	40.7645	0	36																														
+160513_0850	1	simulations	16	23.7	23.7	9	41.589125	41.589125	0	28																														
+160513_0850	1	simulations	16	24.4	24.4	9	41.8084	41.8084	0	20																														
+160513_0850	1	simulations	16	27.7	27.7	9	41.423125	41.423125	0	13																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	16	3	2	1	pareil	-	59																															
+160513_0850	1	chat	16	4	2	2	pareil	-	56																															
+160513_0850	1	chat	16	9	5	1	oui on reste sur 25.5 tant que personne ne trouve mieux 	-	48																															
+160513_0850	1	chat	16	5	3	1	23 ?	-	47																															
+160513_0850	1	chat	16	10	5	2	ok	-	17																															
+160513_0850	1	chat	16	6	3	2	ok!	-	13																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	17	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	17	1	1	41.914	10726.772	0	2	41.914	1	4	1	0	0	6	26	26	26	26	41.914	55	-	-	14	-														
+160513_0850	1	subjects	17	2	1	41.914	10651.002	0	1	41.914	2	4	0	1	0	0	26	26	26	26	41.914	60	-	-	13	-														
+160513_0850	1	subjects	17	3	2	41.914	10673.09	0	4	41.914	1	4	1	1	0	56	26	26	26	26	41.914	64	-	-	15	-														
+160513_0850	1	subjects	17	4	2	41.914	10727.624	0	3	41.914	2	4	1	1	0	55	26	26	26	26	41.914	59	-	-	14	-														
+160513_0850	1	subjects	17	5	3	41.2645	10433.819	0	6	41.2645	1	4	0	0	0	0	23	23	23	22	37.212	36	-	-	12	-														
+160513_0850	1	subjects	17	6	3	41.2645	10615.8955	0	5	41.2645	2	4	0	0	0	0	23	23	22	23	44.5055	62	-	-	12	-														
+160513_0850	1	subjects	17	7	4	18.106	10257.97	0	8	19.652	1	4	0	0	0	0	12	10	8	10	11.85	14	-	-	0	-														
+160513_0850	1	subjects	17	8	4	19.652	10285.0675	0	7	18.106	2	4	0	0	0	0	10	12	10	8	12.572	41	-	-	11	-														
+160513_0850	1	subjects	17	9	5	41.940125	10637.535	0	10	41.940125	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	5	-	-	15	-														
+160513_0850	1	subjects	17	10	5	41.940125	10632.9215	0	9	41.940125	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	62	-	-	14	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	17	12	14	7	26.594	22.78	53	0																														
+160513_0850	1	simulations	17	2.5	2.5	10	-14.961875	-14.961875	51	0																														
+160513_0850	1	simulations	17	18	10	8	10.81	30.602	51	0																														
+160513_0850	1	simulations	17	20	28	7	67.272	2.12	45	0																														
+160513_0850	1	simulations	17	27.7	27.7	9	41.423125	41.423125	43	0																														
+160513_0850	1	simulations	17	10	6	8	9.098	5.386	41	0																														
+160513_0850	1	simulations	17	18	18	7	35.882	35.882	37	0																														
+160513_0850	1	simulations	17	27.9	27.9	9	41.324525	41.324525	36	0																														
+160513_0850	1	simulations	17	27.8	27.8	10	41.3749	41.3749	35	0																														
+160513_0850	1	simulations	17	10	14	8	23.258	17.898	34	0																														
+160513_0850	1	simulations	17	22	22	7	40.618	40.618	29	0																														
+160513_0850	1	simulations	17	10	16	8	26.908	15.466	27	0																														
+160513_0850	1	simulations	17	19.9	19.9	10	38.560525	38.560525	26	0																														
+160513_0850	1	simulations	17	24.9	24.9	9	41.900525	41.900525	25	0																														
+160513_0850	1	simulations	17	16	16	7	32.224	32.224	22	0																														
+160513_0850	1	simulations	17	23.9	23.9	9	41.662525	41.662525	17	0																														
+160513_0850	1	simulations	17	18	10	7	10.81	30.602	13	0																														
+160513_0850	1	simulations	17	21.4	21.4	10	40.1269	40.1269	12	0																														
+160513_0850	1	simulations	17	19.9	19.9	9	38.560525	38.560525	8	0																														
+160513_0850	1	simulations	17	12	12	7	22.328	22.328	4	0																														
+160513_0850	1	simulations	17	21.8	21.8	10	40.4629	40.4629	1	0																														
+160513_0850	1	simulations	17	5.5	5.5	9	-1.089875	-1.089875	0	60																														
+160513_0850	1	simulations	17	12.4	12.4	9	23.4724	23.4724	0	46																														
+160513_0850	1	simulations	17	18.4	18.4	9	36.5104	36.5104	0	35																														
+160513_0850	1	simulations	17	18.4	18.7	9	37.485415	35.96926	0	26																														
+160513_0850	1	simulations	17	25.5	26	9	44.1905	39.622375	0	19																														
+160513_0850	1	simulations	17	25.5	28	9	53.2195	28.961375	0	10																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	17	4	2	2	pareil	-	58																															
+160513_0850	1	chat	17	3	2	1	idem 	-	58																															
+160513_0850	1	chat	17	6	3	2	on remet 23?	-	51																															
+160513_0850	1	chat	17	5	3	1	je met 22 tu mets 23 ? comme ce que tu viens de faire ?	-	44																															
+160513_0850	1	chat	17	6	3	2	j'ai mis22 ? je croyais avoir mis 23?	-	29																															
+160513_0850	1	chat	17	6	3	2	j'ai pas capte	-	22																															
+160513_0850	1	chat	17	5	3	1	oui tu as mis 22	-	17																															
+160513_0850	1	chat	17	6	3	2	ah merde pardon met 22	-	12																															
+160513_0850	1	chat	17	5	3	1	donc on met 23 tous les 22	-	5																															
+160513_0850	1	chat	17	5	3	1	23	-	0																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	18	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	18	1	1	41.914	10768.686	0	2	41.914	1	4	1	0	0	58	26	26	26	26	41.914	57	-	-	13	-														
+160513_0850	1	subjects	18	2	1	41.914	10692.916	0	1	41.914	2	4	0	1	0	0	26	26	26	26	41.914	56	-	-	12	-														
+160513_0850	1	subjects	18	3	2	41.914	10715.004	0	4	41.914	1	4	1	1	0	54	26	26	26	26	41.914	63	-	-	14	-														
+160513_0850	1	subjects	18	4	2	41.914	10769.538	0	3	41.914	2	4	1	1	0	54	26	26	26	26	41.914	58	-	-	8	-														
+160513_0850	1	subjects	18	5	3	41.696	10475.515	0	6	41.696	1	4	0	1	0	0	24	24	23	23	41.2645	50	-	-	10	-														
+160513_0850	1	subjects	18	6	3	41.696	10657.5915	0	5	41.696	2	4	1	0	0	12	24	24	23	23	41.2645	42	-	-	0	-														
+160513_0850	1	subjects	18	7	4	8.992	10266.962	0	8	8.992	1	4	0	0	0	0	8	8	12	10	18.106	8	-	-	0	-														
+160513_0850	1	subjects	18	8	4	8.992	10294.0595	0	7	8.992	2	4	0	0	0	0	8	8	10	12	19.652	42	-	-	11	-														
+160513_0850	1	subjects	18	9	5	41.940125	10679.47513	0	10	41.940125	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	11	-	-	11	-														
+160513_0850	1	subjects	18	10	5	41.940125	10674.86163	0	9	41.940125	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	18	-	-	14	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	18	28	28	9	41.272	41.272	56	0																														
+160513_0850	1	simulations	18	14	16	7	32.676	26.594	53	0																														
+160513_0850	1	simulations	18	18	10	8	10.81	30.602	52	0																														
+160513_0850	1	simulations	18	4.9	4.9	10	-3.709475	-3.709475	51	0																														
+160513_0850	1	simulations	18	10	18	6	30.602	10.81	50	0																														
+160513_0850	1	simulations	18	27.5	27.5	9	41.513125	41.513125	48	0																														
+160513_0850	1	simulations	18	18	8	8	4.652	23.722	46	0																														
+160513_0850	1	simulations	18	13.5	13.5	10	26.442125	26.442125	44	0																														
+160513_0850	1	simulations	18	27	27	9	41.7005	41.7005	42	0																														
+160513_0850	1	simulations	18	18	18	7	35.882	35.882	42	0																														
+160513_0850	1	simulations	18	24	24	6	41.696	41.696	38	0																														
+160513_0850	1	simulations	18	12	10	8	18.106	19.652	37	0																														
+160513_0850	1	simulations	18	26.5	26.5	9	41.834125	41.834125	37	0																														
+160513_0850	1	simulations	18	22	22	7	40.618	40.618	34	0																														
+160513_0850	1	simulations	18	16.5	16.5	10	33.219125	33.219125	32	0																														
+160513_0850	1	simulations	18	26	26	9	41.914	41.914	31	0																														
+160513_0850	1	simulations	18	8	18	8	23.722	4.652	29	0																														
+160513_0850	1	simulations	18	24	24	5	41.696	41.696	26	0																														
+160513_0850	1	simulations	18	18	20	7	42.26	31.642	25	0																														
+160513_0850	1	simulations	18	24	24	6	41.696	41.696	25	0																														
+160513_0850	1	simulations	18	24.5	24.5	9	41.831125	41.831125	22	0																														
+160513_0850	1	simulations	18	14.7	17.4	10	36.43766	26.619515	18	0																														
+160513_0850	1	simulations	18	24	24	9	41.696	41.696	18	0																														
+160513_0850	1	simulations	18	20	28	7	67.272	2.12	18	0																														
+160513_0850	1	simulations	18	8	6	8	6.178	3.188	16	0																														
+160513_0850	1	simulations	18	25	25	6	41.9125	41.9125	16	0																														
+160513_0850	1	simulations	18	23	23	5	41.2645	41.2645	13	0																														
+160513_0850	1	simulations	18	23.5	23.5	9	41.507125	41.507125	12	0																														
+160513_0850	1	simulations	18	17.4	17.4	10	34.8749	34.8749	10	0																														
+160513_0850	1	simulations	18	12	12	7	22.328	22.328	9	0																														
+160513_0850	1	simulations	18	23	23	9	41.2645	41.2645	7	0																														
+160513_0850	1	simulations	18	25	25	5	41.9125	41.9125	6	0																														
+160513_0850	1	simulations	18	22.5	22.5	9	40.968125	40.968125	1	0																														
+160513_0850	1	simulations	18	18	28	6	68.212	-7.558	1	0																														
+160513_0850	1	simulations	18	22	22	9	40.618	40.618	0	62																														
+160513_0850	1	simulations	18	26	1	10	-69.2985	-14.536	0	59																														
+160513_0850	1	simulations	18	21	12	9	6.848	41.8715	0	53																														
+160513_0850	1	simulations	18	26	28	10	51.108	31.418	0	51																														
+160513_0850	1	simulations	18	21	21	9	39.7565	39.7565	0	47																														
+160513_0850	1	simulations	18	28	27.9	9	40.778255	41.81662	0	39																														
+160513_0850	1	simulations	18	28	27	9	36.3395	46.468	0	32																														
+160513_0850	1	simulations	18	28	27.5	9	38.804375	43.9395	0	27																														
+160513_0850	1	simulations	18	27.9	27.6	9	39.8489	42.929975	0	19																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	18	4	2	2	pareil	-	57																															
+160513_0850	1	chat	18	3	2	1	oui	-	55																															
+160513_0850	1	chat	18	5	3	1	on fait pareil ? 23 pour nous deux ?	-	49																															
+160513_0850	1	chat	18	6	3	2	24 plutot	-	34																															
+160513_0850	1	chat	18	6	3	2	des deux cotes	-	30																															
+160513_0850	1	chat	18	5	3	1	ok 24	-	20																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	19	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	19	1	1	41.914	10810.6	0	2	41.914	1	4	1	0	0	58	26	26	26	26	41.914	52	-	-	14	-														
+160513_0850	1	subjects	19	2	1	41.914	10734.83	0	1	41.914	2	4	0	1	0	0	26	26	26	26	41.914	62	-	-	13	-														
+160513_0850	1	subjects	19	3	2	41.914	10756.918	0	4	41.914	1	4	1	1	0	54	26	26	26	26	41.914	64	-	-	15	-														
+160513_0850	1	subjects	19	4	2	41.914	10811.452	0	3	41.914	2	4	1	1	0	53	26	26	26	26	41.914	53	-	-	13	-														
+160513_0850	1	subjects	19	5	3	41.9125	10517.4275	0	6	41.9125	1	4	0	0	0	0	25	25	24	24	41.696	55	-	-	13	-														
+160513_0850	1	subjects	19	6	3	41.9125	10699.504	0	5	41.9125	2	4	0	0	0	0	25	25	24	24	41.696	47	-	-	12	-														
+160513_0850	1	subjects	19	7	4	23.258	10290.22	0	8	17.898	1	4	0	0	0	0	10	14	8	8	8.992	9	-	-	0	-														
+160513_0850	1	subjects	19	8	4	17.898	10311.9575	0	7	23.258	2	4	0	0	0	0	14	10	8	8	8.992	57	-	-	10	-														
+160513_0850	1	subjects	19	9	5	41.940125	10721.41525	0	10	41.940125	1	4	1	0	0	28	25.5	25.5	25.5	25.5	41.940125	7	-	-	14	-														
+160513_0850	1	subjects	19	10	5	41.940125	10716.80175	0	9	41.940125	2	4	0	1	0	0	25.5	25.5	25.5	25.5	41.940125	20	-	-	13	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	19	26	26	5	41.914	41.914	54	0																														
+160513_0850	1	simulations	19	18	18.1	10	36.199855	35.72282	53	0																														
+160513_0850	1	simulations	19	12	12	7	22.328	22.328	52	0																														
+160513_0850	1	simulations	19	18	8	8	4.652	23.722	50	0																														
+160513_0850	1	simulations	19	25	25	5	41.9125	41.9125	47	0																														
+160513_0850	1	simulations	19	16	18	7	37.898	29.548	43	0																														
+160513_0850	1	simulations	19	26.6	27.7	10	46.979115	36.05606	42	0																														
+160513_0850	1	simulations	19	16	10	8	15.466	26.908	40	0																														
+160513_0850	1	simulations	19	20	20	6	38.68	38.68	36	0																														
+160513_0850	1	simulations	19	20	28	7	67.272	2.12	35	0																														
+160513_0850	1	simulations	19	26.6	26.6	10	41.8117	41.8117	33	0																														
+160513_0850	1	simulations	19	14	8	8	13.06	17.698	25	0																														
+160513_0850	1	simulations	19	14	18	7	37.69	23.258	24	0																														
+160513_0850	1	simulations	19	27.7	27.7	10	41.423125	41.423125	23	0																														
+160513_0850	1	simulations	19	14	14	9	27.706	27.706	22	0																														
+160513_0850	1	simulations	19	24	25	6	45.9355	37.508	21	0																														
+160513_0850	1	simulations	19	22	20	7	32.876	45.762	15	0																														
+160513_0850	1	simulations	19	7	7	9	5.1205	5.1205	13	0																														
+160513_0850	1	simulations	19	4	4	9	-7.784	-7.784	8	0																														
+160513_0850	1	simulations	19	15.1	15.1	10	30.297325	30.297325	8	0																														
+160513_0850	1	simulations	19	12	12	7	22.328	22.328	7	0																														
+160513_0850	1	simulations	19	14	6	8	8.266	9.914	2	0																														
+160513_0850	1	simulations	19	6	6	9	1.034	1.034	1	0																														
+160513_0850	1	simulations	19	28	25	6	26.5075	55.192	0	62																														
+160513_0850	1	simulations	19	18	25	6	58.3975	11.312	0	52																														
+160513_0850	1	simulations	19	10.1	10.1	10	16.422325	16.422325	0	50																														
+160513_0850	1	simulations	19	25	25.5	9	44.118875	39.6925	0	48																														
+160513_0850	1	simulations	19	19.3	19.3	10	37.798525	37.798525	0	41																														
+160513_0850	1	simulations	19	25.5	25.4	9	41.49038	42.386995	0	37																														
+160513_0850	1	simulations	19	25.5	25.6	9	42.38998	41.487695	0	30																														
+160513_0850	1	simulations	19	2.2	2.2	10	-16.4555	-16.4555	0	28																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	19	3	2	1	pareil	-	56																															
+160513_0850	1	chat	19	4	2	2	pareil	-	54																															
+160513_0850	1	chat	19	5	3	1	25 tous les deux ?	-	30																															
+160513_0850	1	chat	19	6	3	2	ok!	-	14																															
+160513_0850	1	chat	19	5	3	1	ok	-	6																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	20	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	20	1	1	41.914	10852.514	0	2	41.914	1	4	1	0	0	55	26	26	26	26	41.914	59	-	-	10	-														
+160513_0850	1	subjects	20	2	1	41.914	10776.744	0	1	41.914	2	4	0	1	0	0	26	26	26	26	41.914	62	-	-	9	-														
+160513_0850	1	subjects	20	3	2	41.914	10798.832	0	4	41.914	1	4	1	1	0	56	26	26	26	26	41.914	56	-	-	12	-														
+160513_0850	1	subjects	20	4	2	41.914	10853.366	0	3	41.914	2	4	1	1	0	56	26	26	26	26	41.914	58	-	-	11	-														
+160513_0850	1	subjects	20	5	3	41.914	10559.3415	0	6	41.914	1	4	0	1	0	0	26	26	25	25	41.9125	57	-	-	13	-														
+160513_0850	1	subjects	20	6	3	41.914	10741.418	0	5	41.914	2	4	1	0	0	3	26	26	25	25	41.9125	44	-	-	14	-														
+160513_0850	1	subjects	20	7	4	18.106	10308.326	0	8	19.652	1	4	0	0	0	0	12	10	10	14	23.258	8	-	-	0	-														
+160513_0850	1	subjects	20	8	4	19.652	10331.6095	0	7	18.106	2	4	0	0	0	0	10	12	14	10	17.898	61	-	-	10	-														
+160513_0850	1	subjects	20	9	5	41.940125	10763.35538	0	10	41.940125	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	27	-	-	13	-														
+160513_0850	1	subjects	20	10	5	41.940125	10758.74188	0	9	41.940125	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	24	-	-	12	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	20	26	26	6	41.914	41.914	56	0																														
+160513_0850	1	simulations	20	12	14	7	26.594	22.78	53	0																														
+160513_0850	1	simulations	20	0	0	9	-28	-28	52	0																														
+160513_0850	1	simulations	20	27	27	6	41.7005	41.7005	50	0																														
+160513_0850	1	simulations	20	20	28	7	67.272	2.12	44	0																														
+160513_0850	1	simulations	20	13.8	13.8	10	27.2069	27.2069	42	0																														
+160513_0850	1	simulations	20	28	18	9	-7.558	68.212	41	0																														
+160513_0850	1	simulations	20	14	10	8	17.898	23.258	40	0																														
+160513_0850	1	simulations	20	28	28	6	41.272	41.272	39	0																														
+160513_0850	1	simulations	20	14	16	7	32.676	26.594	36	0																														
+160513_0850	1	simulations	20	16.4	16.4	10	33.0244	33.0244	32	0																														
+160513_0850	1	simulations	20	16	10	8	15.466	26.908	32	0																														
+160513_0850	1	simulations	20	28	19	9	-2.7245	68.02	29	0																														
+160513_0850	1	simulations	20	20	22	7	45.762	32.876	28	0																														
+160513_0850	1	simulations	20	18.9	18.9	10	37.247525	37.247525	25	0																														
+160513_0850	1	simulations	20	19	19	6	37.3885	37.3885	24	0																														
+160513_0850	1	simulations	20	10	12	8	19.652	18.106	24	0																														
+160513_0850	1	simulations	20	26.8	26.8	5	41.7604	41.7604	24	0																														
+160513_0850	1	simulations	20	28	27.1	9	36.832255	45.97342	19	0																														
+160513_0850	1	simulations	20	16	18	7	37.898	29.548	17	0																														
+160513_0850	1	simulations	20	10	16	8	26.908	15.466	17	0																														
+160513_0850	1	simulations	20	26	26	5	41.914	41.914	15	0																														
+160513_0850	1	simulations	20	26.3	26.3	10	41.872525	41.872525	14	0																														
+160513_0850	1	simulations	20	22	20	7	32.876	45.762	9	0																														
+160513_0850	1	simulations	20	10	28	8	49.732	-45.83	9	0																														
+160513_0850	1	simulations	20	15	26	6	59.888	-7.8665	9	0																														
+160513_0850	1	simulations	20	25.8	25.8	10	41.9309	41.9309	3	0																														
+160513_0850	1	simulations	20	25.7	25.7	10	41.936125	41.936125	0	52																														
+160513_0850	1	simulations	20	25.9	25.9	10	41.923525	41.923525	0	35																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	20	3	2	1	idem	-	58																															
+160513_0850	1	chat	20	4	2	2	pareil	-	57																															
+160513_0850	1	chat	20	2	1	2	plus que 10 !!!!	-	54																															
+160513_0850	1	chat	20	5	3	1	tu proposes quoi ?	-	52																															
+160513_0850	1	chat	20	1	1	1	yeaaah	-	48																															
+160513_0850	1	chat	20	6	3	2	26-26	-	45																															
+160513_0850	1	chat	20	1	1	1	on en voit le bout	-	44																															
+160513_0850	1	chat	20	2	1	2	enfin hihiii	-	33																															
+160513_0850	1	chat	20	1	1	1	attend on y est pas encore mdrrr	-	16																															
+160513_0850	1	chat	20	5	3	1	ok	-	9																															
+160513_0850	1	chat	20	2	1	2	mdrr c'est sur...	-	1																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	21	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	21	1	1	41.914	10894.428	0	2	41.914	1	4	1	0	0	58	26	26	26	26	41.914	60	-	-	14	-														
+160513_0850	1	subjects	21	2	1	41.914	10818.658	0	1	41.914	2	4	0	1	0	0	26	26	26	26	41.914	62	-	-	14	-														
+160513_0850	1	subjects	21	3	2	41.914	10840.746	0	4	41.914	1	4	1	1	0	56	26	26	26	26	41.914	63	-	-	14	-														
+160513_0850	1	subjects	21	4	2	41.914	10895.28	0	3	41.914	2	4	1	1	0	55	26	26	26	26	41.914	57	-	-	13	-														
+160513_0850	1	subjects	21	5	3	10.8295	10570.171	0	6	8.896	1	4	0	1	0	0	10	7	26	26	41.914	56	-	-	9	-														
+160513_0850	1	subjects	21	6	3	8.896	10750.314	0	5	10.8295	2	4	1	0	0	4	7	10	26	26	41.914	40	-	-	12	-														
+160513_0850	1	subjects	21	7	4	19.652	10327.978	0	8	18.106	1	4	0	0	0	0	10	12	12	10	18.106	17	-	-	0	-														
+160513_0850	1	subjects	21	8	4	18.106	10349.7155	0	7	19.652	2	4	0	0	0	0	12	10	10	12	19.652	58	-	-	12	-														
+160513_0850	1	subjects	21	9	5	41.940125	10805.2955	0	10	41.940125	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	29	-	-	14	-														
+160513_0850	1	subjects	21	10	5	41.940125	10800.682	0	9	41.940125	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	26	-	-	13	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	21	0	28	10	-23.408	-92.68	53	0																														
+160513_0850	1	simulations	21	12	10	8	18.106	19.652	50	0																														
+160513_0850	1	simulations	21	22	22	7	40.618	40.618	49	0																														
+160513_0850	1	simulations	21	27	27	5	41.7005	41.7005	48	0																														
+160513_0850	1	simulations	21	2	28	10	-4.332	-83.398	46	0																														
+160513_0850	1	simulations	21	12	10	7	18.106	19.652	41	0																														
+160513_0850	1	simulations	21	28	2.8	10	-79.67288	2.67568	38	0																														
+160513_0850	1	simulations	21	24.4	24.4	9	41.8084	41.8084	34	0																														
+160513_0850	1	simulations	21	28	28	7	41.272	41.272	33	0																														
+160513_0850	1	simulations	21	10	15	5	25.0775	16.96	32	0																														
+160513_0850	1	simulations	21	14.1	14.1	10	27.952325	27.952325	29	0																														
+160513_0850	1	simulations	21	18	15	6	26.3975	38.072	29	0																														
+160513_0850	1	simulations	21	12	12	7	22.328	22.328	25	0																														
+160513_0850	1	simulations	21	24.7	25	9	43.17778	40.589995	23	0																														
+160513_0850	1	simulations	21	15	26	6	59.888	-7.8665	21	0																														
+160513_0850	1	simulations	21	20.5	20.5	10	39.245125	39.245125	20	0																														
+160513_0850	1	simulations	21	12	12	8	22.328	22.328	20	0																														
+160513_0850	1	simulations	21	12	18	7	35.258	17.012	17	0																														
+160513_0850	1	simulations	21	24.7	24.8	9	42.3059	41.448975	15	0																														
+160513_0850	1	simulations	21	25.5	25.5	10	41.940125	41.940125	12	0																														
+160513_0850	1	simulations	21	11	16	6	29.184	18.2315	9	0																														
+160513_0850	1	simulations	21	20	28	7	67.272	2.12	9	0																														
+160513_0850	1	simulations	21	22.3	22.3	10	40.834525	40.834525	1	0																														
+160513_0850	1	simulations	21	12	12	7	22.328	22.328	1	0																														
+160513_0850	1	simulations	21	7	25	6	29.2585	-35.6855	0	58																														
+160513_0850	1	simulations	21	24.3	24.3	10	41.783525	41.783525	0	51																														
+160513_0850	1	simulations	21	7	24	6	27.824	-28.6925	0	51																														
+160513_0850	1	simulations	21	7	15	6	15.4085	9.2245	0	44																														
+160513_0850	1	simulations	21	24.8	24.8	10	41.8864	41.8864	0	37																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	21	3	2	1	pareil	-	57																															
+160513_0850	1	chat	21	4	2	2	pareil	-	57																															
+160513_0850	1	chat	21	6	3	2	a partir de maintenant on fait chacun met ce qu'il veut ahah? sinon c'ets pas marrant 	-	47																															
+160513_0850	1	chat	21	1	1	1	ils devraient mettre une option pour qu'on puisse garder la meme stratégie jusqu'a la fin	-	43																															
+160513_0850	1	chat	21	5	3	1	ok	-	41																															
+160513_0850	1	chat	21	2	1	2	grave mdrr	-	35																															
+160513_0850	1	chat	21	2	1	2	on aurait fini depuis longtemps XD	-	17																															
+160513_0850	1	chat	21	1	1	1	parce que nous on a pas fait dans l'originalité ahah	-	7																															
+160513_0850	1	chat	21	1	1	1	c'est clair mdr	-	3																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	22	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	22	1	1	41.914	10936.342	0	2	41.914	1	4	0	0	0	0	26	26	26	26	41.914	57	-	-	14	-														
+160513_0850	1	subjects	22	2	1	41.914	10860.572	0	1	41.914	2	4	0	0	0	0	26	26	26	26	41.914	61	-	-	13	-														
+160513_0850	1	subjects	22	3	2	41.914	10882.66	0	4	41.914	1	4	1	1	0	57	26	26	26	26	41.914	63	-	-	4	-														
+160513_0850	1	subjects	22	4	2	41.914	10937.194	0	3	41.914	2	4	1	1	0	56	26	26	26	26	41.914	57	-	-	12	-														
+160513_0850	1	subjects	22	5	3	24.076	10594.247	0	6	12.7115	1	4	0	1	0	0	9	16	10	7	10.8295	30	-	-	10	-														
+160513_0850	1	subjects	22	6	3	12.7115	10763.0255	0	5	24.076	2	4	1	0	0	3	16	9	7	10	8.896	47	-	-	11	-														
+160513_0850	1	subjects	22	7	4	21.008	10348.986	0	8	30.904	1	4	0	0	0	0	16	12	10	12	19.652	10	-	-	0	-														
+160513_0850	1	subjects	22	8	4	30.904	10380.6195	0	7	21.008	2	4	0	0	0	0	12	16	12	10	18.106	57	-	-	10	-														
+160513_0850	1	subjects	22	9	5	41.940125	10847.23562	0	10	41.940125	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	30	-	-	12	-														
+160513_0850	1	subjects	22	10	5	41.940125	10842.62212	0	9	41.940125	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	18	-	-	7	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	22	10	5	5	7.3775	1.32	54	0																														
+160513_0850	1	simulations	22	16	6	8	4.514	12.244	52	0																														
+160513_0850	1	simulations	22	28	28	7	41.272	41.272	52	0																														
+160513_0850	1	simulations	22	23.8	23.5	9	40.367755	42.75142	47	0																														
+160513_0850	1	simulations	22	11	7	5	11.6205	10.1765	43	0																														
+160513_0850	1	simulations	22	20	28	7	67.272	2.12	42	0																														
+160513_0850	1	simulations	22	16	24	6	55.184	8.176	42	0																														
+160513_0850	1	simulations	22	23.3	23.3	9	41.416525	41.416525	37	0																														
+160513_0850	1	simulations	22	13.8	13.8	10	27.2069	27.2069	35	0																														
+160513_0850	1	simulations	22	14	12	7	22.78	26.594	34	0																														
+160513_0850	1	simulations	22	16	8	8	9.968	20.688	32	0																														
+160513_0850	1	simulations	22	16	26	6	61.034	-3.396	28	0																														
+160513_0850	1	simulations	22	22	20	7	32.876	45.762	26	0																														
+160513_0850	1	simulations	22	23.7	23.7	10	41.589125	41.589125	18	0																														
+160513_0850	1	simulations	22	12	10	7	18.106	19.652	18	0																														
+160513_0850	1	simulations	22	9	8	5	11.06	10.4155	15	0																														
+160513_0850	1	simulations	22	9	26	6	41.336	-34.4585	13	0																														
+160513_0850	1	simulations	22	24	24	7	41.696	41.696	10	0																														
+160513_0850	1	simulations	22	14	6	8	8.266	9.914	10	0																														
+160513_0850	1	simulations	22	24.5	24	9	39.6715	43.814375	0	59																														
+160513_0850	1	simulations	22	24.9	25.1	9	42.779225	41.037025	0	41																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	22	3	2	1	idem	-	58																															
+160513_0850	1	chat	22	4	2	2	pareil	-	58																															
+160513_0850	1	chat	22	2	1	2	tellement pas dans l'originalite mais c'est la meilleure solution pour gagner tte les 2 	-	36																															
+160513_0850	1	chat	22	2	1	2	:)	-	32																															
+160513_0850	1	chat	22	1	1	1	c'est clair 	-	24																															
+160513_0850	1	chat	22	1	1	1	mais j'ai pas compris pourquoi on perdait si on mettait pas le meme chiffre	-	4																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	23	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	23	1	1	41.914	10978.256	0	2	41.914	1	4	1	0	0	30	26	26	26	26	41.914	60	-	-	15	-														
+160513_0850	1	subjects	23	2	1	41.914	10902.486	0	1	41.914	2	4	0	1	0	0	26	26	26	26	41.914	60	-	-	14	-														
+160513_0850	1	subjects	23	3	2	41.914	10924.574	0	4	41.914	1	4	1	1	0	55	26	26	26	26	41.914	61	-	-	15	-														
+160513_0850	1	subjects	23	4	2	41.914	10979.108	0	3	41.914	2	4	1	1	0	55	26	26	26	26	41.914	60	-	-	13	-														
+160513_0850	1	subjects	23	5	3	17.48	10611.727	0	6	16.0115	1	4	0	0	0	0	9	12	9	16	24.076	39	-	-	12	-														
+160513_0850	1	subjects	23	6	3	16.0115	10779.037	0	5	17.48	2	4	0	0	0	0	12	9	16	9	12.7115	16	-	-	12	-														
+160513_0850	1	subjects	23	7	4	35.258	10384.244	0	8	17.012	1	4	0	0	0	0	12	18	16	12	21.008	19	-	-	0	-														
+160513_0850	1	subjects	23	8	4	17.012	10397.6315	0	7	35.258	2	4	0	0	0	0	18	12	12	16	30.904	47	-	-	12	-														
+160513_0850	1	subjects	23	9	5	41.940125	10889.17575	0	10	41.940125	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	33	-	-	14	-														
+160513_0850	1	subjects	23	10	5	41.940125	10884.56225	0	9	41.940125	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	26	-	-	12	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	23	12	8	8	13.928	14.752	55	0																														
+160513_0850	1	simulations	23	12	12	7	22.328	22.328	53	0																														
+160513_0850	1	simulations	23	12	12	5	22.328	22.328	52	0																														
+160513_0850	1	simulations	23	18.8	18.8	9	37.1044	37.1044	48	0																														
+160513_0850	1	simulations	23	16	8	8	9.968	20.688	48	0																														
+160513_0850	1	simulations	23	27.3	27.3	10	41.594525	41.594525	46	0																														
+160513_0850	1	simulations	23	20	28	7	67.272	2.12	45	0																														
+160513_0850	1	simulations	23	16	9	6	12.7115	24.076	42	0																														
+160513_0850	1	simulations	23	11.1	11.1	9	19.627325	19.627325	40	0																														
+160513_0850	1	simulations	23	12	16	7	30.904	21.008	37	0																														
+160513_0850	1	simulations	23	14	10	8	17.898	23.258	37	0																														
+160513_0850	1	simulations	23	27.5	27.5	10	41.513125	41.513125	33	0																														
+160513_0850	1	simulations	23	22.2	22.2	9	40.7645	40.7645	31	0																														
+160513_0850	1	simulations	23	8	8	7	8.992	8.992	29	0																														
+160513_0850	1	simulations	23	12	10	8	18.106	19.652	27	0																														
+160513_0850	1	simulations	23	14	27	10	60.7975	-19.276	23	0																														
+160513_0850	1	simulations	23	14	14	7	27.706	27.706	20	0																														
+160513_0850	1	simulations	23	7.7	7.7	9	7.853125	7.853125	16	0																														
+160513_0850	1	simulations	23	23	25.5	10	51.443875	30.7295	12	0																														
+160513_0850	1	simulations	23	22	22	7	40.618	40.618	11	0																														
+160513_0850	1	simulations	23	19.9	22.2	9	46.66814	31.784035	6	0																														
+160513_0850	1	simulations	23	20	2	7	-23.078	-9.164	0	0																														
+160513_0850	1	simulations	23	12	12	6	22.328	22.328	0	60																														
+160513_0850	1	simulations	23	28	25.5	10	28.961375	53.2195	0	58																														
+160513_0850	1	simulations	23	11.1	22.2	9	42.10094	-2.038765	0	56																														
+160513_0850	1	simulations	23	24	12	6	-8.32	48.584	0	54																														
+160513_0850	1	simulations	23	27	25.5	10	34.569875	48.6995	0	48																														
+160513_0850	1	simulations	23	14	12	6	22.78	26.594	0	41																														
+160513_0850	1	simulations	23	26	25.5	10	39.622375	44.1905	0	38																														
+160513_0850	1	simulations	23	13	12	6	22.832	24.4555	0	33																														
+160513_0850	1	simulations	23	25	25.5	10	44.118875	39.6925	0	30																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	23	4	2	2	pareil	-	59																															
+160513_0850	1	chat	23	3	2	1	pareil	-	56																															
+160513_0850	1	chat	23	5	3	1	si on met le même nombre on a plus de points...	-	35																															
+160513_0850	1	chat	23	2	1	2	c'etait quoi ta derniere phrase ? :s	-	23																															
+160513_0850	1	chat	23	6	3	2	oui mais il dit depuis tout à l'heure de prendre une décisionj 	-	20																															
+160513_0850	1	chat	23	6	3	2	c'est ca le but du truc ahah 	-	14																															
+160513_0850	1	chat	23	5	3	1	je te propose 12 et 12	-	9																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	24	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	24	1	1	41.914	11020.17	0	2	41.914	1	4	1	0	0	6	26	26	26	26	41.914	63	-	-	15	-														
+160513_0850	1	subjects	24	2	1	41.914	10944.4	0	1	41.914	2	4	0	1	0	0	26	26	26	26	41.914	60	-	-	13	-														
+160513_0850	1	subjects	24	3	2	41.914	10966.488	0	4	41.914	1	4	1	1	0	53	26	26	26	26	41.914	59	-	-	14	-														
+160513_0850	1	subjects	24	4	2	41.914	11021.022	0	3	41.914	2	4	1	1	0	54	26	26	26	26	41.914	60	-	-	9	-														
+160513_0850	1	subjects	24	5	3	22.328	10634.055	0	6	22.328	1	4	0	0	0	0	12	12	9	12	17.48	38	-	-	13	-														
+160513_0850	1	subjects	24	6	3	22.328	10801.365	0	5	22.328	2	4	0	0	0	0	12	12	12	9	16.0115	64	-	-	13	-														
+160513_0850	1	subjects	24	7	4	68.212	10452.456	0	8	-7.558	1	4	0	0	0	0	18	28	12	18	35.258	24	-	-	3	-														
+160513_0850	1	subjects	24	8	4	-7.558	10390.0735	0	7	68.212	2	4	0	0	0	0	28	18	18	12	17.012	62	-	-	7	-														
+160513_0850	1	subjects	24	9	5	41.940125	10931.11587	0	10	41.940125	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	47	-	-	14	-														
+160513_0850	1	subjects	24	10	5	41.940125	10926.50237	0	9	41.940125	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	58	-	-	13	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	24	24	25.5	10	48.059375	35.2055	52	-																														
+160513_0850	1	simulations	24	21	1	6	-32.1635	-16.7035	50	-																														
+160513_0850	1	simulations	24	12	12	7	22.328	22.328	44	-																														
+160513_0850	1	simulations	24	14	25.5	10	56.884375	-9.0595	42	-																														
+160513_0850	1	simulations	24	1.4	14.4	9	-16.2704	-3.4693	33	-																														
+160513_0850	1	simulations	24	19	25.5	10	59.421875	12.9355	32	-																														
+160513_0850	1	simulations	24	12	12	5	22.328	22.328	26	-																														
+160513_0850	1	simulations	24	20	20	7	38.68	38.68	25	-																														
+160513_0850	1	simulations	24	1.1	2.2	9	-21.86706	-16.885765	24	-																														
+160513_0850	1	simulations	24	24	20	8	24.848	52.888	18	-																														
+160513_0850	1	simulations	24	16	25.5	10	59.567375	-0.2945	16	-																														
+160513_0850	1	simulations	24	12	12	7	22.328	22.328	16	-																														
+160513_0850	1	simulations	24	16.5	18.5	9	39.069125	30.152125	16	-																														
+160513_0850	1	simulations	24	28	28	8	41.272	41.272	10	-																														
+160513_0850	1	simulations	24	12	12	6	22.328	22.328	10	-																														
+160513_0850	1	simulations	24	14	14	7	27.706	27.706	5	-																														
+160513_0850	1	simulations	24	1	12	6	-19.912	-0.3485	1	-																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	24	4	2	2	pareil*	-	59																															
+160513_0850	1	chat	24	3	2	1	pareil	-	55																															
+160513_0850	1	chat	24	1	1	1	ce qui est bien c'est qu'on a mis en place notre stratégie des le début 	-	49																															
+160513_0850	1	chat	24	5	3	1	pardon j'étais persuadé que tu allais mettre moins	-	47																															
+160513_0850	1	chat	24	8	4	2	met des grands nombre non?	-	39																															
+160513_0850	1	chat	24	5	3	1	12 et 12 maintenant c'est sur ?	-	33																															
+160513_0850	1	chat	24	7	4	1	ok 	-	30																															
+160513_0850	1	chat	24	2	1	2	oui, ca c'est parfait ^^	-	27																															
+160513_0850	1	chat	24	6	3	2	y 'avis pas de combi avantageuse avec 12 si tu mettais 132	-	26																															
+160513_0850	1	chat	24	6	3	2	12	-	25																															
+160513_0850	1	chat	24	1	1	1	:p	-	19																															
+160513_0850	1	chat	24	5	3	1	si on gagne 22.33	-	7																															
+160513_0850	1	chat	24	5	3	1	met 12	-	3																															
+160513_0850	1	chat	24	5	3	1	je met 12	-	0																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	25	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	25	1	1	41.914	11062.084	0	2	41.914	1	4	1	0	0	50	26	26	26	26	41.914	62	-	-	15	-														
+160513_0850	1	subjects	25	2	1	41.914	10986.314	0	1	41.914	2	4	0	1	0	0	26	26	26	26	41.914	61	-	-	14	-														
+160513_0850	1	subjects	25	3	2	41.914	11008.402	0	4	41.914	1	4	1	1	0	55	26	26	26	26	41.914	63	-	-	13	-														
+160513_0850	1	subjects	25	4	2	41.914	11062.936	0	3	41.914	2	4	1	1	0	53	26	26	26	26	41.914	60	-	-	13	-														
+160513_0850	1	subjects	25	5	3	35.258	10669.313	0	6	17.012	1	4	0	0	0	0	12	18	12	12	22.328	39	-	-	5	-														
+160513_0850	1	subjects	25	6	3	17.012	10818.377	0	5	35.258	2	4	0	0	0	0	18	12	12	12	22.328	37	-	-	5	-														
+160513_0850	1	subjects	25	7	4	41.272	10493.728	0	8	41.272	1	4	0	0	0	0	28	28	18	28	68.212	42	-	-	0	-														
+160513_0850	1	subjects	25	8	4	41.272	10431.3455	0	7	41.272	2	4	0	0	0	0	28	28	28	18	-7.558	62	-	-	6	-														
+160513_0850	1	subjects	25	9	5	41.940125	10973.056	0	10	41.940125	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	63	-	-	12	-														
+160513_0850	1	subjects	25	10	5	41.940125	10968.4425	0	9	41.940125	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	33	-	-	11	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	25	18	20	8	42.26	31.642	52	0																														
+160513_0850	1	simulations	25	24.5	25.5	10	46.158625	37.447625	51	0																														
+160513_0850	1	simulations	25	28	26	6	31.418	51.108	48	0																														
+160513_0850	1	simulations	25	26.5	25.5	10	37.165625	46.443625	42	0																														
+160513_0850	1	simulations	25	7.7	28	9	37.83318	-56.702905	40	0																														
+160513_0850	1	simulations	25	18	18	7	35.882	35.882	38	0																														
+160513_0850	1	simulations	25	28	7	9	-60.0005	33.628	33	0																														
+160513_0850	1	simulations	25	20	20	5	38.68	38.68	29	0																														
+160513_0850	1	simulations	25	28	28	7	41.272	41.272	28	0																														
+160513_0850	1	simulations	25	25.5	15.5	10	-2.489875	59.105125	27	0																														
+160513_0850	1	simulations	25	28	28	8	41.272	41.272	24	0																														
+160513_0850	1	simulations	25	15.5	25.5	9	59.105125	-2.489875	20	0																														
+160513_0850	1	simulations	25	19.5	25.5	10	58.911125	15.150125	18	0																														
+160513_0850	1	simulations	25	28	28	7	41.272	41.272	16	0																														
+160513_0850	1	simulations	25	4.5	24.5	10	12.741125	-42.408875	10	0																														
+160513_0850	1	simulations	25	12	25.5	9	51.977375	-17.7805	8	0																														
+160513_0850	1	simulations	25	28	28	7	41.272	41.272	7	0																														
+160513_0850	1	simulations	25	28	28	8	41.272	41.272	6	0																														
+160513_0850	1	simulations	25	18	20	6	42.26	31.642	0	39																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	25	4	2	2	pareil	-	58																															
+160513_0850	1	chat	25	3	2	1	oui	-	55																															
+160513_0850	1	chat	25	1	1	1	plus que 5 !!!	-	53																															
+160513_0850	1	chat	25	7	4	1	on met a partir de combien 	-	48																															
+160513_0850	1	chat	25	2	1	2	je pense qu'on final tu vas avoir entre 15 et 17 :)	-	41																															
+160513_0850	1	chat	25	5	3	1	le but est de se mettre ok pour gagner un max de points  non ?	-	39																															
+160513_0850	1	chat	25	2	1	2	ouiiiii	-	38																															
+160513_0850	1	chat	25	8	4	2	met 28 	-	36																															
+160513_0850	1	chat	25	7	4	1	ok	-	25																															
+160513_0850	1	chat	25	5	3	1	je te propose 20.0 pour nous deux	-	17																															
+160513_0850	1	chat	25	6	3	2	non ! la oui on peut discuter mais après dans le deuxième étape c'est chacun pour son cul 	-	17																															
+160513_0850	1	chat	25	5	3	1	on gagne 38.68	-	10																															
+160513_0850	1	chat	25	1	1	1	oui j'ai fait le meme calcul ca fait 17 je pense 	-	10																															
+160513_0850	1	chat	25	6	3	2	il dit de prendre une décision tu dois mettre ce que tu veux dans l'ayutre étape	-	2																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	26	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	26	1	1	41.914	11103.998	0	2	41.914	1	4	1	0	0	12	26	26	26	26	41.914	61	-	-	15	-														
+160513_0850	1	subjects	26	2	1	41.914	11028.228	0	1	41.914	2	4	0	1	0	0	26	26	26	26	41.914	62	-	-	1	-														
+160513_0850	1	subjects	26	3	2	41.914	11050.316	0	4	41.914	1	4	1	1	0	55	26	26	26	26	41.914	62	-	-	15	-														
+160513_0850	1	subjects	26	4	2	41.914	11104.85	0	3	41.914	2	4	1	1	0	55	26	26	26	26	41.914	62	-	-	14	-														
+160513_0850	1	subjects	26	5	3	16.0115	10685.3245	0	6	17.48	1	4	0	0	0	0	12	9	12	18	35.258	44	-	-	9	-														
+160513_0850	1	subjects	26	6	3	17.48	10835.857	0	5	16.0115	2	4	0	0	0	0	9	12	18	12	17.012	7	-	-	11	-														
+160513_0850	1	subjects	26	7	4	41.272	10535	0	8	41.272	1	4	0	0	0	0	28	28	28	28	41.272	30	-	-	0	-														
+160513_0850	1	subjects	26	8	4	41.272	10472.6175	0	7	41.272	2	4	0	0	0	0	28	28	28	28	41.272	62	-	-	12	-														
+160513_0850	1	subjects	26	9	5	41.940125	11014.99612	0	10	41.940125	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	29	-	-	14	-														
+160513_0850	1	subjects	26	10	5	41.940125	11010.38262	0	9	41.940125	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	30	-	-	10	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	26	18	28	10	68.212	-7.558	48	0																														
+160513_0850	1	simulations	26	21.1	26.1	9	58.607825	19.021825	46	0																														
+160513_0850	1	simulations	26	20	26	8	60.058	14.596	45	0																														
+160513_0850	1	simulations	26	20	28	7	67.272	2.12	44	0																														
+160513_0850	1	simulations	26	20	28	10	67.272	2.12	38	0																														
+160513_0850	1	simulations	26	12	12	7	22.328	22.328	36	0																														
+160513_0850	1	simulations	26	28	25.5	9	28.961375	53.2195	34	0																														
+160513_0850	1	simulations	26	10	12	5	19.652	18.106	29	0																														
+160513_0850	1	simulations	26	18	19	10	39.0655	34.04	26	0																														
+160513_0850	1	simulations	26	22	22	7	40.618	40.618	26	0																														
+160513_0850	1	simulations	26	5	25.5	9	17.288875	-47.9575	23	0																														
+160513_0850	1	simulations	26	28	27	10	36.3395	46.468	15	0																														
+160513_0850	1	simulations	26	20	25.5	9	58.261375	17.3675	15	0																														
+160513_0850	1	simulations	26	12	18	5	35.258	17.012	13	0																														
+160513_0850	1	simulations	26	14	28	6	63.42	-26.782	8	0																														
+160513_0850	1	simulations	26	28	28	7	41.272	41.272	4	0																														
+160513_0850	1	simulations	26	16	12	6	21.008	30.904	0	53																														
+160513_0850	1	simulations	26	21	12	6	6.848	41.8715	0	43																														
+160513_0850	1	simulations	26	2	12	6	-13.292	1.658	0	35																														
+160513_0850	1	simulations	26	25	12	6	-14.488	50.8435	0	20																														
+160513_0850	1	simulations	26	9	12	6	17.48	16.0115	0	12																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	26	4	2	2	pareil	-	57																															
+160513_0850	1	chat	26	3	2	1	oui	-	56																															
+160513_0850	1	chat	26	7	4	1	combien cette fois 	-	54																															
+160513_0850	1	chat	26	5	3	1	j'ai compris le msg	-	53																															
+160513_0850	1	chat	26	6	3	2	parce que le amx de point tu le fais que quand tu met pas pareil que' l'autre	-	47																															
+160513_0850	1	chat	26	2	1	2	ca va on a pas a se plaindre si c'est ca ^^	-	47																															
+160513_0850	1	chat	26	2	1	2	plus que 4 !!	-	42																															
+160513_0850	1	chat	26	1	1	1	franchement c'est cool	-	40																															
+160513_0850	1	chat	26	1	1	1	ouiiii	-	38																															
+160513_0850	1	chat	26	8	4	2	je sais pas	-	35																															
+160513_0850	1	chat	26	6	3	2	c'\qest pour ca qu'il dit prenez une décision il voit ce qu'on fait sur lordi 	-	31																															
+160513_0850	1	chat	26	1	1	1	mieux que le smic	-	29																															
+160513_0850	1	chat	26	2	1	2	mdrr ouii	-	20																															
+160513_0850	1	chat	26	8	4	2	au pire met 28.0 jusqu'a la fin	-	19																															
+160513_0850	1	chat	26	7	4	1	on garde le 28	-	19																															
+160513_0850	1	chat	26	1	1	1	ahah	-	16																															
+160513_0850	1	chat	26	8	4	2	oui c bon	-	12																															
+160513_0850	1	chat	26	5	3	1	oui	-	5																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	27	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	27	1	1	41.914	11145.912	0	2	41.914	1	4	1	0	0	0	26	26	26	26	41.914	61	-	-	15	-														
+160513_0850	1	subjects	27	2	1	41.914	11070.142	0	1	41.914	2	4	0	1	0	0	26	26	26	26	41.914	62	-	-	14	-														
+160513_0850	1	subjects	27	3	2	41.914	11092.23	0	4	41.914	1	4	1	1	0	55	26	26	26	26	41.914	62	-	-	14	-														
+160513_0850	1	subjects	27	4	2	41.914	11146.764	0	3	41.914	2	4	1	1	0	55	26	26	26	26	41.914	60	-	-	15	-														
+160513_0850	1	subjects	27	5	3	23.258	10708.5825	0	6	17.898	1	4	0	0	0	0	10	14	12	9	16.0115	50	-	-	8	-														
+160513_0850	1	subjects	27	6	3	17.898	10853.755	0	5	23.258	2	4	0	0	0	0	14	10	9	12	17.48	30	-	-	12	-														
+160513_0850	1	subjects	27	7	4	41.272	10576.272	0	8	41.272	1	4	0	0	0	0	28	28	28	28	41.272	23	-	-	0	-														
+160513_0850	1	subjects	27	8	4	41.272	10513.8895	0	7	41.272	2	4	0	0	0	0	28	28	28	28	41.272	61	-	-	12	-														
+160513_0850	1	subjects	27	9	5	41.940125	11056.93625	0	10	41.940125	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	34	-	-	11	-														
+160513_0850	1	subjects	27	10	5	41.940125	11052.32275	0	9	41.940125	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	48	-	-	10	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	27	8	18	5	23.722	4.652	56	0																														
+160513_0850	1	simulations	27	22	22	7	40.618	40.618	52	0																														
+160513_0850	1	simulations	27	25.5	12	9	-17.7805	51.977375	50	0																														
+160513_0850	1	simulations	27	12	21	6	41.8715	6.848	49	0																														
+160513_0850	1	simulations	27	8	9	5	10.4155	11.06	46	0																														
+160513_0850	1	simulations	27	0	28	8	-23.408	-92.68	46	0																														
+160513_0850	1	simulations	27	12	21	10	41.8715	6.848	45	0																														
+160513_0850	1	simulations	27	12	12	7	22.328	22.328	44	0																														
+160513_0850	1	simulations	27	13	19	10	39.1105	17.4625	37	0																														
+160513_0850	1	simulations	27	25	18	6	11.312	58.3975	35	0																														
+160513_0850	1	simulations	27	18	18	7	35.882	35.882	34	0																														
+160513_0850	1	simulations	27	20	28	8	67.272	2.12	33	0																														
+160513_0850	1	simulations	27	20	28	7	67.272	2.12	26	0																														
+160513_0850	1	simulations	27	9	10	5	14.248	14.3255	25	0																														
+160513_0850	1	simulations	27	28	14	10	-26.782	63.42	20	0																														
+160513_0850	1	simulations	27	23	21	6	33.1705	47.1905	18	0																														
+160513_0850	1	simulations	27	18	20	7	42.26	31.642	18	0																														
+160513_0850	1	simulations	27	18.8	28	9	68.10288	-3.69208	17	0																														
+160513_0850	1	simulations	27	12	12	7	22.328	22.328	10	0																														
+160513_0850	1	simulations	27	3	15	10	-5.2675	-0.9355	9	0																														
+160513_0850	1	simulations	27	18	28	9	68.212	-7.558	0	58																														
+160513_0850	1	simulations	27	14	18	6	37.69	23.258	0	52																														
+160513_0850	1	simulations	27	18	27	9	64.9295	-0.712	0	48																														
+160513_0850	1	simulations	27	17	18	6	37.168	32.7095	0	40																														
+160513_0850	1	simulations	27	14	18	6	37.69	23.258	0	34																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	27	4	2	2	pareil	-	57																															
+160513_0850	1	chat	27	3	2	1	idem	-	56																															
+160513_0850	1	chat	27	2	1	2	apres ca c'est fini l'experience tu crois ?	-	50																															
+160513_0850	1	chat	27	2	1	2	parce qu'il est que 11h la..	-	40																															
+160513_0850	1	chat	27	1	1	1	oui sur sinon ils nous auraient mis d'autres instructions je pense	-	24																															
+160513_0850	1	chat	27	2	1	2	bon ca va alors :p	-	7																															
+160513_0850	1	chat	27	1	1	1	tqt je pense fini 	-	4																															
+160513_0850	1	chat	27	1	1	1	:p	-	1																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	28	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	28	1	1	41.914	11187.826	0	2	41.914	1	4	1	0	0	25	26	26	26	26	41.914	62	-	-	14	-														
+160513_0850	1	subjects	28	2	1	41.914	11112.056	0	1	41.914	2	4	0	1	0	0	26	26	26	26	41.914	62	-	-	12	-														
+160513_0850	1	subjects	28	3	2	41.914	11134.144	0	4	41.914	1	4	1	1	0	55	26	26	26	26	41.914	63	-	-	15	-														
+160513_0850	1	subjects	28	4	2	41.914	11188.678	0	3	41.914	2	4	1	1	0	56	26	26	26	26	41.914	60	-	-	14	-														
+160513_0850	1	subjects	28	5	3	5.668	10714.2505	0	6	-3.302	1	4	0	1	0	0	10	4	10	14	23.258	48	-	-	8	-														
+160513_0850	1	subjects	28	6	3	-3.302	10850.453	0	5	5.668	2	4	1	0	0	4	4	10	14	10	17.898	1	-	-	13	-														
+160513_0850	1	subjects	28	7	4	41.272	10617.544	0	8	41.272	1	4	0	0	0	0	28	28	28	28	41.272	25	-	-	11	-														
+160513_0850	1	subjects	28	8	4	41.272	10555.1615	0	7	41.272	2	4	0	0	0	0	28	28	28	28	41.272	58	-	-	13	-														
+160513_0850	1	subjects	28	9	5	41.940125	11098.87637	0	10	41.940125	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	53	-	-	14	-														
+160513_0850	1	subjects	28	10	5	41.940125	11094.26287	0	9	41.940125	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	58	-	-	12	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	28	15	10	6	16.96	25.0775	53	0																														
+160513_0850	1	simulations	28	14	14	7	27.706	27.706	52	0																														
+160513_0850	1	simulations	28	20	28	7	67.272	2.12	44	0																														
+160513_0850	1	simulations	28	20.3	20.3	10	39.025525	39.025525	43	0																														
+160513_0850	1	simulations	28	14	9	6	15.4735	20.756	43	0																														
+160513_0850	1	simulations	28	18.9	27.5	9	66.347345	0.209905	40	0																														
+160513_0850	1	simulations	28	12	12	7	22.328	22.328	35	0																														
+160513_0850	1	simulations	28	10	20	5	34.34	3.93	35	0																														
+160513_0850	1	simulations	28	9	12	6	17.48	16.0115	34	0																														
+160513_0850	1	simulations	28	28	16	8	-17.192	66.928	29	0																														
+160513_0850	1	simulations	28	4	1	10	-9.8765	-22.016	28	0																														
+160513_0850	1	simulations	28	24	24	7	41.696	41.696	26	0																														
+160513_0850	1	simulations	28	18	28	8	68.212	-7.558	21	0																														
+160513_0850	1	simulations	28	15	13	10	24.7945	29.7425	20	0																														
+160513_0850	1	simulations	28	9	18	5	27.44	7.7255	18	0																														
+160513_0850	1	simulations	28	18	13	6	20.1295	36.752	18	0																														
+160513_0850	1	simulations	28	12	14	7	26.594	22.78	17	0																														
+160513_0850	1	simulations	28	10	12	7	19.652	18.106	9	0																														
+160513_0850	1	simulations	28	13	14	6	27.428	25.2375	8	0																														
+160513_0850	1	simulations	28	8	8	7	8.992	8.992	2	0																														
+160513_0850	1	simulations	28	13	10	6	18.28	21.4495	0	52																														
+160513_0850	1	simulations	28	9	10	6	14.248	14.3255	0	46																														
+160513_0850	1	simulations	28	8	10	6	11.85	12.572	0	39																														
+160513_0850	1	simulations	28	15	10	6	16.96	25.0775	0	30																														
+160513_0850	1	simulations	28	17	10	6	13.416	28.7495	0	21																														
+160513_0850	1	simulations	28	22	10	6	-5.174	38.122	0	8																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	28	4	2	2	pareil	-	58																															
+160513_0850	1	chat	28	3	2	1	pareil	-	57																															
+160513_0850	1	chat	28	2	1	2	encore 2 !!!	-	55																															
+160513_0850	1	chat	28	1	1	1	presque fini !!	-	45																															
+160513_0850	1	chat	28	1	1	1	il fallait etre motivé mdr	-	39																															
+160513_0850	1	chat	28	2	1	2	mdrr ouii	-	28																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	29	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	29	1	1	41.914	11229.74	0	2	41.914	1	4	0	0	0	0	26	26	26	26	41.914	62	-	-	13	-														
+160513_0850	1	subjects	29	2	1	41.914	11153.97	0	1	41.914	2	4	0	0	0	0	26	26	26	26	41.914	62	-	-	14	-														
+160513_0850	1	subjects	29	3	2	41.914	11176.058	0	4	41.914	1	4	1	1	0	53	26	26	26	26	41.914	61	-	-	15	-														
+160513_0850	1	subjects	29	4	2	41.914	11230.592	0	3	41.914	2	4	1	1	0	55	26	26	26	26	41.914	56	-	-	99999	-														
+160513_0850	1	subjects	29	5	3	14.3255	10728.576	0	6	14.248	1	4	0	0	0	0	10	9	10	4	5.668	49	-	-	11	-														
+160513_0850	1	subjects	29	6	3	14.248	10864.701	0	5	14.3255	2	4	0	0	0	0	9	10	4	10	-3.302	31	-	-	14	-														
+160513_0850	1	subjects	29	7	4	41.272	10658.816	0	8	41.272	1	4	0	0	0	0	28	28	28	28	41.272	28	-	-	0	-														
+160513_0850	1	subjects	29	8	4	41.272	10596.4335	0	7	41.272	2	4	0	0	0	0	28	28	28	28	41.272	60	-	-	13	-														
+160513_0850	1	subjects	29	9	5	41.940125	11140.8165	0	10	41.940125	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	60	-	-	14	-														
+160513_0850	1	subjects	29	10	5	41.940125	11136.203	0	9	41.940125	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	59	-	-	14	-														
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	29	28	28	7	41.272	41.272	51	0																														
+160513_0850	1	simulations	29	10	5	5	7.3775	1.32	50	0																														
+160513_0850	1	simulations	29	1	10	6	-20.504	0.6055	49	0																														
+160513_0850	1	simulations	29	17.4	17.4	10	34.8749	34.8749	46	0																														
+160513_0850	1	simulations	29	11	9	5	15.4465	15.8585	43	0																														
+160513_0850	1	simulations	29	28	28	7	41.272	41.272	42	0																														
+160513_0850	1	simulations	29	5	10	6	1.32	7.3775	41	0																														
+160513_0850	1	simulations	29	9.4	9.4	10	14.0509	14.0509	37	0																														
+160513_0850	1	simulations	29	10	9	5	14.3255	14.248	33	0																														
+160513_0850	1	simulations	29	9	10	6	14.248	14.3255	33	0																														
+160513_0850	1	simulations	29	12	12	7	22.328	22.328	33	0																														
+160513_0850	1	simulations	29	20	28	7	67.272	2.12	25	0																														
+160513_0850	1	simulations	29	11	10	6	17.376	17.8655	21	0																														
+160513_0850	1	simulations	29	10	10	5	16.09	16.09	17	0																														
+160513_0850	1	simulations	29	12	10	6	18.106	19.652	16	0																														
+160513_0850	1	simulations	29	22	22	7	40.618	40.618	16	0																														
+160513_0850	1	simulations	29	26.5	26.5	9	41.834125	41.834125	11	0																														
+160513_0850	1	simulations	29	13	10	6	18.28	21.4495	9	0																														
+160513_0850	1	simulations	29	10	10	7	16.09	16.09	4	0																														
+160513_0850	1	simulations	29	14	10	6	17.898	23.258	3	0																														
+160513_0850	1	simulations	29	24.6	24.6	9	41.8517	41.8517	0	0																														
+160513_0850	1	simulations	29	15	10	6	16.96	25.0775	0	61																														
+160513_0850	1	simulations	29	16	10	6	15.466	26.908	0	52																														
+160513_0850	1	simulations	29	9	12	6	17.48	16.0115	0	34																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	29	3	2	1	yes	-	59																															
+160513_0850	1	chat	29	4	2	2	pareil	-	57																															
+160513_0850	1	chat	29	2	1	2	allez, un petit dernier :p	-	48																															
+160513_0850	1	chat	29	1	1	1	ahah celui la on  l'avait attendu	-	34																															
+160513_0850	1	chat	29	2	1	2	tellement, on moins on l'apprecie	-	17																															
+160513_0850	1	chat	29	1	1	1	on le savoure	-	10																															
+160513_0850	1	chat	29	2	1	2	mdrr	-	5																															
+160513_0850	1	globals	Period	NumPeriods	RepeatTreatment	marketFrame	chatAllowed	StratComp	PosExt	NumSubjectPerGroup	chatTime	Max	MaxFake	MinFake	a	b	c	d	e	f	A	B	C	D	E	F	alpha	beta	gamma	delta	epsilon	nu	alphab	betab	gammab	deltab	epsilonb	nub	AuctionStop	AuctionNoStop
+160513_0850	1	globals	30	30	0	0	1	1	1	2	60	28	100	-100	-28	5.474	0.01	0.278	0.0055	0.165	41.272	5.474	4.938	0.278	0.0055	0.165	-28	2.968563107	2.515436893	0.08175753355	0.02278268836	0.04852515481	41.272	2.968563107	2.432563107	0.08175753355	0.02278268836	0.04852515481	0	0
+160513_0850	1	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	OtherSubject	OtherProfit	subjectID	Stage	FinishChat	otherFinish	LeaveStage	TimeTerminerDialogueStageOK	Inv	OtherInv	PreviousInv	PreviousOtherInv	PreviousProfit	TimeValiderInvestmentStageOK	Winst	Earnings	TimeContinuerProfitDisplayOK	TimeOKEndOfPracticeOK														
+160513_0850	1	subjects	30	1	1	41.914	11271.654	0	2	41.914	1	4	1	0	0	2	26	26	26	26	41.914	61	1271.654	12.71654	7	-														
+160513_0850	1	subjects	30	2	1	41.914	11195.884	0	1	41.914	2	4	0	1	0	0	26	26	26	26	41.914	62	1195.884	11.95884	7	-														
+160513_0850	1	subjects	30	3	2	61.658	11237.716	0	4	5.578	1	4	1	1	0	56	18	26	26	26	41.914	63	1237.716	12.37716	10	-														
+160513_0850	1	subjects	30	4	2	5.578	11236.17	0	3	61.658	2	4	1	1	0	49	26	18	26	26	41.914	53	1236.17	12.3617	0	-														
+160513_0850	1	subjects	30	5	3	56.4675	10785.0435	0	6	20	1	4	0	0	0	0	20	25	10	9	14.3255	36	785.0435	7.850435	0	-														
+160513_0850	1	subjects	30	6	3	20	10884.701	0	5	56.4675	2	4	0	0	0	0	25	20	9	10	14.248	63	884.701	8.84701	5	-														
+160513_0850	1	subjects	30	7	4	41.272	10700.088	0	8	41.272	1	4	0	0	0	0	28	28	28	28	41.272	15	700.088	7.00088	0	-														
+160513_0850	1	subjects	30	8	4	41.272	10637.7055	0	7	41.272	2	4	0	0	0	0	28	28	28	28	41.272	58	637.7055	6.377055	0	-														
+160513_0850	1	subjects	30	9	5	41.940125	11182.75662	0	10	41.940125	1	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	52	1182.756625	11.82756625	2	-														
+160513_0850	1	subjects	30	10	5	41.940125	11178.14312	0	9	41.940125	2	4	0	0	0	0	25.5	25.5	25.5	25.5	41.940125	61	1178.143125	11.78143125	1	-														
+160513_0850	1	summary	Period																																					
+160513_0850	1	summary	0																																					
+160513_0850	1	summary	1																																					
+160513_0850	1	summary	2																																					
+160513_0850	1	summary	3																																					
+160513_0850	1	summary	4																																					
+160513_0850	1	summary	5																																					
+160513_0850	1	summary	6																																					
+160513_0850	1	summary	7																																					
+160513_0850	1	summary	8																																					
+160513_0850	1	summary	9																																					
+160513_0850	1	summary	10																																					
+160513_0850	1	summary	11																																					
+160513_0850	1	summary	12																																					
+160513_0850	1	summary	13																																					
+160513_0850	1	summary	14																																					
+160513_0850	1	summary	15																																					
+160513_0850	1	summary	16																																					
+160513_0850	1	summary	17																																					
+160513_0850	1	summary	18																																					
+160513_0850	1	summary	19																																					
+160513_0850	1	summary	20																																					
+160513_0850	1	summary	21																																					
+160513_0850	1	summary	22																																					
+160513_0850	1	summary	23																																					
+160513_0850	1	summary	24																																					
+160513_0850	1	summary	25																																					
+160513_0850	1	summary	26																																					
+160513_0850	1	summary	27																																					
+160513_0850	1	summary	28																																					
+160513_0850	1	summary	29																																					
+160513_0850	1	summary	30																																					
+160513_0850	1	simulations	Period	Inv_sim1	Inv_sim2	Simulator	Pi_sim1	Pi_sim2	TimeCalculerStageInputSimulationMake	TimeCalculerInvestmentStageInputSimulationMake																														
+160513_0850	1	simulations	30	10	10	6	16.09	16.09	56	-																														
+160513_0850	1	simulations	30	22	22	7	40.618	40.618	53	-																														
+160513_0850	1	simulations	30	17.9	17.9	9	35.719525	35.719525	52	-																														
+160513_0850	1	simulations	30	20	28	7	67.272	2.12	46	-																														
+160513_0850	1	simulations	30	12	12	5	22.328	22.328	42	-																														
+160513_0850	1	simulations	30	25	25	6	41.9125	41.9125	40	-																														
+160513_0850	1	simulations	30	20	28	7	67.272	2.12	37	-																														
+160513_0850	1	simulations	30	28	10	9	-45.83	49.732	31	-																														
+160513_0850	1	simulations	30	14	14	7	27.706	27.706	30	-																														
+160513_0850	1	simulations	30	26	26	6	41.914	41.914	24	-																														
+160513_0850	1	simulations	30	22	22	7	40.618	40.618	24	-																														
+160513_0850	1	simulations	30	28	28	7	41.272	41.272	17	-																														
+160513_0850	1	simulations	30	25.5	10	9	-26.4575	44.846375	11	-																														
+160513_0850	1	simulations	30	28	28	7	41.272	41.272	10	-																														
+160513_0850	1	simulations	30	20	28	7	67.272	2.12	3	-																														
+160513_0850	1	chat	Period	Owner	groupe	ID	WORDS		TimeStageChatMessage																															
+160513_0850	1	chat	30	4	2	2	pareil	-	59																															
+160513_0850	1	chat	30	2	1	2	ohhh	-	53																															
+160513_0850	1	chat	30	5	3	1	je te propose 12 et 12 ok ?	-	48																															
+160513_0850	1	chat	30	1	1	1	je l'avais pas prévu celui ci	-	46																															
+160513_0850	1	chat	30	2	1	2	je croyais que c'etait le dernier mdrr	-	43																															
+160513_0850	1	chat	30	1	1	1	ahah la meme	-	38																															
+160513_0850	1	chat	30	2	1	2	bon celui la c'est le dernier	-	31																															
+160513_0850	1	chat	30	6	3	2	autant 25-25 pour le dernier +de point	-	30																															
+160513_0850	1	chat	30	1	1	1	imagine apres ca repare de zéro	-	26																															
+160513_0850	1	chat	30	5	3	1	ouai mais je ne te fais pas confiance...	-	21																															
+160513_0850	1	chat	30	2	1	2	non non pas question la mdrr	-	17																															
+160513_0850	1	chat	30	5	3	1	12 et 12 on limite les risques	-	10																															
+160513_0850	1	chat	30	1	1	1	mdrrr	-	6																															
+160513_0850	1	chat	30	6	3	2	c'est le dernier je mettrai 25	-	6																															
+160513_0850	1	chat	30	6	3	2	je jure 	-	3																															
+160513_0850	1	session	Subject	FinalProfit	ShowUpFee	ShowUpFeeInvested	MoneyAdded	MoneyToPay	MoneyEarned																															
+160513_0850	1	session	1	11271.654	0	0	0	11271.654	11271.654																															
+160513_0850	1	session	2	11195.884	0	0	0	11195.884	11195.884																															
+160513_0850	1	session	3	11237.716	0	0	0	11237.716	11237.716																															
+160513_0850	1	session	4	11236.17	0	0	0	11236.17	11236.17																															
+160513_0850	1	session	5	10785.0435	0	0	0	10785.0435	10785.0435																															
+160513_0850	1	session	6	10884.701	0	0	0	10884.701	10884.701																															
+160513_0850	1	session	7	10700.088	0	0	0	10700.088	10700.088																															
+160513_0850	1	session	8	10637.7055	0	0	0	10637.7055	10637.7055																															
+160513_0850	1	session	9	11182.75662	0	0	0	11182.75662	11182.75662																															
+160513_0850	1	session	10	11178.14312	0	0	0	11178.14312	11178.14312																															
+160513_0850	2	globals	Period	NumPeriods	RepeatTreatment	timeLimitM	timeLimit	numQuestion	essay	goingback																														
+160513_0850	2	globals	1	1	0	10	610	16	0	1																														
+160513_0850	2	subjects	Period	Subject	Group	Profit	TotalProfit	Participate	question	totalScore	back	prevQuestion	ans[1]	ans[2]	ans[3]	ans[4]	ans[5]	ans[6]	ans[7]	ans[8]	ans[9]	ans[10]	ans[11]	ans[12]	ans[13]	ans[14]	ans[15]	ans[16]	ans[17]	i	TimeOKStageOK	jump	ans	TimeAllerQ1OK	TimeOKQ1OK	TimeQPrcdenteQ1OK	TimeQSuivanteQ1OK	TimeOKComputeScoreOK		
+160513_0850	2	subjects	1	1	1	0	0	1	16	12	0	16	8	1	6	7	5	4	6	2	2	8	3	7	7	5	4	0	0	18	15	0	0	0	47	0	0	26		
+160513_0850	2	subjects	1	2	1	0	0	1	17	10	0	17	4	1	6	8	2	4	6	1	6	4	3	7	7	3	4	5	0	18	16	0	0	-	2	0	0	0		
+160513_0850	2	subjects	1	3	1	0	0	1	15	10	0	15	8	1	6	8	5	4	6	4	6	4	3	6	2	6	0	0	0	18	16	0	0	-	42	0	0	0		
+160513_0850	2	subjects	1	4	1	0	0	1	16	7	0	16	8	1	6	4	5	2	6	1	5	4	1	1	7	4	5	0	0	18	10	0	0	-	18	0	0	25		
+160513_0850	2	subjects	1	5	1	0	0	1	17	5	0	17	8	2	6	8	2	6	6	2	8	7	8	8	7	8	3	5	0	18	15	0	0	-	43	0	0	20		
+160513_0850	2	subjects	1	6	1	0	0	1	16	11	0	16	8	1	6	8	5	2	6	7	6	4	5	7	7	5	4	0	0	18	18	0	0	-	4	0	0	23		
+160513_0850	2	subjects	1	7	1	0	0	1	17	2	0	17	6	1	5	2	1	3	2	8	6	7	5	8	2	3	4	4	0	18	7	0	0	-	0	8	0	0		
+160513_0850	2	subjects	1	8	1	0	0	1	10	13	0	11	8	1	6	8	5	0	6	4	2	4	3	8	7	5	4	0	0	18	15	7	0	-	12	6	4	22		
+160513_0850	2	subjects	1	9	1	0	0	1	17	10	0	17	8	1	6	6	5	4	2	4	2	4	3	7	8	6	8	3	0	18	17	0	0	-	48	0	0	27		
+160513_0850	2	subjects	1	10	1	0	0	1	17	5	0	17	8	1	4	3	5	1	6	8	4	8	5	8	7	8	6	7	0	18	15	0	0	-	131	0	0	0		
+160513_0850	2	summary	Period																																					
+160513_0850	2	summary	1																																					
+160513_0850	2	contracts	Period	player	question																																			
+160513_0850	2	contracts	1	1	16																																			
+160513_0850	2	contracts	1	2	17																																			
+160513_0850	2	contracts	1	3	15																																			
+160513_0850	2	contracts	1	4	16																																			
+160513_0850	2	contracts	1	5	17																																			
+160513_0850	2	contracts	1	6	16																																			
+160513_0850	2	contracts	1	7	17																																			
+160513_0850	2	contracts	1	8	10																																			
+160513_0850	2	contracts	1	9	17																																			
+160513_0850	2	contracts	1	10	17																																			
+160513_0850	2	session	Subject	FinalProfit	ShowUpFee	ShowUpFeeInvested	MoneyAdded	MoneyToPay	MoneyEarned	totalScore																														
+160513_0850	2	session	1	11271.654	0	0	0	11271.654	11271.654	12																														
+160513_0850	2	session	2	11195.884	0	0	0	11195.884	11195.884	10																														
+160513_0850	2	session	3	11237.716	0	0	0	11237.716	11237.716	10																														
+160513_0850	2	session	4	11236.17	0	0	0	11236.17	11236.17	7																														
+160513_0850	2	session	5	10785.0435	0	0	0	10785.0435	10785.0435	5																														
+160513_0850	2	session	6	10884.701	0	0	0	10884.701	10884.701	11																														
+160513_0850	2	session	7	10700.088	0	0	0	10700.088	10700.088	2																														
+160513_0850	2	session	8	10637.7055	0	0	0	10637.7055	10637.7055	13																														
+160513_0850	2	session	9	11182.75662	0	0	0	11182.75662	11182.75662	10																														
+160513_0850	2	session	10	11178.14312	0	0	0	11178.14312	11178.14312	5																														

@@ -1,16 +1,24 @@
 # Setup and Packages ----
 
+install.packages(c(
+  "Hmisc","plyr","reshape2","data.table","gridExtra",
+  "zTree","plm","clusrank","plotrix","perm","tidyverse",
+  "viridis","devtools"
+))
 
 
 packages <- c("ggplot2","Hmisc","plyr","reshape2","e1071","foreign","dplyr",
               "data.table","grid","gridExtra","zTree","plm","psych",
               "clusrank","plotrix","devtools","purrr","perm","tidyverse",
               "forcats","viridis")
+
 sapply(packages, require, character.only = TRUE)
+
 rm(packages)
 
+
 # WD
-setwd(".../Data") # Set this to your folder where the Data folder is
+setwd("~/Documents/GitHub/LLMS_Project/Papers/CodeAndData/Data") # Set this to your folder where the Data folder is
 
 # Session_Naming ----
 Session1 <- as.data.frame(zTreeTables("160503_0820_.xls",zTree.encoding = "utf-8",ignore.errors = T))

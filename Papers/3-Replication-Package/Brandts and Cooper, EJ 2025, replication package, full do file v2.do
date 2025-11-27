@@ -4,7 +4,7 @@
 
 clear
 
-cd "/Users/djcoopr/Dropbox/Decentralization/EJ, Revision 4/"
+cd "/Users/sophiaaristizabal/Documents/GitHub/LLMS_Project/Papers/3-Replication-Package"
 
 use "BC Master Data, Main Experiment.dta"
 

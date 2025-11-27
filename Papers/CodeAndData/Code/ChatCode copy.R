@@ -14,23 +14,46 @@ install.packages(c(
   "DT",
   "clue",
   "wordcloud",
-  "tm", 
-  "devtools",
-  "dplyr",
-  "tidyr"
+  "tm"
 ))
 
+devtools::install_github("jbischof/stmCorrViz")
+devtools::install_github("cschroedl/stmgui")
 devtools::install_github("quanteda/quanteda.textplots")
 
-#library(dplyr)
-#library(tidyr)
+library(dplyr)
+library(tidyr)
 
 
 packages <- c("plyr", "zTree", "stm", "igraph", "quanteda","wordcloud",
-              "tm","DT","stmCorrViz","stmgui","clue","quanteda.textplots","dplyr", "tidyr")
+              "tm","DT","stmCorrViz","stmgui","clue","quanteda.textplots")
 
 sapply(packages, require, character.only = TRUE)
 rm(packages)
+
+# create a function for Diagnostics 
+plotSearch <- function(x, ....){
+  oldpar <- par(no.readonly = TRUE)
+  g <- x$results
+  par(mfrow = c(2, 2), mar = c(4, 4, 4, 4), oma = c(2, 2, 2, 
+                                                    2))
+  plot(g$K, g$heldout, type = "p", main = "Held-Out Likelihood", 
+       xlab = "", ylab = "")
+  lines(g$K, g$heldout, lty = 1, col = 1)
+  plot(g$K, g$residual, type = "p", main = "Residuals", 
+       xlab = "", ylab = "")
+  lines(g$K, g$residual, lty = 1, col = 1)
+  if (!is.null(g$semcoh)) {
+    plot(g$K, g$semcoh, type = "p", main = "Semantic Coherence", 
+         xlab = "Number of Topics", ylab = "")
+    lines(g$K, g$semcoh, lty = 1, col = 1)
+  }
+  plot(g$K, g$exclus, type = "p", main = "Exclusivity", 
+       xlab = "Number of Topics", ylab = "")
+  lines(g$K, g$exclus, lty = 1, col = 1)
+#  title("Diagnostic Values by Number of Topics", outer = TRUE)
+  par(oldpar)
+}
 
 # Session Naming and variable ----
 Session1Chat <- as.data.frame(zTreeTables("160503_0820.xls","chat",ignore.errors = T))
@@ -186,6 +209,163 @@ ChatCountInd0 <- merge(ChatCountInd0,DatA1, by = c("Crosssect"))
 filter(aggregate.data.frame(filter(ChatCountInd,Period>1,Period<31)$x,
                             list(Crosssect=filter(ChatCountInd,Period>1,
                                                   Period<31)$Crosssect),sum),x>149)
+
+---- # ANALYSIS # ----
+#### ---- Word Counts ----
+## Plotting Chatcounts ----
+## averages over subjects for each period
+
+ChatCountIndAve<- aggregate.data.frame(ChatCountInd$x,
+                                       list(Period=ChatCountInd$Period,
+                                            Comp=ChatCountInd$Comp),
+                                       mean)
+
+ChatCountIndSum<- aggregate.data.frame(ChatCountInd$x,
+                                       list(Crosssect=ChatCountInd$Crosssect,
+                                            Comp=ChatCountInd$Comp),
+                                       sum)
+
+ChatCountInd0Sum<- aggregate.data.frame(ChatCountInd0$x,
+                                       list(Crosssect=ChatCountInd0$Crosssect,
+                                            Comp=ChatCountInd0$Comp),
+                                       sum)
+
+
+ChatCountIndAve0<- aggregate.data.frame(ChatCountInd0$x,
+                                       list(Period=ChatCountInd$Period,
+                                            Comp=ChatCountInd$Comp),
+                                       mean)
+
+
+## plotting average messages sent - Figure 6a
+ggplot(filter(ChatCountIndAve0), 
+       aes(x=Period, y=x, colour = factor(Comp), 
+           linetype=factor(Comp), shape=factor(Comp))) +
+  geom_line() +
+  geom_point() +
+  scale_colour_manual("",values=c("red","blue"),labels=c("Substitution","Complementarity")) +
+  scale_linetype_manual("", values=c(4,1),labels=c("Substitution","Complementarity")) +
+  scale_shape_manual("", values=c(1,1),labels=c("Substitution","Complementarity"))+
+  theme_bw()+ylab("Number of Messages")+
+  theme(legend.position="bottom",
+      #  legend.background = element_rect(fill=NULL, size=.2,colour = "black"),
+        legend.key = element_rect(colour = 'white'))+
+  scale_y_continuous(limits = c(0,3))
+
+
+# plotting the number of people with zero message per treatment - Figure 6b
+NonMess <- aggregate.data.frame(filter(ChatCountInd0,x==0)$x,
+                                list(Period=filter(ChatCountInd0,x==0)$Period,
+                                     Comp=filter(ChatCountInd0,x==0)$Comp),length)
+NonMess$Normed <- with(NonMess,x/(104-Comp*4))
+
+wilcox.test(filter(NonMess,Comp==0)$Normed,
+            filter(NonMess,Comp==1)$Normed) 
+
+ggplot(NonMess, 
+       aes(x=Period, y=Normed, colour = factor(Comp), 
+           linetype=factor(Comp), shape=factor(Comp))) +
+  geom_line() +
+  geom_point() +
+  scale_colour_manual("",values=c("red","blue"),labels=c("Substitution","Complementarity")) +
+  scale_linetype_manual("", values=c(4,1),labels=c("Substitution","Complementarity")) +
+  scale_shape_manual("", values=c(1,1),labels=c("Substitution","Complementarity"))+
+  theme_bw()+ylab("Percentage of Non-Senders")+
+  theme(legend.position="bottom",
+    #    legend.background = element_rect(fill=NULL, size=.2,colour = "black"),
+        legend.key = element_rect(colour = 'white'))+
+  scale_y_continuous(limits = c(0,0.75))
+
+## Chatcount means with restrictions ----
+round(mean(filter(ChatCountInd,Period>0)$x),2)
+round(sd(filter(ChatCountInd,Period>0)$x),2)
+
+# Table 4
+round(mean(filter(ChatCountInd,Period>0,Period<16)$x),2)
+round(mean(filter(ChatCountInd,Period>15)$x),2)
+
+wilcox.test(filter(ChatCountInd,Period>0,Period<16)$x,
+            filter(ChatCountInd,Period>15)$x)
+
+round(mean(filter(ChatCountInd,Period>0,Comp==1)$x),2)
+round(sd(filter(ChatCountInd,Period>0,Comp==1)$x),2)
+round(mean(filter(ChatCountInd,Period>0,Comp==0)$x),2)
+round(sd(filter(ChatCountInd,Period>0,Comp==0)$x),2)
+
+wilcox.test(filter(ChatCountInd,Period>0,Comp==1)$x,
+            filter(ChatCountInd,Period>0,Comp==0)$x)
+
+
+round(mean(filter(ChatCountInd,Comp==0,Period>0,Period<16)$x),2)
+round(sd(filter(ChatCountInd,Comp==0,Period>0,Period<16)$x),2)
+round(mean(filter(ChatCountInd,Comp==1,Period>0,Period<16)$x),2)
+round(sd(filter(ChatCountInd,Comp==1,Period>0,Period<16)$x),2)
+
+wilcox.test(filter(ChatCountInd,Comp==0,Period>0,Period<16)$x,
+            filter(ChatCountInd,Comp==1,Period>0,Period<16)$x)
+
+
+round(mean(filter(ChatCountInd,Comp==0,Period>15)$x),2)
+round(sd(filter(ChatCountInd,Comp==0,Period>15)$x),2)
+round(mean(filter(ChatCountInd,Comp==1,Period>15)$x),2)
+round(sd(filter(ChatCountInd,Comp==1,Period>15)$x),2)
+
+wilcox.test(filter(ChatCountInd,Comp==0,Period>15)$x,
+            filter(ChatCountInd,Comp==1,Period>15)$x)
+
+
+## JPM chatcounts ----
+# Table 5
+round(sd(filter(ChatCountInd,JPMabel==1,Period>0)$x),2)
+round(sd(filter(ChatCountInd,JPMabel==0,Period>0)$x),2)
+wilcox.test(filter(ChatCountInd,JPMabel==1,Period>0)$x,
+            filter(ChatCountInd,JPMabel==0,Period>0)$x)
+
+round(sd(filter(ChatCountInd,JPMabel==1,Period>0,Period<16)$x),2)
+round(sd(filter(ChatCountInd,JPMabel==0,Period>0,Period<16)$x),2)
+wilcox.test(filter(ChatCountInd,JPMabel==1,Period>0,Period<16)$x,
+            filter(ChatCountInd,JPMabel==0,Period>0,Period<16)$x)
+
+round(sd(filter(ChatCountInd,JPMabel==1,Period>15)$x),2)
+round(sd(filter(ChatCountInd,JPMabel==0,Period>15)$x),2)
+wilcox.test(filter(ChatCountInd,JPMabel==1,Period>15)$x,
+            filter(ChatCountInd,JPMabel==0,Period>15)$x)
+
+## JPM messaging per treatment
+#SUBS
+mean(filter(ChatCountInd,JPMabel==0,Comp==0,Period>0)$x)
+mean(filter(ChatCountInd,JPMabel==1,Comp==0,Period>0)$x)
+wilcox.test(filter(ChatCountInd,JPMabel==0,Comp==0,Period>0)$x,
+            filter(ChatCountInd,JPMabel==1,Comp==0,Period>0)$x)
+
+sd(filter(ChatCountInd,JPMabel==0,Comp==0,Period>0,Period<16)$x)
+sd(filter(ChatCountInd,JPMabel==1,Comp==0,Period>0,Period<16)$x)
+wilcox.test(filter(ChatCountInd,JPMabel==0,Comp==0,Period>0,Period<16)$x,
+            filter(ChatCountInd,JPMabel==1,Comp==0,Period>0,Period<16)$x)
+
+sd(filter(ChatCountInd,JPMabel==0,Comp==0,Period>15)$x)
+sd(filter(ChatCountInd,JPMabel==1,Comp==0,Period>15)$x)
+wilcox.test(filter(ChatCountInd,JPMabel==0,Comp==0,Period>15)$x,
+            filter(ChatCountInd,JPMabel==1,Comp==0,Period>15)$x)
+
+#COMP
+sd(filter(ChatCountInd,JPMabel==0,Comp==1,Period>0)$x)
+sd(filter(ChatCountInd,JPMabel==1,Comp==1,Period>0)$x)
+wilcox.test(filter(ChatCountInd,JPMabel==0,Comp==1,Period>0)$x,
+            filter(ChatCountInd,JPMabel==1,Comp==1,Period>0)$x)
+
+sd(filter(ChatCountInd,JPMabel==0,Comp==1,Period>0,Period<16)$x)
+sd(filter(ChatCountInd,JPMabel==1,Comp==1,Period>0,Period<16)$x)
+wilcox.test(filter(ChatCountInd,JPMabel==0,Comp==1,Period>0,Period<16)$x,
+            filter(ChatCountInd,JPMabel==1,Comp==1,Period>0,Period<16)$x)
+
+sd(filter(ChatCountInd,JPMabel==0,Comp==1,Period>15)$x)
+sd(filter(ChatCountInd,JPMabel==1,Comp==1,Period>15)$x)
+wilcox.test(filter(ChatCountInd,JPMabel==0,Comp==1,Period>15)$x,
+            filter(ChatCountInd,JPMabel==1,Comp==1,Period>15)$x)
+
+rm(ChatCountInd,ChatCountInd0,ChatCountInd0Sum,
+   ChatCountIndAve,ChatCountIndAve0,ChatCountIndSum,y)
 #### ----- Content Analysis ----
 # Data preparation ----
 
@@ -210,9 +390,6 @@ Chatter <- filter(Chatter, !is.na(Comp))
 
 # Dropping a pair who do not communicate beyond Bonjour and Salut 
 Chatter <- filter(Chatter, Pair!=2098,Pair!=95)
-
-#guardar en csv
-write.csv(Chatter,"ChatContent.csv")
 
 ## Converting X.0 to X and typos to words ----
 Chatter$text<- gsub('28.0', '28', Chatter$text);
@@ -285,49 +462,39 @@ Chatter$text<- gsub("gagne", "gagn", Chatter$text,ignore.case=T);
 Chatter$text<- gsub("chaqune", "chaqu", Chatter$text,ignore.case=T);
 Chatter$text<- gsub("chaqun", "chaqu", Chatter$text,ignore.case=T);
 ## Plotting the relative rank differential and word cloud ----
-
 CTC <-corpus(Chatter) # add filters here for Comp, JPMabel, and Early
 CTCj <-corpus(filter(Chatter,JPMabel==1))
 CTCnj <-corpus(filter(Chatter,JPMabel==0))
-toks <- tokens(CTC, remove_punct = TRUE)
-
-stopwords_custom <- c("a","ca","c'est","ou","ça","oui","si","non","quoi","sans","q",
-                       "-","ouai","cest","ouais","ah","nan","ok","et","tt","j'avais",
-                       "de","le","la","pas","que","en","les","un","une","mais","est","t'es",
-                       "à",'c',"va","une","il","au","ce","des","qu'on","qui","nos",
-                       "pour","sur","du","y","se","dans","suis","sa","pas","aller",
-                       "on","je","tu","moi","toi","nous","me","te","ne","vas","notre",
-                       "avec","etre","par","être","mon","ton","son","leur","ya","m",
-                       "ma","sa","ta","ils","j","p","d","donc","alors","cette",
-                       "bah","ai","t","l","qu'il","quand","bonjour","mis","dsl",
-                       "fait","n","m'a","t'en","qu'ils","cb","mm","très","s",
-                       "faire","quon","tes","vera","pr","tres","bjr",
-                       "peut","fais","coup","mes","vais","avoir","j'ai","t'as",
-                       "apres","chose","là","j'avais","quel","viens","salut",
-                       "après","eu","aura","xd","qu","es","x","o","e","as",
-                       "j'en","ouii","ont","allez","re","nn","c'était","sous",
-                       "tout","tous","sinon","m'as","s'il","fai","fair","^")
-
-toks <- tokens_remove(toks, stopwords_custom)
-
-mydfm2 <- dfm(toks)
-
-mydfm2 <- dfm_wordstem(mydfm2)
+mydfm2 <- dfm(CTC,
+              remove = c("a","ca","c'est","ou","ça","oui","si","non","quoi","sans","q",
+                         "-","ouai","cest","ouais","ah","nan","ok","et","tt","j'avais",
+                         "de","le","la","pas","que","en","les","un","une","mais","est","t'es",
+                         "à",'c',"va","une","il","au","ce","des","qu'on","qui","nos",
+                         "pour","sur","du","y","se","dans","suis","sa","pas","aller",
+                         "on","je","tu","moi","toi","nous","me","te","ne","vas","notre",
+                         "avec","etre","par","être","mon","ton","son","leur","ya","m",
+                         "ma","sa","ta","ils","j","p","d","donc","alors","cette",
+                         "bah","ai","t","l","qu'il","quand","bonjour","mis","dsl",
+                         "fait","n","m'a","t'en","qu'ils","cb","mm","très","s",
+                         "faire","quon","tes","vera","pr","tres","bjr",
+                         "peut","fais","coup","mes","vais","avoir","j'ai","t'as",
+                         "apres","chose","là","j'avais","quel","viens","salut",
+                         "après","eu","aura","xd","qu","es","x","o","e","as",
+                         "j'en","ouii","ont","allez","re","nn","c'était","sous",
+                         "tout","tous","sinon","m'as","s'il","fai","fair","^"),
+              remove_punct = T,stem = T)
 
 # checking top features
 topfeatures(mydfm2, 30)
 topfeatures(mydfm2, 328)
-
 # checking the context of words
-toks <- tokens(CTC)
-
-kwic_results <- kwic(toks, pattern = "12", window = 4)
+kwic(CTC, "12", 4) # "x" x in its context with 2 words around
 
 TextPair <- as.data.frame(cbind(mydfm2@docvars$docname_,
                                 mydfm2@docvars$Pair))
 names(TextPair) <- c("Text","Pair")
 
-Graaave <- kwic(toks, "grave", 1)
+Graaave <- kwic(CTC, "grave", 1)
 Graaave <- filter(Graaave, pre %in% c("pas","Pas"))
 TabGrav<- as.data.frame(table(Graaave$docname)) # subjects using "grave"
 Gravers <- as.vector(TabGrav$Var1)
@@ -335,7 +502,7 @@ Gravers <- filter(TextPair,Text %in% Gravers)
 table(filter(DatA, Pair %in% Gravers$Pair, Period==1,ID==1)$Comp)
 
 # Collect pairs IDs where "25.5" appears
-j255 <- kwic(toks, "25.5", 1)
+j255 <- kwic(CTC, "25.5", 1)
 Tabj255<- as.data.frame(table(j255$docname)) # subjects using "grave"
 j255ers <- as.vector(Tabj255$Var1)
 names(Tabj255) <- c("Text", "Freq")
@@ -358,6 +525,42 @@ write.csv(topfeatures(mydfm2, 200),"Top200_All_RRD.csv")
 # This file needs to be created for both Str. Env. 
 # Then it needs to be polished and transformed for the RRD plot
 # A polished one is included in the package as a sample.
+
+# global wordcloud - Figure 7
+set.seed(10000)
+textplot_wordcloud(mydfm2, min.freq = 10, random.order = F,
+                   rot.per = .25, comparison = F,
+                   colors = RColorBrewer::brewer.pal(8,"Dark2"))
+
+# RRD ----
+#plotting relative rank differences - Figure 8
+require(readxl)
+RRD<- read_xls("Top200_Alln.xls")
+RRD<- filter(RRD,rankS<100) # if necessary, restrict for lower ranks 
+require("ggrepel")
+
+# RRD is the basis of Table 7 in Appendix F
+
+ggplot(RRD, aes(x = rankS, y = rankC)) + 
+  geom_point(color = ifelse((RRD$rrdC>1|RRD$rrdS>1)&RRD$rankS>5, 
+                            "red", "black")) +
+  theme_bw() +
+  # geom_segment(aes(x=50,xend=86,y=50,yend=50),
+  #              linetype = "dotted",
+  #              size=0.005)+
+  # geom_segment(aes(x=50,xend=50,y=50,yend=100),
+  #              linetype = "dotted",
+  #              size=0.005)+
+   geom_text_repel(aes(label=word),
+                  segment.size = 0.3,
+                  segment.alpha = 0.75,
+                  size=3)+
+  ylab("Rank in Complementarity")+
+  xlab("Rank in Substitution")+
+  geom_line(aes(x = rankS,y = rankS))+
+  geom_ribbon(aes(ymin = min, ymax = max, fill = 'prediction'),
+              alpha = 0.2,show.legend = F) +
+  scale_fill_manual('Interval', values = c('green')) 
 
 
 ## STM analysis Setup ----
@@ -455,7 +658,6 @@ View(stm3$theta) # for instance you can look up at a particular document that co
 meta$Pair # get the pair number matched to the text number
 
 # word clouds for each topic - Figure 9
-#thresh es un límite de probabilidad: si un mensaje tiene theta[documento, topic1] > 0.25, se considera “fuerte” para ese topic y aparece en la nube de documentos.
 par(mfrow=c(1,1))
 stm::cloud(stm3,topic=1,type = "documents",documents = docs,thresh = 0.25,
            colors = RColorBrewer::brewer.pal(8,"Dark2"), random.order = F) 
@@ -464,23 +666,189 @@ stm::cloud(stm3,topic=2,type = "model",documents = docs,thresh = 0.25,
 stm::cloud(stm3,topic=3,type = "model",documents = docs,thresh = 0.25,
            colors = RColorBrewer::brewer.pal(8,"Dark2"), random.order = F) 
 
-#entonces quiero generar un csv nuevo con Chatter y poner 3 nuevas columnas como dummies una columna es topic1 la segunda es topic2 y asi
-# si la probabilidad que sale de stm3$theta es mayor que 0.25 (threshhold de los investigaodres) pongo un 1 en la columna de topic1, si no un 0 y asi con las demas
 
-# theta: matriz de probabilidad de cada topic por mensaje
-theta <- stm3$theta   # filas = documentos, columnas = topics
+# Effect Estimations ----
+EffectEst3 <- estimateEffect(1:3 ~ JPMabel+Comp, 
+                             stm3,
+                             meta = out$meta,
+                             uncertainty = "Global")
 
-# Crear un data.frame a partir del CSV original
-df <- Chatter  # tu dataframe original con 98 mensajes
 
-# Umbral para asignación
-thresh <- 0.25
 
-# Crear columnas dummy
-df$topic1 <- as.integer(theta[,1] > thresh)
-df$topic2 <- as.integer(theta[,2] > thresh)
-df$topic3 <- as.integer(theta[,3] > thresh)
+summary(EffectEst3,topics = 3) # getting the regression output
 
-#guardar csv 
 
-write.csv(df, "ChatContent_with_Topics.csv", row.names = FALSE)
+## Covariate effects of topics - Figure 10
+plot(EffectEst3, 
+     covariate = "Comp",
+     model = stm3, 
+     method = "difference",
+     cov.value1 = "1",
+     cov.value2 = "0",
+     xlab = c("         Substitution ------- Complementarity"),
+     main = NULL,
+     xlim = c(-0.5, 0.5),
+     labeltype = "custom",
+     custom.labels = c('1', '2','3')
+     )
+
+plot(EffectEst3, 
+     covariate = "JPMabel",
+     model = stm3, 
+     method = "difference",
+     cov.value1 = "1", cov.value2 = "0",
+     xlab = c("Non-JPM ------- JPM       "),
+     main = NULL,
+     xlim = c(-0.5, 0.5),
+     labeltype = "custom",
+     custom.labels = c('1', '2','3')
+     )
+
+
+
+
+# Topic distributions and metadata including pairs ----
+deneee <- cbind(select(Chatter,Pair,Comp,JPMabel,Early,text),stm3$theta)
+NoTextDene <- select(deneee,-text)
+
+# Plot the topic distributions within pairs in grid
+# Figures 21 and 22 in Appendix G3
+
+TopicDist <- data.table(NoTextDene, key=c("Pair","Comp","JPMabel","Early"))
+TopicDist <- melt(TopicDist,id= c("Pair","Comp","JPMabel","Early"),value.name="TopicProb")
+names(TopicDist) <- c("Pair","Comp","JPMabel","Early","Topic","TopicProb")
+
+# write.csv(TopicDist,"TopicDist.csv")
+
+
+require(grid);require(gridExtra);
+
+TopicDist$PairType <- with(TopicDist,paste("JPM","=",JPMabel,","," ",
+                                               "Early","=",Early,","," ",
+                                               "ID","=",Pair,
+                                               sep = ""))
+TopicDist$PairType2 <-with(TopicDist,
+                           ifelse(JPMabel==0,
+                                  paste("Non-JPM"," ",Pair,sep = ""),
+                                  ifelse(Early==0,
+                                         paste("Eventual JPM"," ",Pair,sep = ""), 
+                                         paste("Early JPM"," ",Pair,sep = "")
+                                  )
+                           )
+)
+
+
+
+PlotGrids <- ggplot(filter(TopicDist,Comp==1),
+                    aes(x=as.numeric(Topic),
+                                                 y=TopicProb)) + 
+  geom_line(group=1) + 
+  # scale_y_continuous(limits=c(0, 1), 
+  #                    expand = c(0.001, 0),
+  #                    breaks=c(0,0.5,1))+
+  scale_x_discrete(limits = c("1","2","3"))+
+  labs(
+  #      title = "Topic Distributions in Pairs: Substitution", 
+    y = "Proportion", x = "Topic") 
+
+
+PlotGrids +   facet_wrap( ~ PairType2, ncol=5) +
+  theme(strip.background = element_blank(),
+        #        strip.text.x = element_blank()),
+        legend.position="none",panel.grid.major = element_blank(),
+        panel.border = element_rect(fill=NA),
+        panel.background = element_blank())
+
+# Early - Eventual comparison over Str Env ----
+# Figure 11
+TopicsAndJPM <- aggregate.data.frame(TopicDist$TopicProb,
+                                      list(TopicDist$Comp,
+                                           TopicDist$JPMabel,
+                                           TopicDist$Early,
+                                           TopicDist$Topic),mean)
+names(TopicsAndJPM) <- c("Comp","JPM","Early","Topic","TopicProb")
+TopicsAndJPM$Type <- with(TopicsAndJPM,ifelse(
+  JPM == 1 & Early == 1, "Early", ifelse(
+    JPM==1 & Early == 0, "Eventual", "Non-JPM"
+  )
+))
+TopicsAndJPM <- TopicsAndJPM[,-c(2,3)]
+TopicsAndJPM$Topic<-as.numeric(TopicsAndJPM$Topic)
+
+ggplot(filter(TopicsAndJPM,Comp==0), # Change Comp value for Str.Env.
+       aes(x=Topic, y=TopicProb, colour = factor(Type), 
+           linetype=factor(Type), shape=factor(Type))) +
+  geom_line() +
+  geom_point() +
+  scale_colour_manual("",values=c("red","blue","darkgreen"),labels=c("Early","Eventual","Non-JPM")) +
+  scale_linetype_manual("", values=c(4,1,3),labels=c("Early","Eventual","Non-JPM")) +
+  scale_shape_manual("", values=c(1,2,3),labels=c("Early","Eventual","Non-JPM"))+
+  theme_bw()+ylab("Topic Probabilities")+
+  theme(legend.position="bottom",
+        legend.key = element_rect(colour = 'white'))+
+  scale_y_continuous(limits = c(0.12,0.8))+
+  scale_x_discrete(limits = factor(c(1,2,3)))
+
+# Comparison of the probabilities of interim strategies across Topic 1 and 2
+sum(exp(t(stm3$beta$logbeta[[1]])[8:21,1]))/sum(exp(t(stm3$beta$logbeta[[1]])[8:21,2]))
+
+
+InterimNumb <- c(15,19,51,53,57,58,61,62,65,68:74,86:89,93:96,98:100,103:126)
+
+CountInterimNumb <- numeric(98)
+for(i in 1:98){
+  CountInterimNumb[i] <- sum(filter(as.data.frame(t(temp$documents[[i]])),V1 %in% InterimNumb)$V2)
+}
+
+CountInterimNumb<-as.data.frame(CountInterimNumb)
+CountInterimNumb <- as.data.frame(cbind(temp$meta$Pair,CountInterimNumb))
+
+names(CountInterimNumb) <- c("Pair","CountInterimNumb")
+
+CountInterimNumb <- merge(filter(TopicDist,Topic==1),CountInterimNumb,by=c("Pair"))
+CountInterimNumb <- CountInterimNumb[,-c(5,6)]
+
+CountInterimNumb$Type <- with(CountInterimNumb,ifelse(
+  JPMabel == 1 & Early == 1, "Early", ifelse(
+    JPMabel==1 & Early == 0, "Eventual", "Non-JPM"
+  )
+))
+
+CountInterimNumb <- CountInterimNumb[,-c(3,4)]
+
+mean(filter(CountInterimNumb,Comp==1)$CountInterimNumb)
+mean(filter(CountInterimNumb,Comp==0)$CountInterimNumb)
+
+wilcox.test(filter(CountInterimNumb,Comp==1)$CountInterimNumb,
+            filter(CountInterimNumb,Comp==0)$CountInterimNumb)
+
+wilcox.test(filter(CountInterimNumb,Comp==1,Type!="Non-JPM")$CountInterimNumb,
+            filter(CountInterimNumb,Comp==0,Type!="Non-JPM")$CountInterimNumb)
+
+
+## printing chat records of particular pairs without long messaging ----
+
+# Pair 397, Comp=1, JPM =1, Early=0, who both use Topic 1 extensively
+
+Pair397 <-select(filter(ChatALL,Crosssect==394|Crosssect==395),
+                 chat.Period,chat.TimeStageChatMessage,chat.ID,chat.WORDS)
+
+filter(NoTextDene,Pair==397) # Table 8
+
+write.csv(Pair397,"ChatRecord_Pair397.csv") # Table 9
+
+# Pair1393, Comp=1, JPM=0, who both use Topic 4 eextensively 
+Pair1393 <-select(filter(ChatALL,Crosssect==1386|Crosssect==1387),
+                 chat.Period,chat.TimeStageChatMessage,chat.ID,chat.WORDS)
+filter(NoTextDene,Pair==1393) # Table 10
+
+write.csv(Pair1393,"ChatRecord_Pair1393.csv") # Tables 11-16
+
+# Pair595, Comp=0, JPM=1, Early==1, who both use Topic 6 eextensively 
+
+Pair595 <-select(filter(ChatALL,Crosssect==590|Crosssect==591),
+                  chat.Period,chat.TimeStageChatMessage,chat.ID,chat.WORDS)
+filter(NoTextDene,Pair==595) # Table 17
+
+write.csv(Pair595,"ChatRecord_Pair595.csv") # Tables 18-19
+

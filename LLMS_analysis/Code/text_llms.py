@@ -93,7 +93,18 @@ def parse_llm_dict(ans):
 
 def obtener_categorias_llm(prompt, paper):
     temps   = [0, 0.2, 0.25, 0.5, 0.6, 0.7, 1]
-    modes   = ["user", "assistant"]
+    modes   = ["user"] # "assistant"]
+    
+    path = os.path.join(DATA_PATH, PAPER_PATHS[int(paper)], "classify.csv")
+    df = pd.read_csv(path)
+    #obtener todo el csv y guardarlo como un string
+    messages = df["message"].tolist()
+    combined_messages = "\n".join(messages)
+    full_prompt = (
+        prompt +
+        "\n\nThese are the messages you should analyze:\n" +
+        combined_messages
+    )
 
     for temp in temps:
         for mode in modes:
@@ -102,9 +113,9 @@ def obtener_categorias_llm(prompt, paper):
 
             # LLAMADA AL LLM --------------------------------------
             if mode == "user":
-                response = llm_chatgpt.invoke(prompt, temperature=temp)
+                response = llm_chatgpt.invoke(full_prompt, temperature=temp)
             else:
-                response = llm_chatgpt.invoke_as_assistant(prompt, temperature=temp)
+                response = llm_chatgpt.invoke_as_assistant(full_prompt, temperature=temp)
             ans = response.content
             # -----------------------------------------------------
 
@@ -116,12 +127,16 @@ def obtener_categorias_llm(prompt, paper):
 
 def obtener_categorizacion_llm(prompt, paper):
     temps   = [0, 0.2, 0.25, 0.5, 0.6, 0.7, 1]
-    modes   = ["user", "assistant"]
+    modes   = ["user"] #, "assistant"]
 
     path = os.path.join(DATA_PATH, PAPER_PATHS[int(paper)], DATA_FILE)
     df = pd.read_csv(path)
 
     message_col = "message"
+    
+    #hay una que tiene Message ESTO SE QUITA IGUALMENE PORQUEME DA TOC
+    if "message" not in df.columns:
+        message_col = "Message"
 
     read_mode = input("¿Desea leer línea por línea (1) o en grupos (2)? Ingrese 1 o 2: ")
 
@@ -142,6 +157,8 @@ def obtener_categorizacion_llm(prompt, paper):
                         "\n\nThis is the message you should analyze:\n" +
                         str(message)
                     )
+                    
+                    print(full_prompt)
 
                     # LLAMADA AL LLM --------------------------------------
                     if mode == "user":
@@ -150,7 +167,9 @@ def obtener_categorizacion_llm(prompt, paper):
                         response = llm_chatgpt.invoke_as_assistant(full_prompt, temperature=temp)
                     ans = response.content
                     # -----------------------------------------------------
-
+                    
+                    print(ans)
+                    
                     parsed = parse_llm_dict(ans)
                     parsed["original_message"] = message
 
@@ -164,7 +183,7 @@ def obtener_categorizacion_llm(prompt, paper):
                 print(f"✔ Resultados guardados en {output_path}")
     else:
 
-        group_sizes = [5, 10, 20]  
+        group_sizes = [51]  
 
         for temp in temps:
             for mode in modes:
@@ -236,11 +255,13 @@ def crear_categorias(paper):
     # Crear el prompt básico
     prompt = crear_prompt_basico(PAPER_PATHS[int(paper)], filenames=[ROLE_FILE, CONTEXT_FILE, CLASSIFICATION_CAT_FILE, FORMAT_CAT_FILE])
     
-    print(prompt)
+    
     # pedir a chat gpt que cree las categorias
+    categorias=obtener_categorias_llm(prompt, paper)
     
     print(f"\n>>> Estas son las categorías creadas para Paper {paper}...")
     
+    print(categorias)
     
     print(f"\n>>> Ahora clasifiquemos cada texto...")
     
@@ -251,7 +272,7 @@ def asignar_zero_shot(paper):
     print(f"\n>>> Asignando categorías (Zero-Shot) para Paper {paper}...")
     prompt = crear_prompt_basico(PAPER_PATHS[int(paper)])
     # pedir a chat gpt que cree las categorias
-    print(prompt)
+    obtener_categorizacion_llm(prompt, paper)
 
 
 def asignar_few_shot(paper):
@@ -264,7 +285,7 @@ def asignar_few_shot(paper):
     prompt += "\n" + fewshot_text   
     
     # pedir a chat gpt que cree las categorias
-    print(prompt)
+    obtener_categorizacion_llm(prompt, paper)
 
 def asignar_zero_shot_cot(paper):
     print(f"\n>>> Asignando categorías (Zero-Shot CoT) para Paper {paper}...")
@@ -276,7 +297,7 @@ def asignar_zero_shot_cot(paper):
     prompt += "\n" + zeroshotcot_text
     
     # pedir a chat gpt que cree las categorias
-    print(prompt)
+    obtener_categorizacion_llm(prompt, paper)
 
 def asignar_few_shot_cot(paper):
     print(f"\n>>> Asignando categorías (Few-Shot CoT) para Paper {paper}...")
@@ -287,12 +308,8 @@ def asignar_few_shot_cot(paper):
     fewshotcot_text = leer_archivo_txt(fewshotcot_path)
     prompt += "\n" + fewshotcot_text
     
-    print(prompt)
+    obtener_categorizacion_llm(prompt, paper)
     
-    # pedir a chat gpt que cree las categorias
-    
-
-
 def menu_asignacion(paper):
     
     while True:

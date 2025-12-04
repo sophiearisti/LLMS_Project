@@ -25,8 +25,9 @@ FEWSHOTCOT_FILE ="few-shotCoT.txt"
 CLASSIFICATION_CAT_FILE ="classificationTaskCat.txt"
 FORMAT_CAT_FILE ="formatCat.txt"
 
-DATA_FILE= "classify.csv"
+DATA_FILE= "test.csv"
 
+#DATA_FILE= "classify.csv"
 
 # API Key para OpenAI.
 load_dotenv()  # load from .env file

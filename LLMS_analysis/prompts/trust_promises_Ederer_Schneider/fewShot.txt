@@ -1,0 +1,23 @@
+The following are some examples based on real responses of participants:
+
+The message is:
+“I will choose roll on all the desicions, in order for both of us to have the chance to get more money if you are interested.”
+
+The classification should be:
+{
+    'is_promise': 1,
+    'is_efficiency': 1,
+    'is_ethics': 0
+}
+
+
+The message is:
+“Let's make this fair. I guess we BOTH want some money.”
+
+The classification should be:
+{
+    'is_promise': 0,
+    'is_efficiency': 0,
+    'is_ethics': 1
+}
+

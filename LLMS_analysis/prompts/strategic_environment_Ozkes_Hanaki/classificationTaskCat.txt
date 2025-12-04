@@ -1,0 +1,1 @@
+Your task is to analyze the full set of chat messages provided and identify three major thematic categories that consistently appear throughout the messages. These categories should capture the dominant topics or communication strategies participants use across the experiment. A message may belong to more than one category.

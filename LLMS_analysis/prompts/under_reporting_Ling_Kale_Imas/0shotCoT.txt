@@ -1,0 +1,17 @@
+Apart from the classification task, please state the Chain of thought or the reasoning behind your classification. In such sense, your answer should be:
+
+{
+    'uninformative': 'F',
+    ' SDB ': 'FALSE',
+    'overest. others': 'FALSE',
+    'underest. own': 'FALSE',
+    'academic integrity': 'TRUE',
+    'info asymmetry': 'FALSE',
+    'AI discussion priming ': 'FALSE',
+    'privacy concerns': 'FALSE',
+    'self-steem': 'TRUE',
+    'self-report bias': 'FALSE',
+    'network effect': 'FALSE',
+    'truthful': 'FALSE',
+    'reason': '<here you write the reasons behind your decisions>'
+}

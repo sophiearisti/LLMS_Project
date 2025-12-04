@@ -1,0 +1,31 @@
+Please give your answer strictly as a python dictionary, with no additional text or characters. Use exactly the following tags in the dictionary:
+4.	'uninformative' for uninformative
+5.	' SDB ' for SDB
+6.	'overest. others' for overest. others
+7.	'underest. own' for underest. own
+8.	'academic integrity' for academic integrity
+9.	'info asymmetry' for info asymmetry
+10.	'AI discussion priming ' for AI discussion priming
+11.	'privacy concerns' for privacy concerns
+12.	'self-steem' for self-steem
+13.	'self-report bias' for self-report bias
+14.	'network effect' for network effect
+15.	'truthful' for truthful
+' uninformative ' must have the values of 'T', if uninformative; 'F? ', if ; and 'F'
+The others must have the value of 'TRUE ' if the category is observed in the response or 'FALSE ' if it is not observed. 
+Be sure that each tag is in simple quotes. 
+In that sense, the format should be:
+{
+    'uninformative': 'F',
+    ' SDB ': 'FALSE',
+    'overest. others': 'FALSE',
+    'underest. own': 'FALSE',
+    'academic integrity': 'TRUE',
+    'info asymmetry': 'FALSE',
+    'AI discussion priming ': 'FALSE',
+    'privacy concerns': 'FALSE',
+    'self-steem': 'TRUE',
+    'self-report bias': 'FALSE',
+    'network effect': 'FALSE',
+    'truthful': 'FALSE'
+}

@@ -1,0 +1,8 @@
+Apart from the classification task, please state the Chain of thought or the reasoning behind your classification. In such sense, your answer should be:
+
+{
+    'is_promise': 1,
+    'is_efficiency': 1,
+    'is_ethics': 0,
+    'reason: '<here you write the reasons behind your decisions>'
+}

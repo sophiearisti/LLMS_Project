@@ -4,15 +4,29 @@ import time
 from dotenv import load_dotenv
 
 # Definir la ruta del archivo de prompt
-PROMPT_FILE = "../prompts/directores/prompt_cargas.txt"
+PROMPTS_PATH = "../prompts/"
+DATA_PATH = "../Data/"
+RESULTS_PATH = "../Results/"
 
-# Leer el contenido del archivo prompt_razones.txt
-if os.path.exists(PROMPT_FILE):
-    with open(PROMPT_FILE, "r", encoding="utf-8") as f:
-        PROMPT_1 = f.read().strip()
-else:
-    # Valor por defecto en caso de que no se encuentre el archivo
-    PROMPT_1 = "Analiza lo siguiente y proporciona un análisis detallado:"
+FIRST_PAPER = "managerial_leadership_Jordi_Cooper/"
+SECOND_PAPER = "strategic_environment_Ozkes_Hanaki/"
+THIRD_PAPER = "trust_promises_Ederer_Schneider/"
+FOURTH_PAPER = "under_reporting_Ling_Kale_Imas/"
+
+ROLE_FILE ="role.txt"
+CONTEXT_FILE ="context.txt"
+CLASSIFICATION_FILE ="classificationTask.txt"
+FORMAT_FILE ="format.txt"
+CONSTRAINTS_FILE ="constraints.txt"
+FEWSHOT_FILE ="fewShot.txt"
+ZEROSHOTCOT_FILE ="0ShotCoT.txt"
+FEWSHOTCOT_FILE ="few-shotCoT.txt"
+
+CLASSIFICATION_CAT_FILE ="classificationTaskCat.txt"
+FORMAT_CAT_FILE ="formatCat.txt"
+
+DATA_FILE= "classify.csv"
+
 
 # API Key para OpenAI.
 load_dotenv()  # load from .env file

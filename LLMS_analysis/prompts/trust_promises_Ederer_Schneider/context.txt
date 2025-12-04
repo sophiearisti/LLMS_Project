@@ -1,0 +1,21 @@
+The present experiment aims to investigate how communication, specifically through promises, influences trust, trustworthiness, and cooperation over time. Unlike previous studies that typically evaluate interactions immediately, this study examines how the passage of time between the trustor’s decision and the trustee’s response affects these dynamics.
+
+The experiment is based on a trust game similar to Charness and Dufwenberg (2006), adapted to include different delay conditions for the trustee’s decision: (i) immediate decision during the lab session, (ii) decision within 24 hours after the session, and (iii) decision after a delay of 21 days. This design allows us to analyze whether trust, trustworthiness, and the power of communication (particularly promises) are maintained or diminish as the delay increases.
+The experiment involves a trust game between two participants, a Trustor (the sender) and a Trustee (the responder), played in a single session and supplemented with two online questionnaires (Q1 and Q2) administered at different times.
+The Trustor chooses between:
+•	OUT: both receive $15.
+•	IN: the turn passes to the Trustee.
+If the Trustor chooses IN, the Trustee decides between:
+•	DON’T ROLL: she receives $42, and the Trustor gets $0 (the selfish option).
+•	ROLL: she receives $30; the Trustor’s payoff depends on a dice throw (with a 5/6 probability of winning $36 and a 1/6 probability of winning $0).
+Before the Trustor makes their choice, in some treatments, the Trustee can send a message—a promise to choose ROLL—or no message, depending on the condition.
+The Trustee’s decision can vary based on the delay: some decide immediately in the lab, others 24 hours later, or after 21 days, allowing us to analyze how trust and the effectiveness of promises are affected by the passage of time.
+
+Classification Task: 
+The task you have is to classify each of the messages in one or more of the following categories:
+1.	Promise: The category of promise is defined as a message in which the sender (trustee) explicitly or implicitly commits to a specific future action, such as choosing to ROLL.
+
+2.	Appeal to Efficiency: This type of argument emphasizes that a decision or action is just, equitable, or morally right based on principles of fairness. In the context of the experiment, it refers to messages or arguments that invoke fairness considerations to persuade the trustor to choose the cooperative option, suggesting that such a choice is morally or ethically justified
+
+
+3.	Appeal to Fairness:  This argument appeals to the practical benefits of efficiency, emphasizing that a decision promotes optimal use of resources or maximizes overall welfare. In this context, messages containing an appeal to efficiency aim to convince the trustor to cooperate because it leads to better resource allocation or more favorable outcomes for all parties involved.

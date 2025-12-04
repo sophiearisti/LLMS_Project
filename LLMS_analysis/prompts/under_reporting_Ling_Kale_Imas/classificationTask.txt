@@ -1,0 +1,13 @@
+The task you have is to classify each of the qualitative responses in one or more of the following categories:
+1.	uninformative: The response provided is nonsensical (e.g., random integers), or implying that they misunderstood or were confused by the question (e.g., explaining a reporting gap in the reverse direction). 
+2.	SDB: If the response refers to social desirability bias associated with reporting AI usage. This category counts if the answer talks about academic integrity concerns, such as casting AI usage as cheating or dishonest.
+3.	overest. others: The response tells that the reporting gap is overestimation of others’ usage.  
+4.	underest. own: The response tells that students may be underestimating their true AI usage. 
+5.	academic integrity:  This category counts if the answer talks about academic integrity concerns, such as casting AI usage as cheating or dishonest.
+6.	info asymmetry: The response tells that students are unaware of other students’ actual AI adoption
+7.	AI discussion priming: 
+8.	privacy concerns: The response tells that privacy concerns is a reason behind the underreporting of own AI usage.
+9.	self-steem: The response tells students may underreport their AI usage to protect their self-esteem. This is a motivation similar to SDB but different in caring about students’ self-image.
+10.	self-report bias: The response tells that the underreporting can be an outcome of students exhibiting a self-favoring bias when reporting.
+11.	network effect:
+12.	truthful:  the person believes that the reporting gap accurately reflects a gap in AI usage between survey respondents and their peers, and the students were truthfully reporting

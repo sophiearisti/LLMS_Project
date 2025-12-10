@@ -55,3 +55,26 @@ names(merged)
 
 #save the newly created dataset
 write.csv(merged, "merged_output.csv", row.names = TRUE)
+
+
+# Cargar datos
+datos <- read.csv("merged_output.csv", stringsAsFactors = FALSE)
+
+
+result <- datos %>%
+  group_by(session, period, group, game) %>%  # agrupa por las columnas deseadas
+  summarise(conteo = n(), .groups = "drop") %>%  # cuenta cuántas veces aparece cada combinación
+  slice(match(paste(session, period, group, game), paste(session, period, group, game)))  # mantiene orden original
+
+# Mostrar resultado
+print(result, n = nrow(result))
+
+# guardar en un txt separado por comas en el orden que sale solo la informacion de "conteo"
+write.table(result %>% select(conteo), 
+            file = "conteo_por_juego.txt", 
+            sep = ",", 
+            row.names = FALSE, 
+            col.names = FALSE)
+
+
+

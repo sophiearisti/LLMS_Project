@@ -132,7 +132,24 @@ def obtener_categorizacion_llm(prompt, paper):
                 print(f"✔ Resultados guardados en {output_path}")
     else:
 
-        group_sizes = [51]  
+        group_sizes = []
+        
+        # pedir al usuario los tamaños de grupo separados por comas O SUBIR UN ARCHIVO txt y cada línea es un tamaño de grupo
+        group_sizes_file = input("¿Desea subir un archivo txt con los tamaños de grupo? (s/n): ")
+        if group_sizes_file.lower() == "s":
+            # Ruta del archivo
+            filepath = "../Data/managerial_leadership_Jordi_Cooper/conteo_por_juego.txt"
+            # ../Data/managerial_leadership_Jordi_Cooper/conteo_por_juego.txt
+            try:
+                with open(filepath, "r", encoding="utf-8") as f:
+                    group_sizes = [int(line.strip()) for line in f if line.strip().isdigit()]   
+            except FileNotFoundError:
+                print("¡Archivo no encontrado! Verifica la ruta.")
+            except Exception as e:
+                print("Ocurrió un error al abrir el archivo:", e)
+        else:
+            group_sizes_input = input("Ingrese los tamaños de grupo separados por comas (por ejemplo, 2,5,10): ")
+            group_sizes = [int(size.strip()) for size in group_sizes_input.split(",") if size.strip().isdigit()] 
 
         for temp in temps:
             for mode in modes:
@@ -147,7 +164,8 @@ def obtener_categorizacion_llm(prompt, paper):
                         end_idx = min(start_idx + group_size, len(df))
 
                         group_msgs = df[message_col].iloc[start_idx:end_idx].tolist()
-                        combined_message = "/".join(group_msgs)
+                        combined_message = "/".join([str(msg) for msg in group_msgs])
+
 
                         full_prompt = (
                             prompt +
@@ -169,6 +187,8 @@ def obtener_categorizacion_llm(prompt, paper):
                         results.append(parsed)
 
                         start_idx += group_size
+                        
+                        print(f"Procesados mensajes de {start_idx - group_size} a {end_idx -1}")
 
                         if start_idx >= len(df):
                             break
@@ -362,7 +382,6 @@ def main_menu():
 
             else:
                 print("Opción no válida.")
-
 
 # Ejecutar todo
 main_menu()

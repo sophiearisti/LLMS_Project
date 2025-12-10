@@ -1,0 +1,10 @@
+The following are some examples based on real responses of participants:
+
+The message is:
+“"26 26" "non " "d'accord" "14" "hhhhh" "28 28 ça te va ?" "4" "et toi" "et toi" "propose" "non " "on fait le contraire" "t'as menti !!" "faisons autre chose " "ok" "18" "26 26" "je sais pas" "bon d'accord" "alors ?" "ok" "on ne parle plus les dix derniers tours" "bonjour" "c'est pas bien de mentir !!" "la tu vas mettre quoi ?" "oui" "ok" "" "pour toi" "je met 18" "je dis banco" "tu mets quoi ?" ":)" "bisous" "26 26 ?" ":)" "j'ai mis 20" "met 27.4" "toi 18" "12" "allez cette fois je met 24" "ça te va ?" "ça peut être bien" "j'ai ripé sur le clavier" "ouais" "ah non" "je met 26" "tu mets combien ?" "ok" "je met 14" "aussi" "je savais pas qu'il fallait mettre le même nombre à la fin aussi" "faut mettre tout le temps 1 à la fin ?" "tu veux pas coopérer malgès ma \qtrahison\q ?" "0" "c'est bon t'as compris la stratégie ?" "oui" "24.5 tout les 2" "24.5/24.5 ?" "je met 18" "ok" "je test d'autres combinaisons en attendant" "ou on varie les plaisirs ?" "24/24 ?" "je met 18 toi 28" "je met 18 tu mets 28 ?" "tu veux tenter quoi ?" "on fais que des roulements comme ça" "si on fais tour par tour 18/28" "je met 28 au dernier" "" "pas équitable" "ok" "je met 24" "bonjour" "tu me suis ?" "faudrait faire un combinaison qui rapporte plus " "la même ?" "genre un coup je le fais et un coup tu le fais" "ok" "je met 28"”
+
+The classification should be:
+{
+    'Numerical_Coordination_and_Strategy': 1,
+    'Trust_Cooperation_and_Betrayal': 1,
+    'OffTopic_Social_and_Affective_Chat': 1}

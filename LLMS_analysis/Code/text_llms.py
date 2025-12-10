@@ -14,72 +14,10 @@ PAPER_PATHS = {
 }
 
 llm_chatgpt = ChatOpenAI(
-    model="gpt-4o",
+    model="gpt-5.1",
     max_retries=1,
     api_key=OAI_2
 )
-
-
-"""# Cargar la base de datos y filtrar filas sin 'razones'
-df = pd.read_excel('../data/directores/db_directores.xls')
-df = df.dropna(subset=['razones']).reset_index(drop=True)
-
-# Instanciar el modelo ChatGPT
-llm_chatgpt = ChatOpenAI(
-    model="gpt-4o",
-    max_retries=1,
-    api_key=OAI_2
-)
-
-# Definir temperaturas a utilizar
-TEMPS = [0, 0.5]
-
-infos = []
-
-# Iterar sobre temperaturas y textos en la columna 'razones', y capturar 'departamento'
-for num in range(1):
-    for temp in tqdm(TEMPS, desc="Temperaturas", total=len(TEMPS)):
-        # Itera sobre cada par (razones, departamento)
-        for text, dept in tqdm(zip(df['razones'].values, df['departamento'].values),
-                                 desc="Datos", total=len(df)):
-            # Construir el prompt y obtener la respuesta con la temperatura correspondiente
-            ans = llm_chatgpt.invoke(PROMPT_1 + " " + text, temperature=temp)
-            ans = ans.content  # Extraer el contenido de la respuesta
-            # Se asume que la respuesta contiene un diccionario en formato string,
-            # por lo que se extrae la parte que comienza con '{'
-            idx = ans.find("{")
-            ans = ans[idx:]
-            dictio = {
-                'llm': f"gpt-4o_{temp}",
-                'info': ans,
-                'num': num,
-                'departamento': dept  # Se guarda el departamento
-            }
-            infos.append(dictio)
-
-
-
-# Procesar las respuestas evaluándolas y convirtiéndolas en Series de pandas
-series = []
-errores = []
-for idx, dictio in enumerate(infos):
-    try:
-        di = eval(dictio['info'])
-        di['llm'] = dictio['llm']
-        di['num'] = dictio['num']
-        di['departamento'] = dictio['departamento']  # Incluir el departamento
-        series.append(pd.Series(di))
-    except Exception as e:
-        print("Error al evaluar la respuesta:", dictio['llm'], idx)
-        errores.append(dictio)
-
-# Concatenar las series en un DataFrame (se conservan todas las columnas)
-data = pd.concat(series, axis=1).T
-
-
-# Guardar el resultado en un archivo CSV
-data.to_csv('../results/directores/results_db_directores.csv', index=False)
-"""
 
 def parse_llm_dict(ans):
 
@@ -92,7 +30,7 @@ def parse_llm_dict(ans):
         return {"error": ans[:300]}
 
 def obtener_categorias_llm(prompt, paper):
-    temps   = [0, 0.2, 0.25, 0.5, 0.6, 0.7, 1]
+    temps   = [0, 0.25, 0.5,  0.75, 1]
     modes   = ["user"] # "assistant"]
     
     path = os.path.join(DATA_PATH, PAPER_PATHS[int(paper)], "classify.csv")
@@ -123,10 +61,21 @@ def obtener_categorias_llm(prompt, paper):
 
             print(f"Respuesta del LLM (Temp: {temp}, Mode: {mode}):")
             print(parsed)
+            
+            #escribir las categorias a un archivo txt
+            path = os.path.join(PROMPTS_PATH, PAPER_PATHS[int(paper)], CLASSIFICATION_FILE)
+            
+            #append to the file
+            with open(path, "w", encoding="utf-8") as f:
+                f.write("Bearing in mind these categories, your next task is to classify each of the messages in one or more of them. These are the categories, the way they are named are how they must be tagged in the python dictionary:\n\n")
+                
+                for key, value in parsed.items():
+                    f.write(f"{key}: {value}\n\n")
+
             return parsed
 
 def obtener_categorizacion_llm(prompt, paper):
-    temps   = [0, 0.2, 0.25, 0.5, 0.6, 0.7, 1]
+    temps   = [0, 0.25, 0.5,  0.75, 1]
     modes   = ["user"] #, "assistant"]
 
     path = os.path.join(DATA_PATH, PAPER_PATHS[int(paper)], DATA_FILE)
@@ -198,7 +147,7 @@ def obtener_categorizacion_llm(prompt, paper):
                         end_idx = min(start_idx + group_size, len(df))
 
                         group_msgs = df[message_col].iloc[start_idx:end_idx].tolist()
-                        combined_message = "\n".join(group_msgs)
+                        combined_message = "/".join(group_msgs)
 
                         full_prompt = (
                             prompt +
@@ -230,13 +179,11 @@ def obtener_categorizacion_llm(prompt, paper):
                 pd.DataFrame(results).to_csv(output_path, index=False)
                 print(f"✔ Resultados guardados en {output_path}")
     
-
 def leer_archivo_txt(filepath) :
 
     with open(filepath, "r", encoding="utf-8") as f:
         return f.read()
- 
-    
+   
 def crear_prompt_basico(folder_path, filenames=[ROLE_FILE, CONTEXT_FILE, CLASSIFICATION_FILE, FORMAT_FILE, CONSTRAINTS_FILE]):
 
     contents = []
@@ -247,7 +194,6 @@ def crear_prompt_basico(folder_path, filenames=[ROLE_FILE, CONTEXT_FILE, CLASSIF
         contents.append(text)
 
     return "\n".join(contents)
-
 
 def crear_categorias(paper):
     print(f"\n>>> Creando categorías para Paper {paper}...")
@@ -265,15 +211,13 @@ def crear_categorias(paper):
     
     print(f"\n>>> Ahora clasifiquemos cada texto...")
     
-    menu_asignacion_pos_categorizacion(paper)
-    
+    menu_asignacion_pos_categorizacion(paper) 
 
 def asignar_zero_shot(paper):
     print(f"\n>>> Asignando categorías (Zero-Shot) para Paper {paper}...")
     prompt = crear_prompt_basico(PAPER_PATHS[int(paper)])
     # pedir a chat gpt que cree las categorias
     obtener_categorizacion_llm(prompt, paper)
-
 
 def asignar_few_shot(paper):
     print(f"\n>>> Asignando categorías (Few-Shot) para Paper {paper}...")
@@ -282,6 +226,8 @@ def asignar_few_shot(paper):
     #leer el fewshot.txt
     fewshot_path = os.path.join(PROMPTS_PATH, PAPER_PATHS[int(paper)], FEWSHOT_FILE)
     fewshot_text = leer_archivo_txt(fewshot_path)
+    #si el archivo esta vacio, pedir los ejemplos por consola
+    fewshot_text = empty_examples(fewshot_text)
     prompt += "\n" + fewshot_text   
     
     # pedir a chat gpt que cree las categorias
@@ -306,10 +252,24 @@ def asignar_few_shot_cot(paper):
     #leer el few-shotCoT.txt
     fewshotcot_path = os.path.join(PROMPTS_PATH,PAPER_PATHS[int(paper)], FEWSHOTCOT_FILE)
     fewshotcot_text = leer_archivo_txt(fewshotcot_path)
+    #si el archivo esta vacio, pedir los ejemplos por consola
+    fewshotcot_text = empty_examples(fewshotcot_text)
     prompt += "\n" + fewshotcot_text
     
     obtener_categorizacion_llm(prompt, paper)
     
+def empty_examples(fewshot_text):
+    if fewshot_text.strip() == "":
+        print("El archivo fewShot.txt está vacío. Por favor, ingrese ejemplos de few-shot (deje una línea vacía para terminar):")
+        ejemplos = []
+        while True:
+            linea = input()
+            if linea.strip() == "":
+                break
+            ejemplos.append(linea)
+        fewshot_text = "\n".join(ejemplos)
+    return fewshot_text
+
 def menu_asignacion(paper):
     
     while True:
@@ -334,8 +294,7 @@ def menu_asignacion(paper):
             return
         else:
             print("Opción no válida.")
- 
-            
+             
 def menu_asignacion_pos_categorizacion(paper):
     
     while True:
@@ -360,7 +319,6 @@ def menu_asignacion_pos_categorizacion(paper):
             return
         else:
             print("Opción no válida.")
-
 
 def main_menu():
     

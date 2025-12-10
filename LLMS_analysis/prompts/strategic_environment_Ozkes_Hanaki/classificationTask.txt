@@ -1,1 +1,8 @@
-Bearing in mind these categories, your next task is to classify each of the messages in one or more of them. 
+Bearing in mind these categories, your next task is to classify each of the messages in one or more of them. These are the categories, the way they are named are how they must be tagged in the python dictionary:
+
+Numerical_Coordination_and_Strategy: Messages where participants propose, negotiate, or fix specific numerical choices (e.g., '26 26', 'toi 28 moi 18', '25.5 les deux'), discuss payoff comparisons, test combinations (including with decimals), or refer to the payoff table/calculator to maximize joint or individual gains. This includes attempts to design rotation schemes (alternating who gets the high payoff), equal-split solutions, or any explicit reasoning about which numbers to pick and why.
+
+Trust_Cooperation_and_Betrayal: Messages focused on interpersonal dynamics around cooperation, trust, fairness, and defection. This includes promises and assurances ('fais moi confiance', 'on reste comme ça jusqu’à la fin'), accusations of lying or betrayal ('tu as menti !!', 'tu m’as arnaqué'), attempts to restore equity or 'rattraper' earlier imbalances, threats of punishment or non-cooperation, and explicit moral or fairness reasoning about not exploiting the partner.
+
+OffTopic_Social_and_Affective_Chat: Messages that are not directly about choosing numbers or payoffs but instead serve social, emotional, or entertainment functions. This includes greetings and small talk, jokes and humor (including blagues, emojis, role-play), discussion of life outside the experiment (studies, food, phones, weather), meta-comments about the experiment’s length or boredom, and expressions of affect or rapport-building that are tangential to the immediate strategic choice.
+

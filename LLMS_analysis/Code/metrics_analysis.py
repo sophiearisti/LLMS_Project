@@ -8,11 +8,12 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import classification_report, accuracy_score
 from utils import *
 
-PAPERS = {
-    1: {
+""" PAPERS = {
+   1: {
         "path": FIRST_PAPER,
         "labels": ["any_suggestion", "suggest_safe", "suggest_efficient", "agree_proposal", "discuss_coordinte", "discuss_fairness", "discuss_efficient", "discuss_rules", "explanation", "discuss_howtoplay", "ask_game", "receive_report", "truthful", "falsehood", "contradict", "neither_report"]
-    },
+    },"""
+PAPERS = {
     2: {
         "path": SECOND_PAPER,
         "real_labels": ["topic1", "topic2", "topic3"],
@@ -37,14 +38,25 @@ PAPERS = {
 def paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder, temp, mode):
     
     real_df = pd.read_csv(real_answers_path)
+    # quitar los nan
+    message_col = "message"
+
+        
+    #quitar los NaN
+    real_df = real_df.dropna(subset=[message_col])
+    
     predicted_df = pd.read_csv(predicted_answers_path)
 
     results = []   # aquí acumularemos las métricas por categoría
 
     for tag in PAPERS[paper_id]["labels"]:
 
-        if tag not in real_df.columns or tag not in predicted_df.columns:
-            print(f"Tag {tag} no existe en uno de los dataframes para Paper {paper_id}")
+        if  tag not in predicted_df.columns:
+            print(f"Tag {tag} no existe en predicted dataframes para Paper {paper_id}")
+            continue
+        
+        if tag not in real_df.columns:
+            print(f"Tag {tag} no existe en real dataframes para Paper {paper_id}")
             continue
 
         y_true = real_df[tag]
@@ -123,6 +135,7 @@ def get_results_and_visualize(paper_id, results, folder, temp, mode):
 
     # Guardar tabla
     out_path = f"results_paper_{paper_id}_temp{temp}_mode{mode}_type{folder}.csv"
+    out_path = os.path.join(RESULTS_PATH, PAPERS[paper_id]['path'], folder, out_path)
     results_df.to_csv(out_path, index=False)
 
     print(f"\nTabla guardada en: {out_path}")
@@ -177,6 +190,7 @@ def get_results_and_visualize(paper_id, results, folder, temp, mode):
     plt.title(f"Resultados del Paper {paper_id}\nMétricas por etiqueta y métricas globales", fontsize=16, pad=20)
 
     png_path = f"results_paper_{paper_id}_temp{temp}_mode{mode}_type{folder}.png"
+    png_path =os.path.join(RESULTS_PATH, PAPERS[paper_id]['path'], folder, png_path)
     plt.savefig(png_path, dpi=300, bbox_inches="tight")
     plt.close()
 
@@ -208,3 +222,6 @@ def main():
                         paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder, temp, m)
                     
                     print("\n" + "="*50 + "\n")
+                    
+
+main()

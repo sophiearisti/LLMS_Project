@@ -82,10 +82,9 @@ def obtener_categorizacion_llm(prompt, paper):
     df = pd.read_csv(path)
 
     message_col = "message"
-    
-    #hay una que tiene Message ESTO SE QUITA IGUALMENE PORQUEME DA TOC
-    if "message" not in df.columns:
-        message_col = "Message"
+        
+    #quitar los NaN
+    df = df.dropna(subset=[message_col])
 
     read_mode = input("¿Desea leer línea por línea (1) o en grupos (2)? Ingrese 1 o 2: ")
 
@@ -164,8 +163,13 @@ def obtener_categorizacion_llm(prompt, paper):
                         end_idx = min(start_idx + group_size, len(df))
 
                         group_msgs = df[message_col].iloc[start_idx:end_idx].tolist()
-                        combined_message = "/".join([str(msg) for msg in group_msgs])
-
+                        #SOLO PARA ESTE PAPER 1
+                        actor = df["Type"].iloc[start_idx:end_idx].tolist()
+                        # unir group_msgs y actor de esta forma: Actor; mensaje
+                        group_msgs = [f"{a}; {m}" for a, m in zip(actor, group_msgs)]
+                        
+                        combined_message_for_csv = "/".join([str(msg) for msg in group_msgs])
+                        combined_message= "\n".join([str(msg) for msg in group_msgs])
 
                         full_prompt = (
                             prompt +
@@ -182,7 +186,7 @@ def obtener_categorizacion_llm(prompt, paper):
                         # -----------------------------------------------------
 
                         parsed = parse_llm_dict(ans)
-                        parsed["original_messages"] = combined_message
+                        parsed["original_messages"] = combined_message_for_csv
 
                         results.append(parsed)
 

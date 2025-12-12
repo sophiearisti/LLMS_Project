@@ -197,7 +197,7 @@ def obtener_categorizacion_llm(prompt, paper):
                         if start_idx >= len(df):
                             break
 
-                out_file = f"results_temp{temp}_mode{mode}_group.csv"
+                out_file = f"results_temp{temp}_mode{mode}.csv"
                 output_path = os.path.join(RESULTS_PATH, PAPER_PATHS[int(paper)], out_file)
 
                 pd.DataFrame(results).to_csv(output_path, index=False)

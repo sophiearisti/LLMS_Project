@@ -1,6 +1,7 @@
 library(tidyverse)
 library(readxl)
 library(dplyr)
+library(stringr)
 
 #set the directory
 setwd("/Users/sophiaaristizabal/Documents/GitHub/LLMS_Project/LLMS_analysis/Data/managerial_leadership_Jordi_Cooper")
@@ -54,11 +55,11 @@ names(merged)
 
 
 #save the newly created dataset
-write.csv(merged, "merged_output.csv", row.names = TRUE)
+write.csv(merged, "real_answers_desaggregated.csv", row.names = TRUE)
 
 
 # Cargar datos
-datos <- read.csv("merged_output.csv", stringsAsFactors = FALSE)
+datos <- read.csv("real_answers_desaggregated.csv", stringsAsFactors = FALSE)
 
 
 result <- datos %>%
@@ -76,5 +77,38 @@ write.table(result %>% select(conteo),
             row.names = FALSE, 
             col.names = FALSE)
 
+vars_keep <- c(
+  "any_suggestion", "suggest_safe", "suggest_efficient", "agree_proposal",
+  "discuss_coordinate", "discuss_fairness", "discuss_efficient", "discuss_rules",
+  "explanation", "discuss_howtoplay", "ask_game", "receive_report",
+  "truthful", "falsehood", "contradict", "neither_report"
+)
+
+names(datos)
+
+# Agrupar y concatenar mensajes
+result <- datos %>%
+  mutate(across(all_of(vars_keep_existing),
+                ~ ifelse(.x %in% c(0, 1), .x, 0.5))) %>% 
+  group_by(session, period, group, game) %>%
+  summarise(
+    across(all_of(vars_keep_existing), ~ first(.x)),
+    message = str_c(message, collapse = "/"),
+    conteo = n(),
+    .groups = "drop"
+  )
+
+# Mostrar resultado
+print(result, n = nrow(result))
+
+#revisar message en result 
+head(result$message)
+
+# guardar en un csv
+write.table(result %>% select(conteo), 
+            file = "real_answers.csv", 
+            sep = ",", 
+            row.names = FALSE, 
+            col.names = FALSE)
 
 

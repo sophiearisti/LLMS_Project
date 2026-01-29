@@ -65,3 +65,21 @@ Ya tenemos en IMAS paper una buena regla en constraints.txt (si uninformative=T 
 “Si menciona ‘they use it more’ sin explicación → marcar truthful solo si explícitamente dice que el gap refleja realidad, no percepción.”
 “SDB vs academic_integrity”: define un criterio de desempate (p.ej. academic_integrity ⊂ SDB, o marcarlas ambas si aplica).
 
+10) Arreglar ejemplos en fewShot.txt (tienen comillas tipográficas ‘ ’ en llaves como suggest_safe ‘:), porque eso enseña al modelo una sintaxis inválida.
+
+
+Alternativas a considerar
+
+1) Prompt en 2 etapas: “Gating” + “Etiquetado” (mejoraría reliability)
+
+Etapa A (gating): decidir solo si la respuesta es informativa vs no informativa (y opcionalmente “dudosa”).
+Etapa B: solo si es informativa, entonces aplicar etiquetas (SDB, info asymmetry, etc.).
+Por qué mejora: reduces errores porque el modelo no intenta forzar etiquetas cuando el texto es vago.
+
+2) Preguntas binarias por etiqueta (one-vs-rest), con umbral
+En vez de pedir 12 campos de una vez:
+
+Haces 12 mini-decisiones: “¿Hay evidencia explícita de X? Sí/No”
+Luego devuelves el diccionario final.
+Por qué mejora: cada sub-tarea es más simple y reduce confusiones entre categorías parecidas (p.ej. overest_others vs info_asymmetry).
+

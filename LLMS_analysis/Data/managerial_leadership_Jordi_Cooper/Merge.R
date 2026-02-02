@@ -105,10 +105,10 @@ print(result, n = nrow(result))
 head(result$message)
 
 # guardar en un csv
-write.table(result %>% select(conteo), 
+write.table(result, 
             file = "real_answers.csv", 
             sep = ",", 
             row.names = FALSE, 
-            col.names = FALSE)
+            col.names = TRUE)
 
 

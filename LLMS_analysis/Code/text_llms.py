@@ -1,5 +1,8 @@
 import ast
+from http import client
 from langchain_openai import ChatOpenAI
+from google import genai
+from google.genai import types
 from tqdm import tqdm
 from utils import *
 import pandas as pd
@@ -19,6 +22,8 @@ llm_chatgpt = ChatOpenAI(
     api_key=OAI_2
 )
 
+llm_gemini = genai.Client()
+
 def parse_llm_dict(ans):
 
     try:
@@ -29,13 +34,15 @@ def parse_llm_dict(ans):
     except:
         return {"error": ans[:300]}
 
-def obtener_categorias_llm(prompt, paper):
+def obtener_categorias_llm(prompt, paper, llm):  
+    
     temps   = [0, 0.25, 0.5,  0.75, 1]
-    modes   = ["user"] # "assistant"]
+    modes   = ["user"] #, "assistant"]
     
     path = os.path.join(DATA_PATH, PAPER_PATHS[int(paper)], "classify.csv")
     df = pd.read_csv(path)
-    #obtener todo el csv y guardarlo como un string
+    
+    # obtener todo el csv y guardarlo como un string
     messages = df["message"].tolist()
     combined_messages = "\n".join(messages)
     full_prompt = (
@@ -48,13 +55,29 @@ def obtener_categorias_llm(prompt, paper):
         for mode in modes:
 
             print(f"\n--- Obteniendo categorías para Paper {paper} | Temp: {temp} | Mode: {mode} ---\n")
-
+            
             # LLAMADA AL LLM --------------------------------------
-            if mode == "user":
-                response = llm_chatgpt.invoke(full_prompt, temperature=temp)
+            
+            # preguntal cual llm usar
+            if llm == "gemini":
+                
+                response = client.models.generate_content(
+                                model="gemini-3-flash-preview",
+                                contents=full_prompt,
+                                config=types.GenerateContentConfig(temperature=temp)
+                            )
+                
+                ans = response.text
+                
             else:
-                response = llm_chatgpt.invoke_as_assistant(full_prompt, temperature=temp)
-            ans = response.content
+                
+                if mode == "user":
+                    response = llm_chatgpt.invoke(full_prompt, temperature=temp)
+                    
+                else:
+                    response = llm_chatgpt.invoke_as_assistant(full_prompt, temperature=temp)
+                
+                ans = response.content
             # -----------------------------------------------------
 
             parsed = parse_llm_dict(ans)
@@ -62,10 +85,10 @@ def obtener_categorias_llm(prompt, paper):
             print(f"Respuesta del LLM (Temp: {temp}, Mode: {mode}):")
             print(parsed)
             
-            #escribir las categorias a un archivo txt
+            # escribir las categorias a un archivo txt
             path = os.path.join(PROMPTS_PATH, PAPER_PATHS[int(paper)], CLASSIFICATION_FILE)
             
-            #append to the file
+            # append to the file
             with open(path, "w", encoding="utf-8") as f:
                 f.write("Bearing in mind these categories, your next task is to classify each of the messages in one or more of them. These are the categories, the way they are named are how they must be tagged in the python dictionary:\n\n")
                 
@@ -74,7 +97,8 @@ def obtener_categorias_llm(prompt, paper):
 
             return parsed
 
-def obtener_categorizacion_llm(prompt, paper):
+def obtener_categorizacion_llm(prompt, paper, llm):
+    
     temps   = [0, 0.25, 0.5,  0.75, 1]
     modes   = ["user"] #, "assistant"]
 
@@ -109,11 +133,22 @@ def obtener_categorizacion_llm(prompt, paper):
                     print(full_prompt)
 
                     # LLAMADA AL LLM --------------------------------------
-                    if mode == "user":
-                        response = llm_chatgpt.invoke(full_prompt, temperature=temp)
+                    # preguntar cual llm usar
+                    if llm == "gemini":
+                        
+                        response = client.models.generate_content(
+                                        model="gemini-3-flash-preview",
+                                        contents=full_prompt,
+                                        config=types.GenerateContentConfig(temperature=temp)
+                                    )
+                        
+                        ans = response.text
                     else:
-                        response = llm_chatgpt.invoke_as_assistant(full_prompt, temperature=temp)
-                    ans = response.content
+                        if mode == "user":
+                            response = llm_chatgpt.invoke(full_prompt, temperature=temp)
+                        else:
+                            response = llm_chatgpt.invoke_as_assistant(full_prompt, temperature=temp)
+                        ans = response.content
                     # -----------------------------------------------------
                     
                     print(ans)
@@ -125,7 +160,10 @@ def obtener_categorizacion_llm(prompt, paper):
 
                 # GUARDAR RESULTADOS POR TEMP Y MODO
                 out_file = f"results_temp{temp}_mode{mode}.csv"
-                output_path = os.path.join(RESULTS_PATH, PAPER_PATHS[int(paper)], out_file)
+                
+                #depending on the llm
+                LLM = "gemini" if llm == "gemini" else "gpt"
+                output_path = os.path.join(RESULTS_PATH, LLM, PAPER_PATHS[int(paper)], out_file)
 
                 pd.DataFrame(results).to_csv(output_path, index=False)
                 print(f"✔ Resultados guardados en {output_path}")
@@ -178,11 +216,23 @@ def obtener_categorizacion_llm(prompt, paper):
                         )
 
                         # LLAMADA AL LLM --------------------------------------
-                        if mode == "user":
-                            response = llm_chatgpt.invoke(full_prompt, temperature=temp)
+                        if llm == "gemini":
+                            
+                            response = client.models.generate_content(
+                                            model="gemini-3-flash-preview",
+                                            contents=full_prompt,
+                                            config=types.GenerateContentConfig(temperature=temp)
+                                        )
+                            
+                            ans = response.text
                         else:
-                            response = llm_chatgpt.invoke_as_assistant(full_prompt, temperature=temp)
-                        ans = response.content
+                            
+                            if mode == "user":
+                                response = llm_chatgpt.invoke(full_prompt, temperature=temp)
+                            else:
+                                response = llm_chatgpt.invoke_as_assistant(full_prompt, temperature=temp)
+                                
+                            ans = response.content
                         # -----------------------------------------------------
 
                         parsed = parse_llm_dict(ans)
@@ -198,7 +248,10 @@ def obtener_categorizacion_llm(prompt, paper):
                             break
 
                 out_file = f"results_temp{temp}_mode{mode}.csv"
-                output_path = os.path.join(RESULTS_PATH, PAPER_PATHS[int(paper)], out_file)
+                
+                #depending on the llm
+                LLM = "gemini" if llm == "gemini" else "gpt"
+                output_path = os.path.join(RESULTS_PATH, LLM, PAPER_PATHS[int(paper)], out_file)
 
                 pd.DataFrame(results).to_csv(output_path, index=False)
                 print(f"✔ Resultados guardados en {output_path}")
@@ -219,7 +272,7 @@ def crear_prompt_basico(folder_path, filenames=[ROLE_FILE, CONTEXT_FILE, CLASSIF
 
     return "\n".join(contents)
 
-def crear_categorias(paper):
+def crear_categorias(paper, llm):
     print(f"\n>>> Creando categorías para Paper {paper}...")
     
     # Crear el prompt básico
@@ -227,7 +280,7 @@ def crear_categorias(paper):
     
     
     # pedir a chat gpt que cree las categorias
-    categorias=obtener_categorias_llm(prompt, paper)
+    categorias=obtener_categorias_llm(prompt, paper, llm)
     
     print(f"\n>>> Estas son las categorías creadas para Paper {paper}...")
     
@@ -237,13 +290,13 @@ def crear_categorias(paper):
     
     menu_asignacion_pos_categorizacion(paper) 
 
-def asignar_zero_shot(paper):
+def asignar_zero_shot(paper, llm):
     print(f"\n>>> Asignando categorías (Zero-Shot) para Paper {paper}...")
     prompt = crear_prompt_basico(PAPER_PATHS[int(paper)])
     # pedir a chat gpt que cree las categorias
-    obtener_categorizacion_llm(prompt, paper)
-
-def asignar_few_shot(paper):
+    obtener_categorizacion_llm(prompt, paper, llm)
+    
+def asignar_few_shot(paper, llm):
     print(f"\n>>> Asignando categorías (Few-Shot) para Paper {paper}...")
     prompt = crear_prompt_basico(PAPER_PATHS[int(paper)])
     #agregar la parte de few-shot
@@ -255,9 +308,9 @@ def asignar_few_shot(paper):
     prompt += "\n" + fewshot_text   
     
     # pedir a chat gpt que cree las categorias
-    obtener_categorizacion_llm(prompt, paper)
+    obtener_categorizacion_llm(prompt, paper, llm)
 
-def asignar_zero_shot_cot(paper):
+def asignar_zero_shot_cot(paper, llm):
     print(f"\n>>> Asignando categorías (Zero-Shot CoT) para Paper {paper}...")
     prompt = crear_prompt_basico(PAPER_PATHS[int(paper)])
     #agregar la parte de 0ShotCoT
@@ -267,9 +320,9 @@ def asignar_zero_shot_cot(paper):
     prompt += "\n" + zeroshotcot_text
     
     # pedir a chat gpt que cree las categorias
-    obtener_categorizacion_llm(prompt, paper)
+    obtener_categorizacion_llm(prompt, paper, llm)
 
-def asignar_few_shot_cot(paper):
+def asignar_few_shot_cot(paper, llm):
     print(f"\n>>> Asignando categorías (Few-Shot CoT) para Paper {paper}...")
     # agregar la parte de few-shot CoT
     prompt = crear_prompt_basico(PAPER_PATHS[int(paper)])
@@ -280,7 +333,7 @@ def asignar_few_shot_cot(paper):
     fewshotcot_text = empty_examples(fewshotcot_text)
     prompt += "\n" + fewshotcot_text
     
-    obtener_categorizacion_llm(prompt, paper)
+    obtener_categorizacion_llm(prompt, paper, llm)
     
 def empty_examples(fewshot_text):
     if fewshot_text.strip() == "":
@@ -307,13 +360,17 @@ def menu_asignacion(paper):
         opcion = input("Elige una opción: ")
 
         if opcion == "1":
-            asignar_zero_shot(paper)
+            llm = seleccionar_llm()
+            asignar_zero_shot(paper, llm)
         elif opcion == "2":
-            asignar_few_shot(paper)
+            llm = seleccionar_llm()
+            asignar_few_shot(paper, llm)
         elif opcion == "3":
-            asignar_zero_shot_cot(paper)
+            llm = seleccionar_llm()
+            asignar_zero_shot_cot(paper, llm)
         elif opcion == "4":
-            asignar_few_shot_cot(paper)
+            llm = seleccionar_llm()
+            asignar_few_shot_cot(paper, llm)
         elif opcion == "5":
             return
         else:
@@ -332,15 +389,35 @@ def menu_asignacion_pos_categorizacion(paper):
         opcion = input("Elige una opción: ")
 
         if opcion == "1":
-            asignar_zero_shot(paper)
+            llm = seleccionar_llm()
+            asignar_zero_shot(paper, llm)
         elif opcion == "2":
-            asignar_few_shot(paper)
+            llm = seleccionar_llm()
+            asignar_few_shot(paper, llm)
         elif opcion == "3":
-            asignar_zero_shot_cot(paper)
+            llm = seleccionar_llm()
+            asignar_zero_shot_cot(paper, llm)
         elif opcion == "4":
-            asignar_few_shot_cot(paper)
+            llm = seleccionar_llm()
+            asignar_few_shot_cot(paper, llm)
         elif opcion == "5":
             return
+        else:
+            print("Opción no válida.")
+
+def seleccionar_llm():
+    while True:
+        print("\n--- Selecciona el LLM ---")
+        print("1. ChatGPT")
+        print("2. Gemini")
+        print("3. Volver")
+
+        opcion = input("Elige una opción: ")
+
+        if opcion == "1":
+            return "chatgpt"
+        elif opcion == "2":
+            return "gemini"
         else:
             print("Opción no válida.")
 
@@ -376,7 +453,8 @@ def main_menu():
             accion = input("Selecciona una opción: ")
 
             if accion == "1":
-                crear_categorias(paper)
+                llm = seleccionar_llm()
+                crear_categorias(paper, llm)
 
             elif accion == "2":
                 menu_asignacion(paper)

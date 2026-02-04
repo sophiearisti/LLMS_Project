@@ -24,7 +24,7 @@ In that sense, the format should be:
     'info asymmetry': 'FALSE',
     'AI discussion priming ': 'FALSE',
     'privacy concerns': 'FALSE',
-    'self-steem': 'TRUE',
+    'self-esteem': 'TRUE',
     'self-report bias': 'FALSE',
     'network effect': 'FALSE',
     'truthful': 'FALSE'

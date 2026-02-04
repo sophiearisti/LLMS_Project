@@ -7,7 +7,7 @@ Please give your answer strictly as a python dictionary, with no additional text
 9.	'info asymmetry' for info asymmetry
 10.	'AI discussion priming ' for AI discussion priming
 11.	'privacy concerns' for privacy concerns
-12.	'self-steem' for self-steem
+12.	'self-esteem' for self-steem
 13.	'self-report bias' for self-report bias
 14.	'network effect' for network effect
 15.	'truthful' for truthful

@@ -1,4 +1,3 @@
-The present experiment wanted to explore how people, due to Social Desirability Bias, might not always admit to using AI, especially in academic settings, as they might feel judged.
-In this experiment all participants were undergraduate students, and, among these, 78% were STEM majors. 
-In the main survey, participants answered questions about their own AI reliance and frequency of use, as well as their perceptions of their peers’ AI usage. The results revealed a statistically significant gap: participants reported substantially lower personal AI usage compared with the level of usage they attributed to their peers.
-In the follow-up survey, a separate sample of undergraduate students were asked (in an open-ended question) about their explanations for this gap, such as social desirability bias or lack of knowledge about others’ AI use.
+The experiment explored whether undergraduate students underreport AI usage in academic settings. Participants (78% STEM majors) reported their own AI reliance and frequency of use, then estimated their peers' AI usage.
+
+A follow-up survey asked a separate sample of undergraduate students to explain potential gaps between self-reported and peer-attributed AI usage through open-ended responses. Responses may include references to social desirability, privacy concerns, genuine lack of knowledge about peers, or alternative explanations.

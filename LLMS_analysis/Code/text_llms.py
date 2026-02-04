@@ -61,7 +61,7 @@ def obtener_categorias_llm(prompt, paper, llm):
             # preguntal cual llm usar
             if llm == "gemini":
                 
-                response = client.models.generate_content(
+                response = llm_gemini.models.generate_content(
                                 model="gemini-3-flash-preview",
                                 contents=full_prompt,
                                 config=types.GenerateContentConfig(temperature=temp)
@@ -136,7 +136,7 @@ def obtener_categorizacion_llm(prompt, paper, llm):
                     # preguntar cual llm usar
                     if llm == "gemini":
                         
-                        response = client.models.generate_content(
+                        response = llm_gemini.models.generate_content(
                                         model="gemini-3-flash-preview",
                                         contents=full_prompt,
                                         config=types.GenerateContentConfig(temperature=temp)
@@ -218,7 +218,7 @@ def obtener_categorizacion_llm(prompt, paper, llm):
                         # LLAMADA AL LLM --------------------------------------
                         if llm == "gemini":
                             
-                            response = client.models.generate_content(
+                            response = llm_gemini.models.generate_content(
                                             model="gemini-3-flash-preview",
                                             contents=full_prompt,
                                             config=types.GenerateContentConfig(temperature=temp)

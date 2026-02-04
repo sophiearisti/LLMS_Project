@@ -1,79 +1,99 @@
-Apart from the classification task, please state the Chain of thought or the reasoning behind your classification. In such sense, your answer should be:
+part from the classification task, please state the Chain of thought or the reasoning behind your classification. In such sense, your answer should be:
 
 {
-    'uninformative': 'F',
-    ' SDB ': 'FALSE',
-    'overest. others': 'FALSE',
-    'underest. own': 'FALSE',
-    'academic integrity': 'TRUE',
-    'info asymmetry': 'FALSE',
-    'AI discussion priming ': 'FALSE',
-    'privacy concerns': 'FALSE',
-    'self-steem': 'TRUE',
-    'self-report bias': 'FALSE',
-    'network effect': 'FALSE',
-    'truthful': 'FALSE',
-    'reason': '<here you write the reasons behind your decisions>'
+'uninformative': 'F',
+'SDB': 'FALSE',
+'overest. others': 'FALSE',
+'underest. own': 'FALSE',
+'academic integrity': 'TRUE',
+'info asymmetry': 'FALSE',
+'AI discussion priming': 'FALSE',
+'privacy concerns': 'FALSE',
+'self-esteem': 'TRUE',
+'self-report bias': 'FALSE',
+'network effect': 'FALSE',
+'truthful': 'FALSE',
+'reason': '<here you write the reasons behind your decisions>'
 }
 
 The following are some examples based on real responses of participants:
 
 The answer is:
-“Not sure, a lot of my friends do not use LLMs but I know a lot of my peers do.”
+“They probably underestimate how much their friends use LLMs. I know for a fact I don't really talk about usage with them, though sometimes we joke around about using AI. That's where my assumptions derive from.”
+
 The classification should be:
 {
-    'uninformative': 'T',
-    ' SDB ': 'FALSE',
-    'overest. others': 'FALSE',
-    'underest. own': 'FALSE',
-    'academic integrity': 'FALSE',
-    'info asymmetry': 'FALSE',
-    'AI discussion priming ': 'FALSE',
-    'privacy concerns': 'FALSE',
-    'self-steem': 'FALSE',
-    'self-report bias': 'FALSE',
-    'network effect': 'FALSE',
-    'truthful': 'FALSE',
-    'reason': 'The response is not answering the intended question. It does not provide an explanation for why the reporting gap exists. It shows confusion or lack of understanding of the task. Therefore, the answer is uninformative, and other categories must be FALSE'
+'uninformative': 'FALSE',
+'SDB': 'FALSE',
+'overest. others': 'FALSE',
+'underest. own': 'FALSE',
+'academic integrity': 'FALSE',
+'info asymmetry': 'TRUE',
+'AI discussion priming': 'FALSE',
+'privacy concerns': 'FALSE',
+'self-esteem': 'FALSE',
+'self-report bias': 'FALSE',
+'network effect': 'FALSE',
+'truthful': 'FALSE',
+'reason': 'The participant explains that they do not discuss LLM usage with friends and therefore relies on assumptions. This directly indicates limited information about peers, which matches information asymmetry. The response does not mention stigma, cheating concerns, priming, or any other mechanism, so those labels remain FALSE.'
 }
 
-
 The answer is:
-“some may not have friends in college”
+“They are afraid of what people may think or they may feel like someone would view them as cheating.”
+
 The classification should be:
 {
-    'uninformative': 'F?',
-    ' SDB ': 'FALSE',
-    'overest. others': 'FALSE',
-    'underest. own': 'FALSE',
-    'academic integrity': 'FALSE',
-    'info asymmetry': 'TRUE',
-    'AI discussion priming ': 'FALSE',
-    'privacy concerns': 'FALSE',
-    'self-steem': 'FALSE',
-    'self-report bias': 'FALSE',
-    'network effect': 'FALSE',
-    'truthful': 'FALSE',
-    'reason': ' The response suggests that students may lack information about their peers’ AI usage because they do not have college friends, which aligns with information asymmetry. However, the answer is vague and only indirectly addresses the question, so it is marked as ‘F?’ rather than fully informative. '
+'uninformative': 'FALSE',
+'SDB': 'TRUE',
+'overest. others': 'FALSE',
+'underest. own': 'FALSE',
+'academic integrity': 'TRUE',
+'info asymmetry': 'FALSE',
+'AI discussion priming': 'FALSE',
+'privacy concerns': 'FALSE',
+'self-esteem': 'FALSE',
+'self-report bias': 'FALSE',
+'network effect': 'FALSE',
+'truthful': 'FALSE',
+'reason': 'The response points to fear of judgment and being seen as cheating. Fear of judgment implies social desirability bias, and the explicit reference to cheating maps to academic integrity concerns. It does not claim students misperceive others due to lack of information or priming, so those labels are FALSE.'
 }
 
-
 The answer is:
-“I think only a small portion of students actually rely on llms to do coursework, while most students do not. That small portion leads some students to assume most are using it.”
+“The disparity is most likely caused by social desirability bias, in which students underreport their own LLM usage to look more academically honest, while overestimating their peers' use due to asymmetric perception bias. Furthermore, students may mistake their awareness of LLM debates or availability for actual usage, distorting their views of others' conduct.”
 
 The classification should be:
 {
-    'uninformative': 'F',
-    ' SDB ': 'FALSE',
-    'overest. others': 'TRUE',
-    'underest. own': 'FALSE',
-    'academic integrity': 'FALSE',
-    'info asymmetry': 'FALSE',
-    'AI discussion priming ': 'TRUE',
-    'privacy concerns': 'FALSE',
-    'self-steem': 'FALSE',
-    'self-report bias': 'FALSE',
-    'network effect': 'FALSE',
-    'truthful': 'FALSE',
-    'reason': ' The response explains the gap by arguing that a small, highly visible group uses LLMs, which makes other students assume usage is widespread. This reflects an overestimation of others’ usage and the idea that discussions or visibility around AI use prime students to believe it is more common than it is. The answer directly addresses the question, so it is informative (‘F’).'
+'uninformative': 'FALSE',
+'SDB': 'TRUE',
+'overest. others': 'TRUE',
+'underest. own': 'FALSE',
+'academic integrity': 'TRUE',
+'info asymmetry': 'TRUE',
+'AI discussion priming': 'TRUE',
+'privacy concerns': 'FALSE',
+'self-esteem': 'FALSE',
+'self-report bias': 'FALSE',
+'network effect': 'FALSE',
+'truthful': 'FALSE',
+'reason': 'The participant explicitly names social desirability bias and explains underreporting to appear academically honest, which supports SDB and academic integrity. It also explicitly says students overestimate peers, which supports overestimation of others. It mentions misjudging peers due to lack of accurate knowledge, which fits information asymmetry. It also links awareness of LLM debates or availability to inflated perceptions of usage, which fits AI discussion priming. No other mechanisms are stated, so the remaining labels are FALSE.'
+}
+
+The answer is:
+“Students may think they are more similar to their peers than they actually are.”
+
+The classification should be:
+{
+'uninformative': 'TRUE',
+'SDB': 'FALSE',
+'overest. others': 'FALSE',
+'underest. own': 'FALSE',
+'academic integrity': 'FALSE',
+'info asymmetry': 'FALSE',
+'AI discussion priming': 'FALSE',
+'privacy concerns': 'FALSE',
+'self-esteem': 'FALSE',
+'self-report bias': 'FALSE',
+'network effect': 'FALSE',
+'truthful': 'FALSE',
+'reason': 'The statement is too general and does not specify any concrete mechanism linked to LLM reporting, such as fear of judgment, cheating concerns, lack of information, or priming. Because it does not clearly explain why the gap exists within the defined label set, it is treated as uninformative and all other labels are FALSE.'
 }

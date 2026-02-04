@@ -1,57 +1,77 @@
 The following are some examples based on real responses of participants:
-The answer is:
-“Not sure, a lot of my friends do not use LLMs but I know a lot of my peers do.”
-The classification should be:
-{
-    'uninformative': 'T',
-    ' SDB ': 'FALSE',
-    'overest. others': 'FALSE',
-    'underest. own': 'FALSE',
-    'academic integrity': 'FALSE',
-    'info asymmetry': 'FALSE',
-    'AI discussion priming ': 'FALSE',
-    'privacy concerns': 'FALSE',
-    'self-steem': 'FALSE',
-    'self-report bias': 'FALSE',
-    'network effect': 'FALSE',
-    'truthful': 'FALSE'
-}
 
 The answer is:
-“some may not have friends in college”
-The classification should be:
-{
-    'uninformative': 'F?',
-    ' SDB ': 'FALSE',
-    'overest. others': 'FALSE',
-    'underest. own': 'FALSE',
-    'academic integrity': 'FALSE',
-    'info asymmetry': 'TRUE',
-    'AI discussion priming ': 'FALSE',
-    'privacy concerns': 'FALSE',
-    'self-steem': 'FALSE',
-    'self-report bias': 'FALSE',
-    'network effect': 'FALSE',
-    'truthful': 'FALSE'
-}
-
-The answer is:
-“I think only a small portion of students actually rely on llms to do coursework, while most students do not. That small portion leads some students to assume most are using it.”
+“They probably underestimate how much their friends use LLMs. I know for a fact I don't really talk about usage with them, though sometimes we joke around about using AI. That's where my assumptions derive from.”
 
 The classification should be:
 {
-    'uninformative': 'F?',
-    ' SDB ': 'FALSE',
-    'overest. others': 'TRUE',
-    'underest. own': 'FALSE',
-    'academic integrity': 'FALSE',
-    'info asymmetry': 'TRUE',
-    'AI discussion priming ': 'TRUE',
-    'privacy concerns': 'FALSE',
-    'self-steem': 'FALSE',
-    'self-report bias': 'FALSE',
-    'network effect': 'FALSE',
-    'truthful': 'FALSE'
+'uninformative': 'FALSE',
+'SDB': 'FALSE',
+'overest. others': 'FALSE',
+'underest. own': 'FALSE',
+'academic integrity': 'FALSE',
+'info asymmetry': 'TRUE',
+'AI discussion priming': 'FALSE',
+'privacy concerns': 'FALSE',
+'self-esteem': 'FALSE',
+'self-report bias': 'FALSE',
+'network effect': 'FALSE',
+'truthful': 'FALSE'
 }
 
+The answer is:
+“They are afraid of what people may think or they may feel like someone would view them as cheating.”
 
+The classification should be:
+{
+'uninformative': 'FALSE',
+'SDB': 'TRUE',
+'overest. others': 'FALSE',
+'underest. own': 'FALSE',
+'academic integrity': 'TRUE',
+'info asymmetry': 'FALSE',
+'AI discussion priming': 'FALSE',
+'privacy concerns': 'FALSE',
+'self-esteem': 'FALSE',
+'self-report bias': 'FALSE',
+'network effect': 'FALSE',
+'truthful': 'FALSE'
+}
+
+The answer is:
+“The disparity is most likely caused by social desirability bias, in which students underreport their own LLM usage to look more academically honest, while overestimating their peers' use due to asymmetric perception bias. Furthermore, students may mistake their awareness of LLM debates or availability for actual usage, distorting their views of others' conduct.”
+
+The classification should be:
+{
+'uninformative': 'FALSE',
+'SDB': 'TRUE',
+'overest. others': 'TRUE',
+'underest. own': 'FALSE',
+'academic integrity': 'TRUE',
+'info asymmetry': 'TRUE',
+'AI discussion priming': 'TRUE',
+'privacy concerns': 'FALSE',
+'self-esteem': 'FALSE',
+'self-report bias': 'FALSE',
+'network effect': 'FALSE',
+'truthful': 'FALSE'
+}
+
+The answer is:
+“Students may think they are more similar to their peers than they actually are.”
+
+The classification should be:
+{
+'uninformative': 'TRUE',
+'SDB': 'FALSE',
+'overest. others': 'FALSE',
+'underest. own': 'FALSE',
+'academic integrity': 'FALSE',
+'info asymmetry': 'FALSE',
+'AI discussion priming': 'FALSE',
+'privacy concerns': 'FALSE',
+'self-esteem': 'FALSE',
+'self-report bias': 'FALSE',
+'network effect': 'FALSE',
+'truthful': 'FALSE'
+}

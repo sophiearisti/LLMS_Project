@@ -1,0 +1,9 @@
+LOGICAL CONSTRAINTS:
+
+1. Uninformative messages:
+   - If 'uninformative': 1, then all other categories must be 0
+   - A nonsensical or irrelevant message cannot simultaneously contain promises or appeals
+
+2. Multiple categories:
+   - Messages can contain combinations of 'is_promise', 'is_efficiency', and 'is_ethics'
+   - Example: A promise that also appeals to efficiency would have both set to 1

@@ -1,23 +1,33 @@
-The task you have is to classify each group of messages sent in one or more of the following categories. The group of messages represent what the participants communicated sequentially during each period. Additionally, it states who sent the message: 0 if it is Central Manager, 1 if it is agent 1, and 2 if it is agent 2. 
+Your task is to classify each group of sequential messages into one or more of the following categories. Messages may belong to multiple categories.
 
-These are the categories stated:
+Each message is labeled by sender: 0 = Central Manager, 1 = Agent 1, 2 = Agent 2.
 
-1.	Did they make a suggestion about what row/column should be chosen? (any_suggestion) If it was the case:
-a.	Did they suggest a safe outcome? (suggest_safe)
-b.	Did they suggest an efficient outcome? (suggest_efficient)
+CATEGORIES:
 
-2.	Did they agree to the proposal about what row/column should be chosen.? (agree_proposal)
-3.	Did they discuss about what row/column should be chosen? If it was the case:
-a.	Did they discuss need to coordinate? (discuss_coordinte) This requires more than making a suggestion that involves coordination. The message needs to indicate that the two players should be choosing the same thing (e.g. “We’ll do better if we make the same choices” is coded. “Let’s choose row 4 and column 4” is not coded.)	
-b.	Did they discuss fairness? (discuss_fairness) This category includes any message that discusses the distribution of pay over the three players.		
-c.	Did they discuss efficiency? (discuss_efficient)This includes discussion of maximizing total pay as well as explaining how and why rotation between players works.
-4.	Did they send questions about rules of the experiment? (discuss_rules)
-5.	Did they give any explanation (explanation)? This included explanations about the rules of the experiment or game, as well as explanations of a suggested way of playing the game.
-6.	Did they send questions about how to play? (discuss_howtoplay) This was for conceptual questions rather than the frequent generic request that somebody suggest a row and column.
-7.	Did the Manager (coded as 0) ask what game is being Played? (ask_game)
-8.	Did Agents Report What Game is Being Played? (Receive_report) I that is the case:
-a.	Did they truthfully Reveal Game? (truthful)
-b.	Did they lie About Game? (falsehood)
-c.	Conflict (conflict): The agents contradict each other
-d.	Disagreement (contradict) This is used for cases where there was “fact-checking”. (e.g. “S1: It is Game 3.” “S2: No, it is Game 2.”) This category is different from the “Contradict” category
-9.	None of the agents report. This is true if in the last question “Did Agents Report What Game is Being Played?”, the answer was false.  (neither_report)
+1. any_suggestion: Participant(s) made a suggestion about which row/column should be chosen.
+   a. suggest_safe: Suggested a safe outcome.
+   b. suggest_efficient: Suggested an efficient outcome.
+
+2. agree_proposal: Participant(s) agreed to a proposal about which row/column should be chosen.
+
+3. discuss_coordinate: Discussed the need to coordinate. Must indicate that both players should choose the same thing (e.g., "We'll do better if we make the same choices"). Simply suggesting matching actions (e.g., "Let's choose row 4 and column 4") does not count.
+
+4. discuss_fairness: Discussed distribution of payoffs across the three players.
+
+5. discuss_efficient: Discussed maximizing total payoffs, including explanations of how or why rotation between players works.
+
+6. discuss_rules: Asked questions about the rules of the experiment.
+
+7. explanation: Provided explanations about experiment/game rules or explained a suggested strategy for playing.
+
+8. discuss_howtoplay: Asked conceptual questions about how to play (excludes generic requests for someone to suggest a row/column).
+
+9. ask_game: Manager (sender 0) asked which game is being played.
+
+10. receive_report: Agent(s) reported which game is being played.
+    a. truthful: Agent(s) truthfully revealed the game.
+    b. falsehood: Agent(s) lied about the game.
+    c. conflict: Agents contradicted each other about which game is being played.
+    d. contradict: Agents fact-checked each other (e.g., "S1: It is Game 3." "S2: No, it is Game 2."). Distinct from conflict category.
+
+11. neither_report: Neither agent reported which game is being played (only TRUE if receive_report is FALSE).

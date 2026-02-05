@@ -1,3 +1,17 @@
-Bear in mind that if 'any_suggestion': 0, this means that 'suggest_safe ' and 'suggest_efficient' must also be 0.  If 'any_suggestion': 1, it can happen that both that 'suggest_safe ' and 'suggest_efficient' are 0. 
+LOGICAL CONSTRAINTS:
 
-Additionally, if 'receive_report': 0, this implies that 'neither_report': 1, and vice versa. Additionally, if 'receive_report': 1, only one in 'truthful', 'falsehood', and 'contradict' must be in 1, the rest must remain in 0. 
+1. Suggestion hierarchy:
+   - If 'any_suggestion': 0, then both 'suggest_safe': 0 and 'suggest_efficient': 0
+   - If 'any_suggestion': 1, then 'suggest_safe' and 'suggest_efficient' can be 0 or 1 independently
+
+2. Reporting logic:
+   - 'receive_report' and 'neither_report' are mutually exclusive:
+     • If 'receive_report': 0, then 'neither_report': 1
+     • If 'receive_report': 1, then 'neither_report': 0
+
+3. Report content (only applies when 'receive_report': 1):
+   - Exactly one of the following must equal 1, the others must be 0:
+     • 'truthful'
+     • 'falsehood'
+     • 'contradict'
+   - If 'receive_report': 0, then all three must be 0

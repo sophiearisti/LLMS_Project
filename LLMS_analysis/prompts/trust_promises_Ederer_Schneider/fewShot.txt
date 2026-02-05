@@ -1,23 +1,45 @@
 The following are some examples based on real responses of participants:
 
 The message is:
-“I will choose roll on all the desicions, in order for both of us to have the chance to get more money if you are interested.”
+“i will always choose roll”
 
 The classification should be:
 {
-    'is_promise': 1,
-    'is_efficiency': 1,
-    'is_ethics': 0
+'is_promise': 1,
+'is_efficiency': 0,
+'is_ethics': 0,
+'uninformative': 0
 }
-
 
 The message is:
-“Let's make this fair. I guess we BOTH want some money.”
+“Hi!”
 
 The classification should be:
 {
-    'is_promise': 0,
-    'is_efficiency': 0,
-    'is_ethics': 1
+'is_promise': 0,
+'is_efficiency': 0,
+'is_ethics': 0,
+'uninformative': 1
 }
 
+The message is:
+“Be free to choose IN. I promise I'll never choose don't roll.”
+
+The classification should be:
+{
+'is_promise': 1,
+'is_efficiency': 1,
+'is_ethics': 0,
+'uninformative': 0
+}
+
+The message is:
+“As a person A you are worried right now that I could choose don’t roll. But I will roll because I want us both to earn as much as possible and it is the fair thing to do.”
+
+The classification should be:
+{
+'is_promise': 1,
+'is_efficiency': 1,
+'is_ethics': 1,
+'uninformative': 0
+}

@@ -1,42 +1,45 @@
-Please give your answer strictly as a python dictionary, with no additional text or characters. Use exactly the following tags in the dictionary:
+Please provide your answer strictly as a Python dictionary with no additional text or characters.
 
-1.	'any_suggestion' 
-2.	'suggest_safe ' 
-3.	'suggest_efficient' 
-4.	'agree_proposal'  
-5.	'discuss_coordinte'  
-6.	'discuss_fairness'
-7.	'discuss_efficient'
-8.	'discuss_rules'
-9.	'explanation'
-10.	'discuss_howtoplay'
-11.	'ask_game'
-12.	'receive_report'
-13.	'truthful'
-14.	'falsehood'
-15.	'contradict'
-16.	'neither_report'
+Use these exact keys with no extra spaces:
+- 'any_suggestion'
+- 'suggest_safe'
+- 'suggest_efficient'
+- 'agree_proposal'
+- 'discuss_coordinate'
+- 'discuss_fairness'
+- 'discuss_efficient'
+- 'discuss_rules'
+- 'explanation'
+- 'discuss_howtoplay'
+- 'ask_game'
+- 'receive_report'
+- 'truthful'
+- 'falsehood'
+- 'contradict'
+- 'neither_report'
 
-All categories must have the value of 1 if the category is observed in the response, 0,5 if the category is partially observed in the response or 0 if it is not observed. 
+All values must be:
+- 1 if the category is clearly observed
+- 0.5 if the category is partially or ambiguously observed
+- 0 if the category is not observed
 
 Be sure that each tag is in simple quotes. 
-In that sense, the format should be:
-
+Example format:
 {
-'any_suggestion': 1, 
-'suggest_safe ' : 0,
-'suggest_efficient' : 1,
-'agree_proposal'  : 0,
-'discuss_coordinte' : 1,
-'discuss_fairness': 1,
-'discuss_efficient': 0,
-'discuss_rules': 0,
-'explanation': 0,
-'discuss_howtoplay': 1,
-'ask_game': 0,
-'receive_report': 0,
-'truthful': 0,
-'falsehood': 0,
-'contradict': 0,
-'neither_report': 1
+    'any_suggestion': 1,
+    'suggest_safe': 0,
+    'suggest_efficient': 1,
+    'agree_proposal': 0,
+    'discuss_coordinate': 1,
+    'discuss_fairness': 1,
+    'discuss_efficient': 0,
+    'discuss_rules': 0.5,
+    'explanation': 0.5,
+    'discuss_howtoplay': 1,
+    'ask_game': 0,
+    'receive_report': 0,
+    'truthful': 0,
+    'falsehood': 0,
+    'contradict': 0,
+    'neither_report': 1
 }

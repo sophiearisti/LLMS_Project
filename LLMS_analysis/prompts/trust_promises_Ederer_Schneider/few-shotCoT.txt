@@ -1,4 +1,4 @@
-few-shot CoT	Apart from the classification task, please state the Chain of thought or the reasoning behind your classification. In such sense, your answer should be:
+Apart from the classification task, please state the Chain of thought or the reasoning behind your classification. In such sense, your answer should be:
 
 {
 
@@ -12,24 +12,49 @@ few-shot CoT	Apart from the classification task, please state the Chain of thoug
 The following are some examples based on real responses of participants:
 
 The message is:
-“I will choose roll on all the desicions, in order for both of us to have the chance to get more money if you are interested.”
+“i will always choose roll”
 
 The classification should be:
 {
-    'is_promise': 1,
-    'is_efficiency': 1,
-    'is_ethics': 0
-    'reason': ' The message explicitly commits to choosing ROLL, which constitutes a promise. It also highlights that both players can obtain more money, which is an appeal to efficiency (i.e., maximizing joint payoff). There is no moral or equity-based argument, so it does not appeal to fairness.'
+'is_promise': 1,
+'is_efficiency': 0,
+'is_ethics': 0,
+'uninformative': 0,
+'reason': "The message commits to a future action but does not mention fairness, joint gains, or moral considerations."
 }
 
-
 The message is:
-“Let's make this fair. I guess we BOTH want some money.”
+“Hi!”
 
 The classification should be:
 {
-    'is_promise': 0,
-    'is_efficiency': 0,
-    'is_ethics': 1
-    'reason': 'The message emphasizes fairness (“make this fair”), which classifies it as an appeal to fairness. It does not contain a commitment to a future action, so it is not a promise, and it does not argue that cooperation maximizes total surplus, so there is no efficiency appeal.'
+'is_promise': 0,
+'is_efficiency': 0,
+'is_ethics': 0,
+'uninformative': 1,
+'reason': "The message is only a greeting and contains no commitment, strategic suggestion, or fairness discussion."
+}
+
+The message is:
+“Be free to choose IN. I promise I'll never choose don't roll.”
+
+The classification should be:
+{
+'is_promise': 1,
+'is_efficiency': 1,
+'is_ethics': 0,
+'uninformative': 0,
+'reason': "The message includes a clear commitment about future behavior and encourages a strategy that increases joint earnings, without referencing fairness or moral norms."
+}
+
+The message is:
+“As a person A you are worried right now that I could choose don’t roll. But I will roll because I want us both to earn as much as possible and it is the fair thing to do.”
+
+The classification should be:
+{
+'is_promise': 1,
+'is_efficiency': 1,
+'is_ethics': 1,
+'uninformative': 0,
+'reason': "The message commits to rolling, explicitly mentions maximizing joint earnings, and appeals to fairness as a moral justification."
 }

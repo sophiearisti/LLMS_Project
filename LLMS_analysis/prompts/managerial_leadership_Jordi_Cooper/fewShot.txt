@@ -79,7 +79,8 @@ The classification should be:
 'truthful': 0,
 'falsehood': 0,
 'contradict': 0,
-'neither_report': 1
+'neither_report': 1,
+'reason': "Participants repeatedly propose coordinated stable options and agree on alternating choices, without explicit discussion of fairness rules, efficiency goals, or reporting results."
 }
 
 The group of messages is:
@@ -159,7 +160,8 @@ The classification should be:
 'truthful': 0,
 'falsehood': 0,
 'contradict': 0,
-'neither_report': 1
+'neither_report': 1,
+'reason': "Participants propose strategies that maximize joint payoffs and mention turn taking to balance outcomes, showing agreement and partial fairness concerns without rule discussion or reporting."
 }
 
 The group of messages is:
@@ -237,24 +239,6 @@ The classification should be:
 'truthful': 1,
 'falsehood': 0,
 'contradict': 0,
-'neither_report': 0
-}
-
-Now classify the next group of messages. Return only:
-{
-'any_suggestion': 0 or 1,
-'suggest_safe': 0 or 1,
-'suggest_efficient': 0 or 1,
-'agree_proposal': 0 or 1,
-'discuss_fairness': 0 or 0.5 or 1,
-'discuss_efficient': 0 or 1,
-'discuss_rules': 0 or 1,
-'explanation': 0 or 1,
-'discuss_howtoplay': 0 or 1,
-'ask_game': 0 or 1,
-'receive_report': 0 or 1,
-'truthful': 0 or 1,
-'falsehood': 0 or 1,
-'contradict': 0 or 1,
-'neither_report': 0 or 1
+'neither_report': 0,
+'reason': "Participants repeatedly suggest keeping the same stable choice and exchange truthful reports of results, without discussing efficiency, fairness, or rule interpretation."
 }

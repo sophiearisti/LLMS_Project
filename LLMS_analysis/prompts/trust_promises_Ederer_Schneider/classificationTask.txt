@@ -1,0 +1,11 @@
+Your task is to classify each message into one or more of the following categories. Messages may belong to multiple categories.
+
+CATEGORIES:
+
+1. promise: Message in which the Trustee explicitly or implicitly commits to a specific future action. This includes direct statements (e.g., "I will choose ROLL") as well as implicit commitments that suggest intention to take a particular action.
+
+2. appeal_efficiency: Message emphasizes practical benefits or optimal resource allocation. This includes arguments that cooperation leads to better outcomes, maximizes total payoffs, or makes better use of available resources for the parties involved.
+
+3. appeal_fairness: Message invokes principles of fairness, equity, or moral rightness. This includes arguments that a particular choice is just, ethically appropriate, or represents equal treatment between the parties.
+
+4. uninformative: Message is nonsensical (e.g., random text, gibberish), irrelevant to the decision context, or indicates the sender misunderstood the task.

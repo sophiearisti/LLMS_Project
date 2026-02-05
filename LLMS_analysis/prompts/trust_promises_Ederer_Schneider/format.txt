@@ -1,14 +1,20 @@
-Please give your answer strictly as a python dictionary, with no additional text or characters. Use exactly the following tags in the dictionary:
-1.	'is_promise' for Promise
-2.	'is_efficiency' for Appeal to Efficiency
-3.	'is_ethics' for Appeal to Fairness
-All categories must have the value of 1 if the category is observed in the response or 0 if it is not observed. 
+Please provide your answer strictly as a Python dictionary with no additional text or characters.
+
+Use these exact keys:
+- 'is_promise'
+- 'is_efficiency'
+- 'is_ethics'
+- 'uninformative'
+
+All values must be:
+- 1 if the category is observed in the message
+- 0 if the category is not observed
 
 Be sure that each tag is in simple quotes. 
-In that sense, the format should be:
-
+Example format:
 {
     'is_promise': 1,
     'is_efficiency': 1,
-    'is_ethics': 0
+    'is_ethics': 0,
+    'uninformative': 0
 }

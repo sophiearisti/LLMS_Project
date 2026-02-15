@@ -5,18 +5,18 @@ The answer is:
 
 The classification should be:
 {
-'uninformative': 'FALSE',
-'SDB': 'FALSE',
-'overest. others': 'FALSE',
-'underest. own': 'FALSE',
-'academic integrity': 'FALSE',
-'info asymmetry': 'TRUE',
-'AI discussion priming': 'FALSE',
-'privacy concerns': 'FALSE',
-'self-esteem': 'FALSE',
-'self-report bias': 'FALSE',
-'network effect': 'FALSE',
-'truthful': 'FALSE'
+'uninformative': 0,
+'SDB': 0,
+'overest_others': 0,
+'underest_own': 0,
+'academic_integrity': 0,
+'info_asymmetry': 1,
+'AI_discussion_priming': 0,
+'privacy_concerns': 0,
+'self_esteem': 0,
+'self_report_bias': 0,
+'network_effect': 0,
+'truthful': 0
 }
 
 The answer is:
@@ -24,18 +24,18 @@ The answer is:
 
 The classification should be:
 {
-'uninformative': 'FALSE',
-'SDB': 'TRUE',
-'overest. others': 'FALSE',
-'underest. own': 'FALSE',
-'academic integrity': 'TRUE',
-'info asymmetry': 'FALSE',
-'AI discussion priming': 'FALSE',
-'privacy concerns': 'FALSE',
-'self-esteem': 'FALSE',
-'self-report bias': 'FALSE',
-'network effect': 'FALSE',
-'truthful': 'FALSE'
+'uninformative': 0,
+'SDB': 1,
+'overest_others': 0,
+'underest_own': 0,
+'academic_integrity': 0,
+'info_asymmetry': 0,
+'AI_discussion_priming': 0,
+'privacy_concerns': 0,
+'self_esteem': 0,
+'self_report_bias': 0,
+'network_effect': '0,
+'truthful': 0
 }
 
 The answer is:
@@ -43,18 +43,18 @@ The answer is:
 
 The classification should be:
 {
-'uninformative': 'FALSE',
-'SDB': 'TRUE',
-'overest. others': 'TRUE',
-'underest. own': 'FALSE',
-'academic integrity': 'TRUE',
-'info asymmetry': 'TRUE',
-'AI discussion priming': 'TRUE',
-'privacy concerns': 'FALSE',
-'self-esteem': 'FALSE',
-'self-report bias': 'FALSE',
-'network effect': 'FALSE',
-'truthful': 'FALSE'
+'uninformative': 0,
+'SDB': 1,
+'overest_others': 1,
+'underest_own': 0,
+'academic_integrity': 1,
+'info_asymmetry': 1,
+'AI_discussion_priming': 1,
+'privacy_concerns': 0,
+'self_esteem': 0,
+'self_report_bias': 0,
+'network_effect': 0,
+'truthful': 0
 }
 
 The answer is:
@@ -62,16 +62,16 @@ The answer is:
 
 The classification should be:
 {
-'uninformative': 'TRUE',
-'SDB': 'FALSE',
-'overest. others': 'FALSE',
-'underest. own': 'FALSE',
-'academic integrity': 'FALSE',
-'info asymmetry': 'FALSE',
-'AI discussion priming': 'FALSE',
-'privacy concerns': 'FALSE',
-'self-esteem': 'FALSE',
-'self-report bias': 'FALSE',
-'network effect': 'FALSE',
-'truthful': 'FALSE'
+'uninformative': 1,
+'SDB': 0,
+'overest_others': 0,
+'underest_own': 0,
+'academic_integrity': 0,
+'info_asymmetry': 0,
+'AI_discussion_priming': 0,
+'privacy_concerns': 0,
+'self_esteem': 0,
+'self_report_bias': 0,
+'network_effect': 0,
+'truthful': 0
 }

@@ -21,6 +21,7 @@ PRIORIDAD ALTA (hacer primero)
   - 'AI discussion priming ' → 'AI_discussion_priming'
   - 'self-steem' → 'self_esteem' (o 'self-esteem' si aceptas guion, pero mejor snake_case)
 
+ok
 3) Eliminar/evitar pedir “Chain of thought”
 - Problema: pedir CoT produce salidas largas e inconsistentes, y aumenta riesgo de no cumplir formato.
 - Acción: reemplazar por “Justificación breve (1 frase) en el campo 'reason'” o “rationale breve”.
@@ -30,6 +31,7 @@ PRIORIDAD MEDIA
 - Recomendación: elegir un estándar global (ideal: 0/1 y opcional 0.5 si realmente necesario).
   - Si necesitas 3 estados tipo informativo: usa un campo separado (p.ej. 'informativeness': 0/0.5/1) en vez de 'T/F/F?'.
 
+FALTA ESTE
 5) Agregar ejemplos negativos (todos 0)
 - Problema: sin ejemplos negativos, el modelo tiende a sobre-clasificar.
 - Acción: incluir 1–2 casos representativos por dataset donde todo sea 0 (o donde aplique “uninformative”).
@@ -48,6 +50,7 @@ Mezcla de 2 categorías (p.ej. SDB + privacy)
   - 'overest. others' → 'overest_others'
   - etc.
 
+ok
 7) Según diferentes IAs en nuestro caso few shot debería funcionar mejor. La idea es usar temperaturas bajas pero también al menos una alta para que podamos mostrar que al subirla perdemos confiabilidad en los resultados. Quizá CoT pueda aumentar variabilidad y errores de formato.
 Mejor: “Provide a one-sentence justification in reason” (máx. 25–40 palabras).
 

@@ -1,4 +1,4 @@
-Apart from the classification task, please state the Chain of thought or the reasoning behind your classification. In such sense, your answer should be:
+Apart from the classification task, please state a one-sentence justification or rationale behind your classification  (máx. 25–40 WORDS). In such sense, your answer should be:
 
 {
 'any_suggestion': 1, 
@@ -16,7 +16,7 @@ Apart from the classification task, please state the Chain of thought or the rea
 'truthful': 0,
 'falsehood': 0,
 'contradict': 0,
-'neither_report': 1
-      'reason': <here you write the reasons behind your decisions>'
+'neither_report': 1,
+'reason': <here you write the rationale behind your decisions>'
 }
 

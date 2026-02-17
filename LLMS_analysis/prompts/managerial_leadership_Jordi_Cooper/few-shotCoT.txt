@@ -16,72 +16,94 @@ Apart from the classification task, please state a one-sentence justification or
 'truthful': 0,
 'falsehood': 0,
 'contradict': 0,
-'neither_report': 1
-      'reason': <here you write the reasons behind your decisions>'
+'neither_report': 1,
+'reason': <here you write the reasons behind your decisions>'
 }
 
 The following are some examples based on real responses of participants:
 
 The group of messages is:
-1; f3
-2; pero son 54 y 26
-2; que es lo mismo si elegimos 40
-2; son 80
-2; decidamos
-1; ha habido un momento que yo he ganado 50 y tu 26 y luego te ha tocado lo mismo y has cogido tu 50 y yo 26 tb
-1; lo que quieras
-2; vale
-2; el a se estara aburriendo maximo
-2; jajajaja
-1; jajajaj ademas de verdad
-1; pero y lo que va a ganar?
-1; no 3 como tu antes
-2; c1 y f1
-1; yo creo que f3
-2; claro , o ganas tu más o ganamos igual XD
-1; cuando toque juego 1 ponemos f1 y c1 y compensa
-2; pero no sabes cuando va a salir
-2; esa esa
-2; ganamos todos
-2; el A mas
-0; c3 f3
+1; parece que ha llovido hoy
+2; jajajaj
+2; el A se está llevando la pasta
+1; te iva a decir lo mismo
+1; jajaja
+2; c3 f3?
+1; te parece que eligamos f5 y c5 y a la siguiente elegimos uno que te veneficie a ti
+1; sinceramente
+1; pero estamos de 4 en 4
+1; no me extrañaria 2 grupos por cada fila xdd
+2; pues puede ser/no que coincidan
+1; porque vamos/pero que se organice asi
+2; los a se llevan exactamento el doble que el resto/yo he repetido el rol de F igual que tu C
+1; si la gente lo hace a empatar
+2; claro xD/que juego esgoemos?
+1; el que menos beneficie a A
+2; cual nos viene mejor?
+1; es juego 3
+2; o un euromillones, asi me jubilo/jubilarse ya? jajaa
+1; en el juego uno el c3,f3 esta compensado igualmente
+0; en todos los juegos
+2; ya
+1; pos a partir de ahora salga el que salga c3,f3 jajaja
+0; mayormente jajaj
+2; yo a esto no le veo el sentido
+1; ni yo
+2; yo tampoco
+0; pero no hay otra opción mjor
+2; porque si el A fuese un poco egoista se cogería el que le da 80 todo el rato sin importarle lo que le digamos
+0; eso en la valoracion final lo debemos de poner
+2; sí
+2; eres un grande A
+0; al igual que deberian reducir el tiempo de chat
+0; que me duermo esperando tio...
+1; 2 y 2 si quieres esq a ti te sube 9 y al A tmb
+1; y a mi solo 3
+1; en verdad ganais mas vosotros
+1; 2y2
+1; despues en el juego 4 y 5 gano yo mas y au
+2; valeee
+2; q se acaba el tiemopo
+1; 2y2
+1; f3 y c3
+2; no entiendo por q no cambia..
+2; toddo el rato igual
+2; noi?
+1; yo tmpc jajaj
+1; sisi
+0; mientras pague
+1; yo esq ya me se hasta la tabla jajajajaj
+0; f1c1?
+1; si
+2; gracias :)
+1; ress
+1; juego 2
+2; f3c3?
+0; f3c3 o vamos igualando?
+1; o f4c4
 1; vale
-1; sii esa
-1; C3 F3
-1; lo he mirado ahora
-1; c3 f3?
-1; pero lo que quieras
-0; c2 f2
-1; me da igual
-2; vale va
-2; pues esa
-1; va
-2; que asi comenso un poco
-2; que en la ronda una tengo 8 puntos y 10
-1; valee
-2; que vais a escoger
+1; cef3
+2; igualar que te refieres?
+1; f3c3*
 
 The classification should be:
-
 {
-'any_suggestion': 1, 
-'suggest_safe ‘: 1,
-'suggest_efficient’: 0,
-'agree_proposal’: 0,
-'discuss_coordinte’: 0,
-'discuss_fairness': 0,
+'any_suggestion': 0,
+'suggest_safe': 0,
+'suggest_efficient': 0,
+'agree_proposal': 0,
+'discuss_fairness': 0.5,
 'discuss_efficient': 0,
 'discuss_rules': 0,
-'explanation': 0,
-'discuss_howtoplay': 0,
+'explanation': 0.5,
+'discuss_howtoplay': 0.5,
 'ask_game': 0,
 'receive_report': 0,
 'truthful': 0,
 'falsehood': 0,
 'contradict': 0,
-'neither_report': 1 ,
-
-'reason': "Multiple messages propose specific row/column choices (e.g. 'c3 f3'), indicating concrete suggestions. The proposals correspond to safe-coordination choices rather than arguments about maximizing total pay, fairness, rules, or factual reporting; no evidence of asking/receiving game reports or contradiction."
+'neither_report': 1,
+'reason': 'Participants briefly discussed payoff differences and relative gains across roles, showing partial fairness concerns, and expressed confusion about patterns and how the game works, but made no clear, consistent strategic proposals or coordinated suggestions.'
 }
 
 The group of messages is:
@@ -143,14 +165,14 @@ The group of messages is:
 1; columna 4 fila 4
 2; si
 0; si
+1; ganamos todos
 
 The classification should be:
 {
-'any_suggestion': 1, 
-'suggest_safe ‘: 0,
-'suggest_efficient’: 1,
+'any_suggestion': 1,
+'suggest_safe': 0,
+'suggest_efficient': 1,
 'agree_proposal': 1,
-'discuss_coordinte': 0,
 'discuss_fairness': 0.5,
 'discuss_efficient': 0,
 'discuss_rules': 0,
@@ -162,5 +184,95 @@ The classification should be:
 'falsehood': 0,
 'contradict': 0,
 'neither_report': 1,
-'reason': " Participants propose specific choices but the discussion emphasizes maximizing summed payoffs and rotating who benefits (mentions 'sum', 'turning'), so this reflects an efficiency-oriented suggestion and explicit agreement. Fairness is partially present via turn-taking/equalizing comments (hence 0.5). No rule questions or factual reporting appear. "
+'reason': 'Participants repeatedly proposed specific row-column combinations and explicitly agreed (e.g., “columna4 fila4”, “si”), showing coordinated suggestions; they discussed alternating gains and equalizing outcomes, indicating partial fairness concerns without explicit rule clarification or state reporting.'
+}
+
+The group of messages is:
+1; va
+1; 42370
+2; ok
+1; hoy  no es mi dia xDDD
+2; tu tienes 110 y yo 194
+1; vamos a empatar
+2; si?
+2; si quieres hacemos 5 5
+1; tengo que elegir entre 40 o 46
+1; pierdo 6
+1; tu ganas bastante mas
+1; empatemos, no me importa
+2; tambien es verdad
+2; bueno vale
+1; tiene que venir  yaaaaaaaaaaaa
+2; pero a partir de esta ya compensamos
+1; seee
+1; en 2 rondas acabamos
+2; sii
+1; paara coger ese cogemos el juego 3 que nos da mas
+0; yaa
+1; asi ganamos 40 40 y80
+2; e suq esolo es del juegoi 4
+2; el juegoi no se puede elegir
+0; j3, c3,f3?
+1; coge j5 f5 y c5
+0; pero en ese caso el c gana la mitad
+2; ya ves...
+1; vale vale
+1; entonces j3 f3 c3
+1; 40 40 80
+2; sí+
+2; más justo
+1; okey
+1; tu cuanto mas ganemos nosotros mas ganas tu
+2; ah sii
+2; ?
+1; claro fijate que es la suma de las nuestras
+1; ahora 40 yu 40 80
+2; hostia paco
+2; cierto
+0; q sagaz
+1; fila 3 columna 3?
+0; otra vez. esto.. jaja
+1; es verdad
+1; vale
+1; f3c3
+0; perfect
+1; 4
+0; f3c3
+0; ?
+1; opino c4 f4 por los mismos motivos de antes, pero la mas justa seria f3c3
+2; en las primeras dos rondas he ganado mucho menos que vosotros dos
+0; C tiene razón/si/me debéis pasta
+1; ajaja
+2; f2c2 podria compensar
+2; f2c2??
+0; F te parece bien?
+1; a ciegas
+0; va
+0; pero que no os descuente
+1; igual, f4c4 o f5c5
+0; lo que digáis
+2; y vuelvo a palmar 3
+2; jajaajaj
+2; yo voto ahora por la justa
+1; o f3c3
+
+The classification should be:
+
+{
+'any_suggestion': 1,
+'suggest_safe': 0,
+'suggest_efficient': 1,
+'agree_proposal': 1,
+'discuss_fairness': 0.5,
+'discuss_efficient': 0,
+'discuss_rules': 0,
+'explanation': 0,
+'discuss_howtoplay': 0,
+'ask_game': 0,
+'receive_report': 0,
+'truthful': 0,
+'falsehood': 0,
+'contradict': 0,
+'neither_report': 1,
+'reason': 'Participants repeatedly proposed specific coordinated action pairs (e.g., f3c3, f2c2) and explicitly agreed, indicating clear suggestions and agreement; they discussed equalizing earnings and compensating lower gains, reflecting partial fairness concerns without explicit rule clarification or state reporting.'
 }

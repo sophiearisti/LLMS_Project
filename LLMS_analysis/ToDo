@@ -12,6 +12,7 @@ PRIORIDAD ALTA (hacer primero)
   - Efficiency = maximizar bienestar/beneficio total
   - Fairness/Ethics = justicia/equidad/moral
 
+ok
 2) Estandarizar llaves EXACTAS (sin espacios/typos)
 - Problema: llaves con espacios al inicio/fin o typos rompen parsing.
 - Ejemplos a corregir:
@@ -26,6 +27,7 @@ ok
 - Problema: pedir CoT produce salidas largas e inconsistentes, y aumenta riesgo de no cumplir formato.
 - Acción: reemplazar por “Justificación breve (1 frase) en el campo 'reason'” o “rationale breve”.
 
+ok
 PRIORIDAD MEDIA
 4) Unificar el formato de valores (0/1 vs TRUE/FALSE vs T/F/F?)
 - Recomendación: elegir un estándar global (ideal: 0/1 y opcional 0.5 si realmente necesario).
@@ -44,6 +46,7 @@ Sarcasmo/ironía
 Mezcla de 2 categorías (p.ej. SDB + privacy)
 “Overestimate others” vs “info asymmetry” (se parecen; hay que separar con ejemplos)
 
+OK
 6) Normalizar nombres a snake_case
 - Acción: migrar keys a snake_case en todo (prompts + scripts de parsing):
   - 'academic integrity' → 'academic_integrity'
@@ -54,6 +57,7 @@ ok
 7) Según diferentes IAs en nuestro caso few shot debería funcionar mejor. La idea es usar temperaturas bajas pero también al menos una alta para que podamos mostrar que al subirla perdemos confiabilidad en los resultados. Quizá CoT pueda aumentar variabilidad y errores de formato.
 Mejor: “Provide a one-sentence justification in reason” (máx. 25–40 palabras).
 
+ok
 8) Completar definiciones incompletas (reduce drift)
 En classificationTask.txt:
 
@@ -61,6 +65,7 @@ AI discussion priming: está vacío
 network effect: está vacío
 Los modelos “inventan” el significado cuando falta definición, y eso baja la reproducibilidad. Pon definiciones + 2–3 “disparadores” (phrases típicas) + 1 contraejemplo breve.
 
+FALTA
 9) Añadir reglas de decisión para casos ambiguos
 Ya tenemos en IMAS paper una buena regla en constraints.txt (si uninformative=T entonces todo FALSE). Yo agregaría:
 
@@ -68,6 +73,7 @@ Ya tenemos en IMAS paper una buena regla en constraints.txt (si uninformative=T 
 “Si menciona ‘they use it more’ sin explicación → marcar truthful solo si explícitamente dice que el gap refleja realidad, no percepción.”
 “SDB vs academic_integrity”: define un criterio de desempate (p.ej. academic_integrity ⊂ SDB, o marcarlas ambas si aplica).
 
+ok
 10) Arreglar ejemplos en fewShot.txt (tienen comillas tipográficas ‘ ’ en llaves como suggest_safe ‘:), porque eso enseña al modelo una sintaxis inválida.
 
 

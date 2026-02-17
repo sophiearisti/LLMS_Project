@@ -8,26 +8,29 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.metrics import classification_report, accuracy_score
 from utils import *
+import textwrap
 
 PAPERS = {
    1: {
         "path": FIRST_PAPER,
         "labels": ["any_suggestion", "suggest_safe", "suggest_efficient", "agree_proposal", "discuss_coordinate", "discuss_fairness", "discuss_efficient", "discuss_rules", "explanation", "discuss_howtoplay", "ask_game", "receive_report", "truthful", "falsehood", "contradict", "neither_report"]
     },
-    2: {
-        "path": SECOND_PAPER,
-        "real_labels": ["topic1", "topic2", "topic3"],
-        "created_labels": ["Numerical_Coordination_and_Strategy", "Trust_Cooperation_and_Betrayal", "OffTopic_Social_and_Affective_Chat"]
-    },
+
     3: {
         "path": THIRD_PAPER,
         "labels": ["is_promise", "is_efficiency", "is_ethics"]
     },
     4: {
         "path": FOURTH_PAPER,
-        "labels": ["uninformative", "SDB", "overest. others", "underest. own", "academic integrity", "info asymmetry", "AI discussion priming", "privacy concerns", "self-steem", "self-report bias", "network effect", "truthful"]
+        "labels": ["uninformative", "SDB", "overest_others", "underest_own", "academic_integrity", "info_asymmetry", "AI_discussion_priming", "privacy_concerns", "self_steem", "self_report_bias", "networkeffect", "truthful"]
     }
 }
+
+"""    2: {
+        "path": SECOND_PAPER,
+        "real_labels": ["topic1", "topic2", "topic3"],
+        "labels": ["Numerical_Coordination_and_Strategy", "Trust_Cooperation_and_Betrayal", "OffTopic_Social_and_Affective_Chat"]
+    },"""
 
 def paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder, temp, mode):
     
@@ -75,10 +78,10 @@ def paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder
         y_pred = y_pred.astype(str).str.strip().str.lower()
         
         #si es el primer paper, quitar a los que apliquen el .0 a los que terminen en .0
-        if paper_id == 1:
+        #if paper_id == 1:
             # Convertir "0.0" → "0", "1.0" → "1", etc.
-            y_true = y_true.str.replace(r"\.0$", "", regex=True)
-            y_pred = y_pred.str.replace(r"\.0$", "", regex=True)
+        y_true = y_true.str.replace(r"\.0$", "", regex=True)
+        y_pred = y_pred.str.replace(r"\.0$", "", regex=True)
 
         # métricas básicas
         acc = accuracy_score(y_true, y_pred)
@@ -123,50 +126,12 @@ def paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder
     # una vez tenemos todas las métricas por categoría, guardamos y visualizamos
     get_results_and_visualize(paper_id, results, folder, temp, mode)
     
-# for the second paper, this is trickier because the categories were created by the llm
-def paper_two_evaluation(real_answers_path, predicted_answers_path, folder, temp, mode):
-    # Load real answers
-    real_df = pd.read_csv(real_answers_path)
-    predicted_df = pd.read_csv(predicted_answers_path)
-    
-    results = []   # aquí acumularemos las métricas por categoría
-    
-    for real_tag, created_tag in zip(PAPERS[2]['real_labels'], PAPERS[2]['created_labels']):
-        if real_tag not in real_df.columns or created_tag not in predicted_df.columns:
-            print(f"Tag {real_tag} or {created_tag} not found in one of the dataframes.")
-            return
-        
-        y_true = real_df[real_tag]
-        y_pred = predicted_df[created_tag]
-
-        # métricas básicas
-        acc = accuracy_score(y_true, y_pred)
-        report = classification_report(y_true, y_pred, output_dict=True)
-
-        print(f"\n Classification Report | Paper 2 | Real Tag: {real_tag} | Created Tag: {created_tag}")
-        print(classification_report(y_true, y_pred))
-        print("Accuracy:", acc)
-
-        # guardar resultados en tabla
-        results.append({
-            "paper_id": 2,
-            "tag": f"{real_tag} | {created_tag}",
-            "accuracy": acc,
-            "precision_0": report["0"]["precision"] if "0" in report else None,
-            "recall_0":    report["0"]["recall"]    if "0" in report else None,
-            "f1_0":        report["0"]["f1-score"]  if "0" in report else None,
-            "precision_1": report["1"]["precision"] if "1" in report else None,
-            "recall_1":    report["1"]["recall"]    if "1" in report else None,
-            "f1_1":        report["1"]["f1-score"]  if "1" in report else None,
-            "macro_f1":    report["macro avg"]["f1-score"]
-        })
-        
-    # una vez tenemos todas las métricas por categoría, guardamos y visualizamos
-    get_results_and_visualize(2, results, folder, temp, mode)
-        
 def get_results_and_visualize(paper_id, results, folder, temp, mode):
-    import textwrap
-
+    
+    AI = "gpt/" 
+    
+    # ask for which model we want to evaluate
+    
     # -------------------------------
     # Función para ajustar texto
     # -------------------------------
@@ -181,7 +146,7 @@ def get_results_and_visualize(paper_id, results, folder, temp, mode):
 
     # Guardar tabla
     out_path = f"results_paper_{paper_id}_temp{temp}_mode{mode}_type{folder}.csv"
-    out_path = os.path.join(RESULTS_PATH, PAPERS[paper_id]['path'], folder, out_path)
+    out_path = os.path.join(RESULTS_PATH, AI, PAPERS[paper_id]['path'], folder, out_path)
     results_df.to_csv(out_path, index=False)
 
     print(f"\nTabla guardada en: {out_path}")
@@ -284,7 +249,7 @@ def get_results_and_visualize(paper_id, results, folder, temp, mode):
               fontsize=16, pad=20)
 
     png_path = f"results_paper_{paper_id}_temp{temp}_mode{mode}_type{folder}.png"
-    png_path = os.path.join(RESULTS_PATH, PAPERS[paper_id]['path'], folder, png_path)
+    png_path = os.path.join(RESULTS_PATH,"gpt/", PAPERS[paper_id]['path'], folder, png_path)
     plt.savefig(png_path, dpi=300, bbox_inches="tight")
     plt.close()
 
@@ -292,7 +257,7 @@ def get_results_and_visualize(paper_id, results, folder, temp, mode):
 
 def main():
     folder_results = ["0shot", "fewshot"] #, "0shotCot", "fewshotCot"]
-    temps   = [0, 0.25, 0.5,  0.75, 1]
+    temps   = [0, 0.1, 0.5,  1, 1.2]
     mode  = ["user"] #, "assistant"]
     
     for paper_id in PAPERS.keys():
@@ -302,18 +267,16 @@ def main():
         for folder in folder_results:
             for temp in temps:
                 for m in mode:
+                    
                     print(f"Evaluating results for Paper {paper_id}, Folder: {folder}, Temp: {temp}, Mode: {m}")
                     
                     out_file = f"results_temp{temp}_mode{m}.csv"
                     
-                    predicted_answers_path = os.path.join(RESULTS_PATH, PAPERS[paper_id]['path'], folder, out_file)
+                    predicted_answers_path = os.path.join(RESULTS_PATH, "gpt/", PAPERS[paper_id]['path'], folder, out_file)
                     
                     print(f"Evaluating Paper {paper_id}...")
-                    
-                    if paper_id == 2:
-                        paper_two_evaluation(real_answers_path, predicted_answers_path, folder, temp, m)
-                    else:
-                        paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder, temp, m)
+                               
+                    paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder, temp, m)
                     
                     print("\n" + "="*50 + "\n")
                     

@@ -5,26 +5,26 @@ Each message is labeled by sender: 0 = Central Manager, 1 = Agent 1, 2 = Agent 2
 CATEGORIES:
 
 1. any_suggestion: Participant(s) made a suggestion about which row/column should be chosen.
-   a. suggest_safe: Suggested a safe outcome.
-   b. suggest_efficient: Suggested an efficient outcome.
+   a. suggest_safe: participant recommends an action that minimizes the worst possible payoff (maximin strategy) or explicitly aims to reduce risk, independent of the other player’s behavior.
+   b. suggest_efficient: participant recommends an action that maximizes total payoffs or leads to a Pareto-efficient outcome, even if it requires coordination or cooperation.
 
 2. agree_proposal: Participant(s) agreed to a proposal about which row/column should be chosen.
 
 3. discuss_coordinate: Discussed the need to coordinate. Must indicate that both players should choose the same thing (e.g., "We'll do better if we make the same choices"). Simply suggesting matching actions (e.g., "Let's choose row 4 and column 4") does not count.
 
-4. discuss_fairness: Discussed distribution of payoffs across the three players.
+4. discuss_fairness: The participant explicitly evaluates or comments on the distribution of payoffs across the three players, focusing on equality, inequality, proportionality, or fairness norms — rather than only efficiency or personal payoff.
 
-5. discuss_efficient: Discussed maximizing total payoffs, including explanations of how or why rotation between players works.
+5. discuss_efficient: The participant explicitly discusses maximizing total (joint) payoffs across players or explains how a strategy increases aggregate welfare.
 
 6. discuss_rules: Asked questions about the rules of the experiment.
 
-7. explanation: Provided explanations about experiment/game rules or explained a suggested strategy for playing.
+7. explanation: The participant provides a descriptive explanation of: i) The rules of the experiment/game, OR ii) How a suggested strategy operates within the game structure, without necessarily evaluating it in terms of fairness, efficiency, or safety.
 
 8. discuss_howtoplay: Asked conceptual questions about how to play (excludes generic requests for someone to suggest a row/column).
 
 9. ask_game: Manager (sender 0) asked which game is being played.
 
-10. receive_report: Agent(s) reported which game is being played.
+10. receive_report: participants reported or disclosed which type of game is being played,
     a. truthful: Agent(s) truthfully revealed the game.
     b. falsehood: Agent(s) lied about the game.
     c. conflict: Agents contradicted each other about which game is being played.

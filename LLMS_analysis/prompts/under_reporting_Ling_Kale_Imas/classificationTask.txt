@@ -4,7 +4,7 @@ CATEGORIES:
 
 1. uninformative: Response is nonsensical (e.g., random text, gibberish) or indicates misunderstanding of the question (e.g., explaining the gap in reverse direction, irrelevant content).
 
-2. SDB: Response references social desirability bias—students underreporting AI usage to avoid negative judgment from others.
+2. SDB: The response indicates that individuals may misreport or conceal AI usage in order to avoid negative social evaluation, judgment, or reputational harm.
 
 3. overest_others: Response indicates students overestimate their peers' AI usage.
 

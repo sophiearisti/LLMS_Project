@@ -1,3 +1,5 @@
+Language note: The input messages are primarily in French. Interpret the content in French and output only the required labels in the specified format.
+
 Bearing in mind these categories, your next task is to classify each of the messages in one or more of them. These are the categories, the way they are named are how they must be tagged in the python dictionary:
 
 Numerical_Coordination_and_Strategy: Messages where participants propose, negotiate, or fix specific numerical choices (e.g., '26 26', 'toi 28 moi 18', '25.5 les deux'), discuss payoff comparisons, test combinations (including with decimals), or refer to the payoff table/calculator to maximize joint or individual gains. This includes attempts to design rotation schemes (alternating who gets the high payoff), equal-split solutions, or any explicit reasoning about which numbers to pick and why.

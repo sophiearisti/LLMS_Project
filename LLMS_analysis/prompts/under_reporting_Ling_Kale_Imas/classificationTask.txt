@@ -1,3 +1,5 @@
+Language note: The input responses are primarily in English. Interpret the content in English and output only the required labels in the specified format.
+
 Your task is to classify each qualitative response into one or more of the following categories. Responses may belong to multiple categories.
 
 CATEGORIES:

@@ -1,17 +1,17 @@
-Apart from the classification task, please state the Chain of thought or the reasoning behind your classification. In such sense, your answer should be:
+Apart from the classification task, please state a one-sentence justification or rationale behind your classification  (máx. 25–40 WORDS). In such sense, your answer should be:
 
 {
-    'uninformative': 'F',
-    ' SDB ': 'FALSE',
-    'overest. others': 'FALSE',
-    'underest. own': 'FALSE',
-    'academic integrity': 'TRUE',
-    'info asymmetry': 'FALSE',
-    'AI discussion priming ': 'FALSE',
-    'privacy concerns': 'FALSE',
-    'self-steem': 'TRUE',
-    'self-report bias': 'FALSE',
-    'network effect': 'FALSE',
-    'truthful': 'FALSE',
+    'uninformative': 0,
+    'SDB': 0,
+    'overest_others': 0,
+    'underest_own': 0,
+    'academic_integrity': 1,
+    'info_asymmetry': 0,
+    'AI_discussion_priming': 0,
+    'privacy_concerns': 0,
+    'self_steem': 0,
+    'self_report_bias': 0,
+    'network_effect': 0,
+    'truthful': 0,
     'reason': '<here you write the reasons behind your decisions>'
 }

@@ -1,5 +1,3 @@
-Language note: The input messages are primarily in Spanish. Interpret the content in Spanish from Spain and output only the required labels in the specified format.
-
 The task you have is to classify each group of messages sent in one or more of the following categories. The group of messages represent what the participants communicated sequentially during each period. Additionally, it states who sent the message: 0 if it is Central Manager, 1 if it is agent 1, and 2 if it is agent 2. 
 
 These are the categories stated:

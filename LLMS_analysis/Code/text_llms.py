@@ -36,7 +36,7 @@ def parse_llm_dict(ans):
 
 def obtener_categorias_llm(prompt, paper, llm):  
     
-    temps   = [0, 0.25, 0.5,  0.75, 1]
+    temps   = [0, 0.1, 0.5,  1, 1.2]
     modes   = ["user"] #, "assistant"]
     
     path = os.path.join(DATA_PATH, PAPER_PATHS[int(paper)], "classify.csv")
@@ -44,6 +44,7 @@ def obtener_categorias_llm(prompt, paper, llm):
     
     # obtener todo el csv y guardarlo como un string
     messages = df["message"].tolist()
+    
     combined_messages = "\n".join(messages)
     full_prompt = (
         prompt +
@@ -62,7 +63,7 @@ def obtener_categorias_llm(prompt, paper, llm):
             if llm == "gemini":
                 
                 response = llm_gemini.models.generate_content(
-                                model="gemini-3-flash-preview",
+                                model="gemini-3-pro-preview",
                                 contents=full_prompt,
                                 config=types.GenerateContentConfig(temperature=temp)
                             )
@@ -99,7 +100,7 @@ def obtener_categorias_llm(prompt, paper, llm):
 
 def obtener_categorizacion_llm(prompt, paper, llm):
     
-    temps   = [0, 0.25, 0.5,  0.75, 1]
+    temps   = [0, 0.1, 0.5, 1, 1.2]
     modes   = ["user"] #, "assistant"]
 
     path = os.path.join(DATA_PATH, PAPER_PATHS[int(paper)], DATA_FILE)
@@ -137,7 +138,7 @@ def obtener_categorizacion_llm(prompt, paper, llm):
                     if llm == "gemini":
                         
                         response = llm_gemini.models.generate_content(
-                                        model="gemini-3-flash-preview",
+                                        model="gemini-3-pro-preview",
                                         contents=full_prompt,
                                         config=types.GenerateContentConfig(temperature=temp)
                                     )
@@ -219,7 +220,7 @@ def obtener_categorizacion_llm(prompt, paper, llm):
                         if llm == "gemini":
                             
                             response = llm_gemini.models.generate_content(
-                                            model="gemini-3-flash-preview",
+                                            model="gemini-3-pro-preview",
                                             contents=full_prompt,
                                             config=types.GenerateContentConfig(temperature=temp)
                                         )

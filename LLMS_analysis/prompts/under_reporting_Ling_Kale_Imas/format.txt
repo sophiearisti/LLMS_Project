@@ -1,31 +1,31 @@
 Please give your answer strictly as a python dictionary, with no additional text or characters. Use exactly the following tags in the dictionary:
 4.	'uninformative' for uninformative
-5.	' SDB ' for SDB
-6.	'overest. others' for overest. others
-7.	'underest. own' for underest. own
-8.	'academic integrity' for academic integrity
-9.	'info asymmetry' for info asymmetry
-10.	'AI discussion priming ' for AI discussion priming
-11.	'privacy concerns' for privacy concerns
-12.	'self-esteem' for self-steem
-13.	'self-report bias' for self-report bias
-14.	'network effect' for network effect
+5.	'SDB' for SDB
+6.	'overest_others' for overest. others
+7.	'underest_own' for underest. own
+8.	'academic_integrity' for academic integrity
+9.	'info_asymmetry' for info asymmetry
+10.	'AI_discussion_priming ' for AI discussion priming
+11.	'privacy _oncerns' for privacy concerns
+12.	'self_esteem' for self-steem
+13.	'self_report_bias' for self-report bias
+14.	'network_effect' for network effect
 15.	'truthful' for truthful
-' uninformative ' must have the values of 'T', if uninformative; 'F? ', if ; and 'F'
-The others must have the value of 'TRUE ' if the category is observed in the response or 'FALSE ' if it is not observed. 
+'uninformative' must have the values of 1, if uninformative; 0.5, if you are unsure that it is uninformative; and 0, if it is not uninformative.
+The others must have the value of 1 if the category is observed in the response or 0 if it is not observed. 
 Be sure that each tag is in simple quotes. 
 In that sense, the format should be:
 {
-    'uninformative': 'F',
-    ' SDB ': 'FALSE',
-    'overest. others': 'FALSE',
-    'underest. own': 'FALSE',
-    'academic integrity': 'TRUE',
-    'info asymmetry': 'FALSE',
-    'AI discussion priming ': 'FALSE',
-    'privacy concerns': 'FALSE',
-    'self-esteem': 'TRUE',
-    'self-report bias': 'FALSE',
-    'network effect': 'FALSE',
-    'truthful': 'FALSE'
+    'uninformative': 0,
+    'SDB': 0,
+    'overest_others': 0,
+    'underest_own': 1,
+    'academic_integrity': 1,
+    'info_asymmetry': 0,
+    'AI_discussion_priming ': 0,
+    'privacy_concerns': 0,
+    'self_esteem': 1,
+    'self_report bias': 0,
+    'network_effect': 0,
+    'truthful': 0
 }

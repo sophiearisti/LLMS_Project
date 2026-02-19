@@ -1,40 +1,23 @@
-This study examines how communication modes and managerial control influence efficient coordination between a manager and two agents with opposing interests and asymmetric information. The authors conduct experiments where they vary the type of communication (none, structured, or free-form chat), the form of control (managerial control versus delegation), and communication channels.
+This experiment examines coordination between a manager and two agents under conditions of conflicting preferences and asymmetric information. Participants (567 undergraduate students in 189 groups of three) were assigned fixed roles (one manager M, two agents S1 and S2) and played 18 rounds where the game state varied randomly.
 
-1.	Gains from Coordination: All parties benefit if the agents coordinate on a common course of action.
+GAME STRUCTURE:
+- All parties benefit when agents coordinate on a common action
+- Agents have opposing preferences over which coordinated outcome to choose
+- Agents observe the game state; the manager does not
+- The efficient outcome (maximizing total surplus) varies by state
+- Manager's objective is to maximize combined agent payoffs
 
-2. Divergent Preferences: Although coordination benefits all, the agents have differing preferences over which common action should be chosen. Agent 1's most preferred equilibrium (outcome 5) is Agent 2's least preferred, and vice versa.
+TREATMENT CONDITIONS:
+Groups were assigned to different conditions varying:
 
-3. Asymmetric Information: The state of the world varies across rounds, changing which outcome is efficient (maximizes total surplus). Agents know the state of the world but the manager does not.
+Communication type:
+- No communication (baseline)
+- Structured communication (predefined message options)
+- Free-form chat (unrestricted text messaging)
 
-4. Incentive to Lie: The combination of divergent preferences and asymmetric information implies that agents have a strong incentive to lie to their manager to influence the manager into enforcing their preferred option.
+Control mechanism:
+- Delegation (agents choose actions)
+- Delegation with managerial advice
+- Managerial control (manager selects actions)
 
-
-The objective of the M is to minimize total costs, which is equivalent to maximizing the sum of the agents' payoffs.
-
-The experiment involved 567 undergraduate students divided into 189 groups of three participants each. Participants played the roles of a manager (M) and two agents (S1 and S2). Each participant was assigned a role for the entire session, with partner matching kept constant throughout.
-
-Participants played 18 rounds of the game, with the game state randomly determined at the start of each round.
-
-
-There were several experimental conditions or treatments assigned to each of the groups. The treatments varied along two main dimensions: 
-a) Type of communication:
-- No communication (baseline).
-- Structured communication (Limited to predefined messages (e.g., radio buttons corresponding to possible actions)).
-- Free-form chat (unrestricted messaging. Agents freely communicate via unrestricted text messages, mimicking natural conversation). 
-
-b) Control mechanism:
-- Delegation with no managerial input.
-- Delegation with advice from a manager.
-- Managerial control (manager directly chooses actions for agents).
-
-Based on these dimensions, treatments can be summarized in three:
-
-- No communication with delegation (NC-D): Baseline where the manager does not intervene, and agents do not communicate.
-
-- Structured communication with delegation (SC/S-D): Agents exchange limited, pre-specified messages before acting.
-
-- Managerial control (MC): Manager observes agents’ actions and messages but cannot commit to mechanisms; the manager directly determines actions based on limited info.
-Additional treatments: Some treatments include a combination of these features, such as structured communication with managerial advice.
-
-Finally, after each round, participants received feedback about the game state and actions.
-In some treatments, managers could see if agents lied about the game state.
+After each round, participants received feedback on the game state and actions. In some treatments, managers could observe discrepancies between agents' reported information and the actual state.

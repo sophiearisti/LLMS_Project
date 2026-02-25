@@ -6,9 +6,26 @@ import os
 from numpy import real
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.metrics import classification_report, accuracy_score
+from sklearn.metrics import classification_report, accuracy_score, cohen_kappa_score
 from utils import *
 import textwrap
+import re
+
+
+def krippendorff_alpha_nominal(y_true, y_pred):
+    y_true = pd.Series(y_true).astype(str)
+    y_pred = pd.Series(y_pred).astype(str)
+
+    observed_disagreement = (y_true != y_pred).mean()
+
+    pooled = pd.concat([y_true, y_pred], ignore_index=True)
+    probs = pooled.value_counts(normalize=True)
+    expected_disagreement = 1 - (probs ** 2).sum()
+
+    if expected_disagreement == 0:
+        return 1.0 if observed_disagreement == 0 else 0.0
+
+    return 1 - (observed_disagreement / expected_disagreement)
 
 PAPERS = {
    1: {
@@ -45,7 +62,39 @@ def paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder
         real_df = real_df.dropna(subset=[message_col])
         predicted_df = predicted_df.dropna(subset=["original_message"])
         
+    def normalize_message(text):
+        text = str(text).strip().lower()
+        text = re.sub(r"(^|/)\s*\d+\s*;\s*", r"\1", text)
+        text = re.sub(r"\s*/\s*", " / ", text)
+        text = re.sub(r"\s+", " ", text)
+        return text.strip()
+
     results = []   # aquí acumularemos las métricas por categoría
+
+    merged_df = None
+
+    if paper_id in [1, 4]:
+        if "original_message" in predicted_df.columns and message_col in real_df.columns:
+            real_df["message_norm"] = real_df[message_col].astype(str).map(normalize_message)
+            predicted_df["message_norm"] = predicted_df["original_message"].astype(str).map(normalize_message)
+
+            merged_df = real_df.merge(
+                predicted_df,
+                left_on="message_norm",
+                right_on="message_norm",
+                suffixes=("_true", "_pred"),
+                how="inner"
+            )
+            if len(merged_df) < min(len(real_df), len(predicted_df)):
+                print(
+                    "Warning: message-based alignment dropped rows. "
+                    "Check for mismatches or duplicates."
+                )
+        else:
+            print(
+                "Warning: Could not align by message fields; "
+                "falling back to row order."
+            )
 
     for tag in PAPERS[paper_id]["labels"]:
 
@@ -57,21 +106,36 @@ def paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder
             print(f"Tag {tag} no existe en real dataframes para Paper {paper_id}")
             continue
         
-        y_true = real_df[tag]
-        y_pred = predicted_df[tag]
+        if merged_df is not None:
+            y_true = merged_df[tag + "_true"]
+            y_pred = merged_df[tag + "_pred"]
+        else:
+            y_true = real_df[tag]
+            y_pred = predicted_df[tag]
         
         if paper_id == 3:
             # Asegurarse de que ambas series tengan el mismo índice después de eliminar NaN
+            real_df["message_norm"] = real_df["message"].astype(str).map(normalize_message)
+            predicted_df["message_norm"] = predicted_df["original_message"].astype(str).map(normalize_message)
+
             merged = real_df.merge(
                 predicted_df,
-                left_on="message",
-                right_on="original_message",
+                left_on="message_norm",
+                right_on="message_norm",
                 suffixes=("_true", "_pred"),
                 how="inner"
             )
 
             y_true = merged[tag + "_true"]
             y_pred = merged[tag + "_pred"]
+
+        if isinstance(y_true, pd.DataFrame):
+            y_true = y_true.iloc[:, 0]
+        if isinstance(y_pred, pd.DataFrame):
+            y_pred = y_pred.iloc[:, 0]
+
+        y_true = y_true.fillna("nan")
+        y_pred = y_pred.fillna("nan")
 
         
         y_true = y_true.astype(str).str.strip().str.lower()
@@ -85,6 +149,8 @@ def paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder
 
         # métricas básicas
         acc = accuracy_score(y_true, y_pred)
+        kappa = float(cohen_kappa_score(y_true, y_pred))
+        kripp_alpha = float(krippendorff_alpha_nominal(y_true, y_pred))
         report = classification_report(y_true, y_pred, output_dict=True)
 
         print(f"\n Classification Report | Paper {paper_id} | Tag: {tag}")
@@ -103,6 +169,8 @@ def paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder
             "paper_id": paper_id,
             "tag": tag,
             "accuracy": acc,
+            "cohen_kappa": kappa,
+            "krippendorff_alpha": kripp_alpha,
             "macro_f1": report["macro avg"]["f1-score"]
         }
 
@@ -156,6 +224,8 @@ def get_results_and_visualize(paper_id, results, folder, temp, mode):
     # -------------------------------
     if paper_id != 4 and paper_id != 1:
         global_acc = results_df["accuracy"].mean()
+        global_kappa = results_df["cohen_kappa"].mean()
+        global_kripp_alpha = results_df["krippendorff_alpha"].mean()
         global_macro_f1 = results_df["macro_f1"].mean()
         global_precision_1 = results_df["precision_1"].mean()
         global_recall_1 = results_df["recall_1"].mean()
@@ -169,6 +239,8 @@ def get_results_and_visualize(paper_id, results, folder, temp, mode):
             "paper_id": paper_id,
             "tag": "GLOBAL",
             "accuracy": global_acc,
+            "cohen_kappa": global_kappa,
+            "krippendorff_alpha": global_kripp_alpha,
             "precision_0": global_precision_0,
             "recall_0": global_recall_0,
             "f1_0": global_f1_0,
@@ -178,34 +250,11 @@ def get_results_and_visualize(paper_id, results, folder, temp, mode):
             "macro_f1": global_macro_f1
         }])
     elif paper_id == 1:
-        global_acc = results_df["accuracy"].mean()
-        global_macro_f1 = results_df["macro_f1"].mean()
-        global_precision_1 = results_df["precision_0"].mean()
-        global_recall_1 = results_df["recall_0"].mean()
-        global_f1_1 = results_df["f1_0"].mean()
-        global_precision_0 = results_df["precision_1"].mean()
-        global_recall_0 = results_df["recall_1"].mean()
-        global_f1_0 = results_df["f1_1"].mean() 
-        global_precision_0 = results_df["precision_0.5"].mean()
-        global_recall_0 = results_df["recall_0.5"].mean()
-        global_f1_0 = results_df["f1_0.5"].mean() 
-        
-        # Añadir métricas globales como una fila extra
-        global_row = pd.DataFrame([{
-            "paper_id": paper_id,
-            "tag": "GLOBAL",
-            "accuracy": global_acc,
-            "precision_0": global_precision_0,
-            "recall_0": global_recall_0,
-            "f1_0": global_f1_0,
-            "precision_1": global_precision_1,
-            "recall_1": global_recall_1,
-            "f1_1": global_f1_1,
-            "precision_0.5": global_precision_0,
-            "recall_0.5": global_recall_0,
-            "f1_0.5": global_f1_0,
-            "macro_f1": global_macro_f1
-        }])
+        global_row = {"paper_id": paper_id, "tag": "GLOBAL"}
+        numeric_cols = results_df.select_dtypes(include=["number"]).columns
+        for col in numeric_cols:
+            global_row[col] = results_df[col].mean()
+        global_row = pd.DataFrame([global_row])
     
     else:
         global_row = pd.DataFrame()  # Fila vacía si no se calculan métricas globales
@@ -215,14 +264,14 @@ def get_results_and_visualize(paper_id, results, folder, temp, mode):
     # -------------------------------
     # REDONDEO A 3 DECIMALES
     # -------------------------------
-    final_df = final_df.applymap(
-        lambda x: round(x, 3) if isinstance(x, (float, int)) else x
+    final_df = final_df.apply(
+        lambda col: col.map(lambda x: round(x, 3) if isinstance(x, (float, int)) else x)
     )
 
     # -------------------------------
     # AJUSTE DE TEXTO
     # -------------------------------
-    wrapped_df = final_df.applymap(lambda x: wrap_cell(x, width=25))
+    wrapped_df = final_df.apply(lambda col: col.map(lambda x: wrap_cell(x, width=25)))
 
     # -----------------------------------------
     # CREAR TABLA BONITA Y GUARDAR COMO PNG

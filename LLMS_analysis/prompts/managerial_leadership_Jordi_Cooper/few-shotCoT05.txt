@@ -1,3 +1,25 @@
+Apart from the classification task, please state a one-sentence justification or rationale behind your classification  (máx. 25–40 WORDS). In such sense, your answer should be:
+
+{
+'any_suggestion': 1, 
+'suggest_safe ': 0,
+'suggest_efficient': 1,
+'agree_proposal' : 1,
+'discuss_coordinte': 0,
+'discuss_fairness': 0.5,
+'discuss_efficient': 0,
+'discuss_rules': 0,
+'explanation': 0,
+'discuss_howtoplay': 0,
+'ask_game': 0,
+'receive_report': 0,
+'truthful': 0,
+'falsehood': 0,
+'contradict': 0,
+'neither_report': 1,
+'reason': <here you write the reasons behind your decisions>'
+}
+
 The following are some examples based on real responses of participants:
 
 The group of messages is:
@@ -21,12 +43,12 @@ The classification should be:
 'falsehood': 0,
 'contradict': 0,
 'neither_report': 1
+'reason': 'They repeatedly propose and agree on specific row/column combinations, explicitly discuss coordinating and equalizing payoffs across rounds, compare maximum gains, and explain how tables work, but no one reports which game is being played.'
 }
 
 The group of messages is:
 
 1; di tu primero / 2; c1 / 1; f1 / 2; vale bien / 1; mejor la f5 / 2; ya estaba decidido jajaj / 2; si / 1; f3 / 2; ganas mas con el f1 / 1; c3-f2 esta bien / 2; uuuf / 2; que miedo / 2; jajajajja / 1; en el bloque c5 / 2; ajajaja / 1; por? / 2; un poco tarde ya / 2; porque es la suma mas alta / 1; entonces que / 2; ahora ya no, no? / 1; me da uq eno / 1; iguales? / 2; okey , estamos deacuerdo / 1; menosmal :P / 2; c1 / 1; f1 / 1; mira tengo una teoria / 2; iluminame / 1; en el juego 1 f1 c1 ganas tu / 1; juego dos f2 c2 ganas mas tu / 2; jajaja / 2; BUENA / 0; bien jugada / 1; vamos / 0; sigamos / 1; pues esa / 0; por ahira c3 f3 / 1; si / 2; leugo hacemos una / 2; esque hacer eso compensa si luego lo hacemos al reves / 2; si / 1; vale pues ya estmos iguales / 2; tenemos q ir haciendo eso q se va turnando / 1; columna4 fila 4 / 0; valeç / 0; siempre lo mismo? / 1; no / 1; mira las variantes / 1; hay que ver que nos sume el maximo de puntos a cada uno / 1; para poder tener mas ganancias / 0; vale ya lo entiendo / 1; en las casillas que haya negativo no le des / 1; porque nos afecta y perdemos dinero / 1; el juego es el 5 / 2; fila 4 / 1; columna 4 fila 4 / 2; si / 0; si / 1; ganamos todos
-
 
 The classification should be:
 {
@@ -34,7 +56,7 @@ The classification should be:
 'suggest_safe': 0,
 'suggest_efficient': 1,
 'agree_proposal': 1,
-'discuss_fairness': 1,
+'discuss_fairness': 0.5,
 'discuss_efficient': 0,
 'discuss_rules': 0,
 'explanation': 0,
@@ -45,6 +67,7 @@ The classification should be:
 'falsehood': 0,
 'contradict': 0,
 'neither_report': 1,
+'reason': 'Participants repeatedly proposed specific row-column combinations and explicitly agreed (e.g., “columna4 fila4”, “si”), showing coordinated suggestions; they discussed alternating gains and equalizing outcomes, indicating partial fairness concerns without explicit rule clarification or state reporting.'
 }
 
 The group of messages is:
@@ -68,5 +91,6 @@ The classification should be:
 'truthful': 1,
 'falsehood': 0,
 'contradict': 0,
-'neither_report': 0
+'neither_report': 0,
+'reason': 'They propose specific row/column choices, agree on them, and explicitly mention coordinating to avoid losses and earn more; the manager asks which game it is and one agent reports “game 3” without contradiction, plus questions about rounds indicate rule discussion.'
 }

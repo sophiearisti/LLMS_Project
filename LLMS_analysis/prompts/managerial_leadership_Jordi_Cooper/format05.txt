@@ -20,6 +20,7 @@ Use these exact keys with no extra spaces:
 
 All values must be:
 - 1 if the category is clearly observed
+- 0.5 if the category is partially or ambiguously observed
 - 0 if the category is not observed
 
 Be sure that each tag is in simple quotes. 
@@ -32,8 +33,8 @@ Example format:
     'discuss_coordinate': 1,
     'discuss_fairness': 1,
     'discuss_efficient': 0,
-    'discuss_rules': 1,
-    'explanation': 1,
+    'discuss_rules': 0.5,
+    'explanation': 0.5,
     'discuss_howtoplay': 1,
     'ask_game': 0,
     'receive_report': 0,

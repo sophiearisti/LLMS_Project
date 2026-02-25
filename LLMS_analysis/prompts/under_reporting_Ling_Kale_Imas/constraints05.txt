@@ -1,2 +1,3 @@
 If you classify a response as uninformative ('1'), then all other categories must automatically be set to '0'.
+If you think a response might be uninformative but are not completely sure, classify it as '0.5'. In this case, you may still mark any of the other categories as '1' or '0'.
 If  you are sure the response is informative ('0'), then you should continue evaluating and assigning '1' or '0' to the other categories as appropriate.

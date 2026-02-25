@@ -11,7 +11,8 @@ Please give your answer strictly as a python dictionary, with no additional text
 13.	'self_report_bias' for self-report bias
 14.	'network_effect' for network effect
 15.	'truthful' for truthful
-All categories must have the value of 1 if the category is observed in the response or 0 if it is not observed. 
+'uninformative' must have the values of 1, if uninformative; 0.5, if you are unsure that it is uninformative; and 0, if it is not uninformative.
+The others must have the value of 1 if the category is observed in the response or 0 if it is not observed. 
 Be sure that each tag is in simple quotes. 
 In that sense, the format should be:
 {

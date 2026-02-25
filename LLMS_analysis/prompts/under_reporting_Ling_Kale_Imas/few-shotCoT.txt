@@ -23,18 +23,18 @@ The answer is:
 
 The classification should be:
 {
-'uninformative': 'FALSE',
-'SDB': 'FALSE',
-'overest_others': 'FALSE',
-'underest_own': 'FALSE',
-'academic_integrity': 'FALSE',
-'info_asymmetry': 'TRUE',
-'AI_discussion_priming': 'FALSE',
-'privacy_concerns': 'FALSE',
-'self_esteem': 'FALSE',
-'self_report_bias': 'FALSE',
-'network_effect': 'FALSE',
-'truthful': 'FALSE',
+'uninformative': 0,
+'SDB': 0,
+'overest_others': 0,
+'underest_own': 0,
+'academic_integrity': 0,
+'info_asymmetry': 1,
+'AI_discussion_priming': 0,
+'privacy_concerns': 0,
+'self_esteem': 0,
+'self_report_bias': 0,
+'network_effect': 0,
+'truthful': 0,
 'reason': 'The participant explains that they do not discuss LLM usage with friends and therefore relies on assumptions. This directly indicates limited information about peers, which matches information asymmetry. The response does not mention stigma, cheating concerns, priming, or any other mechanism, so those labels remain FALSE.'
 }
 
@@ -43,18 +43,18 @@ The answer is:
 
 The classification should be:
 {
-'uninformative': 'FALSE',
-'SDB': 'TRUE',
-'overest_others': 'FALSE',
-'underest_own': 'FALSE',
-'academic_integrity': 'TRUE',
-'info_asymmetry': 'FALSE',
-'AI_discussion_priming': 'FALSE',
-'privacy_concerns': 'FALSE',
-'self_esteem': 'FALSE',
-'self_report_bias': 'FALSE',
-'network_effect': 'FALSE',
-'truthful': 'FALSE',
+'uninformative': 0,
+'SDB': 1,
+'overest_others': 0,
+'underest_own': 0,
+'academic_integrity': 1,
+'info_asymmetry': 0,
+'AI_discussion_priming': 0,
+'privacy_concerns': 0,
+'self_esteem': 0,
+'self_report_bias': 0,
+'network_effect': 0,
+'truthful': 0,
 'reason': 'The response points to fear of judgment and being seen as cheating. Fear of judgment implies social desirability bias, and the explicit reference to cheating maps to academic integrity concerns. It does not claim students misperceive others due to lack of information or priming, so those labels are FALSE.'
 }
 
@@ -63,18 +63,18 @@ The answer is:
 
 The classification should be:
 {
-'uninformative': 'FALSE',
-'SDB': 'TRUE',
-'overest_others': 'TRUE',
-'underest_own': 'FALSE',
-'academic_integrity': 'TRUE',
-'info_asymmetry': 'TRUE',
-'AI_discussion_priming': 'TRUE',
-'privacy_concerns': 'FALSE',
-'self_esteem': 'FALSE',
-'self_report_bias': 'FALSE',
-'network_effect': 'FALSE',
-'truthful': 'FALSE',
+'uninformative': 0,
+'SDB': 1,
+'overest_others': 1,
+'underest_own': 0,
+'academic_integrity': 1,
+'info_asymmetry': 1,
+'AI_discussion_priming': 1,
+'privacy_concerns': 0,
+'self_esteem': 0,
+'self_report_bias': 0,
+'network_effect': 0,
+'truthful': 0,
 'reason': 'The participant explicitly names social desirability bias and explains underreporting to appear academically honest, which supports SDB and academic integrity. It also explicitly says students overestimate peers, which supports overestimation of others. It mentions misjudging peers due to lack of accurate knowledge, which fits information asymmetry. It also links awareness of LLM debates or availability to inflated perceptions of usage, which fits AI discussion priming. No other mechanisms are stated, so the remaining labels are FALSE.'
 }
 

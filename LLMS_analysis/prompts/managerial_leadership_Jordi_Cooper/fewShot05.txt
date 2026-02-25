@@ -34,7 +34,7 @@ The classification should be:
 'suggest_safe': 0,
 'suggest_efficient': 1,
 'agree_proposal': 1,
-'discuss_fairness': 1,
+'discuss_fairness': 0.5,
 'discuss_efficient': 0,
 'discuss_rules': 0,
 'explanation': 0,

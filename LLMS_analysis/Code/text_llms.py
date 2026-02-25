@@ -7,6 +7,7 @@ from tqdm import tqdm
 from utils import *
 import pandas as pd
 import os
+import sys
 
 # Diccionario global
 PAPER_PATHS = {
@@ -99,29 +100,46 @@ def obtener_categorias_llm(prompt, paper, llm):
             return parsed
 
 def obtener_categorizacion_llm(prompt, paper, llm):
-    
+
     temps   = [0, 0.1, 0.5, 1, 1.2]
-    modes   = ["user"] #, "assistant"]
+    modes   = ["user"]
 
     path = os.path.join(DATA_PATH, PAPER_PATHS[int(paper)], DATA_FILE)
     df = pd.read_csv(path)
 
     message_col = "message"
-        
-    #quitar los NaN
-    df = df.dropna(subset=[message_col])
+    df = df.dropna(subset=[message_col]).reset_index(drop=True)
 
     read_mode = input("¿Desea leer línea por línea (1) o en grupos (2)? Ingrese 1 o 2: ")
 
+    # ==========================================================
+    # ======================= LINEA POR LINEA ==================
+    # ==========================================================
     if read_mode == "1":
 
         for temp in temps:
             for mode in modes:
 
-                results = []
+                out_file = f"results_temp{temp}_mode{mode}.csv"
+                LLM = "gemini" if llm == "gemini" else "gpt"
+                output_path = os.path.join(
+                    RESULTS_PATH, LLM, PAPER_PATHS[int(paper)], out_file
+                )
+
+                # ---------- CHECKPOINT ----------
+                if os.path.exists(output_path):
+                    existing_df = pd.read_csv(output_path)
+                    processed_ids = set(existing_df["row_id"].tolist())
+                    print(f"Retomando ejecución. {len(processed_ids)} filas ya procesadas.")
+                else:
+                    processed_ids = set()
+                    print("Nuevo archivo de resultados.")
 
                 for idx, row in tqdm(df.iterrows(), total=len(df),
                                      desc=f"[Linea] Temp {temp}, Mode {mode}"):
+
+                    if idx in processed_ids:
+                        continue
 
                     message = row[message_col]
 
@@ -130,133 +148,155 @@ def obtener_categorizacion_llm(prompt, paper, llm):
                         "\n\nThis is the message you should analyze:\n" +
                         str(message)
                     )
-                    
-                    print(full_prompt)
 
-                    # LLAMADA AL LLM --------------------------------------
-                    # preguntar cual llm usar
-                    if llm == "gemini":
-                        
-                        response = llm_gemini.models.generate_content(
-                                        model="gemini-3-pro-preview",
-                                        contents=full_prompt,
-                                        config=types.GenerateContentConfig(temperature=temp)
-                                    )
-                        
-                        ans = response.text
-                    else:
-                        if mode == "user":
-                            response = llm_chatgpt.invoke(full_prompt, temperature=temp)
+                    try:
+                        # ---------- LLAMADA AL LLM ----------
+                        if llm == "gemini":
+                            response = llm_gemini.models.generate_content(
+                                model="gemini-3-pro-preview",
+                                contents=full_prompt,
+                                config=types.GenerateContentConfig(temperature=temp)
+                            )
+                            ans = response.text
                         else:
-                            response = llm_chatgpt.invoke_as_assistant(full_prompt, temperature=temp)
-                        ans = response.content
-                    # -----------------------------------------------------
-                    
-                    print(ans)
-                    
-                    parsed = parse_llm_dict(ans)
-                    parsed["original_message"] = message
+                            response = llm_chatgpt.invoke(full_prompt, temperature=temp)
+                            ans = response.content
+                        # -------------------------------------
 
-                    results.append(parsed)
+                        parsed = parse_llm_dict(ans)
+                        parsed["original_message"] = message
+                        parsed["row_id"] = idx
 
-                # GUARDAR RESULTADOS POR TEMP Y MODO
-                out_file = f"results_temp{temp}_mode{mode}.csv"
-                
-                #depending on the llm
-                LLM = "gemini" if llm == "gemini" else "gpt"
-                output_path = os.path.join(RESULTS_PATH, LLM, PAPER_PATHS[int(paper)], out_file)
+                        file_exists = os.path.exists(output_path)
 
-                pd.DataFrame(results).to_csv(output_path, index=False)
+                        with open(output_path, "a", encoding="utf-8") as f:
+                            pd.DataFrame([parsed]).to_csv(
+                                f,
+                                header=not file_exists,
+                                index=False
+                            )
+                            f.flush()
+                            os.fsync(f.fileno())
+
+                    except KeyboardInterrupt:
+                        print("\n Interrumpido manualmente. Progreso guardado.")
+                        sys.exit()
+
+                    except Exception as e:
+                        print(f"\n⚠ Error en fila {idx}: {e}")
+                        print("Progreso guardado hasta ahora.")
+                        break
+
                 print(f"✔ Resultados guardados en {output_path}")
+
+    # ==========================================================
+    # ======================= MODO GRUPOS ======================
+    # ==========================================================
     else:
 
         group_sizes = []
-        
-        # pedir al usuario los tamaños de grupo separados por comas O SUBIR UN ARCHIVO txt y cada línea es un tamaño de grupo
+
         group_sizes_file = input("¿Desea subir un archivo txt con los tamaños de grupo? (s/n): ")
+
         if group_sizes_file.lower() == "s":
-            # Ruta del archivo
             filepath = "../Data/managerial_leadership_Jordi_Cooper/conteo_por_juego.txt"
-            # ../Data/managerial_leadership_Jordi_Cooper/conteo_por_juego.txt
-            try:
-                with open(filepath, "r", encoding="utf-8") as f:
-                    group_sizes = [int(line.strip()) for line in f if line.strip().isdigit()]   
-            except FileNotFoundError:
-                print("¡Archivo no encontrado! Verifica la ruta.")
-            except Exception as e:
-                print("Ocurrió un error al abrir el archivo:", e)
+            with open(filepath, "r", encoding="utf-8") as f:
+                group_sizes = [int(line.strip()) for line in f if line.strip().isdigit()]
         else:
             group_sizes_input = input("Ingrese los tamaños de grupo separados por comas (por ejemplo, 2,5,10): ")
-            group_sizes = [int(size.strip()) for size in group_sizes_input.split(",") if size.strip().isdigit()] 
+            group_sizes = [int(size.strip()) for size in group_sizes_input.split(",") if size.strip().isdigit()]
 
         for temp in temps:
             for mode in modes:
 
-                results = []
+                out_file = f"results_temp{temp}_mode{mode}.csv"
+                LLM = "gemini" if llm == "gemini" else "gpt"
+                output_path = os.path.join(
+                    RESULTS_PATH, LLM, PAPER_PATHS[int(paper)], out_file
+                )
+
+                # ---------- CHECKPOINT ----------
+                if os.path.exists(output_path):
+                    existing_df = pd.read_csv(output_path)
+                    processed_ids = set(existing_df["group_id"].tolist())
+                    print(f"🔄 Retomando ejecución. {len(processed_ids)} grupos ya procesados.")
+                else:
+                    processed_ids = set()
+                    print("🆕 Nuevo archivo de resultados.")
+
                 start_idx = 0
+                group_counter = 0
 
                 while start_idx < len(df):
 
                     for group_size in group_sizes:
 
+                        if start_idx >= len(df):
+                            break
+
                         end_idx = min(start_idx + group_size, len(df))
 
+                        if group_counter in processed_ids:
+                            start_idx += group_size
+                            group_counter += 1
+                            continue
+
                         group_msgs = df[message_col].iloc[start_idx:end_idx].tolist()
-                        #SOLO PARA ESTE PAPER 1
                         actor = df["Type"].iloc[start_idx:end_idx].tolist()
-                        # unir group_msgs y actor de esta forma: Actor; mensaje
+
                         group_msgs = [f"{a}; {m}" for a, m in zip(actor, group_msgs)]
-                        
-                        combined_message_for_csv = "/".join([str(msg) for msg in group_msgs])
-                        combined_message= "\n".join([str(msg) for msg in group_msgs])
+
+                        combined_csv = "/".join(group_msgs)
+                        combined_prompt = "\n".join(group_msgs)
 
                         full_prompt = (
                             prompt +
                             "\n\nThese are the messages you should analyze:\n" +
-                            combined_message
+                            combined_prompt
                         )
 
-                        # LLAMADA AL LLM --------------------------------------
-                        if llm == "gemini":
-                            
-                            response = llm_gemini.models.generate_content(
-                                            model="gemini-3-pro-preview",
-                                            contents=full_prompt,
-                                            config=types.GenerateContentConfig(temperature=temp)
-                                        )
-                            
-                            ans = response.text
-                        else:
-                            
-                            if mode == "user":
-                                response = llm_chatgpt.invoke(full_prompt, temperature=temp)
+                        try:
+                            if llm == "gemini":
+                                response = llm_gemini.models.generate_content(
+                                    model="gemini-3-pro-preview",
+                                    contents=full_prompt,
+                                    config=types.GenerateContentConfig(temperature=temp)
+                                )
+                                ans = response.text
                             else:
-                                response = llm_chatgpt.invoke_as_assistant(full_prompt, temperature=temp)
-                                
-                            ans = response.content
-                        # -----------------------------------------------------
+                                response = llm_chatgpt.invoke(full_prompt, temperature=temp)
+                                ans = response.content
 
-                        parsed = parse_llm_dict(ans)
-                        parsed["original_messages"] = combined_message_for_csv
+                            parsed = parse_llm_dict(ans)
+                            parsed["original_messages"] = combined_csv
+                            parsed["group_id"] = group_counter
 
-                        results.append(parsed)
+                            file_exists = os.path.exists(output_path)
 
+                            with open(output_path, "a", encoding="utf-8") as f:
+                                pd.DataFrame([parsed]).to_csv(
+                                    f,
+                                    header=not file_exists,
+                                    index=False
+                                )
+                                f.flush()
+                                os.fsync(f.fileno())
+
+                        except KeyboardInterrupt:
+                            print("\n⛔ Interrumpido manualmente. Progreso guardado.")
+                            sys.exit()
+
+                        except Exception as e:
+                            print(f"\n⚠ Error en grupo {group_counter}: {e}")
+                            print("Progreso guardado hasta ahora.")
+                            return
+
+                        print(f"Procesado grupo {group_counter}")
                         start_idx += group_size
-                        
-                        print(f"Procesados mensajes de {start_idx - group_size} a {end_idx -1}")
+                        group_counter += 1
 
-                        if start_idx >= len(df):
-                            break
-
-                out_file = f"results_temp{temp}_mode{mode}.csv"
-                
-                #depending on the llm
-                LLM = "gemini" if llm == "gemini" else "gpt"
-                output_path = os.path.join(RESULTS_PATH, LLM, PAPER_PATHS[int(paper)], out_file)
-
-                pd.DataFrame(results).to_csv(output_path, index=False)
                 print(f"✔ Resultados guardados en {output_path}")
-    
+ 
 def leer_archivo_txt(filepath) :
 
     with open(filepath, "r", encoding="utf-8") as f:

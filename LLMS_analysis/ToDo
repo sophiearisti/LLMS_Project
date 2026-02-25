@@ -92,3 +92,85 @@ Haces 12 mini-decisiones: “¿Hay evidencia explícita de X? Sí/No”
 Luego devuelves el diccionario final.
 Por qué mejora: cada sub-tarea es más simple y reduce confusiones entre categorías parecidas (p.ej. overest_others vs info_asymmetry).
 
+
+
+----------- 25.02.2026-----------------------------
+
+
+El problema casi seguro es que estás usando llamadas síncronas y secuenciales con Gemini, lo cual no aprovecha su velocidad real. Aquí los culpables principales:
+1. Sin paralelismo (el problema principal)
+Cada mensaje espera a que el anterior termine. Con GPT pasa igual, pero Gemini tiene latencias de red distintas que se acumulan más notoriamente en bucles grandes.
+2. Sin batch nativo
+Gemini tiene soporte para procesar múltiples contenidos, pero lo estás llamando uno por uno en el modo línea por línea.
+3. El cliente genai.Client() síncrono
+Estás usando la versión síncrona cuando podrías usar async.
+
+La solución más directa: usar asyncio + ThreadPoolExecutor o el cliente async de Gemini
+Aquí un refactor del loop crítico en obtener_categorizacion_llm para el modo línea por línea:
+pythonimport asyncio
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+def llamar_gemini(full_prompt, temp):
+    response = llm_gemini.models.generate_content(
+        model="gemini-3-pro-preview",
+        contents=full_prompt,
+        config=types.GenerateContentConfig(temperature=temp)
+    )
+    return response.text
+
+def obtener_categorizacion_llm_paralela(prompt, paper, llm, max_workers=10):
+    path = os.path.join(DATA_PATH, PAPER_PATHS[int(paper)], DATA_FILE)
+    df = pd.read_csv(path).dropna(subset=["message"]).reset_index(drop=True)
+
+    temps = [0, 0.1, 0.5, 1, 1.2]
+
+    for temp in temps:
+        out_file = f"results_temp{temp}_mode_user.csv"
+        LLM = "gemini" if llm == "gemini" else "gpt"
+        output_path = os.path.join(RESULTS_PATH, LLM, PAPER_PATHS[int(paper)], out_file)
+
+        if os.path.exists(output_path):
+            existing_df = pd.read_csv(output_path)
+            processed_ids = set(existing_df["row_id"].tolist())
+        else:
+            processed_ids = set()
+
+        pending = [(idx, row) for idx, row in df.iterrows() if idx not in processed_ids]
+
+        def process_row(args):
+            idx, row = args
+            message = row["message"]
+            full_prompt = prompt + "\n\nThis is the message you should analyze:\n" + str(message)
+            try:
+                if llm == "gemini":
+                    ans = llamar_gemini(full_prompt, temp)
+                else:
+                    response = llm_chatgpt.invoke(full_prompt, temperature=temp)
+                    ans = response.content
+                parsed = parse_llm_dict(ans)
+                parsed["original_message"] = message
+                parsed["row_id"] = idx
+                return parsed
+            except Exception as e:
+                print(f"Error en fila {idx}: {e}")
+                return None
+
+        results = []
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = {executor.submit(process_row, args): args[0] for args in pending}
+            for future in tqdm(as_completed(futures), total=len(futures)):
+                result = future.result()
+                if result:
+                    results.append(result)
+
+        # Guardar en batch al final (o puedes guardar cada N resultados)
+        if results:
+            results_df = pd.DataFrame(results).sort_values("row_id")
+            file_exists = os.path.exists(output_path)
+            results_df.to_csv(output_path, mode="a", header=not file_exists, index=False)
+            print(f"✔ {len(results)} filas guardadas en {output_path}")
+
+Puntos clave del cambio:
+Con max_workers=10 lanzas 10 requests simultáneos en lugar de 1. Gemini tiene rate limits generosos (especialmente en Flash/Pro), así que puedes subir ese número según tu cuota. También agrupas los writes al CSV en lugar de hacer fsync por cada fila, lo cual en sí mismo también era un cuello de botella.
+Ajuste adicional: si tienes muchas filas y quieres guardar progreso parcial, guarda cada 50 resultados dentro del loop de as_completed en vez de esperar al final.
+¿Estás usando la API gratuita de Gemini o con proyecto de Google Cloud? Eso también afecta los rate limits disponibles.

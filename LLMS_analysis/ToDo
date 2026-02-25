@@ -96,6 +96,7 @@ Por qué mejora: cada sub-tarea es más simple y reduce confusiones entre catego
 
 ----------- 25.02.2026-----------------------------
 
+En el paper de Jordi calcular la métricas eliminando las observaciones de las clasificacciones que originalmente eran de valores diferentes a 0 y 1
 
 El problema casi seguro es que estás usando llamadas síncronas y secuenciales con Gemini, lo cual no aprovecha su velocidad real. Aquí los culpables principales:
 1. Sin paralelismo (el problema principal)

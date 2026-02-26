@@ -188,7 +188,7 @@ def obtener_categorias_llm(prompt, paper, llm):
 
             return parsed
 
-def obtener_categorizacion_llm(prompt, paper, llm):
+def obtener_categorizacion_llm(prompt, paper, llm, strategy_folder):
 
     temps, run_all_temps = seleccionar_temperaturas()
     modes   = ["user"]
@@ -212,8 +212,9 @@ def obtener_categorizacion_llm(prompt, paper, llm):
                 out_file = f"results_line_temp{temp}_mode{mode}.csv"
                 LLM = "gemini" if llm == "gemini" else "gpt"
                 output_path = os.path.join(
-                    RESULTS_PATH, LLM, PAPER_PATHS[int(paper)], out_file
+                    RESULTS_PATH, LLM, PAPER_PATHS[int(paper)], strategy_folder, out_file
                 )
+                os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
                 # ---------- CHECKPOINT ----------
                 if os.path.exists(output_path):
@@ -335,8 +336,9 @@ def obtener_categorizacion_llm(prompt, paper, llm):
                 out_file = f"results_group_temp{temp}_mode{mode}.csv"
                 LLM = "gemini" if llm == "gemini" else "gpt"
                 output_path = os.path.join(
-                    RESULTS_PATH, LLM, PAPER_PATHS[int(paper)], out_file
+                    RESULTS_PATH, LLM, PAPER_PATHS[int(paper)], strategy_folder, out_file
                 )
+                os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
                 # ---------- CHECKPOINT ----------
                 if os.path.exists(output_path):
@@ -463,7 +465,7 @@ def crear_categorias(paper, llm):
 def asignar_zero_shot(paper, llm):
     print(f"\n>>> Assigning categories (Zero-Shot) for Paper {paper}...")
     prompt = crear_prompt_basico(PAPER_PATHS[int(paper)])
-    obtener_categorizacion_llm(prompt, paper, llm)
+    obtener_categorizacion_llm(prompt, paper, llm, "0shot")
     
 def asignar_few_shot(paper, llm):
     print(f"\n>>> Assigning categories (Few-Shot) for Paper {paper}...")
@@ -476,7 +478,7 @@ def asignar_few_shot(paper, llm):
     fewshot_text = empty_examples(fewshot_text)
     prompt += "\n" + fewshot_text   
     
-    obtener_categorizacion_llm(prompt, paper, llm)
+    obtener_categorizacion_llm(prompt, paper, llm, "fewshot")
 
 def asignar_zero_shot_cot(paper, llm):
     print(f"\n>>> Assigning categories (Zero-Shot CoT) for Paper {paper}...")
@@ -487,7 +489,7 @@ def asignar_zero_shot_cot(paper, llm):
     zeroshotcot_text = leer_archivo_txt(zeroshotcot_path)
     prompt += "\n" + zeroshotcot_text
     
-    obtener_categorizacion_llm(prompt, paper, llm)
+    obtener_categorizacion_llm(prompt, paper, llm, "0shot_cot")
 
 def asignar_few_shot_cot(paper, llm):
     print(f"\n>>> Assigning categories (Few-Shot CoT) for Paper {paper}...")
@@ -500,7 +502,7 @@ def asignar_few_shot_cot(paper, llm):
     fewshotcot_text = empty_examples(fewshotcot_text)
     prompt += "\n" + fewshotcot_text
     
-    obtener_categorizacion_llm(prompt, paper, llm)
+    obtener_categorizacion_llm(prompt, paper, llm, "fewshot_cot")
     
 def empty_examples(fewshot_text):
     if fewshot_text.strip() == "":

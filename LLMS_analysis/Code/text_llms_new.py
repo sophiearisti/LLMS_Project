@@ -24,7 +24,7 @@ llm_gemini = None
 
 GEMINI_CATEGORY_MODEL = "gemini-3-pro-preview"
 GEMINI_CLASSIFY_MODEL = "gemini-3-flash-preview"
-GEMINI_WORKERS = 10
+GEMINI_WORKERS = 20
 
 # Selected models (updated at runtime via seleccionar_llm)
 SELECTED_CHATGPT_MODEL = "gpt-5.2"
@@ -105,6 +105,26 @@ def parse_llm_dict(ans):
     except:
         return {"error": ans[:300]}
 
+def seleccionar_temperaturas():
+    temperature_options = [0, 0.1, 0.5, 1, 1.2]
+
+    while True:
+        print("\n--- Select temperature(s) ---")
+        for idx, value in enumerate(temperature_options, start=1):
+            print(f"{idx}. {value}")
+        print(f"{len(temperature_options) + 1}. All")
+
+        option = input("Choose an option: ").strip()
+
+        if option.isdigit():
+            option_int = int(option)
+            if 1 <= option_int <= len(temperature_options):
+                return [temperature_options[option_int - 1]], False
+            if option_int == len(temperature_options) + 1:
+                return temperature_options, True
+
+        print("Invalid option.")
+
 def obtener_categorias_llm(prompt, paper, llm):  
     
     temps   = [0, 0.1, 0.5,  1, 1.2]
@@ -170,7 +190,7 @@ def obtener_categorias_llm(prompt, paper, llm):
 
 def obtener_categorizacion_llm(prompt, paper, llm):
 
-    temps   = [0, 0.1, 0.5, 1, 1.2]
+    temps, run_all_temps = seleccionar_temperaturas()
     modes   = ["user"]
 
     path = os.path.join(DATA_PATH, PAPER_PATHS[int(paper)], DATA_FILE)
@@ -243,7 +263,7 @@ def obtener_categorizacion_llm(prompt, paper, llm):
                                 parsed["row_id"] = idx
                                 rows_buffer.append(parsed)
 
-                                if len(rows_buffer) >= 25:
+                                if len(rows_buffer) >= 10:
                                     write_rows_to_csv(output_path, rows_buffer)
                                     rows_buffer = []
 
@@ -270,7 +290,7 @@ def obtener_categorizacion_llm(prompt, paper, llm):
                             parsed["row_id"] = idx
                             rows_buffer.append(parsed)
 
-                            if len(rows_buffer) >= 25:
+                            if len(rows_buffer) >= 10:
                                 write_rows_to_csv(output_path, rows_buffer)
                                 rows_buffer = []
 
@@ -635,8 +655,7 @@ def main_menu():
             print(f"\n--- What would you like to do? [ChatGPT/{SELECTED_CHATGPT_MODEL} | Gemini/{SELECTED_GEMINI_MODEL}] ---")
             print("1. Create categories")
             print("2. Assign categories")
-            print("3. Change LLM / Model")
-            print("4. Go back to main menu")
+            print("3. Go back to main menu")
 
             accion = input("Select an option: ")
 
@@ -648,9 +667,6 @@ def main_menu():
                 menu_asignacion(paper)
 
             elif accion == "3":
-                seleccionar_llm()
-
-            elif accion == "4":
                 break
 
             else:

@@ -17,13 +17,28 @@ PAPER_PATHS = {
     4: FOURTH_PAPER
 }
 
-llm_chatgpt = ChatOpenAI(
-    model="gpt-5.1",
-    max_retries=1,
-    api_key=OAI_2
-)
+llm_chatgpt = None
+llm_gemini = None
 
-llm_gemini = genai.Client()
+
+def get_chatgpt_client():
+    global llm_chatgpt
+    if llm_chatgpt is None:
+        llm_chatgpt = ChatOpenAI(
+            model="gpt-5.1",
+            max_retries=1,
+            api_key=OAI_2
+        )
+    return llm_chatgpt
+
+
+def get_gemini_client():
+    global llm_gemini
+    if llm_gemini is None:
+        if not GEMINI:
+            raise ValueError("Missing GEMINI API key. Set GEMINI in your .env file.")
+        llm_gemini = genai.Client(api_key=GEMINI)
+    return llm_gemini
 
 def parse_llm_dict(ans):
 
@@ -63,7 +78,7 @@ def obtener_categorias_llm(prompt, paper, llm):
             # preguntal cual llm usar
             if llm == "gemini":
                 
-                response = llm_gemini.models.generate_content(
+                response = get_gemini_client().models.generate_content(
                                 model="gemini-3-pro-preview",
                                 contents=full_prompt,
                                 config=types.GenerateContentConfig(temperature=temp)
@@ -74,10 +89,10 @@ def obtener_categorias_llm(prompt, paper, llm):
             else:
                 
                 if mode == "user":
-                    response = llm_chatgpt.invoke(full_prompt, temperature=temp)
+                    response = get_chatgpt_client().invoke(full_prompt, temperature=temp)
                     
                 else:
-                    response = llm_chatgpt.invoke_as_assistant(full_prompt, temperature=temp)
+                    response = get_chatgpt_client().invoke_as_assistant(full_prompt, temperature=temp)
                 
                 ans = response.content
             # -----------------------------------------------------
@@ -152,14 +167,14 @@ def obtener_categorizacion_llm(prompt, paper, llm):
                     try:
                         # ---------- LLAMADA AL LLM ----------
                         if llm == "gemini":
-                            response = llm_gemini.models.generate_content(
+                            response = get_gemini_client().models.generate_content(
                                 model="gemini-3-pro-preview",
                                 contents=full_prompt,
                                 config=types.GenerateContentConfig(temperature=temp)
                             )
                             ans = response.text
                         else:
-                            response = llm_chatgpt.invoke(full_prompt, temperature=temp)
+                            response = get_chatgpt_client().invoke(full_prompt, temperature=temp)
                             ans = response.content
                         # -------------------------------------
 
@@ -257,14 +272,14 @@ def obtener_categorizacion_llm(prompt, paper, llm):
 
                         try:
                             if llm == "gemini":
-                                response = llm_gemini.models.generate_content(
+                                response = get_gemini_client().models.generate_content(
                                     model="gemini-3-pro-preview",
                                     contents=full_prompt,
                                     config=types.GenerateContentConfig(temperature=temp)
                                 )
                                 ans = response.text
                             else:
-                                response = llm_chatgpt.invoke(full_prompt, temperature=temp)
+                                response = get_chatgpt_client().invoke(full_prompt, temperature=temp)
                                 ans = response.content
 
                             parsed = parse_llm_dict(ans)

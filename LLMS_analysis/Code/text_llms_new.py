@@ -22,13 +22,13 @@ llm_chatgpt = None
 
 llm_gemini = None
 
-GEMINI_CATEGORY_MODEL = "gemini-3-pro-preview"
+GEMINI_CATEGORY_MODEL = "gemini-3.1-pro-preview"
 GEMINI_CLASSIFY_MODEL = "gemini-3-flash-preview"
 GEMINI_WORKERS = 20
 
 # Selected models (updated at runtime via seleccionar_llm)
 SELECTED_CHATGPT_MODEL = "gpt-5.2"
-SELECTED_GEMINI_MODEL = "gemini-3-flash-preview"
+SELECTED_GEMINI_MODEL = "gemini-3.1-pro-preview"
 
 
 def write_rows_to_csv(output_path, rows):
@@ -578,14 +578,14 @@ def seleccionar_llm():
     global SELECTED_CHATGPT_MODEL, SELECTED_GEMINI_MODEL, llm_chatgpt
 
     CHATGPT_MODELS = {
-        "1": "gpt-4o-mini",
-        "2": "gpt-4o",
-        "3": "gpt-4.1",
-        "4": "gpt-5.1",
+        "1": "gpt-5.2",
+        "2": "gpt-5.1",
+        "3": "gpt-5-mini",
+        "4": "gpt-4o",
     }
     GEMINI_MODELS = {
-        "1": "gemini-2.0-flash",
-        "2": "gemini-2.0-pro",
+        "1": "gemini-3.1-pro-preview",
+        "2": "gemini-3.1-pro-preview-customtools",
         "3": "gemini-3-flash-preview",
         "4": "gemini-3-pro-preview",
     }

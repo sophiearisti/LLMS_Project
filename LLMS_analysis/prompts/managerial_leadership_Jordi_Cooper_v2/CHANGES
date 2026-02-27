@@ -1,0 +1,124 @@
+Paper 1 v2 Experiment — Registro de cambios y motivación
+Fecha: 2026-02-27
+
+Objetivo
+- Mejorar las métricas de clasificación del Paper 1 (Managerial Leadership, Jordi & Cooper)
+  sin modificar los archivos originales, creando una carpeta de experimento aislada.
+- Carpeta de prompts nueva : prompts/managerial_leadership_Jordi_Cooper_v2/
+- Scripts nuevos           : Code/run_paper1_v2.py  /  Code/metrics_paper1_v2.py
+- Resultados en            : Results/<llm>/managerial_leadership_Jordi_Cooper_v2/
+
+===================================================================================
+DIAGNÓSTICO (qué fallaba en la versión original)
+===================================================================================
+
+PROBLEMA 1 — El prompt nunca mencionaba 0.5 como valor válido [IMPACTO MÁS ALTO]
+- El human coding en real_answers.csv usa tres valores: 0, 0.5 y 1.
+- format.txt original solo autorizaba 0 o 1.
+- Consecuencia: precision_0.5 = recall_0.5 = f1_0.5 = 0.0 en TODOS los tags.
+- Cohen's Kappa y Krippendorff-alpha resultaban negativos (peor que azar) en tags
+  donde 0.5 era frecuente: discuss_fairness, discuss_efficient, explanation.
+
+PROBLEMA 2 — Typo 'discuss_coordinte' en classificationTask.txt
+- La clave correcta es 'discuss_coordinate' (confirmado en format.txt y real_answers).
+- El typo causaba incoherencia entre prompt y formato de salida.
+- ADICIONALMENTE: esa columna no existe en real_answers.csv (los codificadores humanos
+  nunca la anotaron), así que en metrics_analysis.py se saltaba silenciosamente.
+  Se documenta explícitamente en metrics_paper1_v2.py y se excluye del label list.
+
+PROBLEMA 3 — Todos los few-shot examples usaban solo 0 y 1
+- Ningún ejemplo en fewShot.txt ni few-shotCoT.txt mostraba un 0.5 en la salida.
+- Sin señal inductiva, el modelo no aprendía cuándo usar 0.5.
+
+PROBLEMA 4 — Ejemplo 2 de fewShot.txt tenía discuss_fairness = 1 incorrecto
+- La anotación real para ese grupo de mensajes es 0.5 (fairness mencionada de pasada).
+- El ejemplo enseñaba al modelo a sobre-predecir 1 en discuss_fairness.
+
+PROBLEMA 5 — CoT excluido del bucle de métricas original
+- metrics_analysis.py solo evaluaba ["0shot", "fewshot"].
+- Las carpetas 0shot_cot y fewshot_cot existían en el código pero nunca se evaluaban.
+
+===================================================================================
+QUÉ SE CAMBIÓ EN LOS PROMPTS v2
+===================================================================================
+
+format.txt
+  - Añadido 0.5 como tercer valor válido con definición explícita:
+      0   = categoría no observada
+      0.5 = parcialmente presente, borderline o ambigua
+      1   = claramente y sin ambigüedad observada
+  - Ejemplo del diccionario actualizado: discuss_fairness ahora muestra 0.5
+
+classificationTask.txt
+  - Typo corregido: 'discuss_coordinte' → 'discuss_coordinate'
+  - Bloque "IMPORTANT — PARTIAL PRESENCE (0.5)" añadido al principio de la tarea
+  - Cada categoría tiene nota "(use 0.5 if...)" donde aplica
+  - Boundary condition de discuss_coordinate clarificada (ya existía texto en el original
+    pero el typo lo hacía inconsistente)
+
+constraints.txt
+  - Reglas de propagación de 0.5 añadidas a la jerarquía de sugerencias y reporting:
+      · any_suggestion = 0.5  →  sub-tags máximo 0.5
+      · receive_report = 0    →  neither_report = 1    (sin cambio)
+      · receive_report = 0.5  →  neither_report = 0.5  (nuevo)
+      · receive_report = 0.5  →  máximo uno de (truthful/falsehood/contradict) = 0.5
+
+fewShot.txt
+  - Ejemplo 2: discuss_fairness corregido de 1 → 0.5 (match con real_answers.csv)
+  - Nuevo Ejemplo 4: grupo real con discuss_fairness = 0.5, discuss_efficient = 0.5,
+    explanation = 0.5 — provee señal inductiva para predicciones 0.5
+
+few-shotCoT.txt
+  - Mismas correcciones que fewShot.txt + campo 'reason' en cada ejemplo
+  - Razones explican por qué un valor es 0.5 vs 1 (e.g. "fairness se menciona de
+    pasada sin ser el tema focal → 0.5")
+  - Preamble actualizado: "Values must be 0, 0.5, or 1"
+
+0shotCoT.txt
+  - Typo corregido en la clave del ejemplo
+  - Preamble actualizado para mencionar 0.5
+
+role.txt / context.txt
+  - Sin cambios (idénticos al original)
+
+===================================================================================
+QUÉ SE CAMBIÓ EN EL CÓDIGO
+===================================================================================
+
+Code/run_paper1_v2.py
+  - Apunta a FIRST_PAPER_V2 = "managerial_leadership_Jordi_Cooper_v2/"
+  - Resultados en Results/<llm>/managerial_leadership_Jordi_Cooper_v2/<strategy>/
+  - Menú simplificado (solo Paper 1)
+  - Lógica de clasificación y checkpoint idéntica a text_llms_new.py
+
+Code/metrics_paper1_v2.py
+  - 'discuss_coordinate' eliminado de la lista de labels (columna ausente en ground truth)
+  - Evaluación incluye los 4 folders: 0shot, fewshot, 0shot_cot, fewshot_cot
+  - Resultados/imágenes guardados en managerial_leadership_Jordi_Cooper_v2/
+  - Permite comparación directa con managerial_leadership_Jordi_Cooper/ original
+
+===================================================================================
+MÉTRICAS QUE SE ESPERAN MEJORAR
+===================================================================================
+
+Tag                | Kappa original (temp=0) | Razón del problema         | Fix aplicado
+-------------------|-------------------------|----------------------------|------------------
+discuss_fairness   | -0.32                   | 0.5 nunca predicho         | format + fewshot
+discuss_efficient  | -0.29                   | 0.5 nunca predicho         | format + fewshot
+explanation        | -0.48                   | 0.5 nunca predicho         | format + fewshot
+suggest_safe       | 0.01                    | ejemplo 2 enseñaba mal     | fewshot corregido
+any_suggestion     | -0.007                  | over-predicción de 1       | constraints + format
+
+===================================================================================
+PENDIENTE / PRÓXIMOS PASOS
+===================================================================================
+
+[ ] Ejecutar run_paper1_v2.py con temp=0, estrategia fewshot y fewshot_cot
+[ ] Ejecutar metrics_paper1_v2.py y comparar results_paper_1_temp0_* entre
+    managerial_leadership_Jordi_Cooper/ vs managerial_leadership_Jordi_Cooper_v2/
+[ ] Si Kappa mejora en discuss_fairness, discuss_efficient, explanation:
+    considerar aplicar misma corrección al bucle de otros papers con 0.5
+[ ] Evaluar si añadir ejemplos negativos (todos 0) mejoraría sobre-predicción
+    de any_suggestion (ver punto 5 del ToDo principal)
+[ ] Considerar pipeline en 2 etapas (ver "Alternativas" en ToDo principal)
+    como siguiente iteración si v2 no alcanza Kappa > 0.4 en los tags problemáticos

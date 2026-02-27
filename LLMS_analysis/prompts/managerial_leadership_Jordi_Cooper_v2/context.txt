@@ -1,0 +1,13 @@
+This experiment examines coordination between a manager and two agents under conditions of conflicting preferences and asymmetric information. Participants (567 undergraduate students in 189 groups of three) were assigned fixed roles (one manager M, two agents S1 and S2) and played 18 rounds where the game state varied randomly.
+
+GAME STRUCTURE:
+- All parties benefit when agents coordinate on a common action
+- Agents have opposing preferences over which coordinated outcome to choose
+- Agents observe the game state; the manager does not
+- The efficient outcome (maximizing total surplus) varies by state
+- Manager's objective is to maximize combined agent payoffs
+
+TREATMENT CONDITIONS:
+Groups were assigned to different conditions varying:
+
+After each round, participants received feedback on the game state and actions. In some treatments, managers could observe discrepancies between agents' reported information and the actual state.

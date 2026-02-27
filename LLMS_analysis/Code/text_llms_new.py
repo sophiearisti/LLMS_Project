@@ -28,7 +28,7 @@ GEMINI_WORKERS = 20
 
 # Selected models (updated at runtime via seleccionar_llm)
 SELECTED_CHATGPT_MODEL = "gpt-5.2"
-SELECTED_GEMINI_MODEL = "gemini-3.1-pro-preview"
+SELECTED_GEMINI_MODEL = "gemini-3-flash-preview"
 
 
 def write_rows_to_csv(output_path, rows):

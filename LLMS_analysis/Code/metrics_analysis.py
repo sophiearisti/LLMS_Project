@@ -213,7 +213,7 @@ def paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder
     
 def get_results_and_visualize(paper_id, results, folder, temp, mode):
     
-    AI = "gpt/" 
+    AI = "gemini/" 
     
     # ask for which model we want to evaluate
     
@@ -315,7 +315,7 @@ def get_results_and_visualize(paper_id, results, folder, temp, mode):
               fontsize=16, pad=20)
 
     png_path = f"results_paper_{paper_id}_temp{temp}_mode{mode}_type{folder}.png"
-    png_path = os.path.join(RESULTS_PATH,"gpt/", PAPERS[paper_id]['path'], folder, png_path)
+    png_path = os.path.join(RESULTS_PATH,"gemini/", PAPERS[paper_id]['path'], folder, png_path)
     plt.savefig(png_path, dpi=300, bbox_inches="tight")
     plt.close()
 
@@ -323,8 +323,9 @@ def get_results_and_visualize(paper_id, results, folder, temp, mode):
 
 def main():
     folder_results = ["0shot", "fewshot"] #, "0shotCot", "fewshotCot"]
-    temps   = [0, 0.1, 0.5,  1, 1.2]
+    temps   = [ 0.1, 0.5,  1, 1.2]
     mode  = ["user"] #, "assistant"]
+    llms = [ "gemini/"]
     
     for paper_id in PAPERS.keys():
         
@@ -333,18 +334,19 @@ def main():
         for folder in folder_results:
             for temp in temps:
                 for m in mode:
+                    for llm in llms:
                     
-                    print(f"Evaluating results for Paper {paper_id}, Folder: {folder}, Temp: {temp}, Mode: {m}")
-                    
-                    out_file = f"results_temp{temp}_mode{m}.csv"
-                    
-                    predicted_answers_path = os.path.join(RESULTS_PATH, "gpt/", PAPERS[paper_id]['path'], folder, out_file)
-                    
-                    print(f"Evaluating Paper {paper_id}...")
-                               
-                    paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder, temp, m)
-                    
-                    print("\n" + "="*50 + "\n")
+                        print(f"Evaluating results for Paper {paper_id}, Folder: {folder}, Temp: {temp}, Mode: {m}")
+                        
+                        out_file = f"results_temp{temp}_mode{m}.csv"
+                        
+                        predicted_answers_path = os.path.join(RESULTS_PATH, llm, PAPERS[paper_id]['path'], folder, out_file)
+                        
+                        print(f"Evaluating Paper {paper_id}...")
+                                
+                        paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder, temp, m)
+                        
+                        print("\n" + "="*50 + "\n")
                     
 
 main()

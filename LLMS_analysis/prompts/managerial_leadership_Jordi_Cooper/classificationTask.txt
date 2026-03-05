@@ -8,18 +8,17 @@ These are the categories stated:
 a.	Did they suggest a safe outcome? (suggest_safe)
 b.	Did they suggest an efficient outcome? (suggest_efficient)
 
-2.	Did they agree to the proposal about what row/column should be chosen.? (agree_proposal)
+2.	Did they agree to the proposal about what row/column should be chosen? (agree_proposal)
 3.	Did they discuss about what row/column should be chosen? If it was the case:
-a.	Did they discuss need to coordinate? (discuss_coordinte) This requires more than making a suggestion that involves coordination. The message needs to indicate that the two players should be choosing the same thing (e.g. “We’ll do better if we make the same choices” is coded. “Let’s choose row 4 and column 4” is not coded.)	
-b.	Did they discuss fairness? (discuss_fairness) This category includes any message that discusses the distribution of pay over the three players.		
-c.	Did they discuss efficiency? (discuss_efficient)This includes discussion of maximizing total pay as well as explaining how and why rotation between players works.
-4.	Did they send questions about rules of the experiment? (discuss_rules)
-5.	Did they give any explanation (explanation)? This included explanations about the rules of the experiment or game, as well as explanations of a suggested way of playing the game.
+a.	Did they discuss need to coordinate? (discuss_coordinate) IMPORTANT BOUNDARY: This requires more than making a suggestion that involves coordination. The message needs to indicate that the two players should be choosing the same thing (e.g. "We'll do better if we make the same choices" is coded. "Let's choose row 4 and column 4" is not coded.)	
+b.	Did they discuss fairness? (discuss_fairness) This category includes any message that discusses the distribution of pay over the three players. Use 0.5 if fairness is raised only briefly or incidentally.		
+c.	Did they discuss efficiency? (discuss_efficient) This includes discussion of maximizing total pay as well as explaining how and why rotation between players works. Use 0.5 if efficiency is mentioned in passing.
+4.	Did they send questions about rules of the experiment? (discuss_rules) Use 0.5 if the question is ambiguous (could be asking about rules or about strategy).
+5.	Did they give any explanation (explanation)? This included explanations about the rules of the experiment or game, as well as explanations of a suggested way of playing the game. Use 0.5 if the explanation is partial or unclear.
 6.	Did they send questions about how to play? (discuss_howtoplay) This was for conceptual questions rather than the frequent generic request that somebody suggest a row and column.
-7.	Did the Manager (coded as 0) ask what game is being Played? (ask_game)
-8.	Did Agents Report What Game is Being Played? (Receive_report) I that is the case:
+7.	Did the Manager (coded as 0) ask what game is being Played? (ask_game) Use 0.5 if the question is implicit or ambiguous.
+8.	Did Agents Report What Game is Being Played? (receive_report) If that is the case:
 a.	Did they truthfully Reveal Game? (truthful)
 b.	Did they lie About Game? (falsehood)
-c.	Conflict (conflict): The agents contradict each other
-d.	Disagreement (contradict) This is used for cases where there was “fact-checking”. (e.g. “S1: It is Game 3.” “S2: No, it is Game 2.”) This category is different from the “Contradict” category
-9.	None of the agents report. This is true if in the last question “Did Agents Report What Game is Being Played?”, the answer was false.  (neither_report)
+c.	Conflict (contradict): The agents contradict each other — one says one game, the other says a different game. (Note: previously mislabeled 'contradict' was the fact-checking category; see constraint file for final mapping.)
+9.	None of the agents report. This is true if in the last question "Did Agents Report What Game is Being Played?", the answer was false. (neither_report)

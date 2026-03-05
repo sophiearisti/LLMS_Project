@@ -27,10 +27,27 @@ def krippendorff_alpha_nominal(y_true, y_pred):
 
     return 1 - (observed_disagreement / expected_disagreement)
 
+
 PAPERS = {
    1: {
         "path": FIRST_PAPER,
-        "labels": ["any_suggestion", "suggest_safe", "suggest_efficient", "agree_proposal", "discuss_coordinate", "discuss_fairness", "discuss_efficient", "discuss_rules", "explanation", "discuss_howtoplay", "ask_game", "receive_report", "truthful", "falsehood", "contradict", "neither_report"]
+        "labels": [
+            "any_suggestion",
+            "suggest_safe",
+            "suggest_efficient",
+            "agree_proposal",
+            "discuss_fairness",
+            "discuss_efficient",
+            "discuss_rules",
+            "explanation",
+            "discuss_howtoplay",
+            "ask_game",
+            "receive_report",
+            "truthful",
+            "falsehood",
+            "contradict",
+            "neither_report",
+        ],    
     },
 
     3: {

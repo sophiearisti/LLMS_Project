@@ -1,8 +1,10 @@
   library(readr)
   library(dplyr)
+  library(ggplot2)
+  library(patchwork)
   
   papers <- data.frame(
-    paper_number = c(1, 2, 4),
+    paper_number = c(1, 3, 4),
     paper_name = c(
       "managerial_leadership_Jordi_Cooper",
       "trust_promises_Ederer_Schneider",
@@ -80,15 +82,94 @@
           full_path <- file.path(folder_path, file_name)
           
           if (file.exists(full_path)) {
-            
-            df <- read_csv(full_path, na = c("", "NA"))
-            
-            #print full_path
-            cat(full_path, "\n")
-            
+                
+                df <- read_csv(full_path, na = c("", "NA"))
+                
+                #print full_path
+                cat(full_path, "\n")
+                
+                
+                df <- df %>%
+                  mutate(
+                    llm = llm,
+                    paper = paper_num,
+                    shot = shot,
+                    temperature = temp
+                  )
+                
+                all_data[[length(all_data)+1]] <- df
           }
         }
       }
     }
   }
   
+
+head(all_data)
+
+results_df <- bind_rows(all_data)
+
+setwd("~/Documents/GitHub/LLMS_Project/LLMS_analysis/Graphs")
+
+for(llm_name in llms){
+  
+  for (i in 1:nrow(papers)) {
+    
+    for(metric in metrics){
+      
+      paper_num <- papers$paper_number[i]
+      
+      df_llm <- results_df %>% 
+        filter(llm == llm_name, shot == "0shot", paper_id == paper_num)
+      
+      p1 <- ggplot(df_llm,
+                   aes(x = tag,
+                       y = .data[[metric]],
+                       fill = factor(temperature))) +
+        geom_bar(stat="identity", position="dodge") +
+        labs(
+          title = paste("0-shot"),
+          y = metric,
+          fill = "Temperature"
+        ) +
+        theme_classic() +
+        scale_fill_brewer(palette = "Set2") +
+        theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+      
+      
+      df_llm <- results_df %>% 
+        filter(llm == llm_name, shot == "fewshot", paper_id == paper_num)
+      
+      p2 <- ggplot(df_llm,
+                   aes(x = tag,
+                       y = .data[[metric]],
+                       fill = factor(temperature))) +
+        geom_bar(stat="identity", position="dodge") +
+        labs(
+          title = paste("Few-shot"),
+          y = metric,
+          fill = "Temperature"
+        ) +
+        theme_classic() +
+        scale_fill_brewer(palette = "Set2") +
+        theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+      
+      
+      # juntar las dos gráficas
+      combined_plot <- p1 + p2 +
+        plot_annotation(
+          title = paste(metric, "- LLM:", llm_name, "paper", papers$paper_name[i])
+        )
+      
+      print(combined_plot)
+      
+      ggsave(
+        filename = paste0(metric, "_", llm_name, "_", papers$paper_name[i], ".png"),
+        plot = combined_plot,
+        width = 14,
+        height = 6,
+        dpi = 300
+      )
+    }
+  }
+}

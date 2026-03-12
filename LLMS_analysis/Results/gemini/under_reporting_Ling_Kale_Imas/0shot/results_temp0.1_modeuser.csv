@@ -3,7 +3,6 @@ uninformative,SDB,overest_others,underest_own,academic_integrity,info_asymmetry,
 0,1,0,0,0,0,0,,0,,0,0,Perceptions from others,5,0.0,0.0
 1,0,0,0,0,0,0,,0,,0,0,Yes i think so,19,0.0,0.0
 0,1,1,1,1,1,0,0.0,1,1.0,0,0,"The discrepancy between college students' self-reported and perceived LLM usage and that of their friends can be explained by a number of plausible factors:
-
  Due to social desirability bias, students may underreport their own use of LLM in order to avoid being seen as technologically dependent or academically dishonest.  Students may wish to project an image of independence and competence because an excessive reliance on AI is stigmatized.
  In contrast, they may exaggerate their friends' use in an attempt to justify or normalize their own actions.  Mental defenses like ""everyone else is doing it"" are widespread.
  Absence of precise knowledge

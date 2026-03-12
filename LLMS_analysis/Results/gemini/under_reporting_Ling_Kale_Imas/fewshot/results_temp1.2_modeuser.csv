@@ -19,16 +19,16 @@ uninformative,SDB,overest_others,underest_own,academic_integrity,info_asymmetry,
 1,0,0,0,0,0,,0,0,,0,0,wide,22,0.0,0.0
 0,1,0,0,0,0,,0,0,,0,0,I think that this gap could be due to some students not being honest about how frequently they use LLMs out of fear of being judged or ridiculed for it,29,0.0,0.0
 0,1,0,0,0,0,0.0,0,0,0.0,0,0,People are probably embarrassed to admit it if they are using them.,28,,
-0,0,0,0,0,1,0.0,0.0,0,0.0,0,0,Some think that their friends rely a little on LLMs but they actually use LLMs everyday.,23,,,
-0,1,1,1,1,1,,0.0,0,,0,0,"The discrepancy between college students' self-reported ",0,0.0,0.0,
-1,0,0,0,0,0,,,0,0.0,0,0,I have no idea.,13,0.0,,0.0
-1,0,0,0,0,0,0.0,0.0,0,0.0,0,0,3,11,,,
-0,1,0,0,0,0,0.0,0.0,0,0.0,0,0,not being snitches,18,,,
-1,0,0,0,0,0,,0.0,0,,0,0,learning gap,21,0.0,0.0,
-0,0,1,0,0,1,,0.0,0,,0,0,"Social media portraying AI use, lack of understanding of how much they use it",1,1.0,0.0,
-0,1,0,0,0,0,,0.0,0,,0,0,Some don’t want to admit using LLMs,33,0.0,0.0,
-0,1,0,0,0,0,0.0,0.0,0,0.0,0,0,People don't want to admit that they are using AI as much as they are.,27,,,
-0,0,0,0,0,1,,0.0,0,,1,1,"Not sure, a lot of my friends do not use LLMs but I know a lot of my peers do.",2,0.0,0.0,
+0,0,0,0,0,1,0.0,0.0,0,0.0,0,0,Some think that their friends rely a little on LLMs but they actually use LLMs everyday.,23,,
+0,1,1,1,1,1,,0.0,0,,0,0,"The discrepancy between college students' self-reported ",0,0.0,0.0
+1,0,0,0,0,0,,,0,0.0,0,0,I have no idea.,13,0.0,0.0
+1,0,0,0,0,0,0.0,0.0,0,0.0,0,0,3,11,,
+0,1,0,0,0,0,0.0,0.0,0,0.0,0,0,not being snitches,18,,
+1,0,0,0,0,0,,0.0,0,,0,0,learning gap,21,0.0,0.0
+0,0,1,0,0,1,,0.0,0,,0,0,"Social media portraying AI use, lack of understanding of how much they use it",1,1.0,0.0
+0,1,0,0,0,0,,0.0,0,,0,0,Some don’t want to admit using LLMs,33,0.0,0.0
+0,1,0,0,0,0,0.0,0.0,0,0.0,0,0,People don't want to admit that they are using AI as much as they are.,27,,
+0,0,0,0,0,1,,0.0,0,,1,1,"Not sure, a lot of my friends do not use LLMs but I know a lot of my peers do.",2,0.0,0.0
 0,1,0,0,0,0,0.0,0,0,0.0,0,0,People are embarassed,40,,
 0,1,0,0,0,0,0.0,0,0,0.0,0,0,Some people don't want to admit to using AI,35,,
 0,1,0,0,0,0,,0,0,,0,0,The gap is some pretend and act like they do not use them whereas they actually use them.,30,0.0,0.0
@@ -64,8 +64,7 @@ uninformative,SDB,overest_others,underest_own,academic_integrity,info_asymmetry,
 0,1,1,0,1,1,1.0,0,0,0.0,0,0,"The disparity is most likely caused by social desirability bias, in which students underreport their own LLM usage to look more academically honest, while overestimating their peers' use due to asymmetric perception bias.  Furthermore, students may mistake their awareness of LLM debates or availability for actual usage, distorting their views of others' conduct.  This mismatch demonstrates how individuals frequently misunderstand group standards in relation to their own behavior.",57,,
 0,1,0,0,0,1,,0,0,,0,0,I think it is because people do not talk about how much they use LLMs since there is still somewhat of a stigma with using it.,74,0.0,0.0
 0,0,0,0,0,1,0.0,0,0,0.0,0,0,No knowledge of their friends using LLMs so therefore they truly do not know,71,,
-0,1,1,0,0,1,1.0,0,0,0.0,0,0,"The gap likely stems from social perception biases. Students probably understate their use of LLMs because they want to appear self-sufficient yet they misjudge their classmates' utilization by what they overhear or believe to be true. Student tracking of their AI usage can differ from their assessment of other peers because of mistaken evaluations.
-",60,,
+0,1,1,0,0,1,1.0,0,0,0.0,0,0,"The gap likely stems from social perception biases. Students probably understate their use of LLMs because they want to appear self-sufficient yet they misjudge their classmates' utilization by what they overhear or believe to be true. Student tracking of their AI usage can differ from their assessment of other peers because of mistaken evaluations.",60,,
 0,1,1,0,0,0,0.0,0,0,0.0,0,0,The most likely explanation for this gap is social desirability bias students may underreport their own use of LLMs to avoid appearing overly dependent on AI while assuming their peers use them more freely.,58,,
 0,1,0,0,0,0,0.0,0,0,0.0,0,0,They don't want to be accused of cheating.,51,,
 1,0,0,0,0,0,0.0,0,0,0.0,0,0,I think it's just the difference between expectations and reality.,76,,

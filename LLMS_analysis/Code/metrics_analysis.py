@@ -323,7 +323,7 @@ def get_results_and_visualize(paper_id, results, folder, temp, mode):
 
 def main():
     folder_results = ["0shot", "fewshot"] #, "0shotCot", "fewshotCot"]
-    temps   = [ 0.1, 0.5,  1, 1.2]
+    temps   = [0, 0.1, 0.5,  1, 1.2]
     mode  = ["user"] #, "assistant"]
     llms = [ "gemini/"]
     

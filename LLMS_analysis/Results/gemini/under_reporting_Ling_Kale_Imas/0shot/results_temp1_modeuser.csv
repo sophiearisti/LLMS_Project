@@ -1,14 +1,14 @@
-uninformative,SDB,overest_others,underest_own,academic_integrity,info_asymmetry,AI_discussion_priming ,privacy_concerns,self_esteem,self_report bias,network_effect,truthful,original_message,row_id
-1,0,0,0,0,0,0,0,0,0,0,0,understanding,10
-1,0,0,0,0,0,0,0,0,0,0,0,3,11
-0,1,0,0,1,0,0,0,0,0,0,0,not being snitches,18
-1,0,0,0,0,0,0,0,0,0,0,0,very accurate,8
-1,0,0,0,0,0,0,0,0,0,0,0,The costs,6
-0,0,0,1,0,1,0,0,1,1,0,0,I feel they think they are the only ones or feel unique when in reality the growth and use is larger than we think.,9
-1,0,0,0,0,0,0,0,0,0,0,0,not many,17
-1,0,0,0,0,0,0,0,0,0,0,0,Priority differences,15
-1,0,0,0,0,0,0,0,0,0,0,0,learning gap,21
-0,1,1,1,1,1,0,0,1,1,0,0,"The discrepancy between college students' self-reported and perceived LLM usage and that of their friends can be explained by a number of plausible factors:",0
+uninformative,SDB,overest_others,underest_own,academic_integrity,info_asymmetry,AI_discussion_priming ,privacy_concerns,self_esteem,self_report bias,network_effect,truthful,original_message,row_id,privacy _oncerns,self_report_bias
+1,0,0,0,0,0,0,0,0,0,0,0,understanding,10,,
+1,0,0,0,0,0,0,0,0,0,0,0,3,11,,
+0,1,0,0,1,0,0,0,0,0,0,0,not being snitches,18,,
+1,0,0,0,0,0,0,0,0,0,0,0,very accurate,8,,
+1,0,0,0,0,0,0,0,0,0,0,0,The costs,6,,
+0,0,0,1,0,1,0,0,1,1,0,0,I feel they think they are the only ones or feel unique when in reality the growth and use is larger than we think.,9,,
+1,0,0,0,0,0,0,0,0,0,0,0,not many,17,,
+1,0,0,0,0,0,0,0,0,0,0,0,Priority differences,15,,
+1,0,0,0,0,0,0,0,0,0,0,0,learning gap,21,,
+0,1,1,1,1,1,0,0,1,1,0,0,"The discrepancy between college students' self-reported and perceived LLM usage and that of their friends can be explained by a number of plausible factors:",0,,
 1,0,0,0,0,0,0,0.0,0,0.0,0,0,wide,22,,
 1,0,0,0,0,0,0,0.0,0,0.0,0,0,Maybe they think their friends don't use them.,12,,
 1,0,0,0,0,0,0,0.0,0,0.0,0,0,I am not sure maybe people think they use them more then other people.,4,,
@@ -46,19 +46,17 @@ uninformative,SDB,overest_others,underest_own,academic_integrity,info_asymmetry,
 0,1,1,1,1,1,0,0.0,0,1.0,0,0,"I think its social bias- students might downplay or be hesitant to confirm how much or the extent to which they use LLMs due to fear of being judged as being dishonest or lazy.",56,,
 0,1,0,0,1,0,0,0.0,0,1.0,0,0,"I think there is a stigma attached to the usage of LLMs, particularly for school.",53,,
 0,1,0,1,0,0,0,0.0,1,1.0,0,0,People don't want to self report that they use it a lot and make themselves look bad because they rely on it.,41,,
-0,1,1,1,0,1,1,0.0,1,1.0,0,0,"The gap likely stems from social perception biases. Students probably understate their use of LLMs because they want to appear self-sufficient yet they misjudge their classmates' utilization by what they overhear or believe to be true. Student tracking of their AI usage can differ from their assessment of other peers because of mistaken evaluations.
-",60,,
+0,1,1,1,0,1,1,0.0,1,1.0,0,0,"The gap likely stems from social perception biases. Students probably understate their use of LLMs because they want to appear self-sufficient yet they misjudge their classmates' utilization by what they overhear or believe to be true. Student tracking of their AI usage can differ from their assessment of other peers because of mistaken evaluations.",60,,
 0,1,0,0,1,0,0,,0,,0,0,People don't want to admit they use LLMs because it is typically frowned upon to use them,45,0.0,1.0
 0,1,0,1,0,0,0,0.0,1,1.0,0,0,"They think that by excluding themselves from the question, they will seem more intelligent or focused with their studies.",42,,
-0,1,0,0,0,0,0,0,0,1,0,0,Some don’t want to admit using LLMs,33
+0,1,0,0,0,0,0,0,0,1,0,0,Some don’t want to admit using LLMs,33,,
 0,1,0,0,0,0,0,0,0,1,0,0,Well i feel a lot of people may not want to tell people how much they depend on LLMs because it might seem as though they don't task their brain to think,44
-0,1,1,0,1,1,1,0,0,1,0,0,"The disparity is most likely caused by social desirability bias, in which students underreport their own LLM usage to look more academically honest, while overestimating their peers' use due to asymmetric perception bias.  Furthermore, students may mistake their awareness of LLM debates or availability for actual usage, distorting their views of others' conduct.  This mismatch demonstrates how individuals frequently misunderstand group standards in relation to their own behavior.",57
-0,1,0,0,1,0,0,0,0,0,0,0,"The prospect of getting caught. For most schools, getting caught using AI for homework can get students expelled from their program at school.",63
-0,1,0,1,1,0,0,0,0,1,0,0,I'd assume that's because they don't want to appear as though they are trying to cheat or get ahead somehow by using AI while attending college as well as not wanting to look less credible or knowledgeable to their professors or fellow students,50
-0,1,1,1,0,1,0,0,0,1,0,0,"The gap likely comes from social desirability bias—students may underreport their own use of LLMs to appear more independent while assuming others rely on them more. Additionally, perception gaps cause students to misjudge their peers' behavior based on assumptions rather than direct knowledge.
-",59
-0,0,0,0,0,1,0,0,0,0,0,0,I think it's hard to know how much friends use LLMs.,70
-0,0,0,0,0,1,0,0,0,0,0,0,I guess they simply don't know much about what their friends do on the daily basis or how much their friends use LLMs to be exact.,66
+0,1,1,0,1,1,1,0,0,1,0,0,"The disparity is most likely caused by social desirability bias, in which students underreport their own LLM usage to look more academically honest, while overestimating their peers' use due to asymmetric perception bias.  Furthermore, students may mistake their awareness of LLM debates or availability for actual usage, distorting their views of others' conduct.  This mismatch demonstrates how individuals frequently misunderstand group standards in relation to their own behavior.",57,,
+0,1,0,0,1,0,0,0,0,0,0,0,"The prospect of getting caught. For most schools, getting caught using AI for homework can get students expelled from their program at school.",63,,
+0,1,0,1,1,0,0,0,0,1,0,0,I'd assume that's because they don't want to appear as though they are trying to cheat or get ahead somehow by using AI while attending college as well as not wanting to look less credible or knowledgeable to their professors or fellow students,50,,
+0,1,1,1,0,1,0,0,0,1,0,0,"The gap likely comes from social desirability bias—students may underreport their own use of LLMs to appear more independent while assuming others rely on them more. Additionally, perception gaps cause students to misjudge their peers' behavior based on assumptions rather than direct knowledge.",59,,
+0,0,0,0,0,1,0,0,0,0,0,0,I think it's hard to know how much friends use LLMs.,70,,
+0,0,0,0,0,1,0,0,0,0,0,0,I guess they simply don't know much about what their friends do on the daily basis or how much their friends use LLMs to be exact.,66,,
 0,1,0,0,1,0,0,0,0,1,0,0,The use of AI has often been deemed as cheating and that it encourages laziness. That has made individuals to not want to disclose fully their use of AI due to possible stigmatization. The same individuals won't have a problem reporting how their friends use the AI.,52
 0,1,1,0,0,0,0,0,0,1,0,0,The most likely explanation for this gap is social desirability bias students may underreport their own use of LLMs to avoid appearing overly dependent on AI while assuming their peers use them more freely.,58
 0,1,0,0,1,0,0,0.0,0,1.0,0,0,"I think the most likely explanation for this gap is social choice bias. Students might not report using LLM if they think that academic organizations look down on it, but their friends may not care as much about this reputation.",54,,
@@ -71,16 +69,16 @@ uninformative,SDB,overest_others,underest_own,academic_integrity,info_asymmetry,
 0,0,0,0,0,1,0,0.0,0,0.0,0,0,No knowledge of their friends using LLMs so therefore they truly do not know,71,,
 0,0,0,0,0,1,0,0.0,0,0.0,0,0,Lack of communication.,67,,
 0,1,0,0,0,0,0,0.0,1,1.0,0,0,"Probably a sense of denial and underlying embarrassment for utilizing these tools because it suggests that their own work is not up-to-par with the professional levels needed to produce such work, and that they as students may not be as well adept, intelligent and skilled/talented as previously assumed because they have used/needed to use these tools.",62,,
-0,0,1,0,0,1,0,0,0,0,0,0,"I guess the gap could be because we don't see each other use LLMs, we have to speculate, and we are more likely to speculate radically than moderately.",85
-0,0,0,0,0,1,0,0,0,0,1,0,"They probably underestimate how much their friends use LLMs. I know for a fact I don't really talk about usage with them, though sometimes we joke around about using AI. That's where my assumptions derive from.",64
-0,1,0,0,0,1,0,0,0,1,0,0,Sometimes their friends can lie,72
-0,1,0,0,1,0,0,0,0,0,0,0,Students might underreport their own use of LLMs because they don't want to seem lazy or dishonest.,49
-0,1,0,0,0,1,0,0,0,0,0,0,i think so the most likely explanation is that people dont disclose with others of how much they rely on AI,69
-0,0,0,0,0,1,0,0,0,0,0,0,We are bad at predicting how little or much our friends use it.,84
-0,1,0,0,0,1,0,0,0,0,0,0,I think it is because people do not talk about how much they use LLMs since there is still somewhat of a stigma with using it.,74
-0,0,0,0,0,0,0,0,0,0,1,0,Certain friend groups have more of use of LLM than others,77
-0,0,0,0,0,0,0,0,0,0,0,1,The people taking the surveys don't use AI as much as the people that they know do,89
-1,0,0,0,0,0,0,0,0,0,0,0,I think it's just the difference between expectations and reality.,76
+0,0,1,0,0,1,0,0,0,0,0,0,"I guess the gap could be because we don't see each other use LLMs, we have to speculate, and we are more likely to speculate radically than moderately.",85,,
+0,0,0,0,0,1,0,0,0,0,1,0,"They probably underestimate how much their friends use LLMs. I know for a fact I don't really talk about usage with them, though sometimes we joke around about using AI. That's where my assumptions derive from.",64,,
+0,1,0,0,0,1,0,0,0,1,0,0,Sometimes their friends can lie,72,,
+0,1,0,0,1,0,0,0,0,0,0,0,Students might underreport their own use of LLMs because they don't want to seem lazy or dishonest.,49,,
+0,1,0,0,0,1,0,0,0,0,0,0,i think so the most likely explanation is that people dont disclose with others of how much they rely on AI,69,,
+0,0,0,0,0,1,0,0,0,0,0,0,We are bad at predicting how little or much our friends use it.,84,,
+0,1,0,0,0,1,0,0,0,0,0,0,I think it is because people do not talk about how much they use LLMs since there is still somewhat of a stigma with using it.,74,,
+0,0,0,0,0,0,0,0,0,0,1,0,Certain friend groups have more of use of LLM than others,77,,
+0,0,0,0,0,0,0,0,0,0,0,1,The people taking the surveys don't use AI as much as the people that they know do,89,,
+1,0,0,0,0,0,0,0,0,0,0,0,I think it's just the difference between expectations and reality.,76,,
 0,0,0,1,0,0,0,0.0,1,1.0,0,0,Protecting their self-esteem by disguising their true ai usage by marginally reporting their peer's usage.,86,,
 0,0,1,0,0,0,0,0.0,0,0.0,0,0,Overestimating Peer Usage,81,,
 0,0,1,0,0,0,1,0.0,0,0.0,0,0,It is likely due to how much people talk about AI nowadays. Along with it mostly being used by high school and college students.,82,,

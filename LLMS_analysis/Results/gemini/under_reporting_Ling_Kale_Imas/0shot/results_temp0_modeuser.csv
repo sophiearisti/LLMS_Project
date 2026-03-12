@@ -38,17 +38,16 @@ uninformative,SDB,overest_others,underest_own,academic_integrity,info_asymmetry,
 0,1,0,0,1,0,0,0.0,0,1.0,0,0,"They don't want to seem like they are using LLMs to help with their school assignments, especially writing assignments.",34,,
 0,1,0,0,0,0,0,0.0,1,0.0,0,0,People are embarassed,40,,
 0,1,0,0,0,0,0,0.0,0,0.0,0,0,Students probably don't like admitting to it.,39,,
-0,1,0,0,0,0,0,0.0,0,0.0,0,0,No one wants to admit it,38,,,
-0,1,0,0,0,0,0,,0,,0,0,Some don’t want to admit using LLMs,33,0.0,1.0,
-0,1,1,1,1,1,0,0.0,0,1.0,0,1,"I think its social bias- students might downplay or be hesitant to confirm how much or the extent to which they use LLMs due to fear of being judged as being dishonest or lazy.
-Some students might not be using or rarely uses  LLMs but believe everyone else is using them out of rumour and take it as the norm",56,,,
-0,1,0,1,0,0,0,0.0,1,,0,0,"They think that by excluding themselves from the question, they will seem more intelligent or focused with their studies.",42,,,1.0
-0,1,0,0,0,0,0,0.0,0,1.0,0,0,Well i feel a lot of people may not want to tell people how much they depend on LLMs because it might seem as though they don't task their brain to think,44,,,
-0,1,0,0,1,0,0,0.0,0,0.0,0,0,They are afraid of what people may think or they may feel like someone would view them as cheating.,47,,,
-0,1,1,1,0,0,1,,0,,0,0,The gap likely stems from social desirability bias. Students underreport their own LLM use due to stigma while overestimating peers' usage. The availability heuristic also plays a role; hearing about classmates using LLMs makes it seem widespread. Different interpretations of “use” further contribute to the discrepancy.,46,0.0,1.0,
-0,1,0,0,1,0,0,0.0,0,0.0,0,0,People don't want to admit they use LLMs because it is typically frowned upon to use them,45,,,
-0,1,0,1,0,0,0,0.0,0,1.0,0,0,Maybe they don't want to admit that they are as reliant on LLMs as their friends are.,43,,,
-0,1,1,1,1,0,1,0.0,0,1.0,0,0,"Some students might downplay their own use of LLMs due to concerns about academic integrity or stigma around relying on AI for assignments. And again Students might assume their friends use LLMs more frequently because AI generated content is widespread, and discussions about AI tools are common.",55,,,
+0,1,0,0,0,0,0,0.0,0,0.0,0,0,No one wants to admit it,38,,
+0,1,0,0,0,0,0,,0,,0,0,Some don’t want to admit using LLMs,33,0.0,1.0
+0,1,1,1,1,1,0,0.0,0,1.0,0,1,"I think its social bias- students might downplay or be hesitant to confirm how much or the extent to which they use LLMs due to fear of being judged as being dishonest or lazy.Some students might not be using or rarely uses  LLMs but believe everyone else is using them out of rumour and take it as the norm",56,,
+0,1,0,1,0,0,0,0.0,1,,0,0,"They think that by excluding themselves from the question, they will seem more intelligent or focused with their studies.",42,,1.0
+0,1,0,0,0,0,0,0.0,0,1.0,0,0,Well i feel a lot of people may not want to tell people how much they depend on LLMs because it might seem as though they don't task their brain to think,44,,
+0,1,0,0,1,0,0,0.0,0,0.0,0,0,They are afraid of what people may think or they may feel like someone would view them as cheating.,47,,
+0,1,1,1,0,0,1,,0,,0,0,The gap likely stems from social desirability bias. Students underreport their own LLM use due to stigma while overestimating peers' usage. The availability heuristic also plays a role; hearing about classmates using LLMs makes it seem widespread. Different interpretations of “use” further contribute to the discrepancy.,46,0.0,1.0
+0,1,0,0,1,0,0,0.0,0,0.0,0,0,People don't want to admit they use LLMs because it is typically frowned upon to use them,45,,
+0,1,0,1,0,0,0,0.0,0,1.0,0,0,Maybe they don't want to admit that they are as reliant on LLMs as their friends are.,43,,
+0,1,1,1,1,0,1,0.0,0,1.0,0,0,"Some students might downplay their own use of LLMs due to concerns about academic integrity or stigma around relying on AI for assignments. And again Students might assume their friends use LLMs more frequently because AI generated content is widespread, and discussions about AI tools are common.",55,,
 0,1,0,0,1,0,0,0.0,0,0.0,0,0,The use of AI has often been deemed as cheating and that it encourages laziness. That has made individuals to not want to disclose fully their use of AI due to possible stigmatization. The same individuals won't have a problem reporting how their friends use the AI.,52,,
 0,1,0,0,1,0,0,,0,,0,0,Students might underreport their own use of LLMs because they don't want to seem lazy or dishonest.,49,0.0,1.0
 0,1,0,0,1,0,0,,0,,0,0,"I think there is a stigma attached to the usage of LLMs, particularly for school.",53,0.0,0.0
@@ -56,12 +55,10 @@ Some students might not be using or rarely uses  LLMs but believe everyone else 
 0,1,0,0,1,0,0,0.0,0,0.0,0,0,I'd assume that's because they don't want to appear as though they are trying to cheat or get ahead somehow by using AI while attending college as well as not wanting to look less credible or knowledgeable to their professors or fellow students,50,,
 0,1,0,0,1,0,0,,0,,0,0,They don't want to be accused of cheating.,51,0.0,0.0
 0,1,1,0,0,0,0,,0,,0,0,The most likely explanation for this gap is social desirability bias students may underreport their own use of LLMs to avoid appearing overly dependent on AI while assuming their peers use them more freely.,58,0.0,1.0
-0,1,1,1,0,1,1,0.0,1,1.0,0,0,"The gap likely stems from social perception biases. Students probably understate their use of LLMs because they want to appear self-sufficient yet they misjudge their classmates' utilization by what they overhear or believe to be true. Student tracking of their AI usage can differ from their assessment of other peers because of mistaken evaluations.
-",60,,
+0,1,1,1,0,1,1,0.0,1,1.0,0,0,"The gap likely stems from social perception biases. Students probably understate their use of LLMs because they want to appear self-sufficient yet they misjudge their classmates' utilization by what they overhear or believe to be true. Student tracking of their AI usage can differ from their assessment of other peers because of mistaken evaluations",60,,
 0,1,0,0,1,0,0,0.0,0,1.0,0,0,"I think the most likely explanation for this gap is social choice bias. Students might not report using LLM if they think that academic organizations look down on it, but their friends may not care as much about this reputation.",54,,
 0,1,1,0,1,1,1,,0,,0,0,"The disparity is most likely caused by social desirability bias, in which students underreport their own LLM usage to look more academically honest, while overestimating their peers' use due to asymmetric perception bias.  Furthermore, students may mistake their awareness of LLM debates or availability for actual usage, distorting their views of others' conduct.  This mismatch demonstrates how individuals frequently misunderstand group standards in relation to their own behavior.",57,0.0,1.0
-0,1,1,0,0,1,0,0.0,0,1.0,0,0,"The gap likely comes from social desirability bias—students may underreport their own use of LLMs to appear more independent while assuming others rely on them more. Additionally perception gaps cause students to misjudge their peers' behavior based on assumptions rather than direct knowledge.
-",59,,
+0,1,1,0,0,1,0,0.0,0,1.0,0,0,"The gap likely comes from social desirability bias—students may underreport their own use of LLMs to appear more independent while assuming others rely on them more. Additionally perception gaps cause students to misjudge their peers' behavior based on assumptions rather than direct knowledge.",59,,
 0,1,1,0,0,1,0,1.0,0,0.0,0,0,"the gap could be explained by a combination of personal privacy, social perceptions, and varied usage patterns that don't always match what students expect of their peers.",61,,
 0,1,0,1,0,0,0,0.0,1,1.0,0,0,"Probably a sense of denial and underlying embarrassment for utilizing these tools because it suggests that their own work is not up-to-par with the professional levels needed to produce such work, and that they as students may not be as well adept, intelligent and skilled/talented as previously assumed because they have used/needed to use these tools.",62,,
 0,1,0,0,1,0,0,0.0,0,0.0,0,0,"The prospect of getting caught. For most schools, getting caught using AI for homework can get students expelled from their program at school.",63,,

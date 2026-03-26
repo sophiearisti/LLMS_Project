@@ -35,3 +35,4 @@ REAL_ANSWERS_FILE = "real_answers.csv"
 load_dotenv()  # load from .env file
 OAI_2 = os.getenv("OAI_2")
 GEMINI = os.getenv("GEMINI")
+CLAUDE = os.getenv("CLAUDE")

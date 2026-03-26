@@ -22,6 +22,8 @@ llm_chatgpt = None
 
 llm_gemini = None
 
+llm_claude = None
+
 GEMINI_CATEGORY_MODEL = "gemini-3.1-pro-preview"
 GEMINI_CLASSIFY_MODEL = "gemini-3-flash-preview"
 GEMINI_WORKERS = 20
@@ -29,7 +31,7 @@ GEMINI_WORKERS = 20
 # Selected models (updated at runtime via seleccionar_llm)
 SELECTED_CHATGPT_MODEL = "gpt-5.2"
 SELECTED_GEMINI_MODEL = "gemini-3-flash-preview"
-
+SELECTED_CLAUDE_MODEL = "XXXXXX"
 
 def write_rows_to_csv(output_path, rows):
     if not rows:
@@ -210,15 +212,19 @@ def obtener_categorizacion_llm(prompt, paper, llm, strategy_folder):
             for mode in modes:
 
                 out_file = f"results_line_temp{temp}_mode{mode}.csv"
+                
                 LLM = "gemini" if llm == "gemini" else "gpt"
+                
                 output_path = os.path.join(
                     RESULTS_PATH, LLM, PAPER_PATHS[int(paper)], strategy_folder, out_file
                 )
+                
                 os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
                 # ---------- CHECKPOINT ----------
                 if os.path.exists(output_path):
                     existing_df = pd.read_csv(output_path)
+                    
                     if "row_id" in existing_df.columns:
                         processed_ids = set(existing_df["row_id"].tolist())
                         print(f"Resuming execution. {len(processed_ids)} rows already processed.")
@@ -309,9 +315,11 @@ def obtener_categorizacion_llm(prompt, paper, llm, strategy_folder):
 
                 print(f"✔ Results saved at {output_path}")
 
+
     # ==========================================================
     # ========================= GROUP MODE =====================
     # ==========================================================
+    
     else:
 
         group_sizes = []
@@ -345,13 +353,13 @@ def obtener_categorizacion_llm(prompt, paper, llm, strategy_folder):
                     existing_df = pd.read_csv(output_path)
                     if "group_id" in existing_df.columns:
                         processed_ids = set(existing_df["group_id"].tolist())
-                        print(f"🔄 Resuming execution. {len(processed_ids)} groups already processed.")
+                        print(f" Resuming execution. {len(processed_ids)} groups already processed.")
                     else:
                         processed_ids = set()
                         print("⚠ Existing results file has no group_id column. Starting from scratch for group mode.")
                 else:
                     processed_ids = set()
-                    print("🆕 New results file.")
+                    print(" New results file.")
 
                 start_idx = 0
                 group_counter = 0
@@ -414,7 +422,7 @@ def obtener_categorizacion_llm(prompt, paper, llm, strategy_folder):
                                 )
 
                         except KeyboardInterrupt:
-                            print("\n⛔ Manually interrupted. Progress saved.")
+                            print("\n Manually interrupted. Progress saved.")
                             sys.exit()
 
                         except Exception as e:

@@ -57,16 +57,14 @@ CLAUDE=your-anthropic-claude-api-key
 Install required packages:
 
 ```bash
-pip install anthropic langchain-openai google-generativeai pandas tqdm
+pip install anthropic langchain-openai google-generativeai pandas tqdm matplotlib scikit-learn python-dotenv
 ```
 
 ### 3. File Configuration
 
-Edit `utils.py` to configure:
-- Paper folder paths (FIRST_PAPER, SECOND_PAPER, etc.)
-- Data paths
-- Prompt paths
-- Results directory paths
+Path handling is already configured in `utils.py` using project-relative absolute paths.
+
+You normally do not need to edit paths manually unless your project layout changes.
 
 ## Usage
 
@@ -118,10 +116,13 @@ The interactive menu provides options to:
 - Best for: Cost-efficient processing of large datasets
 - Features:
   - Automatic polling every 30 seconds
-  - Resumable execution (checkpoint-based)
+   - Resumable execution (checkpoint-based)
+   - In-progress batch tracking (`Results/claude/batch_status.json`)
+   - Per-temperature decision prompt: skip, continue pending, or rerun
   - Prompt caching on system message
   - ~50% reduction in input token costs
   - Automatic result streaming
+   - Anthropic-safe request IDs for all temperatures
 
 ### Temperature Selection
 
@@ -131,6 +132,10 @@ Choose one or all temperatures:
 - `0.5`: Moderate variation
 - `1.0`: Standard randomness
 - `1.2`: High variation
+
+Note for Claude:
+- Claude supports temperature range `0..1`.
+- If `1.2` is selected, it is automatically skipped for Claude runs.
 
 ## Output Files
 
@@ -165,6 +170,7 @@ Each result file contains:
 - All modes track processed rows/groups
 - Resume interrupted runs without reprocessing
 - Row/group IDs tracked in output CSV
+- Claude batch mode also checks already-existing output files (line and batch) before creating new requests.
 
 ### Error Handling
 - Keyboard interrupt (Ctrl+C) saves progress automatically
@@ -189,11 +195,14 @@ After classification, analyze results:
 python metrics_analysis.py
 ```
 
-This generates metrics and visualizations for:
-- Classification distribution
-- Agreement between LLMs
-- Performance by strategy
-- Cost analysis
+Current behavior:
+- Scans `Results/gpt`, `Results/gemini`, and `Results/claude`
+- Auto-detects file patterns from multiple modes:
+   - `results_temp{T}_mode{mode}.csv`
+   - `results_line_temp{T}_mode{mode}.csv`
+   - `results_group_temp{T}_mode{mode}.csv`
+   - `results_line_batch_temp{T}_mode{mode}.csv`
+- Writes per-run metric tables and PNG summaries into the same strategy folder.
 
 ## Troubleshooting
 
@@ -205,6 +214,16 @@ This generates metrics and visualizations for:
 - Check network connection
 - Batch polling continues every 30 seconds
 - Maximum wait typically 5-15 minutes depending on dataset size
+- Use Anthropic Console (`console.anthropic.com -> Batches`) to inspect per-request status.
+- If rerunning while a batch is already in progress, the script reuses/polls the tracked batch instead of duplicating it.
+
+### Claude Batch Validation Errors
+- Error: `temperature: range: 0..1`
+   - Cause: invalid temperature (e.g., `1.2`) for Claude
+   - Fix: choose `0, 0.1, 0.5, 1` (the script also auto-skips invalid Claude temperatures)
+- Error: `custom_id ... should match pattern '^[a-zA-Z0-9_-]{1,64}$'`
+   - Cause: invalid custom_id characters
+   - Fix: handled by script via safe custom_id formatting
 
 ### Memory Issues with Large Batches
 - Reduce batch size by selecting fewer rows

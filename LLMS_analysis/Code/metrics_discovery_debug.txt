@@ -1,0 +1,3 @@
+path=../Results/claude\trust_promises_Ederer_Schneider/0shot
+files=['results_line_batch_temp0.1_modeuser.csv', 'results_line_batch_temp0.5_modeuser.csv', 'results_line_batch_temp1_modeuser.csv', 'results_line_temp0_modeuser.csv']
+matched=[]

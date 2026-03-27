@@ -8,7 +8,13 @@ from utils import *
 import pandas as pd
 import os
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
+
+try:
+    import anthropic
+except ImportError:
+    anthropic = None
 
 # Global dictionary
 PAPER_PATHS = {
@@ -26,12 +32,14 @@ llm_claude = None
 
 GEMINI_CATEGORY_MODEL = "gemini-3.1-pro-preview"
 GEMINI_CLASSIFY_MODEL = "gemini-3-flash-preview"
+CLAUDE_CATEGORY_MODEL = "claude-opus-4-6"
 GEMINI_WORKERS = 20
+CLAUDE_MAX_TOKENS = 4096
 
 # Selected models (updated at runtime via seleccionar_llm)
 SELECTED_CHATGPT_MODEL = "gpt-5.2"
 SELECTED_GEMINI_MODEL = "gemini-3-flash-preview"
-SELECTED_CLAUDE_MODEL = "XXXXXX"
+SELECTED_CLAUDE_MODEL = "claude-sonnet-4-6"
 
 def write_rows_to_csv(output_path, rows):
     if not rows:
@@ -67,6 +75,40 @@ def get_gemini_client():
     return llm_gemini
 
 
+def get_claude_client():
+    global llm_claude
+    if llm_claude is None:
+        if not CLAUDE:
+            raise ValueError("Missing CLAUDE API key. Set CLAUDE in your .env file.")
+        if anthropic is None:
+            raise ImportError(
+                "Anthropic SDK is not installed. Run 'pip install anthropic'."
+            )
+        llm_claude = anthropic.Anthropic(api_key=CLAUDE)
+    return llm_claude
+
+
+def extract_claude_text(response):
+    """Extract text content from Claude response."""
+    if hasattr(response, 'content') and response.content:
+        text_blocks = []
+        for block in response.content:
+            if hasattr(block, 'type') and block.type == 'text':
+                text_blocks.append(block.text)
+        return "\\n".join(text_blocks) if text_blocks else ""
+    return ""
+
+
+def poll_batch_status(client, batch_id, poll_interval=30):
+    """Poll batch status until completion."""
+    while True:
+        batch = client.messages.batches.retrieve(batch_id)
+        if batch.processing_status == "ended":
+            return batch
+        print(f"Batch {batch_id} status: {batch.processing_status}. Waiting {poll_interval}s...")
+        time.sleep(poll_interval)
+
+
 def call_llm_for_message(base_prompt, message, temp, llm, mode="user"):
     if llm == "gemini":
         full_prompt = (
@@ -80,6 +122,29 @@ def call_llm_for_message(base_prompt, message, temp, llm, mode="user"):
             config=types.GenerateContentConfig(temperature=temp)
         )
         return response.text
+
+    if llm == "claude":
+        user_message = (
+            "Classify ONLY this message and return only a Python dictionary. "
+            "Do not add explanations.\n\n"
+            f"Message:\n{message}"
+        )
+        response = get_claude_client().messages.create(
+            model=SELECTED_CLAUDE_MODEL,
+            max_tokens=CLAUDE_MAX_TOKENS,
+            temperature=temp,
+            system=[
+                {
+                    "type": "text",
+                    "text": base_prompt,
+                    "cache_control": {"type": "ephemeral"},
+                }
+            ],
+            messages=[
+                {"role": "user", "content": user_message}
+            ],
+        )
+        return extract_claude_text(response)
 
     user_prompt = (
         "Classify ONLY this message and return only a Python dictionary. "
@@ -162,6 +227,29 @@ def obtener_categorias_llm(prompt, paper, llm):
                 
                 ans = response.text
                 
+            elif llm == "claude":
+                
+                if mode == "user":
+                    response = get_claude_client().messages.create(
+                        model=CLAUDE_CATEGORY_MODEL,
+                        max_tokens=CLAUDE_MAX_TOKENS,
+                        temperature=temp,
+                        system=[
+                            {
+                                "type": "text",
+                                "text": prompt,
+                                "cache_control": {"type": "ephemeral"},
+                            }
+                        ],
+                        messages=[
+                            {"role": "user", "content": full_prompt.replace(prompt, "")}
+                        ],
+                    )
+                    ans = extract_claude_text(response)
+                else:
+                    # Assistant mode not supported for Claude categories yet
+                    print("⚠ Assistant mode not supported for Claude. Using user mode instead.")
+                    
             else:
                 
                 if mode == "user":
@@ -201,7 +289,10 @@ def obtener_categorizacion_llm(prompt, paper, llm, strategy_folder):
     message_col = "message"
     df = df.dropna(subset=[message_col]).reset_index(drop=True)
 
-    read_mode = input("Read line by line (1) or in groups (2)? Enter 1 or 2: ")
+    if llm == "claude":
+        read_mode = input("Read line by line (1) or in groups (2) or batch mode (3)? Enter 1, 2, or 3: ")
+    else:
+        read_mode = input("Read line by line (1) or in groups (2)? Enter 1 or 2: ")
 
     # ==========================================================
     # ========================= LINE BY LINE ===================
@@ -213,7 +304,7 @@ def obtener_categorizacion_llm(prompt, paper, llm, strategy_folder):
 
                 out_file = f"results_line_temp{temp}_mode{mode}.csv"
                 
-                LLM = "gemini" if llm == "gemini" else "gpt"
+                LLM = "gemini" if llm == "gemini" else ("claude" if llm == "claude" else "gpt")
                 
                 output_path = os.path.join(
                     RESULTS_PATH, LLM, PAPER_PATHS[int(paper)], strategy_folder, out_file
@@ -288,7 +379,7 @@ def obtener_categorizacion_llm(prompt, paper, llm, strategy_folder):
                     for idx, message in tqdm(
                         pending_rows,
                         total=len(pending_rows),
-                        desc=f"[Line][GPT] Temp {temp}, Mode {mode}"
+                        desc=f"[Line][{'Claude' if llm == 'claude' else 'GPT'}] Temp {temp}, Mode {mode}"
                     ):
                         try:
                             ans = call_llm_for_message(prompt, message, temp, llm, mode)
@@ -317,6 +408,104 @@ def obtener_categorizacion_llm(prompt, paper, llm, strategy_folder):
 
 
     # ==========================================================
+    # ===================== CLAUDE BATCH MODE ==================
+    # ==========================================================
+    elif read_mode == "3" and llm == "claude":
+        print(f"\n--- Claude Batch API Mode ---\n")
+
+        for temp in temps:
+            out_file = f"results_line_batch_temp{temp}_mode{modes[0]}.csv"
+            output_path = os.path.join(
+                RESULTS_PATH, "claude", PAPER_PATHS[int(paper)], strategy_folder, out_file
+            )
+            os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+            if os.path.exists(output_path):
+                existing_df = pd.read_csv(output_path)
+                if "row_id" in existing_df.columns:
+                    processed_ids = set(existing_df["row_id"].tolist())
+                    print(f"Resuming batch. {len(processed_ids)} rows already processed.")
+                else:
+                    processed_ids = set()
+                    print("⚠ Starting batch from scratch.")
+            else:
+                processed_ids = set()
+                print("New batch file.")
+
+            pending_rows = [
+                (idx, row[message_col])
+                for idx, row in df.iterrows()
+                if idx not in processed_ids
+            ]
+
+            if not pending_rows:
+                print(f"No pending rows for temp {temp}. Skipping batch.")
+                continue
+
+            print(f"Preparing batch with {len(pending_rows)} rows (Temp {temp})...")
+
+            batch_requests = []
+            row_id_map = {}  # Map custom_id (string) to (idx, message)
+            
+            for i, (idx, message) in enumerate(pending_rows):
+                custom_id = str(i)
+                row_id_map[custom_id] = (idx, message)
+                
+                user_message = (
+                    "Classify ONLY this message and return only a Python dictionary. "
+                    "Do not add explanations.\n\n"
+                    f"Message:\n{message}"
+                )
+                req = anthropic.types.MessageCreateParamsNonStreaming(
+                    model=SELECTED_CLAUDE_MODEL,
+                    max_tokens=CLAUDE_MAX_TOKENS,
+                    temperature=temp,
+                    system=[
+                        {
+                            "type": "text",
+                            "text": prompt,
+                            "cache_control": {"type": "ephemeral"},
+                        }
+                    ],
+                    messages=[
+                        {"role": "user", "content": user_message}
+                    ],
+                )
+                batch_requests.append(req)
+
+            print(f"Submitting batch with {len(batch_requests)} requests...")
+            batch = get_claude_client().messages.batches.create(requests=batch_requests)
+            print(f"Batch created: {batch.id}")
+
+            batch = poll_batch_status(get_claude_client(), batch.id)
+            print(f"Batch {batch.id} completed.")
+
+            rows_buffer = []
+            for result in get_claude_client().messages.batches.results(batch.id):
+                try:
+                    if result.result.type == "succeeded":
+                        custom_id = result.custom_id
+                        idx, message = row_id_map[custom_id]
+                        ans = extract_claude_text(result.result.message)
+                        parsed = parse_llm_dict(ans)
+                        parsed["original_message"] = message
+                        parsed["row_id"] = idx
+                        rows_buffer.append(parsed)
+
+                        if len(rows_buffer) >= 10:
+                            write_rows_to_csv(output_path, rows_buffer)
+                            rows_buffer = []
+                    else:
+                        print(f"⚠ Result {result.custom_id} failed: {result.result.error}")
+                except Exception as e:
+                    print(f"⚠ Error processing batch result: {e}")
+
+            write_rows_to_csv(output_path, rows_buffer)
+            print(f"✔ Batch results saved at {output_path}")
+
+    elif read_mode == "3" and llm != "claude":
+        print("⚠ Batch mode is only available for Claude. Skipping.")
+        return
     # ========================= GROUP MODE =====================
     # ==========================================================
     
@@ -342,7 +531,7 @@ def obtener_categorizacion_llm(prompt, paper, llm, strategy_folder):
             for mode in modes:
 
                 out_file = f"results_group_temp{temp}_mode{mode}.csv"
-                LLM = "gemini" if llm == "gemini" else "gpt"
+                LLM = "gemini" if llm == "gemini" else ("claude" if llm == "claude" else "gpt")
                 output_path = os.path.join(
                     RESULTS_PATH, LLM, PAPER_PATHS[int(paper)], strategy_folder, out_file
                 )
@@ -404,6 +593,23 @@ def obtener_categorizacion_llm(prompt, paper, llm, strategy_folder):
                                     config=types.GenerateContentConfig(temperature=temp)
                                 )
                                 ans = response.text
+                            elif llm == "claude":
+                                response = get_claude_client().messages.create(
+                                    model=SELECTED_CLAUDE_MODEL,
+                                    max_tokens=CLAUDE_MAX_TOKENS,
+                                    temperature=temp,
+                                    system=[
+                                        {
+                                            "type": "text",
+                                            "text": prompt,
+                                            "cache_control": {"type": "ephemeral"},
+                                        }
+                                    ],
+                                    messages=[
+                                        {"role": "user", "content": full_prompt.replace(prompt, "")}
+                                    ],
+                                )
+                                ans = extract_claude_text(response)
                             else:
                                 response = get_chatgpt_client().invoke(full_prompt, temperature=temp)
                                 ans = response.content
@@ -583,7 +789,7 @@ def menu_asignacion_pos_categorizacion(paper):
             print("Invalid option.")
 
 def seleccionar_llm():
-    global SELECTED_CHATGPT_MODEL, SELECTED_GEMINI_MODEL, llm_chatgpt
+    global SELECTED_CHATGPT_MODEL, SELECTED_GEMINI_MODEL, SELECTED_CLAUDE_MODEL, llm_chatgpt, llm_claude
 
     CHATGPT_MODELS = {
         "1": "gpt-5.2",
@@ -597,12 +803,18 @@ def seleccionar_llm():
         "3": "gemini-3-flash-preview",
         "4": "gemini-3-pro-preview",
     }
+    CLAUDE_MODELS = {
+        "1": "claude-opus-4-6",
+        "2": "claude-sonnet-4-6",
+        "3": "claude-haiku-4-5-20251001",
+    }
 
     while True:
-        print(f"\n--- Select LLM  [recommended: ChatGPT/{SELECTED_CHATGPT_MODEL}  |  Gemini/{SELECTED_GEMINI_MODEL}] ---")
+        print(f"\n--- Select LLM  [recommended: ChatGPT/{SELECTED_CHATGPT_MODEL}  |  Gemini/{SELECTED_GEMINI_MODEL}  |  Claude/{SELECTED_CLAUDE_MODEL}] ---")
         print("1. ChatGPT")
         print("2. Gemini")
-        print("3. Go back")
+        print("3. Claude")
+        print("4. Go back")
 
         opcion = input("Choose an option: ")
 
@@ -634,6 +846,20 @@ def seleccionar_llm():
             return "gemini"
 
         elif opcion == "3":
+            print("\n--- Select Claude model ---")
+            for k, v in CLAUDE_MODELS.items():
+                marker = " ◀ recommended" if v == SELECTED_CLAUDE_MODEL else ""
+                print(f"{k}. {v}{marker}")
+            model_op = input("Choose a model: ").strip()
+            if model_op in CLAUDE_MODELS:
+                SELECTED_CLAUDE_MODEL = CLAUDE_MODELS[model_op]
+            else:
+                print(f"Invalid option. Recommended model will be used: {SELECTED_CLAUDE_MODEL}")
+            llm_claude = None  # force client to reinitialize with new model
+            print(f"Selected model: {SELECTED_CLAUDE_MODEL}")
+            return "claude"
+
+        elif opcion == "4":
             return None
 
         else:

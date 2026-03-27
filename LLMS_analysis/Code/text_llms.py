@@ -542,6 +542,9 @@ def obtener_categorizacion_llm(prompt, paper, llm, strategy_folder):
     elif read_mode == "3" and llm == "claude":
         print(f"\n--- Claude Batch API Mode ---\n")
 
+        client = get_claude_client()
+        active_batches = {}
+
         for temp in temps:
             out_file = f"results_line_batch_temp{temp}_mode{modes[0]}.csv"
             output_path = os.path.join(
@@ -627,7 +630,7 @@ def obtener_categorizacion_llm(prompt, paper, llm, strategy_folder):
                     batch_requests.append(req)
                 
                 print(f"Submitting batch with {len(batch_requests)} requests...")
-                batch_obj = get_claude_client().messages.batches.create(requests=batch_requests)
+                batch_obj = client.messages.batches.create(requests=batch_requests)
                 batch_id = batch_obj.id
                 print(f"Batch created: {batch_id}")
                 print("Tip: Go to console.anthropic.com → Batches to see live progress, status, and estimated completion time.")
@@ -641,50 +644,84 @@ def obtener_categorizacion_llm(prompt, paper, llm, strategy_folder):
                     "strategy": strategy_folder
                 }
                 save_batch_status(batches)
-            
-            # Poll batch (whether new or existing)
-            batch = poll_batch_status(get_claude_client(), batch_id)
-            print(f"Batch {batch.id} completed.")
 
-            rows_buffer = []
-            succeeded_count = 0
-            errored_count = 0
-            for result in get_claude_client().messages.batches.results(batch.id):
-                try:
-                    if result.result.type == "succeeded":
-                        custom_id = result.custom_id
-                        idx, message = row_id_map[custom_id]
-                        ans = extract_claude_text(result.result.message)
-                        parsed = parse_llm_dict(ans)
-                        parsed["original_message"] = message
-                        parsed["row_id"] = idx
-                        rows_buffer.append(parsed)
-                        succeeded_count += 1
+            active_batches[temp] = {
+                "batch_id": batch_id,
+                "output_path": output_path,
+                "row_id_map": row_id_map,
+            }
 
-                        if len(rows_buffer) >= 10:
-                            write_rows_to_csv(output_path, rows_buffer)
-                            rows_buffer = []
-                    else:
-                        errored_count += 1
-                        print(f"⚠ Result {result.custom_id} failed: {result.result.error}")
-                except Exception as e:
-                    errored_count += 1
-                    print(f"⚠ Error processing batch result: {e}")
+        if not active_batches:
+            print("No Claude batches to process.")
+            return
 
-            write_rows_to_csv(output_path, rows_buffer)
-            if succeeded_count > 0:
-                print(f"✔ Batch results saved at {output_path}")
-            else:
+        print(f"\nSubmitted/queued {len(active_batches)} batch(es). Polling all temperatures in parallel...\n")
+
+        while active_batches:
+            for temp in list(active_batches.keys()):
+                info = active_batches[temp]
+                batch = client.messages.batches.retrieve(info["batch_id"])
+                counts = batch.request_counts
                 print(
-                    f"⚠ No successful results saved for temp {temp}. "
-                    f"Succeeded: {succeeded_count}, Errored: {errored_count}."
+                    f"[Temp {temp}] [{batch.processing_status}] "
+                    f"succeeded: {counts.succeeded} | errored: {counts.errored} | processing: {counts.processing}"
                 )
-            
-            # Remove completed batch from tracker
-            batches = load_batch_status()
-            if f"{paper}_{strategy_folder}_{temp}" in batches:
-                del batches[f"{paper}_{strategy_folder}_{temp}"]
-                save_batch_status(batches)
+
+                if batch.processing_status != "ended":
+                    continue
+
+                print(f"Batch {batch.id} completed for temp {temp}.")
+                rows_buffer = []
+                succeeded_count = 0
+                errored_count = 0
+
+                for result in client.messages.batches.results(batch.id):
+                    try:
+                        if result.result.type == "succeeded":
+                            custom_id = result.custom_id
+                            if custom_id not in info["row_id_map"]:
+                                errored_count += 1
+                                print(f"⚠ Unknown custom_id in results: {custom_id}")
+                                continue
+
+                            idx, message = info["row_id_map"][custom_id]
+                            ans = extract_claude_text(result.result.message)
+                            parsed = parse_llm_dict(ans)
+                            parsed["original_message"] = message
+                            parsed["row_id"] = idx
+                            rows_buffer.append(parsed)
+                            succeeded_count += 1
+
+                            if len(rows_buffer) >= 10:
+                                write_rows_to_csv(info["output_path"], rows_buffer)
+                                rows_buffer = []
+                        else:
+                            errored_count += 1
+                            print(f"⚠ Result {result.custom_id} failed: {result.result.error}")
+                    except Exception as e:
+                        errored_count += 1
+                        print(f"⚠ Error processing batch result: {e}")
+
+                write_rows_to_csv(info["output_path"], rows_buffer)
+
+                if succeeded_count > 0:
+                    print(f"✔ Batch results saved at {info['output_path']}")
+                else:
+                    print(
+                        f"⚠ No successful results saved for temp {temp}. "
+                        f"Succeeded: {succeeded_count}, Errored: {errored_count}."
+                    )
+
+                # Remove completed batch from tracker
+                batches = load_batch_status()
+                if f"{paper}_{strategy_folder}_{temp}" in batches:
+                    del batches[f"{paper}_{strategy_folder}_{temp}"]
+                    save_batch_status(batches)
+
+                del active_batches[temp]
+
+            if active_batches:
+                time.sleep(30)
 
     elif read_mode == "3" and llm != "claude":
         print("⚠ Batch mode is only available for Claude. Skipping.")

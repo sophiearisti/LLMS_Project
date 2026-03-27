@@ -56,7 +56,7 @@ PAPERS = {
     },
     4: {
         "path": FOURTH_PAPER,
-        "labels": ["uninformative", "SDB", "overest_others", "underest_own", "academic_integrity", "info_asymmetry", "AI_discussion_priming", "privacy_concerns", "self_steem", "self_report_bias", "networkeffect", "truthful"]
+        "labels": ["uninformative", "SDB", "overest_others", "underest_own", "academic_integrity", "info_asymmetry", "AI_discussion_priming", "privacy_concerns", "self_esteem", "self_report_bias", "network_effect", "truthful"]
     }
 }
 
@@ -71,6 +71,18 @@ def paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder
     real_df = pd.read_csv(real_answers_path)
     
     predicted_df = pd.read_csv(predicted_answers_path)
+
+    # Normalize known legacy/typo column variants in prediction files.
+    predicted_df.columns = [c.strip() for c in predicted_df.columns]
+    rename_map = {}
+    if "self_steem" in predicted_df.columns:
+        rename_map["self_steem"] = "self_esteem"
+    if "networkeffect" in predicted_df.columns:
+        rename_map["networkeffect"] = "network_effect"
+    if "self_report bias" in predicted_df.columns:
+        rename_map["self_report bias"] = "self_report_bias"
+    if rename_map:
+        predicted_df = predicted_df.rename(columns=rename_map)
     
     message_col = "message"
     

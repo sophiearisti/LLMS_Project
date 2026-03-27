@@ -75,6 +75,50 @@ cd LLMS_analysis/Code
 python text_llms.py
 ```
 
+### Quick Run Recipes
+
+#### Claude Batch + Metrics (Paper 3, 0shot)
+
+1. Start classification:
+
+```bash
+cd LLMS_analysis/Code
+python text_llms.py
+```
+
+2. In menus, choose:
+   - Paper: `3`
+   - Assignment strategy: `1` (Zero-Shot)
+   - LLM: `3` (Claude)
+   - Claude model: `2` (Sonnet, recommended)
+   - Temperatures: select one or `All`
+   - Read mode: `3` (Batch API)
+
+3. For each temperature prompt:
+   - If already complete: choose `s` (skip)
+   - If partially complete: choose `c` (continue pending)
+   - Use `r` (rerun) only if you want to recompute from scratch
+
+4. Claude-specific notes:
+   - Valid temperatures are `0, 0.1, 0.5, 1`
+   - `1.2` is auto-skipped for Claude
+   - In-progress batches are tracked in `Results/claude/batch_status.json`
+
+5. Run metrics after classification:
+
+```bash
+cd LLMS_analysis
+.venv\Scripts\python.exe Code\metrics_analysis.py
+```
+
+6. Check outputs in:
+   - Classification files:
+     - `Results/claude/{paper}/{strategy}/results_line_batch_temp{T}_modeuser.csv`
+     - `Results/claude/{paper}/{strategy}/results_line_temp{T}_modeuser.csv`
+   - Metrics files:
+     - `Results/claude/{paper}/{strategy}/results_paper_{paper_id}_temp{T}_modeuser_type{strategy}.csv`
+     - `Results/claude/{paper}/{strategy}/results_paper_{paper_id}_temp{T}_modeuser_type{strategy}.png`
+
 ### Menu Navigation
 
 The interactive menu provides options to:

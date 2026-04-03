@@ -11,7 +11,198 @@
         "under_reporting_Ling_Kale_Imas"
       )
     )
+
     
+    # ─────────────────────────────────────────────
+    # Parámetros del estudio
+    # ─────────────────────────────────────────────
+    
+    papers <- data.frame(
+      paper_number = c(1, 3, 4),
+      paper_name = c(
+        "managerial_leadership_Jordi_Cooper",
+        "trust_promises_Ederer_Schneider",
+        "under_reporting_Ling_Kale_Imas"
+      )
+    )
+    
+    shot_types   <- c("0shot", "fewshot")
+    metrics      <- c("accuracy", "cohen_kappa", "precision_0", "recall_0", "precision_1", "recall_1")
+    temperatures <- c(0, 0.1, 0.5, 1, 1.2)
+    llms         <- c("gpt", "gemini")
+    
+    # ─────────────────────────────────────────────
+    # Paleta de colores (secuencial ordenada por temperatura)
+    # Perceptualmente distinguible, amigable con daltonismo
+    # ─────────────────────────────────────────────
+    
+    temp_colors <- c(
+      "0"   = "#003f5c",
+      "0.1" = "#58508d",
+      "0.5" = "#bc5090",
+      "1"   = "#ff6361",
+      "1.2" = "#ffa600"
+    )
+    
+    # ─────────────────────────────────────────────
+    # Tema base reutilizable
+    # ─────────────────────────────────────────────
+    
+    theme_llm <- function() {
+      theme_classic(base_size = 11) +
+        theme(
+          # Títulos
+          plot.title       = element_text(size = 12, face = "bold", margin = margin(b = 6)),
+          plot.subtitle    = element_text(size = 10, color = "grey40", margin = margin(b = 8)),
+          
+          # Ejes
+          axis.title.x     = element_text(size = 10, margin = margin(t = 6)),
+          axis.title.y     = element_blank(),
+          axis.text        = element_text(size = 9, color = "grey30"),
+          axis.line        = element_line(color = "grey70", linewidth = 0.4),
+          axis.ticks       = element_line(color = "grey70", linewidth = 0.4),
+          
+          # Leyenda
+          legend.title     = element_text(size = 9, face = "bold"),
+          legend.text      = element_text(size = 9),
+          legend.key.size  = unit(0.5, "cm"),
+          legend.position  = "right",
+          
+          # Grilla horizontal sutil para facilitar lectura
+          panel.grid.major.x = element_line(color = "grey92", linewidth = 0.4),
+          panel.grid.major.y = element_blank(),
+          
+          # Márgenes del panel
+          plot.margin = margin(8, 12, 8, 8)
+        )
+    }
+    
+    # ─────────────────────────────────────────────
+    # Carga de datos
+    # ─────────────────────────────────────────────
+    
+    setwd("~/Documents/GitHub/LLMS_Project/LLMS_analysis/Results")
+    # Daniel directory:
+    setwd("C:/Users/danie/Dropbox/Javeriana/Proyecto LLMS text/LLMS_Project/LLMS_analysis/Results")
+    
+    all_data <- list()
+    
+    for (llm in llms) {
+      for (i in 1:nrow(papers)) {
+        for (shot in shot_types) {
+          
+          paper_num  <- papers$paper_number[i]
+          paper_name <- papers$paper_name[i]
+          folder_path <- file.path(llm, paper_name, shot)
+          
+          for (temp in temperatures) {
+            
+            file_name <- paste0(
+              "results_paper_", paper_num,
+              "_temp", temp,
+              "_modeuser_type", shot,
+              ".csv"
+            )
+            
+            full_path <- file.path(folder_path, file_name)
+            
+            if (file.exists(full_path)) {
+              df <- read_csv(full_path, na = c("", "NA"))
+              cat(full_path, "\n")
+              
+              df <- df %>%
+                mutate(
+                  llm         = llm,
+                  paper       = paper_num,
+                  shot        = shot,
+                  temperature = temp
+                )
+              
+              all_data[[length(all_data) + 1]] <- df
+            }
+          }
+        }
+      }
+    }
+    
+    results_df <- bind_rows(all_data)
+    
+    # ─────────────────────────────────────────────
+    # Generación de gráficas
+    # ─────────────────────────────────────────────
+    
+    setwd("~/Documents/GitHub/LLMS_Project/LLMS_analysis/Graphs")
+    # Daniel:
+    setwd("C:/Users/danie/Dropbox/Javeriana/Proyecto LLMS text/LLMS_Project/LLMS_analysis/Graphs")
+    
+    make_panel <- function(data, shot_label, metric) {
+      ggplot(data,
+             aes(x    = tag,
+                 y    = .data[[metric]],
+                 fill = factor(temperature))) +
+        geom_bar(
+          stat     = "identity",
+          position = position_dodge(width = 0.8),
+          width    = 0.7
+        ) +
+        coord_flip() +
+        scale_fill_manual(
+          values = temp_colors,
+          name   = "Temperature"
+        ) +
+        scale_y_continuous(
+          limits = c(0, 1),
+          breaks = c(0, 0.2, 0.4, 0.6, 0.8, 1),
+          labels = c("0", ".2", ".40", ".60", ".80", "1")
+        ) +
+        labs(
+          title = shot_label,
+          x     = NULL,
+          y     = metric
+        ) +
+        theme_llm()
+    }
+    
+    for (llm_name in llms) {
+      for (i in 1:nrow(papers)) {
+        for (metric in metrics) {
+          
+          paper_num <- papers$paper_number[i]
+          
+          df_0shot <- results_df %>%
+            filter(llm == llm_name, shot == "0shot", paper_id == paper_num)
+          
+          df_few <- results_df %>%
+            filter(llm == llm_name, shot == "fewshot", paper_id == paper_num)
+          
+          p1 <- make_panel(df_0shot, "0-shot",   metric)
+          p2 <- make_panel(df_few,   "Few-shot", metric)
+          
+          combined_plot <- (p1 / p2) +
+            plot_annotation(
+              title = paste0(
+                metric, "  ·  LLM: ", llm_name,
+                "  ·  ", papers$paper_name[i]
+              ),
+              theme = theme(
+                plot.title = element_text(size = 13, face = "bold", hjust = 0)
+              )
+            ) +
+            plot_layout(guides = "collect") &   # leyenda compartida
+            theme(legend.position = "right")
+          
+          print(combined_plot)
+          
+          ggsave(
+            filename = paste0(metric, "_", llm_name, "_", papers$paper_name[i], ".png"),
+            plot     = combined_plot,
+            width    = 10,
+            height   = 7,
+            dpi      = 300
+          )
+        }
+      }
+    }
     
     # list of zeroshot and fewshot
     shot_types <- c(
@@ -47,6 +238,11 @@
     
     #cambiar directorio a "~/Documents/GitHub/LLMS_Project/LLMS_analysis/Results"
     setwd("~/Documents/GitHub/LLMS_Project/LLMS_analysis/Results")
+
+    # Daniel directory: 
+    #setwd("C:/Users/danie/Dropbox/Javeriana/Proyecto LLMS text/LLMS_Project/LLMS_analysis/Results")
+
+
     
     # la idea es iterar con llms/nombrepaper/shottype
     # acceder al csv, todos tienen la misma estructura: results_paper_1_temp0_modeuser_type0shot.csv 
@@ -111,6 +307,8 @@
   results_df <- bind_rows(all_data)
   
   setwd("~/Documents/GitHub/LLMS_Project/LLMS_analysis/Graphs")
+  #Daniel
+ #setwd("C:/Users/danie/Dropbox/Javeriana/Proyecto LLMS text/LLMS_Project/LLMS_analysis/Graphs")
   
   for(llm_name in llms){
     

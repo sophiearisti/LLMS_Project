@@ -210,7 +210,7 @@ build_heatmap_data <- function(data, metric_name, threshold = 0.8) {
     )
 }
 
-save_heatmap <- function(heatmap_df, fill_name, plot_title, plot_subtitle, file_stub, threshold = 0.8) {
+save_heatmap <- function(heatmap_df, fill_name, file_stub, threshold = 0.8) {
   p_heatmap <- ggplot(heatmap_df, aes(x = .data$config, y = .data$llm, fill = .data$mean_value)) +
     geom_tile(color = "white", linewidth = 0.4) +
     geom_tile(
@@ -232,8 +232,12 @@ save_heatmap <- function(heatmap_df, fill_name, plot_title, plot_subtitle, file_
       name = fill_name
     ) +
     labs(
-      title = plot_title,
-      subtitle = plot_subtitle,
+      title = paste0("LLM ", fill_name, " Across Papers and Configurations"),
+      subtitle = paste0(
+        "Cells show average ", fill_name,
+        " across tags with at least 10 positive cases; bold border marks ",
+        fill_name, " >= ", sprintf("%.2f", threshold)
+      ),
       x = "Configuration (shot@temperature)",
       y = "Model"
     ) +
@@ -262,8 +266,6 @@ macro_f1_heatmap_df <- build_heatmap_data(filtered_results_df, "macro_f1", thres
 save_heatmap(
   heatmap_df = kappa_heatmap_df,
   fill_name = "Cohen Kappa",
-  plot_title = "LLM Coding Agreement Across Papers and Configurations",
-  plot_subtitle = "Cells show average Cohen kappa across tags with at least 10 positive cases; bold border marks kappa >= 0.80",
   file_stub = "figure1_cohen_kappa_heatmap_by_paper",
   threshold = 0.8
 )
@@ -271,8 +273,6 @@ save_heatmap(
 save_heatmap(
   heatmap_df = macro_f1_heatmap_df,
   fill_name = "Macro F1",
-  plot_title = "LLM Macro F1 Across Papers and Configurations",
-  plot_subtitle = "Cells show average Macro F1 across tags with at least 10 positive cases; bold border marks Macro F1 >= 0.80",
   file_stub = "figure2_macro_f1_heatmap_by_paper",
   threshold = 0.8
 )

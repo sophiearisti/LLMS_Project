@@ -1,0 +1,350 @@
+# now that we classified all the files, we need to compare with the actual answers
+
+#TAKE EACH FILE IN THE RESULTS FOLDER AND COMPARE WITH THE REAL ANSWERS, THAT IS LETERALLY ALL
+# METRICS ARE ACCURACY, PRECISION, RECALL, F1 SCORE FOR EACH CATEGORY AND OVERALL
+import os
+from numpy import real
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.metrics import classification_report, accuracy_score, cohen_kappa_score
+from utils import *
+import textwrap
+import re
+
+
+def krippendorff_alpha_nominal(y_true, y_pred):
+    y_true = pd.Series(y_true).astype(str)
+    y_pred = pd.Series(y_pred).astype(str)
+
+    observed_disagreement = (y_true != y_pred).mean()
+
+    pooled = pd.concat([y_true, y_pred], ignore_index=True)
+    probs = pooled.value_counts(normalize=True)
+    expected_disagreement = 1 - (probs ** 2).sum()
+
+    if expected_disagreement == 0:
+        return 1.0 if observed_disagreement == 0 else 0.0
+
+    return 1 - (observed_disagreement / expected_disagreement)
+
+
+PAPERS = {
+   1: {
+        "path": FIRST_PAPER,
+        "labels": [
+            "any_suggestion",
+            "suggest_safe",
+            "suggest_efficient",
+            "agree_proposal",
+            "discuss_fairness",
+            "discuss_efficient",
+            "discuss_rules",
+            "explanation",
+            "discuss_howtoplay",
+            "ask_game",
+            "receive_report",
+            "truthful",
+            "falsehood",
+            "contradict",
+            "neither_report",
+        ],    
+    },
+
+    3: {
+        "path": THIRD_PAPER,
+        "labels": ["is_promise", "is_efficiency", "is_ethics"]
+    },
+    4: {
+        "path": FOURTH_PAPER,
+        "labels": ["uninformative", "SDB", "overest_others", "underest_own", "academic_integrity", "info_asymmetry", "AI_discussion_priming", "privacy_concerns", "self_steem", "self_report_bias", "networkeffect", "truthful"]
+    }
+}
+
+"""    2: {
+        "path": SECOND_PAPER,
+        "real_labels": ["topic1", "topic2", "topic3"],
+        "labels": ["Numerical_Coordination_and_Strategy", "Trust_Cooperation_and_Betrayal", "OffTopic_Social_and_Affective_Chat"]
+    },"""
+
+def paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder, temp, mode, llm):
+    
+    real_df = pd.read_csv(real_answers_path)
+    
+    predicted_df = pd.read_csv(predicted_answers_path)
+    
+    message_col = "message"
+    
+    #quitar los NaN
+    if paper_id != 1:
+        real_df = real_df.dropna(subset=[message_col])
+        predicted_df = predicted_df.dropna(subset=["original_message"])
+        
+    def normalize_message(text):
+        text = str(text).strip().lower()
+        text = re.sub(r"(^|/)\s*\d+\s*;\s*", r"\1", text)
+        text = re.sub(r"\s*/\s*", " / ", text)
+        text = re.sub(r"\s+", " ", text)
+        return text.strip()
+
+    results = []   # aquí acumularemos las métricas por categoría
+
+    merged_df = None
+
+    if paper_id in [1, 4]:
+        if "original_message" in predicted_df.columns and message_col in real_df.columns:
+            real_df["message_norm"] = real_df[message_col].astype(str).map(normalize_message)
+            predicted_df["message_norm"] = predicted_df["original_message"].astype(str).map(normalize_message)
+
+            merged_df = real_df.merge(
+                predicted_df,
+                left_on="message_norm",
+                right_on="message_norm",
+                suffixes=("_true", "_pred"),
+                how="inner"
+            )
+            if len(merged_df) < min(len(real_df), len(predicted_df)):
+                print(
+                    "Warning: message-based alignment dropped rows. "
+                    "Check for mismatches or duplicates."
+                )
+        else:
+            print(
+                "Warning: Could not align by message fields; "
+                "falling back to row order."
+            )
+
+    for tag in PAPERS[paper_id]["labels"]:
+
+        if  tag not in predicted_df.columns:
+            print(f"Tag {tag} no existe en predicted dataframes para Paper {paper_id}")
+            continue
+        
+        if tag not in real_df.columns:
+            print(f"Tag {tag} no existe en real dataframes para Paper {paper_id}")
+            continue
+        
+        if merged_df is not None:
+            y_true = merged_df[tag + "_true"]
+            y_pred = merged_df[tag + "_pred"]
+        else:
+            y_true = real_df[tag]
+            y_pred = predicted_df[tag]
+        
+        if paper_id == 3:
+            # Asegurarse de que ambas series tengan el mismo índice después de eliminar NaN
+            real_df["message_norm"] = real_df["message"].astype(str).map(normalize_message)
+            predicted_df["message_norm"] = predicted_df["original_message"].astype(str).map(normalize_message)
+
+            merged = real_df.merge(
+                predicted_df,
+                left_on="message_norm",
+                right_on="message_norm",
+                suffixes=("_true", "_pred"),
+                how="inner"
+            )
+
+            y_true = merged[tag + "_true"]
+            y_pred = merged[tag + "_pred"]
+
+        if isinstance(y_true, pd.DataFrame):
+            y_true = y_true.iloc[:, 0]
+        if isinstance(y_pred, pd.DataFrame):
+            y_pred = y_pred.iloc[:, 0]
+
+        y_true = y_true.fillna("nan")
+        y_pred = y_pred.fillna("nan")
+
+        
+        y_true = y_true.astype(str).str.strip().str.lower()
+        y_pred = y_pred.astype(str).str.strip().str.lower()
+        
+        #si es el primer paper, quitar a los que apliquen el .0 a los que terminen en .0
+        #if paper_id == 1:
+            # Convertir "0.0" → "0", "1.0" → "1", etc.
+        y_true = y_true.str.replace(r"\.0$", "", regex=True)
+        y_pred = y_pred.str.replace(r"\.0$", "", regex=True)
+
+        # métricas básicas
+        acc = accuracy_score(y_true, y_pred)
+        kappa = float(cohen_kappa_score(y_true, y_pred))
+        kripp_alpha = float(krippendorff_alpha_nominal(y_true, y_pred))
+        report = classification_report(y_true, y_pred, output_dict=True)
+
+        print(f"\n Classification Report | Paper {paper_id} | Tag: {tag}")
+        print(classification_report(y_true, y_pred))
+
+        print("Accuracy:", acc)
+
+        # guardar resultados en tabla
+        classes = sorted(list(set(y_true.unique()) | set(y_pred.unique())))
+        
+
+        report = classification_report(y_true, y_pred, output_dict=True)
+
+
+        row = {
+            "paper_id": paper_id,
+            "tag": tag,
+            "accuracy": acc,
+            "cohen_kappa": kappa,
+            "krippendorff_alpha": kripp_alpha,
+            "macro_f1": report["macro avg"]["f1-score"]
+        }
+
+        # Agregar métricas por clase según las claves reales del report
+        for c in classes:
+            c_str = str(c).lower()
+            if c_str in report:
+                row[f"precision_{c}"] = report[c_str]["precision"]
+                row[f"recall_{c}"]    = report[c_str]["recall"]
+                row[f"f1_{c}"]        = report[c_str]["f1-score"]
+            else:
+                row[f"precision_{c}"] = None
+                row[f"recall_{c}"]    = None
+                row[f"f1_{c}"]        = None
+
+
+        results.append(row)
+        
+        print(results)
+
+    # una vez tenemos todas las métricas por categoría, guardamos y visualizamos
+    get_results_and_visualize(paper_id, results, folder, temp, mode, llm)
+    
+def get_results_and_visualize(paper_id, results, folder, temp, mode, llm):
+    
+    # ask for which model we want to evaluate
+    
+    # -------------------------------
+    # Función para ajustar texto
+    # -------------------------------
+    def wrap_cell(x, width=25):
+        if isinstance(x, str):
+            return "\n".join(textwrap.wrap(x, width=width))
+        return x
+
+    # Convertir resultados a un DataFrame
+    results_df = pd.DataFrame(results)
+
+
+    # Guardar tabla
+    out_path = f"results_paper_{paper_id}_temp{temp}_mode{mode}_type{folder}.csv"
+    out_path = os.path.join(RESULTS_PATH, llm, PAPERS[paper_id]['path'], folder, out_path)
+    results_df.to_csv(out_path, index=False)
+
+    print(f"\nTabla guardada en: {out_path}")
+    
+    # -------------------------------
+    # MÉTRICAS GLOBALES DEL PAPER
+    # -------------------------------
+    if paper_id != 4 and paper_id != 1:
+        global_acc = results_df["accuracy"].mean()
+        global_kappa = results_df["cohen_kappa"].mean()
+        global_kripp_alpha = results_df["krippendorff_alpha"].mean()
+        global_macro_f1 = results_df["macro_f1"].mean()
+        global_precision_1 = results_df["precision_1"].mean()
+        global_recall_1 = results_df["recall_1"].mean()
+        global_f1_1 = results_df["f1_1"].mean()
+        global_precision_0 = results_df["precision_0"].mean()
+        global_recall_0 = results_df["recall_0"].mean()
+        global_f1_0 = results_df["f1_0"].mean()
+        
+        # Añadir métricas globales como una fila extra
+        global_row = pd.DataFrame([{
+            "paper_id": paper_id,
+            "tag": "GLOBAL",
+            "accuracy": global_acc,
+            "cohen_kappa": global_kappa,
+            "krippendorff_alpha": global_kripp_alpha,
+            "precision_0": global_precision_0,
+            "recall_0": global_recall_0,
+            "f1_0": global_f1_0,
+            "precision_1": global_precision_1,
+            "recall_1": global_recall_1,
+            "f1_1": global_f1_1,
+            "macro_f1": global_macro_f1
+        }])
+    elif paper_id == 1:
+        global_row = {"paper_id": paper_id, "tag": "GLOBAL"}
+        numeric_cols = results_df.select_dtypes(include=["number"]).columns
+        for col in numeric_cols:
+            global_row[col] = results_df[col].mean()
+        global_row = pd.DataFrame([global_row])
+    
+    else:
+        global_row = pd.DataFrame()  # Fila vacía si no se calculan métricas globales
+
+    final_df = pd.concat([results_df, global_row], ignore_index=True)
+
+    # -------------------------------
+    # REDONDEO A 3 DECIMALES
+    # -------------------------------
+    final_df = final_df.apply(
+        lambda col: col.map(lambda x: round(x, 3) if isinstance(x, (float, int)) else x)
+    )
+
+    # -------------------------------
+    # AJUSTE DE TEXTO
+    # -------------------------------
+    wrapped_df = final_df.apply(lambda col: col.map(lambda x: wrap_cell(x, width=25)))
+
+    # -----------------------------------------
+    # CREAR TABLA BONITA Y GUARDAR COMO PNG
+    # -----------------------------------------
+    fig, ax = plt.subplots(figsize=(18, 0.55 * len(final_df) + 2))
+    ax.axis("off")
+
+    table = ax.table(
+        cellText=wrapped_df.values,
+        colLabels=wrapped_df.columns,
+        loc='center',
+        cellLoc='center'
+    )
+
+    table.auto_set_font_size(False)
+    table.set_fontsize(10)
+    table.scale(1.2, 1.5)
+
+    # Ajustar ancho de columnas automáticamente
+    table.auto_set_column_width(col=list(range(len(final_df.columns))))
+
+    # Título
+    plt.title(f"Resultados del Paper {paper_id}\nMétricas por etiqueta y métricas globales", 
+              fontsize=16, pad=20)
+
+    png_path = f"results_paper_{paper_id}_temp{temp}_mode{mode}_type{folder}.png"
+    png_path = os.path.join(RESULTS_PATH,llm, PAPERS[paper_id]['path'], folder, png_path)
+    plt.savefig(png_path, dpi=300, bbox_inches="tight")
+    plt.close()
+
+    print(f"Imagen guardada en: {png_path}")
+
+def main():
+    folder_results = ["0shot", "fewshot"] #, "0shotCot", "fewshotCot"]
+    temps   = [0, 0.1, 0.5,  1, 1.2]
+    mode  = ["user"] #, "assistant"]
+    llms = [ "gemini/", "gpt"]
+    
+    for paper_id in PAPERS.keys():
+        
+        real_answers_path = os.path.join(DATA_PATH, PAPERS[paper_id]['path'], REAL_ANSWERS_FILE)
+
+        for folder in folder_results:
+            for temp in temps:
+                for m in mode:
+                    for llm in llms:
+                    
+                        print(f"Evaluating results for Paper {paper_id}, Folder: {folder}, Temp: {temp}, Mode: {m}")
+                        
+                        out_file = f"results_temp{temp}_mode{m}.csv"
+                        
+                        predicted_answers_path = os.path.join(RESULTS_PATH, llm, PAPERS[paper_id]['path'], folder, out_file)
+                        
+                        print(f"Evaluating Paper {paper_id}...")
+                                
+                        paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder, temp, m, llm)
+                        
+                        print("\n" + "="*50 + "\n")
+                    
+
+main()

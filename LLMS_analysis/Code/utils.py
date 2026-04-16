@@ -3,10 +3,13 @@ import os
 import time
 from dotenv import load_dotenv
 
-# Definir la ruta del archivo de prompt
-PROMPTS_PATH = "../prompts/"
-DATA_PATH = "../Data/"
-RESULTS_PATH = "../Results/"
+# Define project-relative absolute paths (independent of current working directory)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.normpath(os.path.join(BASE_DIR, ".."))
+
+PROMPTS_PATH = os.path.join(PROJECT_DIR, "prompts")
+DATA_PATH = os.path.join(PROJECT_DIR, "Data")
+RESULTS_PATH = os.path.join(PROJECT_DIR, "Results")
 
 FIRST_PAPER = "managerial_leadership_Jordi_Cooper/"
 SECOND_PAPER = "strategic_environment_Ozkes_Hanaki/"

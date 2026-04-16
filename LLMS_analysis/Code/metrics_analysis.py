@@ -56,7 +56,7 @@ PAPERS = {
     },
     4: {
         "path": FOURTH_PAPER,
-        "labels": ["uninformative", "SDB", "overest_others", "underest_own", "academic_integrity", "info_asymmetry", "AI_discussion_priming", "privacy_concerns", "self_steem", "self_report_bias", "networkeffect", "truthful"]
+        "labels": ["uninformative", "SDB", "overest_others", "underest_own", "academic_integrity", "info_asymmetry", "AI_discussion_priming", "privacy_concerns", "self_esteem", "self_report_bias", "network_effect", "truthful"]
     }
 }
 
@@ -71,6 +71,18 @@ def paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder
     real_df = pd.read_csv(real_answers_path)
     
     predicted_df = pd.read_csv(predicted_answers_path)
+
+    # Normalize known legacy/typo column variants in prediction files.
+    predicted_df.columns = [c.strip() for c in predicted_df.columns]
+    rename_map = {}
+    if "self_steem" in predicted_df.columns:
+        rename_map["self_steem"] = "self_esteem"
+    if "networkeffect" in predicted_df.columns:
+        rename_map["networkeffect"] = "network_effect"
+    if "self_report bias" in predicted_df.columns:
+        rename_map["self_report bias"] = "self_report_bias"
+    if rename_map:
+        predicted_df = predicted_df.rename(columns=rename_map)
     
     message_col = "message"
     
@@ -321,30 +333,58 @@ def get_results_and_visualize(paper_id, results, folder, temp, mode, llm):
 
 def main():
     folder_results = ["0shot", "fewshot"] #, "0shotCot", "fewshotCot"]
-    temps   = [0, 0.1, 0.5,  1, 1.2]
-    mode  = ["user"] #, "assistant"]
-    llms = [ "gemini/", "gpt"]
-    
+    llms = ["gemini", "gpt", "claude"]
+
     for paper_id in PAPERS.keys():
-        
         real_answers_path = os.path.join(DATA_PATH, PAPERS[paper_id]['path'], REAL_ANSWERS_FILE)
 
         for folder in folder_results:
-            for temp in temps:
-                for m in mode:
-                    for llm in llms:
-                    
-                        print(f"Evaluating results for Paper {paper_id}, Folder: {folder}, Temp: {temp}, Mode: {m}")
-                        
-                        out_file = f"results_temp{temp}_mode{m}.csv"
-                        
-                        predicted_answers_path = os.path.join(RESULTS_PATH, llm, PAPERS[paper_id]['path'], folder, out_file)
-                        
-                        print(f"Evaluating Paper {paper_id}...")
-                                
-                        paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder, temp, m, llm)
-                        
-                        print("\n" + "="*50 + "\n")
+            for llm in llms:
+                folder_path = os.path.join(RESULTS_PATH, llm, PAPERS[paper_id]['path'], folder)
+
+                if not os.path.isdir(folder_path):
+                    continue
+
+                # Support historical and current naming conventions.
+                pattern = re.compile(
+                    r"^results(?:_(?:line|group|line_batch))?_temp(?P<temp>[^_]+)_mode(?P<mode>[^.]+)\.csv$"
+                )
+
+                available_files = []
+                for filename in os.listdir(folder_path):
+                    match = pattern.match(filename)
+                    if match:
+                        available_files.append(
+                            (filename, match.group("temp"), match.group("mode"))
+                        )
+
+                if not available_files:
+                    continue
+
+                for filename, temp, m in sorted(available_files):
+                    predicted_answers_path = os.path.join(folder_path, filename)
+
+                    print(
+                        f"Evaluating results for Paper {paper_id}, LLM: {llm}, "
+                        f"Folder: {folder}, Temp: {temp}, Mode: {m}, File: {filename}"
+                    )
+
+                    try:
+                        paper_evaluation(
+                            paper_id,
+                            real_answers_path,
+                            predicted_answers_path,
+                            folder,
+                            temp,
+                            m,
+                            llm,
+                        )
+                    except FileNotFoundError:
+                        print(f"⚠ Skipping missing file: {predicted_answers_path}")
+                    except Exception as e:
+                        print(f"⚠ Error evaluating {predicted_answers_path}: {e}")
+
+                    print("\n" + "="*50 + "\n")
                     
 
 main()

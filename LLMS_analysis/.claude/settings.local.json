@@ -12,7 +12,14 @@
       "Bash(.venv/Scripts/pip install *)",
       "Bash(.venv/Scripts/python -c \"import krippendorff; print\\('ok'\\)\")",
       "Bash(\"c:/Users/danie/Dropbox/Javeriana/Proyecto LLMS text/LLMS_Project/LLMS_analysis/.venv/Scripts/pip.exe\" install krippendorff -q)",
-      "Bash(\"c:/Users/danie/Dropbox/Javeriana/Proyecto LLMS text/LLMS_Project/LLMS_analysis/.venv/Scripts/python.exe\" -c \"import krippendorff; print\\('ok'\\)\")"
+      "Bash(\"c:/Users/danie/Dropbox/Javeriana/Proyecto LLMS text/LLMS_Project/LLMS_analysis/.venv/Scripts/python.exe\" -c \"import krippendorff; print\\('ok'\\)\")",
+      "Bash(Rscript --version)",
+      "PowerShell(Get-Command Rscript -ErrorAction SilentlyContinue)",
+      "PowerShell(& \"C:\\\\Program Files\\\\R\\\\R-4.4.2\\\\bin\\\\Rscript.exe\" --version 2>&1)",
+      "PowerShell(& \"C:\\\\Program Files\\\\R\\\\R-4.3.3\\\\bin\\\\Rscript.exe\" --version 2>&1)",
+      "PowerShell(Get-ChildItem \"C:\\\\Program Files\\\\R\\\\\" -ErrorAction SilentlyContinue; Get-ChildItem \"C:\\\\Program Files\\\\Microsoft\\\\R\\\\\" -ErrorAction SilentlyContinue; \\(Get-Command Rscript.exe -ErrorAction SilentlyContinue\\).Source)",
+      "PowerShell(& \"C:\\\\Program Files\\\\R\\\\R-4.5.3\\\\bin\\\\Rscript.exe\" --version 2>&1)",
+      "PowerShell(& \"C:\\\\Program Files\\\\R\\\\R-4.5.3\\\\bin\\\\Rscript.exe\" \"C:\\\\Users\\\\danie\\\\Dropbox\\\\Javeriana\\\\Proyecto LLMS text\\\\LLMS_Project\\\\LLMS_analysis\\\\Graphs\\\\Graphs.R\" 2>&1)"
     ]
   }
 }

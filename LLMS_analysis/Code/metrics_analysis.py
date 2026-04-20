@@ -60,31 +60,46 @@ def krippendorff_alpha_4raters(tags_df: pd.DataFrame, merged_df: pd.DataFrame,
     """
     Compute Krippendorff's alpha across 3 human coders + 1 LLM for paper 1.
 
-    tags_df   : full tags.csv loaded (has raw coder fractions)
-    merged_df : already-merged real×predicted dataframe (used for obs_keys alignment)
-    obs_keys  : ['session','period','group','game']
-    tag       : label column name
-    y_pred_binary : LLM predictions aligned to merged_df rows (0/1 integers/floats)
+    tags_df      : full tags.csv (raw coder fractions per conversation)
+    merged_df    : merged real×predicted df (may have multiple rows per conversation)
+    obs_keys     : ['session','period','group','game']
+    tag          : label column name
+    y_pred_binary: LLM predictions aligned to merged_df rows (0/1)
+
+    merged_df may have duplicate obs_keys (one row per message). We aggregate the
+    LLM predictions to conversation level using majority vote (mean > 0.5) so the
+    n_items dimension matches the human coder matrix derived from tags_df.
     """
-    # Pull the raw fractions for the matched observations
-    obs = merged_df[obs_keys].drop_duplicates()
-    tags_sub = obs.merge(tags_df[obs_keys + [tag]], on=obs_keys, how="left")
+    # Aggregate LLM predictions to conversation level (majority vote)
+    tmp = merged_df[obs_keys].copy()
+    tmp["_pred"] = pd.to_numeric(y_pred_binary.values, errors="coerce")
+    conv_pred = (
+        tmp.groupby(obs_keys)["_pred"]
+        .mean()
+        .reset_index()
+        .rename(columns={"_pred": "_pred_agg"})
+    )
+    conv_pred["_pred_agg"] = (conv_pred["_pred_agg"] > 0.5).astype(float)
 
-    avg_vals = tags_sub[tag].values  # shape (n_obs,)
+    # Pull human fractions for the same conversations from tags_df
+    tags_sub = conv_pred[obs_keys].merge(
+        tags_df[obs_keys + [tag]], on=obs_keys, how="left"
+    )
 
-    # Reconstruct 3 human coder rows
-    human_mat = _reconstruct_coders(pd.Series(avg_vals))  # (3, n_obs)
+    avg_vals = tags_sub[tag].values          # shape (n_conv,)
+    llm_vals = conv_pred["_pred_agg"].values # shape (n_conv,)
 
-    # LLM row: convert to float, keep NaN where prediction is missing
-    llm_row = pd.to_numeric(pd.Series(y_pred_binary.values), errors="coerce").values.astype(float)
-    llm_row = llm_row.reshape(1, -1)  # (1, n_obs)
+    # Reconstruct 3 human coder rows → (3, n_conv)
+    human_mat = _reconstruct_coders(pd.Series(avg_vals))
 
-    # Stack into (4, n_obs) reliability matrix
-    mat = np.vstack([human_mat, llm_row])
+    # LLM row → (1, n_conv)
+    llm_row = llm_vals.astype(float).reshape(1, -1)
+
+    mat = np.vstack([human_mat, llm_row])  # (4, n_conv)
 
     flat = mat[~np.isnan(mat)]
     if len(np.unique(flat)) < 2:
-        return np.nan  # no variance — alpha undefined
+        return np.nan
 
     return float(krippendorff.alpha(mat, level_of_measurement="nominal"))
 

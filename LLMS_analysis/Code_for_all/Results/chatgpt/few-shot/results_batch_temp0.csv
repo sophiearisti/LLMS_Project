@@ -1,0 +1,572 @@
+error,row_id,original_message,code,treatment
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 5, 'CONC': 3, 'STR': 1 }",0,Muy cómodo y agradable,0bkjfmmh,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",1,habia ruido del altavoz ,0dqlym8c,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",2,un poco molesto el ruido,0fp71y5j,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 5, 'CONC': 3, 'STR': 3 }",3,Fue un ambiente muy agradable 10/10,0kkkkfza,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",4,estuvo normal,0nqdjg46,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",5,durante el experimeto habia un sonido bastante incomodo,0o2ejtzd,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 3, 'CONC': 4, 'STR': 3 }",6,El silencio ayuda a concentrarse en la actividades,0pa8qb1r,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",7,buena,0rixd1vv,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",8,Agradable,0rn918s3,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 5, 'CONC': 3, 'STR': 1 }",9,"bastante agradable, fue muy cómodo",0rsywoes,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 5, 'STR': 2 }",10,"Muy bueno, apto para la concentración ",0ubspe6g,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",11,muy agradable,0wi0gxt2,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",12,El ruido de la sala dificultaba la concentración para la secuencia de numeros,0wy31kvd,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",13,Me fastidiaba demasiado el ruido y sentía que no me podía concentrar del todo,0xdi8t29,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",14,fue bueno ,0xhplkid,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",15,muy agradable,0yastm3o,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 1, 'CONC': 1, 'STR': 4 }",16,horrible sonido del altavoz no deja concentrar de forma adecuada ,13n23btn,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 5, 'CONC': 4, 'STR': 1 }",17,BASTANTE TRANQUILO Y AGRADABLE,1d3du1m6,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 4, 'STR': 2 }",18,Fue silencioso y tranquilo,1el29l7t,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",19,MUY AMIGABLE,1fvjjos3,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",20,bueno,1hj2ursw,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 5, 'CONC': 4, 'STR': 1 }",21,"muy agradable, se esta comodo para desarrollar el experiemento ",1huwhr7d,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",22,"Mucho ruido, solía ser molesto para memorizar las palabras ",1ic4s74d,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",23,Había mucho ruido,1j2dfkxt,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 5 }",24,"Super feo, al principio creí que había sido un error y que se le había prendido el micrófono a la chica, casi levanto la mano, luego sonaba repetitivos y me di cuenta que era parte del experimento. Muy estresante.  ",1jsl2j7f,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 1, 'CONC': 2, 'STR': 4 }",25,"el problema es que esta haciendo mucho ruido porque al parecer dejaron el microfono abierto y suena horrible, como un ventilador",1pbdilgl,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",26,Normal,1sz5idkr,1
+"{ 'SEN': 0, 'MR': 0, 'MS': 1, 'CONF': 3, 'CONC': 3, 'STR': 3 }",27,silencioso,1tp6f785,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",28,pues no se si hace parte de experimento pero un ruido en todo momento,1uauyxcf,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",29,muy bien,1vyejqct,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",30,bastate bien,1wn5ulpz,2
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",31,Un tanto agobiante,1x64q25u,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",32,"Hay un ruido de fondo que me mantuvo con la mente en blanco, ayudo a concentrarse",1zaq64hr,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 3, 'STR': 2 }",33,tranquilo,211bjkj7,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",34,muy agradable,22rik80a,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",35,"durante todo el experimento hubo un ruido tenaz, no se si fue parte de ello",232ycds3,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 5, 'CONC': 4, 'STR': 1 }",36,Lo suficientemente agradable para realizar la actividad con comodidad y silencio,2j5dt56i,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",37,Muy bueno,2m5ss3ox,1
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",38,nada ,2mgxsjfm,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",39,FUE BUENA,2mljy8hi,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",40,"Pues fue un poco incomodo escuchar los sonidos, pero no me incomodaba ya que suelo estudiar con ruido; además creo que hacia parte del experimento.  ",2ns5dq5t,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 4, 'STR': 2 }",41,Agradable para hacer calculos mentales,2rmngz5y,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 5 }",42,"Horrible, los sonidos reproducidos hacen que pierda la concentración y me estrese",2ryhlidf,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 4 }",43,Incòmodo con el ruido de fondo,2tn7fh9c,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",44,El ruido no me permitía concentrarme bien .,2xkfrpna,2
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",45,no fue muy agradable,31p6i1gp,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",46,Molestia por el ruido,354xmfqr,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 3, 'STR': 2 }",47,Tranquilo,38kfu8gp,1
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",48,"bien, aunque el sonido me desconcentraba un poco",3dxr24y5,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",49,El ruido me molestò,3guvfo9k,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 1, 'CONC': 1, 'STR': 4 }",50,"Cero agradable, habia demasiado ruido que distraia",3gz7u82j,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 1, 'CONF': 3, 'CONC': 2, 'STR': 3 }",51,estaba tranquilo sin embargo me cuesta concentrarme en total silencio,3h9w8xql,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 4 }",52,"BUENO, PERO EL SONIDO ME CAUSABA COMO IMPACIENCIA",3iqujqjx,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",53,No fue agradable pero uno se acostumbra al sonido,3jip8k0f,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",54,"Los sonidos si distraen bastante sobre todo en los números, en el resto no ",3vrbjv1b,3
+"{ 'SEN': 1, 'MR': 1, 'MS': 0, 'CONF': 5, 'CONC': 5, 'STR': 1 }",55,"fue agradable, tiene la temperatura adecuada no se escucha ruido y es bueno para concentrarse",45t5no4z,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",56,no fue agradable por que el sistema de sonido estaba reproduciendo un sonido de interferencia,49jcnh90,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",57,Normal,49zcfjtw,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 5, 'CONC': 3, 'STR': 1 }",58,"Fue agradable, còmodo",4acqr36p,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 5, 'CONC': 4, 'STR': 1 }",59,agradable y tranquilo,4f93qypp,1
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 4 }",60,"Ya que no hay comunicacion con nadie no podrias de terminarlo, pero fue tencionante  por las tares",4hfha8gl,1
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",61,Todo en orden,4hmtrpnq,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",62,No fue agradable por el ruido del micrófono,4qyp0n2j,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",63,No fue nada agradable hacer el ejercicio con un ruido muy molesto sonando ,4s1taztx,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",64,"No sé si era a propósito, pero los sonidos de fondo desde la sala de dirección en la sala fueron molestos.",4t9ime46,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",65,fue agradable,4yunlbve,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 4 }",66,El ruido me molesto un monton,51788tnk,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",67,Agradable y limpio,542tdrwb,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",68,"Mala, no apagaron el altavoz y se escuchaba ruido de fondo que distrae.",5darkdzg,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",69,fue un ambiente ameno ,5fcp53bf,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",70,Estuvo bien :),5lj2gfer,2
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",71,Fue algo confuso,5m5qr726,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 5, 'CONC': 3, 'STR': 1 }",72,"fue buena, muy acogedora",5qlgmfce,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",73,Incomodo por e ruido,5r6664la,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",74,El ruido de la calle y de los parlantes me distrajo mucho ,5rptzc1h,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",75,buena ,5sw4wtnh,1
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",76,disruptivo,5t5a0als,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 4, 'STR': 2 }",77,Fue tranquilo,5xdqreiu,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",78,hay un ruido que no deja concentrar,620s88wq,2
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",79,terrible,63vilrnk,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",80,"El ambiente fue un poco ruidoso, al principio fue poco agradable después el cerebro se adapta",64lrcuux,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",81,muy agradable,6e22sn9t,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",82,Desconcetraba un poco el ruido de los altavoces,6fonetg0,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",83,Muy agradable,6hihvu1s,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",84,El ruido fue incomodo al inicio luego me acostumbre,6hxg6sxd,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",85,Sonó ruido por los altavoces todo el tiempo :c ,6il08mpf,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",86,fue agradable,6kui6vhd,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",87,"Algo desagradable, todo el tiempo hubo un ruido desde los parlantes ",6mf4oq0r,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",88,sì,6tb6wx8l,1
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",89,bien,6u4zj052,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 3, 'CONC': 5, 'STR': 3 }",90,El silencio ayuda a concentrarme mejor,6wot483c,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",91,"Malo, el ruido del parlante era parte del experimento?",6ydofoda,2
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",92,"Se presentò un ruido bastante repetitivo fuerte, sillas comodas y un adecuado ordenador",6ypbwic6,2
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 4, 'STR': 3 }",93,Un poco de ruido pero pude mantener la concentracion para el experimento,71u6n0p0,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",94,demadiado ruido ,73oygbgo,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 4, 'STR': 2 }",95,Silencioso y tranquilo,75gdiyez,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",96,En general fue agradable sin embargo el ruido de fondo era molesto,79875gw4,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",97,Fue agradable,7eh8l4vc,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",98,Estuvo bien ,7f3hbz14,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",99,no es agradable el sonido del micrófono todo el tiempo ,7fpucyz8,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",100,Habia un sonido feo,7gidd5iv,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",101,bastante agradable,7jfcye8k,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",102,fue agradable,7swmbqbn,1
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",103,bueno,7w9k7vcm,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",104,el ruido fue muy molesto,7xhn9smy,2
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",105,muy paila,7ya9l3ze,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",106,Fue muy bueno. Acorde al experimento,7yfnttwc,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",107,hay mucho ruido ,7zqmwk0i,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",108,bueno.,8144nhkc,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 5, 'CONC': 4, 'STR': 1 }",109,Muy tranquilo y agradable,831ckw49,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 4, 'STR': 1 }",110,Estuvo bien facil rapido y entretenido,86wm4j3y,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 1, 'CONC': 2, 'STR': 4 }",111,"Horrible, me duele la cabeza por el ruido blanco que viene y se va. ",8c5bkc6p,2
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",112,"Me incomoda el ruido de la gente cuando come, en general todo bien",8cdm5f3w,3
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",113,Fue un poco difícil conseguir la concentración debido a factores externos,8mrrp6ms,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",114,"No me gustó el ruido, desconcentra mucho",8vdd7xui,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 1, 'CONC': 1, 'STR': 5 }",115,el ruido me impide funcionar con normalidad ,90aohfyt,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",116,"a veces logro concentrarme aun con ruido fuerte del exterior, hoy no fue el caso tal vez por que anoche no dormi ",92mszlt5,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",117,muy buen ambinete,92ptazpg,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",118,Molesto por el ruido,950fwnp4,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",119,"0 agradable, me siento irritada con el ruido y mas si es gente masticando",95fq8522,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 3, 'STR': 2 }",120,tranquilo ,98wm2un1,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 5, 'CONC': 3, 'STR': 3 }",121,"Super agradable, bastante cómodo ",994ixshv,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",122,"Muy buen ambiente, profesional  ",9d1bzaj4,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",123,el ruido era incomodo,9intgf4g,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",124,El ruido molesta un poco al momento de la concentración ,9is2jsgf,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",125,Bastante agradable ,9jlfemkz,1
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",126,"Normal, quizás el sonido al inicio podía llegar a incomodar, pero bien",9ktv2z90,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",127,Bastante agradable,9llk4qgt,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",128,"Regular, encontré bastante ruido, logre poca concentracion y un poco de frustracion",9m9yrmbt,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 4, 'STR': 2 }",129,bien no hubo algo que me distrajera,9pgbth3e,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 4 }",130,"Fue estresante el sonido de fondo, sin embargo es despues lo deje a un lado",9schagd7,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",131,Agradable,9sx18449,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",132,el ruido no deja concentrar mucho por el tipo de ruido,9tte0jz0,2
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",133,Incomoda,9uibb9rd,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",134,Bueno,a71jg2v8,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",135,Estuvo interesante pese al ruido que no me permite concentrarme,a8x6f2b5,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",136,super,act52iwn,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",137,Un poco incomodo debido a que habia ruido en la sala,alz57p57,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 4, 'STR': 2 }",138,Favorable. me permitió hacer las tareas de memoria de gran manera,ama3nrqo,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",139,El ruido es un poco distractor pero una vez que se logra dejar en segundo plano no afecta demasiado ,appcfae9,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 4, 'STR': 2 }",140,"Fue bueno, el silencio ayuda a completar las tareas de mejor manera",aw1s2gvd,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 3, 'STR': 2 }",141,muy tranquila ,az1n7vjd,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",142,muy buena,az9oyhlq,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",143,Excelente,azmfni1y,3
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",144,la interferencia fue molesta ,b17hqlar,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",145,el ruido de fondo dificulta la tarea,b38hyzlt,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",146,Agradable,b4schjt5,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 5, 'CONC': 4, 'STR': 1 }",147,"Es un buen ambiente para trabajar, tranquilo y cómodo",b57v2a9z,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",148,Habia ruido de fondo. Al inicio me ha costado completar la prueba por esa razon. Creo que el ruido me puso algo nervioso tambien,b5cu0xod,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",149,"el ambiente se volvio algo estresante debido al sonido de fondo que deja no concentrarse de la manera adecuada. mas sin embargo, siento que es una buena manera de concentraciòn por parte de uno mismo en la de interactuar o hacer otras cosas.",b5dun2p2,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",150,medianamente agradable,b96ji273,2
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",151,malo,baz9z2ji,3
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",152,"Algo desagradable, pero se entiende el objetivo de ser una variable que influya en las respuestas.",bb5ubzbq,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",153,muy agradable,bc2qudps,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 4, 'STR': 2 }",154,Silencioso y agradable,bd4l45uc,1
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",155,Bueno.,be2scswv,1
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",156,horrible,bfegog7x,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",157,Muy bueno pero los sonidos no ayudan ,bfg36zkf,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",158,super,bfpupl0w,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 4, 'STR': 2 }",159,es bastante agradable ya que no hay distracciones y las herramientas para los experimentos son utiles ,bgt08i9i,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 4, 'STR': 1 }",160,totalmente tranquilo,bhaoxlyp,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 5 }",161,el ruido de fondo como de interferencia del microfono no es muy agradable y me generaba estres y no podia concentrarme ,bi0pct35,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",162,estuvo bien ene general todo,bl7867dp,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",163,ruido exterior,bmril146,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",164,Muy agradable,bw06fecb,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",165,Agradable,bzi193hp,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",166,Es comodo,c00eul2t,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",167,había un ruido incomodo del altavoz ,c61ihueq,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 3, 'STR': 2 }",168,Fue agradable por el silencio y la disposición de las sillas.,c7v7gsf3,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",169,"No fue nada agradable, pues los sonidos hacen que se dificulte la concentración. ",cakq4wln,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",170,fue muy agradable por la hora del dia me senti agotado. ,cfp9zdud,1
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",171,Normal.,cg1k2s7v,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 4 }",172,el ruido altera,cnu9kg2j,2
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",173,"Normal, algo ruidoso",coufgn87,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",174,me gusto el experimento esta vez fue diferente ,ctzey4b5,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",175,Molesto por el sonido,cwtnq86j,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",176,El ruido hace un poco mas difícil concentrarse.,cym0feit,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 4, 'STR': 3 }",177,"Un poco molestos los sonidos, pero no influyen mucho si te concentras.",d7rjey2l,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 3, 'STR': 2 }",178,Calmado,dd41vml1,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",179,muy agradable,dfrulnp2,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 3, 'STR': 2 }",180,"Tranquilo, silencioso",di771y63,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",181,Muy agradable,dmk4hlrk,3
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 1, 'CONC': 1, 'STR': 4 }",182,"Fue horrible, es muy dificil concentrarse asi",dmqask61,3
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",183,No tan bueno,dmthehtn,3
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",184,No era agradable,dsi2ndvn,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",185,RUIDOSO,dxwg8gsx,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",186,No mucho porque habia mucho ruido,e2bnkm91,2
+"{ 'SEN': 1, 'MR': 1, 'MS': 0, 'CONF': 4, 'CONC': 5, 'STR': 2 }",187,"súper, el sonido me ayudo a concentrarme",e9lp7j7h,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 3 }",188,Habia un ruido de ambiente desconcentrante,eb1dgn10,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",189,"Al principio no fue muy agradable gracias al ambiente auditivo, habìa mucho ruido en el entorno y eso me distrajo en las tareas",eddpjdg8,3
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",190,No fue tan agradable,edq8uiul,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",191,"Me distraje demasiado con el ruido de fondo, no me dejo concentrarme",edrwkjuk,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",192,Mal ese sonido del microfono desconcentra,ekhkaj49,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",193,Fue poco agradable pero es interesante ,el9q8ddt,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",194,muy buen ambiente,esfjh45t,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",195,"Buen ambiente, exceptuando el ruido del micrófono",eunk150h,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",196,Totalmente agradable,evinydg5,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",197,Muy Agradable,ezflv8jy,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 4, 'STR': 2 }",198,Fue agradable ya que hubo espacio para la concentración.,ezoj4kuw,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",199,"El ambiente estuvo bien , todo muy controlado",f1oraqlz,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 5, 'CONC': 5, 'STR': 1 }",200,"Bueno, el silencio ayuda mucho a concentrarse y el lugar es còmodo",f7uy5xxn,1
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",201,"Eh regular, el sonido que pusieron (creo que fue de aposta) pero luego cuando eran los juego uno no se percataba del sonido, ya era como sonido de fondo",f9339d5w,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",202,"bueno, aunque el ruido de fondo si llega a distraer en algunos momentos",fdmmjhqr,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",203,Muy agradable,feeyih0q,1
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",204,fue desagradable,fgnrs655,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 5, 'CONC': 3, 'STR': 1 }",205,fue agradable y acogedor,fgrhnvbs,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",206,super desagradable le ruido de fondo ,fgzoi3nx,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 5, 'CONC': 3, 'STR': 3 }",207,Cómodo,fm4n1bhi,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 3, 'STR': 2 }",208,El ambiente fue muy tranquilo,fssvy6my,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 4, 'CONC': 2, 'STR': 3 }",209,"Bastante desconcentrante debido al ruido de fondo del micrófono, de resto muy comodo ",ft4zt4p1,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",210,"Fue una bonita experiencia, aprendi mas a fortalecer habilidades",ft963el0,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",211,"El ruido de fondo en el que se escucha el teclado, o las notificaciones del celular distrae demasiado",fv2qn6h1,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",212,"Fue bueno, aunque a lo último me desconcentré en el cuenta atrás de tres números por el aviso de salida y perdí la concentración",g0p45d5l,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",213,Ruidoso,g2iccwkm,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",214,"Estuvo bien, pero el ruido blanco de fondo fue un poco molesto a veces",g319irjp,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",215,Comodo,g5k11e2b,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 3 }",216,"Todo estuvo muy bien, sin embargo hay un problema con el micrófono de la sala y queda prendido todo el experimento. No sé si fue a propósito, pero dificultó la realización del mismo. ",g6r6cr77,2
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",217,Había ruido pero aun así me sentí cómoda,g7dfv73z,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 4, 'STR': 1 }",218,"Pues no fue tenso ni incomodo, me gusto porque cada uno esta en su computador y no se siente presion a nada  ",g8wmvl9h,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",219,esta bien,g98z32sd,3
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",220,"Nada agradable, pero era parte del experimento",gdnkvtta,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",221,Ruido blanco intermitente que produce distraccion cuando se silencia y vuelve a sonar,ggiwpjt8,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 4 }",222,Fue molesto por el efecto de sonido que pusieron en los parlantes ,glrbk0u8,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",223,buena pero se escucha mucho ruido ,gnhkbxsu,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",224,fue bastante agradable,go6hnlyv,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",225,Mas que aceptable,gpyfarzk,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 5, 'CONC': 4, 'STR': 1 }",226,Totalmente silencioso. Agradable,gqbhr8mp,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",227,"No fue agradable, habìa mucho ruido, hacia difìcil concentrarse",gr9n7iiw,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 3, 'STR': 2 }",228,Tranquilo,greg4tdt,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",229,Agradable,gufopkfh,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 1, 'CONC': 2, 'STR': 4 }",230,El ruido de fondo me incomodo mucho,gvw7p3nm,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 2 }",231,Relajado,h20xjgwa,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",232,el sonido generaba una gran distracción ,h3jrufnd,3
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",233,"Estuvo bien, lo único fue que cuando habló la chica me distraje un poco, al igual con la música del exterior. ",h4g6jdzc,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",234,normal,h5e1ndll,1
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",235,no tan agradable ya después uno se acostumbra,h5puhgrx,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",236,El ambiente de la sala estuvo bien.,h9wvej62,1
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",237,Malo,hbgqgoyi,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",238,bueno,he21szl6,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",239,"Apropiado, sin embargo había ruido del micrófono que no permitía concentrarse de la mejor manera",hjie77d2,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",240,fue agradable,hjsmv7l9,2
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",241,Pesado ,hpqzhfaa,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",242,bueno ,hv70jemx,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",243,fue muy feo el ruido,hwa1qzx9,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",244,bueno,hxbs7vt3,1
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",245,normal,hz8e4upf,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",246,excelente,hzepzhvk,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 5, 'CONC': 3, 'STR': 3 }",247,"Bueno, todos estaban en silencio y fue cómodo",i0noswc2,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 4 }",248,bueno pero el ruido altera,i698u7hv,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",249,"Agrdable, de oficina",i7ho830i,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",250,Mucho ruido no dejaba concentrarme ,idfwv87t,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",251,mucho,ifcyd7yu,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",252,perfecto,ih03ide4,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 3 }",253,El sonido molestaba mucho el ambiente y la concentracion,iqh4w966,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 5 }",254,estresante por el ruido ,ir6wfar5,3
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",255,para experimentar como funciona la memoria atencional esta bien la implantación de sonidos explícitos distractores.,irz65y08,2
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",256,"Fue agradable, a veces el sonido no deja concentrar",ismsb3g8,1
+"{ 'SEN': 1, 'MR': 1, 'MS': 0, 'CONF': 4, 'CONC': 4, 'STR': 2 }",257,"Fue un ambiente agradable, el ruido de fondo me funciono para el ejercicio de memoria",isq0qtia,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 3, 'STR': 2 }",258,"Fue agradable, muy silencioso ",isvl8kr5,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 1, 'CONC': 2, 'STR': 4 }",259,Detestable con esa cantidad de sonidos,itiqjnd3,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",260,"El ruido me distrajo mucho, no pude concentrarme bien. ",izli3w4f,2
+"{ 'SEN': 1, 'MR': 1, 'MS': 0, 'CONF': 4, 'CONC': 4, 'STR': 2 }",261,"Pues fue comodo, el ruido me ayudaba a concentrarme mejor.",j2zncg4g,2
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",262,poco agradable,j3grljiq,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",263,Muy agradable ,j5y9nrjg,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",264,Bueno,j6a2cc9u,1
+"{ 'SEN': 1, 'MR': 1, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",265,"Bien, agradable, el ruido blanco del fondo estaba bien",jcgamq1s,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",266,"Había un ruido que no dejaba concentrar, por lo que se hizo complicado realizar el experimento",je68xdgm,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 5 }",267,"El ruido de fondo fue muy estresante y frustrante. Ese tipo de sonidos hacen que me distraiga muchísimo, fue muy difícil concentrarme en la tareas de los números particularmente.",jft82oh4,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",268,normal,jg3n47g1,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",269,Ruidoso por el ruido ambiente del megafono,jp96hpbo,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",270,Fue bueno ,jvp768kn,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",271,Fue irritante porque el micrófono siempre estuvo encendido,jxn7jjfn,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",272,El ruido de fondo no me dejaba concentrar,jy0hodp3,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",273,"El sonido es un poco molesto, el que sale por los parlantes",k501ku2o,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",274,El ambiente en la sala fue un poco tedioso debido a que el ruido constante como distracción hacia que fuera difícil mantener la atención sostenida en la actividad propuesta ,k6tg0f7d,2
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",275,Yo siento que el punto en el que se sintió tensa la sesión fue cuando estaban memorizando las palabras y de la nada les entraron a preguntar cosas... se escucho como el agh se me va a olvidar todo,k9i1tjbe,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",276,el ambiente fue comodo,kah4j5pc,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",277,mucho sonido de fondo,kcm9bp6n,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",278,Habia un ruido un poco molesto como cuando el televisor no tiene programa,kmw4di68,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 4, 'CONC': 2, 'STR': 3 }",279,Es algo complicado lograr concentrarse con los sonidos que ponen en los altavoces de resto todo excelente.,kn931swe,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",280,Muy amable las personas en el laboratorio,kwjwfmyv,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",281,Estaba sonando ruido que no me permitía concentrarme,kxwyiuej,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",282,Ambiente agradable,kyksyfyi,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 5 }",283,"El sonido lo estresa, olvidando lo que esta haciendo por momentos",kyyty5cp,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",284,bien,kyztdp9p,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",285,El ambiente de la sala fue agradable,l5twx2sm,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",286,el sonido perturba demasiado,l5y5kcsh,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",287,Muy agradable-,lamz8bxb,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",288,Muy bien,lbfdyabn,1
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",289,No fue para nada agradable,ld4fekqe,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",290,Fue poco agradable escuchar sonidos externos e incomodos,ljtsnl7l,3
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",291,"bueno, pero ruido de la cale",llxfdeoz,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",292,"El ruido de fondo era incómodo, pero quizá era parte del experimento.",ls8x6t7x,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",293,Bien,ltz7hxxk,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",294,Todo bastante bien,luexx172,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",295,Si fue agradable :),luz1jtij,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 4, 'STR': 2 }",296,Bien porque estuvo silencioso,m1g7vcw9,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 5 }",297,"Fue bastante estresante y agobiante, por la cantidad de ruido y mas porque es un ruido como bastante plano ",m2beq5zn,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 4, 'STR': 2 }",298,Fue agradable el silencio y el orden del lugar,m2r1ss98,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 5, 'CONC': 5, 'STR': 1 }",299,Fue un ambiente optimo para la concentración del experimento,m7dh6ljw,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",300,muy agradable ,m8kmv03w,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",301,hay un ruido de fondo que hace que me desconcentre y fue un poco dificil para mi ,mc863074,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",302,fue agradable,md800yz8,1
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",303,"no fue muy agradable que dieran un  anuncio mientras se hace un ejercicio de memoria me desconcentro totalmente, siento que fue inapropiado",mgpwdjso,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 4 }",304,El ruido me parecio bastante incomodo,ml90olgf,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",305,fue bastante agradable,n8a0yw19,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",306,7,n8z1hooo,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 3, 'STR': 2 }",307,Tranquilo,ncd2080b,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",308,Agradable,nedln5fm,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 1, 'CONC': 2, 'STR': 4 }",309,El micrófono estuvo todo el tiempo prendido entonces fue muy incomodo escuchar el ruido durante el experimento,nf1u57vj,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",310,"mucho ruido, dificulta la concentracion ",nisl6ete,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",311,"Todo bien, agradable",nksuj8c3,1
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",312,bueno,nmvofkrx,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 5, 'CONC': 3, 'STR': 3 }",313,"Sillas cómodas, buen clima.",no80c3e6,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",314,"El ruido fué incómodo pero bien, intenté concentrarme lo mejor que pude",npf71lwv,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",315,agradabe ,nrdi55xl,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 1, 'CONF': 3, 'CONC': 2, 'STR': 4 }",316,Los ejercicios eran estresantes por el nivel de concentraciòn requerido pero el espacio estuvo tranquilo hasta la parte final cuando comunicaron informaciòn por el micròfono mientras algunos no terminàbamos todas las pruebas que requerìan concentraciòn.,nv25r71i,1
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",317,"hace calor, y a veces cuando uno esta concentrado siente que falta oxigeno",nwpq6kvv,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 4, 'STR': 3 }",318,"El ambiente estuvo de acuerdo a los requerimientos de los juegos. Osea, fue un espacio en donde me pude concentrar",nxaddrha,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",319,mucho ruido de fondo,ny9jjrzj,3
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",320,No tan bueno,nztlvbhu,3
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",321,Nefasto,o0ir1gnh,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",322,fue agradable,o1lpkona,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",323,al principio no tan bien por el sonido,o9zfmksa,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",324,Bueno,oet4nvok,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",325,Muy agradable,og7fvnd8,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 4, 'STR': 2 }",326,"Excelente, mucha motivación",om9kwu4e,1
+"{ 'SEN': 1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",327,Me gustaron los sonidos de fondo,onergf90,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",328,No hay nada desagradable en la sala,oohgymik,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",329,bien,otr2bf81,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",330,"bien, un poco distraida por el ruido",oufm9y5g,2
+"{ 'SEN': 1, 'MR': 1, 'MS': 0, 'CONF': 4, 'CONC': 4, 'STR': 2 }",331,Los compañeros muy concentrados y el sonido ambiente muy bueno,owadpngo,3
+"{ 'SEN': 1, 'MR': 1, 'MS': 0, 'CONF': 4, 'CONC': 5, 'STR': 2 }",332,"Fue comodo ya que no hubo demasiado ruido, ademas el espacio es ideal para que uno se concentre solo en lo que uno esta haciendo",oza01398,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",333,Agradable.,p3cibj7i,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",334,habia un ruido de estatica lo que pudo afectar mi capacidad de concentracion durante el experimento.,p7o3znr2,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",335,"No me gustó, había ruido constante de los parlantes y desconcentraba un poco",p8kam9kn,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",336,"Bueno, pero hacia mucho ruido",pa6ayr70,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",337,Bastante agradable,pavy07cm,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",338,"mucho ruido, tanto por música, como por un sonido que creo yo era del micrófono y la distraccion a lo ultimo cuando hablaron ",pc17azfn,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",339,muy agradable,pcvjt7cp,1
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",340,habian distracciones notorias,pcycazxv,3
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",341,no fue el mejor debido a algunas distracciones generadas.,pd22ay8k,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 5, 'CONC': 3, 'STR': 3 }",342,Muy cómodo,pg491u7w,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",343,Me recibieron muy bien :),ph4ab81g,1
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",344,bien,pivrc0xn,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 5, 'CONC': 3, 'STR': 1 }",345,Es un ambiente cómodo y seguro,pkqcekjn,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 3 }",346,Ruido por el microfono,pl4rlowo,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",347,BUENA,poa848in,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 1, 'CONC': 1, 'STR': 4 }",348,"muy malo, soy muy auditiva el escuchar cosas externas me sacan de mi labor",pr2j094l,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 5, 'STR': 1 }",349,"Fue agradable, el silencio ayuda a concentrarte",pxsq1xcn,1
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",350,Normal,pzkczc21,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",351,Había un poco de ruido,q0jrwvd6,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",352,excelente ,q38d4cqd,2
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",353,molesto y desgastante,qe4wdmxc,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",354,Bastante agradable,qec37a1j,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",355,El ruido afecta la concentracion,qga7p5lc,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 5, 'CONC': 3, 'STR': 1 }",356,"fue tranquilo, y no hubo incomodidad.",qhns6rqd,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 3, 'STR': 2 }",357,Estuvo tranquilo y confiados,qhyqv0zm,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",358,estuvo bien,qi11ovot,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",359,Hubiera sido agradable si mi compañero de al lado no estuviera murmurando las palabras en voz baja y gesticulando cada vez que perdía.,qoxfssxg,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 1, 'CONF': 3, 'CONC': 3, 'STR': 3 }",360,"Fue ameno, calmado, un poco frio y desconcertante con el ruido externo",qpnbmmn4,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",361,"Fue desagradable, hubo un casi constante ruido",qr0wv8tm,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 4, 'STR': 2 }",362,Un Ambiente Tranquilo,qs2yl81m,1
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",363,"Se sintió un lugar adecuado para el desarrollo de la actividad, los ruidos externos llegaron a distraer en momentos cruciales, pero fue algo completamente externo. De resto cómoda y apropiada.",qu6xgpf4,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",364,Fue agradable,qubdatw5,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 3, 'STR': 2 }",365,"EL ambiente fue bueno, tranquilo.",qyur5wyi,1
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",366,Los sonidos influyen en la concentración,qz2aw66p,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 1, 'CONC': 1, 'STR': 5 }",367,"Dejaron el micròfono encendido y todo el tiempo estuve escuchando notificaciones de whatsapp, paquetes, personas masticando, entre otros ruidos molestos.",qzuspasa,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 4 }",368,"La organizacion del experimento como tal fue buena, solo fue que el sonido constante en si me irrita mucho.",r1i791he,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",369,excelente,rbvv3kq9,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",370,"estuve chevere, auqnue el ruido del microfono descocentraba mucho",rch8v7zs,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",371,"Agradable, excepto porque el microfono produce ruido muy molesto",rdmpfux2,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 5, 'CONC': 4, 'STR': 1 }",372,Muy silencioso y agradable,rhm4pjqt,1
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",373,"Estuvo bien, bastante normal",ri2bhzhr,1
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",374,desagradable,rj04t3d3,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",375,bien ,rmpcjoqw,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",376,"Con el ruido es imposible concentrarse, aunque sé que es intencional para este experimento. En cualquier caso, ese factor me pone incómodo.",rppbbk2s,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 4, 'STR': 1 }",377,"Muy casual, la informaciòn se transmite de manera agradable y fue muy tranquilo.",rqw9m5ct,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",378,había ruido ,rubo351f,3
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",379,No fue nada agradable,rx4rnmef,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",380,"feo, mucho ruido",rybpw06h,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",381,Muy buena,rz8gpdek,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",382,bastante agradable,rziat748,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",383,bien,s0hnhax1,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",384,Bien. un poco incomodo el sonido,s1hlyn6p,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 4, 'STR': 3 }",385,"El ambiente obliga a concentrarse, de otra manera no se puede realizar de una manera correcta",s24t1f6p,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",386,Acogedor,s75jgmvt,1
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 4 }",387,Fue un poco estresante,s7atigpa,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",388,Bueno,s89zdljc,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",389,Todo muy eficiente,sbwvi9am,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",390,Excelente,scf5grw9,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",391,El ambiente estuvo suficientemente agradable,seac8t87,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 4 }",392,fue un poco estresante el sonido del fondo como una interferencia,sie3ghks,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",393,Mucho ruido del micrófono constantemente,sjwyxg0q,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",394,normal,sk8u8o34,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",395,"Malo, el ruido no dejaba concentrarse ",sm5veszw,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",396,bueno,srz3a3c5,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",397,No fue agradable por los ruidos.,ssyc96qu,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",398,Nada agradable con el sonido de la sala,sufnhykf,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",399,Muy agradable y profesional,suhgw3dm,1
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",400,"regular, debido al sonido",svdgfikn,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",401,Bueno,svf193ag,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",402,el sonido distraia demasiado,sx0p38cl,2
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",403,"Bien, sin embargo había un poco de ruido generado por la bocina",sxet4rc4,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 4, 'STR': 2 }",404,"Bastante bueno, silencioso y tranquilo.",sz0hxt09,1
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",405,Indiferente,t05bn1uc,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 3 }",406,"Agradable, interferida por el ruido.",t880k706,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 5 }",407,"No fué agradable, el ruido no me dejaba pensar y me estresaba.",t8y91855,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",408,"Fue poco agradable por el sonido de fondo, aunque se entiende que hace parte del experimento, tambien influye que los participantes a vecs hablan o piensan en voz alta",t9e4egbk,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",409,Muy agradable,tdas901e,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 5 }",410,"Para nada agradable, los sonidos de fondo distraen y estresan",tdayb0h4,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 3, 'STR': 2 }",411,tranquila,too3nur1,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 5, 'CONC': 3, 'STR': 1 }",412,"me gusta es tranquila, muy agradable",top3ysq4,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 5 }",413,Fue estresante y me distrajeron en varias ocasiones los ruidos.,tpi7mpzu,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",414,"El problema principal fue el ruido de la sala, que venia desde los parlantes, la estática iba y venia y me desconcentraba con mucha facilidad de resto todo estaba perfectamente.",tvllvo4b,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 5 }",415,El ruido que producian en la sala en general es estresante,txkt055z,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",416,estuvo normal ,u0zvc7ie,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 4, 'STR': 2 }",417,poco agradable pero el ruido hacia que pudiera recordar palabras,u1p0p146,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",418,"fue agradable, sin embargo, el micrófono tenía un ruido constante que desconcentraba",u4srczgn,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",419,"El ruido un poco insoportable. Me lograba concentrar, pero en màs corto plazo: como en el segundo intento.",u77ds9pv,2
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",420,terrible,ubicz2t4,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",421,Fue bastante agradable. ,ucmt1a8t,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",422,bien,uei87b3c,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",423,Buen Ambiente,ugiw59sj,1
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",424,Poco,uiwkyh8g,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",425,es agradable,uj6sqqzh,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",426,"Cómodo, caluroso.",ulf5cgz5,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",427,no tan agradable por el ruido,uoch1b4d,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 3 }",428,El ruido de fondo no facilitaba la concentracion,uq68q6gu,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 1, 'CONF': 3, 'CONC': 3, 'STR': 3 }",429,Silencioso,uqqrxnp3,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 1, 'CONC': 1, 'STR': 5 }",430,mucho ruido estresante,utea0gu4,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",431,"bien, agradable",uwbpe0es,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 3, 'STR': 3 }",432,"Silencioso, bueno",uxd7h901,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",433,Fue muy agradable,uyzcdvcj,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",434,"No fue muy agradable, habian muchos sonidos de fondo, mensajes, teclados, etc. ",v09rhmy2,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",435,normal,v1jur4v6,2
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",436,Fue muy malo el ambiente en general,v5fnovnh,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",437,muy buen ambiente en la sala ,v9h99f4t,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",438,"Malo, el ruido era muy molesto",vad1vr08,2
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 1, 'CONC': 1, 'STR': 4 }",439,"horrible, no me pude concentrar",vb9xoomi,2
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 3 }",440,"Negativo, Perfecto para la desconcentración",vbep8bbh,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 5, 'CONC': 3, 'STR': 3 }",441,Muy comodo,vha1erec,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",442,"El ruido no me pareció molesto; en cambio, había una persona memorizando las palabras en voz alta que sí me desconcentró un poco",vi6a2fst,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 4, 'CONC': 2, 'STR': 4 }",443,"es agradable, el espacio es muy còmodo y limpio, sin embargo, el ruido claramente es un distractor muy fuerte",vkpabr8g,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 1, 'CONC': 1, 'STR': 5 }",444,"Fue horrible, el sonido tan fuerte no me permitía concentrar",vmucblw5,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 4, 'STR': 3 }",445,los ruidos del ambiente son distractores y no muy agradables al inicio pero una vez acostumbrado es mas facil concentrarse en la prueba,volpkw4t,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 3 }",446,no fue muy agradable debido al fuerte ruido que se presento lo cual interviene un poco en la concentración ,vtw9f1zq,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 3 }",447,"No fue agradable el ambiente, ya que durante toda la prueba estuvo presente un sonido (como de interferencia), lo cual la verdad dificultaba concentrarse",w5mb4235,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",448,estuvo incomodo dado que habia un ruido ,w6dfq3aw,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",449,estuvo bien ,w80o747c,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",450,"El sonido no permitìa concentrarse mucho y en el momento en que hablaron por prestar atenciòn, fue un distractor para seguir concentrarse en la actividad",w8kysn5y,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",451,muy agradable,w9s2tgdf,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",452,Agradable,w9vdxk2k,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",453,agradable,wfngdgrd,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 3, 'STR': 2 }",454,"Fue agradable, estaba en silencio y se sentia tranquilidad",wj38xr2b,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 5, 'STR': 1 }",455,"bien, perfecto para concentrarse",wmwbgbad,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",456,El ruido no dejaba concentrarse.,wnzeslvp,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",457,normal ,wp4wklqh,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 4, 'STR': 1 }",458,bien pq esta en total silencio,wp8p1qhw,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",459,"Normal, aunque si desconcentra mucho el ruido de fondo",wqcz4zvg,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",460,"Nada agradable, el sonido hacia que se perdiera la concentración en las actividades. ",wup2hwu2,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",461,No fue agradable debido al ruido blanco de fondo,x0kiuc1d,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",462,fue algo confuso pero no desagradable,x1an0spt,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",463,"Al principio no fue tan agradable por el ruido de fondo, pero con el tiempo me habitué un poco al mismo, aunque seguía siendo molesto",x1iz0csv,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",464,estresante con el sonido,x1zla4x6,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 5, 'CONC': 3, 'STR': 2 }",465,"Es cómodo y me sentí bien, no sentí rechazo o un mal ambiente",x2f0emyl,1
+"{ 'SEN': 1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 4, 'STR': 2 }",466,Bien cuando logras ignorar los sonidos  y enfocarte es divertida la actividad,xe23b583,3
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",467,"chevere, a veces me distrae un poco el ruido de los buses afuera y alguien que al parecer escucha radio uno, pero de resto bien, se que no es algo de todos los dias.",xodnqky5,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",468,Agradable a excepción de los sonidos de fondo,xp3wuflr,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",469,Normal.,xr4o39mz,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",470,"Fue completamente agradable, acorde con el interès del proyecto",xrqspdh9,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 5, 'CONC': 4, 'STR': 1 }",471,"Tranquilo, sin ninguna molestia",y1o5up2a,1
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 4, 'STR': 3 }",472,"Bastante, solo me concentré em el portátil",y5gs6vf7,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",473,El sonido que ponen es como molesto,y5hpjji5,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 1, 'CONC': 1, 'STR': 4 }",474,"Fatal los sonidos del micròfono, la chica tecleando y comiendo ",y8iszp0z,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",475,"Si, la temperatura estaba bien.",yazi90oi,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",476,"Muy agradable, el único inconveniente que tuve es que en una prueba que estaba llevando los números en mi cabeza, hablaron por el micrófono y me desconcentró y perdí lo que llevaba por consiguiente afectó mi resultado. ",ycspzpq4,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",477,"hubo mucho ruido durante la prueba, creo que era el micrófono que usan para darnos instrucciones ",yd4610am,2
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",478,Bueno,yeov12qn,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 2 }",479,"escuche un ruido constantemente, aunque no me frustro, si puedo ver que no me permitía concentrarme",yx2pmlb0,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 5, 'STR': 1 }",480,Es agradable porque esta en silencio y eso permite mejor la concentracion en estas actividades,yzxqll2e,1
+"{ 'SEN': 1, 'MR': 1, 'MS': 0, 'CONF': 4, 'CONC': 4, 'STR': 2 }",481,"Fu agradable , aunque el sonido externo a veces lo perturba a uno , sin embargo , el sonido para mi no fue impedimento de concentración ",zdxom9ee,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",482,Un ruido q aveces molestaba,zf18rqdc,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",483,Agradable,zipus456,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",484,Bueno,zitwennt,1
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",485,agradable,zlg6umj5,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 1, 'CONC': 1, 'STR': 5 }",486,"pésimo, el ruido intermitente no me permitió concentrarme, hasta me dio dolor de cabeza",zm99pq4j,2
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",487,Hubo mucho ruido por los parlantes,zqp6r0a8,2
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",488,Muy agradable,zsbxou8o,1
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",489,"Fue un poco molesto algunos sonidos que se pusieron, sobre todo el sonido de cuando alguien simula que come.",ztihkj2n,3
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 4 }",490,estresante,zy8k0hp6,3
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",491,Un poco incomodo,zzytpwcl,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",492,El ruido me distrae,1oddhdl1,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",493,"Fue todo un reto, el ruido dificulto mucho la concentración",201mmkx3,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",494,normal,2jrqy2ll,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 1, 'CONC': 1, 'STR': 4 }",495,"desagradable, demasiado ruido",3gn8ggjg,3
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 1, 'CONC': 2, 'STR': 4 }",496,"terrible, me duele cabeza ",4crjm62l,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",497,"No fue tan agradable porque habìa mucho ruido, entonces no te podìas concentrar en las preguntas",4m625nxd,3
+"{ 'SEN': 1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",498,"Me gustaron las distracciones del ambiente, el sonido distractor añadió un factor importante en el desarrollo de las actividades.",5fdp5p1i,3
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",499,"Bastante agradable, lo unico medio malo fue que el microfono de la parte de produccion, estuvo prendido todo el tiempo. ",5qvlrbb0,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",500,"no fue agradable, pensar con esos sonidos es difícil",5vr22aup,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",501,estuvo bien,79drkvyn,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",502,"Desagradable con el ruido de fondo que había, no permitía concentrarse",7fmc5cir,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",503,mucho ruido,7kgedl8d,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",504,"Lo unico que me molesto es que sonaba contantement notificaciones de llamada, de whastapp y de comida por el microfono de la sala.",7m1qpdup,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",505,No muy Agradable realmente por los sonidos al comenzar,9aj03356,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",506,Nada agradable con ese ruido persistente de fondo,9njxchtp,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",507,Bueno,9rzny2nc,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 1, 'CONC': 1, 'STR': 5 }",508,Muy ruidoso y exigía trabajo de concentración matemática y de memorizar palabras y con tanto ruido y no podía memorizar ni pensar bien,al3lchn8,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 5, 'CONC': 3, 'STR': 2 }",509,"AGRADABLE Y COMODO, ME SENTI BIEN >:(",aoxwi48z,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",510,"no fue agradable, había mucho ruido ",asa69pdd,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",511,fue muy agradable,cgpacsw3,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",512,Chistoso con tanto ruido.,cso4focb,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",513,Se me dificultó concentrarme por el ruido,d9xjndjt,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",514,"Mucho ruido en las bocinas, se escuchaba gente comiendo, tecleando y recibiendo mensajes por whatsapp lo que altero un poco mi concentración.",daxwkh3d,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",515,un poco incomodo por el ruido,db4va830,3
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 4, 'STR': 2 }",516,"El sonido de fondo si distrae, pero cuando te concentras pasa a segundo plano. Personalmente estudio con ruido blanco, entonces no me distraje tanto.",fhe4cbsw,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",517,"Fue un tanto difícil concentrarse con los ruidos de la bocina, pero asumo que era parte del experimento.",ieup1t69,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",518,un poco complejo por el ruido,iv775223,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",519,El ambiente fue incomodo y ruidoso debido a los sonidos de fondo de notificaciones y personas masticando,iw5gxm22,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",520,agradable,k1jf9leo,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",521,"No, hay algunos ruidos repetitivos en alto volumen",nluh6ksj,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 3, 'STR': 2 }",522,es ameno y muy tranquilo,nmul35i8,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",523,Mucho ruido en la sala,nnzhy6ts,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 5, 'CONC': 3, 'STR': 3 }",524,"La sala es limpia y espaciosa, tiene buena iluminaciòn.",o323vul4,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",525,No lo fue para nada,o58cobx9,3
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",526,Cero agradable,p58pj9s1,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",527,Un poco incomodo por los ruidos,pxg7lx9d,3
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",528,no fue para nada agradable,qrcvo6d5,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 2 }",529,"Me dio risa, pero no fue tan critico, creo que estaba el entorno no me afecta tanto como mis pensamientos, justo hoy tengo la mente en otro mundo",rlwjhj3o,3
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",530,"moderado, es un poco difícil concentrase con los ruidos de fondo, sin embargo estuvo interesante",rpctlp5o,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",531,Fue una excelente experiencia.,rr9zqq4r,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",532,fue ruidoso,sfab6g6b,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",533,fue agradable ,u5tff6t4,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",534,buen ambiente,unwa8tui,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 5 }",535,"El uso de sonidos estresantes dificulto mucho la concentración, lo que me estreso bastante",vtzdjtmp,3
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",536,"Bastante bien, aunque escuchaba el ruido  por parte de los organizadores, los teclazos, que estaban comiendo, haciendo otras actividades",wb4p5cgu,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",537,Fue entretenido ver como colocaban ruidos para hacer desconcentrarnos en las pruebas,xaxn9vfz,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",538,no tanto,xmnescie,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",539,bueno,xnr0qmex,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 1, 'STR': 5 }",540,"La sala y adecuacion estuvieron bien, pero el experimento fue muy estresante, horrible. El ruido era impresionante y la falta de sueño y estrès me desconcentraron",ylyt5hu6,3
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 4 }",541,"Estresante, era complejo concentrarse debido al ruido, pero fue retador hacer el esfuerzo de mantenerse concentrado, lo cual en parte fue agradable.",zz3n9byc,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 4 }",513,Se me dificultó concentrarme por el ruido,d9xjndjt,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",514,"Mucho ruido en las bocinas, se escuchaba gente comiendo, tecleando y recibiendo mensajes por whatsapp lo que altero un poco mi concentración.",daxwkh3d,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",515,un poco incomodo por el ruido,db4va830,3
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 4, 'STR': 2 }",516,"El sonido de fondo si distrae, pero cuando te concentras pasa a segundo plano. Personalmente estudio con ruido blanco, entonces no me distraje tanto.",fhe4cbsw,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",517,"Fue un tanto difícil concentrarse con los ruidos de la bocina, pero asumo que era parte del experimento.",ieup1t69,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",518,un poco complejo por el ruido,iv775223,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",519,El ambiente fue incomodo y ruidoso debido a los sonidos de fondo de notificaciones y personas masticando,iw5gxm22,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",520,agradable,k1jf9leo,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",521,"No, hay algunos ruidos repetitivos en alto volumen",nluh6ksj,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 1, 'CONF': 4, 'CONC': 3, 'STR': 2 }",522,es ameno y muy tranquilo,nmul35i8,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",523,Mucho ruido en la sala,nnzhy6ts,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 5, 'CONC': 3, 'STR': 3 }",524,"La sala es limpia y espaciosa, tiene buena iluminaciòn.",o323vul4,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",525,No lo fue para nada,o58cobx9,3
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",526,Cero agradable,p58pj9s1,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",527,Un poco incomodo por los ruidos,pxg7lx9d,3
+"{ 'SEN': -1, 'MR': 0, 'MS': 0, 'CONF': 2, 'CONC': 3, 'STR': 3 }",528,no fue para nada agradable,qrcvo6d5,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 2 }",529,"Me dio risa, pero no fue tan critico, creo que estaba el entorno no me afecta tanto como mis pensamientos, justo hoy tengo la mente en otro mundo",rlwjhj3o,3
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",530,"moderado, es un poco difícil concentrase con los ruidos de fondo, sin embargo estuvo interesante",rpctlp5o,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",531,Fue una excelente experiencia.,rr9zqq4r,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",532,fue ruidoso,sfab6g6b,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 2 }",533,fue agradable ,u5tff6t4,3
+"{ 'SEN': 1, 'MR': 0, 'MS': 0, 'CONF': 4, 'CONC': 3, 'STR': 3 }",534,buen ambiente,unwa8tui,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 1, 'STR': 5 }",535,"El uso de sonidos estresantes dificulto mucho la concentración, lo que me estreso bastante",vtzdjtmp,3
+"{ 'SEN': 0, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",536,"Bastante bien, aunque escuchaba el ruido  por parte de los organizadores, los teclazos, que estaban comiendo, haciendo otras actividades",wb4p5cgu,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 2, 'STR': 3 }",537,Fue entretenido ver como colocaban ruidos para hacer desconcentrarnos en las pruebas,xaxn9vfz,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",538,no tanto,xmnescie,3
+"{ 'SEN': 0, 'MR': 0, 'MS': 0, 'CONF': 3, 'CONC': 3, 'STR': 3 }",539,bueno,xnr0qmex,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 3, 'CONC': 1, 'STR': 5 }",540,"La sala y adecuacion estuvieron bien, pero el experimento fue muy estresante, horrible. El ruido era impresionante y la falta de sueño y estrès me desconcentraron",ylyt5hu6,3
+"{ 'SEN': -1, 'MR': 1, 'MS': 0, 'CONF': 2, 'CONC': 2, 'STR': 4 }",541,"Estresante, era complejo concentrarse debido al ruido, pero fue retador hacer el esfuerzo de mantenerse concentrado, lo cual en parte fue agradable.",zz3n9byc,3

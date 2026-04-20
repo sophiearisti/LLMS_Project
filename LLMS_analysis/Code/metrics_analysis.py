@@ -5,14 +5,41 @@
 import os
 from numpy import real
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import classification_report, accuracy_score, cohen_kappa_score
+import krippendorff
 from utils import *
 import textwrap
 import re
 
+TAGS_FILE = "tags.csv"          # raw coder fractions for paper 1
+N_HUMAN_CODERS = 3
+OBS_KEYS_P1 = ["session", "period", "group", "game"]
+
+
+def _reconstruct_coders(avg_series: pd.Series) -> np.ndarray:
+    """
+    Reconstruct N_HUMAN_CODERS binary vectors from averaged fractions.
+    avg × 3 → k coders said "1"; assign 1 to the first k coders.
+    Returns shape (N_HUMAN_CODERS, n_items).
+    """
+    n = len(avg_series)
+    mat = np.full((N_HUMAN_CODERS, n), np.nan)
+    for i, val in enumerate(avg_series):
+        if pd.isna(val):
+            continue
+        k = int(round(float(val) * N_HUMAN_CODERS))
+        k = max(0, min(N_HUMAN_CODERS, k))
+        for c in range(N_HUMAN_CODERS):
+            mat[c, i] = 1.0 if (N_HUMAN_CODERS - c) <= k else 0.0
+    return mat
+
 
 def krippendorff_alpha_nominal(y_true, y_pred):
+    """
+    Generic 2-rater Krippendorff alpha (used for papers 3 and 4).
+    """
     y_true = pd.Series(y_true).astype(str)
     y_pred = pd.Series(y_pred).astype(str)
 
@@ -26,6 +53,40 @@ def krippendorff_alpha_nominal(y_true, y_pred):
         return 1.0 if observed_disagreement == 0 else 0.0
 
     return 1 - (observed_disagreement / expected_disagreement)
+
+
+def krippendorff_alpha_4raters(tags_df: pd.DataFrame, merged_df: pd.DataFrame,
+                                obs_keys: list, tag: str, y_pred_binary: pd.Series) -> float:
+    """
+    Compute Krippendorff's alpha across 3 human coders + 1 LLM for paper 1.
+
+    tags_df   : full tags.csv loaded (has raw coder fractions)
+    merged_df : already-merged real×predicted dataframe (used for obs_keys alignment)
+    obs_keys  : ['session','period','group','game']
+    tag       : label column name
+    y_pred_binary : LLM predictions aligned to merged_df rows (0/1 integers/floats)
+    """
+    # Pull the raw fractions for the matched observations
+    obs = merged_df[obs_keys].drop_duplicates()
+    tags_sub = obs.merge(tags_df[obs_keys + [tag]], on=obs_keys, how="left")
+
+    avg_vals = tags_sub[tag].values  # shape (n_obs,)
+
+    # Reconstruct 3 human coder rows
+    human_mat = _reconstruct_coders(pd.Series(avg_vals))  # (3, n_obs)
+
+    # LLM row: convert to float, keep NaN where prediction is missing
+    llm_row = pd.to_numeric(pd.Series(y_pred_binary.values), errors="coerce").values.astype(float)
+    llm_row = llm_row.reshape(1, -1)  # (1, n_obs)
+
+    # Stack into (4, n_obs) reliability matrix
+    mat = np.vstack([human_mat, llm_row])
+
+    flat = mat[~np.isnan(mat)]
+    if len(np.unique(flat)) < 2:
+        return np.nan  # no variance — alpha undefined
+
+    return float(krippendorff.alpha(mat, level_of_measurement="nominal"))
 
 
 PAPERS = {
@@ -101,6 +162,14 @@ def paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder
     results = []   # aquí acumularemos las métricas por categoría
 
     merged_df = None
+    tags_df = None  # only loaded for paper 1
+
+    if paper_id == 1:
+        tags_path = os.path.join(DATA_PATH, PAPERS[1]["path"], TAGS_FILE)
+        if os.path.exists(tags_path):
+            tags_df = pd.read_csv(tags_path)
+        else:
+            print(f"Warning: {tags_path} not found — falling back to 2-rater alpha for paper 1")
 
     if paper_id in [1, 4]:
         if "original_message" in predicted_df.columns and message_col in real_df.columns:
@@ -179,7 +248,19 @@ def paper_evaluation(paper_id, real_answers_path, predicted_answers_path, folder
         # métricas básicas
         acc = accuracy_score(y_true, y_pred)
         kappa = float(cohen_kappa_score(y_true, y_pred))
-        kripp_alpha = float(krippendorff_alpha_nominal(y_true, y_pred))
+
+        if paper_id == 1 and tags_df is not None and merged_df is not None:
+            # 4-rater Krippendorff: 3 humans (reconstructed from fractions) + LLM
+            y_pred_numeric = pd.to_numeric(
+                merged_df[tag + "_pred"].astype(str).str.replace(r"\.0$", "", regex=True),
+                errors="coerce"
+            )
+            kripp_alpha = krippendorff_alpha_4raters(
+                tags_df, merged_df, OBS_KEYS_P1, tag, y_pred_numeric
+            )
+            kripp_alpha = float(kripp_alpha) if not np.isnan(kripp_alpha) else float("nan")
+        else:
+            kripp_alpha = float(krippendorff_alpha_nominal(y_true, y_pred))
         report = classification_report(y_true, y_pred, output_dict=True)
 
         print(f"\n Classification Report | Paper {paper_id} | Tag: {tag}")

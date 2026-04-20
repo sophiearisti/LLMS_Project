@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(py -c \"import krippendorff; print\\('ok'\\)\")",
+      "Bash(py -c \"import sklearn; print\\('sklearn ok'\\)\")",
+      "Bash(py -c \"import pandas; print\\('pandas ok'\\)\")",
+      "Bash(py -m pip install krippendorff -q)",
+      "Bash(py -c \"import krippendorff; print\\('installed', krippendorff.__version__\\)\")",
+      "Bash(py -c \"import krippendorff; import numpy as np; print\\('krippendorff ok'\\); a=krippendorff.alpha\\(np.array\\([[1,0,1],[1,1,0]]\\), level_of_measurement='nominal'\\); print\\('alpha test:', a\\)\")",
+      "Bash(py -c ' *)",
+      "Bash(py human_irr.py)",
+      "Bash(.venv/Scripts/pip install *)",
+      "Bash(.venv/Scripts/python -c \"import krippendorff; print\\('ok'\\)\")",
+      "Bash(\"c:/Users/danie/Dropbox/Javeriana/Proyecto LLMS text/LLMS_Project/LLMS_analysis/.venv/Scripts/pip.exe\" install krippendorff -q)",
+      "Bash(\"c:/Users/danie/Dropbox/Javeriana/Proyecto LLMS text/LLMS_Project/LLMS_analysis/.venv/Scripts/python.exe\" -c \"import krippendorff; print\\('ok'\\)\")"
+    ]
+  }
+}

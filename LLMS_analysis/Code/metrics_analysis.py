@@ -39,20 +39,12 @@ def _reconstruct_coders(avg_series: pd.Series) -> np.ndarray:
 def krippendorff_alpha_nominal(y_true, y_pred):
     """
     Generic 2-rater Krippendorff alpha (used for papers 3 and 4).
+    Builds a (2, n_items) reliability matrix and delegates to the krippendorff library.
     """
-    y_true = pd.Series(y_true).astype(str)
-    y_pred = pd.Series(y_pred).astype(str)
-
-    observed_disagreement = (y_true != y_pred).mean()
-
-    pooled = pd.concat([y_true, y_pred], ignore_index=True)
-    probs = pooled.value_counts(normalize=True)
-    expected_disagreement = 1 - (probs ** 2).sum()
-
-    if expected_disagreement == 0:
-        return 1.0 if observed_disagreement == 0 else 0.0
-
-    return 1 - (observed_disagreement / expected_disagreement)
+    y_true = pd.Series(y_true).astype(str).values
+    y_pred = pd.Series(y_pred).astype(str).values
+    mat = np.array([y_true, y_pred], dtype=object)
+    return float(krippendorff.alpha(mat, level_of_measurement="nominal"))
 
 
 def krippendorff_alpha_4raters(tags_df: pd.DataFrame, merged_df: pd.DataFrame,
@@ -85,6 +77,17 @@ def krippendorff_alpha_4raters(tags_df: pd.DataFrame, merged_df: pd.DataFrame,
     tags_sub = conv_pred[obs_keys].merge(
         tags_df[obs_keys + [tag]], on=obs_keys, how="left"
     )
+
+    n_total = len(tags_sub)
+    n_aligned = int(tags_sub[tag].notna().sum())
+    n_missing = n_total - n_aligned
+    if n_missing > 0:
+        print(
+            f"Warning [{tag}]: {n_missing}/{n_total} conversations not aligned to "
+            f"tags_df — alpha computed on {n_aligned} rows."
+        )
+    if n_aligned < 2:
+        return np.nan
 
     avg_vals = tags_sub[tag].values          # shape (n_conv,)
     llm_vals = conv_pred["_pred_agg"].values # shape (n_conv,)

@@ -333,3 +333,36 @@ The classification should be:
 'contradict': 0,
 'neither_report': 0
 }"""
+
+
+HELP_CLASIFICACION_CAT = """
+Your task is to analyze the full set of chat messages provided and identify three major thematic categories that consistently appear throughout the messages. These categories should capture the dominant topics or communication strategies participants use across the experiment. A message may belong to more than one category.
+"""
+
+HELP_FORMAT_CAT = """
+You must return the three categories you identify strictly as a Python dictionary, with no additional text or characters.
+Each key should be a descriptive tag, meaning that each must accurately depict the category you chose.  Also,  each value should be a definition of the category.
+For example, if your categories are A, B, and C, and your tags are 'A', 'B', and 'C', the response should be:
+
+ {
+    'A': 'the category is A: <definition of the category> ',
+    'B': 'the category is B: <definition of the category> ',
+    'C': 'the category is C: <definition of the category> '
+}
+
+You must:
+1.	Analyze the complete content.
+2.	Identify the three most prevalent thematic categories.
+3.	Return them only in the required Python dictionary format.
+
+After this first step (creating the categories), further instructions will follow for applying them to each individual message.
+
+"""
+
+
+gpt_models = ["gpt-5.4-mini", "gpt-5.4", "gpt-5.2"]
+
+gemini_models = ["gemini-3.1-pro-preview", "gemini-3.1-pro-preview-customtools",
+                       "gemini-3-flash-preview", "gemini-3-pro-preview", "gemini-3.1-flash-live-preview"]
+
+claude_models = ["claude-opus-4-6", "claude-sonnet-4-6", "claude-haiku-4-5-20251001"]

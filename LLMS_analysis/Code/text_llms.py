@@ -41,6 +41,8 @@ SELECTED_CHATGPT_MODEL = "gpt-5.2"
 SELECTED_GEMINI_MODEL = "gemini-3-flash-preview"
 SELECTED_CLAUDE_MODEL = "claude-sonnet-4-6"
 
+API_KEY = ""
+
 def write_rows_to_csv(output_path, rows):
     if not rows:
         return
@@ -61,7 +63,7 @@ def get_chatgpt_client():
         llm_chatgpt = ChatOpenAI(
             model=SELECTED_CHATGPT_MODEL,
             max_retries=1,
-            api_key=OAI_2
+            api_key=API_KEY
         )
     return llm_chatgpt
 
@@ -71,7 +73,7 @@ def get_gemini_client():
     if llm_gemini is None:
         if not GEMINI:
             raise ValueError("Missing GEMINI API key. Set GEMINI in your .env file.")
-        llm_gemini = genai.Client(api_key=GEMINI)
+        llm_gemini = genai.Client(api_key=API_KEY)
     return llm_gemini
 
 
@@ -233,7 +235,6 @@ def normalize_temps_for_llm(temps, llm):
         return [0]
 
     return valid
-
 
 
 def call_llm_for_message(base_prompt, message, temp, llm, mode="user"):

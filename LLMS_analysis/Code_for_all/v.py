@@ -150,6 +150,7 @@ def menu_asignacion_st(df):
         prompt_resultados(info_llm, estrategia, df)
         
 def prompt_resultados(info_llm, estrategia, df):
+    
     # 1. Inicializar estados para persistencia
     if 'proceso_finalizado' not in st.session_state:
         st.session_state.proceso_finalizado = False

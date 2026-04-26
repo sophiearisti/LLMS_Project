@@ -14,22 +14,13 @@ import os
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import shutil
-try:
-    import anthropic
-except ImportError:
-    anthropic = None
-
-
-#REVISAR QUE ES ESTO
-try:
-    from openai import OpenAI
-except ImportError:
-    OpenAI = None
-
+import anthropic
+from openai import OpenAI
 
 llm_chatgpt = None
 llm_gemini = None
 llm_claude = None
+llm_openai_batch = None
 
 GEMINI_CATEGORY_MODEL = "gemini-3.1-pro-preview"
 GEMINI_CLASSIFY_MODEL = "gemini-3-flash-preview"

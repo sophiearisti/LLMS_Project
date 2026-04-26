@@ -198,7 +198,7 @@ def crear_prompt_obtener_resultados(info_llm, df, API_KEY, estrategia):
 
     # --- VALIDACIÓN DE ARCHIVOS PREVIOS (Antes del botón) ---
     # --- VALIDACIÓN DE ARCHIVOS PREVIOS ---
-    st.subheader("File Check")
+
     modos_ejecucion = {}
     hay_archivos_previos = False
 

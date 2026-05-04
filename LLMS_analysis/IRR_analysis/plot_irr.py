@@ -2,7 +2,9 @@
 Visualize IRR results from human_irr.py outputs.
 Produces:
   irr_results/krippendorff_alpha_plot.png  — bar chart of alpha per label
+    irr_results/krippendorff_alpha_plot.pdf  — bar chart of alpha per label
   irr_results/pairwise_kappa_heatmap.png   — heatmap of mean kappa per coder pair
+    irr_results/pairwise_kappa_heatmap.pdf   — heatmap of mean kappa per coder pair
 """
 
 import pandas as pd
@@ -42,8 +44,10 @@ def plot_alpha(alpha_df: pd.DataFrame) -> None:
 
     plt.tight_layout()
     plt.savefig(OUT / "krippendorff_alpha_plot.png", dpi=150)
+    plt.savefig(OUT / "krippendorff_alpha_plot.pdf")
     plt.close()
     print("Saved: krippendorff_alpha_plot.png")
+    print("Saved: krippendorff_alpha_plot.pdf")
 
 
 def plot_kappa_heatmap(kappa_df: pd.DataFrame) -> None:
@@ -92,8 +96,10 @@ def plot_kappa_heatmap(kappa_df: pd.DataFrame) -> None:
     ax.set_title("Mean Pairwise Cohen's Kappa (averaged over labels)")
     plt.tight_layout()
     plt.savefig(OUT / "pairwise_kappa_heatmap.png", dpi=150)
+    plt.savefig(OUT / "pairwise_kappa_heatmap.pdf")
     plt.close()
     print("Saved: pairwise_kappa_heatmap.png")
+    print("Saved: pairwise_kappa_heatmap.pdf")
 
 
 def main():

@@ -1,6 +1,7 @@
-Please provide your answer strictly as a Python dictionary with no additional text or characters.
+<output_format>
+Provide your answer strictly as a Python dictionary with no additional text or characters.
 
-Use these exact keys with no extra spaces:
+Use these exact keys (single quotes, no extra spaces):
 - 'any_suggestion'
 - 'suggest_safe'
 - 'suggest_efficient'
@@ -18,23 +19,22 @@ Use these exact keys with no extra spaces:
 - 'contradict'
 - 'neither_report'
 
-All values must be:
-- 1 if the category is clearly observed
-- 0 if the category is not observed
+Valid values:
+- 1   = the category is clearly and unambiguously present
+- 0   = the category is not observed, or evidence is ambiguous/partial
 
-Be sure that each tag is in simple quotes. 
-Example format:
+Example:
 {
     'any_suggestion': 1,
     'suggest_safe': 0,
     'suggest_efficient': 1,
-    'agree_proposal': 0,
-    'discuss_coordinate': 1,
-    'discuss_fairness': 1,
+    'agree_proposal': 1,
+    'discuss_coordinate': 0,
+    'discuss_fairness': 0,
     'discuss_efficient': 0,
-    'discuss_rules': 1,
-    'explanation': 1,
-    'discuss_howtoplay': 1,
+    'discuss_rules': 0,
+    'explanation': 0,
+    'discuss_howtoplay': 0,
     'ask_game': 0,
     'receive_report': 0,
     'truthful': 0,
@@ -42,3 +42,4 @@ Example format:
     'contradict': 0,
     'neither_report': 1
 }
+</output_format>

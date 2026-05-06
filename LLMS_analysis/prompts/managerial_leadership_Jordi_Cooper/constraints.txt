@@ -1,17 +1,37 @@
-LOGICAL CONSTRAINTS:
+<constraints>
+APPLY THESE LOGICAL CONSTRAINTS TO EVERY OUTPUT:
 
-1. Suggestion hierarchy:
-   - If 'any_suggestion': 0, then both 'suggest_safe': 0 and 'suggest_efficient': 0
-   - If 'any_suggestion': 1, then 'suggest_safe' and 'suggest_efficient' can be 0 or 1 independently
+1. Binary-only rule:
+   - Every key must be either 0 or 1.
+   - Never output 0.5.
 
-2. Reporting logic:
+2. Suggestion hierarchy:
+   - If 'any_suggestion': 0, then both 'suggest_safe': 0 and 'suggest_efficient': 0.
+   - If 'any_suggestion': 1, then 'suggest_safe' and 'suggest_efficient' can be 0 or 1 independently.
+
+3. Reporting logic:
    - 'receive_report' and 'neither_report' are mutually exclusive:
-     • If 'receive_report': 0, then 'neither_report': 1
-     • If 'receive_report': 1, then 'neither_report': 0
+     - If 'receive_report': 0, then 'neither_report': 1.
+     - If 'receive_report': 1, then 'neither_report': 0.
 
-3. Report content (only applies when 'receive_report': 1):
-   - Exactly one of the following must equal 1, the others must be 0:
-     • 'truthful'
-     • 'falsehood'
-     • 'contradict'
-   - If 'receive_report': 0, then all three must be 0
+4. Report content (factuality check):
+   - When 'receive_report': 1, exactly one of 'truthful', 'falsehood', 'contradict' must be 1; the other two must be 0.
+   - Compare the reported game number with the ACTUAL GAME NUM PROVIDED in the context to determine which:
+     * If reported number matches ACTUAL GAME → 'truthful': 1
+     * If reported number differs from ACTUAL GAME → 'falsehood': 1
+     * If contradictory reports (two agents report different numbers) → 'contradict': 1
+   - DEFAULT ASSIGNMENT: If 'receive_report': 1 with clear game number report, default to 'truthful': 1 unless evidence clearly shows mismatch or contradiction.
+   - When 'receive_report': 0, all three ('truthful', 'falsehood', 'contradict') must be 0.
+
+5. Conservative reporting rule:
+   - Do NOT set 'receive_report' to 1 unless there is clear evidence that an agent is informing the Manager (Player 0) of the game number.
+   - Agent-to-agent game mentions without clear Manager-directed reporting should remain 'receive_report': 0.
+
+6. High-priority activation for report tags:
+   - If Manager asks about game identity and any agent provides a concrete game number (1-5), set 'receive_report': 1.
+   - If 'receive_report': 1 and there is no explicit mismatch or contradiction, set 'truthful': 1.
+   - Use 'falsehood': 1 only when a reported number clearly differs from ACTUAL GAME.
+   - Use 'contradict': 1 only when two agents clearly report different numbers.
+
+7. Before outputting, verify your dictionary satisfies ALL constraints above. If any constraint is violated, correct it.
+</constraints>

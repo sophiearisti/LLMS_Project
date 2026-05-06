@@ -1,23 +1,45 @@
-This experiment examines coordination between a manager and two agents under conditions of conflicting preferences and asymmetric information. Participants (567 undergraduate students in 189 groups of three) were assigned fixed roles (one manager M, two agents S1 and S2) and played 18 rounds where the game state varied randomly.
+<experiment_context>
+This experiment studies managerial leadership in a coordination game. 567 undergraduate students in Spain formed 189 fixed groups of three and played 18 rounds. All chat is in informal Spanish.
 
-GAME STRUCTURE:
-- All parties benefit when agents coordinate on a common action
-- Agents have opposing preferences over which coordinated outcome to choose
-- Agents observe the game state; the manager does not
-- The efficient outcome (maximizing total surplus) varies by state
-- Manager's objective is to maximize combined agent payoffs
+ROLES (each message line is prefixed with the sender number):
+- Player 0 = Manager (role "A"): sends messages to both agents but does NOT see which game is being played that round. Wants agents to coordinate on the highest-payoff outcome.
+- Player 1 = Agent F (row chooser): sees the game number, chooses a row (f1–f4).
+- Player 2 = Agent C (column chooser): sees the game number, chooses a column (c1–c4).
 
-TREATMENT CONDITIONS:
-Groups were assigned to different conditions varying:
+KEY INFORMATION ASYMMETRY:
+The Manager (Player 0) does NOT know which game is being played. The two Agents (Players 1 and 2) DO know the game. 
+Agents may or may not truthfully report the game number to the Manager in the chat.
 
-Communication type:
-- No communication (baseline)
-- Structured communication (predefined message options)
-- Free-form chat (unrestricted text messaging)
+PAYOFF STRUCTURE — 5 possible games per round:
+Each game uses a 5×5 payoff matrix. Each cell yields payoffs for (Agent F, Agent C, Manager A).
 
-Control mechanism:
-- Delegation (agents choose actions)
-- Delegation with managerial advice
-- Managerial control (manager selects actions)
+SAFE outcome is ALWAYS f3-c3 (row 3, column 3) in every game:
+  - Games 1 and 5: F=32, C=32, A=64
+  - Games 2 and 4: F=36, C=36, A=72
+  - Game 3:        F=40, C=40, A=80
+  The safe outcome always gives EQUAL payoffs to F and C.
 
-After each round, participants received feedback on the game state and actions. In some treatments, managers could observe discrepancies between agents' reported information and the actual state.
+EFFICIENT outcome maximizes total group payoff (always 160 ECU total) but differs by game:
+  - Game 1: f1-c1 → F=26, C=54, A=80  (C earns more than F)
+  - Game 2: f2-c2 → F=33, C=47, A=80  (C earns more than F)
+  - Game 3: f3-c3 → F=40, C=40, A=80  (safe and efficient coincide — no conflict)
+  - Game 4: f4-c4 → F=47, C=33, A=80  (F earns more than C)
+  - Game 5: f5-c5 → F=54, C=26, A=80  (F earns more than C)
+
+KEY PATTERNS (help interpret participant language):
+  - Games 1↔5 and 2↔4 are mirror images. Games 1–2 favour C; Games 4–5 favour F.
+  - Off-diagonal choices yield very poor payoffs (often negative), making miscoordination costly.
+  - When participants say "40", "32", "36", "26", "54", "47", "33", "80", "160" they are citing these exact payoff values.
+  - "vamos al 3 / f3c3 / la del centro / lo seguro / lo igualado" → safe outcome.
+  - "el eficiente / el que más suma / maximizar / el mejor para todos" → efficient outcome.
+  - "turnamos / compensamos / la siguiente ganas tú / ir rotando" → fairness/turn-taking across rounds.
+  - Off-diagonal proposals (e.g. f1c5, f5c1) almost certainly reflect confusion or mistakes.
+
+COMMON CHAT PATTERNS:
+- Agents often say things like "vamos al 3", "f3 c3", "la 3" → suggesting the safe outcome.
+- "ir al eficiente", "el mejor para todos" → suggesting the efficient outcome.
+- Agents may report or discuss the game number: "es el juego 2", "me sale el 4".
+- Manager (Player 0) may ask which game it is: "¿qué juego es?", "¿cuál os sale?"
+- Participants use slang, abbreviations, and typos (e.g., "bno" = bueno, "q" = que, "tmb" = también).
+
+</experiment_context>

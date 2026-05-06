@@ -1,24 +1,89 @@
-Language note: The input messages are primarily in Spanish. Interpret the content in Spanish from Spain and output only the required labels in the specified format.
+<classification_categories>
+LANGUAGE NOTE: All messages are in informal Spanish (Spain). Interpret content in Spanish and output only the required labels.
 
-The task you have is to classify each group of messages sent in one or more of the following categories. The group of messages represent what the participants communicated sequentially during each period. Additionally, it states who sent the message: 0 if it is Central Manager, 1 if it is agent 1, and 2 if it is agent 2. 
+Classify each group of messages into the following categories. 
+The messages represent what participants communicated sequentially during one period. Each message line is prefixed with the sender: 0 = Manager, 1 = Agent F (row chooser), 2 = Agent C (column chooser).
 
-These are the categories stated:
+DECISION PRIORITY (use these before assigning labels):
+- Be conservative: assign 1 only when evidence is explicit.
+- Do NOT infer intent if the chat does not clearly state it.
+- For report-related labels, only code when an agent is clearly informing the Manager (Player 0), not just chatting with the other agent.
 
-1.	Did they make a suggestion about what row/column should be chosen? (any_suggestion) If it was the case:
-a.	Did they suggest a safe outcome? (suggest_safe)
-b.	Did they suggest an efficient outcome? (suggest_efficient)
+BINARY DECISION ONLY (NO 0.5):
+Use only 0 or 1 for every category.
+- Assign 1 only when evidence is clear and explicit.
+- If evidence is weak, partial, borderline, or ambiguous, assign 0.
 
-2.	Did they agree to the proposal about what row/column should be chosen? (agree_proposal)
-3.	Did they discuss about what row/column should be chosen? If it was the case:
-a.	Did they discuss need to coordinate? (discuss_coordinate) IMPORTANT BOUNDARY: This requires more than making a suggestion that involves coordination. The message needs to indicate that the two players should be choosing the same thing (e.g. "We'll do better if we make the same choices" is coded. "Let's choose row 4 and column 4" is not coded.)	
-b.	Did they discuss fairness? (discuss_fairness) This category includes any message that discusses the distribution of pay over the three players. Use 0.5 if fairness is raised only briefly or incidentally.		
-c.	Did they discuss efficiency? (discuss_efficient) This includes discussion of maximizing total pay as well as explaining how and why rotation between players works. Use 0.5 if efficiency is mentioned in passing.
-4.	Did they send questions about rules of the experiment? (discuss_rules) Use 0.5 if the question is ambiguous (could be asking about rules or about strategy).
-5.	Did they give any explanation (explanation)? This included explanations about the rules of the experiment or game, as well as explanations of a suggested way of playing the game. Use 0.5 if the explanation is partial or unclear.
-6.	Did they send questions about how to play? (discuss_howtoplay) This was for conceptual questions rather than the frequent generic request that somebody suggest a row and column.
-7.	Did the Manager (coded as 0) ask what game is being Played? (ask_game) Use 0.5 if the question is implicit or ambiguous.
-8.	Did Agents Report What Game is Being Played? (receive_report) If that is the case:
-a.	Did they truthfully Reveal Game? (truthful)
-b.	Did they lie About Game? (falsehood)
-c.	Conflict (contradict): The agents contradict each other — one says one game, the other says a different game. (Note: previously mislabeled 'contradict' was the fact-checking category; see constraint file for final mapping.)
-9.	None of the agents report. This is true if in the last question "Did Agents Report What Game is Being Played?", the answer was false. (neither_report)
+CATEGORIES:
+
+1. Did they make a suggestion about what row/column should be chosen? (any_suggestion) If so:
+   a. Did they suggest the safe outcome? (suggest_safe) — The safe outcome is ALWAYS f3-c3 (row 3, column 3) in every game.
+   b. Did they suggest the efficient outcome? (suggest_efficient) — The efficient outcome varies by game: f1-c1 in Games 1–2, f3-c3 in Game 3, f4-c4 in Games 4–5. Refer to the payoff structure in the context.
+
+2. Did they agree to a proposal about what row/column should be chosen? (agree_proposal)
+   Code 1 only when a participant explicitly accepts a SPECIFIC row/column proposal that was made in this same chat (e.g., "vale f3c3", "sí eso", "de acuerdo con el 4", "pues eso entonces").
+   Do NOT code agree_proposal just because someone says "vale", "ok", "sí", "de acuerdo", or "perfecto" without a specific prior proposal to accept.
+   Do NOT code agree_proposal when participants give vague, uncommitted responses like "lo que queráis", "como vosotros veáis", "da igual", "lo que sea".
+   There must be a clearly identifiable proposal (a specific f/c combination or game strategy) and a clearly identifiable acceptance of that same proposal.
+   If acceptance is ambiguous or the proposal was never clearly stated, assign 0.
+
+3. Did they discuss about what row/column should be chosen? If so:
+   a. Did they discuss the need to coordinate? (discuss_coordinate) — This requires MORE than making a suggestion that happens to involve coordination. The message must explicitly indicate that the two agents should choose the same row and column (e.g., "We'll do better if we make the same choices"). Merely saying "Let's choose row 4 and column 4" is a suggestion, NOT a coordination discussion.
+   b. Did they discuss fairness? (discuss_fairness) — Code this only when they explicitly discuss equity/justice/turn-taking/equalizing outcomes (e.g., "vamos turnando", "que quede igualado", "justo para ambos").
+      Do NOT code fairness only because someone mentions raw pay differences (e.g., "aquí ganas más tú") unless they clearly frame it as a fairness concern.
+      If fairness framing is weak/brief, assign 0.
+   c. Did they discuss efficiency? (discuss_efficient) — Discussion of maximizing total pay, or explaining how and why rotation between players works. If only mentioned in passing, assign 0.
+
+4. Did they send questions about rules of the experiment? (discuss_rules) — If ambiguous between rules and strategy, assign 0.
+
+5. Did they give any explanation? (explanation) — Code this only for explicit explanatory reasoning (cause-effect or justification), not for short directives.
+   Examples that count: "porque...", "si hacemos X entonces...", "la suma total sube por...".
+   Examples that do NOT count alone: "pon c3f3", "vale", "esa".
+   If reasoning is incomplete/unclear, assign 0.
+
+6. Did they send questions about how to play? (discuss_howtoplay) — Conceptual questions about strategy, NOT the frequent generic request for someone to suggest a row and column.
+
+7. Did the Manager (Player 0) ask what game is being played? (ask_game) — Code 1 only when Player 0 explicitly asks about game identity (e.g., "¿qué juego es?", "¿juego?").
+   Do NOT code ask_game for generic coordination questions like "¿cuál ponemos?", "¿qué marcáis?".
+   If game-identity intent is weak/implicit, assign 0.
+
+8. Did an Agent (Player 1 or 2) report what game is being played TO THE MANAGER (Player 0)? (receive_report)
+   IMPORTANT: code receive_report only when the agent is clearly informing Player 0 (typically after Manager asks, or clearly addressed to Manager).
+   Agent-to-agent mentions alone do NOT count as receive_report.
+
+   POSITIVE TRIGGERS (set receive_report = 1):
+   - Manager (0) asks about game identity (e.g., "juego?", "que juego es?") and an agent (1 or 2) answers with a game number.
+   - Agent states game identity in forms like: "juego 3", "es el 3", "ahora es 3", "game 3", or even short numeric replies like "3" when clearly in response to Manager game query.
+   - If there is at least one clear agent-to-manager game-number report, set receive_report = 1.
+
+   NEGATIVE TRIGGERS (do NOT set receive_report = 1 for these):
+   - Agent mentions a game number while discussing strategy with the other agent (e.g. "en el juego 1 f1c1 ganas más tú" is strategy talk, not a report to Manager).
+   - Agent mentions a game number hypothetically or referring to another round (e.g. "si nos toca el juego 3", "la anterior era el 2").
+   - Agent self-corrects mid-sentence (e.g. "f3 c3 juego 3? / JUEGO 2 PERDON / o f2 c2 juego 2" — this is a slip correction, not a formal report).
+   - Short numbers or row/column references that likely mean choices, not game identity (e.g. "todo 2", "c2 f2", "ponemos el 3" without game-identity context).
+   - Agent explains the payoff structure using game numbers without the Manager having asked (e.g. "en el juego 1 f1c1 es el eficiente" said to the other agent).
+   When in doubt about whether a game number mention is a report TO THE MANAGER, assign receive_report = 0.
+
+   If receive_report = 1, DETERMINE FACTUALITY by comparing reported number(s) with the ACTUAL game number provided in the context:
+   
+   a. Truthful report (truthful = 1): 
+      - The agent names/mentions a game number (1, 2, 3, 4, or 5) in the message
+      - That number matches the ACTUAL GAME provided in context
+      - Example: If actual game is 3 and agent says "juego 3", "el 3", "Game 3" → truthful = 1
+   
+   b. False report (falsehood = 1): 
+      - The agent names a specific game number that DIFFERS from the ACTUAL GAME, in a direct response to the Manager's game-identity question.
+      - Example: If actual game is 3 but agent says "juego 5" when answering Manager → falsehood = 1
+      - Be EXTREMELY conservative. Only set falsehood = 1 if an agent directly and unambiguously responds to the Manager's game-identity question with the wrong number.
+      - Do NOT set falsehood = 1 for: (a) game numbers mentioned in strategy discussions or payoff explanations, (b) hypothetical game references, (c) agent self-corrections or slips mid-sentence, (d) numbers that plausibly refer to row/column choices rather than game identity.
+      - When receive_report = 1 and there is any ambiguity, always default to truthful = 1. Reserve falsehood = 1 for unambiguous mismatches.
+   
+   c. Contradiction (contradict = 1): 
+      - Two agents report different game numbers to the Manager in the same message/exchange
+      - Example: Agent 1 says "juego 2" and Agent 2 says "juego 4" → contradict = 1
+   
+   DEFAULT: If receive_report = 1 and there is no explicit mismatch/contradiction evidence, code truthful = 1.
+   If evidence is weak/ambiguous about whether the message is a report to Manager, assign receive_report = 0.
+
+9. No agent reported the game. (neither_report) — This is 1 when receive_report is 0, and 0 when receive_report is 1. They are mutually exclusive (see constraints).
+</classification_categories>

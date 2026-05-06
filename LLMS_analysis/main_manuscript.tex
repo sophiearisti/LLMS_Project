@@ -381,14 +381,11 @@ threshold.
 \end{figure}
 
 Figure~\ref{fig:agreement_Jordi} summarizes mean agreement across evaluable categories for
-each model and configuration. Averaged across the 12 evaluable tags, Claude achieves the
-highest mean $\alpha$ (0.38 at its best configuration: zero-shot, $T = 0.1$), followed
-closely by Gemini (0.37, few-shot, $T = 0$) and GPT (0.32, few-shot, $T = 0$). Few-shot
-prompting substantially improves agreement for Gemini ($+0.06$ relative to zero-shot) and
-GPT ($+0.05$), but leaves Claude essentially unchanged, suggesting that Claude's zero-shot
-performance is already near its ceiling for this task. Temperature variation within each
-prompting strategy has modest effects (range $< 0.05$ across models), indicating that
-results are robust to decoding temperature.
+each model and configuration. In the updated comparison, the Paper 1 panel includes Claude
+and GPT (Gemini excluded). Both models perform best under few-shot prompting at $T = 0$,
+with Claude achieving the higher mean $\alpha$ across the 12 evaluable categories.
+Temperature variation within each prompting strategy remains modest, indicating limited
+sensitivity to decoding temperature in this task.
 
 \begin{figure}[htbp]
     \caption{Best-configuration Krippendorff's $\alpha$ per category and model ---
@@ -467,55 +464,49 @@ To evaluate substantive validity, we replicate the core regression analysis of
 outcomes. Table~8 in the original paper reports probit regressions in which binary
 coordination outcomes---whether a group coordinated, and whether coordination was
 efficient---are regressed on the chat content categories, separately by treatment.
-We replicate this specification as a linear probability model (LPM) on the restricted
-shared-data sample, replacing the human-coded categories with LLM-generated categories in
-turn, so that all five columns (human, Claude, Gemini, GPT, ensemble) are estimated on the
-same observations. The selected LLM configurations are few-shot at temperature~0 for all
-three models.
+We replicate this specification as a Probit model on the restricted shared-data sample,
+replacing the human-coded categories with LLM-generated categories in turn, so that all
+columns (human, Claude, GPT, ensemble) are estimated on the same observations. The selected
+LLM configurations are few-shot at temperature~0.
 
 Relative to the original Table~8 sample, the shared classification files retain only
-72~of~486 CH/S-D observations and 61~of~486 CH-MC observations, while CH/A-D is
-unavailable entirely. The restricted comparison sample therefore preserves roughly
-13--15\% of the original observations in the retained treatment arms. Because probit
-estimates become numerically unstable in this sparse subsample, we report LPM coefficients
-with standard errors clustered at the conversation-group level.
+458 observations in the retained treatment panels, while CH/A-D is unavailable entirely.
+We therefore focus on CH/S-D coordination, CH/S-D efficient coordination, and CH-MC
+efficient coordination, with standard errors clustered at the conversation-group level.
 
 Table~\ref{tab:table8-lpm-condensed} presents the results across three panels: coordination
 in CH/S-D, efficient coordination in CH/S-D, and efficient coordination in CH-MC.
 
-In the \textit{CH/S-D coordination} panel, the human benchmark identifies \textit{Agreement}
-($\beta = 0.418$, $p < 0.05$) and \textit{Discuss efficiency} ($\beta = 0.230$, $p < 0.05$)
-as the significant predictors. None of the LLM codings recover significant effects for either
-category; Claude yields a marginally significant negative coefficient on \textit{Questions
-about rules} ($\beta = -0.133$, $p < 0.10$), a pattern absent in the human data.
+In the \textit{CH/S-D coordination} panel, the human benchmark shows a positive and
+significant effect of \textit{Agreement} ($\beta = 0.196$, $p < 0.01$), close to the
+replication-package benchmark ($0.108$). GPT also shows a positive and marginally
+significant effect for \textit{Agreement} ($\beta = 0.057$, $p < 0.10$). Claude shows a
+positive and significant effect on \textit{Questions about play}
+($\beta = 0.050$, $p < 0.01$), which does not appear in the human baseline.
 
-In the \textit{CH/S-D efficient coordination} panel, the human benchmark is dominated by
-\textit{Discuss efficiency} ($\beta = 0.519$, $p < 0.001$). No LLM replicates this
-finding---coefficients for that category are small and statistically insignificant across
-all models. By contrast, LLM codings assign explanatory power to \textit{Discuss fairness}:
-Claude ($\beta = -0.274$, $p < 0.01$), Gemini ($\beta = -0.246$, $p < 0.05$), and GPT
-($\beta = -0.054$, $p < 0.10$) all produce a negative and significant coefficient for that
-category, a direction visible but not significant in the human data ($\beta = -0.273$).
-The ensemble instead attributes a large negative effect to \textit{Questions about play}
-($\beta = -0.850$, $p < 0.001$), which is not significant in any other source.
+In the \textit{CH/S-D efficient coordination} panel, the human benchmark remains close to the
+paper pattern, with positive and significant effects for \textit{Agreement}
+($\beta = 0.201$, $p < 0.01$; paper: $0.217$), \textit{Discuss efficiency}
+($\beta = 0.252$, $p < 0.01$; paper: $0.253$), and a negative and significant effect for
+\textit{Discuss fairness} ($\beta = -0.252$, $p < 0.01$; paper: $-0.265$). Claude shows
+positive significant effects for \textit{Discuss need to coordinate},
+\textit{Discuss fairness}, and \textit{Discuss efficiency}, while GPT does not produce
+statistically significant effects in this panel.
 
-In the \textit{CH-MC efficient coordination} panel, the human benchmark finds a positive
-and marginally significant effect of \textit{Agreement} ($\beta = 0.254$, $p < 0.10$).
-Claude and Gemini produce no significant predictors. GPT and the ensemble instead identify
-\textit{Questions about rules} as the dominant predictor ($\beta = 0.464$ and $0.503$,
-respectively, both $p < 0.01$), with GPT additionally finding significant effects for
-\textit{Explanation} ($\beta = 0.358$, $p < 0.01$) and a negative effect for
-\textit{Discuss efficiency} ($\beta = -0.196$, $p < 0.05$)---none of which are significant
-in the human data.
+In the \textit{CH-MC efficient coordination} panel, the human benchmark again aligns closely
+with the replication-package value for \textit{Truthfully reveal game}
+($\beta = 0.290$, $p < 0.01$; paper: $0.295$). GPT shows a negative significant effect for
+\textit{Explanation} ($\beta = -0.171$, $p < 0.05$) and a positive significant effect for
+\textit{Lie about game} ($\beta = 0.432$, $p < 0.01$), while the ensemble also shows a
+positive effect for \textit{Lie about game} ($\beta = 0.261$, $p < 0.05$).
 
-Overall, LLM codings do not reliably replicate the human behavioral correlates in this
-application. The most consistent replication is the negative direction of \textit{Discuss
-fairness} on efficient coordination in CH/S-D, a finding that four of five sources share.
-Elsewhere, LLMs either find no significant predictors where humans do, or assign
-significance to different categories entirely. This pattern is consistent with the
-agreement results: categories with ambiguous boundaries (\textit{Discuss efficiency},
-\textit{Explanation}, \textit{Questions about rules}) yield low inter-rater agreement, and
-their behavioral correlates consequently diverge across coding sources.
+Overall, the Probit replacement exercise leads to the same qualitative conclusion:
+LLM-derived codings do not consistently reproduce the human benchmark coefficients in this
+application. Alignment appears in selected terms (for example, the positive role of
+\textit{Agreement} in CH/S-D coordination for GPT), but several statistically significant
+LLM coefficients diverge in sign or salience from the human baseline. This pattern is
+consistent with the agreement analysis above: categories with higher interpretive ambiguity
+generate less stable downstream substantive inferences.
 
 \input{Results/by_paper/managerial_leadership_Jordi_Cooper/_substantive_analysis/table8_probit_comparison_table.tex}
 

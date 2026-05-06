@@ -1,89 +1,94 @@
 \begin{table}[!htbp]
 \centering
 \scriptsize
-\caption{Table~8. OLS (Linear Probability Model) regressions on the restricted shared-data sample: human and LLM codings.}
+\caption{Table~8. Probit marginal effects on the restricted shared-data sample: human and LLM codings.}
 \label{tab:table8-lpm-condensed}
 \begin{threeparttable}
+\begin{adjustbox}{width=\textwidth,center}
 \begin{tabular}{@{}l
-  *{5}{S[table-format=-1.3, table-space-text-post={***}]}@{}}
+  *{4}{S[table-format=-1.3, table-space-text-post={***}]}@{}}
 
 \toprule
 
-& \multicolumn{5}{c}{CH/S-D, coordination} \\
-\cmidrule(l){2-6}
+& \multicolumn{4}{c}{CH/S-D, coordination} \\
+\cmidrule(l){2-5}
 Dependent variable
-  & {Human} & {Claude} & {Gemini} & {GPT} & {Ensemble} \\
+  & {Human} & {Claude} & {GPT} & {Ensemble} \\
 \midrule
   Agreement
-  & 0.418{**} & -0.075 & -0.161 & 0.021 & -0.154 \\
+  & 0.196{***} & 0.028 & 0.057{*} & 0.058 \\
   Discuss need to coordinate
-  & 0.018 & 0.067 & -0.056 & -0.264 & -0.110 \\
+  & -0.047 & -0.023 & 0.015 & 0.026 \\
   Discuss fairness
-  & -0.099 & -0.126 & -0.103 & -0.052 & -0.068 \\
+  & 0.010 & 0.003 & -0.027 & 0.005 \\
   Discuss efficiency
-  & 0.230{**} & 0.137 & 0.024 & 0.111 & -0.038 \\
+  & 0.010 & 0.011 & -0.017 & -0.027 \\
   Questions about rules
-  & -0.166 & -0.133{*} & 0.090 & 0.198 & 0.161 \\
+  & -0.085 & -0.228 & -0.012 & -0.042 \\
   Questions about play
-  & -0.022 & {} & 0.053 & 0.022 & 0.261 \\
+  & 0.025 & 0.050{***} & -0.310 & -0.188 \\
   Explanation
-  & -0.011 & -0.124 & {} & -0.092 & 0.014 \\
+  & -0.053 & 0.011 & 0.026 & 0.027 \\
 \midrule[0.3pt]
 \addlinespace[2pt]
-& \multicolumn{5}{c}{CH/S-D, efficient coordination} \\
-\cmidrule(l){2-6}
+& \multicolumn{4}{c}{CH/S-D, efficient coordination} \\
+\cmidrule(l){2-5}
 \addlinespace[1pt]
 Dependent variable
-  & {Human} & {Claude} & {Gemini} & {GPT} & {Ensemble} \\
+  & {Human} & {Claude} & {GPT} & {Ensemble} \\
 \midrule
   Agreement
-  & 0.212 & 0.044 & 0.055 & -0.020 & 0.082 \\
+  & 0.201{***} & 0.031 & 0.056 & -0.009 \\
   Discuss need to coordinate
-  & 0.187 & 0.054 & 0.188 & -0.047 & 0.045 \\
+  & 0.206 & 0.290{***} & -0.039 & -0.010 \\
   Discuss fairness
-  & -0.273 & -0.274{***} & -0.246{**} & -0.054{*} & -0.187 \\
+  & -0.252{***} & 0.138{***} & 0.100 & 0.142{***} \\
   Discuss efficiency
-  & 0.519{***} & 0.068 & -0.215 & -0.021 & -0.053 \\
+  & 0.252{***} & 0.171{**} & -0.007 & 0.063 \\
   Questions about rules
-  & -0.006 & 0.042 & 0.208{**} & -0.290 & -0.024 \\
+  & -0.060 & 0.103 & -0.012 & 0.155 \\
   Questions about play
-  & 0.129 & {} & 0.062 & -0.102{**} & -0.850{***} \\
+  & -0.106 & -0.180 & 0.064 & -0.104 \\
   Explanation
-  & -0.008 & -0.006 & {} & -0.017 & -0.067 \\
+  & 0.056 & -0.125{*} & 0.032 & -0.062 \\
 \midrule[0.3pt]
 \addlinespace[2pt]
-& \multicolumn{5}{c}{CH-MC, efficient coordination} \\
-\cmidrule(l){2-6}
+& \multicolumn{4}{c}{CH-MC, efficient coordination} \\
+\cmidrule(l){2-5}
 \addlinespace[1pt]
 Dependent variable
-  & {Human} & {Claude} & {Gemini} & {GPT} & {Ensemble} \\
+  & {Human} & {Claude} & {GPT} & {Ensemble} \\
 \midrule
   Agreement
-  & 0.254{*} & 0.043 & 0.032 & 0.053 & 0.011 \\
+  & 0.044 & 0.029 & -0.008 & 0.016 \\
   Discuss need to coordinate
-  & 0.343 & -0.002 & -0.172 & 0.217{*} & -0.139 \\
+  & -0.090 & -0.059 & -0.119 & -0.146 \\
   Discuss fairness
-  & 0.165 & -0.166 & -0.157 & -0.074 & -0.235 \\
+  & -0.101 & 0.002 & 0.091 & 0.022 \\
   Discuss efficiency
-  & 0.051 & -0.011 & 0.216 & -0.196{**} & -0.086 \\
+  & 0.109 & 0.066 & 0.151 & 0.149 \\
   Questions about rules
-  & -0.119 & {} & 0.080 & 0.464{***} & 0.503{***} \\
+  & -0.166 & -0.099 & 0.045 & -0.033 \\
   Questions about play
-  & 0.323 & 0.219 & 0.068 & -0.113 & 0.205 \\
+  & -0.118 & 0.056 & 0.156 & 0.063 \\
   Explanation
-  & -0.208 & 0.029 & -0.221 & 0.358{***} & 0.090 \\
+  & 0.034 & -0.012 & -0.171{**} & -0.082 \\
   Ask what game
-  & 0.266 & 0.027 & 0.153 & -0.014 & 0.237 \\
+  & 0.118 & 0.050 & 0.046 & 0.016 \\
   Truthfully reveal game
-  & -0.051 & 0.120 & -0.045 & -0.156 & -0.154 \\
+  & 0.290{***} & 0.028 & -0.063 & 0.043 \\
   Lie about game
-  & {} & {} & {} & -0.124 & {} \\
+  & -0.032 & 0.191 & 0.432{***} & 0.261{**} \\
 
 \bottomrule
 \end{tabular}
-\begin{tablenotes}
-\footnotesize
-\item \textit{Notes:} OLS coefficients (Linear Probability Model) with clustered standard errors (by conversation group). $^{***}p<0.01$, $^{**}p<0.05$, $^{*}p<0.10$. All columns are estimated on the same restricted shared-data sample, so the human column is the apples-to-apples benchmark for the LLM columns. LLM estimates use few-shot prompting at temperature~0 (Claude, Gemini, GPT). CH/A-D omitted: message-level inputs not present in the shared classification files. Blank cells indicate the regressor was dropped due to no within-sample variation.
+\end{adjustbox}
+\begin{minipage}{\textwidth}
+\begin{tablenotes}[flushleft]
+\tiny
+\item \textit{Notes:} Entries are Probit marginal effects (dprobit-style, evaluated at means) with clustered standard errors at the conversation-group level. Significance: $^{***}p<0.01$, $^{**}p<0.05$, $^{*}p<0.10$.
+\item All columns are estimated on the same restricted shared-data sample; the human column is the apples-to-apples benchmark. LLM estimates use few-shot prompting at temperature~0 (Claude, GPT). CH/A-D is omitted because message-level inputs are not present in the shared classification files. Blank cells indicate regressors dropped due to no within-sample variation.
 \end{tablenotes}
+\end{minipage}
 \end{threeparttable}
 \end{table}

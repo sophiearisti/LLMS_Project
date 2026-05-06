@@ -41,9 +41,14 @@ def krippendorff_alpha_nominal(y_true, y_pred):
     Generic 2-rater Krippendorff alpha (used for papers 3 and 4).
     Builds a (2, n_items) reliability matrix and delegates to the krippendorff library.
     """
-    y_true = pd.Series(y_true).astype(str).values
-    y_pred = pd.Series(y_pred).astype(str).values
-    mat = np.array([y_true, y_pred], dtype=object)
+    y_true = pd.Series(y_true).astype(str).reset_index(drop=True)
+    y_pred = pd.Series(y_pred).astype(str).reset_index(drop=True)
+
+    combined = pd.concat([y_true, y_pred], ignore_index=True)
+    codes, _ = pd.factorize(combined, sort=True)
+    split = len(y_true)
+    mat = np.vstack([codes[:split], codes[split:]]).astype(float)
+
     return float(krippendorff.alpha(mat, level_of_measurement="nominal"))
 
 

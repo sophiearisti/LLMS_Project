@@ -50,7 +50,7 @@ PANELS = [
 
 # Threshold below which a coefficient is treated as numerically degenerate
 DEGENERATE_COEF = 1e-10
-DEGENERATE_SE   = 1e-10   # LPM does not produce separation-driven degeneracy
+DEGENERATE_SE   = 1e-10
 
 
 # ---------------------------------------------------------------------------
@@ -96,7 +96,7 @@ def fmt_cell(coef, se, p) -> str:
 def load_results():
     df = pd.read_csv(BASE_DIR / "table8_r_probit_replication.csv")
     df = df[df["model"].isin([p[0] for p in PANELS])].copy()
-    df = df[df["source"].isin(["human", "claude", "gemini", "gpt", "ensemble_majority"])].copy()
+    df = df[df["source"].isin(["human", "claude", "gpt", "ensemble_majority"])].copy()
     df = df[["model", "term", "coef", "se", "p_value", "source"]].copy()
     return df
 
@@ -118,16 +118,15 @@ def build_lookup(results_df):
 # Table builder
 # ---------------------------------------------------------------------------
 
-SOURCES = ["human", "claude", "gemini", "gpt", "ensemble_majority"]
+SOURCES = ["human", "claude", "gpt", "ensemble_majority"]
 COL_LABELS = {
     "human":            "Human",
     "claude":           "Claude",
-    "gemini":           "Gemini",
     "gpt":              "GPT",
     "ensemble_majority": "Ensemble",
 }
 
-# No blanking by source needed for LPM (no perfect-separation degeneracy)
+# No blanking by source needed in the standard case.
 PANEL_BLANK_SOURCES = {}
 
 
@@ -164,7 +163,7 @@ def panel_rows(model_key, lut):
 
     if not rows:
         rows.append(
-            r"\multicolumn{6}{l}{\textit{All restricted-sample estimates are numerically degenerate in this panel.}} \\" 
+            r"\multicolumn{5}{l}{\textit{All restricted-sample estimates are numerically degenerate in this panel.}} \\" 
         )
 
     return rows
@@ -178,11 +177,12 @@ def build_table(results_df):
         r"\begin{table}[!htbp]",
         r"\centering",
         r"\scriptsize",
-        r"\caption{Table~8. OLS (Linear Probability Model) regressions on the restricted shared-data sample: human and LLM codings.}",
+        r"\caption{Table~8. Probit marginal effects on the restricted shared-data sample: human and LLM codings.}",
         r"\label{tab:table8-lpm-condensed}",
         r"\begin{threeparttable}",
+        r"\begin{adjustbox}{width=\textwidth,center}",
         r"\begin{tabular}{@{}l",
-        r"  *{5}{S[table-format=-1.3, table-space-text-post={***}]}@{}}",
+        r"  *{4}{S[table-format=-1.3, table-space-text-post={***}]}@{}}",
         r"",
     ]
 
@@ -197,9 +197,9 @@ def build_table(results_df):
         lines.append(r"\toprule" if i == 0 else r"\midrule[0.3pt]")
         lines.append(r"\addlinespace[2pt]" if i > 0 else "")
         lines.append(
-            rf"& \multicolumn{{5}}{{c}}{{{panel_label}}} \\"
+            rf"& \multicolumn{{4}}{{c}}{{{panel_label}}} \\"
         )
-        lines.append(r"\cmidrule(l){2-6}")
+        lines.append(r"\cmidrule(l){2-5}")
         if i > 0:
             lines.append(r"\addlinespace[1pt]")
         lines.append(header)
@@ -212,17 +212,14 @@ def build_table(results_df):
         r"",
         r"\bottomrule",
         r"\end{tabular}",
-        r"\begin{tablenotes}",
-        r"\footnotesize",
-        (
-            r"\item \textit{Notes:} OLS coefficients (Linear Probability Model) with clustered standard errors (by conversation group). "
-            r"$^{***}p<0.01$, $^{**}p<0.05$, $^{*}p<0.10$. "
-            r"All columns are estimated on the same restricted shared-data sample, so the human column is the apples-to-apples benchmark for the LLM columns. "
-            r"LLM estimates use few-shot prompting at temperature~0 (Claude, Gemini, GPT). "
-            r"CH/A-D omitted: message-level inputs not present in the shared classification files. "
-            r"Blank cells indicate the regressor was dropped due to no within-sample variation."
-        ),
+        r"\end{adjustbox}",
+        r"\begin{minipage}{\textwidth}",
+        r"\begin{tablenotes}[flushleft]",
+        r"\tiny",
+        r"\item \textit{Notes:} Entries are Probit marginal effects (dprobit-style, evaluated at means) with clustered standard errors at the conversation-group level. Significance: $^{***}p<0.01$, $^{**}p<0.05$, $^{*}p<0.10$.",
+        r"\item All columns are estimated on the same restricted shared-data sample; the human column is the apples-to-apples benchmark. LLM estimates use few-shot prompting at temperature~0 (Claude, GPT). CH/A-D is omitted because message-level inputs are not present in the shared classification files. Blank cells indicate regressors dropped due to no within-sample variation.",
         r"\end{tablenotes}",
+        r"\end{minipage}",
         r"\end{threeparttable}",
         r"\end{table}",
     ]

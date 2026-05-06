@@ -63,11 +63,9 @@ TABLE6_HUMAN = {
 # best-config raw classification files per model
 BEST_CONFIGS = {
     "Claude": os.path.join(RESULTS_DIR, "claude", "managerial_leadership_Jordi_Cooper",
-                           "0shot", "results_line_batch_temp0.1_modeuser.csv"),
-    "Gemini": os.path.join(RESULTS_DIR, "gemini", "managerial_leadership_Jordi_Cooper",
-                           "fewshot", "results_temp0_modeuser.csv"),
+                           "fewshot", "results_line_batch_temp0_modeuser.csv"),
     "GPT":    os.path.join(RESULTS_DIR, "gpt",    "managerial_leadership_Jordi_Cooper",
-                           "fewshot", "results_temp0_modeuser.csv"),
+                           "fewshot", "results_line_temp0_modeuser.csv"),
 }
 
 

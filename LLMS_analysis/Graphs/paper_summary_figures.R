@@ -251,7 +251,8 @@ build_heatmap_data <- function(data, metric_name, threshold = 0.8) {
       config    = paste0(.data$shot, "@", .data$temperature),
       config    = factor(.data$config, levels = config_levels),
       llm       = factor(
-        .data$llm, levels = c("gpt", "gemini", "claude")
+        .data$llm, levels = intersect(c("gpt", "gemini", "claude"),
+                                      unique(.data$llm))
       ),
       label     = paste0(
         sprintf("%.2f", .data$mean_value),
@@ -293,7 +294,7 @@ make_heatmap_plot <- function(
       labeller = as_labeller(paper_labels)
     ) +
     scale_x_discrete(drop = FALSE) +
-    scale_y_discrete(labels = llm_labels, drop = FALSE) +
+    scale_y_discrete(labels = llm_labels, drop = TRUE) +
     scale_fill_gradientn(
       colors = c(
         "#b2182b", "#f4a582", "#f7f7f7", "#92c5de", "#2166ac"

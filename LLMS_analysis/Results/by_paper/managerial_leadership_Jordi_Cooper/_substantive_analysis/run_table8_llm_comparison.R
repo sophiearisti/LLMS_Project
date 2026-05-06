@@ -317,7 +317,7 @@ get_source_labels <- function(base) {
   sources
 }
 
-compute_lpm_coefficients <- function(data, dep, regressors) {
+compute_probit_marginal_effects <- function(data, dep, regressors) {
   needed <- unique(c(dep, "global_group", "game", regressors))
   present <- needed[needed %in% names(data)]
   used <- data[stats::complete.cases(data[present]), , drop = FALSE]
@@ -334,7 +334,7 @@ compute_lpm_coefficients <- function(data, dep, regressors) {
 
   form <- stats::as.formula(paste(dep, "~", paste(c(varying_regs, "factor(game)"), collapse = " + ")))
   fit <- tryCatch(
-    stats::lm(form, data = used),
+    stats::glm(form, data = used, family = stats::binomial(link = "probit")),
     error = function(e) NULL
   )
   if (is.null(fit)) {
@@ -349,19 +349,57 @@ compute_lpm_coefficients <- function(data, dep, regressors) {
     return(data.frame(term = character(), coef = numeric(), se = numeric(), p_value = numeric(), n = integer(), stringsAsFactors = FALSE))
   }
 
-  beta <- stats::coef(fit)
-  beta <- beta[!is.na(beta)]
+  beta_full <- stats::coef(fit)
+  keep_beta <- !is.na(beta_full)
+  beta <- beta_full[keep_beta]
+  if (length(beta) == 0) {
+    return(data.frame(term = character(), coef = numeric(), se = numeric(), p_value = numeric(), n = integer(), stringsAsFactors = FALSE))
+  }
+
+  model_X <- tryCatch(stats::model.matrix(fit), error = function(e) NULL)
+  if (is.null(model_X)) {
+    return(data.frame(term = character(), coef = numeric(), se = numeric(), p_value = numeric(), n = integer(), stringsAsFactors = FALSE))
+  }
+
+  common_names <- intersect(names(beta), colnames(model_X))
+  if (length(common_names) == 0) {
+    return(data.frame(term = character(), coef = numeric(), se = numeric(), p_value = numeric(), n = integer(), stringsAsFactors = FALSE))
+  }
+
+  beta <- beta[common_names]
+  vcov_mat <- vcov_mat[common_names, common_names, drop = FALSE]
+  X <- model_X[, common_names, drop = FALSE]
+  xbar <- colMeans(X)
 
   rows <- list()
   for (term in regressors) {
     if (!term %in% names(beta)) {
       next
     }
-    se <- sqrt(vcov_mat[term, term])
-    p_value <- 2 * stats::pt(-abs(beta[[term]] / se), df = fit$df.residual)
+
+    # Stata dprobit reports marginal effects. For binary regressors, use
+    # discrete change in predicted probability at means: Pr(x_j=1)-Pr(x_j=0).
+    x1 <- xbar
+    x0 <- xbar
+    x1[term] <- 1
+    x0[term] <- 0
+
+    z1 <- sum(x1 * beta)
+    z0 <- sum(x0 * beta)
+    mfx <- stats::pnorm(z1) - stats::pnorm(z0)
+
+    grad <- stats::dnorm(z1) * x1 - stats::dnorm(z0) * x0
+    se <- sqrt(as.numeric(t(grad) %*% vcov_mat %*% grad))
+    if (!is.finite(se) || se <= 0) {
+      se <- NA_real_
+    }
+
+    z_value <- ifelse(is.na(se), NA_real_, mfx / se)
+    p_value <- 2 * stats::pnorm(-abs(z_value))
+
     rows[[length(rows) + 1]] <- data.frame(
       term = term,
-      coef = unname(beta[[term]]),
+      coef = unname(mfx),
       se = unname(se),
       p_value = unname(p_value),
       n = nrow(used),
@@ -381,7 +419,7 @@ run_models_for_base <- function(base, model_specs) {
   for (spec in model_specs) {
     mask <- !is.na(base[[spec$mask_col]]) & base[[spec$mask_col]] == 1 & !is.na(base$period) & base$period > 1
     subset <- base[mask, , drop = FALSE]
-    result <- compute_lpm_coefficients(subset, spec$dep, spec$regressors)
+    result <- compute_probit_marginal_effects(subset, spec$dep, spec$regressors)
     for (term in TAGS) {
       hit <- result[result$term == term, , drop = FALSE]
       if (nrow(hit) == 1) {
@@ -516,18 +554,18 @@ main <- function() {
   coverage <- build_label_coverage(classified_base, diag)
   message("built label coverage")
 
-  write.csv(replication_results, file.path(SCRIPT_DIR, "table8_r_replication_package_lpm.csv"), row.names = FALSE)
+  write.csv(replication_results, file.path(SCRIPT_DIR, "table8_r_replication_package_probit.csv"), row.names = FALSE)
   write.csv(replication_comparison, file.path(SCRIPT_DIR, "table8_r_replication_package_comparison.csv"), row.names = FALSE)
   write.csv(replication_summary, file.path(SCRIPT_DIR, "table8_r_replication_package_summary.csv"), row.names = FALSE)
   write.csv(llm_results, file.path(SCRIPT_DIR, "table8_r_probit_replication.csv"), row.names = FALSE)
   write.csv(llm_wide, file.path(SCRIPT_DIR, "table8_r_probit_comparison_table.csv"), row.names = FALSE)
   write.csv(coverage, file.path(SCRIPT_DIR, "table8_r_label_coverage.csv"), row.names = FALSE)
 
-  message("Wrote table8_r_replication_package_lpm.csv")
+  message("Wrote table8_r_replication_package_probit.csv")
   message("Wrote table8_r_replication_package_comparison.csv")
   message("Wrote table8_r_replication_package_summary.csv")
-  message("Wrote table8_r_probit_replication.csv (LPM)")
-  message("Wrote table8_r_probit_comparison_table.csv (LPM)")
+  message("Wrote table8_r_probit_replication.csv (Probit)")
+  message("Wrote table8_r_probit_comparison_table.csv (Probit)")
   message("Wrote table8_r_best_model_configs_used.csv")
   message("Wrote table8_r_label_coverage.csv")
 }

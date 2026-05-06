@@ -317,14 +317,14 @@ make_heatmap_plot <- function(
     theme(axis.text.x = element_text(angle = 30, hjust = 1))
 }
 
-save_plot <- function(p, file_stub) {
+save_plot <- function(p, file_stub, width = 11, height = 8.5) {
   ggsave(
     file.path(output_dir, paste0(file_stub, ".pdf")),
-    p, width = 11, height = 8.5
+    p, width = width, height = height
   )
   ggsave(
     file.path(output_dir, paste0(file_stub, ".png")),
-    p, width = 11, height = 8.5, dpi = 300
+    p, width = width, height = height, dpi = 300
   )
 }
 
@@ -388,3 +388,57 @@ message(
   "  (Krippendorff alpha paper 1, Cohen kappa others)"
 )
 message(" - figure2_macro_f1_heatmap_by_paper.pdf/.png")
+
+# ─────────────────────────────────────────────────────────────────
+# Per-paper figures (same style, single facet each)
+# ─────────────────────────────────────────────────────────────────
+
+agreement_metric_labels <- c(
+  "managerial_leadership_Jordi_Cooper" = paste0(
+    "Krippendorff’s α (3 human coders + LLM)"
+  ),
+  "trust_promises_Ederer_Schneider"    = "Cohen kappa",
+  "under_reporting_Ling_Kale_Imas"     = "Cohen kappa"
+)
+
+for (i in seq_len(nrow(papers))) {
+  paper_nm  <- papers$paper_name[i]
+  paper_lbl <- paper_labels[paper_nm]
+  metric_nm <- agreement_metric_labels[paper_nm]
+
+  paper_data <- filtered_results_df |> filter(paper_name == paper_nm)
+  if (nrow(paper_data) == 0) next
+
+  # Agreement
+  paper_agreement_df <- build_agreement_heatmap_data(paper_data, threshold = 0.8)
+  if (nrow(paper_agreement_df) > 0) {
+    p_agree <- make_heatmap_plot(
+      heatmap_df   = paper_agreement_df,
+      fill_name    = "Agreement",
+      title_str    = paste0("Agreement with Human Annotations — ", paper_lbl),
+      subtitle_str = paste0(metric_nm, ". Tags < 10 positive cases excluded.",
+                            " Bold border = agreement >= 0.80."),
+      threshold    = 0.8
+    )
+    save_plot(p_agree,
+              paste0("figure1_agreement_heatmap_", paper_nm),
+              width = 11, height = 4)
+  }
+
+  # Macro F1
+  paper_f1_df <- build_heatmap_data(paper_data, "macro_f1", threshold = 0.8)
+  if (nrow(paper_f1_df) > 0) {
+    p_f1_p <- make_heatmap_plot(
+      heatmap_df   = paper_f1_df,
+      fill_name    = "Macro F1",
+      title_str    = paste0("Macro F1 — ", paper_lbl),
+      subtitle_str = paste0("Average Macro F1 across tags with >= 10 positive cases.",
+                            " Bold border = Macro F1 >= 0.80."),
+      threshold    = 0.8
+    )
+    save_plot(p_f1_p,
+              paste0("figure2_macro_f1_heatmap_", paper_nm),
+              width = 11, height = 4)
+  }
+}
+message("Per-paper figures saved in: ", output_dir)

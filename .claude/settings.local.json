@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where Rscript)",
+      "PowerShell(& \"C:\\\\Program Files\\\\R\\\\R-4.5.3\\\\bin\\\\Rscript.exe\" \"C:\\\\Users\\\\danie\\\\Dropbox\\\\Javeriana\\\\Proyecto LLMS text\\\\LLMS_Project\\\\LLMS_analysis\\\\Graphs\\\\Graphs.R\" 2>&1)",
+      "PowerShell(& \"C:\\\\Program Files\\\\R\\\\R-4.5.3\\\\bin\\\\Rscript.exe\" \"C:\\\\Users\\\\danie\\\\Dropbox\\\\Javeriana\\\\Proyecto LLMS text\\\\LLMS_Project\\\\LLMS_analysis\\\\Graphs\\\\paper_summary_figures.R\" 2>&1)",
+      "Bash(git -C \"C:/Users/danie/Dropbox/Javeriana/Proyecto LLMS text/LLMS_Project\" log --oneline --follow -- LLMS_analysis/Graphs/paper_summary_figures.R)",
+      "Bash(C:/Users/danie/AppData/Local/Programs/Python/Python312/python.exe *)",
+      "Bash(\"C:/Program Files/R/R-4.5.3/bin/Rscript.exe\" Graphs.R)",
+      "Bash(grep -E \"\\\\.\\(csv|xlsx|txt\\)$\")",
+      "Bash(grep -E \"\\\\.csv$\")",
+      "Bash(python3 *)"
+    ]
+  }
+}

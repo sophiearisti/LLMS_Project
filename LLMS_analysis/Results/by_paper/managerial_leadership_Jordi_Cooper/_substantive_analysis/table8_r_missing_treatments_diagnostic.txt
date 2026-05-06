@@ -1,0 +1,6 @@
+Treatment coverage diagnostic for Table 8 R comparison
+
+Classified source file: C:/Users/danie/Dropbox/Javeriana/Proyecto LLMS text/LLMS_Project/LLMS_analysis/Data/managerial_leadership_Jordi_Cooper/classify.csv
+Replication coding file: C:/Users/danie/Dropbox/Javeriana/Proyecto LLMS text/LLMS_Project/Papers/3-Replication-Package/BC Coding Data, Main Experiment.dta
+
+Missing treatments in classified keys: CH/A-D

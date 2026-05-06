@@ -3,12 +3,21 @@ library(readxl)
 library(dplyr)
 library(stringr)
 
-#set the directory
-setwd("/Users/sophiaaristizabal/Documents/GitHub/LLMS_Project/LLMS_analysis/Data/managerial_leadership_Jordi_Cooper")
+#set the directory when the script is executed directly
+script_args <- commandArgs(trailingOnly = FALSE)
+file_arg <- "--file="
+script_path <- sub(file_arg, "", script_args[grepl(file_arg, script_args)])
+if (length(script_path) > 0) {
+  setwd(dirname(normalizePath(script_path[1])))
+}
 
 #read the data
 tags <- read_csv("tags.csv")
 chat <- read_excel("chat.xlsx")
+
+# normalize names so the current chat.xlsx joins on the expected keys
+names(tags) <- make.unique(tolower(names(tags)))
+names(chat) <- make.unique(tolower(names(chat)))
 
 #compare the numer of observarions in each dataset
 nrow(tags)
@@ -41,11 +50,11 @@ cols_to_drop <- c(
   "chat_decent", "chat_cent", "chat_advice",
   
   # from chat
-  "centralized", "Session Start", "Session No.",
-  "TimeStage21ChatChatMessage", 
-  "TimeStage2InfoATreatment0And1ChatMessage",
-  "TimeStage2StateOfTheWorldDecisionCTreatment0ChatMessage",
-  "re","Group"
+  "centralized", "session start", "session no.",
+  "timestage21chatchatmessage", 
+  "timestage2infoatreatment0and1chatmessage",
+  "timestage2stateoftheworlddecisionctreatment0chatmessage",
+  "re", "group.1"
 )
 
 merged <- merged %>% 
@@ -55,7 +64,7 @@ names(merged)
 
 
 #save the newly created dataset
-write.csv(merged, "real_answers_desaggregated.csv", row.names = TRUE)
+write.csv(merged, "real_answers_desaggregated.csv", row.names = FALSE)
 
 
 # Cargar datos
@@ -85,6 +94,8 @@ vars_keep <- c(
 )
 
 names(datos)
+
+vars_keep_existing <- intersect(vars_keep, names(datos))
 
 # Agrupar y concatenar mensajes
 result <- datos %>%

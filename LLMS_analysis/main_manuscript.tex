@@ -1,0 +1,647 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,hmargin=3cm,vmargin=3cm]{geometry}
+\usepackage{amssymb,amsmath,amsfonts,eurosym,geometry,ulem,caption, subcaption,color,setspace,sectsty,comment,footmisc,pdflscape,subfig,array}
+%\usepackage{palatino,amssymb,amsfonts,amsmath,latexsym,setspace}
+\usepackage{utopia,latexsym}
+\PassOptionsToPackage{pdftex}{graphicx}
+\usepackage{graphicx}
+\captionsetup{justification=centering}
+\usepackage{fancyhdr}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{dutchcal}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{lscape}
+\usepackage{eurosym}
+\usepackage[font=footnotesize,labelfont=bf]{caption}
+\usepackage{dcolumn}
+\usepackage{booktabs}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[authoryear]{natbib}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{microtype}
+\usepackage{threeparttablex} % for "ThreePartTable" environment
+
+ \aboverulesep=0ex %make vertical lines continuous when needed.
+ \belowrulesep=0ex %make vertical lines continuous when needed. 
+
+
+\usepackage{appendix}
+\appendixtitleon
+
+
+\usepackage{tikz}
+\let\latextable\table
+\renewcommand\table[1][]{\latextable[H]}
+\normalem
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+
+\definecolor{blue_citations}{HTML}{08088A}
+
+\usepackage{adjustbox} %for adjusting tables width
+
+
+\usepackage[colorlinks=true,linkcolor=black,citecolor=blue_citations,urlcolor=Violet,breaklinks]{hyperref}
+
+
+\usetikzlibrary{decorations.pathreplacing,angles,quotes}
+\usepackage[labelsep=period,font=small,textfont=bf,labelfont=bf,skip=0.1cm]{caption}
+%\usepackage[labelformat=simple,labelsep=period,font=small,skip=0.0cm]{subcaption}
+\setlength{\parskip}{2mm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{hypothesis}{Hypothesis}
+\newtheorem{result}{Result}
+\newtheorem{assumption}{Assumption}
+\newtheorem{observation}{Observation}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+
+
+
+\newtheorem{hyp}{Hypothesis}
+\newtheorem{subhyp}{Hypothesis}[hyp]
+\renewcommand{\thesubhyp}{\thehyp\alph{subhyp}}
+
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\blue}[1]{{\color{blue} #1}}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+
+% Command for better table alignment
+\newcommand\mc[1]{\multicolumn{1}{c}{#1}} % handy shortcut macro
+
+
+% Fix title, sections, etc.
+
+\let\LaTeXtitle\title
+\renewcommand{\title}[1]{\LaTeXtitle{{\LARGE #1}}}
+
+
+
+  
+ 
+
+\newcommand{\ri}{r_i}
+\newcommand{\rj}{r_j}
+\newcommand{\cbar}{\bar{c}}
+
+
+\newcommand{\dstirling}[2]{\genfrac{}{}{0pt}{0}{#1}{#2}}
+
+
+\begin{document}
+\begin{sloppypar}
+
+%==============================================================================
+%This is the title page
+\setcounter{page}{1} \thispagestyle{empty} \renewcommand{\thefootnote}{\fnsymbol{footnote}} %\vspace*\fill %
+\phantomsection\addcontentsline{toc}{section}{Front Page}
+
+
+\begin{center}
+\vspace{+0.5cm}
+\huge\textbf{Coding open-ended responses with large language models: Evidence from three economic experiments}\footnote{This research was conducted as part of Project No. 000000000010844, funded by Pontificia Universidad Javeriana. The authors gratefully acknowledge this financial support. We thank Jordi Brandts, David Cooper, Alex Imas, and Yier Ling for generously sharing their data. Data from \citet{ederer_schneider_2022} were obtained from publicly available sources. We also thank Ali Ozkes for kindly providing data from his study \citet{hanaki2023strategic}.
+}
+
+\vspace{+1cm}
+
+\large{Daniel Parra}\footnote{Department of Business Administration, School of Economics and Management, Pontificia Universidad Javeriana. E-mail: \href{mailto:danielfparra@javeriana.edu.co}{danielfparra@javeriana.edu.co}.}
+\hspace{0.5em} \textcircled{r}\footnote{We randomized the author order using the AEA \href{https://www.aeaweb.org/journals/policies/random-author-order/generator}{Author Randomization Tool}. Confirmation code: \href{https://www.aeaweb.org/journals/policies/random-author-order/search?RandomAuthorsSearch\%5Bsearch\%5D=2\_fO\_iB6Zyq8}{2\_fO\_iB6Zyq8}.} \hspace{0.3em}
+\large{Sophia Aristizabal}\footnote{Pontificia Universidad Javeriana. E-mail: \href{mailto:so.aristizabal@javeriana.edu.co}{so.aristizabal@javeriana.edu.co}.}
+\\
+\end{center}
+
+\bigskip
+\begin{abstract}
+\noindent
+This paper studies whether large language models (LLMs) can replicate and scale the coding of open-ended responses and free-form communication in experimental economics. We assemble three empirical applications built from previously published communication datasets. The first involves inductively coded free-text explanations about self- and peer-reported AI use. The second involves multi-label human coding of free-form chat in a coordination experiment. The third uses communication from a trust game with promises over time. Across these cases, we compare LLM-generated labels to human-coded benchmarks, evaluate agreement and predictive validity, and study when LLM coders succeed or fail. Our goal is not only to assess whether LLMs can reproduce existing coding decisions, but also to identify which types of experimental text are best suited for reliable AI-assisted coding.
+    
+\end{abstract}
+
+
+
+\vspace{1cm}
+JEL Codes: C90, C92, D83, D91.\\
+Keywords: large language models, text coding, communication experiments, open-ended responses, measurement.\\
+\indent This version: \today
+\vspace*\fill
+
+\setcounter{page}{0}
+\onehalfspacing
+\pagebreak
+\newpage
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\setcounter{footnote}{0}
+
+\section{Introduction}\label{s-intro}
+
+Textual data have become increasingly important in experimental economics research. Textual responses occupy an intermediate position between choices and mental states: they are observable behavior, yet they often encode reasoning, beliefs, and motivations that choices alone leave ambiguous. Even in experiments without direct participant communication, researchers often collect open-ended responses to understand how subjects interpret the environment, justify their choices, or form beliefs about others. In many settings, these responses contain information central to the underlying behavioral question: motives, persuasion attempts, norm perceptions, strategic misunderstandings, and reactions to treatment conditions are often only partially observable in choices. However, precisely because such data are rich and unstructured, they are costly to use. Transforming free-form text into analyzable variables typically requires teams of research assistants to read, interpret, and manually code responses, thereby transforming them into analyzable quantitative measures. This renders text-intensive projects slow to scale, costly to replicate, and difficult to standardize across studies. As \citet{gentzkow2019text} note, open-ended responses are theoretically informative but challenging to systematically code due to their heterogeneity and complexity. The problem is especially acute in experiments where communication is itself the object of study rather than a supplementary outcome.
+
+This paper examines whether large language models (LLMs) can perform this coding task reliably enough to serve as substitutes for, or complements to, human coders in the analysis of experimental data and the limitations that arise when applying these methods. More specifically, we evaluate whether LLM-generated categorizations replicate human-coded measures, preserve substantively meaningful variation in settings with multiple possible labels, and lead to the same empirical conclusions regarding treatment effects and behavioral correlates. Our focus is therefore not on whether LLMs can summarize text in a general sense, but on whether they can generate research-quality coded data from experimental text.
+
+Recent advances in large language models (LLMs) have created new possibilities for experimental research. \citet{charness2023generation} characterize this broader shift as a ``Generation Next'' moment for experimentation, in which AI tools may reshape multiple stages of the research process, from design to implementation to analysis. In economics and the behavioral sciences, these tools are increasingly viewed as a means of analyzing language-rich data, supporting empirical workflows, and reducing the cost of processing unstructured information \citep{charness2023generation,ludwig2025large}. At the same time, the existing discussion remains largely prospective, and evidence on LLM-based coding in experimental settings remains limited. Experimental text presents a particularly demanding test case because coding often depends on subtle distinctions among strategic content, promises, persuasive language, and inductively generated themes. Whether LLMs can recover these distinctions with sufficient consistency to support inference remains an open question. More broadly, as \citet{gentzkow2019text} note, text is theoretically informative but difficult to code systematically because of its heterogeneity and dependence on context. These challenges are especially important when the goal is not prediction alone, but measurement that must align with economically meaningful categories.
+
+We address this question using three empirical applications drawn from previously published experimental studies in which human coding plays a central role. The first is \citet{brandts_cooper_2025}, which examines chat communication in a game with asymmetric information. The second is \citet{ederer_schneider_2022}, which analyzes free-form promises in a repeated trust game, a setting in which messages appear strategically simple but may encode psychologically rich commitments. The third is \citet{ling2025underreporting}, which examines students’ explanations for discrepancies between self-reported and peer-reported AI use and employs thematic coding of open-ended responses. Taken together, these applications allow us to compare LLM and human coding across heterogeneous tasks that differ in the structure of the coding scheme, the ambiguity of the text, and the substantive role that communication plays in the experiment.
+
+
+
+-------------------
+ \textcolor{red}{We need to check this after the paper is written to be consistent and precise!}
+
+
+This paper makes three main contributions. First, it provides systematic evidence on the extent to which LLM coders can replicate benchmark human-coded labels in experimental data. Second, by examining three substantively different applications, it shows that LLM performance is not uniform across coding tasks: agreement depends on whether categories are tightly defined or inductively constructed, binary or multi-label, and strategically explicit or interpretive. Third, we move beyond agreement rates to evaluate whether LLM-generated labels preserve the empirical content relevant to researchers. In particular, we examine whether conclusions regarding treatment differences, behavioral correlations, and category prevalence are robust to replacing human coding with LLM coding. This distinction is important because imperfect agreement need not imply unusable measurement, whereas high mechanical agreement need not guarantee the preservation of substantive inference. 
+
+Our findings highlight both the promise and the limits of LLM-based coding. In some settings, LLMs closely reproduce human judgments and appear capable of generating usable research measures at substantially lower cost. In other settings, especially where coding relies on inductively developed themes or nuanced interpretation, agreement deteriorates and the choice of coding protocol becomes consequential. The broader implication is that LLMs are best understood not as automatic replacements for human interpretation, but as tools whose reliability depends on the structure of the underlying measurement problem.
+
+The remainder of the paper proceeds as follows. Section \ref{s-related} situates the paper within the literature on experimental communication, human coding, and LLM-assisted text analysis. Section \ref{s-applications} introduces the three empirical applications and explains how they differ with respect to text structure, coding complexity, and substantive purpose. Section \ref{s-methods} presents the LLM coding framework, including model selection, prompt design, and implementation. Section \ref{s-evaluation} defines the validation framework and the metrics used to compare LLM and human coding. The results section then reports agreement across applications, examines whether LLM-based labels preserve the substantive conclusions of the original studies, and identifies the coding tasks for which LLMs perform relatively well or poorly. The final section discusses scope conditions, practical guidance for researchers, and the broader implications of LLM-based coding for experimental economics.
+
+\section{Related literature}\label{s-related}
+
+Communication and open-ended responses have long been central to experimental economics, enabling researchers to test predictions from influential theories of human behavior and to develop a richer picture of the variables individuals consider relevant when making choices or forming beliefs \citep{haaland2025understanding}. Open-ended measurement captures key features of real-world communication and allows individuals to express their considerations, feelings, and experiences in their own words, without being constrained by predefined response options \citep{haaland2025understanding}. An early and ongoing experimental literature provides systematic evidence on the importance of natural language communication for economic outcomes, demonstrating that allowing communication can foster cooperation or collusion in a variety of contexts \citep{Houser2007, Andreoni2011, brandts_cooper_2025, Baranski2023, Zultan2012}. Researchers use such qualitative data to measure motives and reasoning underlying decisions, as well as mental models, narratives, and attention allocation—decision-relevant factors that are often unobserved in traditional datasets \citep{haaland2025understanding, ChopraHaaland2023}. Chat logs from experiments can yield insights into participant behavior, uncertainty, and cognitive processes, providing an under-the-hood perspective that can generate novel hypotheses \citep{ling2025underreporting}. A full understanding of human behavior requires not only quantitative data, typically collected from observed choices, but also qualitative data on how people perceive and reason about the world \citep{ChopraHaaland2023}.
+
+
+Despite their richness, experimental text data present substantial challenges for systematic coding at scale, limiting their use even when such data are collected. Open-ended responses provide detailed and nuanced information and often uncover unexpected themes, but their unstructured nature also creates greater scope for both classical and nonclassical measurement error. In particular, researchers may worry that analyses based on such data will be viewed as questionable because human coding may be influenced by biases that align with researcher hypotheses. Additionally, some respondents may be unwilling to exert effort, and even when they do, their responses may remain ambiguous and difficult to interpret \citep{haaland2025understanding}. While open-ended social simulations can be highly informative, selecting and analyzing their outcomes can be difficult, as researchers may need to sift through thousands of lines of unstructured text to identify meaningful patterns \citep{charness2023generation}. Previous research documents a progression from manual coding \citep{Andreoni2011, Burchardi2014, nielsen2019teams, ederer_schneider_2022, brandts_cooper_2025} to semi-automated and fully automated approaches using, for instance, machine learning \citep{penczynski2019using, hausladen2024predicting}, and, more recently, to the use of LLMs as classifiers \citep{Korinek2023, ChopraHaaland2023, Celebi2024, Bermejo2025, haaland2025understanding}. In this context, LLMs offer the potential to standardize text analysis at scale, reduce concerns about subjectivity and coder reliability, and provide a more cost-effective alternative that may reduce disparities between researchers with substantial funding and those with fewer resources, including junior scholars and researchers in developing countries.
+
+However, developing a coding scheme is costly and requires researchers to make subjective choices that may not be fully replicable and may also be prone to bias \citep{haaland2025understanding}. Inductive coding begins with the data and develops codes based on themes that emerge directly from open-ended responses, whereas deductive coding uses existing knowledge and theory to define a coding scheme \citep{haaland2025understanding}. Best practices call for multiple researchers to independently review responses to identify appropriate codes and then to work together to develop a final set of codes that remains close to respondents’ own language. A qualitative codebook that includes the final set of codes along with positive and negative examples illustrates how the codes should be applied, and all coders should review the codebook carefully, participate in joint training, and then independently hand-code the same data \citep{ChopraHaaland2023}. Research assistants typically receive extensive training before beginning the task, including multiple rounds of double- and triple-coding, followed by group discussions about how to reconcile coding differences \citep{ChopraHaaland2023}. Ensuring that coders are unaware of the research hypothesis can reduce the potential for bias, and double-coding responses with discrepancies resolved through a third coder can reduce measurement error \citep{haaland2025understanding}. Inter-coder reliability measures the extent of agreement across coders, with common measures including Cohen's kappa and Krippendorff's alpha. As noted by \citet{haaland2025understanding}, \citet{miles1994qualitative} suggest 80\% agreement on 95\% of codes, whereas \citet{neuendorf2017content} proposes thresholds of 90\% as widely acceptable and 80\% as acceptable in many applications.
+
+Recent evidence suggests that large language models can code open-ended data reliably and reproducibly, outperforming crowd workers and making them a low-cost and easily scalable alternative to human coding \citep{Bermejo2025, haaland2025understanding, Celebi2024}. LLMs offer several attractive performance features: they generate immediate outputs, provide detailed justifications on demand, and produce consistent classifications that are not subject to fatigue \citep{Celebi2024}. In experimental economics, \citet{Celebi2024} conducted a similar exercise to ours and found that GPT-4 outperforms GPT-3.5 and achieves high levels of agreement with human coders, reaching nearly 90\% accuracy in applications involving promises and up to 73\% in more complex tasks such as identifying strategic thinking, which requires understanding and applying specific game-theoretic concepts and interpreting implicit linguistic patterns. Human-validated AI coding can serve as a cost-effective substitute for labeling interview transcripts, with GPT-4o achieving global interrater agreement of 86\% between AI and human coders, matching human-human agreement \citep{ChopraHaaland2023}. LLMs consistently outperform outsourced human coders, particularly in tasks requiring deep contextual understanding, and offer a cost-effective alternative for sophisticated text analysis through simple API-based workflows and modest operational costs \citep{Bermejo2025}. Traditional methods such as BERT-based classification \citep{seiler2025measuring} require significant training data, and their performance deteriorates for more nuanced concepts, whereas LLMs can reduce the need for extensive labeled training data and train-test separation, making them advantageous in low-resource environments \citep{Bermejo2025}. However, although frontier LLMs can provide a low-cost and easily scalable alternative to human coding, their performance can depend on the quality of the prompting, the type of LLM used, and the complexity of the setting, and it remains essential to validate AI-generated coding against human benchmarks to guard against hallucinations and systematic model bias.
+
+
+\section{The LLM coding framework}\label{s-methods}
+
+To systematically evaluate the performance of LLMs in coding open-ended responses, we developed a modular framework designed for reproducibility and scalability. This framework can be visualized in Figure \ref{fig:flow}, which describes the seven steps ranging from the submission of the input file to the download of the coding results.
+
+\begin{figure}[H]
+    \centering
+       \caption{Flow diagram of the LLM coding procedure}\label{fig:flow}
+    \includegraphics[width=0.95\linewidth]{1_Figures/flow_diagram.png}     
+\end{figure}
+
+The first step is to upload a CSV input file. This file must contain, at a minimum, the individual textual inputs to be analyzed, with the relevant input column explicitly specified. After the file is uploaded, one can choose between \textit{assigning categories} to each open-ended response or \textit{creating categories} based on the whole set of responses.
+
+If the last option is chosen (\textit{Create Categories}), the result will be a CSV file with the categories created by the LLM and a definition for each category. 
+On the other hand, Assign Categories will generate a CSV file with all the responses classified, and additional columns specified by the user.
+
+For both options, the second stage of the framework involves selecting a specific LLM and its corresponding version. For this research, we selected models from the Gemini, GPT, and Claude families, given their prominence and widespread use in the current academic landscape. By incorporating multiple models, we aim to provide a robust comparison of performance across diverse textual inputs and experimental contexts.
+
+Next, we proceed to the Prompt Configuration module. This third stage constructs the prompt for the model using a template that includes five sections. Although both options include the same sections, some serve different purposes.  
+
+For the \textit{Create categories} option, the first section is the \textit{Role Definition}. This section establishes the LLM’s identity as an expert research assistant specializing in the qualitative analysis of behavioral economics experiments. Following the \textit{Role Definition}, the \textit{Context Setting} provides an overview of the experimental design. For this, we describe the game structure, the treatment conditions, the communication type, the control mechanism, and other relevant details needed for the model to understand the underlying experimental logic without disclosing the experimental results. Next, \textbackslash{}textit\{Classification Instructions\} in general terms ask the LLM to create N categories based on the full set of chat messages provided. To ensure the output is structured for automated analysis, the \textbackslash{}textit\{Format Specification\} defines the expected response structure for generating and interpreting the new categories. In this case, we require a JSON format. The final section is \textit{Constraints}. Here, we establish which conditions may apply when creating the categories; for example, this section may state that a response may belong to more than one category or that XXXXX.
+
+In the case of \textit{Assign Categories}, the Role and Context sections have the same function. For the \textit{Classification Instructions}, the aim changes, as now it explicitly defines the categories used for the classification task, along with the language and structure of the participants’ responses. Also, the format specification slightly changes. Now, instead of receiving the new categories, this defines the required response format for each classified response (still expected in JSON format). Finally, Constraints now establishes how each category had to be classified; for example, whether the classification is binary or includes other options. We also described any conditional dependencies among categories. One example is: if 'A' is false, then 'B,' 'C,' and 'D' are always false.  In Appendix X, we added all the prompts used for the empirical applications, and included an example for the create categories option. 
+
+The Classification Strategy Branch forms part of the prompt structure we developed. This only applies to the Categories assignment option. Depending on the type of classification, additional specifications may be added. In this case, we used four types: zero-shot, few-shot, zero-shot Chain-of-Thought (CoT), and few-shot CoT. For zero-shot, for instance, the basic prompt structure described above is sufficient, whereas few-shot requires providing the LLM with one or more examples of already classified responses \citep{brown2020language}. Zero-shot CoT and few-shot CoT work similarly to the previous two approaches but additionally ask the model to generate intermediate reasoning steps or explain the logic used for the final classification \citep{wei2022chain}.
+
+These prompt structures were based on the template proposed by \cite{penczynski2019using}. They combine role specification, contextual information, classification instructions, examples, output constraints, and other modular components into a unified prompting framework. The purpose of generating a fixed structure is to reduce prompt-design confounds, ensure consistency across tasks, and better isolate differences in performance attributable to task complexity rather than prompt variation. This overarching structure supports systematic comparison of model performance across diverse textual inputs and experimental contexts.
+
+Once the prompt template is specified, the next step is to select the temperature settings for the LLM. Temperature is an important parameter to examine because it controls the randomness of the model’s output: higher temperatures increase variability in responses, whereas lower temperatures produce more deterministic and reproducible classifications. Although the available temperature range may vary across models, values closer to zero generally yield more stable outputs. Testing across different temperature settings allows us to evaluate the extent to which this parameter influences classification results and to assess how closely model-generated classifications at each temperature align with the original human-coded annotations.
+
+The Temperature step was the last required for creating the categories, but if the purpose is to assign them, the next module is the \textit{Processing Modes}. In this module, candidate responses are processed to obtain their corresponding classifications. All Gemini, ChatGPT, and Claude models can assign classifications on a per-response (or per-observation or line-by-line) basis, while ChatGPT and Claude also allow processing in batch mode, in which multiple observations are submitted and classified within a single asynchronous job. This mode is particularly useful for large-scale annotation tasks, as it can reduce computational costs, API overhead, and processing time \citep{openaibatch2024}. In the case of per-observation processing, the classification results can be downloaded as a CSV file. Additionally, if the classification process is interrupted, whether due to connection issues or because the researcher chooses to stop execution, the framework saves progress in a helper file, allowing the process to resume from the last completed observation.
+
+This framework was developed with the aim of facilitating the creation and classification of open ended responses for any researcher that needs to do this process for a XXXXX AT ANY TIME for free. This tool was coded in a way that the procedure is the same and the results can be obtained in a user friendly maner. This repository contains the code that can be imported, and the read me file  which describes how it can be run and used. Additionall, Appendix X shows some screenshots of how the tool works.
+
+
+ESCRIBIR UN PARRAFO DICIENDO QUE ESTA FORMA ERA LA MEJOR FORMA DE HACERLO PARA HACERLO MAS FACIL Y QUE TAMBIEN ACA SE PUEDE VER EL REPOSITORIO
+APENDICE CON SCREENSHOTS
+
+\section{Validation framework and metrics}\label{s-evaluation}
+
+the \textit{Evaluation Module} computes a set of performance and agreement metrics, including accuracy, precision, recall, F1-score, Cohen’s kappa, and Krippendorff’s alpha, to assess both how closely model-generated classifications align with the original human-coded labels and the reliability of the models’ classifications.   These metrics are organized in a CSV report file for later use in creating tables and charts.
+
+Decir las implicaciones de cada metrica
+
+
+\begin{enumerate}
+    \item Agreement rate and percent agreement
+    \item Cohen's kappa 
+    \item Precision, recall, and F1 by category
+    \item Using human-human agreement as the benchmark ceiling
+\end{enumerate}
+
+
+
+\section{Three empirical applications}\label{s-applications}
+
+El problema del desbalance.
+Si una categoría es rara (ej. 90\% de los textos son 0 y solo 10\% son 1), kappa puede ser engañosamente bajo aunque el acuerdo sea alto. En ese caso conviene reportar también:
+
+Sensibilidad (¿qué fracción de los 1 reales detecta el LLM?)
+Especificidad (¿qué fracción de los 0 clasifica correctamente?)
+O directamente el F1-score, que es más robusto al desbalance
+
+Lo que típicamente se reporta en este diseño
+MétricaPor quéκ de CohenEstándar de acuerdo inter-rater\% acuerdo brutoIntuitivo para lectoresSensibilidad / F1. Si hay desbalance en las clases.
+
+Yo sugeriría una estrategia de dos niveles:
+
+Etiquetas evaluables (≥ 10 positivos): reportar κ, F1_1, y concluir sobre replicabilidad. Aquí tenés resultados reales.
+Etiquetas raras (< 10 positivos): reportar solo que la muestra es insuficiente para validación, y excluirlas de las conclusiones sobre acuerdo LLM-humano. No es un fracaso del LLM — es una limitación del N.
+
+
+For each application, report:
+
+ the best-performing configuration (or average across temperatures if variance is low), and separately discuss temperature sensitivity as a secondary finding. That collapses your results substantially.
+
+ one figure per paper with model as the main visual dimension
+For each paper, a dot plot where:
+
+Y-axis: tags (the coding categories)
+X-axis: κ
+Color: model (GPT, Gemini, Claude)
+Each point = best configuration for that model × tag (or average across temperatures)
+Reference line at κ = 0.80
+
+This gives you a clean visual that answers: "for this paper's coding scheme, which model works best, and for which tags?"
+
+Then temperature and prompting get collapsed into either:
+
+A brief paragraph: "results were robust across temperatures" (if true), or
+A small supplementary figure showing κ range per model as error bars or ranges on the same plot
+
+The core problem you need to solve
+κ = 0 for a rare category doesn't mean the LLM failed — it means the category can't be evaluated with that N. You need to communicate that distinction clearly so reviewers don't penalize you for it.
+My suggestion: a two-tier reporting strategy
+Tier 1 — Evaluable tags (enough positives, say ≥ 10):
+Report κ as the primary metric in the figure. That's it. κ already accounts for chance agreement and is the standard the field expects.
+Tier 2 — Rare tags (< 10 positives):
+Don't report κ at all for these. Instead, note in a footnote or a small table that these categories had insufficient positive cases for reliable agreement estimation, and report only the raw count of positives. This is methodologically cleaner than showing κ = 0 which looks like failure.
+
+Appendix table: κ + f1_1 for all tags including rare ones, all models, all configurations
+
+Worth reporting, secondary
+
+Few-shot vs. 0-shot comparison — not per tag, but aggregated. A small table with average κ across evaluable tags by model × prompting strategy, per paper. Answers the practical question: does giving examples help?
+Temperature sensitivity — similarly aggregated. If κ variance across temperatures is low (say range < 0.05), one sentence saying "results were robust to temperature" is enough. If variance is high for some models, that's worth a small figure.
+
+
+\begin{itemize}
+    \item the original experimental setting and why text matters for the underlying theory;
+    \item the unit of analysis (response, message line, conversation, participant, or round);
+    \item the original human coding protocol;
+    \item the final coding categories used as benchmark labels;
+    \item whether labels are single-label, multi-label, binary, ordinal, or hierarchical;
+  \end{itemize}
+
+A compact summary table would help. For example:
+
+\begin{table}[h!]
+\centering
+\caption{Summary of empirical applications}
+\begin{tabular}{p{3.3cm}p{2.6cm}p{2.5cm}p{2.6cm}p{2.3cm}}
+\toprule
+Application & Text source & Human benchmark & Label structure & Unit of analysis \\
+\midrule
+AI underreporting & Free-text explanations & Inductive thematic coding & Single- or multi-label & Response \\
+Manager-agent game & Free-form chat & Multi-coder content coding & Multi-label binary & Message line / conversation \\
+Trust and promises & Promise / communication text & \textit{To be specified} & \textit{To be specified} & \textit{To be specified} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Substantive validity}
+For each application, test whether replacing human labels with LLM labels preserves the original empirical conclusions. Examples include:
+\begin{itemize}
+    \item relative prevalence of categories;
+    \item treatment contrasts;
+    \item correlations between text labels and observed behavior;
+    \item regressions using human versus LLM labels as predictors or outcomes.
+\end{itemize}
+
+
+\subsection{Application 1: Free-form chat in managerial coordination game \citep{brandts_cooper_2025}}
+
+In \citet{brandts_cooper_2025}, the authors study how effective different types of communication and managerial control are in facilitating coordination within organizations. They consider a setting characterized by information asymmetries and preference conflicts between managers and agents. To analyze this environment, they employ a game-theoretic framework they term the Manager-Agent (MA) game. The MA game is a three-player coordination game involving one manager (M) and two agents (A1 and A2). In the game, all participants, regardless of role, benefit from coordinating on a common action, but they have differing preferences over which action should be chosen. The state of the world, which determines the efficient outcome, varies; agents observe this state, whereas the manager does not. Given preference heterogeneity and the manager’s informational disadvantage, agents have an incentive to misreport the state of the world to influence the manager’s decision toward their preferred outcome. Central to the experimental design, the authors vary two factors to identify their causal effects: (1) whether agents’ actions are determined by managerial control (the manager imposes decisions) or by delegation (agents choose their own actions); and (2) the type of communication available, including no communication, structured communication (i.e., pre-specified message spaces), or free-form chat.
+
+The experimental design consists of seven treatments corresponding to combinations of these two dimensions. Specifically, the treatments are: No Communication with Delegation (NC-D), which serves as the baseline; Structured Communication between Agents with Delegation (SC/S-D); Structured Communication with Advice and Delegation (SC/A-D); Structured Communication with Managerial Control (SC-MC); Chat between Agents with Delegation (CH/S-D); Chat with Advice and Delegation (CH/A-D); and Chat with Managerial Control (CH-MC). An additional treatment, Extended Communication and Managerial Control (EC-MC), was later introduced to isolate the marginal effect of free-form communication.
+
+The authors find that managerial control combined with free-form chat (CH-MC) significantly outperforms all other organizational structures, achieving efficiency gains of 44.3\%, corresponding to roughly half of the theoretically feasible improvement, and is the only treatment that significantly exceeds a safe-outcome benchmark. This result is driven by agents’ near-complete truth-telling about private information in free-form communication, in contrast to theoretical predictions and to behavior observed under structured communication. While managerial control consistently yields higher total surplus relative to delegation, structured communication treatments (SC-MC, SC/S-D, SC/A-D) do not improve outcomes relative to the no-communication baseline due either to managerial errors in processing information or to coordination failures. A follow-up treatment, Extended Communication and Managerial Control (EC-MC), incorporating features of free-form chat into structured communication, does not replicate the substantial reduction in misreporting, confirming that free-form communication per se is critical for inducing truthful reporting.
+
+In this paper, we focus on treatments involving free-form chat. In the original paper, \citet{brandts_cooper_2025} develop a systematic coding scheme to analyze the content of free-form chat messages in the Manager-Agent (MA) game. They employ an iterative review of a random sample of conversations to identify relevant patterns and categories. Two research assistants independently code all chat conversations using a binary coding scheme in which each message line is assigned a value of 1 if it contains content relevant to a given category and 0 otherwise, with no restriction on the number of categories assigned to each message. For categories exhibiting low inter-rater agreement (Cohen's kappa < 0.5), a third, extensively trained coder recoded those categories to enhance reliability. Coders are explicitly instructed to code content objectively, without considering potential effects, and remain blind to the authors' hypotheses. The coding scheme encompasses multiple categories, including suggestions (safe or efficient outcomes), agreement, discussion topics (coordination, fairness, efficiency, experimental rules, and gameplay), information revelation (truthful disclosure, deception, and contradictions), and the frequency of managerial communication. This setting is well-suited for evaluating LLM performance on structured, multi-label classification tasks against an explicit human benchmark.
+
+\subsubsection{Application 1: validation metrics}
+
+Before evaluating LLM performance, we partition the 15 categories by their
+prevalence in the evaluation sample. Two categories---\textit{falsehood} and
+\textit{contradict}---have no positive cases, making agreement statistics
+undefined; we exclude them from all analysis.\footnote{The absence of
+\textit{falsehood} and \textit{contradict} in our sample reflects the structure
+of the treatments we evaluate, which focus on free-form chat with delegation and
+managerial control. These categories may be more prevalent in other treatment arms.}
+One additional category---\textit{discuss\_howtoplay}---has only 9 positive cases,
+below the threshold of 10 we require for reliable estimation; we report it in the
+appendix but exclude it from main conclusions. This leaves 12 evaluable categories.
+
+\begin{figure}[htbp]
+    \caption{Human inter-rater reliability per category (Krippendorff's $\alpha$)}
+    \label{fig:alpha_Jordi}
+    \centering
+    \includegraphics[width=0.9\textwidth]{1_Figures/krippendorff_alpha_plot.pdf}
+
+    \vspace{0.2cm}
+    \footnotesize
+    \textit{Note:} Computed from three independent human coders on 133 conversations.
+    Green = strong agreement ($\alpha \geq 0.80$); orange = tentative ($0.67$--$0.80$);
+    red = unreliable ($< 0.67$).
+\end{figure}
+
+Figure~\ref{fig:alpha_Jordi} reports the human inter-rater reliability (Krippendorff's
+$\alpha$) for each category. The evaluable categories fall into two groups. Eight are
+\textit{behaviorally concrete}: they capture whether agents make or agree to specific
+proposals, ask about the game state, or truthfully report private information, and human
+coders agree strongly on these ($\alpha \geq 0.70$). Four are \textit{interpretively
+ambiguous}: they concern the general topic of conversation---fairness, efficiency,
+rules---or require inferring communicative intent (\textit{explanation}), and human
+coders agree less ($\alpha$ ranging from 0.24 to 0.47). This distinction is important
+because LLMs cannot be expected to systematically outperform human inter-rater agreement;
+the per-category human $\alpha$ is the relevant benchmark ceiling, not a uniform 0.80
+threshold.
+
+\begin{figure}[htbp]
+    \caption{Agreement with human annotations: model $\times$ configuration heatmap ---
+             \citet{brandts_cooper_2025}}
+    \label{fig:agreement_Jordi}
+    \centering
+    \includegraphics[width=0.9\textwidth]{1_Figures/figure1_agreement_heatmap_managerial_leadership_Jordi_Cooper.pdf}
+
+    \vspace{0.2cm}
+    \footnotesize
+    \textit{Note:} Cells report mean Krippendorff's $\alpha$ (3 human coders + LLM)
+    averaged across the 12 evaluable categories ($\geq 10$ positive cases).
+    Bold border indicates mean $\alpha \geq 0.80$.
+    Configuration labels: shot@temperature (e.g.\ \texttt{fewshot@0} = few-shot, $T = 0$).
+\end{figure}
+
+Figure~\ref{fig:agreement_Jordi} summarizes mean agreement across evaluable categories for
+each model and configuration. Averaged across the 12 evaluable tags, Claude achieves the
+highest mean $\alpha$ (0.38 at its best configuration: zero-shot, $T = 0.1$), followed
+closely by Gemini (0.37, few-shot, $T = 0$) and GPT (0.32, few-shot, $T = 0$). Few-shot
+prompting substantially improves agreement for Gemini ($+0.06$ relative to zero-shot) and
+GPT ($+0.05$), but leaves Claude essentially unchanged, suggesting that Claude's zero-shot
+performance is already near its ceiling for this task. Temperature variation within each
+prompting strategy has modest effects (range $< 0.05$ across models), indicating that
+results are robust to decoding temperature.
+
+\begin{figure}[htbp]
+    \caption{Best-configuration Krippendorff's $\alpha$ per category and model ---
+             \citet{brandts_cooper_2025}}
+    \label{fig:dotplot_Jordi}
+    \centering
+    \includegraphics[width=0.9\textwidth]{1_Figures/dotplot_best_config_managerial_leadership_Jordi_Cooper.pdf}
+
+    \vspace{0.2cm}
+    \footnotesize
+    \textit{Note:} Each point is the maximum $\alpha$ for that model across all
+    shot $\times$ temperature combinations. Grey vertical bars indicate the
+    per-category human inter-rater $\alpha$. Dashed line marks $\alpha = 0.80$.
+    Categories with zero positive cases (\textit{falsehood}, \textit{contradict})
+    and fewer than 10 positives (\textit{discuss\_howtoplay}) are omitted.
+\end{figure}
+
+Figure~\ref{fig:dotplot_Jordi} shows the best-configuration $\alpha$ per category for
+each model, together with the per-category human $\alpha$ as a reference. Performance is
+heterogeneous across categories in a pattern that closely mirrors the human IRR structure.
+Categories where agents make concrete proposals or report factual outcomes---\textit{suggest\_safe},
+\textit{truthful}, \textit{agree\_proposal}, \textit{receive\_report},
+\textit{suggest\_efficient}, \textit{discuss\_efficient}, \textit{neither\_report}---reach
+$\alpha \geq 0.45$ under the best-performing model. Categories that require detecting
+general communicative acts without unambiguous surface markers---\textit{any\_suggestion},
+\textit{ask\_game}, \textit{discuss\_rules}, \textit{discuss\_fairness}---yield moderate
+agreement (best-model $\alpha$ between 0.24 and 0.66). The category \textit{explanation}
+yields near-zero agreement across all models ($\alpha < 0.10$), but this is also the
+category with the lowest human IRR ($\alpha = 0.24$), indicating that the difficulty is
+not specific to LLMs.
+
+A notable pattern emerges across categories: per-tag LLM agreement tracks per-tag human
+inter-rater agreement. Categories where human coders themselves disagree tend to show the
+lowest LLM performance. This correspondence implies that LLM coding difficulty partially
+reflects inherent definitional ambiguity---the same sources that make categories hard for
+human coders also make them hard for LLMs. Near-zero LLM $\alpha$ on categories such as
+\textit{explanation} should therefore not be interpreted as a model failure in isolation,
+but as evidence that these categories are difficult to operationalize regardless of the
+coder.
+
+Figure~\ref{fig:dotplot_f1_Jordi} reports the same analysis using Macro F1 as the
+performance metric. Macro F1 is a classification accuracy measure (average of per-class
+precision and recall against the human gold standard), whereas Krippendorff's $\alpha$
+measures inter-rater agreement treating the LLM as a fourth coder. The two metrics are
+complementary: high $\alpha$ means the LLM codes like the human panel; high F1 means the
+LLM correctly identifies positive and negative cases relative to the consensus label.
+The per-category ranking across models is broadly consistent between the two metrics,
+confirming that the pattern reported above is not an artefact of the agreement statistic
+chosen. Categories that are behaviorally concrete achieve higher F1 scores; categories
+that are interpretively ambiguous yield lower F1 scores. The main qualitative difference
+is that F1 does not have a natural human ceiling (unlike $\alpha$, where perfect agreement
+with human coders is the upper bound), so absolute levels are not directly comparable
+across the two figures.
+
+\begin{figure}[htbp]
+    \caption{Best-configuration Macro F1 per category and model ---
+             \citet{brandts_cooper_2025}}
+    \label{fig:dotplot_f1_Jordi}
+    \centering
+    \includegraphics[width=0.9\textwidth]{1_Figures/dotplot_f1_best_config_managerial_leadership_Jordi_Cooper.pdf}
+
+    \vspace{0.2cm}
+    \footnotesize
+    \textit{Note:} Each point is the maximum Macro F1 for that model across all
+    shot $\times$ temperature combinations. Macro F1 is the unweighted average of
+    per-class F1 scores computed against the human gold-standard labels.
+    Dashed line marks F1 $= 0.80$.
+    Categories with zero positive cases (\textit{falsehood}, \textit{contradict})
+    and fewer than 10 positives (\textit{discuss\_howtoplay}) are omitted.
+\end{figure}
+
+\subsubsection{Application 1: substantive validity}
+
+To evaluate substantive validity, we replicate the core regression analysis of
+\citet{brandts_cooper_2025}, which examines how communication content predicts coordination
+outcomes. Table~8 in the original paper reports probit regressions in which binary
+coordination outcomes---whether a group coordinated, and whether coordination was
+efficient---are regressed on the chat content categories, separately by treatment.
+We replicate this specification as a linear probability model (LPM) on the restricted
+shared-data sample, replacing the human-coded categories with LLM-generated categories in
+turn, so that all five columns (human, Claude, Gemini, GPT, ensemble) are estimated on the
+same observations. The selected LLM configurations are few-shot at temperature~0 for all
+three models.
+
+Relative to the original Table~8 sample, the shared classification files retain only
+72~of~486 CH/S-D observations and 61~of~486 CH-MC observations, while CH/A-D is
+unavailable entirely. The restricted comparison sample therefore preserves roughly
+13--15\% of the original observations in the retained treatment arms. Because probit
+estimates become numerically unstable in this sparse subsample, we report LPM coefficients
+with standard errors clustered at the conversation-group level.
+
+Table~\ref{tab:table8-lpm-condensed} presents the results across three panels: coordination
+in CH/S-D, efficient coordination in CH/S-D, and efficient coordination in CH-MC.
+
+In the \textit{CH/S-D coordination} panel, the human benchmark identifies \textit{Agreement}
+($\beta = 0.418$, $p < 0.05$) and \textit{Discuss efficiency} ($\beta = 0.230$, $p < 0.05$)
+as the significant predictors. None of the LLM codings recover significant effects for either
+category; Claude yields a marginally significant negative coefficient on \textit{Questions
+about rules} ($\beta = -0.133$, $p < 0.10$), a pattern absent in the human data.
+
+In the \textit{CH/S-D efficient coordination} panel, the human benchmark is dominated by
+\textit{Discuss efficiency} ($\beta = 0.519$, $p < 0.001$). No LLM replicates this
+finding---coefficients for that category are small and statistically insignificant across
+all models. By contrast, LLM codings assign explanatory power to \textit{Discuss fairness}:
+Claude ($\beta = -0.274$, $p < 0.01$), Gemini ($\beta = -0.246$, $p < 0.05$), and GPT
+($\beta = -0.054$, $p < 0.10$) all produce a negative and significant coefficient for that
+category, a direction visible but not significant in the human data ($\beta = -0.273$).
+The ensemble instead attributes a large negative effect to \textit{Questions about play}
+($\beta = -0.850$, $p < 0.001$), which is not significant in any other source.
+
+In the \textit{CH-MC efficient coordination} panel, the human benchmark finds a positive
+and marginally significant effect of \textit{Agreement} ($\beta = 0.254$, $p < 0.10$).
+Claude and Gemini produce no significant predictors. GPT and the ensemble instead identify
+\textit{Questions about rules} as the dominant predictor ($\beta = 0.464$ and $0.503$,
+respectively, both $p < 0.01$), with GPT additionally finding significant effects for
+\textit{Explanation} ($\beta = 0.358$, $p < 0.01$) and a negative effect for
+\textit{Discuss efficiency} ($\beta = -0.196$, $p < 0.05$)---none of which are significant
+in the human data.
+
+Overall, LLM codings do not reliably replicate the human behavioral correlates in this
+application. The most consistent replication is the negative direction of \textit{Discuss
+fairness} on efficient coordination in CH/S-D, a finding that four of five sources share.
+Elsewhere, LLMs either find no significant predictors where humans do, or assign
+significance to different categories entirely. This pattern is consistent with the
+agreement results: categories with ambiguous boundaries (\textit{Discuss efficiency},
+\textit{Explanation}, \textit{Questions about rules}) yield low inter-rater agreement, and
+their behavioral correlates consequently diverge across coding sources.
+
+\input{Results/by_paper/managerial_leadership_Jordi_Cooper/_substantive_analysis/table8_probit_comparison_table.tex}
+
+
+
+\subsection{Application 2: Messages and promises in a trust game over time 
+\citep{ederer_schneider_2022}}
+
+The second application we consider is \citet{ederer_schneider_2022}. The authors examine how temporal delay affects trust, trustworthiness, and the credibility of promises, motivated by the empirical observation that trust often involves delayed reciprocation. Using a large-scale hybrid laboratory–online experiment with over 700 participants, they employ an adaptation of the trust game \citep{berg1995trust, guth1997cooperation}, similar to that proposed by \citet{charness2006promises}, by introducing exogenous time delays between the trustor's decision to send money and the trustee's opportunity to reciprocate. The experimental design varies three temporal conditions: immediate decisions during the laboratory session, early decisions within 24 hours, and late decisions after a 21-day delay. Crucially for our purposes, they incorporate a pre-play communication stage that allows trustees to send free-form messages, including non-binding promises, to trustors. This design allows for an examination of whether the positive effects of communication on cooperative behavior persist when reciprocation is delayed, testing the hypothesis that temporal distance may erode both the propensity to honor commitments and the overall level of trustworthiness.
+
+The experiment measures trust by the amount sent by trustors and trustworthiness by the amount returned by trustees, with trustees making 10 binary ROLL/DON’T ROLL choices, one of which is randomly implemented. To analyze free-form communication, the authors employ two hypothesis-blind research assistants to independently classify messages according to whether they contain an explicit promise to choose ROLL (e.g., “I will choose ROLL” or “I promise to choose ROLL”). \citet{ederer_schneider_2022} find that pre-play communication substantially increases cooperation, trust, and trustworthiness by approximately 50 percent, with this effect remaining robust even when three weeks elapse between the trustee's message and their actual reciprocation decision. Across all three delay conditions (Immediate, Early, and Late), the passage of time does not significantly affect trust or trustworthiness, suggesting that findings from standard laboratory settings generalize to environments with greater external validity. Trustees who make promises exhibit higher ROLL rates (6.2 choices on average) compared to those who do not (4.2 choices), while trustors increase their IN choices by approximately 20 percentage points when communication is possible, with both effects remaining consistent across time frames. Analysis of the free-form chat data confirms that explicit promises are the primary driver of these effects.
+
+
+\subsubsection{Application 2: validation metrics}
+
+\begin{figure}[htbp]
+    \caption{Best metric score by model - \citet{ederer_schneider_2022}} \label{fig:figure1_ederer}
+    \centering
+    \includegraphics[width=0.9\textwidth]{1_Figures/figure1_heatmap_best_config_trust_promises_Ederer_Schneider.pdf}
+    
+       \vspace{0.3cm}
+    \footnotesize
+    \textit{Note:} Cell annotation shows winning configuration (shot@temperature).
+\end{figure}
+
+
+\begin{figure}[htbp]
+    \caption{Temperature sensitivity of aggregate score by model and prompt style - \citet{ederer_schneider_2022}} 
+    \label{fig:figure2_temperature_ederer}
+    \centering
+    \includegraphics[width=0.9\textwidth]{1_Figures/figure2_temperature_sensitivity_trust_promises_Ederer_Schneider.pdf}
+    
+    \vspace{0.3cm}
+    \footnotesize
+    \textit{Note:} The figure displays aggregate performance across temperature values for each model (Claude, Gemini, GPT) and prompt style (0-shot and few-shot). Aggregate score corresponds to the mean across selected core metrics.
+\end{figure}
+
+
+The categories here — is_promise, is_efficiency, is_ethics — are relatively well-defined normative concepts that a language model can recognize from surface and semantic features of the text. Compare that to Paper 1's agree_proposal or discuss_fairness, which require tracking conversational context and inferring pragmatic intent.
+Also notably: no class imbalance problem. The precision_1 and recall_1 values are all substantial, meaning there are enough positives in each category to actually measure agreement.
+One nuance on is_ethics
+κ = 0.675 with precision_1 = 0.571 suggests the LLM is over-predicting ethics labels — it flags things as ethical content that the human coder didn't. That's an interesting asymmetry worth noting: ethics is probably the most interpretation-dependent of the three categories.
+For the paper, Paper 3 is your poster child for "when does LLM coding work?" — few, well-defined, non-overlapping categories with balanced representation. 
+
+\subsubsection{Application 2: substantive validity}
+
+\subsection{Application 3: Social Desariability Bias and AI use \citep{ling2025underreporting} }
+
+The third application draws on data from \citet{ling2025underreporting}, in which the authors study the discrepancy between self-reported AI usage and perceived peer usage in educational settings. The authors attribute this gap primarily to social desirability bias \citep{krumpal2013determinants}. The study employs an indirect questioning method, commonly used in the psychology literature \citep{fisher1993social}, with 338 university students, by asking respondents to report both their own AI use and their perceptions of peers’ usage. Results reveal that approximately 60\% of students report using AI themselves, compared to nearly 90\% when reporting on peer usage. Qualitative evidence indicates that a majority of students (70.8\%) attribute this gap to reluctance to admit their own use of large language models, a pattern consistent with the documented social norm of “AI shaming” across academic and professional settings. Additional mechanisms contributing to this gap include overestimation of peers’ usage driven by availability bias and information asymmetry regarding actual adoption rates.
+
+To investigate the mechanisms underlying this discrepancy, the researchers collected open-ended responses from a separate follow-up survey involving 96 undergraduate students recruited via Prolific. This sample serves as the benchmark for our analysis. Participants were presented with findings from the initial survey, highlighting the reporting gap, and asked an open-ended question to explain it in their own words. These responses were analyzed using a streamlined thematic analysis approach: the first author conducted open coding to identify proposed explanations, after which all authors jointly refined and agreed upon a set of inductive codes, which were then iteratively applied to classify each response, with ambiguous cases resolved through author consultation. This coding process identifies social desirability bias as the most frequently cited explanation for the reporting gap, while also surfacing alternative mechanisms such as overestimation of peers' AI usage driven by availability bias and information asymmetry regarding actual adoption rates among peers. This application is particularly well-suited for evaluating whether LLMs can reproduce inductive thematic coding on short explanatory responses. The findings demonstrate that self-reported AI adoption statistics are substantially distorted by social desirability bias and that indirect questioning, by making individuals more comfortable attributing sensitive behaviors to peers, provides a more accurate measure of underlying AI adoption, with important implications for institutional policy, stigma reduction, and responsible AI integration strategies.
+
+
+\subsubsection{Application 3: validation metrics}
+
+\begin{figure}[htbp]
+    \caption{Best metric score by model - \citet{ling2025underreporting}} \label{fig:figure1_liang}
+    \centering
+    \includegraphics[width=0.9\textwidth]{1_Figures/figure1_heatmap_best_config_under_reporting_Ling_Kale_Imas.pdf}
+    
+       \vspace{0.3cm}
+    \footnotesize
+    \textit{Note:} Cell annotation shows winning configuration (shot@temperature).
+\end{figure}
+
+
+\begin{figure}[htbp]
+    \caption{Temperature sensitivity of aggregate score by model and prompt style - \citet{ling2025underreporting}} 
+    \label{fig:figure2_temperature_liang}
+    \centering
+    \includegraphics[width=0.9\textwidth]{1_Figures/figure2_temperature_sensitivity_under_reporting_Ling_Kale_Imas.pdf}
+    
+    \vspace{0.3cm}
+    \footnotesize
+    \textit{Note:} The figure displays aggregate performance across temperature values for each model (Claude, Gemini, GPT) and prompt style (0-shot and few-shot). Aggregate score corresponds to the mean across selected core metrics.
+\end{figure}
+
+\subsubsection{Application 3: substantive validity}
+
+
+\section{Discussion and conclusion}\label{s-discussion}
+
+This paper should emphasize that LLM coding is most useful when it is evaluated as a measurement procedure rather than treated as a black box substitute for researchers.
+
+A useful structure is:
+\begin{itemize}
+    \item what kinds of coding tasks LLMs handle well;
+    \item where human adjudication remains essential;
+    \item how benchmark quality affects apparent model performance;
+    \item implications for experimental economics and communication research;
+    \item transparency, reproducibility, and ethical concerns.
+\end{itemize}
+
+should do three things: synthesize the performance across all three applications (not just per study), discuss failure modes (where did the LLM disagree with humans, and why?), and offer practical guidance — what prompt structures worked, what kinds of coding tasks are better or worse candidates for this approach.
+
+From tables on paper ready folder:
+
+The models are essentially tied
+GPT avg rank 1.87, Claude and Gemini both 2.07 — that's a razor-thin difference. Median rank is 2 for all three. No model dominates clearly.
+Wins is the most interesting column
+Gemini wins most individual tag-level contests (6), GPT second (5), Claude third (4) — yet GPT has the best average rank. That suggests GPT is more consistently near the top even when it doesn't win outright, while Gemini wins more but also loses more.
+Temperature SD is low and similar across models
+All three are around 0.17–0.19, meaning performance is fairly stable across temperatures for all models. This is actually a useful finding: temperature doesn't matter much, which simplifies practical recommendations to researchers.
+What this means for the paper
+The honest conclusion is: model choice doesn't matter much — all three perform similarly. That's a clean, useful message. The more important determinant of success is the coding scheme itself (category concreteness, class balance), not which LLM you pick.
+This table could appear as a small summary box in the discussion with exactly that framing. Want help writing that paragraph?
+
+
+\newpage
+\singlespacing
+\bibliography{llm_coding_references}
+\bibliographystyle{apalike}
+
+\clearpage
+\begin{appendices}
+
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
+\section{Prompt templates}
+Include the exact prompts used for each application.
+
+\section{Additional figures and tables}
+Include supplementary figures and tables.
+
+\end{appendices}
+
+\end{sloppypar}
+\end{document}

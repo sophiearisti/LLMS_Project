@@ -189,7 +189,8 @@ results_df <- results_df %>%
 # ─────────────────────────────────────────────────────────────────────────────
 
 make_panel <- function(data, shot_label, metric_col, axis_label,
-                       ref_line = NULL, ref_label = NULL) {
+                       ref_line = NULL, ref_label = NULL,
+                       fixed_levels = NULL) {
 
   data <- data %>% filter(!is.na(tag), tag != "GLOBAL", !is.na(.data[[metric_col]]))
 
@@ -199,8 +200,19 @@ make_panel <- function(data, shot_label, metric_col, axis_label,
              theme_void() + labs(title = shot_label))
   }
 
+  if (!is.null(fixed_levels)) {
+    data <- data %>% mutate(tag = factor(tag, levels = fixed_levels))
+  } else {
+    lvls <- data %>%
+      group_by(tag) %>%
+      summarise(m = mean(.data[[metric_col]], na.rm = TRUE), .groups = "drop") %>%
+      arrange(m) %>%
+      pull(tag)
+    data <- data %>% mutate(tag = factor(tag, levels = lvls))
+  }
+
   p <- ggplot(data,
-              aes(x    = reorder(tag, .data[[metric_col]], mean, na.rm = TRUE),
+              aes(x    = tag,
                   y    = .data[[metric_col]],
                   fill = factor(temperature,
                                 levels = as.character(c(0, 0.1, 0.5, 1, 1.2))))) +
@@ -276,8 +288,10 @@ for (llm_name in llms) {
       ref_line  <- if (use_ref) mean_human_alpha else NULL
       ref_label <- if (use_ref) sprintf("Mean human \u03b1 = %.2f", mean_human_alpha) else NULL
 
-      p1 <- make_panel(df_0shot, "Zero-shot",  metric_col, metric_name, ref_line, ref_label)
-      p2 <- make_panel(df_few,   "Few-shot",   metric_col, metric_name, ref_line, ref_label)
+      fixed_lvls <- if (paper_num == 1) irr_floor_p1$tag else NULL
+
+      p1 <- make_panel(df_0shot, "Zero-shot",  metric_col, metric_name, ref_line, ref_label, fixed_lvls)
+      p2 <- make_panel(df_few,   "Few-shot",   metric_col, metric_name, ref_line, ref_label, fixed_lvls)
 
       caption_text <- if (use_ref)
         paste0("Agreement = Krippendorff\u2019s \u03b1 across 3 human coders + LLM.",
@@ -313,3 +327,133 @@ for (llm_name in llms) {
 }
 
 message("Done. Figures saved in numbered subfolders.")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Dot plot: best-config Krippendorff alpha per tag × model — Paper 1 only
+#   Y-axis : tags in canonical fixed order
+#   X-axis : Krippendorff alpha
+#   Points : best configuration (max alpha) per tag × model
+#   Segment: per-tag human alpha as a grey reference mark
+#   Vline  : alpha = 0.80
+# ─────────────────────────────────────────────────────────────────────────────
+
+EXCLUDED_TAGS_P1 <- c("falsehood", "contradict", "discuss_howtoplay")
+LABELS_P1 <- irr_floor_p1$tag[!irr_floor_p1$tag %in% EXCLUDED_TAGS_P1]
+
+model_colors <- c(
+  "GPT"    = "#003f5c",
+  "Gemini" = "#bc5090",
+  "Claude" = "#ff6361"
+)
+
+p1_best <- results_df %>%
+  filter(paper == 1, tag != "GLOBAL", !is.na(krippendorff_alpha),
+         !tag %in% EXCLUDED_TAGS_P1) %>%
+  mutate(model = llm_labels[llm]) %>%
+  group_by(tag, model) %>%
+  summarise(alpha = max(krippendorff_alpha, na.rm = TRUE), .groups = "drop") %>%
+  mutate(tag = factor(tag, levels = LABELS_P1))
+
+human_ref <- irr_floor_p1 %>%
+  filter(!tag %in% EXCLUDED_TAGS_P1) %>%
+  mutate(tag = factor(tag, levels = LABELS_P1))
+
+if (nrow(p1_best) > 0) {
+
+  p_dot <- ggplot(p1_best, aes(x = alpha, y = tag, colour = model)) +
+    geom_errorbarh(
+      data = human_ref,
+      aes(xmin = human_alpha, xmax = human_alpha, y = tag),
+      height = 0.5, colour = "grey65", linewidth = 0.9,
+      inherit.aes = FALSE
+    ) +
+    geom_vline(xintercept = 0.80, linetype = "dashed",
+               colour = "grey40", linewidth = 0.4) +
+    geom_point(size = 2.8, alpha = 0.9) +
+    scale_colour_manual(values = model_colors, name = "Model") +
+    scale_x_continuous(
+      limits = c(-0.15, 1),
+      breaks = c(0, 0.2, 0.4, 0.6, 0.8, 1.0),
+      labels = function(x) sprintf("%.1f", x),
+      expand = expansion(mult = c(0.02, 0.03))
+    ) +
+    annotate("text", x = 0.80, y = 0.5,
+             label = "α = 0.80", hjust = -0.08, vjust = 0,
+             size = 2.8, colour = "grey40") +
+    annotate("text", x = 0.97, y = 1.5,
+             label = "Human α", hjust = 0.5, vjust = -0.3,
+             size = 2.6, colour = "grey55") +
+    labs(
+      title    = paste0("Best-configuration Krippendorff's α per category · ",
+                        "Brandts & Cooper (2025)"),
+      subtitle = paste0("Each point = maximum α for that model across all ",
+                        "shot × temperature combinations.\n",
+                        "Grey bars = human inter-rater α. ",
+                        "Dashed line = α = 0.80."),
+      x        = "Krippendorff's α (3 human coders + LLM)",
+      y        = NULL
+    ) +
+    theme_llm()
+
+  ggsave(
+    filename = file.path("1", "dotplot_best_config_managerial_leadership_Jordi_Cooper.pdf"),
+    plot = p_dot, width = 9, height = 6
+  )
+  ggsave(
+    filename = file.path("1", "dotplot_best_config_managerial_leadership_Jordi_Cooper.png"),
+    plot = p_dot, width = 9, height = 6, dpi = 300
+  )
+  cat("Saved: dotplot_best_config_managerial_leadership_Jordi_Cooper\n")
+}
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Dot plot: best-config Macro F1 per tag × model — Paper 1 only
+#   Same layout as the alpha dot plot; no human reference (F1 is already the
+#   LLM-vs-human comparison).
+# ─────────────────────────────────────────────────────────────────────────────
+
+p1_best_f1 <- results_df %>%
+  filter(paper == 1, tag != "GLOBAL", !is.na(macro_f1),
+         !tag %in% EXCLUDED_TAGS_P1) %>%
+  mutate(model = llm_labels[llm]) %>%
+  group_by(tag, model) %>%
+  summarise(f1 = max(macro_f1, na.rm = TRUE), .groups = "drop") %>%
+  mutate(tag = factor(tag, levels = LABELS_P1))
+
+if (nrow(p1_best_f1) > 0) {
+
+  p_dot_f1 <- ggplot(p1_best_f1, aes(x = f1, y = tag, colour = model)) +
+    geom_vline(xintercept = 0.80, linetype = "dashed",
+               colour = "grey40", linewidth = 0.4) +
+    geom_point(size = 2.8, alpha = 0.9) +
+    scale_colour_manual(values = model_colors, name = "Model") +
+    scale_x_continuous(
+      limits = c(0, 1),
+      breaks = c(0, 0.2, 0.4, 0.6, 0.8, 1.0),
+      labels = function(x) sprintf("%.1f", x),
+      expand = expansion(mult = c(0.02, 0.03))
+    ) +
+    annotate("text", x = 0.80, y = 0.5,
+             label = "F1 = 0.80", hjust = -0.08, vjust = 0,
+             size = 2.8, colour = "grey40") +
+    labs(
+      title    = paste0("Best-configuration Macro F1 per category · ",
+                        "Brandts & Cooper (2025)"),
+      subtitle = paste0("Each point = maximum Macro F1 for that model across all ",
+                        "shot × temperature combinations.\n",
+                        "Dashed line = F1 = 0.80."),
+      x        = "Macro F1",
+      y        = NULL
+    ) +
+    theme_llm()
+
+  ggsave(
+    filename = file.path("1", "dotplot_f1_best_config_managerial_leadership_Jordi_Cooper.pdf"),
+    plot = p_dot_f1, width = 9, height = 6
+  )
+  ggsave(
+    filename = file.path("1", "dotplot_f1_best_config_managerial_leadership_Jordi_Cooper.png"),
+    plot = p_dot_f1, width = 9, height = 6, dpi = 300
+  )
+  cat("Saved: dotplot_f1_best_config_managerial_leadership_Jordi_Cooper\n")
+}

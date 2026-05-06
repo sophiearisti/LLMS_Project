@@ -1,0 +1,4 @@
+"llm","prompt_folder","temperature","selection_metric","mean_krippendorff_alpha","mean_macro_f1","prediction_file"
+"claude","fewshot",0,"krippendorff_alpha",0.437978308051155,0.519159439086965,"C:\Users\danie\Dropbox\Javeriana\Proyecto LLMS text\LLMS_Project\LLMS_analysis\Results\claude\managerial_leadership_Jordi_Cooper\fewshot\results_line_batch_temp0_modeuser.csv"
+"gemini","fewshot",0,"krippendorff_alpha",0.426572426148287,0.499058844754955,"C:\Users\danie\Dropbox\Javeriana\Proyecto LLMS text\LLMS_Project\LLMS_analysis\Results\gemini\managerial_leadership_Jordi_Cooper\fewshot\results_temp0_modeuser.csv"
+"gpt","fewshot",0,"krippendorff_alpha",0.401941847257989,0.48132840792526,"C:\Users\danie\Dropbox\Javeriana\Proyecto LLMS text\LLMS_Project\LLMS_analysis\Results\gpt\managerial_leadership_Jordi_Cooper\fewshot\results_temp0_modeuser.csv"

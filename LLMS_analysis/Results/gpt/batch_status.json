@@ -1,0 +1,42 @@
+{
+  "4_0shot_0": {
+    "batch_id": "batch_69fb4f720ca08190b2ec4490fff47151",
+    "temperature": 0,
+    "paper": "4",
+    "strategy": "0shot",
+    "input_file_id": "file-Wb8XsvQrrrdbKVbJfWq7Qb",
+    "batch_input_path": "C:\\Users\\danie\\Dropbox\\Javeriana\\Proyecto LLMS text\\LLMS_Project\\LLMS_analysis\\Results\\gpt\\under_reporting_Ling_Kale_Imas/0shot\\batch_input_temp0.jsonl"
+  },
+  "4_0shot_0.1": {
+    "batch_id": "batch_69fb4f7458c48190bdc748605e4e9fe0",
+    "temperature": 0.1,
+    "paper": "4",
+    "strategy": "0shot",
+    "input_file_id": "file-1FXCY1c9BchbLWGoxPJwk1",
+    "batch_input_path": "C:\\Users\\danie\\Dropbox\\Javeriana\\Proyecto LLMS text\\LLMS_Project\\LLMS_analysis\\Results\\gpt\\under_reporting_Ling_Kale_Imas/0shot\\batch_input_temp0.1.jsonl"
+  },
+  "4_0shot_0.5": {
+    "batch_id": "batch_69fb4f75dcd48190ac2264008a8a62d2",
+    "temperature": 0.5,
+    "paper": "4",
+    "strategy": "0shot",
+    "input_file_id": "file-5K2nv14bYBenqcjADEWCfD",
+    "batch_input_path": "C:\\Users\\danie\\Dropbox\\Javeriana\\Proyecto LLMS text\\LLMS_Project\\LLMS_analysis\\Results\\gpt\\under_reporting_Ling_Kale_Imas/0shot\\batch_input_temp0.5.jsonl"
+  },
+  "4_0shot_1": {
+    "batch_id": "batch_69fb4f77a8088190b9e98caff13bfc97",
+    "temperature": 1,
+    "paper": "4",
+    "strategy": "0shot",
+    "input_file_id": "file-WxRLjTgdBg5AdAzjZYa6kG",
+    "batch_input_path": "C:\\Users\\danie\\Dropbox\\Javeriana\\Proyecto LLMS text\\LLMS_Project\\LLMS_analysis\\Results\\gpt\\under_reporting_Ling_Kale_Imas/0shot\\batch_input_temp1.jsonl"
+  },
+  "4_0shot_1.2": {
+    "batch_id": "batch_69fb4f78bf5c81908bade15c12bdc377",
+    "temperature": 1.2,
+    "paper": "4",
+    "strategy": "0shot",
+    "input_file_id": "file-2JAZUw9NAcPv925kysRHNn",
+    "batch_input_path": "C:\\Users\\danie\\Dropbox\\Javeriana\\Proyecto LLMS text\\LLMS_Project\\LLMS_analysis\\Results\\gpt\\under_reporting_Ling_Kale_Imas/0shot\\batch_input_temp1.2.jsonl"
+  }
+}

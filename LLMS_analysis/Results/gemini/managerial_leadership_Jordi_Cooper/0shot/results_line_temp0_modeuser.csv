@@ -1,0 +1,201 @@
+any_suggestion,suggest_safe,suggest_efficient,agree_proposal,discuss_coordinate,discuss_fairness,discuss_efficient,discuss_rules,explanation,discuss_howtoplay,ask_game,receive_report,truthful,falsehood,contradict,neither_report,original_message,row_id
+1,0,1,1,0,1,1,0,1,0,0,0,0,0,0,1,"hola/si quirees cojo yo la fila 3 y tu la columna 3/que son 40 para cada uno/vale perfecto/vamos hacerlo de forma que vayamos ganando lo maximo posible/exacto/vale, pues yo c3 y tu f3 en esta",1
+1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,f3,0
+1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,di tu primero/c1/f1/vale bien/mejor la f5/ya estaba decidido jajaj,17
+1,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,"otra vez el 2..cual vas a elegir?/si,fila 3 y columna 3/perfecto/;))",13
+1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,"hola, ¿cuál fila vas a elegir?/voy a elegir f4/¿te parece bien que escoja c4?/o c3?/elegiré c3/lo que prefieras",3
+1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,que c5 vas a elejir??/3/ok/yo f3,9
+1,0,1,0,0,1,1,0,1,0,0,1,1,0,0,0,dime columna/cual nos da mas?/la primera/no?/joder es q el A se llleva siempre el doble../f3 i c3 nos llevamos mas/yo voy a poner c1/el se lleva lo mismo/y antes tu ya obtuviste mas que yo,11
+1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,f3/c2,14
+1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,fila 3/columna 2/3,5
+1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,jugamos al 3?/vale/fila 3/?/que columna eliges?/vale/la 3/vale/??/ahora?,16
+1,0,1,1,0.5,1,1.0,0,1.0,0,0,0.0,0.0,0,0,1.0,elijes tu la cantidad mas alta de c/y en la siguiente yo la de f/vale/escoge la fila 1/ok/yo f1,27
+1,0,0,1,0.0,0,0.0,0,0.5,0,0,0.0,0.0,0,0,1.0,"te parece c2 f2/si quieres ahora c2 f2, y hacemos como antes/si si/si vale guay",19
+1,0,1,1,0.0,0,1.0,0,1.0,0,0,0.0,0.0,0,0,1.0,"qué mal xd/c3 y f3?/jaja esque el A se nos desmadra/f5/c3 y f3 ganamos mas/vañe/vale*/ok/vamos bien, no?/si jajaj",26
+1,0,1,1,0.0,0,0.5,0,0.5,0,0,1.0,1.0,0,0,0.0,"logico fila 3 columna 3 es la mejor/juego 5,fila 3 y columna3/exacto jaj/jajaja",31
+1,0,0,1,0.0,0,0.0,0,0.5,0,0,0.0,0.0,0,0,1.0,voy a elegir f5/tu mejor opcion c5/me lo has puesto dificil/eso haré,30
+1,0,1,1,0.0,0,0.0,0,0.0,0,0,1.0,1.0,0,0,0.0,HOLA/hola/F2/Y TU?/c2/bien?/perfecto,8
+1,0,1,1,0.0,0,1.0,0,1.0,0,0,1.0,1.0,0,0,0.0,cual coges?/juego3 fila 3 y columna 3/okey/es el que mas compensa/exacto,22
+1,0,1,1,0.0,0,1.0,0,1.0,0,0,1.0,1.0,0,0,0.0,"si te fijas, c es igual a nuestra suma/querras decir A/eso eso/f3/o f4/f 3 mejor/c3/vale",21
+1,0,1,1,0.5,0,1.0,0,1.0,0,0,0.5,0.5,0,0,0.5,"podrias haber ganado tres puntos mas/ya, pero c, 20 ,más/que fila vas a escojer?/te parece que eligamos c3 y f3/?/vale",12
+1,0,1,1,0.0,1,0.5,0,1.0,0,0,1.0,1.0,0,0,0.0,"como antes? c3 f3?/me parece bien/el F siempre recibe menos/o sino cual?/recibimos lo mismo en esta/ya, ya/32 cad uno/que antes he perdido 18 xd/jajajajajaja porq estabais despuntando",35
+1,0.0,0,1,0,0.0,0.0,0.0,0.0,0,0,0,0,0,0,1,di/yo f5 y tu c5/perfecto,36
+1,1.0,0,1,0,1.0,0.0,0.0,1.0,0,0,0,0,0,0,1,"en este es que si yo gano mas, tu pierdes mucho/esta vez si quieres c3 f3/si quierers cgemos el de enmedio/perfe",37
+1,0.0,1,0,0,0.5,1.0,0.0,1.0,0,0,1,0,1,0,0,elige el juego 4 columna 4/Voya ver/es la que mayores resultados da a todos/Columna 4 fila 4,15
+1,0.5,1,1,1,1.0,1.0,0.0,1.0,0,0,0,0,0,0,1,"cogiendo la 4 pillabamos cacho ambos, ahora consensuamos/la c3-f3 es mejor/pillamos lo mismo/genial/joder es q es muy injusto! jaja/o podemos cojer la c1-f2 que gano yo y a la de despues ganas tu/aci vamos a ganar mas/no crees?/venga va confie en ti eh/c1-f1",38
+1,0.0,1,1,1,1.0,1.0,0.0,1.0,0,0,1,1,0,0,0,"Fila 4 columna 4/la 3/Es la que mas puntos nos da a los dos/que tenemos lo mismo/A ti te da los puntos del c, a mi me da los puntos del f/la fila 3 columna 3 he puesto/claro es el mismo resultado/columna 3 fila 3 hazme caso",42
+1,0.0,0,1,0,0.0,0.0,0.0,1.0,0,0,0,0,0,0,1,"el 3-3 no?/si ,lo que pasa esq antes puse lo que te dije y me salia otra fila xD/a mi igual/yo puse 3 y salio 1/Será porque el A lo habrá cogido/puede ser",40
+1,0.0,0,0,1,0.0,0.0,0.5,1.0,1,0,0,0,0,0,1,"yo voy a coger c1/yo la 4 o la 5/y si no coincidimos que pasa?/pues o nos ponemos de acurdo pa ganar o nos joderemos, no?/coje la 1 es mejor",29
+1,0.0,0,1,0,0.5,0.0,0.0,0.5,0,0,0,0,0,0,1,f3 c3/igualados/ok,32
+1,0.0,0,1,0,0.5,0.0,0.0,1.0,0,0,1,1,0,0,0,Como lo ves?/nos ha tocado el peor de los cinco/ya/si quieres ganamos igual/vale es o c3 f3/o si quieres c4 f4,46
+1,0.0,0,1,0,1.0,0.5,0.0,1.0,0,0,0,0,0,0,1,di fila jaja/bua no se/columna?/c3 f3?/otra vez xd/vale/aunque a la siguiente hay que quitarle al A,44
+1,0.0,0.0,1.0,0.0,0,0.0,0,1.0,0.0,0,1.0,0.0,0,1,0.0,el juego 5 fila 1 te gusta?/o prefieres otro/el juego seleccionado pone quee s 1/leelo arriba/vale si/fila 3/?/vale/c3,43
+1,0.0,0.0,1.0,0.0,1,0.0,0,0.0,0.0,0,0.0,0.0,0,0,1.0,"3,3?/sii/estaba claro jajaja/ya ves jaj/el A se estara forrando/jajaja/sii y nostros/as siempre menos,,ajaj ,pero bueno algo es algo/eso te iba a decir algo es algo/jaja/por cierto eres chica o chico?",49
+1,1.0,1.0,1.0,1.0,1,0.5,0,1.0,0.0,0,0.0,0.0,0,0,1.0,fila 1 columna 1/Esta vez elijo la 4/voy a vcer/la 3 es la que nos da loo mism/fila 3 columna 3/voy a poner/total por dos menos que ter da a ti nois llevamos lo9 mismo/3 los dos,51
+1,0.0,1.0,1.0,0.0,1,0.0,0,0.5,0.0,0,0.0,0.0,0,0,1.0,"f5/ok/c5-f5?/perfect/el q mas palma yo/x(/el A siempre sale ganando/siempre, lo hacen apostas pa que seamos mala gente",47
+1,0.5,0.5,0.5,0.5,1,0.5,0,1.0,0.5,0,0.0,0.0,0,0,1.0,"le vamos a quitar a A?/si le quitamos a A/tambien perdemos nosotros jajaj/ya../que ponemos?/c2 f2 o c3 f3?/y xq no c4, f4?/c3f3/se acaba ek tiempo xd",53
+1,0.0,0.5,1.0,0.0,1,1.0,0,1.0,0.0,0,0.0,0.0,0,0,1.0,"Como lo ves en este?/si quieres en este c4 f4/vale/y en el siguiente que tu ganes mas yo me los bajo/no hay problema/vlae, eso te iba a decir ajjaj/perfecto",10
+1,0.0,0.0,1.0,0.0,1,0.0,0,1.0,0.0,0,0.0,0.0,0,0,1.0,si eliges f3 me haces un favor/vele/vale/solo pierdes 6 puntos de lo maximo que te puedes llevar/yo 22 puntos/okey?/grande/XD,54
+1,0.0,1.0,1.0,0.0,1,1.0,0,1.0,0.0,0,0.0,0.0,0,0,1.0,podemos elejir en esta ronda tu o yo el mas alto/y en la siguiente el otro para compensar los beneficios que se lleva a no/??/sisi,18
+1,0.5,1.0,0.0,0.0,0,1.0,0,1.0,0.0,0,0.0,0.0,0,0,1.0,hay que intentar elegir las columnas cin mayor resultado y siempre en positivo,6
+1,0.0,0.0,0.0,0.0,0,0.0,0,1.0,0.0,0,0.5,0.5,0,0,0.5,que area vas a escojer?/f3/como lo ves?/es q todos tienen negativo,2
+1,0,0.5,1,0.0,1,0.5,0,1,0.0,1.0,1,1,0,0,0,que juego celeccionamos?/el 1?/vale/y ahora?/fila f2?/no/fila f3/vale/ganamos lo mismo en el c3,7
+1,0,0.5,1,1.0,1,1.0,0,1,0.0,0.0,0,0,0,0,1,f3/c3/pero esque el A siempre se lleva mucho mas/muchisimo/pero tampoco quiero perjudicar porq nos perjudicamxs todxs/pues yo c3/f3-c3/vale,20
+1,0,0.0,0,0.5,0,0.0,0,0,0.0,0.0,1,1,0,0,0,"hola/has elegido ya la fili?/fila/he escogido el juego 2 ,fila 1 y columna/1/1/buenas*",4
+1,0,0.0,1,0.0,0,0.0,0,0,0.0,0.0,0,0,0,0,1,el 3-3 no? jajaja/sii,58
+1,0,1.0,1,0.5,1,1.0,0,1,0.0,0.0,0,0,0,0,1,el A se está llevando la pasta/te iva a decir lo mismo/jajaja/c3 f3?/te parece que eligamos f5 y c5 y a la siguiente elegimos uno que te veneficie a ti/sinceramente/creo que saldria bien/de acuerdo/porque hay tablas que salen grandes pagos para f y otras para c/aunque el A se lleva 80/por ejemplo cuando nos toque la 1 elegimos c1 f1,57
+1,0,1.0,1,0.5,1,1.0,0,1,0.0,0.0,0,0,0,0,1,f3c3/me quiero llevas mas/esta por mi y la otra por ti/f1c1/vale/si?/vale/a la proxima yo/si/entonces 1 1/vale,59
+1,0,0.0,0,0.5,1,0.0,0,1,0.0,0.0,0,0,0,0,1,hacemos la jugada de antes/fila 3 columna 3/hay que intentar elegir de tal maner que obtengamos lo mismo/porque como habras co probado el jugador A  se lleva la suma de lo nuestro/le voy a dar al 3,60
+1,0,1.0,1,1.0,1,1.0,0,1,0.5,0.0,1,1,0,0,0,"vale juego 3/quieres fila 3 o variamos?/variamos/pero juguemos a compensar/el siguiente juego sera el 4/asi que ahora puedo ganar o puedes ganar tu mas/y luego la otra persona/me entiendes?/vale ahora fila 4 ?/asi ahora gano yo solo 3 mas/fila 1??/que columna?/y luego elegimos en juego 4 fila 5/y sales tu ganando/vale, confio jaja",61
+1,0,1.0,1,0.0,1,1.0,0,1,0.0,0.0,0,0,0,0,1,elige tu ahora lo maximo/y la siguiente yo/f5 y c5/bien,63
+1,0,1.0,1,1.0,1,1.0,0,1,1.0,0.5,1,0,0,1,0,que juego quieres ahora?/en lugar de hacerme perder puntos porque no compensamos?/yo elegiria el 2/primero elegimos el juego 3/vale/escucha/fijate en la fila 1 columna 1/luego fijate en la fila 5 columna 5/si/primero elegimos una opcion luego la otra y ganamos los 2/elijo la c1/vale/fila 1 ahora entonces/si/perfceto/fijate en otra manera dee compensar para el proximo juego,25
+1,0,1.0,1,0.0,0,0.0,0.0,0.0,0,0,0,0,0,0,1,ahora f4 c4?/vale bien,64
+1,0,1.0,1,1.0,1,1.0,0.0,1.0,0,0,0,0,0,0,1,si quieres seguimos el mismo metodo. Ahora f4 c4 que ganas tu mas y luego al reves/vale perfecto,28
+1,1,0.0,1,0.0,1,1.0,0.0,1.0,0,0,1,1,0,0,0,"otra vez el 4/3.3/3.3/jajajajaja el 1 no sale ;(/es el que mas positivos tiene ,pero los valores son pequeños/eso si",67
+1,0,0.0,1,0.0,1,0.5,0.0,1.0,0,0,1,1,0,0,0,ves? en esta te llevabas tu 50.. joder/f5-c5/c4-f4/ganas tu mas que yo pero yo gano algo mas/no/f5/q en la primera me llevado solo 5puntos/vale,65
+1,0,1.0,1,0.0,0,0.5,0.0,0.5,0,0,0,0,0,0,1,f2/c2/mejor opcion.../si,23
+1,1,0.0,1,0.0,1,0.0,0.0,1.0,0,0,0,0,0,0,1,la ultima xd/pff/que hacemos/c3 f3? ni para ti ni para mi xd/o que propones?/c3 f4 jajaja/que yo llevo menos/no tio/o tia xd/llevo yo menos/en total?/yo creo que no/yo diria que si/que tu antes has ganado 15 mas que yo/va c3 f3/y al principio tambien,71
+1,0,0.0,0,0.0,1,0.5,0.0,1.0,0,0,1,1,0,0,0,juego dos fila 2/asi compensamos para qye los resultados se asemejn/por favor/columna 4 y juego 5,24
+1,0,0.5,1,0.0,1,1.0,0.0,1.0,0,0,0,0,0,0,1,c1-f1/vale?/f3-c3/ahora me toca ganar mas a mi/c1-f1/pero lo hemos hecho impar y ganas mas tu que yo/por 6 puntos.../venga vale/guay/gracias,74
+1,0,1.0,1,0.5,1,1.0,0.5,1.0,1,0,0,0,0,0,1,noentiendo lo de mayor pagopara A/no se a que te referias/porque si hubieramos elegido en todas las rondas el mayor pago de A al final nos habriamos llevado las mayores cantidades/es dificil de explicar asi por escrito/es verdad/elegimos f3 c3?/vale,75
+1,0,0.0,1,0.0,0,0.0,0.0,0.0,0,0,0,0,0,0,1,elie/f1/ok,72
+1,0,1,1,1.0,0,1.0,0,1.0,0,0.0,0,0,0,0,1,Hay que elegir siempre la misma opción para tener el máximo beneficio/columna 2 y fila 2/he elegido la 2/Yo también/perfectoo,33
+1,0,1,1,0.5,0,0.5,0,1.0,0,0.0,0,0,0,0,1,f3 c3/okey/mejor opcion../si no negativo,77
+1,0,0,1,0.0,1,0.0,0,1.0,0,0.0,1,0,1,0,0,no hemos hecho el juego 3/entre el juego 2 columna 4 y el jugo 4 columna 4 cual prefieres/2 juego/??/si/fila 4/okk/columna ?/la 4 te favorece/vale,34
+1,0,0,1,0.0,1,0.0,0,1.0,0,0.0,0,0,0,0,1,vale ahora gana tu/o los dos lo mismo?/elige/creo que deberias ganar tu/mmmm/vale gracias/en la fila 2/fila dos/c2??/vale/podria elegir c1 f1 pero soy buena gente/jajaja eso espero/si si jajaja,79
+1,0,1,1,0.0,1,0.5,0,1.0,0,0.0,0,0,0,0,1,"si quieres f3 c3, que ganamos ambos 40/si si jajja",82
+1,0,1,1,0.0,1,0.5,0,1.0,0,0.0,0,0,0,0,1,f2c2/okey/o/f3c3 y estamos igualados/vale mejor/valee/el a se esta llevando...,41
+1,0,1,1,0.0,0,1.0,0,1.0,0,0.0,0,0,0,0,1,"yo creo que siendo la ultima ronda, vale la pena c3 f3/que son 40/si si yo lo veo igual/gracias/a ti jajaja",73
+1,0,1,1,0.0,1,0.5,0,0.5,0,0.5,1,0,0,1,0,cual/f1/ok/bueno/f3/q esta mas equilibrado/lo que veas/f3/por 6 puntos ya ves,45
+1,0,0,1,0.0,0,0.0,0,1.0,0,0.0,0,0,0,0,1,42432/42432/en todas las partidas es 3-3/si,78
+1,0,1,1,0.0,0,0.0,0,0.0,0,0.0,0,0,0,0,1,f3c3?/si/vale,86
+1,0,1,1,0.0,0,0,0,0.0,0,0,0,0,0,0,1,f5 c5?/ok,81
+1,0,0,1,0.0,1,0,0,1.0,0,0,0,0,0,0,1,sorprendeme es el 3.3???/sii es el mas proporcional/si porque los otros o uno tiene muchos y los otros nada o al reves/exacto,85
+1,0,0,1,0.0,0,0,0,0.0,0,0,0,0,0,0,1,¿cuál vas a elegir ahora?/f4/yo c3/o c2/esta bien elegire f3,39
+1,0,0,1,0.0,0,0,0,0.5,0,0,1,1,0,0,0,f3 c3 o f4 c4/creo que en esta tabla si que podriamos llegar al acuerdo de f3 c3/okay/parece que ha llovido hoy/jajajaj,48
+1,0,1,1,0.0,1,1,0,1.0,0,0,0,0,0,0,1,"si quieres f4 c4/si quieres f4 c4, y en la siguiente gano yo mas y ya esta jajaj/si si/vale jajaj",91
+1,0,1,1,0.0,1,0,0,1.0,0,0,0,0,0,0,1,f3c3/vale/a se lleva el doble/ya/pero a mi me da igual a/ya,50
+1,0,1,1,1.0,1,1,0,1.0,0,0,0,0,0,0,1,c3 f3 siempre/si cogemos la f5-c5 me llevo yo más pero luego hacemos para q te lleves tu y así./como lo ves?/así A no se lleva el doble q nosotros/venga vale/f5-c5/esta ganas tu mas y la siguiente gano yo mas y asi succesivamente/ok?/y luego por tí y así.. vale/exacto,92
+1,0,0,1,0.5,1,0,0,1.0,0,0,0,0,0,0,1,hola/hola/si usamos la c3-f3 siempre ganaremos lo mismo tu y yo/apostamos por esa?/c3-f3?/vale,83
+1,0,0,1,0.0,0,0,0,0.0,0,0,0,0,0,0,1,3.3/okey,94
+1,0,1,1,0.5,1,1,0,1.0,1,0,1,1,0,0,0,vale/juego tres otra vez/elige tu/fila 3/columna??/noo/fila 4/columna 4/valee/vale/jugamos a compensar en todas las rondas??/sii aunque queda 1/luegoo nueve mas,70
+1,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0,0,0,0,0,1,3-3 otra vez,96
+1,0.0,0.0,1.0,0.0,0,0.0,0.0,0.0,0,0,0,0,0,0,1,otra igual/vale,99
+1,0.0,0.0,0.5,0.0,1,0.0,0.0,1.0,0,0,0,0,0,0,1,"yo haria f3 c3, que si no esta muy desigualado/vale bien",100
+0,0.0,0.0,0.0,0.0,0,0.0,0.5,0.5,0,0,0,0,0,0,1,aqui somos todos estudiantes? o hay gente que no lo es?/ahora 9 rondas ya es aburrido/no lo se/creo que tienes que ser universitario/y tanto jaja/esque como a veces he visto gente mayor no estaba seguro/tu es la primera vez que vienes?,102
+1,0.0,1.0,1.0,0.5,1,1.0,0.0,0.5,0,0,0,0,0,0,1,"c1-f1/de acuerdo/A siempre gana/si/y mucho mas que nosotros/da rabia, pero bueno.. intentaremos hacer algo de bote i au",101
+1,0.5,1.0,1.0,1.0,1,0.5,0.0,1.0,0,0,0,0,0,0,1,"mmmm/f5 c5?/no tio/yo ahi gano mucho menos/c4 f4/esta que son 40 hacemos c3 f3?/pero te juro que me acuerdo de lo tuyo para las siguientes jajaj/gano mas en c4 f4/ok/pero solo 3 mas/yo pierdo 11/sino, me lo tomare por mi cuenta/los que he ganado antes jaja/jajaja va/c3f3 ok?/ok",98
+1,0.0,0.0,1.0,0.5,0,0.0,0.0,0.0,0,0,1,1,0,0,0,juego 2/fila 3/mismo/c3/vale,52
+0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0,1,1,0,0,0,Bingo/por fin jugegp 3/jaja/la 3 otra vez como siempre,105
+1,0.0,0.5,1.0,1.0,0,1.0,0.0,1.0,0,0,0,0,0,0,1,ahora si quieres f2 c2/vale perfecto/antes no me ha dado tiempo a contestarte/ya digo como la cambie sin querer la liamos +/jaja/ajaja yo he pensado lo mismo/habriamos obtenido mucho menos/jajaj,55
+1,0.0,1.0,1.0,1.0,0,0.0,0.0,1.0,0,0,0,0,0,0,1,"3.3/3.3/si ajaj/en los anteriores salia otro que no habiamos escogido pq el A escogió uno diferente/puede ser/lo mas seguro/si,pq me lo dijeron",103
+1,1,1,0,1.0,1.0,1.0,0.0,1.0,0,0,0,0,0,0,1,c1-f1/no?/voto por f5  - c5 q me llevo más y tu también/y luego lo hacemos por ti+/dime/corre/c1-f1,56
+1,0,1,0,0.5,1.0,1.0,0.5,1.0,1,0,1,1,0,0,0,"en este no hay muchos pagos de C/c3 f3?/de hecho me acabo de dar cuenta que la tabla 1 y 5 son la misma pero a la inversa, y la 2 y la 4 igual, con lo cual deberiamos estar eligiendo siempre el mayor pago para A/porque?/elegimos ahora f4 y c4 y cuando toquen las tablas 1 y 2 elegimos tus mejores pagos/solo queda una ronda/lo tendriamos que haber hecho así desde el principio, no me habia dado cuenta, mierda",66
+1,0,1,1,0.0,1.0,1.0,0.0,1.0,0,0,0,0,0,0,1,igual no/otra no?/o quieres elejir la mas alta/que va por 6 puntos no me importa/pero si toca el juego 1 o 2 dejame elegir es lo unico/vale/eso si el jugadorA se va llevar 500 millones/madre mia/lo estamos haciendo de oro/ya estaba mirando si podemos ponerle una cantidad negativa,108
+1,1,0,1,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0,0,1,"3.3/sii/no salimos del 3.3 eh jajajaja/ya ves,es un poco repetitivo/sii la verdad es que si",112
+1,1,1,1,0.0,1.0,0.5,0.0,1.0,0,0,0,0,0,0,1,f5c5/4 4/que tu antes te has llevado minimo 26/y 47 esta muy bien que yo me he llevado 45/vale/okey/pues  4 4/vale,68
+1,0,1,1,1.0,0.0,0.5,0.0,0.5,0,0,0,0,0,0,1,42432/fila 3 columna 3/coodinacion jajaja/nos esta saliendo bien la jugada/Sii jajaj/:),69
+1,0,1,1,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0,0,1,"ahora si f2 c2, no?/si por supuesto",109
+1,0,0,1,0.0,0.5,0.0,0.0,0.0,0,0,0,0,0,0,1,fila 1 ? o 2? ¬¬/venga f2 c2/jajaja/guay/sere comprensiva/jajaj gracias/nadaa/jajaj,115
+1,0,1,1,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0,0,1,f4 querras no?/vale/f4 c4/perfect,106
+1,0,1,1,0.0,1.0,1.0,0.0,1.0,0,0,0,0,0,0,1,c2 f2?/que antes he ganado menos que tu jajaj/como?/c3 f2?/antes yo he ganado 18 y tu 29/f2 c2 ganamos mas que c3 f2/vale/f2 c2 entonces? jajaj,62
+1,0.0,0,0.5,1.0,1.0,0,0.0,1.0,0.0,0,0.5,0.5,0.0,0,0.5,"3.3/perfecto el A sin hacer nada se va a llevar el triple jajaja/en la de antes habias puesto la 2?/en el de antes hemos puesto lo mismo,pero paso lo mismo que en el juego cinco que nos salia negativo y es pq el A seleccionó ese",76
+1,0.0,1,1.0,0.5,1.0,1,0.5,1.0,0.5,0,1.0,1.0,0.0,0,0.0,"hola/hola/A ver ya he entendido este juego/tenemos que elegir el que salga 80/al final se compensa/Esacto/i ganamos los 3 igual/Es lo que te iba a decir/menos mal, me ahorras tener que explicartelo/f2 c2 jajajaj/pues eso, ahora elegimos el 2/esque en la anterior nos ha costado darnos cuenta/igual",84
+1,0.0,0,1.0,0.0,0.0,0,1.0,1.0,0.0,0,0.0,0.0,0.0,0,1.0,"el jugador a creo quye va en orden todo el rato/elegimos la 3 otra vez/Si, eso parece/jajaja luego ira juego 1/en la ronda 8 volvera el juego 3/Los cálculos se te dan bien parece",114
+1,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,1.0,3.3/3.3,121
+1,0.0,0,1.0,0.0,1.0,0,0.0,1.0,0.0,0,1.0,1.0,0.0,0,0.0,3 3/f3c3/igualados a 40/si/si,113
+1,0.0,1,1.0,1.0,1.0,1,0.0,0.5,1.0,0,0.0,0.0,0.0,0,1.0,"f2-c2/joder, los de 50 siempre te los llevas tu.../asi hacemos como antes/iba a decirtelo/guay/hacemos siempre lo mismo?/ok/c2-f2 y c4-f4/claro../de todos modos nos da mogollon de tiempo/per si/ya",119
+1,0.0,1,1.0,1.0,1.0,1,1.0,1.0,0.5,0,0.0,0.0,0.0,0,1.0,fila 4? c4? jiji/mm tu te llevas mas/escucha/no se si eres de fiar pero tengi una buena idea/juguemos a compensar/dime rapido/primero ganas tu mas/.../luego elegire yo/te parece??/siii/eso estamos haciuendo no?/eres el mismo??/mas o menos/pensaba q cambiaba/vale okay/soy yo soy yo tranqui jaja/entonces/4c  4f entnces?/siii,88
+1,0.5,0,1.0,0.0,1.0,0,0.0,1.0,0.0,0,0.0,0.0,0.0,0,1.0,f4? jeje/f4 c4 es lo mas compennsatorio/genial/:),124
+1,0.0,1,1.0,0.5,1.0,1,0.0,1.0,0.0,0,0.5,0.0,0.5,0,0.5,columna 3 fila 3/obtenemos los mismos resultados/El jugador A debería elegir siempre el juego 3/nos saldria mas rentable a todos/pero con el es imposible comunicarse/Si,87
+1,1.0,0,1.0,0.0,0.5,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,1.0,f4 c4?/c4 f4 ?/vale/perfe jajaja/ya me hubiera gustado ser el A con nosotros jaja/jajajaja ya ves,126
+1,0,1.0,1,0.0,1,1.0,0,1.0,1,0,0,0,0,0,1,"un momento xd/que crees que tiene que hacer A?/dime/no se ni si existe xd/c2 f2?/yo pienso igual jajajajaj/no, asi tu ganas mas/tu ganas 3 menos y yo 11 más xd/A otra ronda lo arreglamos al reves/e igual ganamos mas jajaj/no se yo si fiarme../que si que si jajaj/ok/lo que digas/ok?/mismo/va/pero luego quiero mi parte/jajaja/c2f2/si jajaj",89
+1,0,0.5,1,0.0,0,0.5,0,0.5,0,0,0,0,0,0,1,elije/vale a ver/o c1 f1/o c2 f2/por tres puntos ya ves/c2 f2 mejor no/ajaja/por eso te digo/sisi/c2 f2,117
+1,0,0.0,1,0.5,1,0.5,0,1.0,0,0,0,0,0,0,1,c1 y f1/o f3 y c3 ques esta mas compensado/pero cmo tu me dejaste elejir/elijo el c1 f1/nono/tienes razon/ok/pero hazme el favor si la siguiente sale juego n1 elijo yo y luego tu porfavor/perfecto,90
+1,0,0.0,1,0.0,0,0.0,0,0.0,0,0,0,0,0,0,1,"3.3/sii jaj/pasa un poco lento no?/bastante lento,/la gente contesta rapido../o eso creemos,xD/se oyen los teclados/y ratones jajaj/jaja hablando para quitar el aburrimiento/jajajaj eso si/como nosotros/jajaja",129
+1,0,0.0,1,1.0,1,0.0,0,1.0,1,0,0,0,0,0,1,hola/hola/c3 f3?/bien/los hacemos de forma que ganemos siempre lo mismo nosotros?/me parece lo más sensato jajaja/Genial,80
+1,0,0.0,1,0.0,1,0.0,0,0.5,0,0,0,0,0,0,1,f2 c2?/f2 c2/si jaja/jaja de acuerdo/oye y el A?/solo gana y gana/lo dejamos que gane tanto?/que hacemos sino?/ya...../bueno da igual,131
+1,0,1.0,1,1.0,1,1.0,0,1.0,0,0,0,0,0,0,1,aqui si c3f3 es donde mas ganamos/c3 f3?/si/vamooooos/el juego 4 y 5 te pueden beneficiar/y el 1 y 2 a mí/si volvemos a repetir lo de antes xd/jajajaja/lo miraremos../ok jaja/crees que vamos a sacar pasta?/pues en esta ronda contigo/algo mas que con quien me ha tocado en la anterior xd/como a mi../que no nos coordinabamos para nada jajaja,125
+1,0,1.0,0,0.0,0,0.0,0,1.0,0,0,0,0,0,0,1,pues eso/c2 f2?/tocará/ronda cuatro y aun no han aparecido tablas 4 y 5/deberia empezar a preocuparme/aun quedan 5/a ver la siguiente/espero/puede que sea la 3 otra vez/dice que son al 20%,111
+1,0,1.0,1,0.0,0,0.0,0,0.0,0,0,0,0,0,0,1,f3 c3?/vale si,134
+1,0,0.0,1,0.5,1,0.0,0,0.5,0,0,0,0,0,0,1,vamos a por una tuya?/vale/que te parece c4 f4?/f4 c4¿/Si/okay,136
+1,1,1,1,0.0,1.0,0.5,0.0,0.5,0.0,0,0,0,0,0,1,f1 c1??/fila 2 c 2?/vale/ganas muchiiiisisisisisisiisimo mas jajaja/y tu antes ¬¬/vale.../jajajjaa/f1 c1/confirmo/bien!!/fijate en el a/se va a llevar un monton d puntos/ese gana por todos los lados,97
+1,0,0,1,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0,1,c2 f2/ok,135
+1,0,0,1,0.0,0.5,0.0,0.0,0.0,0.0,0,0,0,0,0,1,"ahora 4, no?/si/c4-f4/esto va muy lento/muchoo/jaja/estamos mas de un minuto sin hacer nada/habrá quien se peleará xD/supongo/venga q ya acaba",127
+1,0,0,1,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0,1,33/si/vale,138
+1,0,0,1,0.0,1.0,0.5,0.0,1.0,0.0,0,0,0,0,0,1,"venga elige/f5 c5/uff/por esa de 22 - 50 de antes/jjajaja/bueno vale, pero al inicio d juego has ganado mucho mas tu eh jajaja/venga.. f4 c4/bien?/si??/valeeee/total son 3 puntos/sii :)/a mi se me va con 9/:))",140
+1,0,1,1,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0,1,f3 c3?/f3 c3 ?/sii/vale,143
+1,0,1,1,0.0,0.0,0.0,0.0,0.5,0.0,0,0,0,0,0,1,"f3 c3 no?/como el de antes, c3 f3/si/pues que tal? Te has acordado de coger paraguas?/no/Yo no y me he chopado/jajaj/mal vamos tomando decisiones/he aparcado lejos/i me ha tocado mojarme/no vives por aqui?/no, soy de fuera/aah/pero estudias en la universidad",93
+1,0,1,1,0.5,1.0,1.0,0.0,1.0,0.0,0,0,0,0,0,1,f3c3/no quieres esta por ti y la proxima por mi?/vale va/y ponemos f4 c4/si?/me parece bien/vale perfecto/a la proxima tu/vale/gracias/entonces 4 4/si,95
+1,0,0,0,0.0,0.0,0.0,0.5,0.0,0.0,0,0,0,0,0,1,"3.3/que raro/jajajaja/ya ves ,porfin ha cambiado/nos llevaremos mucho o que?/7 ya/queda  poco/solo 2 rondas/a 3 minutos o asi/sii ,menos mal,/jaa/20 segundos..",137
+1,0,0,1,1.0,0.0,0.0,0.5,0.0,0.5,0,0,0,0,0,1,3.3/valep/ya lo sabias no?xD/el A que tendra que poner?/sii jajajaj/esperemos que ponga lo mismo/de momento lo esta poniendo,146
+1,0,0.0,1,0,1.0,1,0.0,1.0,0,0.0,0.0,0.0,0,0,1.0,f1c1/y aun asi antes te has llevado tu mas/esta mas o menos igualados porque yo ahora me llevo menos/bueno entonces 1 1 ?/venga/vale gracias,104
+1,0,1.0,1,0,0.0,0,0.5,0.0,0,0.5,0.0,0.0,0,0,1.0,ahora que toca?/f4-c4/ok/que hambre../yo tengo que ir a estudiar/jajaja/uff../hoy no se come,144
+0,0,0.0,0,0,0.0,0,0.0,0.0,0,0.0,1.0,1.0,0,0,0.0,333/jajaja numero extraño jaajajajaajaj/la mitad de 666/jajajajaja todo muy curioso/jajaja/jajaja,148
+1,1,1.0,1,0,1.0,1,0.0,1.0,0,0.0,0.0,0.0,0,0,1.0,hacemos una cosa/c3 y f3 ahora/cuando toque juego 5 c4 f4/si mas que nada porque el resto no me compresa/y recuperamos lo tuyo/compresa no jajaj compensa/AJAJAJJAA/ok/va pues 3/pero sino toca el 5 me lo pienso sobrar iguale n otro/jajajja/que lo sepas/vale jajaja/cobrar*,107
+1,0,1.0,1,0,1.0,1,0.0,1.0,0,0.0,0.5,0.5,0,0,0.5,"c5-f5/f4-c4?/tu ganas casi lo mismo pero yo gano mucho mas que en c5-f5/vale va/esque tu pierdes 3 puntos pero yo gano 11/sisi, me parece bien",110
+1,0,0.0,1,0,1.0,0,0.0,1.0,0,0.0,0.5,0.5,0,0,0.5,f3 c2?/c2 f2 te parece bien??/tu ganas mas/vale tu querras f2 c2/siii/guay/esque soy un poco lenta/jajaja tenemos tiempo,149
+1,0,0.5,1,0,0.5,1,0.0,1.0,0,0.0,0.0,0.0,0,0,1.0,"f2-c2?/ahora c1-f1 que en la ronda 2 escojimos c5-f5/que estaba mirandolo antes/iba a decirte q memoria!/jajaa/vale, c1-f1",153
+1,0,0.0,1,0,0.0,0,0.0,0.0,0,0.0,0.0,0.0,0,0,1.0,como lo ves? f3 c3?/si quieres ahora c3 f3/vale jaja,118
+1,0,0.0,1,0,0.5,0,0.0,0.5,0,0.0,1.0,1.0,0,0,0.0,"ui mira, el 5/jajajajajjajajajajjaja/jajaja/c3 f3 entonces/c4 f4 era/jajaja si/c4f4/valee/no me la trames ahora ¬¬/no no jajaja/soy de fiar/me lo creeré jajaja/ya veras/:)",116
+1,1,0.0,1,0,1.0,0,0.0,1.0,0,0.0,1.0,1.0,0,0,0.0,"es el mismo/4 4/seguro?/si, se llevan 14 de diferencia como antes/ah vale/pues 4 4/asi igualados",156
+1,1.0,0.0,1,0.0,0,0,0,0,0,0,0,0,0,0,1,por mmi f4 c4 bien/valee,158
+1,0.0,1.0,0,0.0,0,0,0,0,0,0,0,0,0,0,1,f5 c5/no?/f5 c5,151
+1,0.0,1.0,1,0.0,0,1,0,1,0,0,1,0,1,0,0,hoola/el bloque 1/hola/c1?/si/f3/ganas mas con el f1,159
+1,0.0,1.0,1,0.0,1,1,0,1,0,0,0,0,0,0,1,3 3no?/o si quieres 4 4/y la proxima por mi/como antes/vale 44/vale/y luego tu/si,122
+0,0.0,0.0,0,0.0,0,0,0,0,0,0,1,1,0,0,0,"3.3/sii,/la ultima yaaa/creo que en esta ronda el A le pilló el truco/ya ves/porfin/sii en esta lo ha hecho bien/1 minuto/q especifico/a/jaja/o/jaja a",155
+0,0.0,0.0,0,0.0,0,0,0,0,0,0,0,0,0,0,1,hola/estas?/Si,164
+1,0.0,0.0,1,0.0,0,0,0,0,0,0,0,0,0,0,1,escogeré c3/yo f3,160
+1,0.0,1.0,1,0.0,1,1,0,1,0,0,0,0,0,0,1,le damos una a tu favor?/o volvemos a hacer lo mismo?/está la aguantamos en la 33 pero en la siguiente si no cambia sí/vale,120
+1,0.0,1.0,1,0.5,0,1,0,1,0,0,1,1,0,0,0,tenemos el juego 3/elijamos los que más puntos nos de/c3/perfecto/f3/ok??/siu ok/y ahora seguimos todaslas rondas,161
+1,0.5,0.5,1,0.0,1,1,0,1,0,0,0,0,0,0,1,c3?f3?/f5?/c5?/no me compensa/si quieres/c2 f2/y la siguiente que me compense a mi/c3 y f3? Empate/si/guay,162
+1.0,0.0,1.0,1,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,0,1.0,que te parece f4?/hola?/ok,165
+1.0,0.0,0.5,1,0.5,0.5,0.5,0,0.5,0,0,0.0,0.0,0,0,1.0,c3-f2 esta bien/es mejor el c2 f2/c3-f3/para ambos/vale c3 f3,168
+1.0,0.0,0.0,1,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,0,1.0,que fila vas a elegir?/f3 c3 no?/sip/perfecto,170
+1.0,0.5,0.0,1,0.0,1.0,0.0,0,1.0,0,0,1.0,1.0,0,0,0.0,mismo juego/si/c3f3?/vale/en todos los juegos c3f3 es la que nos compensa por igual,171
+0.5,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,0,1.0,42432,130
+1.0,0.0,1.0,1,0.0,0.5,1.0,1,1.0,0,0,0.5,0.5,0,0,0.5,f5 c5?/si/por fin/por fin jaja/es en la que mas ganss/bua en este experimento que te tocara ser A es un chollo/ya/luego creo que hay otro exp/ah si? No es solo esto?/no lo se,128
+1.0,0.0,1.0,1,0.0,1.0,0.5,0,1.0,0,0,0.0,0.0,0,0,1.0,antes tu has tenido menos/para compensar/elegimos la que te de mmas a ti ahora?/f5 c5?/si/a quien le toque el A va a estar en la gloria jajaja/jajajaja pues si/pero bueno,172
+1.0,0.0,1.0,1,0.0,0.0,1.0,0,1.0,0,0,0.0,0.0,0,0,1.0,f5/si coges otra fila ganariamos mas puntos/por ejemplo f3 con c3/cual/vale,169
+1.0,0.0,1.0,1,0.0,1.0,1.0,0,1.0,0,0,0.0,0.0,0,0,1.0,mmmm/qué dices? jajaj/hacemos como antes/luego gano yo/f2 c2?/y la ultima hacemos tablas/te parece?/vale/f2 c2?/sip/confirmame jajaj/vale/asi me quedo tranquilo xd/confirmado/relax/respira/jajajajajajaja,132
+1.0,0.0,1.0,1,0.0,0.0,0.0,0,0.0,0,0,1.0,1.0,0,0,0.0,juego 3 jajajaj/fila 3 columna 3/Sii,123
+1,0,0,1,0.0,0.0,0.0,0.0,0,0,0.5,1.0,1.0,0,0,0.0,hola/hola/que juego cogemos?/elegiré el c1/te parece el juego 1/?/vale/perfecto/f1?/bien,167
+1,0,1,1,0.5,0.5,0.5,0.0,1,0,0.0,1.0,1.0,0,0,0.0,f3-c3/son 32/sii/para ambos,177
+1,0,0,1,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0,0,1.0,f3 y c3?/ok,178
+1,0,1,1,0.0,0.0,1.0,0.0,1,0,0.0,0.5,0.5,0,0,0.5,buah que lastima/aqui no te puedes llevar casi puntos/pero di/f3 c3/perfe/thanks,142
+1,0,1,1,0.0,0.0,1.0,0.0,1,0,0.0,0.0,0.0,0,0,1.0,ahora f4 y c4?/son las mayores ganacias para f y c/vale,183
+1,0,1,1,0.0,1.0,1.0,0.0,1,0,0.0,1.0,1.0,0,0,0.0,"ups/he aquí un dilema jajaj/hacemos lo que digas xd/pfffffffffffffffffffffffffffffffffffffffff/jajjaja/c3f3/va/me parece bien/y a la siguiente mi/mia*/sea lo que sea jajaja/a no ser que salga el 1 otra vez xd/bueno pues si sale uno de neuvo tambien ganare yo/jajajaja/bueno, eso ya lo debatimos xd/mm no/venga va/no da lugar/jajaj",141
+1,0,1,1,1.0,0.0,1.0,0.0,1,0,0.0,0.0,0.0,0,0,1.0,cual escogemos?/lo mismo?/es lo que mas ganacias tiene/vale/si perfecto/f3/c3/c3 no?/vale perfecto/si,175
+1,0,1,1,0.5,1.0,1.0,0.0,1,0,0.0,0.0,0.0,0,0,1.0,"vale escuchame/dime si te parece bien/ahora elijo yo, y las dos siguientes tu/lo que quieras/ejie esta y las siguiente dos uo/yo/exaaacto/vale/pues igual f1 c1",133
+1,1,1,1,1.0,1.0,1.0,0.0,1,0,0.0,0.0,0.0,0,0,1.0,"vamos alternandolo pues/f1 c1?/o c3f3/el que quieras/ya veeeeeeees/jajajaja/pues por mi ese/3 3/vale/luego seguimos alternando/porque si alternamos tenemos la posibilidad de conseguir mas/c3f3 es una opcion de ganancia intermedia/creo que esperan ver eso de nosotros, si el mercado hace que nos destruyamos o cooperamos jajaja/pero equitativa/somos muy cooperativos jajaja",181
+1,1,0,0,0.5,1.0,0.0,0.5,1,1,0.0,0.0,0.0,0,0,1.0,no funcionó tu plan/creo que nos estamos equivocando/porque el juego no lo decidimos nosotros/como lo hacemos entonces?/escojamos las columnas y filas donde menos se pierda/en todos los juegos/siempre c1/o donde ganemos lo mismo/o c3/si ellos escojen el juego lo mejor es asegurar no perder/en todos los juegos hay una casilla que ganamos lo mismo/probemos/y siempre es 30 o 40/fijate/escoje f2,184
+1.0,0,1,1,0.0,0,0.0,0.0,0,0,0,0.0,0.0,0,0,1.0,55?/si/es la penultima ya,145
+1.0,1,1,1,0.5,1,1.0,0.5,1,1,0,1.0,1.0,0,0,0.0,c3f3?/es el que ganamos lo mismo ambos/vale hacemos una cosa? cogemos las equitativas hasta la ronda 5 y las 4 ultimas escoges dos para ti y yo dos pero sin que nos resten?/ahora pongo f3/ok/yo c3/vale pues hasta la cinco ganamos igual,179
+0.5,0,0,0,0.0,0,0.0,0.0,0,0,0,0.0,0.0,0,0,1.0,42432,139
+1.0,0,0,1,0.0,0,0.0,0.0,0,0,0,0.0,0.0,0,0,1.0,"c2?/vale, per con f2/ok",174
+1.0,0,1,1,0.5,1,1.0,0.0,1,0,0,0.0,0.0,0,0,1.0,3 3 o 2 2 y la ultima tu?/2 2 y a la proxima yo/vale/pues 2 2 entonces/si,147
+1.0,0,1,1,0.5,1,1.0,0.0,1,0,0,0.0,0.0,0,0,1.0,lo mismo ?/c2 f2/vale/vamos rotando si quieres cada vez uno/vale,192
+1.0,1,0,1,1.0,1,0.0,0.0,1,0,0,0.0,0.0,0,0,1.0,no lo estamos haciendo bien/escucha/vamos a probarlo asi/dime/si sale juego 3/cogemos f3 y c3/y nos llevamos los dos 40/si sale juego 1/saldrá en negativo/f3 c3/pero probemos/ya ya/pero hay que mirar/q nois llevemos lo mismo/sabes?/segun el juego q salga miramos la tabla/antes no me hiciste caso/pero yo si te hare/y donde salga la misma cantidad/para lkos dos/si si/te hice caso/pusiste 3/y dije 2/y no gane nada/ganaste 8/pondre/ya/3,193
+1.0,0,0,1,0.5,0,0.0,0.0,0,0,0,0.0,0.0,0,0,1.0,"igual,no?/muy bien sigaMOS DOS MAS AMIGO@/SII/ok/5 Y 5",196
+1.0,0,0,1,0.0,1,0.5,0.0,1,0,0,0.5,0.5,0,0,0.5,"palmo yo/osea/de 36 he pasado a 22/tendria que obtener 50 para estar en las mismas que haber elegido 36 cada vez/y en este juego no tengo 50 en ninguna/c3f3/puedes f1,c1/tu sales muy perjudicado/c3f3/hasta que encuentre otra que vaya bien/vale",188
+1.0,0,1,1,0.0,1,1.0,0.0,1,0,0,1.0,1.0,0,0,0.0,"c3-f3 jajajaja siempre el mismo pero son 40/jajaja sii/igual hay un truco/seguramente/lo único que quien sea A, se lleva nuestra suma/ya, la goza/jajaja/y no hace nada/totalmente jajajaj c3-f3 siempre va a ser la misma cantidad",185
+1,0.0,1,1,0.0,1.0,1.0,0,1.0,0,0,0.0,0.0,0,0,1.0,"mierda xd/qué hacemos?/c4f4/pero yo pierdo 11 :(/yo gano los 3 que he operdido antes y tu pierdes los 11 que has ganadi/ei, como yo antes../va jajaja/ni pa tu ni pa mi/jajajajjaja/pero no me engañes xd/no te he engañado en 9 rondas../te voy a engañar ahora?/bueno, no te compensa otra opción xd/jajaj/por eso/Pues un placer :)",150
+1,0.0,1,1,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,0,1.0,f3 c3/vale si jaja,152
+1,0.0,1,1,0.5,1.0,0.5,0,1.0,0,0,1.0,1.0,0,0,0.0,"f4 c4?/c5 f5 ?/ganas mas tu en la 5/no, ganas mas tu/50/22/??/cual elegimos?/si quieres esa/f5 c5",201
+1,0.5,1,1,0.5,1.0,1.0,0,1.0,0,0,0.5,0.5,0,0,0.5,"uff/yo digo de empatar en esta/porque tu ganancia maxima es 42/vale, la siguiente en mi favor pues/si si estaba pensando lo mismo/dejamos tu compensacion para un juego que tu puedas ganar mas/42432/si/peor bueno lo que prefieras/porque estoy viendo que tampoco tienes numeros muy altos en las otras/ya xD",198
+1,0.0,0,1,0.0,0.5,0.5,0,1.0,0,0,0.0,0.0,0,0,1.0,1?/pues cogemos f1 y c1 y en la siguiente eliges tu/vale,195
+1,0.0,0,1,0.0,0.5,0.0,0,0.5,0,0,0.0,0.0,0,0,1.0,"apues, llevas una rachita/¿cuál seleccionamos ahora?/al, final resulta que no tendriamos que haber camiado en la ronda esa/ya/f5 c5/pero no pasa na/okay/bueno ha sido un placer participar contigo/igualmente/que te vaya bien en proximos experimentos",154
+1,0.0,1,1,0.0,0.0,1.0,0,1.0,0,0,0.5,0.5,0,0,0.5,bien/creo que en todos los juegos/lo has hecho genial/es f3 y c3/con lo que mas ganamos/no crees?/si/perfecto/probemos con uno mas/voy!/si vemos que la cosa no es asi cambiamos/vale guay/pero sigamos/a por MAS!!!!/eso!!!!,202
+1,0.0,1,1,1.0,1.0,1.0,1,1.0,1,0,0.5,0.5,0,0,0.5,"seguimos igual n?/no?*/sii, son 32, no esta mal/si vemos que en alguna de c3-f3 la cantidad es peque, podemos mirar otra cosa/en verdad te la puedo jugar y elegir otra/o tu/jaajja/solo nos llevamos 6 puntos de diferencia entre nosotros/ya ves/jajajajajaj no lo hagassss/jajajaja/la ultima lo hacemos/okay/por que en la primera has elegido esa?/no pillaba el juego/grande jajaja/jaja sorry",194
+1,0.0,0,1,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,0,1.0,5/5?/vlae/vale,204
+1,0.0,1,1,1.0,1.0,1.0,0,1.0,0,0,0.0,0.0,0,0,1.0,"c5f5, no/??/siii/igual que antes/perfecto/okais/ahora te tocara a ti/en la siguiente ya/eso es dsps lo k diga usted",205
+1,0,1.0,1,1.0,0.0,1,0,1,0.0,0,1.0,1.0,0,0,0.0,la 3/Nos sirve buscar mas el equilibrio/ganamos mas/si/listo/3 tu y yo 3/la 3,208
+1,0,0.0,1,0.0,1.0,0,0,0,0.0,0,1.0,1.0,0,0,0.0,"c2, f2'/?/ok/tb la habia pensaod/genial/que morro tien el A, eh.../ya ves/lo vamos a hacer rico/jeje/espero ser A en los siguientes 9",200
+1,0,1.0,1,0.0,0.0,0,0,1,0.0,0,1.0,1.0,0,0,0.0,"jajajja vuelta al 333/Por fin lo ha pillado/jajaja/Al final, pero lo ha pillado/se ha dado cuenta tardeejaja/porque esta es la ultima ronda ya/Si/con lo diver que estaba el juegoo jaja/Si, mucho/jajaja/Sobre todo la espera/jaajaj/las tomas de dcisiones lo mejor jajaja/Sii/jaja/Que estudias?/aprovechemos para petar el chat que esto se acaba/turismpo/tu?",157
+1,0,1.0,0,0.5,0.5,1,1,1,0.5,0,1.0,1.0,0,0,0.0,Hola/hey/alguna idea?/mirand el juego 3 la mejor columna c para elegir es la 1/creo que tenemos que intentar que todos ganemos el maximo posible/y f1 supongo/pero donde tengo que ponerlooo? xDD/o tambien c4f4,163
+1,0,0.0,1,0.0,0.0,0,0,0,0.0,0,0.0,0.0,0,0,1.0,a ver yo aun  confio en que salga la 4 o la 5/XDDDDDD/jajaja/5-5?/va,207
+1,0,1.0,1,1.0,1.0,1,0,1,0.0,0,0.0,0.0,0,0,1.0,"que lioteeee/jajajajajaja/totaaaal/jajajajajaj/si es que lo mejor es lo mismo/es que yo en el uno podia ganar 54, y tu cmo mucho 38/ya/jajajaj/pillamos ahora el c5f5/entonces que? seguimos esta ronda y la siguiente igual y en la ultima ya cada uno lo que quiera?/nooo/vale/cogemos el c5f5 y a la siguiente gano yo mas/okay",212
+1,0,1.0,0,0.0,0.0,0,0,0,0.0,0,0.5,0.5,0,0,0.5,cual elegimos?/la fila 3,166
+1,0,0.5,1,0.0,1.0,1,0,1,0.0,0,0.0,0.0,0,0,1.0,c3f3/empate/vale/o si quieres/c4f4/y las proximas dos que me compensen en igual medida/como prefieras/pues 4/vale,215
+1,0,1.0,1,1.0,1.0,1,0,1,0.0,0,0.5,0.5,0,0,0.5,perdona por la de antes he estado lento/selecciona la 2/sugiero hacerlo de forma que seamos los dos quienes ganemos/yo voy a seleccionar exacto/que vas a seleccionar tu?/2/y si seleccionamos los dos/la 3/asi no gana tanto el a/listo,173
+1,0,0.0,1,0.0,0.0,0,0,0,0.0,0,0.0,0.0,0,0,1.0,3 otra vez/listo/3,217

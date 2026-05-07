@@ -1,0 +1,27 @@
+\begin{table}
+    \centering
+    \caption{Label prevalence and correlations: human vs.\ LLM coding -- \citet{ederer_schneider_2022}}
+    \label{tab:ederer_descriptives}
+    \begin{adjustbox}{max width=0.82\linewidth}
+    \small
+    \begin{tabular}{lcccc}
+        \toprule
+         & Human & Claude & GPT & Gemini \\
+        \midrule
+        \multicolumn{5}{l}{\textit{Panel A: Prevalence (\% of 172 communication-condition messages)}} \\
+        Promise    & 69.8 & 67.4 & 67.4 & 79.1 \\
+        Efficiency & 48.8 & 59.3 & 57.0 & 58.7 \\
+        Ethics     &  7.6 & 12.2 &  9.9 & 22.1 \\
+        \midrule
+        \multicolumn{5}{l}{\textit{Panel B: Pearson correlations (full trustee sample, $N=354$)}} \\
+        $r$(Promise, Efficiency) & 0.709 & 0.699 & 0.671 & 0.774 \\
+        $r$(Promise, Ethics)     & 0.146 & 0.181 & 0.237 & 0.383 \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \vspace{0.2cm}
+    \begin{minipage}{0.82\linewidth}
+        \footnotesize
+        \textit{Note:} LLM predictions at zero-shot, temperature~0. Prevalence computed among the 172 communication-condition trustees; 13 rows with missing messages are assigned label~0 (matching human coding). Correlations computed on the full trustee sample ($N=354$, including no-communication trustees with all labels set to~0).
+    \end{minipage}
+\end{table}

@@ -1,0 +1,28 @@
+\begin{table}
+    \centering
+    \caption{Regression comparison: human vs.\ LLM-coded \textit{is\_promise} -- \citet{ederer_schneider_2022}}
+    \label{tab:ederer_regression}
+    \begin{adjustbox}{max width=0.82\linewidth}
+    \small
+    \begin{tabular}{lcccc}
+        \toprule
+          & Human & Claude & GPT & Gemini \\
+        \midrule
+        Communication & $0.521$ & $0.919$ & $0.723$ & $0.709$ \\
+         & $(0.813)$ & $(0.762)$ & $(0.733)$ & $(0.787)$ \\
+        Promise & $1.977^{**}$ & $1.454$ & $1.746^{*}$ & $1.507^{*}$ \\
+         & $(0.946)$ & $(0.957)$ & $(0.928)$ & $(0.875)$ \\
+        Constant & $3.652^{***}$ & $3.652^{***}$ & $3.652^{***}$ & $3.652^{***}$ \\
+         & $(0.319)$ & $(0.319)$ & $(0.319)$ & $(0.319)$ \\
+        \midrule
+        $N$ & 353 & 353 & 353 & 353 \\
+        $R^2$ & 0.065 & 0.056 & 0.061 & 0.054 \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \vspace{0.2cm}
+    \begin{minipage}{0.82\linewidth}
+        \footnotesize
+        \textit{Note:} OLS with standard errors clustered by session. Sample: trustees (\textit{role}~$= 1$). Human column uses original author coding. LLM columns replace \textit{is\_promise} with model predictions at zero-shot, temperature~0. Standard errors in parentheses. $^{***}p<0.01$, $^{**}p<0.05$, $^{*}p<0.10$.
+    \end{minipage}
+\end{table}

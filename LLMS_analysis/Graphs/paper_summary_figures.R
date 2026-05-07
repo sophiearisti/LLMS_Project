@@ -230,11 +230,150 @@ PAPER1 <- "managerial_leadership_Jordi_Cooper"
 
 filtered_results_df <- filtered_results_df |>
   mutate(
+    macro_precision = rowMeans(
+      cbind(.data$precision_0, .data$precision_1),
+      na.rm = TRUE
+    ),
+    macro_recall = rowMeans(
+      cbind(.data$recall_0, .data$recall_1),
+      na.rm = TRUE
+    ),
     agreement = case_when(
       paper_name == PAPER1 ~ krippendorff_alpha,
       TRUE                 ~ cohen_kappa
     )
   )
+
+latex_escape <- function(text) {
+  text |>
+    gsub("\\\\", "\\\\textbackslash{}", x = _, fixed = TRUE) |>
+    gsub("_", "\\\\_", x = _, fixed = TRUE) |>
+    gsub("&", "\\\\&", x = _, fixed = TRUE) |>
+    gsub("%", "\\\\%", x = _, fixed = TRUE)
+}
+
+format_temp <- function(value) {
+  ifelse(abs(value - round(value)) < 1e-9,
+         as.character(as.integer(round(value))),
+         format(value, trim = TRUE, nsmall = 1))
+}
+
+write_paper_latex_table <- function(paper_nm, paper_lbl, data) {
+  table_df <- data |>
+    filter(.data$paper_name == paper_nm) |>
+    group_by(.data$llm, .data$shot, .data$temperature) |>
+    summarise(
+      agreement = mean(.data$agreement, na.rm = TRUE),
+      accuracy = mean(.data$accuracy, na.rm = TRUE),
+      precision = mean(.data$macro_precision, na.rm = TRUE),
+      recall = mean(.data$macro_recall, na.rm = TRUE),
+      f1 = mean(.data$macro_f1, na.rm = TRUE),
+      evaluable_tags = n_distinct(.data$tag),
+      .groups = "drop"
+    ) |>
+    mutate(
+      llm = dplyr::recode(.data$llm, !!!llm_labels),
+      shot = dplyr::recode(
+        .data$shot,
+        "0shot" = "Zero-shot",
+        "fewshot" = "Few-shot"
+      )
+    ) |>
+    arrange(.data$llm, .data$shot, .data$temperature)
+
+  if (nrow(table_df) == 0) {
+    return(invisible(NULL))
+  }
+
+  agreement_label <- if (paper_nm == PAPER1) {
+    "Krippendorff's $\\alpha$"
+  } else {
+    "Cohen's $\\kappa$"
+  }
+
+  build_panel_lines <- function(panel_df, panel_title) {
+    body_lines <- apply(panel_df, 1, function(row) {
+      paste(
+        row[["llm"]],
+        format_temp(as.numeric(row[["temperature"]])),
+        sprintf("%.3f", as.numeric(row[["agreement"]])),
+        sprintf("%.3f", as.numeric(row[["accuracy"]])),
+        sprintf("%.3f", as.numeric(row[["precision"]])),
+        sprintf("%.3f", as.numeric(row[["recall"]])),
+        sprintf("%.3f", as.numeric(row[["f1"]])),
+        as.integer(row[["evaluable_tags"]]),
+        sep = " & "
+      )
+    })
+
+    c(
+      paste0("\\multicolumn{8}{l}{\\textit{Panel ", panel_title, "}} \\\\"),
+      "\\midrule",
+      paste0(body_lines, " \\\\" )
+    )
+  }
+
+  zero_shot_df <- table_df |>
+    filter(.data$shot == "Zero-shot") |>
+    select(-shot)
+
+  few_shot_df <- table_df |>
+    filter(.data$shot == "Few-shot") |>
+    select(-shot)
+
+  panel_lines <- c()
+  if (nrow(zero_shot_df) > 0) {
+    panel_lines <- c(panel_lines, build_panel_lines(zero_shot_df, "A. Zero-shot"))
+  }
+  if (nrow(zero_shot_df) > 0 && nrow(few_shot_df) > 0) {
+    panel_lines <- c(panel_lines, "\\addlinespace[0.35em]")
+  }
+  if (nrow(few_shot_df) > 0) {
+    panel_lines <- c(panel_lines, build_panel_lines(few_shot_df, "B. Few-shot"))
+  }
+
+  latex_lines <- c(
+    "\\begin{table}[htbp]",
+    "\\centering",
+    paste0(
+      "\\caption{LLM validation metrics by configuration for ",
+      latex_escape(paper_lbl),
+      ".}"
+    ),
+    paste0(
+      "\\label{tab:metrics_",
+      paper_nm,
+      "}"
+    ),
+    "\\small",
+    "\\begin{threeparttable}",
+    "\\begin{tabular}{lrrrrrrr}",
+    "\\toprule",
+    paste(
+      "Model", "Temp.", agreement_label,
+      "Accuracy", "Precision", "Recall", "F1", "$N$",
+      sep = " & "
+    ),
+    "\\\\",
+    panel_lines,
+    "\\bottomrule",
+    "\\end{tabular}",
+    "\\begin{tablenotes}[flushleft]",
+    paste0(
+      "\\footnotesize Notes: Entries report mean metrics across tags with at least 10 positive cases. ",
+      "Precision and recall are macro averages over classes 0 and 1. ",
+      "Within each table, Panel A reports zero-shot prompting and Panel B reports few-shot prompting."
+    ),
+    "\\end{tablenotes}",
+    "\\end{threeparttable}",
+    "\\end{table}"
+  )
+
+  writeLines(
+    latex_lines,
+    con = file.path(output_dir, paste0("table_metrics_", paper_nm, ".tex"))
+  )
+}
 
 build_heatmap_data <- function(data, metric_name, threshold = 0.8) {
   data |>
@@ -443,3 +582,11 @@ for (i in seq_len(nrow(papers))) {
   }
 }
 message("Per-paper figures saved in: ", output_dir)
+
+for (i in seq_len(nrow(papers))) {
+  paper_nm  <- papers$paper_name[i]
+  paper_lbl <- paper_labels[paper_nm]
+  write_paper_latex_table(paper_nm, paper_lbl, filtered_results_df)
+}
+
+message("Per-paper LaTeX tables saved in: ", output_dir)

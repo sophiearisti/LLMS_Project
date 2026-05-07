@@ -9,7 +9,10 @@
       "Bash(\"C:/Program Files/R/R-4.5.3/bin/Rscript.exe\" Graphs.R)",
       "Bash(grep -E \"\\\\.\\(csv|xlsx|txt\\)$\")",
       "Bash(grep -E \"\\\\.csv$\")",
-      "Bash(python3 *)"
+      "Bash(python3 *)",
+      "Bash(python *)",
+      "Bash(python3.12)",
+      "Bash(awk -F',' '{print $22}')"
     ]
   }
 }

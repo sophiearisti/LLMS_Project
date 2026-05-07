@@ -1,0 +1,50 @@
+\begin{table}[htbp]
+\centering
+\caption{LLM validation metrics by configuration for Ederer and Schneider (2022).}
+\label{tab:metrics_trust_promises_Ederer_Schneider}
+\small
+\begin{threeparttable}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Model & Temp. & Cohen's $\kappa$ & Accuracy & Precision & Recall & F1 & $N$
+\\
+\multicolumn{8}{l}{\textit{Panel A. Zero-shot}} \\
+\midrule
+Claude & 0 & 0.757 & 0.920 & 0.863 & 0.914 & 0.878 & 3 \\
+Claude & 0.1 & 0.757 & 0.920 & 0.863 & 0.914 & 0.878 & 3 \\
+Claude & 0.5 & 0.753 & 0.918 & 0.862 & 0.912 & 0.876 & 3 \\
+Claude & 1 & 0.761 & 0.922 & 0.864 & 0.916 & 0.880 & 3 \\
+GPT & 0 & 0.754 & 0.924 & 0.866 & 0.896 & 0.877 & 3 \\
+GPT & 0.1 & 0.758 & 0.926 & 0.869 & 0.898 & 0.879 & 3 \\
+GPT & 0.5 & 0.755 & 0.926 & 0.865 & 0.899 & 0.877 & 3 \\
+GPT & 1 & 0.786 & 0.932 & 0.881 & 0.914 & 0.893 & 3 \\
+GPT & 1.2 & 0.755 & 0.928 & 0.872 & 0.888 & 0.877 & 3 \\
+Gemini & 0 & 0.648 & 0.884 & 0.844 & 0.874 & 0.819 & 3 \\
+Gemini & 0.1 & 0.685 & 0.900 & 0.856 & 0.887 & 0.839 & 3 \\
+Gemini & 0.5 & 0.676 & 0.900 & 0.855 & 0.873 & 0.835 & 3 \\
+Gemini & 1 & 0.619 & 0.880 & 0.840 & 0.850 & 0.804 & 3 \\
+Gemini & 1.2 & 0.642 & 0.884 & 0.845 & 0.868 & 0.816 & 3 \\
+\addlinespace[0.35em]
+\multicolumn{8}{l}{\textit{Panel B. Few-shot}} \\
+\midrule
+Claude & 0 & 0.707 & 0.898 & 0.841 & 0.895 & 0.852 & 3 \\
+Claude & 0.1 & 0.707 & 0.898 & 0.841 & 0.895 & 0.852 & 3 \\
+Claude & 0.5 & 0.708 & 0.898 & 0.843 & 0.895 & 0.852 & 3 \\
+Claude & 1 & 0.712 & 0.900 & 0.844 & 0.897 & 0.854 & 3 \\
+GPT & 0 & 0.762 & 0.922 & 0.863 & 0.919 & 0.880 & 3 \\
+GPT & 0.1 & 0.745 & 0.918 & 0.859 & 0.902 & 0.872 & 3 \\
+GPT & 0.5 & 0.733 & 0.920 & 0.860 & 0.882 & 0.866 & 3 \\
+GPT & 1 & 0.723 & 0.914 & 0.850 & 0.887 & 0.861 & 3 \\
+GPT & 1.2 & 0.746 & 0.918 & 0.859 & 0.901 & 0.872 & 3 \\
+Gemini & 0 & 0.658 & 0.884 & 0.854 & 0.853 & 0.825 & 3 \\
+Gemini & 0.1 & 0.648 & 0.882 & 0.851 & 0.850 & 0.821 & 3 \\
+Gemini & 0.5 & 0.668 & 0.886 & 0.856 & 0.867 & 0.831 & 3 \\
+Gemini & 1 & 0.661 & 0.886 & 0.858 & 0.852 & 0.828 & 3 \\
+Gemini & 1.2 & 0.659 & 0.886 & 0.853 & 0.856 & 0.826 & 3 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize Notes: Entries report mean metrics across tags with at least 10 positive cases. Precision and recall are macro averages over classes 0 and 1. Within each table, Panel A reports zero-shot prompting and Panel B reports few-shot prompting.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

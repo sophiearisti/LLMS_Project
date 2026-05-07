@@ -1,0 +1,130 @@
+================================================================================
+INTER-LLM RELIABILITY — Krippendorff's Alpha (LLMs as raters, temp=0)
+================================================================================
+
+Each LLM at temperature=0 is treated as an independent rater.
+Predictions are binarized: > 0.5 → 1, else 0.
+High alpha → LLMs agree on classifications (well-defined categories).
+Low alpha  → LLMs disagree (interpretively ambiguous categories).
+
+Thresholds (Krippendorff 2004):
+  >= 0.80 : strong agreement
+  0.67-0.80: tentative
+  < 0.67  : unreliable
+
+Paper: managerial_leadership_Jordi_Cooper  |  Strategy: 0shot
+  Raters (LLMs): ['claude', 'gpt', 'gemini']   N_items=197
+  Mean alpha  : 0.2960
+  Median alpha: 0.2553
+--------------------------------------------------------------------------------
+  Label                             Alpha  Interpretation
+--------------------------------------------------------------------------------
+  agree_proposal                   0.5188  Unreliable (<0.67)
+  discuss_fairness                 0.4796  Unreliable (<0.67)
+  receive_report                   0.4345  Unreliable (<0.67)
+  truthful                         0.4289  Unreliable (<0.67)
+  neither_report                   0.4285  Unreliable (<0.67)
+  any_suggestion                   0.3889  Unreliable (<0.67)
+  ask_game                         0.3276  Unreliable (<0.67)
+  discuss_efficient                0.2553  Unreliable (<0.67)
+  contradict                       0.2462  Unreliable (<0.67)
+  falsehood                        0.2410  Unreliable (<0.67)
+  suggest_safe                     0.2036  Unreliable (<0.67)
+  explanation                      0.1680  Unreliable (<0.67)
+  discuss_howtoplay                0.1663  Unreliable (<0.67)
+  suggest_efficient                0.1595  Unreliable (<0.67)
+  discuss_rules                   -0.0068  Unreliable (<0.67)
+
+Paper: managerial_leadership_Jordi_Cooper  |  Strategy: fewshot
+  Raters (LLMs): ['claude', 'gpt']   N_items=927
+  Mean alpha  : 0.3788
+  Median alpha: 0.5410
+--------------------------------------------------------------------------------
+  Label                             Alpha  Interpretation
+--------------------------------------------------------------------------------
+  ask_game                         0.6782  Tentative (0.67-0.80)
+  falsehood                        0.6614  Unreliable (<0.67)
+  receive_report                   0.6396  Unreliable (<0.67)
+  truthful                         0.6305  Unreliable (<0.67)
+  neither_report                   0.6149  Unreliable (<0.67)
+  agree_proposal                   0.5659  Unreliable (<0.67)
+  discuss_fairness                 0.5432  Unreliable (<0.67)
+  any_suggestion                   0.5410  Unreliable (<0.67)
+  contradict                       0.4981  Unreliable (<0.67)
+  discuss_rules                    0.3971  Unreliable (<0.67)
+  explanation                      0.1708  Unreliable (<0.67)
+  discuss_howtoplay                0.0907  Unreliable (<0.67)
+  suggest_efficient                0.0494  Unreliable (<0.67)
+  discuss_efficient               -0.0776  Unreliable (<0.67)
+  suggest_safe                    -0.3206  Unreliable (<0.67)
+
+Paper: trust_promises_Ederer_Schneider  |  Strategy: 0shot
+  Raters (LLMs): ['claude', 'gpt', 'gemini']   N_items=156
+  Mean alpha  : 0.7432
+  Median alpha: 0.7079
+--------------------------------------------------------------------------------
+  Label                             Alpha  Interpretation
+--------------------------------------------------------------------------------
+  is_efficiency                    0.8978  Strong (>=0.80)
+  is_promise                       0.7079  Tentative (0.67-0.80)
+  is_ethics                        0.6238  Unreliable (<0.67)
+
+Paper: trust_promises_Ederer_Schneider  |  Strategy: fewshot
+  Raters (LLMs): ['claude', 'gpt', 'gemini']   N_items=156
+  Mean alpha  : 0.7738
+  Median alpha: 0.7998
+--------------------------------------------------------------------------------
+  Label                             Alpha  Interpretation
+--------------------------------------------------------------------------------
+  is_ethics                        0.8262  Strong (>=0.80)
+  is_efficiency                    0.7998  Tentative (0.67-0.80)
+  is_promise                       0.6955  Tentative (0.67-0.80)
+
+Paper: under_reporting_Ling_Kale_Imas  |  Strategy: 0shot
+  Raters (LLMs): ['claude', 'gpt', 'gemini']   N_items=95
+  Mean alpha  : 0.6192
+  Median alpha: 0.6374
+--------------------------------------------------------------------------------
+  Label                             Alpha  Interpretation
+--------------------------------------------------------------------------------
+  SDB                              0.9441  Strong (>=0.80)
+  academic_integrity               0.8393  Strong (>=0.80)
+  overest_others                   0.7755  Tentative (0.67-0.80)
+  info_asymmetry                   0.7053  Tentative (0.67-0.80)
+  uninformative                    0.6906  Tentative (0.67-0.80)
+  self_esteem                      0.6374  Unreliable (<0.67)
+  privacy_concerns                 0.5935  Unreliable (<0.67)
+  underest_own                     0.5087  Unreliable (<0.67)
+  network_effect                   0.4721  Unreliable (<0.67)
+  truthful                         0.4682  Unreliable (<0.67)
+  self_report_bias                 0.1765  Unreliable (<0.67)
+  AI_discussion_priming               NaN  Insufficient raters
+
+Paper: under_reporting_Ling_Kale_Imas  |  Strategy: fewshot
+  Raters (LLMs): ['claude', 'gpt', 'gemini']   N_items=25
+  Mean alpha  : 0.4893
+  Median alpha: 0.4789
+--------------------------------------------------------------------------------
+  Label                             Alpha  Interpretation
+--------------------------------------------------------------------------------
+  SDB                              1.0000  Strong (>=0.80)
+  AI_discussion_priming            1.0000  Strong (>=0.80)
+  overest_others                   0.7898  Tentative (0.67-0.80)
+  uninformative                    0.7287  Tentative (0.67-0.80)
+  underest_own                     0.6081  Unreliable (<0.67)
+  network_effect                   0.4789  Unreliable (<0.67)
+  info_asymmetry                   0.3169  Unreliable (<0.67)
+  truthful                         0.2850  Unreliable (<0.67)
+  self_esteem                      0.2227  Unreliable (<0.67)
+  academic_integrity               0.0000  Unreliable (<0.67)
+  self_report_bias                -0.0476  Unreliable (<0.67)
+  privacy_concerns                    NaN  No variance
+
+================================================================================
+SUMMARY — mean inter-LLM alpha by (paper, strategy)
+================================================================================
+strategy                             0shot  fewshot
+paper                                              
+managerial_leadership_Jordi_Cooper  0.2960   0.3788
+trust_promises_Ederer_Schneider     0.7432   0.7738
+under_reporting_Ling_Kale_Imas      0.6192   0.4893

@@ -1,0 +1,40 @@
+\begin{table}[htbp]
+\centering
+\caption{LLM validation metrics by configuration for Brandts and Cooper (2025).}
+\label{tab:metrics_managerial_leadership_Jordi_Cooper}
+\small
+\begin{threeparttable}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Model & Temp. & Krippendorff's $\alpha$ & Accuracy & Precision & Recall & F1 & $N$
+\\
+\multicolumn{8}{l}{\textit{Panel A. Zero-shot}} \\
+\midrule
+Claude & 0 & 0.516 & 0.712 & 0.648 & 0.692 & 0.484 & 14 \\
+Claude & 0.1 & 0.516 & 0.714 & 0.641 & 0.690 & 0.476 & 14 \\
+Claude & 0.5 & 0.518 & 0.713 & 0.648 & 0.689 & 0.478 & 14 \\
+Claude & 1 & 0.512 & 0.713 & 0.645 & 0.683 & 0.476 & 14 \\
+GPT & 0 & 0.473 & 0.675 & 0.608 & 0.656 & 0.435 & 14 \\
+GPT & 0.1 & 0.476 & 0.677 & 0.608 & 0.654 & 0.439 & 14 \\
+GPT & 0.5 & 0.477 & 0.674 & 0.605 & 0.665 & 0.436 & 14 \\
+GPT & 1 & 0.471 & 0.668 & 0.607 & 0.655 & 0.434 & 14 \\
+GPT & 1.2 & 0.474 & 0.672 & 0.594 & 0.655 & 0.440 & 14 \\
+\addlinespace[0.35em]
+\multicolumn{8}{l}{\textit{Panel B. Few-shot}} \\
+\midrule
+Claude & 0 & 0.518 & 0.742 & 0.658 & 0.687 & 0.492 & 14 \\
+Claude & 0.1 & 0.515 & 0.742 & 0.649 & 0.680 & 0.487 & 14 \\
+Claude & 0.5 & 0.517 & 0.741 & 0.657 & 0.683 & 0.491 & 14 \\
+Claude & 1 & 0.519 & 0.741 & 0.656 & 0.683 & 0.492 & 14 \\
+GPT & 0 & 0.491 & 0.692 & 0.606 & 0.677 & 0.436 & 14 \\
+GPT & 0.1 & 0.493 & 0.693 & 0.601 & 0.673 & 0.434 & 14 \\
+GPT & 0.5 & 0.488 & 0.696 & 0.610 & 0.676 & 0.438 & 14 \\
+GPT & 1 & 0.488 & 0.691 & 0.605 & 0.671 & 0.435 & 14 \\
+GPT & 1.2 & 0.479 & 0.688 & 0.599 & 0.662 & 0.436 & 14 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize Notes: Entries report mean metrics across tags with at least 10 positive cases. Precision and recall are macro averages over classes 0 and 1. Within each table, Panel A reports zero-shot prompting and Panel B reports few-shot prompting.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

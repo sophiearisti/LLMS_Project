@@ -457,3 +457,126 @@ if (nrow(p1_best_f1) > 0) {
   )
   cat("Saved: dotplot_f1_best_config_managerial_leadership_Jordi_Cooper\n")
 }
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Dot plots for papers without the paper-1 dot-plot pair
+#   Create agreement (best config) and Macro F1 dot plots for papers 3 and 4.
+#   Saved directly to LLMS_analysis/1_Figures to mirror manuscript assets.
+# ─────────────────────────────────────────────────────────────────────────────
+
+figures_dir <- "../1_Figures"
+dir.create(figures_dir, showWarnings = FALSE, recursive = TRUE)
+
+paper_folder_map <- setNames(papers$paper_folder, papers$paper_number)
+paper_label_map  <- setNames(papers$paper_label, papers$paper_number)
+
+for (paper_num in c(3, 4)) {
+  paper_folder <- paper_folder_map[as.character(paper_num)]
+  paper_label  <- paper_label_map[as.character(paper_num)]
+
+  # Agreement dot plot (Cohen's kappa for papers 3 and 4)
+  best_agreement <- results_df %>%
+    filter(paper == paper_num, tag != "GLOBAL", !is.na(agreement)) %>%
+    mutate(model = llm_labels[llm]) %>%
+    group_by(tag, model) %>%
+    summarise(score = max(agreement, na.rm = TRUE), .groups = "drop")
+
+  if (nrow(best_agreement) > 0) {
+    tag_levels <- best_agreement %>%
+      group_by(tag) %>%
+      summarise(mean_score = mean(score, na.rm = TRUE), .groups = "drop") %>%
+      arrange(mean_score) %>%
+      pull(tag)
+
+    best_agreement <- best_agreement %>%
+      mutate(tag = factor(tag, levels = tag_levels))
+
+    p_dot_agreement <- ggplot(best_agreement, aes(x = score, y = tag, colour = model)) +
+      geom_vline(xintercept = 0.80, linetype = "dashed",
+                 colour = "grey40", linewidth = 0.4) +
+      geom_point(size = 2.8, alpha = 0.9) +
+      scale_colour_manual(values = model_colors, name = "Model") +
+      scale_x_continuous(
+        limits = c(-0.15, 1),
+        breaks = c(0, 0.2, 0.4, 0.6, 0.8, 1.0),
+        labels = function(x) sprintf("%.1f", x),
+        expand = expansion(mult = c(0.02, 0.03))
+      ) +
+      annotate("text", x = 0.80, y = 0.5,
+               label = "\u03ba = 0.80", hjust = -0.08, vjust = 0,
+               size = 2.8, colour = "grey40") +
+      labs(
+        title    = paste0("Best-configuration Cohen's \u03ba per category \u00b7 ",
+                          paper_label),
+        subtitle = paste0("Each point = maximum Cohen's \u03ba for that model across all ",
+                          "shot \u00d7 temperature combinations.\n",
+                          "Dashed line = \u03ba = 0.80."),
+        x        = "Cohen's \u03ba",
+        y        = NULL
+      ) +
+      theme_llm()
+
+    ggsave(
+      filename = file.path(figures_dir, paste0("dotplot_best_config_", paper_folder, ".pdf")),
+      plot = p_dot_agreement, width = 9, height = 6
+    )
+    ggsave(
+      filename = file.path(figures_dir, paste0("dotplot_best_config_", paper_folder, ".png")),
+      plot = p_dot_agreement, width = 9, height = 6, dpi = 300
+    )
+    cat("Saved: dotplot_best_config_", paper_folder, "\n", sep = "")
+  }
+
+  # Macro F1 dot plot
+  best_f1 <- results_df %>%
+    filter(paper == paper_num, tag != "GLOBAL", !is.na(macro_f1)) %>%
+    mutate(model = llm_labels[llm]) %>%
+    group_by(tag, model) %>%
+    summarise(score = max(macro_f1, na.rm = TRUE), .groups = "drop")
+
+  if (nrow(best_f1) > 0) {
+    tag_levels_f1 <- best_f1 %>%
+      group_by(tag) %>%
+      summarise(mean_score = mean(score, na.rm = TRUE), .groups = "drop") %>%
+      arrange(mean_score) %>%
+      pull(tag)
+
+    best_f1 <- best_f1 %>%
+      mutate(tag = factor(tag, levels = tag_levels_f1))
+
+    p_dot_f1_other <- ggplot(best_f1, aes(x = score, y = tag, colour = model)) +
+      geom_vline(xintercept = 0.80, linetype = "dashed",
+                 colour = "grey40", linewidth = 0.4) +
+      geom_point(size = 2.8, alpha = 0.9) +
+      scale_colour_manual(values = model_colors, name = "Model") +
+      scale_x_continuous(
+        limits = c(0, 1),
+        breaks = c(0, 0.2, 0.4, 0.6, 0.8, 1.0),
+        labels = function(x) sprintf("%.1f", x),
+        expand = expansion(mult = c(0.02, 0.03))
+      ) +
+      annotate("text", x = 0.80, y = 0.5,
+               label = "F1 = 0.80", hjust = -0.08, vjust = 0,
+               size = 2.8, colour = "grey40") +
+      labs(
+        title    = paste0("Best-configuration Macro F1 per category \u00b7 ",
+                          paper_label),
+        subtitle = paste0("Each point = maximum Macro F1 for that model across all ",
+                          "shot \u00d7 temperature combinations.\n",
+                          "Dashed line = F1 = 0.80."),
+        x        = "Macro F1",
+        y        = NULL
+      ) +
+      theme_llm()
+
+    ggsave(
+      filename = file.path(figures_dir, paste0("dotplot_f1_best_config_", paper_folder, ".pdf")),
+      plot = p_dot_f1_other, width = 9, height = 6
+    )
+    ggsave(
+      filename = file.path(figures_dir, paste0("dotplot_f1_best_config_", paper_folder, ".png")),
+      plot = p_dot_f1_other, width = 9, height = 6, dpi = 300
+    )
+    cat("Saved: dotplot_f1_best_config_", paper_folder, "\n", sep = "")
+  }
+}

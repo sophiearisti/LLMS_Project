@@ -1,0 +1,262 @@
+================================================================================
+LLM INTERNAL CONSISTENCY — Krippendorff's Alpha (temperatures as raters)
+================================================================================
+
+Each temperature setting is treated as an independent rater.
+Predictions are binarized: > 0.5 → 1, else 0.
+High alpha → LLM is temperature-insensitive (consistent across runs).
+Low alpha  → temperature substantially changes classification decisions.
+
+Thresholds (Krippendorff 2004):
+  >= 0.80 : strong agreement
+  0.67-0.80: tentative conclusions
+  < 0.67  : unreliable
+
+LLM: CLAUDE  |  Paper: managerial_leadership_Jordi_Cooper  |  Strategy: 0shot
+  Temperatures (raters): ['0', '0.1', '0.5', '1']   N_raters=4   N_items=923
+  Mean alpha across labels : 0.8533
+  Median alpha across labels: 0.8891
+--------------------------------------------------------------------------------
+  Label                             Alpha  Interpretation
+--------------------------------------------------------------------------------
+  discuss_fairness                 0.9376  Strong (>=0.80)
+  ask_game                         0.9216  Strong (>=0.80)
+  any_suggestion                   0.9202  Strong (>=0.80)
+  truthful                         0.9167  Strong (>=0.80)
+  receive_report                   0.9155  Strong (>=0.80)
+  agree_proposal                   0.9151  Strong (>=0.80)
+  neither_report                   0.9024  Strong (>=0.80)
+  explanation                      0.8891  Strong (>=0.80)
+  discuss_efficient                0.8708  Strong (>=0.80)
+  falsehood                        0.8447  Strong (>=0.80)
+  contradict                       0.7992  Tentative (0.67-0.80)
+  discuss_rules                    0.7873  Tentative (0.67-0.80)
+  suggest_efficient                0.7665  Tentative (0.67-0.80)
+  discuss_howtoplay                0.7568  Tentative (0.67-0.80)
+  suggest_safe                     0.6562  Unreliable (<0.67)
+
+LLM: CLAUDE  |  Paper: managerial_leadership_Jordi_Cooper  |  Strategy: fewshot
+  Temperatures (raters): ['0', '0.1', '0.5', '1']   N_raters=4   N_items=926
+  Mean alpha across labels : 0.8814
+  Median alpha across labels: 0.8906
+--------------------------------------------------------------------------------
+  Label                             Alpha  Interpretation
+--------------------------------------------------------------------------------
+  ask_game                         0.9615  Strong (>=0.80)
+  neither_report                   0.9600  Strong (>=0.80)
+  any_suggestion                   0.9437  Strong (>=0.80)
+  agree_proposal                   0.9395  Strong (>=0.80)
+  receive_report                   0.9332  Strong (>=0.80)
+  truthful                         0.9325  Strong (>=0.80)
+  falsehood                        0.8916  Strong (>=0.80)
+  discuss_fairness                 0.8906  Strong (>=0.80)
+  suggest_safe                     0.8769  Strong (>=0.80)
+  explanation                      0.8653  Strong (>=0.80)
+  suggest_efficient                0.8464  Strong (>=0.80)
+  discuss_howtoplay                0.8439  Strong (>=0.80)
+  discuss_efficient                0.8018  Strong (>=0.80)
+  discuss_rules                    0.7886  Tentative (0.67-0.80)
+  contradict                       0.7450  Tentative (0.67-0.80)
+
+LLM: CLAUDE  |  Paper: trust_promises_Ederer_Schneider  |  Strategy: 0shot
+  Temperatures (raters): ['0', '0.1', '0.5', '1']   N_raters=4   N_items=159
+  Mean alpha across labels : 0.9939
+  Median alpha across labels: 1.0000
+--------------------------------------------------------------------------------
+  Label                             Alpha  Interpretation
+--------------------------------------------------------------------------------
+  is_promise                       1.0000  Strong (>=0.80)
+  is_ethics                        1.0000  Strong (>=0.80)
+  is_efficiency                    0.9818  Strong (>=0.80)
+
+LLM: CLAUDE  |  Paper: trust_promises_Ederer_Schneider  |  Strategy: fewshot
+  Temperatures (raters): ['0', '0.1', '0.5', '1']   N_raters=4   N_items=159
+  Mean alpha across labels : 0.9792
+  Median alpha across labels: 0.9830
+--------------------------------------------------------------------------------
+  Label                             Alpha  Interpretation
+--------------------------------------------------------------------------------
+  is_promise                       0.9898  Strong (>=0.80)
+  is_efficiency                    0.9830  Strong (>=0.80)
+  is_ethics                        0.9649  Strong (>=0.80)
+
+LLM: CLAUDE  |  Paper: under_reporting_Ling_Kale_Imas  |  Strategy: 0shot
+  Temperatures (raters): ['0', '0.1', '0.5', '1']   N_raters=4   N_items=96
+  Mean alpha across labels : 0.9502
+  Median alpha across labels: 0.9606
+--------------------------------------------------------------------------------
+  Label                             Alpha  Interpretation
+--------------------------------------------------------------------------------
+  academic_integrity               1.0000  Strong (>=0.80)
+  uninformative                    0.9744  Strong (>=0.80)
+  truthful                         0.9686  Strong (>=0.80)
+  info_asymmetry                   0.9679  Strong (>=0.80)
+  network_effect                   0.9628  Strong (>=0.80)
+  SDB                              0.9583  Strong (>=0.80)
+  overest_others                   0.9504  Strong (>=0.80)
+  self_esteem                      0.9358  Strong (>=0.80)
+  privacy_concerns                 0.9014  Strong (>=0.80)
+  underest_own                     0.8820  Strong (>=0.80)
+  AI_discussion_priming               NaN  Insufficient raters
+  self_report_bias                    NaN  No variance / insufficient data
+
+LLM: CLAUDE  |  Paper: under_reporting_Ling_Kale_Imas  |  Strategy: fewshot
+  Temperatures (raters): ['0', '0.1', '0.5', '1']   N_raters=4   N_items=26
+  Mean alpha across labels : 0.9725
+  Median alpha across labels: 1.0000
+--------------------------------------------------------------------------------
+  Label                             Alpha  Interpretation
+--------------------------------------------------------------------------------
+  uninformative                    1.0000  Strong (>=0.80)
+  SDB                              1.0000  Strong (>=0.80)
+  overest_others                   1.0000  Strong (>=0.80)
+  academic_integrity               1.0000  Strong (>=0.80)
+  info_asymmetry                   1.0000  Strong (>=0.80)
+  AI_discussion_priming            1.0000  Strong (>=0.80)
+  self_esteem                      1.0000  Strong (>=0.80)
+  truthful                         1.0000  Strong (>=0.80)
+  network_effect                   1.0000  Strong (>=0.80)
+  underest_own                     0.8844  Strong (>=0.80)
+  self_report_bias                 0.8134  Strong (>=0.80)
+  privacy_concerns                    NaN  No variance
+
+LLM: GEMINI  |  Paper: trust_promises_Ederer_Schneider  |  Strategy: 0shot
+  Temperatures (raters): ['0', '0.1', '0.5', '1', '1.2']   N_raters=5   N_items=159
+  Mean alpha across labels : 0.9024
+  Median alpha across labels: 0.8999
+--------------------------------------------------------------------------------
+  Label                             Alpha  Interpretation
+--------------------------------------------------------------------------------
+  is_efficiency                    0.9624  Strong (>=0.80)
+  is_promise                       0.8999  Strong (>=0.80)
+  is_ethics                        0.8450  Strong (>=0.80)
+
+LLM: GEMINI  |  Paper: trust_promises_Ederer_Schneider  |  Strategy: fewshot
+  Temperatures (raters): ['0', '0.1', '0.5', '1', '1.2']   N_raters=5   N_items=159
+  Mean alpha across labels : 0.9175
+  Median alpha across labels: 0.9022
+--------------------------------------------------------------------------------
+  Label                             Alpha  Interpretation
+--------------------------------------------------------------------------------
+  is_promise                       0.9801  Strong (>=0.80)
+  is_efficiency                    0.9022  Strong (>=0.80)
+  is_ethics                        0.8703  Strong (>=0.80)
+
+LLM: GEMINI  |  Paper: under_reporting_Ling_Kale_Imas  |  Strategy: 0shot
+  Temperatures (raters): ['0', '0.1', '0.5', '1', '1.2']   N_raters=5   N_items=95
+  Mean alpha across labels : 0.8250
+  Median alpha across labels: 0.8588
+--------------------------------------------------------------------------------
+  Label                             Alpha  Interpretation
+--------------------------------------------------------------------------------
+  privacy_concerns                 1.0000  Strong (>=0.80)
+  SDB                              0.9663  Strong (>=0.80)
+  academic_integrity               0.9118  Strong (>=0.80)
+  overest_others                   0.8991  Strong (>=0.80)
+  self_esteem                      0.8889  Strong (>=0.80)
+  uninformative                    0.8588  Strong (>=0.80)
+  self_report_bias                 0.8457  Strong (>=0.80)
+  info_asymmetry                   0.8321  Strong (>=0.80)
+  truthful                         0.7245  Tentative (0.67-0.80)
+  underest_own                     0.6212  Unreliable (<0.67)
+  network_effect                   0.5265  Unreliable (<0.67)
+  AI_discussion_priming               NaN  Insufficient raters
+
+LLM: GEMINI  |  Paper: under_reporting_Ling_Kale_Imas  |  Strategy: fewshot
+  Temperatures (raters): ['0', '0.1', '0.5', '1', '1.2']   N_raters=5   N_items=95
+  Mean alpha across labels : 0.8269
+  Median alpha across labels: 0.8546
+--------------------------------------------------------------------------------
+  Label                             Alpha  Interpretation
+--------------------------------------------------------------------------------
+  privacy_concerns                 1.0000  Strong (>=0.80)
+  SDB                              0.9537  Strong (>=0.80)
+  uninformative                    0.9203  Strong (>=0.80)
+  info_asymmetry                   0.9040  Strong (>=0.80)
+  overest_others                   0.8840  Strong (>=0.80)
+  AI_discussion_priming            0.8614  Strong (>=0.80)
+  academic_integrity               0.8477  Strong (>=0.80)
+  truthful                         0.8335  Strong (>=0.80)
+  underest_own                     0.8248  Strong (>=0.80)
+  self_esteem                      0.8029  Strong (>=0.80)
+  network_effect                   0.6044  Unreliable (<0.67)
+  self_report_bias                 0.4858  Unreliable (<0.67)
+
+LLM: GPT  |  Paper: managerial_leadership_Jordi_Cooper  |  Strategy: 0shot
+  Temperatures (raters): ['0', '0.1', '0.5', '1', '1.2']   N_raters=5   N_items=892
+  Mean alpha across labels : 0.6499
+  Median alpha across labels: 0.7350
+--------------------------------------------------------------------------------
+  Label                             Alpha  Interpretation
+--------------------------------------------------------------------------------
+  any_suggestion                   0.8490  Strong (>=0.80)
+  agree_proposal                   0.8126  Strong (>=0.80)
+  discuss_fairness                 0.7828  Tentative (0.67-0.80)
+  discuss_efficient                0.7449  Tentative (0.67-0.80)
+  suggest_efficient                0.7370  Tentative (0.67-0.80)
+  receive_report                   0.7358  Tentative (0.67-0.80)
+  neither_report                   0.7356  Tentative (0.67-0.80)
+  ask_game                         0.7350  Tentative (0.67-0.80)
+  truthful                         0.7305  Tentative (0.67-0.80)
+  explanation                      0.7197  Tentative (0.67-0.80)
+  falsehood                        0.5753  Unreliable (<0.67)
+  discuss_howtoplay                0.5571  Unreliable (<0.67)
+  discuss_rules                    0.3878  Unreliable (<0.67)
+  suggest_safe                     0.3776  Unreliable (<0.67)
+  contradict                       0.2673  Unreliable (<0.67)
+
+LLM: GPT  |  Paper: managerial_leadership_Jordi_Cooper  |  Strategy: fewshot
+  Temperatures (raters): ['0', '0.1', '0.5', '1', '1.2']   N_raters=5   N_items=927
+  Mean alpha across labels : 0.6604
+  Median alpha across labels: 0.7068
+--------------------------------------------------------------------------------
+  Label                             Alpha  Interpretation
+--------------------------------------------------------------------------------
+  any_suggestion                   0.8663  Strong (>=0.80)
+  agree_proposal                   0.8243  Strong (>=0.80)
+  ask_game                         0.7949  Tentative (0.67-0.80)
+  neither_report                   0.7543  Tentative (0.67-0.80)
+  receive_report                   0.7530  Tentative (0.67-0.80)
+  truthful                         0.7455  Tentative (0.67-0.80)
+  suggest_efficient                0.7188  Tentative (0.67-0.80)
+  explanation                      0.7068  Tentative (0.67-0.80)
+  discuss_efficient                0.6934  Tentative (0.67-0.80)
+  contradict                       0.6097  Unreliable (<0.67)
+  discuss_fairness                 0.6020  Unreliable (<0.67)
+  falsehood                        0.5189  Unreliable (<0.67)
+  discuss_rules                    0.4985  Unreliable (<0.67)
+  discuss_howtoplay                0.4182  Unreliable (<0.67)
+  suggest_safe                     0.4011  Unreliable (<0.67)
+
+LLM: GPT  |  Paper: under_reporting_Ling_Kale_Imas  |  Strategy: 0shot
+  Temperatures (raters): ['0', '0.1', '0.5', '1', '1.2']   N_raters=5   N_items=96
+  Mean alpha across labels : 0.8851
+  Median alpha across labels: 0.9043
+--------------------------------------------------------------------------------
+  Label                             Alpha  Interpretation
+--------------------------------------------------------------------------------
+  privacy_concerns                 1.0000  Strong (>=0.80)
+  SDB                              0.9792  Strong (>=0.80)
+  academic_integrity               0.9532  Strong (>=0.80)
+  network_effect                   0.9351  Strong (>=0.80)
+  uninformative                    0.9274  Strong (>=0.80)
+  AI_discussion_priming            0.9158  Strong (>=0.80)
+  info_asymmetry                   0.8929  Strong (>=0.80)
+  self_esteem                      0.8926  Strong (>=0.80)
+  overest_others                   0.8081  Strong (>=0.80)
+  underest_own                     0.7979  Tentative (0.67-0.80)
+  truthful                         0.7679  Tentative (0.67-0.80)
+  self_report_bias                 0.7517  Tentative (0.67-0.80)
+
+================================================================================
+CROSS-LLM SUMMARY — mean alpha by (LLM, strategy) per paper
+================================================================================
+strategy                                    0shot  fewshot
+paper                              llm                    
+managerial_leadership_Jordi_Cooper claude  0.8533   0.8814
+                                   gpt     0.6499   0.6604
+trust_promises_Ederer_Schneider    claude  0.9939   0.9792
+                                   gemini  0.9024   0.9175
+under_reporting_Ling_Kale_Imas     claude  0.9502   0.9725
+                                   gemini  0.8250   0.8269
+                                   gpt     0.8852      NaN

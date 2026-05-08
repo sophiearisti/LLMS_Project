@@ -1,0 +1,35 @@
+\begin{table}[htbp]
+    \centering
+    \caption{Category prevalence: human vs.\ LLM coding -- \citet{ling2025underreporting}}
+    \label{tab:ling_prevalence}
+    \begin{adjustbox}{max width=0.88\linewidth}
+    \small
+    \begin{tabular}{lcccc}
+        \toprule
+        & Human & Claude & Gemini & GPT \\
+        \midrule
+        \multicolumn{5}{l}{\textit{Panel A: High-prevalence categories (human $\geq 20\%$)}} \\
+        Social desirability bias  & 60.6 & 57.5 & 63.2 & 62.8 \\
+        Overestimate others       & 29.6 & 22.5$^{a}$ & 23.7$^{a}$ & 24.4$^{a}$ \\
+        Information asymmetry     & 26.8 & 31.2 & 27.6 & 25.6 \\
+        Academic integrity        & 21.1 & 16.2 & 21.1 & 19.2 \\
+        \midrule
+        \multicolumn{5}{l}{\textit{Panel B: Moderate-prevalence categories (human $5$--$20\%$)}} \\
+        AI discussion priming     & 11.3 &  6.2$^{a}$ &  7.9$^{a}$ &  5.1$^{a}$ \\
+        Underestimate own use     &  7.0 & 12.5$^{b}$ & 21.1$^{b}$ & 21.8$^{b}$ \\
+        \midrule
+        \multicolumn{5}{l}{\textit{Panel C: Rare categories (human $< 5\%$)}} \\
+        Privacy concerns          &  4.2 &  3.8 &  1.3 &  1.3 \\
+        Self-esteem               &  4.2 & 25.0$^{b}$ & 14.5$^{b}$ & 24.4$^{b}$ \\
+        Truthful response         &  2.8 & 11.2$^{b}$ &  7.9$^{b}$ &  3.8 \\
+        Self-report bias          &  1.4 &  1.2 & 19.7$^{b}$ & 14.1$^{b}$ \\
+        Network effect            &  1.4 & 10.0$^{b}$ &  1.3 &  9.0$^{b}$ \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \vspace{0.2cm}
+    \begin{minipage}{0.88\linewidth}
+        \footnotesize
+        \textit{Note:} Prevalence reported as percentage of valid responses (human: $n=71$; LLM: $n=68$--$80$ depending on model's uninformative classification). LLM predictions at zero-shot, temperature~0. Rows ordered by human prevalence within each panel. $^{a}$~LLM under-detects relative to human benchmark (difference ${>}5$ pp). $^{b}$~LLM over-detects relative to human benchmark (difference ${>}5$ pp).
+    \end{minipage}
+\end{table}

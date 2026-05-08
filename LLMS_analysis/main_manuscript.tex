@@ -21,10 +21,14 @@
 \usepackage{booktabs}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[authoryear]{natbib}
-\usepackage{multirow}
 \usepackage{adjustbox}
 \usepackage{microtype}
-\usepackage{threeparttablex} % for "ThreePartTable" environment
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{threeparttable, multirow}
+%\usepackage{hyperref}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
 
  \aboverulesep=0ex %make vertical lines continuous when needed.
  \belowrulesep=0ex %make vertical lines continuous when needed. 
@@ -164,10 +168,10 @@ Our findings highlight both the promise and the limits of LLM-based coding. In s
 
 The remainder of the paper proceeds as follows. Section \ref{s-related} situates the paper within the literature on experimental communication, human coding, and LLM-assisted text analysis. Section \ref{s-applications} introduces the three empirical applications and explains how they differ with respect to text structure, coding complexity, and substantive purpose. Section \ref{s-methods} presents the LLM coding framework, including model selection, prompt design, and implementation. Section \ref{s-evaluation} defines the validation framework and the metrics used to compare LLM and human coding. The results section then reports agreement across applications, examines whether LLM-based labels preserve the substantive conclusions of the original studies, and identifies the coding tasks for which LLMs perform relatively well or poorly. The final section discusses scope conditions, practical guidance for researchers, and the broader implications of LLM-based coding for experimental economics.
 
+
 \section{Related literature}\label{s-related}
 
 Communication and open-ended responses have long been central to experimental economics, enabling researchers to test predictions from influential theories of human behavior and to develop a richer picture of the variables individuals consider relevant when making choices or forming beliefs \citep{haaland2025understanding}. Open-ended measurement captures key features of real-world communication and allows individuals to express their considerations, feelings, and experiences in their own words, without being constrained by predefined response options \citep{haaland2025understanding}. An early and ongoing experimental literature provides systematic evidence on the importance of natural language communication for economic outcomes, demonstrating that allowing communication can foster cooperation or collusion in a variety of contexts \citep{Houser2007, Andreoni2011, brandts_cooper_2025, Baranski2023, Zultan2012}. Researchers use such qualitative data to measure motives and reasoning underlying decisions, as well as mental models, narratives, and attention allocation—decision-relevant factors that are often unobserved in traditional datasets \citep{haaland2025understanding, ChopraHaaland2023}. Chat logs from experiments can yield insights into participant behavior, uncertainty, and cognitive processes, providing an under-the-hood perspective that can generate novel hypotheses \citep{ling2025underreporting}. A full understanding of human behavior requires not only quantitative data, typically collected from observed choices, but also qualitative data on how people perceive and reason about the world \citep{ChopraHaaland2023}.
-
 
 Despite their richness, experimental text data present substantial challenges for systematic coding at scale, limiting their use even when such data are collected. Open-ended responses provide detailed and nuanced information and often uncover unexpected themes, but their unstructured nature also creates greater scope for both classical and nonclassical measurement error. In particular, researchers may worry that analyses based on such data will be viewed as questionable because human coding may be influenced by biases that align with researcher hypotheses. Additionally, some respondents may be unwilling to exert effort, and even when they do, their responses may remain ambiguous and difficult to interpret \citep{haaland2025understanding}. While open-ended social simulations can be highly informative, selecting and analyzing their outcomes can be difficult, as researchers may need to sift through thousands of lines of unstructured text to identify meaningful patterns \citep{charness2023generation}. Previous research documents a progression from manual coding \citep{Andreoni2011, Burchardi2014, nielsen2019teams, ederer_schneider_2022, brandts_cooper_2025} to semi-automated and fully automated approaches using, for instance, machine learning \citep{penczynski2019using, hausladen2024predicting}, and, more recently, to the use of LLMs as classifiers \citep{Korinek2023, ChopraHaaland2023, Celebi2024, Bermejo2025, haaland2025understanding}. In this context, LLMs offer the potential to standardize text analysis at scale, reduce concerns about subjectivity and coder reliability, and provide a more cost-effective alternative that may reduce disparities between researchers with substantial funding and those with fewer resources, including junior scholars and researchers in developing countries.
 
@@ -176,9 +180,10 @@ However, developing a coding scheme is costly and requires researchers to make s
 Recent evidence suggests that large language models can code open-ended data reliably and reproducibly, outperforming crowd workers and making them a low-cost and easily scalable alternative to human coding \citep{Bermejo2025, haaland2025understanding, Celebi2024}. LLMs offer several attractive performance features: they generate immediate outputs, provide detailed justifications on demand, and produce consistent classifications that are not subject to fatigue \citep{Celebi2024}. In experimental economics, \citet{Celebi2024} conducted a similar exercise to ours and found that GPT-4 outperforms GPT-3.5 and achieves high levels of agreement with human coders, reaching nearly 90\% accuracy in applications involving promises and up to 73\% in more complex tasks such as identifying strategic thinking, which requires understanding and applying specific game-theoretic concepts and interpreting implicit linguistic patterns. Human-validated AI coding can serve as a cost-effective substitute for labeling interview transcripts, with GPT-4o achieving global interrater agreement of 86\% between AI and human coders, matching human-human agreement \citep{ChopraHaaland2023}. LLMs consistently outperform outsourced human coders, particularly in tasks requiring deep contextual understanding, and offer a cost-effective alternative for sophisticated text analysis through simple API-based workflows and modest operational costs \citep{Bermejo2025}. Traditional methods such as BERT-based classification \citep{seiler2025measuring} require significant training data, and their performance deteriorates for more nuanced concepts, whereas LLMs can reduce the need for extensive labeled training data and train-test separation, making them advantageous in low-resource environments \citep{Bermejo2025}. However, although frontier LLMs can provide a low-cost and easily scalable alternative to human coding, their performance can depend on the quality of the prompting, the type of LLM used, and the complexity of the setting, and it remains essential to validate AI-generated coding against human benchmarks to guard against hallucinations and systematic model bias.
 
 
+
 \section{The LLM coding framework}\label{s-methods}
 
-To systematically evaluate the performance of LLMs in coding open-ended responses, we developed a modular framework designed for reproducibility and scalability. This framework can be visualized in Figure \ref{fig:flow}, which describes the seven steps ranging from the submission of the input file to the download of the coding results.
+To systematically evaluate the performance of LLMs in coding open-ended responses, we developed a modular framework designed for reproducibility and scalability. This framework can be visualized in Figure \ref{fig:flow}, which describes the six steps ranging from the submission of the input file to the download of the coding results.
 
 \begin{figure}[H]
     \centering
@@ -186,40 +191,32 @@ To systematically evaluate the performance of LLMs in coding open-ended response
     \includegraphics[width=0.95\linewidth]{1_Figures/flow_diagram.png}     
 \end{figure}
 
-The first step is to upload a CSV input file. This file must contain, at a minimum, the individual textual inputs to be analyzed, with the relevant input column explicitly specified. After the file is uploaded, one can choose between \textit{assigning categories} to each open-ended response or \textit{creating categories} based on the whole set of responses.
+The first step is to upload a CSV input file. This file must contain, at a minimum, the individual textual inputs to be analyzed, with the relevant input column explicitly specified. After the file is uploaded, one can choose between \textit{assigning categories} to each open-ended response or \textit{creating categories} based on the whole set of responses. If the last option is chosen (\textit{Create Categories}), the result will be a CSV file with the categories created by the LLM and a definition for each label.  On the other hand, A\textit{ssign Categories} will generate a CSV file with all the responses classified, and additional columns specified by the user. 
 
-If the last option is chosen (\textit{Create Categories}), the result will be a CSV file with the categories created by the LLM and a definition for each category. 
-On the other hand, Assign Categories will generate a CSV file with all the responses classified, and additional columns specified by the user.
+This section only describes how to assign categories using the developed framework, as the present paper focuses on evaluating LLM's performance in classifying responses from the three empirical applications conducted herein. Nonetheless, in other contexts, the \textit{Create Categories} option may be useful for first defining the labels that will later be employed for classification. Additionally, it follows a procedure similar to that of the \textit{Assign Categories} option, so the following explanation will aid in understanding this functionality later.
 
-For both options, the second stage of the framework involves selecting a specific LLM and its corresponding version. For this research, we selected models from the Gemini, GPT, and Claude families, given their prominence and widespread use in the current academic landscape. By incorporating multiple models, we aim to provide a robust comparison of performance across diverse textual inputs and experimental contexts.
+For \textit{Assigning Categories}, the second stage of the framework involves selecting a specific LLM and its corresponding version. For this research, we selected models from the Gemini, GPT, and Claude families, given their prominence and widespread use in the current academic landscape. By incorporating multiple models, we aim to provide a robust comparison of performance across diverse textual inputs and experimental contexts.
 
-Next, we proceed to the Prompt Configuration module. This third stage constructs the prompt for the model using a template that includes five sections. Although both options include the same sections, some serve different purposes.  
+Next, we proceed to the Prompt Configuration module. This third step constructs the prompt for the model using a template that includes five sections. The first section is the \textit{Role Definition}. This one establishes the LLM’s identity as an expert research assistant specializing in the qualitative analysis of behavioral economics experiments. Following the \textit{Role Definition}, the \textit{Context Setting} provides an overview of the experimental design. For this, we described the game structure, the treatment conditions, the communication type, the control mechanism, and other relevant details needed for the model to understand the underlying experimental logic, without disclosing the results. Next, \textit{Classification Instructions} explicitly define the categories used for the coding task, along with the language and structure of the participants’ responses. To ensure the output is structured for automated analysis, the \textit{Format Specification} defines the required response format for each classified response. In this case, we required a JSON structure. The fifth and final section is \textit{Constraints}. Here, we established how each category had to be classified; for example, whether the classification is binary or includes other options. We also described any conditional dependencies among categories. One example is: if 'A' is false, then 'B,' 'C,' and 'D' are always false.
 
-For the \textit{Create categories} option, the first section is the \textit{Role Definition}. This section establishes the LLM’s identity as an expert research assistant specializing in the qualitative analysis of behavioral economics experiments. Following the \textit{Role Definition}, the \textit{Context Setting} provides an overview of the experimental design. For this, we describe the game structure, the treatment conditions, the communication type, the control mechanism, and other relevant details needed for the model to understand the underlying experimental logic without disclosing the experimental results. Next, \textbackslash{}textit\{Classification Instructions\} in general terms ask the LLM to create N categories based on the full set of chat messages provided. To ensure the output is structured for automated analysis, the \textbackslash{}textit\{Format Specification\} defines the expected response structure for generating and interpreting the new categories. In this case, we require a JSON format. The final section is \textit{Constraints}. Here, we establish which conditions may apply when creating the categories; for example, this section may state that a response may belong to more than one category or that XXXXX.
+The \textit{Classification Strategy} forms part of the prompt structure we developed. Depending on the type of classification, additional specifications may be added. In this case, we used four types: zero-shot, few-shot, zero-shot Chain-of-Thought (CoT), and few-shot CoT. For zero-shot, for instance, the basic prompt structure described above is sufficient, whereas few-shot requires providing the LLM with one or more examples of already classified responses \citep{brown2020language}. Zero-shot CoT and few-shot CoT work similarly to the previous two approaches but additionally ask the model to generate intermediate reasoning steps or explain the logic used for the final classification \citep{wei2022chain}.
 
-In the case of \textit{Assign Categories}, the Role and Context sections have the same function. For the \textit{Classification Instructions}, the aim changes, as now it explicitly defines the categories used for the classification task, along with the language and structure of the participants’ responses. Also, the format specification slightly changes. Now, instead of receiving the new categories, this defines the required response format for each classified response (still expected in JSON format). Finally, Constraints now establishes how each category had to be classified; for example, whether the classification is binary or includes other options. We also described any conditional dependencies among categories. One example is: if 'A' is false, then 'B,' 'C,' and 'D' are always false.  In Appendix X, we added all the prompts used for the empirical applications, and included an example for the create categories option. 
-
-The Classification Strategy Branch forms part of the prompt structure we developed. This only applies to the Categories assignment option. Depending on the type of classification, additional specifications may be added. In this case, we used four types: zero-shot, few-shot, zero-shot Chain-of-Thought (CoT), and few-shot CoT. For zero-shot, for instance, the basic prompt structure described above is sufficient, whereas few-shot requires providing the LLM with one or more examples of already classified responses \citep{brown2020language}. Zero-shot CoT and few-shot CoT work similarly to the previous two approaches but additionally ask the model to generate intermediate reasoning steps or explain the logic used for the final classification \citep{wei2022chain}.
-
-These prompt structures were based on the template proposed by \cite{penczynski2019using}. They combine role specification, contextual information, classification instructions, examples, output constraints, and other modular components into a unified prompting framework. The purpose of generating a fixed structure is to reduce prompt-design confounds, ensure consistency across tasks, and better isolate differences in performance attributable to task complexity rather than prompt variation. This overarching structure supports systematic comparison of model performance across diverse textual inputs and experimental contexts.
+This prompt structure was based on the template proposed by \cite{penczynski2019using}. They combine role specification, contextual information, classification instructions, examples, output constraints, and other modular components into a unified prompting framework. The purpose of generating a fixed structure is to reduce prompt-design confounds, ensure consistency across tasks, and better isolate differences in performance attributable to task complexity rather than prompt variation. It is also important to take into account that the prompt structure is not the only aspect that may influence how optimal  the results are, also the word choice may play a role in the LLM's performance \cite{penczynski2019using}.
 
 Once the prompt template is specified, the next step is to select the temperature settings for the LLM. Temperature is an important parameter to examine because it controls the randomness of the model’s output: higher temperatures increase variability in responses, whereas lower temperatures produce more deterministic and reproducible classifications. Although the available temperature range may vary across models, values closer to zero generally yield more stable outputs. Testing across different temperature settings allows us to evaluate the extent to which this parameter influences classification results and to assess how closely model-generated classifications at each temperature align with the original human-coded annotations.
 
-The Temperature step was the last required for creating the categories, but if the purpose is to assign them, the next module is the \textit{Processing Modes}. In this module, candidate responses are processed to obtain their corresponding classifications. All Gemini, ChatGPT, and Claude models can assign classifications on a per-response (or per-observation or line-by-line) basis, while ChatGPT and Claude also allow processing in batch mode, in which multiple observations are submitted and classified within a single asynchronous job. This mode is particularly useful for large-scale annotation tasks, as it can reduce computational costs, API overhead, and processing time \citep{openaibatch2024}. In the case of per-observation processing, the classification results can be downloaded as a CSV file. Additionally, if the classification process is interrupted, whether due to connection issues or because the researcher chooses to stop execution, the framework saves progress in a helper file, allowing the process to resume from the last completed observation.
+The final stage is the \textit{Processing Modes}. In this module, candidate responses are processed to obtain their corresponding classifications. All Gemini, ChatGPT, and Claude models can assign classifications on a per-response (or per-observation or line-by-line) basis, while ChatGPT and Claude also allow processing in batch mode, in which multiple observations are submitted and classified within a single asynchronous job. This mode is particularly useful for large-scale annotation tasks, as it can reduce computational costs, API overhead, and processing time \citep{openaibatch2024}. In the case of per-observation processing, the classification results can be downloaded as a CSV file. Additionally, if the classification process is interrupted, whether due to connection issues or because the researcher chooses to stop execution, the framework saves progress in a helper file, allowing the process to resume from the last completed observation.
 
-This framework was developed with the aim of facilitating the creation and classification of open ended responses for any researcher that needs to do this process for a XXXXX AT ANY TIME for free. This tool was coded in a way that the procedure is the same and the results can be obtained in a user friendly maner. This repository contains the code that can be imported, and the read me file  which describes how it can be run and used. Additionall, Appendix X shows some screenshots of how the tool works.
+This framework was developed with the aim of facilitating the creation of categories and the classification of open-ended responses for any researcher who needs to carry out this process for a given dataset at any time, free of charge. The framework was coded in a webpage format so that the procedure remains consistent and results can be obtained in a user-friendly manner. The code is available at this \href{https://github.com/sophiearisti/LLMS_Project.git}{GitHub repository}, it also contains a README file that explains how to run and use the tool. Additionally, Appendix X presents screenshots preliminarily showing how it looks.
 
-
-ESCRIBIR UN PARRAFO DICIENDO QUE ESTA FORMA ERA LA MEJOR FORMA DE HACERLO PARA HACERLO MAS FACIL Y QUE TAMBIEN ACA SE PUEDE VER EL REPOSITORIO
-APENDICE CON SCREENSHOTS
 
 \section{Validation framework and metrics}\label{s-evaluation}
 
 We computed a set of performance and agreement metrics, including accuracy, precision, recall, F1-score, Cohen’s kappa, and Krippendorff’s alpha, to assess both how closely model-generated classifications align with the original human-coded labels and the reliability of the models’ classifications. 
 
-The first four metrics summarize predictive performance relative to the benchmark human labels. Accuracy measures the overall share of correct classifications, $\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}$, but can be misleading when categories are unbalanced. Precision, $\text{Precision} = \frac{TP}{TP + FP}$, measures how often predicted positives are correct, while recall, $\text{Recall} = \frac{TP}{TP + FN}$, measures how often true positives are recovered. We therefore use the F1-score, $\text{F1} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}$, as the main summary of classification quality because it balances false positives and false negatives. To conserve space, the main text reports these confusion-matrix metrics compactly and emphasizes F1 as the headline performance measure, while detailed class-specific precision and recall results are presented in the appendix.
+The first four metrics are used to evaluate how well the LLMs classify responses relative to the true classifications. The most straightforward metric is accuracy, which indicates the proportion of correct categorization regardless of the type of response (i.e., whether it truly belongs to the category, TP, or not, TN) $\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN} $. This metric is most useful when there is a balanced number of true and false cases, as it may otherwise obscure poor performance in minority classes. For example, if 90\% of the responses belong to a given category and the LLM classifies 100\% of them as belonging to that group, the accuracy will be high; however, this does not reveal that the model fails to correctly identify responses that do not belong to the category.
 
-For comparability across the three empirical applications, we report these metrics in a common format. In the main text, each paper is summarized with the same compact table showing, for each model family, the agreement metric relevant to that application (Cohen’s kappa or Krippendorff’s alpha), accuracy, macro F1, the best prompting configuration, and a simple robustness statistic across temperatures. The appendix then reports the full metric profile in the same visual format for every paper, using heatmaps over model, prompting strategy, and temperature so that paper-specific results remain directly comparable.
+On the other hand, precision and recall can be more informative for evaluating the model's performance. Precision is the proportion of all positive classifications made by the model that are in fact correct within a given category: $\text{Precision} = \frac{TP}{TP + FP}$. This metric is particularly useful when it is important to avoid incorrectly assigning responses to a group. However, precision does not indicate whether there are responses that truly belong to the category but were not classified as such. For example, if two responses are correctly assigned to a label while 98 other relevant responses are missed, precision will still be 100\%. This limitation can be addressed by considering recall, which measures the proportion of actual positive cases that are correctly identified by the LLM: $\text{Recall} = \frac{TP}{TP + FN}$. Finally, when both recall and precision need to be considered, the F1-score is the most appropriate metric, as it represents the harmonic mean of the two: $\text{F1-score} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}$. An F1-score closer to one indicates that both recall and precision are high.
 
 Besides these metrics, Cohen’s kappa and Krippendorff’s alpha are commonly used in the literature on the classification of open-ended responses in behavioral experiments. Both are measures of inter-rater reliability, meaning they assess the extent of agreement between coders beyond what would be expected by chance. Cohen’s kappa measures agreement between two raters, with values ranging from 1 (perfect agreement) to 0 (agreement equivalent to chance), and negative values indicating systematic disagreement between coders. In contrast, Krippendorff’s alpha is suitable when there are more than two coders, and its values are interpreted similarly.
 
@@ -227,148 +224,93 @@ In this study, the selected LLM is treated as one coder and the ground-truth cla
 
 
 
-
 \section{Three empirical applications}\label{s-applications}
+\subsection{Application 1: Free-form chat in managerial coordination game \citep{brandts_cooper_2025}}
 
-\subsubsection{Application 1: validation metrics}
+In \citet{brandts_cooper_2025}, the authors study how effective different types of communication and managerial control are in facilitating coordination within organizations. They consider a setting characterized by information asymmetries and preference conflicts between managers and agents. To analyze this environment, they employ a game-theoretic framework they term the Manager-Agent (MA) game. The MA game is a three-player coordination game involving one manager (M) and two agents (A1 and A2). In the game, all participants, regardless of role, benefit from coordinating on a common action, but they have differing preferences over which action should be chosen. The state of the world, which determines the efficient outcome, varies; agents observe this state, whereas the manager does not. Given preference heterogeneity and the manager’s informational disadvantage, agents have an incentive to misreport the state of the world to influence the manager’s decision toward their preferred outcome. Central to the experimental design, the authors vary two factors to identify their causal effects: (1) whether agents’ actions are determined by managerial control (the manager imposes decisions) or by delegation (agents choose their own actions); and (2) the type of communication available, including no communication, structured communication (i.e., pre-specified message spaces), or free-form chat.
 
-To assess how consistently each model classifies responses across temperature settings, we treat each temperature run as an independent rater and compute Krippendorff's alpha across the resulting label vectors. This internal consistency analysis abstracts from agreement with the human benchmark and measures whether a model's own coding decisions are stable under variation in temperature. High alpha values indicate that the model makes consistent decisions regardless of temperature; low values suggest that the chosen temperature meaningfully affects classification outcomes for that category. Table~\ref{tab:temp_irr_managerial} reports label-level alpha values for Claude (temperatures 0, 0.1, 0.5, 1) and GPT (temperatures 0, 0.1, 0.5, 1, 1.2) under zero-shot and few-shot prompting.
+The experimental design consists of seven treatments corresponding to combinations of these two dimensions. Specifically, the treatments are: No Communication with Delegation (NC-D), which serves as the baseline; Structured Communication between Agents with Delegation (SC/S-D); Structured Communication with Advice and Delegation (SC/A-D); Structured Communication with Managerial Control (SC-MC); Chat between Agents with Delegation (CH/S-D); Chat with Advice and Delegation (CH/A-D); and Chat with Managerial Control (CH-MC). An additional treatment, Extended Communication and Managerial Control (EC-MC), was later introduced to isolate the marginal effect of free-form communication.
 
-Claude achieves strong internal consistency for most categories, with mean $\alpha = 0.853$ under zero-shot and $\alpha = 0.881$ under few-shot. Under zero-shot, only \textit{safe suggestion} falls below the 0.67 reliability threshold, and four categories are in the tentative range; few-shot prompting reduces this to two (\textit{discuss rules} and \textit{contradiction}). GPT exhibits substantially lower internal consistency (mean $\alpha = 0.650$ zero-shot; $0.660$ few-shot), with four categories falling below 0.67 under zero-shot---\textit{contradiction} reaching 0.267 and \textit{safe suggestion}, \textit{discuss rules}, and \textit{discuss how to play} also unreliable. Few-shot prompting does not consistently improve GPT's stability: while \textit{contradiction} rises to 0.610, \textit{discuss fairness} (0.602) and \textit{discuss how to play} (0.418) deteriorate. These results indicate that Claude's classifications are largely insensitive to temperature, while GPT's decisions for categories requiring pragmatic inference about conversational context vary considerably across temperature settings.
+The authors find that managerial control combined with free-form chat (CH-MC) significantly outperforms all other organizational structures, achieving efficiency gains of 44.3\%, corresponding to roughly half of the theoretically feasible improvement, and is the only treatment that significantly exceeds a safe-outcome benchmark. This result is driven by agents’ near-complete truth-telling about private information in free-form communication, in contrast to theoretical predictions and to behavior observed under structured communication. While managerial control consistently yields higher total surplus relative to delegation, structured communication treatments (SC-MC, SC/S-D, SC/A-D) do not improve outcomes relative to the no-communication baseline due either to managerial errors in processing information or to coordination failures. A follow-up treatment, Extended Communication and Managerial Control (EC-MC), incorporating features of free-form chat into structured communication, does not replicate the substantial reduction in misreporting, confirming that free-form communication per se is critical for inducing truthful reporting.
 
-\begin{table}
+In this paper, we focus on treatments involving free-form chat. In the original paper, \citet{brandts_cooper_2025} develop a systematic coding scheme to analyze the content of free-form chat messages in the Manager-Agent (MA) game. They employ an iterative review of a random sample of conversations to identify relevant patterns and categories. Two research assistants independently code all chat conversations using a binary coding scheme in which each message line is assigned a value of 1 if it contains content relevant to a given category and 0 otherwise, with no restriction on the number of categories assigned to each message. The final dataset contains 133 conversations with 15 labels coded at conversation level. For categories exhibiting low inter-rater agreement (Cohen's kappa < 0.5), a third, extensively trained coder recoded those categories to enhance reliability. Coders are explicitly instructed to code content objectively, without considering potential effects, and remain blind to the authors' hypotheses. The coding scheme encompasses multiple categories, including suggestions (safe or efficient outcomes), agreement, discussion topics (coordination, fairness, efficiency, experimental rules, and gameplay), information revelation (truthful disclosure, deception, and contradictions), and the frequency of managerial communication. 
+
+\subsubsection{\citet{brandts_cooper_2025}: validation metrics}
+
+Figure \ref{fig:alpha_Jordi} presents the inter-rater reliability, measured by Krippendorff's $\alpha$, for each category. Some categories exhibit high agreement among the three human coders. However, other categories appear more difficult to code and yield lower agreement scores. These $\alpha$ values help distinguish cases in which low model performance reflects LLM misclassification from cases in which the category itself is difficult to code, as indicated by low agreement among human coders. 
+
+Before evaluating LLM performance, we partition the 15 categories according to their prevalence in the evaluation sample. Two categories, \textit{falsehood} and \textit{contradict}, contain no positive cases, rendering agreement statistics undefined; accordingly, we exclude them from all analyses.\footnote{The absence of \textit{falsehood} and \textit{contradict} in our sample reflects the structure of the treatments we evaluate, which focus on free-form chat with delegation and managerial control. These categories may be more prevalent in other treatment arms.} One additional category, \textit{discuss\_howtoplay}, contains only nine positive cases, below the threshold of 10 required for reliable estimation. We report results for this category in the appendix but exclude it from the main analysis. This leaves 12 evaluable categories.
+
+\begin{figure}[htbp]
+    \caption{Human Inter-Rater reliability per category (Krippendorff's $\alpha$) } \label{fig:alpha_Jordi}
     \centering
-    \caption{Internal consistency across temperature settings -- \citet{brandts_cooper_2025}}
-    \label{tab:temp_irr_managerial}
-    \begin{adjustbox}{max width=\linewidth}
-    \small
-    \begin{tabular}{lcccc}
-        \toprule
-        & \multicolumn{2}{c}{Claude} & \multicolumn{2}{c}{GPT} \\
-        \cmidrule(lr){2-3}\cmidrule(lr){4-5}
-        Category              & Zero-shot & Few-shot & Zero-shot & Few-shot \\
-        \midrule
-        Any suggestion        & 0.920 & 0.944 & 0.849 & 0.866 \\
-        Safe suggestion       & 0.656$^{b}$ & 0.877 & 0.378$^{b}$ & 0.401$^{b}$ \\
-        Efficient suggestion  & 0.767$^{a}$ & 0.846 & 0.737$^{a}$ & 0.719$^{a}$ \\
-        Agreement             & 0.915 & 0.940 & 0.813 & 0.824 \\
-        Discuss fairness      & 0.938 & 0.891 & 0.783$^{a}$ & 0.602$^{b}$ \\
-        Discuss efficiency    & 0.871 & 0.802 & 0.745$^{a}$ & 0.693$^{a}$ \\
-        Discuss rules         & 0.787$^{a}$ & 0.789$^{a}$ & 0.388$^{b}$ & 0.499$^{b}$ \\
-        Explanation           & 0.889 & 0.865 & 0.720$^{a}$ & 0.707$^{a}$ \\
-        Discuss how to play   & 0.757$^{a}$ & 0.844 & 0.557$^{b}$ & 0.418$^{b}$ \\
-        Ask about game        & 0.922 & 0.962 & 0.735$^{a}$ & 0.795$^{a}$ \\
-        Receive report        & 0.916 & 0.933 & 0.736$^{a}$ & 0.753$^{a}$ \\
-        Truthful about game   & 0.917 & 0.933 & 0.731$^{a}$ & 0.746$^{a}$ \\
-        Lie about game        & 0.845 & 0.892 & 0.575$^{b}$ & 0.519$^{b}$ \\
-        Contradiction         & 0.799$^{a}$ & 0.745$^{a}$ & 0.267$^{b}$ & 0.610$^{b}$ \\
-        Neither option        & 0.902 & 0.960 & 0.736$^{a}$ & 0.754$^{a}$ \\
-        \midrule
-        \textit{Mean}         & \textit{0.853} & \textit{0.881} & \textit{0.650} & \textit{0.660} \\
-        \bottomrule
-    \end{tabular}
-    \end{adjustbox}
-    \vspace{0.2cm}
-    \begin{minipage}{\linewidth}
+    \includegraphics[width=0.9\textwidth]{1_Figures/krippendorff_alpha_plot.pdf}
+\end{figure}
+
+Figure \ref{fig:alpha_Jordi} shows that the evaluable categories fall into two broad groups. Eight are \textit{behaviorally concrete}: they capture whether agents make or agree to specific proposals, ask about the game state, or truthfully report private information, and human coders exhibit high agreement on these categories ($\alpha \geq 0.70$). The remaining four are \textit{interpretively ambiguous}: they concern broader conversational themes—such as fairness, efficiency, or rules—or require inference about communicative intent (\textit{explanation}), resulting in substantially lower human agreement ($\alpha$ ranging from 0.24 to 0.47). This distinction is important because LLMs cannot reasonably be expected to systematically exceed human inter-rater reliability; the category-specific human $\alpha$ therefore provides the relevant benchmark ceiling, rather than a uniform threshold such as 0.80.
+
+Then, for each evaluable tag, we select the best-performing configuration for each model across all combinations of prompting strategy (zero-shot vs.\ few-shot) and temperature, and report the resulting Krippendorff's $\alpha$ as the tag-level agreement estimate. Figure \ref{fig:dot_Jordi} presents the results of this metric, treating each LLM as a fourth coder and recalculating the agreement $\alpha$. The figure plots one point for each model (Claude and GPT), representing the maximum $\alpha$ achieved across all shot-by-temperature combinations. Grey bars indicate human inter-rater agreement among the three original coders; the dashed vertical line marks $\alpha = 0.80$, which is the standard threshold in the literature for agreement among classifiers.
+
+\begin{figure}[htbp]
+\centering
+    \caption{Best-configuration Krippendorff's $\alpha$ per category - \citet{brandts_cooper_2025}} \label{fig:dot_Jordi}    
+    \includegraphics[width=0.9\textwidth]{1_Figures/dotplot_best_config_managerial_leadership_Jordi_Cooper.pdf}
+
         \footnotesize
-        \textit{Note:} Krippendorff's alpha treating each temperature run as an independent rater (predictions binarized: ${>}0.5\to 1$, else~0). Claude: 4 temperature settings (0, 0.1, 0.5, 1); GPT: 5 settings (0, 0.1, 0.5, 1, 1.2). $^{a}$~Tentative agreement ($0.67\leq\alpha<0.80$). $^{b}$~Unreliable agreement ($\alpha<0.67$). All unmarked values indicate strong agreement ($\alpha\geq0.80$).
-    \end{minipage}
-\end{table}
+    \textit{Note:} Each point $=$ maximum a for that model across all shot $ \times$ temperature combinations. Grey bars $=$ human inter-rater $\alpha$. Dashed line $=$ $\alpha = 0.80$.
+\end{figure}
 
-As a complementary analysis, Table~\ref{tab:inter_llm_managerial} reports Krippendorff's alpha treating each LLM as an independent rater at temperature~0, measuring inter-LLM agreement rather than intra-model temperature consistency. Results are strikingly low: mean $\alpha = 0.296$ under zero-shot (Claude, GPT, Gemini; $n = 197$) and $\alpha = 0.379$ under few-shot (Claude and GPT; $n = 927$). Every category falls below the 0.67 reliability threshold under zero-shot; under few-shot only \textit{ask about game} reaches the tentative range (0.678), and several categories produce near-zero or negative alpha values, indicating systematic divergence between models. Together with the high intra-model temperature consistency in Table~\ref{tab:temp_irr_managerial}, these results reveal a clear pattern: each model applies its own stable internal coding logic, but those logics differ substantially across models. This reflects the inherent interpretive demands of the coding scheme---categories that require inference about conversational intent and pragmatic context are precisely those for which LLMs resolve ambiguity differently.
 
-\begin{table}
+Among the 12 evaluable tags, agreement with human coders varies substantially across models. CLaude achieves the highest best-configuration $\alpha$ for seven tags. The two LLMs perform poorly on \texttt{discuss\_rules} and \texttt{discuss\_fairness}. Human agreement is also modest for these two tags, suggesting that these categories are inherently ambiguous rather than uniquely difficult for LLMs to classify. Figure \ref{fig:overall_agree_jordi} reports the average Krippendorff’s $\alpha$ across the 12 evaluable tags for each model, with configurations defined by prompting strategy (zero-shot versus few-shot) and temperature ($T \in {0, 0.1, 0.5, 1, 1.2}$). Both models achieve their strongest performance under few-shot prompting at $T = 0$, with Claude attaining the higher mean $\alpha$ across categories. Variation across temperature settings within a given prompting strategy is modest, suggesting that performance in this task is relatively insensitive to LLM's temperature.
+
+\begin{figure}[htbp]
+    \caption{Overall agreement with Human Annotations - \citet{brandts_cooper_2025}} \label{fig:overall_agree_jordi}
     \centering
-    \caption{Inter-LLM agreement across models -- \citet{brandts_cooper_2025}}
-    \label{tab:inter_llm_managerial}
-    \begin{adjustbox}{max width=\linewidth}
-    \small
-    \begin{tabular}{lcc}
-        \toprule
-        Category              & Zero-shot & Few-shot \\
-        \midrule
-        Any suggestion        & 0.389$^{b}$ & 0.541$^{b}$ \\
-        Safe suggestion       & 0.204$^{b}$ & $-$0.321$^{b}$ \\
-        Efficient suggestion  & 0.160$^{b}$ & 0.049$^{b}$ \\
-        Agreement             & 0.519$^{b}$ & 0.566$^{b}$ \\
-        Discuss fairness      & 0.480$^{b}$ & 0.543$^{b}$ \\
-        Discuss efficiency    & 0.255$^{b}$ & $-$0.078$^{b}$ \\
-        Discuss rules         & $-$0.007$^{b}$ & 0.397$^{b}$ \\
-        Explanation           & 0.168$^{b}$ & 0.171$^{b}$ \\
-        Discuss how to play   & 0.166$^{b}$ & 0.091$^{b}$ \\
-        Ask about game        & 0.328$^{b}$ & 0.678$^{a}$ \\
-        Receive report        & 0.435$^{b}$ & 0.640$^{b}$ \\
-        Truthful about game   & 0.429$^{b}$ & 0.631$^{b}$ \\
-        Lie about game        & 0.241$^{b}$ & 0.661$^{b}$ \\
-        Contradiction         & 0.246$^{b}$ & 0.498$^{b}$ \\
-        Neither option        & 0.429$^{b}$ & 0.615$^{b}$ \\
-        \midrule
-        \textit{Mean}         & \textit{0.296} & \textit{0.379} \\
-        \bottomrule
-    \end{tabular}
-    \end{adjustbox}
-    \vspace{0.2cm}
-    \begin{minipage}{\linewidth}
+    \includegraphics[width=0.9\textwidth]{1_Figures/figure1_agreement_heatmap_managerial_leadership_Jordi_Cooper.pdf}
+
         \footnotesize
-        \textit{Note:} Krippendorff's alpha with each LLM as an independent rater at temperature~0 (predictions binarized: ${>}0.5\to 1$, else~0). Zero-shot: Claude, GPT, and Gemini ($n=197$, limited by Gemini's partial corpus coverage). Few-shot: Claude and GPT only ($n=927$; Gemini has no few-shot results for this application). $^{a}$~Tentative ($0.67\leq\alpha<0.80$). $^{b}$~Unreliable ($\alpha<0.67$). No category reaches strong agreement ($\alpha\geq0.80$).
-    \end{minipage}
-\end{table}
+    \textit{Note:} Krippendorff’s $\alpha$ (3 human coders + LLM). Tags $<$ 10 positive cases excluded.
+\end{figure}
 
-\subsubsection{Application 1: substantive validity}
+% \begin{figure}[htbp]
+%     \caption{Temperature sensitivity of aggregate score by model and prompt style - \citet{brandts_cooper_2025}} 
+%     \label{fig:figure2_temperature_Jordi}
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{1_Figures/figure2_temperature_sensitivity_managerial_leadership_Jordi_Cooper.pdf}
+%     
+%     \vspace{0.3cm}
+%     \footnotesize
+%     \textit{Note:} The figure displays aggregate performance across temperature values for each model (Claude, Gemini, GPT) and prompt style (0-shot and few-shot). Aggregate score corresponds to the mean across selected core metrics. 
+% \end{figure}
 
-To evaluate substantive validity, we replicate the core regression analysis of
-\citet{brandts_cooper_2025}, which examines how communication content predicts coordination
-outcomes. Table~8 in the original paper reports probit regressions in which binary
-coordination outcomes---whether a group coordinated, and whether coordination was
-efficient---are regressed on the chat content categories, separately by treatment.
-We replicate this specification as a Probit model on the restricted shared-data sample,
-replacing the human-coded categories with LLM-generated categories in turn, so that all
-columns (human, Claude, GPT, ensemble) are estimated on the same observations. The selected
-LLM configurations are few-shot at temperature~0.
+In this paper we found that LLMs are not particularly good trying to replace humans coders. The main issue for this data is its complexity given that they used chats between three people with a lot of jargon, and implicit meaning difficult to catch. Even for humans, there were some categories were agreement was particularly low. In other words, the categories in this paper are likely interpretively ambiguous. For instance, things like "suggest safe", "discuss fairness", "agree proposal" require inferring intent or pragmatic meaning from text, which is harder than detecting more concrete or surface-level features. The LLM and the human coder are essentially applying different implicit criteria.
 
-Relative to the original Table~8 sample, the shared classification files retain only
-458 observations in the retained treatment panels, while CH/A-D is unavailable entirely.
-We therefore focus on CH/S-D coordination, CH/S-D efficient coordination, and CH-MC
-efficient coordination, with standard errors clustered at the conversation-group level.
+To assess the consistency of response classifications across temperature settings, we treat each temperature run as an independent rater and compute Krippendorff’s alpha over the resulting label vectors. This internal consistency analysis abstracts from agreement with the human benchmark and instead evaluates whether a model’s coding decisions remain stable across temperature variations. High alpha values indicate that the model produces consistent classifications regardless of temperature, whereas low values suggest that temperature meaningfully affects classification outcomes for a given category. Table \ref{tab:temp_irr_managerial} reports label-level alpha values for Claude (temperatures 0, 0.1, 0.5, and 1) and GPT (temperatures 0, 0.1, 0.5, 1, and 1.2) under both zero-shot and few-shot prompting conditions.
 
-Table~\ref{tab:table8-lpm-condensed} presents the results across three panels: coordination
-in CH/S-D, efficient coordination in CH/S-D, and efficient coordination in CH-MC.
+\input{2_Tables/irr_llms_jordi}
 
-In the \textit{CH/S-D coordination} panel, the human benchmark shows a positive and
-significant effect of \textit{Agreement} ($\beta = 0.196$, $p < 0.01$), close to the
-replication-package benchmark ($0.108$). GPT also shows a positive and marginally
-significant effect for \textit{Agreement} ($\beta = 0.057$, $p < 0.10$). Claude shows a
-positive and significant effect on \textit{Questions about play}
-($\beta = 0.050$, $p < 0.01$), which does not appear in the human baseline.
-
-In the \textit{CH/S-D efficient coordination} panel, the human benchmark remains close to the
-paper pattern, with positive and significant effects for \textit{Agreement}
-($\beta = 0.201$, $p < 0.01$; paper: $0.217$), \textit{Discuss efficiency}
-($\beta = 0.252$, $p < 0.01$; paper: $0.253$), and a negative and significant effect for
-\textit{Discuss fairness} ($\beta = -0.252$, $p < 0.01$; paper: $-0.265$). Claude shows
-positive significant effects for \textit{Discuss need to coordinate},
-\textit{Discuss fairness}, and \textit{Discuss efficiency}, while GPT does not produce
-statistically significant effects in this panel.
-
-In the \textit{CH-MC efficient coordination} panel, the human benchmark again aligns closely
-with the replication-package value for \textit{Truthfully reveal game}
-($\beta = 0.290$, $p < 0.01$; paper: $0.295$). GPT shows a negative significant effect for
-\textit{Explanation} ($\beta = -0.171$, $p < 0.05$) and a positive significant effect for
-\textit{Lie about game} ($\beta = 0.432$, $p < 0.01$), while the ensemble also shows a
-positive effect for \textit{Lie about game} ($\beta = 0.261$, $p < 0.05$).
-
-Overall, the Probit replacement exercise leads to the same qualitative conclusion:
-LLM-derived codings do not consistently reproduce the human benchmark coefficients in this
-application. Alignment appears in selected terms (for example, the positive role of
-\textit{Agreement} in CH/S-D coordination for GPT), but several statistically significant
-LLM coefficients diverge in sign or salience from the human baseline. This pattern is
-consistent with the agreement analysis above: categories with higher interpretive ambiguity
-generate less stable downstream substantive inferences.
-
-\input{Results/by_paper/managerial_leadership_Jordi_Cooper/_substantive_analysis/table8_probit_comparison_table.tex}
+Table \ref{tab:temp_irr_managerial} shows that Claude achieves strong internal consistency across most categories, with mean $\alpha = 0.853$ under zero-shot prompting and $\alpha = 0.881$ under few-shot prompting. Under zero-shot prompting, only \textit{safe suggestion} falls below the 0.67 reliability threshold, while four categories fall within the tentative agreement range. Few-shot prompting reduces the number of tentative categories to two: \textit{discuss rules} and \textit{contradiction}. Conversely, GPT exhibits substantially lower internal consistency (mean $\alpha = 0.650$ under zero-shot prompting and $\alpha = 0.660$ under few-shot prompting), with four categories falling below 0.67 in the zero-shot setting. Few-shot prompting does not consistently improve GPT’s stability. These results indicate that Claude’s classifications are largely insensitive to temperature variation, whereas GPT’s coding decisions, particularly for categories requiring pragmatic inference about conversational context, vary considerably across temperature settings.
 
 
+\subsubsection{\citet{brandts_cooper_2025}: substantive validity}
 
+To evaluate substantive validity, that is, whether LLM-coded data lead to the same conclusions as human-coded data, we link both human- and LLM-generated labels to the replication outcomes at the conversation-round level and restrict attention to the free-chat treatments. This analysis relies on files provided by the authors through their replication package and subsequent correspondence. The shared chat files do not include CH/A-D sessions, although the coding file contains CH/A-D observations for which no corresponding message-level source data are available. Because these source data are absent from the shared materials, the corresponding observations cannot be classified by the LLMs. Accordingly, all LLM-based analyses are restricted to the treatments covered by the shared files, and results requiring CH/A-D observations fall outside the scope of this analysis. For all analyses, we use the few-shot prompting configuration at temperature $T = 0$.
+
+We then replicate the core regression analysis of \citet{brandts_cooper_2025}, which examines how communication content predicts coordination outcomes. Table 8 in the original paper reports Probit regressions in which binary coordination outcomes, whether a group coordinated, and whether coordination was
+efficient, are regressed on the chat content categories, separately by treatment. We replicate this specification as a Probit model on the restricted shared-data sample, replacing the human-coded categories with LLM-generated categories in turn, so that all columns (human, Claude, GPT, ensemble) are estimated on the same observations.
+
+Table \ref{tab:table8-lpm-condensed} reports results across three panels: coordination in CH/S-D, efficient coordination in CH/S-D, and efficient coordination in CH-MC. In the \textit{CH/S-D coordination} panel, the human-coded benchmark indicates a positive and statistically significant effect of \textit{Agreement} ($\beta = 0.196$, $p < 0.01$), broadly consistent with the original benchmark estimate ($\beta = 0.108$). GPT-based coding also yields a positive and marginally significant effect for \textit{Agreement} ($\beta = 0.057$, $p < 0.10$). By contrast, Claude-based coding produces a positive and statistically significant effect for \textit{Questions about play} ($\beta = 0.050$, $p < 0.01$), a relationship that does not appear in the human-coded benchmark.
+
+In the \textit{CH/S-D efficient coordination} panel, the human-coded benchmark remains broadly consistent with the pattern reported in the original paper. Claude-based coding yields positive and statistically significant effects for \textit{Discuss need to coordinate}, \textit{Discuss fairness}, and \textit{Discuss efficiency}, whereas GPT-based coding does not produce statistically significant effects in this specification.
+
+Finally, in the \textit{CH-MC efficient coordination} panel, the human-coded benchmark again closely matches the replication-package estimate for \textit{Truthfully reveal game} ($\beta = 0.290$, $p < 0.01$; paper estimate: $0.295$). GPT-based coding produces a negative and statistically significant effect for \textit{Explanation} ($\beta = -0.171$, $p < 0.05$) and a positive and statistically significant effect for \textit{Lie about game} ($\beta = 0.432$, $p < 0.01$). The ensemble specification also yields a positive and statistically significant effect for \textit{Lie about game} ($\beta = 0.261$, $p < 0.05$).
+
+Overall, the Probit regressions lead to the same qualitative conclusion: LLM-derived codings do not consistently reproduce the human-coded benchmark coefficients in this application. Some alignment emerges for selected variables—for example, the positive association between \textit{Agreement} and CH/S-D coordination in the GPT-based specification—but several statistically significant LLM-derived coefficients differ from the human benchmark in either sign or substantive prominence. This pattern is consistent with the agreement analysis discussed above: categories characterized by greater interpretive ambiguity tend to produce less stable downstream substantive inferences.
+
+
+\input{2_Tables/table8_replication}
+
+ 
 \subsection{Application 2: Messages and promises in a trust game over time 
 \citep{ederer_schneider_2022}}
 
@@ -377,108 +319,63 @@ The second application we consider is \citet{ederer_schneider_2022}. The authors
 The experiment measures trust by the amount sent by trustors and trustworthiness by the amount returned by trustees, with trustees making 10 binary ROLL/DON’T ROLL choices, one of which is randomly implemented. To analyze free-form communication, the authors employ two hypothesis-blind research assistants to independently classify messages according to whether they contain an explicit promise to choose ROLL (e.g., “I will choose ROLL” or “I promise to choose ROLL”). \citet{ederer_schneider_2022} find that pre-play communication substantially increases cooperation, trust, and trustworthiness by approximately 50 percent, with this effect remaining robust even when three weeks elapse between the trustee's message and their actual reciprocation decision. Across all three delay conditions (Immediate, Early, and Late), the passage of time does not significantly affect trust or trustworthiness, suggesting that findings from standard laboratory settings generalize to environments with greater external validity. Trustees who make promises exhibit higher ROLL rates (6.2 choices on average) compared to those who do not (4.2 choices), while trustors increase their IN choices by approximately 20 percentage points when communication is possible, with both effects remaining consistent across time frames. Analysis of the free-form chat data confirms that explicit promises are the primary driver of these effects.
 
 
-\subsubsection{Application 2: validation metrics}
+\subsubsection{\citet{ederer_schneider_2022}: validation metrics}
 
-\begin{figure}[htbp]
-    \caption{Best metric score by model - \citet{ederer_schneider_2022}} \label{fig:figure1_ederer}
-    \centering
-    \includegraphics[width=0.9\textwidth]{1_Figures/figure1_heatmap_best_config_trust_promises_Ederer_Schneider.pdf}
-    
-       \vspace{0.3cm}
-    \footnotesize
-    \textit{Note:} Cell annotation shows winning configuration (shot@temperature).
-\end{figure}
+In the first application, we used Claude and GPT as the evaluated LLMs. In the subsequent two applications, we additionally included Gemini. Gemini is substantially more expensive, costing approximately two to three times more than Claude and up to five times more than GPT. Because the first application involved a more computationally demanding dataset, we restricted the use of Gemini to the second and third applications.
+
+For this paper, we do not report Krippendorff’s alpha because only one human classification is available for each tag. Accordingly, we focus on Cohen’s kappa as the primary agreement metric. Figure \ref{fig:dot_ederer} presents the Cohen’s kappa values for the three analyzed categories. As in Application 1, we select the best-performing configuration for each model across all combinations of prompting strategy (zero-shot versus few-shot) and temperature, and report the resulting Cohen’s kappa as the tag-level agreement estimate. The figure displays one point for each model (Claude, Gemini, and GPT), corresponding to the maximum $\kappa$ achieved across all shot-by-temperature combinations. The dashed vertical line marks $\kappa = 0.80$, the conventional threshold in the literature for strong agreement among classifiers.
 
 
 \begin{figure}[htbp]
-    \caption{Temperature sensitivity of aggregate score by model and prompt style - \citet{ederer_schneider_2022}} 
-    \label{fig:figure2_temperature_ederer}
-    \centering
-    \includegraphics[width=0.9\textwidth]{1_Figures/figure2_temperature_sensitivity_trust_promises_Ederer_Schneider.pdf}
-    
-    \vspace{0.3cm}
-    \footnotesize
-    \textit{Note:} The figure displays aggregate performance across temperature values for each model (Claude, Gemini, GPT) and prompt style (0-shot and few-shot). Aggregate score corresponds to the mean across selected core metrics.
+\centering
+    \caption{Best-configuration Cohen's $\kappa$ per category - \citet{ederer_schneider_2022}} \label{fig:dot_ederer}    
+    \includegraphics[width=0.9\textwidth]{1_Figures/dotplot_best_config_trust_promises_Ederer_Schneider.pdf}
+
+        \footnotesize
+    \textit{Note:} Each point $=$ maximum a for that model across all shot $ \times$ temperature combinations. Grey bars $=$ human inter-rater $\kappa$. Dashed line $=$ $\kappa= 0.80$.
 \end{figure}
 
+Figure~\ref{fig:dot_ederer} shows that the categories \texttt{is\_promise} and \texttt{is\_efficiency} achieve high agreement between LLMs and human coders, with the exception of Gemini on \texttt{is\_promise}. In contrast, the category \texttt{is\_ethics} exhibits lower Cohen’s kappa values across models.
 
-The categories here — is_promise, is_efficiency, is_ethics — are relatively well-defined normative concepts that a language model can recognize from surface and semantic features of the text. Compare that to Paper 1's agree_proposal or discuss_fairness, which require tracking conversational context and inferring pragmatic intent.
-Also notably: no class imbalance problem. The precision_1 and recall_1 values are all substantial, meaning there are enough positives in each category to actually measure agreement.
-One nuance on is_ethics
-κ = 0.675 with precision_1 = 0.571 suggests the LLM is over-predicting ethics labels — it flags things as ethical content that the human coder didn't. That's an interesting asymmetry worth noting: ethics is probably the most interpretation-dependent of the three categories.
-For the paper, Paper 3 is your poster child for "when does LLM coding work?" — few, well-defined, non-overlapping categories with balanced representation. 
+Overall, the categories in this application correspond to relatively well-defined normative concepts that language models can identify from the surface and semantic features of the text. Unlike Application 1, classification in this setting does not require tracking conversational context or inferring pragmatic intent. Moreover, the dataset does not suffer from severe class imbalance, meaning that each category contains a sufficient number of positive cases to support meaningful agreement estimates.
 
-Table~\ref{tab:temp_irr_trust} reports internal consistency across temperature settings for the trust promises application. All model--strategy combinations achieve strong alpha values, with no entry falling below the 0.80 threshold. Claude is the most consistent, attaining near-perfect agreement under zero-shot prompting (mean $\alpha = 0.994$), with \textit{promise} and \textit{ethics} reaching 1.000 and \textit{efficiency} reaching 0.982; few-shot prompting yields comparable stability (mean $\alpha = 0.979$). Gemini is similarly consistent, with mean alpha of 0.902 (zero-shot) and 0.918 (few-shot), though the ethics category is slightly less stable (0.845 zero-shot; 0.870 few-shot), reflecting marginally greater sensitivity to temperature for this more normatively nuanced label. The near-ceiling consistency for all combinations reflects the conceptual clarity of the three coding categories: a message either contains an explicit promise, an efficiency argument, or an ethical argument, each of which can be identified from surface semantic features of the text without requiring inference about conversational context or pragmatic intent.
+The comparatively lower agreement for \texttt{is\_ethics} may indicate that LLMs tend to over-predict ethical content, labeling statements as ethical when the human coder did not. As a result, the mean agreement values reported in Figure~\ref{fig:overall_agree_ederer} fall below the 0.80 threshold, with the lower performance of this category reducing overall agreement levels. This asymmetry is noteworthy because ethics is likely the most interpretation-dependent of the three categories.
 
-\begin{table}
+\begin{figure}[htbp]
+    \caption{Overall agreement with Human Annotations - \citet{ederer_schneider_2022}} \label{fig:overall_agree_ederer}
     \centering
-    \caption{Internal consistency across temperature settings -- \citet{ederer_schneider_2022}}
-    \label{tab:temp_irr_trust}
-    \begin{adjustbox}{max width=0.72\linewidth}
-    \small
-    \begin{tabular}{lcccc}
-        \toprule
-        & \multicolumn{2}{c}{Claude} & \multicolumn{2}{c}{Gemini} \\
-        \cmidrule(lr){2-3}\cmidrule(lr){4-5}
-        Category   & Zero-shot & Few-shot & Zero-shot & Few-shot \\
-        \midrule
-        Promise    & 1.000 & 0.990 & 0.900 & 0.980 \\
-        Efficiency & 0.982 & 0.983 & 0.962 & 0.902 \\
-        Ethics     & 1.000 & 0.965 & 0.845 & 0.870 \\
-        \midrule
-        \textit{Mean} & \textit{0.994} & \textit{0.979} & \textit{0.902} & \textit{0.918} \\
-        \bottomrule
-    \end{tabular}
-    \end{adjustbox}
-    \vspace{0.2cm}
-    \begin{minipage}{0.72\linewidth}
+    \includegraphics[width=0.9\textwidth]{1_Figures/figure1_agreement_heatmap_trust_promises_Ederer_Schneider.pdf}
+
         \footnotesize
-        \textit{Note:} Krippendorff's alpha treating each temperature run as an independent rater (predictions binarized: ${>}0.5\to 1$, else~0). Claude: 4 temperature settings (0, 0.1, 0.5, 1); Gemini: 5 settings (0, 0.1, 0.5, 1, 1.2). All values indicate strong agreement ($\alpha\geq0.80$).
-    \end{minipage}
-\end{table}
+    \textit{Note:} Cohen’s $\kappa$ (human coder + LLM).
+\end{figure}
 
-Table~\ref{tab:inter_llm_trust} extends the analysis to inter-LLM agreement, with Claude, GPT, and Gemini each contributing one prediction per observation at temperature~0 ($n=156$). Results are markedly higher than for the communication coding application: mean $\alpha = 0.743$ (zero-shot) and $\alpha = 0.774$ (few-shot). \textit{Efficiency} achieves strong inter-LLM agreement under zero-shot (0.898), reflecting its comparatively concrete semantic content. \textit{Promise} reaches tentative agreement in both strategies (0.708 and 0.696). \textit{Ethics} is the most variable category: unreliable under zero-shot (0.624) but strong under few-shot (0.826), indicating that providing examples substantially helps LLMs converge on this more normatively laden dimension. The contrast between the near-perfect intra-model consistency in Table~\ref{tab:temp_irr_trust} and the moderate inter-LLM agreement here indicates that each model classifies stably, but that their operational definitions of promise and ethics diverge; few-shot prompting partially resolves this by anchoring classification on shared examples.
+Finally, Table \ref{tab:temp_irr_trust} reports internal consistency across temperature settings for the trust-promises application. All model-strategy combinations achieve strong Krippendorff's alpha values, with no entry falling below the 0.80 threshold. Claude is the most consistent model, attaining near-perfect agreement under zero-shot prompting (mean $\alpha = 0.994$), with \textit{promise} and \textit{ethics} reaching 1.000 and \textit{efficiency} reaching 0.982. Few-shot prompting yields similarly high stability (mean $\alpha = 0.979$). Gemini is likewise highly consistent, with mean alpha values of 0.902 under zero-shot prompting and 0.918 under few-shot prompting, although the \textit{ethics} category is somewhat less stable (0.845 under zero-shot prompting and 0.870 under few-shot prompting). We can also see in Figure \ref{fig:overall_agree_ederer} that Gemini was the worse performing LLM.
 
-\begin{table}
-    \centering
-    \caption{Inter-LLM agreement across models -- \citet{ederer_schneider_2022}}
-    \label{tab:inter_llm_trust}
-    \begin{adjustbox}{max width=0.58\linewidth}
-    \small
-    \begin{tabular}{lcc}
-        \toprule
-        Category   & Zero-shot & Few-shot \\
-        \midrule
-        Promise    & 0.708$^{a}$ & 0.696$^{a}$ \\
-        Efficiency & 0.898       & 0.800$^{a}$ \\
-        Ethics     & 0.624$^{b}$ & 0.826       \\
-        \midrule
-        \textit{Mean} & \textit{0.743} & \textit{0.774} \\
-        \bottomrule
-    \end{tabular}
-    \end{adjustbox}
-    \vspace{0.2cm}
-    \begin{minipage}{0.58\linewidth}
-        \footnotesize
-        \textit{Note:} Krippendorff's alpha with Claude, GPT, and Gemini as independent raters at temperature~0; $n=156$. Predictions binarized: ${>}0.5\to 1$, else~0. $^{a}$~Tentative ($0.67\leq\alpha<0.80$). $^{b}$~Unreliable ($\alpha<0.67$). Unmarked: strong ($\alpha\geq0.80$). The few-shot efficiency value (0.800) is marked tentative based on the unrounded value (0.7998).
-    \end{minipage}
-\end{table}
+The near-ceiling consistency observed across all model-strategy combinations likely reflects the conceptual clarity of the three coding categories. A message either contains an explicit promise, an efficiency argument, or an ethical argument, each of which can be identified from surface-level semantic features of the text without requiring substantial inference about conversational context or pragmatic intent. Overall, this application provides the clearest example of the conditions under which LLM-based coding performs well: a small number of well-defined, non-overlapping categories with balanced class representation.
 
-\subsubsection{Application 2: substantive validity}
+\input{2_Tables/irr_llms_ederer}
 
-Among the three coded labels, only \textit{is\_promise} enters the substantive analysis of \citet{ederer_schneider_2022}. The authors code whether each trustee's message contains an explicit promise to choose ROLL and use this classification in a single core regression: \textsc{OLS} of \textit{numrolls} (the number of ROLL choices out of 10) on a communication treatment dummy and \textit{is\_promise}, restricted to trustees (\textit{role}~$= 1$, $N = 354$), with standard errors clustered by session. This specification yields a positive and statistically significant effect for \textit{is\_promise} ($\hat{\beta} \approx 2.18$, $p = 0.043$ in the original paper), showing that trustees who explicitly promise to cooperate choose ROLL at a substantially higher rate than those who do not. The remaining two labels, \textit{is\_efficiency} and \textit{is\_ethics}, appear only in Appendix~D as descriptive statistics: efficiency appeals are present in 49~per cent of messages and are highly correlated with promise-making ($r = 0.75$), while ethics appeals occur in only 8~per cent of messages. Neither label enters any regression in the paper, so the substantive validity test for this application reduces to a single question: does LLM-coded \textit{is\_promise} preserve the original finding?
+\subsubsection{\citet{ederer_schneider_2022}: substantive validity}
 
-To answer this, we replace the human-coded \textit{is\_promise} column with LLM predictions from each model at zero-shot, temperature~0 --- the best-performing configuration for this label based on the agreement metrics reported above. For trustees in the no-communication condition, \textit{is\_promise} is set to~0 regardless of model (no message, no promise), matching the original human coding. For the 172 trustees with messages, LLM predictions are merged by message content. The regression specification is otherwise identical to the original.
+To assess whether the same substantive conclusions emerge when using LLM-coded data instead of human-coded data, we use the replication package provided by the authors on the publication website. Among the three coded labels, only \textit{is\_promise} is used in the published analysis of \citet{ederer_schneider_2022}. The authors code whether each trustee message contains an explicit promise to choose ROLL and use this classification in a single core regression: an \textsc{OLS} specification of \textit{numrolls} (the number of ROLL choices out of 10) on a communication-treatment indicator and \textit{is\_promise}, restricted to trustees (\textit{role} $= 1$, $N = 354$), with standard errors clustered at the session level. In the original paper, this specification yields a positive and statistically significant effect for \textit{is\_promise}, indicating that trustees who explicitly promise to cooperate choose ROLL substantially more often than those who do not.
 
-Table~\ref{tab:ederer_regression} reports the results. The human baseline reproduces the original finding closely ($\hat{\beta} = 1.977$, $p = 0.037$). Under LLM coding, the coefficient on \textit{Promise} retains the correct sign and similar magnitude across all three models, but the significance level attenuates: GPT comes closest to replication ($\hat{\beta} = 1.746$, $p = 0.060$), while Gemini ($p = 0.085$) and Claude ($p = 0.128$) fall further from significance. The communication treatment dummy is not significant in any column, consistent with the original paper's result --- the effect of communication on ROLL choices operates primarily through promise-making rather than through the treatment itself. The $R^2$ declines modestly for LLM columns (0.054--0.061) relative to the human benchmark (0.065), reflecting the additional classification noise.
+To address this question, we replace the human-coded \textit{is\_promise} variable with LLM-generated predictions from each model using the zero-shot, temperature-$0$ configuration, which achieved the strongest agreement performance for this label in the analysis above. For trustees in the no-communication condition, \textit{is\_promise} is set equal to 0 for all models, consistent with the original coding procedure, as these participants did not send a message and therefore could not make a promise. For the 172 trustees who sent messages, LLM predictions are merged using the message text as the matching key. The regression specification is otherwise identical to that used in the original paper.
 
-The partial replication by GPT and Gemini, together with the preserved coefficient direction across all models, indicates that LLM-coded \textit{is\_promise} captures the behaviorally relevant signal. At the same time, even an agreement of $\kappa \approx 0.84$ (GPT zero-shot) does not suffice to fully preserve the original inference at conventional significance levels. This illustrates a key tension between classification accuracy and regression validity: a coding scheme where the positive class is behaviorally distinctive --- here, a specific commitment mechanism with downstream behavioral consequences --- is particularly sensitive to misclassification, because mislabeled non-promises dilute the estimated effect and mislabeled promises add noise to the treated group. The finding underscores that validation against human-coded benchmarks should complement, rather than substitute for, direct replication of downstream statistical analyses.
+Table \ref{tab:ederer_regression} reports the results. The human-coded baseline closely reproduces the original finding ($\hat{\beta} = 1.977$, $p = 0.037$).\footnote{These results may differ slightly from those reported in the original paper because some observations are lost during the classification process; accordingly, we restrict the analysis to the subset of observations also coded by the LLMs.} Under LLM-based coding, the coefficient on \textit{Promise} retains the same sign and a broadly similar magnitude across all three models, although statistical significance weakens. GPT comes closest to reproducing the original result ($\hat{\beta} = 1.746$, $p = 0.060$), while Gemini ($p = 0.085$) and Claude ($p = 0.128$) fall further from conventional significance thresholds. The communication-treatment indicator is not statistically significant in any specification, consistent with the original paper.
 
-\input{Results/by_paper/trust_promises_Ederer_Schneider/_substantive_analysis/regression_comparison.tex}
+\input{2_Tables/table_p2_sustantive}
 
-Table~\ref{tab:ederer_descriptives} extends the comparison to the secondary labels reported descriptively in Appendix~D of the original paper. Panel~A shows prevalence rates among the 172 communication-condition trustees. For \textit{Promise}, Claude and GPT are close to the human benchmark (67.4\% vs.\ 69.8\%), while Gemini over-predicts (79.1\%). For \textit{Efficiency}, all three models substantially over-predict relative to the human coder (57--59\% vs.\ 49\%), suggesting that LLMs detect potential efficiency-relevant language more broadly than the human's conservative coding standard. The divergence is sharpest for \textit{Ethics}: the human coder identified appeals in only 7.6\% of messages, while Claude flags 12.2\%, GPT 9.9\%, and Gemini 22.1\%. This over-sensitivity to normative language is consistent with the tendency of large language models to recognize implicit ethical framing that a human coder would not classify as a deliberate ethics appeal. Panel~B shows Pearson correlations on the full trustee sample ($N = 354$). The promise--efficiency correlation is well-preserved by Claude ($r = 0.699$ vs.\ human $0.709$) and reasonably so by GPT ($0.671$), with Gemini slightly inflating it ($0.774$). The promise--ethics correlation is more distorted: the human value of $0.146$ rises to $0.181$ (Claude), $0.237$ (GPT), and $0.383$ (Gemini), reflecting the over-prediction of ethics labels inflating apparent co-occurrence.
+Overall, these results suggest that when the classification task is relatively straightforward, LLM-based coding can recover the same qualitative substantive conclusions as human coding. Although the LLM-based estimates exhibit greater noise, leading in some cases to weaker statistical significance, the direction and approximate magnitude of the effects remain broadly consistent with the human-coded benchmark.
 
-\input{Results/by_paper/trust_promises_Ederer_Schneider/_substantive_analysis/descriptives_comparison.tex}
+The remaining two labels, \textit{is\_efficiency} and \textit{is\_ethics}, appear only in the appendices as descriptive statistics. Efficiency appeals are present in 49 per cent of messages and are strongly correlated with promise-making ($r = 0.75$), whereas ethics appeals appear in only 8 per cent of messages.
+
+Table \ref{tab:ederer_descriptives} extends the comparison to the secondary labels reported descriptively in Appendix D of \citet{ederer_schneider_2022}. Panel A reports prevalence rates among the 172 trustees in the communication condition. For \textit{Promise}, Claude and GPT produce estimates close to the human benchmark (67.4\% versus 69.8\%), whereas Gemini overpredicts the category (79.1\%). For \textit{Efficiency}, all three models substantially overpredict relative to the human coder (57-59\% versus 49\%), suggesting that LLMs identify efficiency-related language more broadly than the comparatively conservative human coding standard. The divergence is largest for \textit{Ethics}: the human coder identifies ethics appeals in only 7.6\% of messages, compared with 12.2\% for Claude, 9.9\% for GPT, and 22.1\% for Gemini. This pattern is consistent with a tendency for LLMs to classify implicit normative language as ethical framing even when a human coder would not interpret it as an explicit ethics appeal.
+
+Panel B reports Pearson correlations for the full trustee sample ($N = 354$). The correlation between \textit{Promise} and \textit{Efficiency} is closely reproduced by Claude ($r = 0.699$ versus the human benchmark of $0.709$) and reasonably approximated by GPT ($r = 0.671$), while Gemini produces a somewhat higher estimate ($r = 0.774$). By contrast, the correlation between \textit{Promise} and \textit{Ethics} is more distorted. The human benchmark of $r = 0.146$ increases to $0.181$ under Claude, $0.237$ under GPT, and $0.383$ under Gemini, reflecting the tendency of the models, particularly Gemini, to overpredict ethics-related labels and thereby inflate apparent co-occurrence.
+
+\input{2_Tables/tab_ederer_descriptive_sustantive}
+
 
 \subsection{Application 3: Social Desariability Bias and AI use \citep{ling2025underreporting} }
 
@@ -487,106 +384,53 @@ The third application draws on data from \citet{ling2025underreporting}, in whic
 To investigate the mechanisms underlying this discrepancy, the researchers collected open-ended responses from a separate follow-up survey involving 96 undergraduate students recruited via Prolific. This sample serves as the benchmark for our analysis. Participants were presented with findings from the initial survey, highlighting the reporting gap, and asked an open-ended question to explain it in their own words. These responses were analyzed using a streamlined thematic analysis approach: the first author conducted open coding to identify proposed explanations, after which all authors jointly refined and agreed upon a set of inductive codes, which were then iteratively applied to classify each response, with ambiguous cases resolved through author consultation. This coding process identifies social desirability bias as the most frequently cited explanation for the reporting gap, while also surfacing alternative mechanisms such as overestimation of peers' AI usage driven by availability bias and information asymmetry regarding actual adoption rates among peers. This application is particularly well-suited for evaluating whether LLMs can reproduce inductive thematic coding on short explanatory responses. The findings demonstrate that self-reported AI adoption statistics are substantially distorted by social desirability bias and that indirect questioning, by making individuals more comfortable attributing sensitive behaviors to peers, provides a more accurate measure of underlying AI adoption, with important implications for institutional policy, stigma reduction, and responsible AI integration strategies.
 
 
-\subsubsection{Application 3: validation metrics}
+\subsubsection{\citet{ling2025underreporting}: validation metrics}
+
+For this application we also use Cohen’s kappa as the primary agreement metric. The coding categories used by \citet{ling2025underreporting} captures twelve distinct mechanisms that may explain the gap between personal and peer-reported AI usage. \textit{Uninformative} responses contain nonsensical or contradictory content that misunderstands the question. \textit{SDB} (Social Desirability Bias) refers to the possibility that individuals misreport or conceal AI usage to avoid negative social evaluation, judgment, or reputational harm. \textit{Academic\_integrity} captures concerns that AI usage constitutes cheating, dishonesty, or academically inappropriate behavior. \textit{Overest\_others} indicates that students overestimate their peers’ AI usage, whereas \textit{Underest\_own} reflects students underestimating their own usage. \textit{Info\_asymmetry} captures students’ limited knowledge about their peers’ actual AI usage patterns. \textit{Privacy\_concerns} reflects reluctance to disclose personal AI usage because of privacy considerations. \textit{Self\_esteem} indicates that students underreport usage to protect their internal self-image, distinct from concerns about external judgment captured by \textit{SDB}. \textit{Self\_report\_bias} captures broader self-enhancement or self-favoring biases in reported behavior.
+\textit{AI\_discussion\_priming} attributes the gap to confusion between the visibility and frequency of AI-related discussions or media coverage and the actual prevalence of AI usage. \textit{Network\_effect} explains the gap by suggesting that students generalize from their local social networks, inferring broader population-level AI usage from the behavior observed within their immediate peer group. Finally, \textit{Truthful} indicates that the reported gap reflects genuine differences between personal and peer AI usage.
+
+Figure \ref{fig:dot_liang} presents the Cohen’s kappa values for the twelve coding categories. As in the previous applications, we select the best-performing configuration for each model across all combinations of prompting strategy (zero-shot versus few-shot) and temperature, and report the resulting Cohen’s kappa as the tag-level agreement estimate. The figure displays one point for each model (Claude, Gemini, and GPT), corresponding to the maximum $\kappa$ achieved across all shot-by-temperature combinations. The dashed vertical line marks $\kappa = 0.80$, the conventional threshold for strong agreement.
 
 \begin{figure}[htbp]
-    \caption{Best metric score by model - \citet{ling2025underreporting}} \label{fig:figure1_liang}
-    \centering
-    \includegraphics[width=0.9\textwidth]{1_Figures/figure1_heatmap_best_config_under_reporting_Ling_Kale_Imas.pdf}
-    
-       \vspace{0.3cm}
-    \footnotesize
-    \textit{Note:} Cell annotation shows winning configuration (shot@temperature).
+\centering
+    \caption{Best-configuration Cohen's $\kappa$ per category - \citet{ling2025underreporting}} \label{fig:dot_liang}    
+    \includegraphics[width=0.9\textwidth]{1_Figures/dotplot_best_config_under_reporting_Ling_Kale_Imas.pdf}
+
+        \footnotesize
+    \textit{Note:} Each point $=$ maximum a for that model across all shot $ \times$ temperature combinations. Grey bars $=$ human inter-rater $\kappa$. Dashed line $=$ $\kappa= 0.80$.
 \end{figure}
 
 
+Figure \ref{fig:dot_liang} shows substantial heterogeneity in agreement across categories. Four categories---\textit{overestimate peers}, \textit{social desirability bias}, \textit{academic integrity}, and \textit{information asymmetry}---reach or closely approach the $\kappa = 0.80$ threshold for strong agreement between the human coding and each LLM. This pattern is consistent with the explicit theoretical grounding of these constructs and the relative clarity with which they are expressed in respondents’ answers.
+
+In contrast, \textit{self-report bias}, \textit{network effect}, and \textit{privacy concerns} remain well below the threshold for every model, even under the best-performing configuration. This likely reflects both the more inductive origins of these labels and the inferential demands they place on coders, who must attribute implicit motivations to short, open-ended responses.
+
+A notable outlier is the \textit{self-esteem} category, for which Gemini achieves near-perfect agreement ($\kappa \approx 1.0$), whereas Claude and GPT both fall below $0.25$. Such extreme divergence is more plausibly attributable to Gemini collapsing class variation by systematically predicting a single value than to genuine alignment with human judgment. Class-balance diagnostics should therefore be examined before interpreting this result as evidence of superior performance.
+
+Figure \ref{fig:overall_agree_liang} presents Cohen’s $\kappa$ relative to the human benchmark across all ten shot $\times$ temperature configurations for the five categories meeting the minimum prevalence threshold. Gemini achieves the highest and most stable agreement, with $\kappa$ values ranging narrowly from 0.73 to 0.78 and showing minimal sensitivity to prompting strategy or temperature. Claude performs similarly under zero-shot prompting ($\kappa = 0.70$--$0.73$) but deteriorates under few-shot prompting at lower temperatures, suggesting that the examples may introduce an interfering prior. GPT exhibits the greatest variability, with $\kappa$ ranging from 0.39 to 0.74, although few-shot prompting generally improves performance relative to zero-shot. Overall, even the best-performing configurations achieve only moderate agreement, reflecting the inductive nature of the coding scheme for some categories, which requires inference about social motivations rather than identification of surface-level linguistic features.
+
 \begin{figure}[htbp]
-    \caption{Temperature sensitivity of aggregate score by model and prompt style - \citet{ling2025underreporting}} 
-    \label{fig:figure2_temperature_liang}
+    \caption{Overall agreement with Human Annotations - \citet{ling2025underreporting}} \label{fig:overall_agree_liang}
     \centering
-    \includegraphics[width=0.9\textwidth]{1_Figures/figure2_temperature_sensitivity_under_reporting_Ling_Kale_Imas.pdf}
-    
-    \vspace{0.3cm}
-    \footnotesize
-    \textit{Note:} The figure displays aggregate performance across temperature values for each model (Claude, Gemini, GPT) and prompt style (0-shot and few-shot). Aggregate score corresponds to the mean across selected core metrics.
+    \includegraphics[width=0.9\textwidth]{1_Figures/figure1_agreement_heatmap_under_reporting_Ling_Kale_Imas.pdf}
+
+        \footnotesize
+    \textit{Note:} Cohen’s $\kappa$ (human coder + LLM).
 \end{figure}
 
-Table~\ref{tab:temp_irr_under} reports internal consistency across temperature settings for the under-reporting application. All three models achieve strong mean alpha values, but notable variation emerges for specific labels. Claude attains the highest and most uniform consistency, with mean $\alpha = 0.950$ under zero-shot and $\alpha = 0.973$ under few-shot; three labels register no cross-temperature variance in a given strategy (shown as ---) and are excluded from the mean. Gemini is broadly consistent (mean $\alpha = 0.825$ zero-shot; $0.827$ few-shot) but two labels fall below the reliability threshold: \textit{underestimate self} ($\alpha = 0.621$, zero-shot) and \textit{network effect} ($\alpha = 0.527$ zero-shot; $0.604$ few-shot). GPT achieves strong mean consistency under zero-shot prompting ($\alpha = 0.885$), with only \textit{self-report bias} (0.752) and \textit{truthful response} (0.768) in the tentative range and no category below 0.67. The problematic labels for Gemini---\textit{underestimate self} and \textit{network effect}---are among the most inductively defined categories in this scheme, suggesting that nuanced social-psychological concepts offer greater scope for temperature-driven variability than more concrete thematic labels such as \textit{social desirability bias} or \textit{academic integrity}.
+Table \ref{tab:temp_irr_under} reports internal consistency across temperature settings for the under-reporting application. All three models achieve strong mean alpha values, although notable variation emerges for specific labels. Claude attains the highest and most uniform consistency, with mean $\alpha = 0.950$ under zero-shot prompting and $\alpha = 0.973$ under few-shot prompting; three labels exhibit no cross-temperature variance in a given strategy (shown as ---) and are therefore excluded from the mean calculation. Gemini is also broadly consistent (mean $\alpha = 0.825$ under zero-shot prompting and $\alpha = 0.827$ under few-shot prompting), although two labels fall below the reliability threshold: \textit{underestimate self} ($\alpha = 0.621$ under zero-shot prompting) and \textit{network effect} ($\alpha = 0.527$ under zero-shot prompting; $0.604$ under few-shot prompting). GPT achieves strong mean consistency under zero-shot prompting ($\alpha = 0.885$), with only \textit{self-report bias} (0.752) and \textit{truthful response} (0.768) falling within the tentative agreement range and no category below 0.67. Notably, the problematic labels for Gemini (\textit{underestimate self} and \textit{network effect}) are among the most inductively defined categories in the coding scheme, suggesting that nuanced social-psychological constructs are more sensitive to temperature variation than more concrete thematic labels such as \textit{social desirability bias} or \textit{academic integrity}.
 
-\begin{table}
-    \centering
-    \caption{Internal consistency across temperature settings -- \citet{ling2025underreporting}}
-    \label{tab:temp_irr_under}
-    \begin{adjustbox}{max width=\linewidth}
-    \small
-    \begin{tabular}{lccccc}
-        \toprule
-        & \multicolumn{2}{c}{Claude} & \multicolumn{2}{c}{Gemini} & GPT \\
-        \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-6}
-        Category                 & Zero-shot & Few-shot & Zero-shot & Few-shot & Zero-shot \\
-        \midrule
-        Uninformative            & 0.974 & 1.000 & 0.859 & 0.920 & 0.927 \\
-        Social desirability bias & 0.958 & 1.000 & 0.966 & 0.954 & 0.979 \\
-        Overestimate peers       & 0.950 & 1.000 & 0.899 & 0.884 & 0.808 \\
-        Underestimate self       & 0.882 & 0.884 & 0.621$^{b}$ & 0.825 & 0.798$^{a}$ \\
-        Academic integrity       & 1.000 & 1.000 & 0.912 & 0.848 & 0.953 \\
-        Information asymmetry    & 0.968 & 1.000 & 0.832 & 0.904 & 0.893 \\
-        AI discussion priming    & ---   & 1.000 & ---   & 0.861 & 0.916 \\
-        Privacy concerns         & 0.901 & ---   & 1.000 & 1.000 & 1.000 \\
-        Self-esteem              & 0.936 & 1.000 & 0.889 & 0.803 & 0.893 \\
-        Self-report bias         & ---   & 0.813 & 0.846 & 0.486$^{b}$ & 0.752$^{a}$ \\
-        Network effect           & 0.963 & 1.000 & 0.527$^{b}$ & 0.604$^{b}$ & 0.935 \\
-        Truthful response        & 0.969 & 1.000 & 0.725$^{a}$ & 0.834 & 0.768$^{a}$ \\
-        \midrule
-        \textit{Mean}$^{\dagger}$ & \textit{0.950} & \textit{0.973} & \textit{0.825} & \textit{0.827} & \textit{0.885} \\
-        \bottomrule
-    \end{tabular}
-    \end{adjustbox}
-    \vspace{0.2cm}
-    \begin{minipage}{\linewidth}
-        \footnotesize
-        \textit{Note:} Krippendorff's alpha treating each temperature run as an independent rater (predictions binarized: ${>}0.5\to 1$, else~0). Claude: 4 temperature settings (0, 0.1, 0.5, 1); Gemini and GPT: 5 settings (0, 0.1, 0.5, 1, 1.2). GPT results are zero-shot only for this application. $^{a}$~Tentative agreement ($0.67\leq\alpha<0.80$). $^{b}$~Unreliable agreement ($\alpha<0.67$). Unmarked values: strong agreement ($\alpha\geq0.80$). ---~no cross-temperature variance or insufficient data. $^{\dagger}$~Mean excludes cells marked ---.
-    \end{minipage}
-\end{table}
 
-Table~\ref{tab:inter_llm_under} reports inter-LLM agreement for the under-reporting application, again at temperature~0. Under zero-shot prompting ($n=95$), agreement varies substantially across categories. \textit{Social desirability bias} achieves strong inter-LLM agreement (0.944), consistent with its theoretical centrality and prevalence in the coding scheme, and \textit{academic integrity} also shows strong agreement (0.839). \textit{Overestimate peers}, \textit{information asymmetry}, and \textit{uninformative} are in the tentative range. The remaining categories---including \textit{self-report bias} (0.177), \textit{network effect} (0.472), and \textit{truthful response} (0.468)---fall below the reliability threshold, indicating substantial cross-model divergence for the more inductively defined themes. Few-shot results ($n=25$) should be interpreted with caution given the very small sample; large swings in individual labels (e.g., \textit{academic integrity} collapsing from 0.839 to 0.000) most likely reflect sampling variability rather than genuine model behavior. The zero-shot divergence pattern closely mirrors the structure of the coding scheme: LLMs converge on categories with explicit theoretical grounding but disagree for themes that emerged inductively from the original thematic analysis.
+\input{2_Tables/iir_llms_liang}
 
-\begin{table}
-    \centering
-    \caption{Inter-LLM agreement across models -- \citet{ling2025underreporting}}
-    \label{tab:inter_llm_under}
-    \begin{adjustbox}{max width=0.65\linewidth}
-    \small
-    \begin{tabular}{lcc}
-        \toprule
-        Category                 & Zero-shot & Few-shot$^{\dagger}$ \\
-        \midrule
-        Uninformative            & 0.691$^{a}$ & 0.729$^{a}$ \\
-        Social desirability bias & 0.944       & 1.000       \\
-        Overestimate peers       & 0.776$^{a}$ & 0.790$^{a}$ \\
-        Underestimate self       & 0.509$^{b}$ & 0.608$^{b}$ \\
-        Academic integrity       & 0.839       & 0.000$^{b}$ \\
-        Information asymmetry    & 0.705$^{a}$ & 0.317$^{b}$ \\
-        AI discussion priming    & ---         & 1.000       \\
-        Privacy concerns         & 0.594$^{b}$ & ---         \\
-        Self-esteem              & 0.637$^{b}$ & 0.223$^{b}$ \\
-        Self-report bias         & 0.177$^{b}$ & $-$0.048$^{b}$ \\
-        Network effect           & 0.472$^{b}$ & 0.479$^{b}$ \\
-        Truthful response        & 0.468$^{b}$ & 0.285$^{b}$ \\
-        \midrule
-        \textit{Mean}$^{\ddagger}$ & \textit{0.619} & \textit{0.489} \\
-        \bottomrule
-    \end{tabular}
-    \end{adjustbox}
-    \vspace{0.2cm}
-    \begin{minipage}{0.65\linewidth}
-        \footnotesize
-        \textit{Note:} Krippendorff's alpha with Claude, GPT, and Gemini as independent raters at temperature~0. Predictions binarized: ${>}0.5\to 1$, else~0. $^{a}$~Tentative ($0.67\leq\alpha<0.80$). $^{b}$~Unreliable ($\alpha<0.67$). Unmarked: strong ($\alpha\geq0.80$). ---~no variance or insufficient data. $^{\dagger}$~Few-shot uses $n=25$ (limited coverage); interpret with caution. $^{\ddagger}$~Mean excludes cells marked ---.
-    \end{minipage}
-\end{table}
 
-\subsubsection{Application 3: substantive validity}
+\subsubsection{\citet{ling2025underreporting}: substantive validity}
 
+Finally, as in the previous applications, we examine whether using LLM-coded data instead of the authors’ original classifications would lead to the same substantive conclusions. \citet{ling2025underreporting} report category prevalence estimates showing that social desirability bias (\textit{SDB}) is the dominant explanation for the own--other AI usage gap, appearing in 60.6\% of valid responses, followed by overestimation of others’ usage (29.6\%), information asymmetry (26.8\%), and academic integrity concerns (21.1\%). The key substantive validity question in this application is therefore whether LLM-based coding reproduces the rank ordering and relative magnitudes of these categories closely enough to preserve the paper’s qualitative conclusions.
+
+Table \ref{tab:ling_prevalence} reports prevalence rates from the human coding and from each model under zero-shot prompting at temperature 0. The main conclusion of \citet{ling2025underreporting}, namely, that social desirability bias (\textit{SDB}) is the dominant mechanism underlying the own-other AI usage gap, is robustly preserved across all three models. LLM-estimated SDB prevalence ranges from 57.5\% (Claude) to 63.2\% (Gemini), closely bracketing the human benchmark of 60.6\%. Information asymmetry and academic integrity are likewise reproduced with high fidelity, with no model deviating by more than five percentage points from the human benchmark for either category. Overall, these results suggest that the paper’s central substantive conclusions--that SDB is the primary driver of underreporting, that overestimation of peers’ AI usage plays a secondary role, and that information asymmetry represents a distinct explanatory mechanism--are reliably recovered through LLM-based coding.
+
+\input{2_Tables/table_p3_sustantive}
 
 \section{Discussion and conclusion}\label{s-discussion}
 
@@ -630,10 +474,463 @@ This table could appear as a small summary box in the discussion with exactly th
 \section{Prompt templates}
 Include the exact prompts used for each application.
 
+\fbox{
+\begin{minipage}{0.9\linewidth}
+\ttfamily
+
+// \textbf{Role}
+
+Your are is <role description>\\
+
+// \textbf{Context}
+
+<Game structure>
+
+<Treatment Conditions>
+
+<Communication type>
+
+<Underlying experimental logic>\\
+
+// \textbf{Classification Task}
+
+<Language note>
+
+<Participants responses' structure>
+
+<Categories definition>\\
+
+// \textbf{Format}
+
+Please give your answer strictly as a python dictionary, with no additional text or characters. Use the same tags you chose for each category.
+
+<JSON structure>\\
+
+// \textbf{Constraints}
+
+<Constraints specification>
+
+
+\end{minipage}
+}
+
+
+\begin{tcolorbox}[
+    enhanced,
+    breakable, % Esto permite que el cuadro salte de página
+    colback=white,
+    colframe=black,
+    sharp corners,
+    boxrule=0.5pt,
+    width=0.98\linewidth,
+    center,
+    fontupper=\ttfamily
+]
+
+// \textbf{Role}
+
+You are an expert research assistant specializing in qualitative analysis of behavioral economics experiments, with extensive experience interpreting and coding free-form participant responses.\\
+
+// \textbf{Context}
+
+This experiment examines coordination between a manager and two agents under conditions of conflicting preferences and asymmetric information. Participants (567 undergraduate students in 189 groups of three) were assigned fixed roles (one manager M, two agents S1 and S2) and played 18 rounds where the game state varied randomly.\\
+
+GAME STRUCTURE:\\
+- All parties benefit when agents coordinate on a common action\\
+- Agents have opposing preferences over which coordinated outcome to choose\\
+- Agents observe the game state; the manager does not\\
+- The efficient outcome (maximizing total surplus) varies by state\\
+- Manager's objective is to maximize combined agent payoffs\\
+
+TREATMENT CONDITIONS:\\
+Groups were assigned to different conditions varying:\\
+
+Communication type:\\
+- No communication (baseline)\\
+- Structured communication (predefined message options)\\
+- Free-form chat (unrestricted text messaging)\\
+
+Control mechanism:\\
+- Delegation (agents choose actions)\\
+- Delegation with managerial advice\\
+- Managerial control (manager selects actions)\\
+
+After each round, participants received feedback on the game state and actions. In some treatments, managers could observe discrepancies between agents' reported information and the actual state.\\
+
+
+// \textbf{Classification Task}
+
+Language note: The input messages are primarily in Spanish. Interpret the content in Spanish from Spain and output only the required labels in the specified format.\\
+
+The task you have is to classify each group of messages sent in one or more of the following categories. The group of messages represent what the participants communicated sequentially during each period. Additionally, it states who sent the message: 0 if it is Central Manager, 1 if it is agent 1, and 2 if it is agent 2. \\
+
+These are the categories stated:\\
+
+1.	Did they make a suggestion about what row/column should be chosen? (any\_suggestion) If it was the case:\\
+a.	Did they suggest a safe outcome? (suggest\_safe)\\
+b.	Did they suggest an efficient outcome? (suggest\_efficient)\\
+
+2.	Did they agree to the proposal about what row/column should be chosen? (agree\_proposal)\\
+3.	Did they discuss about what row/column should be chosen? If it was the case:\\
+a.	Did they discuss need to coordinate? (discuss\_coordinate) IMPORTANT BOUNDARY: This requires more than making a suggestion that involves coordination. The message needs to indicate that the two players should be choosing the same thing (e.g. "We'll do better if we make the same choices" is coded. "Let's choose row 4 and column 4" is not coded.)	\\
+b.	Did they discuss fairness? (discuss\_fairness) This category includes any message that discusses the distribution of pay over the three players. Use 0.5 if fairness is raised only briefly or incidentally.\\		
+c.	Did they discuss efficiency? (discuss\_efficient) This includes discussion of maximizing total pay as well as explaining how and why rotation between players works. Use 0.5 if efficiency is mentioned in passing.\\
+4.	Did they send questions about rules of the experiment? (discuss\_rules) Use 0.5 if the question is ambiguous (could be asking about rules or about strategy).\\
+5.	Did they give any explanation (explanation)? This included explanations about the rules of the experiment or game, as well as explanations of a suggested way of playing the game. Use 0.5 if the explanation is partial or unclear.\\
+6.	Did they send questions about how to play?\\(discuss\_howtoplay) This was for conceptual questions rather than the frequent generic request that somebody suggest a row and column.\\
+7.	Did the Manager (coded as 0) ask what game is being Played? (ask\_game) Use 0.5 if the question is implicit or ambiguous.\\
+8.	Did Agents Report What Game is Being Played? (receive\_report) If that is the case:\\
+a.	Did they truthfully Reveal Game? (truthful)\\
+b.	Did they lie About Game? (falsehood)\\
+c.	Conflict (contradict): The agents contradict each other — one says one game, the other says a different game. (Note: previously mislabeled 'contradict' was the fact-checking category; see constraint file for final mapping.)\\
+9.	None of the agents report. This is true if in the last question "Did Agents Report What Game is Being Played?", the answer was false. (neither\_report)\\
+
+// \textbf{Format}
+
+Please provide your answer strictly as a Python dictionary with no additional text or characters.\\
+
+Use these exact keys with no extra spaces:\\
+- 'any\_suggestion'\\
+- 'suggest\_safe'\\
+- 'suggest\_efficient'\\
+- 'agree\_proposal'\\
+- 'discuss\_coordinate'\\
+- 'discuss\_fairness'\\
+- 'discuss\_efficient'\\
+- 'discuss\_rules'\\
+- 'explanation'\\
+- 'discuss\_howtoplay'\\
+- 'ask\_game'\\
+- 'receive\_report'\\
+- 'truthful'\\
+- 'falsehood'\\
+- 'contradict'\\
+- 'neither\_report'\\
+
+All values must be:\\
+- 1 if the category is clearly observed\\
+- 0 if the category is not observed\\
+
+Be sure that each tag is in simple quotes. \\
+Example format:\\
+\{\\
+    'any\_suggestion': 1,\\
+    'suggest\_safe': 0,\\
+    'suggest\_efficient': 1,\\
+    'agree\_proposal': 0,\\
+    'discuss\_coordinate': 1,\\
+    'discuss\_fairness': 1,\\
+    'discuss\_efficient': 0,\\
+    'discuss\_rules': 1,\\
+    'explanation': 1,\\
+    'discuss\_howtoplay': 1,\\
+    'ask\_game': 0,\\
+    'receive\_report': 0,\\
+    'truthful': 0,\\
+    'falsehood': 0,\\
+    'contradict': 0,\\
+    'neither\_report': 1\\
+\}\\
+
+// \textbf{Constraints}
+
+LOGICAL CONSTRAINTS:\\
+
+1. Suggestion hierarchy:\\
+   - If 'any\_suggestion': 0, then both 'suggest\_safe': 0 and 'suggest\_efficient': 0\\
+   - If 'any\_suggestion': 1, then 'suggest\_safe' and 'suggest\_efficient' can be 0 or 1 independently\\
+
+2. Reporting logic:\\
+   - 'receive\_report' and 'neither\_report' are mutually exclusive:\\
+     • If 'receive\_report': 0, then 'neither\_report': 1\\
+     • If 'receive\_report': 1, then 'neither\_report': 0\\
+
+3. Report content (only applies when 'receive\_report': 1):\\
+   - Exactly one of the following must equal 1, the others must be 0:\\
+     • 'truthful'\\
+     • 'falsehood'\\
+     • 'contradict'\\
+   - If 'receive\_report': 0, then all three must be 0\\
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+    enhanced,
+    breakable, % Esto permite que el cuadro salte de página
+    colback=white,
+    colframe=black,
+    sharp corners,
+    boxrule=0.5pt,
+    width=0.98\linewidth,
+    center,
+    fontupper=\ttfamily
+]
+
+// \textbf{Role}
+
+You are an expert research assistant specializing in qualitative analysis of behavioral economics experiments, with extensive experience interpreting and coding free-form participant responses. \\
+
+// \textbf{Context}
+
+This experiment examines how communication influences trust and cooperation in a sequential decision-making game, with particular focus on how time delays affect these dynamics.\\
+
+EXPERIMENTAL STRUCTURE:\\
+Participants play a trust game in pairs: a Trustor (sender) and a Trustee (responder). The game occurs in a single lab session, supplemented by two online questionnaires (Q1 and Q2) administered at different times.\\
+
+GAME MECHANICS:\\
+The Trustor chooses between:\\
+- OUT: Both receive \$15\\
+- IN: Decision passes to the Trustee\\
+
+If the Trustor chooses IN, the Trustee decides between:\\
+- DON'T ROLL: Trustee receives \$42, Trustor receives \$0\\
+- ROLL: Trustee receives \$30, Trustor's payoff depends on a dice roll (5/6 probability of \$36, 1/6 probability of \$0)\\
+
+TREATMENT CONDITIONS:\\
+Treatments vary across two dimensions:\\
+
+Communication:\\
+- No message condition\\
+- Message condition (Trustee can send a message to the Trustor before the Trustor's decision)\\
+
+Decision timing:\\
+- Immediate: Trustee decides during the lab session\\
+- 24-hour delay: Trustee decides within 24 hours after the session\\
+- 21-day delay: Trustee decides 21 days after the session\\
+
+ANALYSIS FOCUS:\\
+Messages sent by Trustees in the communication conditions are analyzed for content and framing.\\
+
+// \textbf{Classification Task}
+
+Language note: The input messages are primarily in English. Interpret the content in English and output only the required labels in the specified format.\\
+
+Your task is to classify each message into one or more of the following categories. Messages may belong to multiple categories.\\
+
+CATEGORIES:\\
+
+1. is\_promise: Message in which the Trustee explicitly or implicitly commits to a specific future action. This includes direct statements (e.g., "I will choose ROLL") as well as implicit commitments that suggest intention to take a particular action.\\
+
+2. appeal\_efficiency: Message emphasizes practical benefits or optimal resource allocation. This includes arguments that cooperation leads to better outcomes, maximizes total payoffs, or makes better use of available resources for the parties involved.\\
+
+3. appeal\_fairness: Message invokes principles of fairness, equity, or moral rightness. This includes arguments that a particular choice is just, ethically appropriate, or represents equal treatment between the parties.\\
+
+4. uninformative: Message is nonsensical (e.g., random text, gibberish), irrelevant to the decision context, or indicates the sender misunderstood the task.\\
+
+
+// \textbf{Format}
+
+Please provide your answer strictly as a Python dictionary with no additional text or characters.\\
+
+Use these exact keys:\\
+- 'is\_promise'\\
+- 'is\_efficiency'\\
+- 'is\_ethics'\\
+- 'uninformative'\\
+
+All values must be:\\
+- 1 if the category is observed in the message\\
+- 0 if the category is not observed\\
+
+Be sure that each tag is in simple quotes. \\
+Example format:\\
+{\\
+    'is\_promise': 1,\\
+    'is\_efficiency': 1,\\
+    'is\_ethics': 0,\\
+    'uninformative': 0\\
+}\\
+
+
+// \textbf{Constraints}
+
+LOGICAL CONSTRAINTS:\\
+
+1. Uninformative messages:\\
+   - If 'uninformative': 1, then all other categories must be 0\\
+   - A nonsensical or irrelevant message cannot simultaneously contain promises or appeals\\
+
+2. Multiple categories:\\
+   - Messages can contain combinations of 'is\_promise', 'is\_efficiency', and 'is\_ethics'\\
+   - Example: A promise that also appeals to efficiency would have both set to 1\\
+
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+    enhanced,
+    breakable, % Esto permite que el cuadro salte de página
+    colback=white,
+    colframe=black,
+    sharp corners,
+    boxrule=0.5pt,
+    width=0.98\linewidth,
+    center,
+    fontupper=\ttfamily
+]
+
+// \textbf{Role}
+
+You are an expert research assistant specializing in qualitative analysis of behavioral economics experiments, with extensive experience interpreting and coding free-form participant responses.  \\
+
+// \textbf{Context}
+
+The experiment explored whether undergraduate students underreport AI usage in academic settings. Participants (78\% STEM majors) reported their own AI reliance and frequency of use, then estimated their peers' AI usage.\\
+
+A follow-up survey asked a separate sample of undergraduate students to explain potential gaps between self-reported and peer-attributed AI usage through open-ended responses. Responses may include references to social desirability, privacy concerns, genuine lack of knowledge about peers, or alternative explanations.\\
+
+
+// \textbf{Classification Task}
+
+Language note: The input responses are primarily in English. Interpret the content in English and output only the required labels in the specified format.\\
+
+Your task is to classify each qualitative response into one or more of the following categories. Responses may belong to multiple categories.\\
+
+CATEGORIES:\\
+
+1. uninformative: Response is nonsensical (e.g., random text, gibberish) or indicates misunderstanding of the question (e.g., explaining the gap in reverse direction, irrelevant content).\\
+
+2. SDB: The response indicates that individuals may misreport or conceal AI usage in order to avoid negative social evaluation, judgment, or reputational harm.\\
+
+3. overest\_others: Response indicates students overestimate their peers' AI usage.\\
+
+4. underest\_own: Response indicates students underestimate their own AI usage.\\
+
+5. academic\_integrity: Response mentions academic integrity concerns, such as viewing AI usage as cheating, dishonest, or academically problematic.\\
+
+6. info\_asymmetry: Response indicates students lack knowledge about peers' actual AI usage patterns.\\
+
+7. AI\_discussion\_priming: Response that attributes the gap between self-reported and peer-reported AI use to the visibility and frequency of AI as a topic of conversation, debate, or media coverage. It captures instances where respondents believe that "talking about AI" is being mistaken for "using AI".\\
+
+8. privacy\_concerns: Response mentions privacy concerns as a reason for underreporting personal AI usage.\\
+
+9. self\_esteem: Response indicates students underreport AI usage to protect self-image or self-worth (similar to SDB but focused on internal self-perception rather than external judgment).\\
+
+10. self\_report\_bias: Response mentions self-favoring or self-enhancement bias in reporting behavior.\\
+
+11. network\_effect: Response explains the reporting gap by suggesting that a student’s local social circle or friend group heavily influences their perception of how much the general population uses AI. It describes a scenario where high usage within a specific "network" leads a student to incorrectly assume that those same high usage rates apply to the entire student body.\\
+
+12. truthful: Response indicates the gap accurately reflects real differences in AI usage—respondents genuinely use AI less than their peers.\\
+
+
+// \textbf{Format}
+
+Please give your answer strictly as a python dictionary, with no additional text or characters. Use exactly the following tags in the dictionary:\\
+4.	'uninformative' for uninformative\\
+5.	'SDB' for SDB\\
+6.	'overest\_others' for overest. others\\
+7.	'underest\_own' for underest. own\\
+8.	'academic\_integrity' for academic integrity\\
+9.	'info\_asymmetry' for info asymmetry\\
+10.	'AI\_discussion\_priming ' for AI discussion priming\\
+11.	'privacy\_oncerns' for privacy concerns\\
+12.	'self\_esteem' for self-steem\\
+13.	'self\_report\_bias' for self-report bias\\
+14.	'network\_effect' for network effect\\
+15.	'truthful' for truthful\\
+
+All categories must have the value of 1 if the category is observed in the response or 0 if it is not observed. 
+Be sure that each tag is in simple quotes. \\
+
+In that sense, the format should be:\\
+\{
+    'uninformative': 0,\\
+    'SDB': 0,\\
+    'overest\_others': 0,\\
+    'underest\_own': 1,\\
+    'academic\_integrity': 1,\\
+    'info\_asymmetry': 0,\\
+    'AI\_discussion\_priming ': 0,\\
+    'privacy\_concerns': 0,\\
+    'self\_esteem': 1,\\
+    'self\_report bias': 0,\\
+    'network\_effect': 0,\\
+    'truthful': 0\\
+\}\\
+
+
+// \textbf{Constraints}
+
+If you classify a response as uninformative ('1'), then all other categories must automatically be set to '0'.\\
+
+If  you are sure the response is informative ('0'), then you should continue evaluating and assigning '1' or '0' to the other categories as appropriate.\\
+
+
+\end{tcolorbox}
+
 \section{Additional figures and tables}
-Include supplementary figures and tables.
+
+ \input{appendix_tables}
+
+\begin{figure}[htbp]
+    \caption{Best metric score by model - }
+    \label{fig:figure1_ederer}
+    \centering
+    \includegraphics[width=0.9\textwidth]{1_Figures/tool_screenshots/csv upload.png}
+    
+       \vspace{0.3cm}
+    \footnotesize
+    \textit{Note:} Cell annotation shows winning configuration (shot@temperature).
+\end{figure}
+
+\begin{figure}[htbp]
+    \caption{Best metric score by model - }
+    \label{fig:figure1_ederer}
+    \centering
+    \includegraphics[width=0.9\textwidth]{1_Figures/tool_screenshots/api_key.png}
+    
+       \vspace{0.3cm}
+    \footnotesize
+    \textit{Note:} Cell annotation shows winning configuration (shot@temperature).
+\end{figure}
+
+\begin{figure}[htbp]
+    \caption{Best metric score by model - }
+    \label{fig:figure1_ederer}
+    \centering
+    \includegraphics[width=0.9\textwidth]{1_Figures/tool_screenshots/prompt.png}
+    
+       \vspace{0.3cm}
+    \footnotesize
+    \textit{Note:} Cell annotation shows winning configuration (shot@temperature).
+\end{figure}
+
+\begin{figure}[htbp]
+    \caption{Best metric score by model - }
+    \label{fig:figure1_ederer}
+    \centering
+    \includegraphics[width=0.9\textwidth]{1_Figures/tool_screenshots/line by line.png}
+    
+       \vspace{0.3cm}
+    \footnotesize
+    \textit{Note:} Cell annotation shows winning configuration (shot@temperature).
+\end{figure}
+
+\begin{figure}[htbp]
+    \caption{Best metric score by model - }
+    \label{fig:figure1_ederer}
+    \centering
+    \includegraphics[width=0.9\textwidth]{1_Figures/tool_screenshots/batch 1.png}
+    
+       \vspace{0.3cm}
+    \footnotesize
+    \textit{Note:} Cell annotation shows winning configuration (shot@temperature).
+\end{figure}
+
+\begin{figure}[htbp]
+    \caption{Best metric score by model - }
+    \label{fig:figure1_ederer}
+    \centering
+    \includegraphics[width=0.9\textwidth]{1_Figures/tool_screenshots/batch 2.png}
+    
+       \vspace{0.3cm}
+    \footnotesize
+    \textit{Note:} Cell annotation shows winning configuration (shot@temperature).
+\end{figure}
+
 
 \end{appendices}
+
 
 \end{sloppypar}
 \end{document}

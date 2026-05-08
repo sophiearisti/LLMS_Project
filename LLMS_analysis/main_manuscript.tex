@@ -434,30 +434,135 @@ Table \ref{tab:ling_prevalence} reports prevalence rates from the human coding a
 
 \section{Discussion and conclusion}\label{s-discussion}
 
-This paper should emphasize that LLM coding is most useful when it is evaluated as a measurement procedure rather than treated as a black box substitute for researchers.
+% =========================================================================
+% STRUCTURE NOTE (delete before submission):
+% Five subsections: (1) Synthesis, (2) Taxonomy of coding tasks,
+% (3) Agreement vs. substantive validity, (4) Practical guidance,
+% (5) Limitations + Conclusion.
+% [DRAFT] = ready prose. [AUTHOR: ...] = your judgment needed there.
+% =========================================================================
 
-A useful structure is:
-\begin{itemize}
-    \item what kinds of coding tasks LLMs handle well;
-    \item where human adjudication remains essential;
-    \item how benchmark quality affects apparent model performance;
-    \item implications for experimental economics and communication research;
-    \item transparency, reproducibility, and ethical concerns.
-\end{itemize}
+%--- 1. SYNTHESIS -----------------------------------------------------------
+\subsection*{Synthesis of findings}
 
-should do three things: synthesize the performance across all three applications (not just per study), discuss failure modes (where did the LLM disagree with humans, and why?), and offer practical guidance — what prompt structures worked, what kinds of coding tasks are better or worse candidates for this approach.
+This paper provides systematic evidence on whether large language models can reliably code the kinds of open-ended text data that arise in experimental economics research. Our three applications span a wide range of coding complexity---from inductively constructed thematic schemes applied to short survey responses, to multi-label conversational coding of free-form chat in strategic environments, to binary deductive labeling of promise content in a trust game---and together allow us to identify the structural features of a coding task that determine how far LLMs can be trusted as measurement instruments.
 
-From tables on paper ready folder:
+The clearest positive finding concerns coding tasks defined by explicit, deductively specified categories whose content is surface-marked in the text. In Application~2, the promise label in \citet{ederer_schneider_2022} is precisely this type: a trustee either commits to a specific action or does not, and the relevant evidence is largely visible in the syntactic surface of the message. All three models achieve strong agreement with the human benchmark, and the main substantive conclusion of the original paper---that promise-making strongly predicts cooperative behavior---is recovered by LLM coding in terms of sign and magnitude, even if statistical significance attenuates slightly. This result extends to the descriptive secondary labels, where prevalence estimates are broadly comparable to human coding, with the main discrepancy being a tendency to over-detect ethics language, consistent with LLMs' known sensitivity to normatively framed content.
 
-The models are essentially tied
-GPT avg rank 1.87, Claude and Gemini both 2.07 — that's a razor-thin difference. Median rank is 2 for all three. No model dominates clearly.
-Wins is the most interesting column
-Gemini wins most individual tag-level contests (6), GPT second (5), Claude third (4) — yet GPT has the best average rank. That suggests GPT is more consistently near the top even when it doesn't win outright, while Gemini wins more but also loses more.
-Temperature SD is low and similar across models
-All three are around 0.17–0.19, meaning performance is fairly stable across temperatures for all models. This is actually a useful finding: temperature doesn't matter much, which simplifies practical recommendations to researchers.
-What this means for the paper
-The honest conclusion is: model choice doesn't matter much — all three perform similarly. That's a clean, useful message. The more important determinant of success is the coding scheme itself (category concreteness, class balance), not which LLM you pick.
-This table could appear as a small summary box in the discussion with exactly that framing. Want help writing that paragraph?
+The picture is more mixed in Application~3, where the coding scheme of \citet{ling2025underreporting} is inductive rather than deductive. For the dominant and theoretically central category---social desirability bias---all three models closely reproduce the human benchmark (57--63\% vs.\ 60.6\%), and the paper's first-order substantive conclusion is preserved. However, for the tail of rare, inductively derived categories, LLM coding diverges substantially and systematically: self-esteem concerns and self-report bias are massively over-detected by most models (self-esteem inflated from 4.2\% to 14--25\%), while overestimation of peers and AI discussion priming are consistently under-detected. A researcher relying on LLM coding alone for these minor categories would draw materially different conclusions about the social-psychological portrait of students' reasoning about AI use.
+
+The most demanding application is Application~1, the multi-label conversational coding in \citet{brandts_cooper_2025}. For the eight behaviorally concrete categories, where human coders achieve strong agreement ($\alpha \geq 0.70$), LLM coding attains moderate to good agreement. For the four interpretively ambiguous categories ($\alpha < 0.50$ among human coders), LLM performance deteriorates, mirroring the difficulty that human experts face. Critically, the downstream Probit regressions do not replicate reliably under LLM coding: some coefficients change sign, others achieve significance on variables that are not significant in the human benchmark, and the correspondence is inconsistent across models. This application illustrates the most consequential failure mode: when LLMs disagree with humans on categories that are key predictors in the regression, the conclusions can be actively misleading rather than merely noisier.
+
+% [AUTHOR: Consider adding a 2--3 sentence synthesis paragraph here that
+% explicitly places the three applications on a performance gradient, e.g.:
+% "Application 2 is a near-success; Application 3 a partial success at
+% the category level but reliable for first-order conclusions; Application 1
+% a qualified failure at the downstream inference level for the most
+% complex coding categories." A crisp ranking helps readers who read
+% the conclusion before the results.]
+
+%--- 2. TAXONOMY OF CODING TASKS -------------------------------------------
+\subsection*{What predicts LLM performance: a taxonomy}
+
+Across the three applications, a consistent pattern emerges: the structural features of the coding scheme---not the choice of model or temperature---are the primary determinants of LLM coding quality. We identify three features that appear to matter most.
+
+\textit{Deductive versus inductive scheme construction.} Categories derived from prior theory and defined before data collection tend to be more reliably coded by LLMs because they correspond to constructs whose semantic content is relatively stable and can be communicated through a prompt. Inductive categories, constructed from themes that emerged from the data, capture distinctions that human analysts discovered iteratively and that may not have clean linguistic signatures. This contrast is cleanest between the promise label in Application~2 and the rare categories in Application~3, but it also manifests within Application~1, where theoretically grounded categories (truthful report, suggestion) are coded more reliably than discourse-level interpretive ones (explanation, discuss fairness).
+
+\textit{Surface-marking versus pragmatic interpretation.} Some categories can be detected from relatively shallow lexical or syntactic features---explicit commitment verbs, mentions of academic dishonesty, named concepts like ``social desirability bias''---while others require inference about communicative intent, social context, or implicit meaning. LLMs perform substantially better on the former. Pragmatic categories, where the correct label depends not on what was said but on why it was said and how a competent interlocutor would receive it, impose a deeper interpretive demand that current LLMs do not meet as reliably as trained human coders.
+
+\textit{Category prevalence and class balance.} LLMs over-detect rare inductive categories systematically. When a category appears in fewer than approximately 5--7\% of responses in the human coding, LLM prevalence estimates tend to diverge sharply upward, often by a factor of three to five. This failure mode is likely a consequence of LLMs identifying semantically related content that a human analyst would not assign to a label under the coding rubric---a form of precision failure that is invisible in high-prevalence categories.
+
+% [AUTHOR: A 3-column summary table or box with "Scheme type /
+% Surface-marking / Prevalence" and a column "Expected LLM performance"
+% would make this taxonomy visually memorable for readers. You could
+% use Applications 1--3 as the row examples. Optional but potentially
+% high-impact for practitioner readers.]
+
+Notably, neither model choice nor temperature plays a decisive role in performance differences. Across the three applications, the three model families (Claude, Gemini, GPT) perform similarly at best configuration: average rank differences are smaller than 0.25 and no model dominates consistently across all categories. Gemini wins most individual tag-level contests (6), GPT second (5), Claude third (4), yet GPT has the best average rank---suggesting GPT is more consistently near the top even when it does not win outright, while Gemini wins more but also loses more. Temperature sensitivity is similarly low: the standard deviation of aggregate performance across the $[0, 1.2]$ temperature range is approximately 0.17--0.19 for all models. These findings carry a practical implication: researchers do not need to invest in model comparisons or hyperparameter tuning. The bottleneck is coding scheme design and prompt engineering, not LLM selection.
+
+%--- 3. AGREEMENT VS. SUBSTANTIVE VALIDITY ---------------------------------
+\subsection*{Agreement and substantive validity are not the same}
+
+A central methodological contribution of this paper is the distinction between classification agreement and substantive validity. High agreement between an LLM and a human coder is necessary but not sufficient for the LLM-coded variable to be usable in downstream inference. Conversely, imperfect agreement does not automatically disqualify a variable for research use.
+
+The trust game application illustrates this tension. GPT achieves Cohen's $\kappa \approx 0.84$ on the promise label---widely considered strong agreement---yet this does not fully preserve the statistical significance of the promise effect in the regression ($p = 0.060$ under GPT coding versus $p = 0.043$ in the original). The attenuation is consistent with classical measurement error: even a small rate of mislabeled non-promises dilutes the estimated effect, because the treated group is contaminated with observations that should have been coded zero. When the positive class is rare and behaviorally distinctive---that is, when mislabeled observations are systematically different in outcome from correctly labeled ones---the cost of classification noise is amplified. Researchers who rely solely on agreement statistics to evaluate LLM coding may underestimate this cost.
+
+The converse failure mode appears in Application~1. Several LLM-derived coding variables achieve moderate Krippendorff's $\alpha$ values in the agreement analysis, yet produce regression coefficients that are inconsistent with the human benchmark in sign and significance. The agreement metric is misleading in the opposite direction: because the categories are multi-label and the outcome is binary coordination, a coding that systematically assigns a category to the wrong subset of conversations can achieve moderate agreement globally while being substantively wrong about the conversations that matter most for the regression.
+
+% [AUTHOR: This is the right place for a methodological recommendation
+% paragraph, e.g.: "We recommend that researchers validate LLM-coded
+% variables on both dimensions: (a) agreement on a hand-coded validation
+% sample, AND (b) downstream replication of the key regressions or
+% descriptive statistics. Reporting both gives readers---and referees---
+% the information needed to evaluate whether a specific LLM-coded
+% variable is fit for the purpose at hand."]
+
+Together, these two failure modes suggest that downstream inference replication---not just agreement statistics---should be the research standard for validating LLM-based coding. A coding that yields $\kappa = 0.80$ but reverses the sign of a key coefficient is not usable. A coding that yields $\kappa = 0.65$ but preserves the sign, approximate magnitude, and statistical significance of all substantive findings may be good enough for the purpose at hand.
+
+%--- 4. PRACTICAL GUIDANCE --------------------------------------------------
+\subsection*{Practical guidance for researchers}
+
+Based on our findings, we offer the following guidance for researchers considering LLM-assisted text coding in experimental settings.
+
+\textit{Invest heavily in prompt design, especially for complex schemes.} The largest determinant of performance across all three applications is how well the prompt communicates the coding task. Few-shot prompting consistently improves performance relative to zero-shot for complex multi-label schemes, and the few-shot examples should be chosen to represent the ambiguous cases that distinguish adjacent categories, not just clean prototypical cases. The prompt should define the boundary between similar categories, not only provide positive exemplars.
+
+\textit{Always validate on a human-coded sample, and validate downstream.} Regardless of prompt design, researchers should hand-code a random validation sample---we suggest at least 10--15\% of observations---and compute both agreement statistics and downstream replications of the key regressions or descriptive statistics. Agreement statistics alone are not sufficient as a validity criterion.
+
+\textit{Treat rare inductive categories with extra skepticism.} Any category whose human-coded prevalence falls below approximately 5\% is at elevated risk of over-detection by LLMs. For such categories, human spot-checking of a larger random sample or targeted adjudication of LLM positives is warranted before interpreting LLM-estimated prevalence quantitatively.
+
+\textit{Use temperature 0 for reproducibility.} Because performance is largely insensitive to temperature, temperature 0 is the simplest choice for researchers who prioritize exact replication. It eliminates stochastic variation and allows the coding to be reproduced exactly from the same prompt and model version.
+
+\textit{Model choice is not a first-order concern.} Our results show no consistent advantage for any single model family. Researchers should choose the most accessible and cost-effective model and invest the saved decision cost in prompt iteration and validation instead.
+
+% [AUTHOR: Consider adding a brief note on cost here. Something like:
+% "For context, the cost of coding [X] responses using [model] at
+% temperature 0 was approximately \$Y, compared to an estimated
+% [RA-hours] for human coding. LLM coding appears cost-competitive
+% even accounting for the researcher-time required for validation."
+% Concrete cost figures would be highly practical for readers deciding
+% whether to adopt the approach.]
+
+%--- 5. LIMITATIONS AND CONCLUSION -----------------------------------------
+\subsection*{Limitations}
+
+Several limitations bound the scope of our conclusions. First, all three applications involve English-language text produced by university-educated participants in structured experimental settings. Whether the same performance patterns extend to other languages, lower-literacy populations, or less constrained text environments remains an open question.
+
+Second, the human coding benchmarks used here are of unusually high quality: expert coders underwent multiple rounds of training and calibration, with disagreements adjudicated through group discussion. Our agreement statistics may therefore be conservative relative to what would be observed against a less carefully constructed human coding.
+
+Third, we evaluate only zero-shot and few-shot prompting strategies; chain-of-thought, self-consistency, and multi-step prompting approaches may yield different results, particularly for the interpretively complex categories in Application~1. We leave this to future work.
+
+Fourth, frontier LLMs evolve rapidly. Our results characterize performance at a specific snapshot; successor models may perform substantially differently, and our quantitative benchmarks should be interpreted accordingly.
+
+% [AUTHOR: Add a paragraph here acknowledging the limitation of
+% three applications. Something like: "Our taxonomy of coding task
+% features should be understood as a hypothesis about the structural
+% determinants of LLM coding quality, to be tested and refined in
+% future work covering a broader range of coding schemes, languages,
+% and experimental contexts. In particular, we have no applications
+% involving coding from audio or video transcripts, adversarial text,
+% or non-WEIRD populations, where performance may differ substantially."]
+
+\subsection*{Conclusion}
+
+This paper provides evidence that large language models are useful but imperfect tools for coding open-ended text in experimental economics research. Their usefulness is greatest when the coding scheme is deductive, when the relevant categories are surface-marked in the text, and when the categories are prevalent enough to provide clear training signal in a few-shot prompt. Their limitations are most consequential when the scheme is inductive, when categories require pragmatic inference about communicative intent, and when rare categories need to be estimated quantitatively rather than just detected qualitatively.
+
+A key practical implication is that model choice and temperature are second-order concerns: the determinant of success is the fit between the coding scheme and the capabilities of current LLMs. Researchers should spend their adaptation effort on prompt engineering and validation design, not model comparisons. They should also resist treating agreement statistics as the ultimate validity criterion; downstream replication of key regressions or descriptive statistics is the appropriate standard for research-grade LLM coding.
+
+More broadly, our results suggest that LLMs are best understood as a component in a human-machine coding workflow rather than autonomous replacements for human judgment. For many coding tasks in experimental economics, the most practical use case is not full automation but LLM-assisted coding with targeted human review of the cases most likely to be misclassified---low-prevalence categories, pragmatically complex messages, and observations near the coding boundary. This hybrid approach preserves the scalability and cost advantages of LLM coding while retaining human oversight where it is most needed.
+
+% [AUTHOR: Close with a 2--3 sentence look-forward paragraph. Ideas:
+% -- How might LLM-assisted coding change the practice of communication
+%    experiments? (E.g., real-time coding during data collection, enabling
+%    adaptive experimental designs that respond to chat content.)
+% -- What does near-zero marginal cost of coding imply for the design of
+%    text-heavy experiments that were previously infeasible?
+% -- Could LLMs help standardize coding schemes across replications of
+%    the same experiment conducted in different labs or languages?
+% -- Connection to open science: because LLM coding is reproducible from
+%    a prompt + model version, it creates an audit trail that human coding
+%    alone cannot provide.
+% Pick 1--2 threads that resonate with your research agenda and close on
+% a forward-looking note.]
 
 
 \newpage

@@ -1,20 +1,11 @@
 {
-  "batch_69f99a59e7648190833b72803ee92aee": {
-    "batch_id": "batch_69f99a59e7648190833b72803ee92aee",
+  "batch_6a02ae1a55108190aab57b8f988bd6b3": {
+    "batch_id": "batch_6a02ae1a55108190aab57b8f988bd6b3",
     "provider": "chatgpt",
     "model": "gpt-5.4-mini",
     "temperature": 0,
     "strategy": "zero-shot",
     "output_path": "Results/chatgpt/zero-shot/results_batch_temp0.csv",
-    "total_rows": 98
-  },
-  "batch_69f99a5ca4f08190816478558129c154": {
-    "batch_id": "batch_69f99a5ca4f08190816478558129c154",
-    "provider": "chatgpt",
-    "model": "gpt-5.4-mini",
-    "temperature": 0.5,
-    "strategy": "zero-shot",
-    "output_path": "Results/chatgpt/zero-shot/results_batch_temp0.5.csv",
-    "total_rows": 98
+    "total_rows": 159
   }
 }

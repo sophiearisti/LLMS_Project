@@ -78,29 +78,35 @@ def input_prompt_component(label, help_text, example_text, esta_bloqueado):
                 st.markdown(f"**Example of {label}:**")
                 st.caption(example_text) # More legible text for examples
 
-        # Method selector
+        # 2. Definimos la función que pone la variable en False
+        def desactivar_algo():
+            st.session_state.proceso_finalizado = False
+
+        # 3. Pasamos la función al radio button
         method = st.radio(
             f"How would you like to enter the {label}?",
             ["Write text", "Upload .txt file"],
             key=f"radio_{label}",
             horizontal=True, 
-            disabled = esta_bloqueado
+            disabled=esta_bloqueado,
+            on_change=desactivar_algo 
         )
-        
         if method == "Write text":
             return st.text_area(
                 f"Enter the {label}:", 
                 placeholder=help_text, 
                 key=f"txt_{label}",
                 height=150, # Fixed height to prevent it from looking too small,
-                disabled = esta_bloqueado
+                disabled = esta_bloqueado,
+                on_change=desactivar_algo 
             )
         else:
             file = st.file_uploader(
                 f"Upload the file for {label}", 
                 type="txt", 
                 key=f"file_{label}",
-                disabled = esta_bloqueado
+                disabled = esta_bloqueado,
+                on_change=desactivar_algo 
             )
             if file:
                 return file.read().decode("utf-8")
@@ -232,7 +238,7 @@ def crear_prompt_obtener_resultados(info_llm, df, API_KEY, estrategia):
     modos_ejecucion = {}
 
     for temp in temps:
-        if not st.session_state.proceso_finalizado:
+        if not st.session_state.proceso_finalizado and esta_bloqueado == False:
             if processing_mode == "Batch API (async, ~50% cheaper, up to 24 h)":
                 
                 hay_archivos_previos, modos_ejecucion = verify_files_existence(proveedor, strategy_folder, temp, modos_ejecucion, batch_prefix="batch", esta_bloqueado=esta_bloqueado)
@@ -264,7 +270,7 @@ def crear_prompt_obtener_resultados(info_llm, df, API_KEY, estrategia):
     # --- BOTÓN DE EJECUCIÓN (Solo si está confirmado) ---
     if confirmado:
         # --- BOTONES DE EJECUCIÓN Y STOP ---
-        if st.button("Generate Prompt and Run"):
+        if st.button("Generate Prompt and Run", disabled=esta_bloqueado):
             if prompt_final.strip():
                 # 1. Aplicar limpieza de archivos
                 if modos_ejecucion:
@@ -324,8 +330,9 @@ def crear_prompt_obtener_resultados(info_llm, df, API_KEY, estrategia):
                     game_col=game_col,
                     keep_cols=keep_cols,
                 )
-                st.session_state.proceso_finalizado = False
-                
+                if 'proceso_finalizado' not in st.session_state:
+                    st.session_state.proceso_finalizado = False
+
             else:
                 st.caption("Processing row by row. To stop, click **⏹ Stop Processing** — it will halt after the current API call finishes.")
                 ejecutar_procesamiento_st(
@@ -339,7 +346,9 @@ def crear_prompt_obtener_resultados(info_llm, df, API_KEY, estrategia):
                     game_col=game_col,
                     keep_cols=keep_cols,
                 )
-                st.session_state.proceso_finalizado = False
+                if 'proceso_finalizado' not in st.session_state:
+                    st.session_state.proceso_finalizado = False
+
 
         else:
             
@@ -351,7 +360,9 @@ def crear_prompt_obtener_resultados(info_llm, df, API_KEY, estrategia):
                 message_col,  
                 API_KEY
             )
-            st.session_state.proceso_finalizado = False
+               # 1. Inicializar estados para persistencia
+            if 'proceso_finalizado' not in st.session_state:
+                st.session_state.proceso_finalizado = False
 
         if st.button("Reset and Edit Prompt"):
             st.session_state.proceso_finalizado = False
@@ -359,21 +370,20 @@ def crear_prompt_obtener_resultados(info_llm, df, API_KEY, estrategia):
 
 def verify_files_existence_json(df, provider, message_col, esta_bloqueado):
     MIN_APPEND_KEY_OVERLAP = 0.1
-    json_files = []
+    # Usamos un set para evitar duplicados por rutas redundantes
+    json_files = set()
     batches_a_eliminar = [] 
     
-    # 1. Definir la ruta específica del proveedor para buscar solo ahí
-    # Esto evita que si estás en ChatGPT te salten avisos de batches de Claude
     provider_path = os.path.join(RESULTS_PATH, provider)
     
     if not os.path.exists(provider_path):
         return False, []
 
-    # Buscamos solo en la carpeta del proveedor actual
     for root, dirs, files in os.walk(provider_path):
         for file in files:
             if file.startswith("rowmap_") and file.endswith(".json"):
-                json_files.append(os.path.join(root, file))
+                # .add() en lugar de .append()
+                json_files.add(os.path.join(root, file))
 
     mensajes_df = set(df[message_col].dropna().astype(str).tolist())
     if not mensajes_df:
@@ -381,6 +391,7 @@ def verify_files_existence_json(df, provider, message_col, esta_bloqueado):
     
     hay_solapamiento = False
 
+    # El bucle funciona igual sobre el set
     for json_file in json_files:
         try:
             with open(json_file, "r", encoding="utf-8") as f:
@@ -596,7 +607,6 @@ def ejecutar_procesamiento_st(df, prompt, config_llm, temps, message_col, strate
                 mostrar_boton_descarga(rows_buffer, temp, "results")
 
 def mostrar_boton_descarga(df_temp, temp, type):
-    st.session_state.proceso_finalizado = True
     
     st.success(f"✅ ¡Temp {temp} ready to be downloaded!")
     
@@ -993,6 +1003,7 @@ def ejecutar_batch_st(df, prompt, config_llm, temps, message_col, strategy_folde
         # OPCIONAL: Si quieres que se actualice la lista de abajo automáticamente 
         # sin perder este mensaje, puedes poner un botón de refresco:
         if st.button("🔄 Refresh List & View Batches"):
+            st.session_state.proceso_finalizado = True
             st.rerun()
         
         # Opcional: st.button("Refresh List", on_click=st.rerun)

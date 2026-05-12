@@ -1,0 +1,956 @@
+{
+  "temp0_row0": {
+    "idx": 0,
+    "message": "Hi! Please choose IN, I'll choose ROLL and let's hope on the chance :)",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row1": {
+    "idx": 1,
+    "message": "i will roll the dice for you :)",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row2": {
+    "idx": 2,
+    "message": "In and Roll. Best for both of us.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row3": {
+    "idx": 3,
+    "message": "Hey, This is our stretegy for a win win solution. You always choose IN and always choose ROLL.This way I get 30 and you based on probabilty will get between 27 and 36. because the chances of 1 is very low in these ten decisions. So, lets do it. I assure you be happy at the end.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row4": {
+    "idx": 4,
+    "message": "I promise I will choose ROLL, so that we both will earn more money. By that I will earn  show up fee+30CH which is totally ok with me. You have high chance to win 36+show up fee.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row5": {
+    "idx": 5,
+    "message": "Hi. I think it makes more sense for both of us to choose ROLL at all times. in this case, you will get 36chf with 5/6 probability or 0 with 1/6 probability. I will get 30 chf. This is the case if you choose IN and you believe that I will choose ROLL. ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row6": {
+    "idx": 6,
+    "message": "Hello, lets go for rolling the dice. For me, I would like to get more than 15 CHF. For you the chance is big that you will get 36 francs if we roll. You can trust me on rolling. I dont really care about the additional extra 12 francs. But 15 francs is a little bit small to spend one hour on. Damn, this keyboard sucks. Haha. Ok, hope you pick IN.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row7": {
+    "idx": 7,
+    "message": "If A always chooses in and B always chooses ROLL, there is a large possibility for both  A and B to get at least  30CHF for this part.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row8": {
+    "idx": 8,
+    "message": "Be free to choose IN. I promise I'll never choose don't roll to make sure that we both earn more money.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row9": {
+    "idx": 9,
+    "message": "I will always choose ROLL. That way we both will maximize our earnings if you always choose IN. I will be paid always 30CHF and you will be paid 36CHF 83% possibility (5 out of 6 numbers of the dice), which is equivaltent to 30CHF.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row10": {
+    "idx": 10,
+    "message": "Hi !! Go for \"IN\" ALL THE 10 TIMES. Then we can Roll and have a chance to win more. MUCH MORE and MUCH BETTER CHANCE. Thanks and All the Best.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row11": {
+    "idx": 11,
+    "message": "Hi there, I will press ROLL if you press IN. This will give you a 83% chance of winning 36 CHF instead of just 15 CHF and it will give me 30 CHF instead of just 15CHF, Thanks :)",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row12": {
+    "idx": 12,
+    "message": "I will always chose Roll, so I hope you will always chose In ;) Then we can both make a good load of money :)",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row13": {
+    "idx": 13,
+    "message": "Dear Partner A, I can't do more than honestly promise you that i'll press ROLL in every of the 10 decisions. In that way we can get the most out of this for the two of us. For this to work you should go for IN, so let's do this together. Have a nice day and best wishes, your Partner B",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row14": {
+    "idx": 14,
+    "message": "hey :-) i guess it would be best for the both of us, if you would always chose IN so  when I always chose Roll the chance of us becoming more then only the 15 CHF are highes. Despite your descision I will always chose Roll. Promise! ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row15": {
+    "idx": 15,
+    "message": "hi... i think it's best to choose in and then roll... i promise you not to choose don't roll! lets do that in all 10 decisions. its best for you and me ;)",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row16": {
+    "idx": 16,
+    "message": "I will always choose ROLL",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row17": {
+    "idx": 17,
+    "message": "Hey! It would be best if you always decide for IN and I always decide for ROLL, this would mean a very high chance that both of us earn a lot of money :)",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row18": {
+    "idx": 18,
+    "message": "Hi, so here's the catch. From a probabilistic point of view best option would be A choses IN and B chooses ROLL, since there's a high chance of getting high payback on both sides. Therefore just know I'll always put ROLL. It's up to you if you wanna take the risk. Best.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row19": {
+    "idx": 19,
+    "message": "please use a lot of \"in\" ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row20": {
+    "idx": 20,
+    "message": "I know for sure I will earn 15 each round at least, I want to double the earnings and that is reasonably fair earning for me.I  will cooperate and I don't care about earning 12 more CHF than I could by cooperating",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row21": {
+    "idx": 21,
+    "message": "Hi Person A! If you choose IN i promise you i will choose ROLL and not DON'T ROLL. Try to do this as often as possible, so the chances that the dice will roll 1 is little and we both earn a little more than 15 CHF ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row22": {
+    "idx": 22,
+    "message": "Always choose IN, and I will go for ROLL so we both can win more than 15 CHF ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row23": {
+    "idx": 23,
+    "message": "i'm going to press ROLL. So there are chances that we both get more money than 15 francs.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row24": {
+    "idx": 24,
+    "message": "i hope you will be IN enough times for me to DON'T ROLL.    just kidding, have fun, and play fair ;)",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row25": {
+    "idx": 25,
+    "message": "i will chose roll (2-6) ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row26": {
+    "idx": 26,
+    "message": "hi. good luck. ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row27": {
+    "idx": 27,
+    "message": "Hi! I suggest we go for the last option - you go \"IN\" and I will go with \"ROLL\" for all decisions. That way we have the best chance for both of us to get some good money. Good luck! :)  ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row28": {
+    "idx": 28,
+    "message": "Hey, I think it would be rather boring to just always get 15. Right? Plus if you choose IN, you have a 2/3 chance of getting more than double the 15. I promise (weird to promise to a computer) to always pick ROLL, just a heads up :D",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row29": {
+    "idx": 29,
+    "message": "Hi! Let's take risks! I guess I won't use don't roll so, its up to the die.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row30": {
+    "idx": 30,
+    "message": "I think our best chance is if you choose IN, then I will always choose ROLL. It's then more probable  we get 2-6 so we make the most money each. Ballin' ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row31": {
+    "idx": 31,
+    "message": "Let's make this fair. I guess we BOTH want some money. ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row32": {
+    "idx": 32,
+    "message": "I'll be nice and always chose role, as otherwise you risk a payoff of only 15 or even 0. With In and Roll the chance for a nice payment is the highest.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row33": {
+    "idx": 33,
+    "message": "hey, you should always choose IN and i will always choose Roll so in that way, we will have more chances of receiving more money.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row34": {
+    "idx": 34,
+    "message": "I case you choose IN - I'll always choose ROLL. Since it's more money for both of us.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row35": {
+    "idx": 35,
+    "message": "if you chose IN I will chose ROLL so you could earn 36 in the best case",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row36": {
+    "idx": 36,
+    "message": "hi, will choose roll. if you want, press out for maybe 5/10 times. That way you will definitely get something  hopefully. ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row37": {
+    "idx": 37,
+    "message": "Hey there. :) I hope the dice when rolled give any number but one. :)",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row38": {
+    "idx": 38,
+    "message": "I will always choose roll and you choose IN, so our chances are at highest for getting good money. I will not choose dont roll, i promise!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row39": {
+    "idx": 39,
+    "message": "if you choose in i will roll so that we both have chances for 30 francs or more",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row40": {
+    "idx": 40,
+    "message": "we can choose IN and choose roll 2, 3, 4, 5 or 6...",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row41": {
+    "idx": 41,
+    "message": "Hello A, nice to meet you. As far as I know, it would be the best if you choose IN and I choose ROLL. Then the income can be maximized. Thank you very much. Have a nice day.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row42": {
+    "idx": 42,
+    "message": "Hello and good luck. I hope we both get a decent amount of money. It's my first time in such an experiment and I have no idea what's going to happen.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row43": {
+    "idx": 43,
+    "message": "Hello A. I will always choose \"Roll\". You can either trust me and we both might get a lot of money, or choose \"Out\". Your call. But I will always choose \"Roll\", because I want to have 30fr. instead of 15.-. It's much better if we both earn at least 30.- money than just me. :)",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row44": {
+    "idx": 44,
+    "message": "Hello. :) If you feel like taking the risk of die = 1, go for IN and I will go for ROLL. I believe it is best for both!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row45": {
+    "idx": 45,
+    "message": "Hallo! I think we would be better off if you choose IN. I intend to choose ROLL in the second phase.  The probability of both of us getting  30something CHF is 5 out of 6",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row46": {
+    "idx": 46,
+    "message": "Hallo I m your Person B, I m going to choose ROLL everytime. I know my earning are going to be about 33% lower but I think this way we can both earn a bit more. Make good choises!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row47": {
+    "idx": 47,
+    "message": "I think, the probability that both of us get a lot of money is the highest, when you enter IN and I choose ROLL. (You would even get more than  me :))",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row48": {
+    "idx": 48,
+    "message": "I will choose roll on all the desicions, in order for both of us to have the chance to get more money if you are interested.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row49": {
+    "idx": 49,
+    "message": "Hello person A! So according to probabilities, if you choose IN and I ROLL, then  there is 83.33% probability that you will get 36 chf and  I will get 30 CHF at each time (that is the probabiliy that the dice shows 2,3,4,5 or 6). So each time I roll there is 84% (=5/6) probability that we will get maximum profit. Therefore, please choose always IN and I will always choose ROLL!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row50": {
+    "idx": 50,
+    "message": "We should agree on choosing in and rolling otherwise its not going to be fair for one of us. ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row51": {
+    "idx": 51,
+    "message": "I will choose \"ROLL\". Regards.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row52": {
+    "idx": 52,
+    "message": "I promise to \"ROLL\" if you choose \"IN\". This way we would both win. Your expectation would be 5/6 * 36 = 30 and mine 30, too. Hence we could double our payoff. This is a win-win-situation. ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row53": {
+    "idx": 53,
+    "message": "Hi so, I guess we are both here to get the most money out of it. I suggest we make it simple, 15 CHF is not the best we can get, also it would not be fair for me to choose \"DON'T ROLL\" because that would mean you get nothing. I will go for \"ROLL\" in all 10 decisions, and we can both be happy :D Thanks, I hope I can count on you! You can certainly count on me!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row54": {
+    "idx": 54,
+    "message": "Hi there, I hope you will always go for IN, because I will click on ROLL. So you will have a high probability to receive 36 CHF and I may receive 30CHF. I think that is the best strategy to make the most out of this study. best regards person B",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row55": {
+    "idx": 55,
+    "message": "dear A. If we cooperate we can both get more than 15 francs. If you choose IN I will always choose ROLL, so your chance to get 36 francs will be very high. Since I would not want to be screwed over for the price of a beer and a pack of cigarettes (12 francs) if I was A, I won't choose DONT ROLL, so don't worry.  cheers, yours sincerely, B",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row56": {
+    "idx": 56,
+    "message": "We could both win if you choose IN all the time and I roll. You will only have a 1/6 chance of not getting paid. Trust me, or not.. Good luck!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row57": {
+    "idx": 57,
+    "message": "Hey A, I think the way to maxmize both our profits here is that I would trust that you make the IN decision and  you trust that I make the ROLL decision , which I think have better earnings than just a mere 15 CH, cheers",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row58": {
+    "idx": 58,
+    "message": "choose \"in\", i will then roll, the chance will be 5 in 6 that you will get 36.- and i will get 30.- thats maximum pay off for you. and i will be making 30.- so you will in any case still end up with more money than me: 36 CHF!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row59": {
+    "idx": 59,
+    "message": "if you chose IN i will always chose ROLL so both our chances will be as high as possible to earn more than 15 chf. so the chance for you to win 36 and me 30 chf will be high and not just 15chf if you choose out. hope that's fine ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row60": {
+    "idx": 60,
+    "message": "Hello Person A, I just wanted to inform you that I will take 10 times ROLL, since I can't lose anything anyway, and it's the best outcome for both of us.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row61": {
+    "idx": 61,
+    "message": "I promise that I will choose ROLL in every decision. If you choose IN in every decision, the profit will be maximized for both of us.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row62": {
+    "idx": 62,
+    "message": "I commit to choosing to ROLL in each chance. So, if you decide to choose IN, with a very high probability, we maximise our payoffs.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row63": {
+    "idx": 63,
+    "message": "Hi, I'm going to play ROLL every time so we both get 30 dollars or more!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row64": {
+    "idx": 64,
+    "message": "Lets go",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row65": {
+    "idx": 65,
+    "message": "I am going to roll. ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row66": {
+    "idx": 66,
+    "message": "Hi, it's in both of our best interets' if I roll and you go in. That way, we are both almost certainly guaranteed $30+ dollars. It's unlikely that I'll roll 1 and that will be the decision chosen. You'll have well over an 80% chance of making $36.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row67": {
+    "idx": 67,
+    "message": "I will always choose to ROLL if you choose IN",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row68": {
+    "idx": 68,
+    "message": "Good luck! Since I'm not gong to be able to see your decisions, I guess I'll try to make decisions that will give the best outcome.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row69": {
+    "idx": 69,
+    "message": "I'm picking roll all 10 times. I'm guaranteed a floor of $15, but would love $30. I get zero pleasure out of scamming you by picking don't roll, and would rather have the satisfaction of knowing I doubled my own payment (and knowing you made out well too). So if you're willing to take the chance of the roll, opt in! :)",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row70": {
+    "idx": 70,
+    "message": "Hi there :) It seems to me like we should work together. I'll always choose to roll and you always choose in. That way, you'll have a 5/6 chance of more than doubling your money and I'll do better too! Looking forward to playing with you",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row71": {
+    "idx": 71,
+    "message": "Hello! if you choose in, I promise to roll every time!! I want us both to make money from this SOM study :) Happy Friday!!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row72": {
+    "idx": 72,
+    "message": "To me, the difference of $30-42 is not worth screwing you over, so in each decision I will choose ROLL and hope that we both get money.  It's up to you whether you would like to gamble and get $15 or $36.  5/6 chance, your choice.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row73": {
+    "idx": 73,
+    "message": "It's important that I maintain your trust so that we both get more money so I guarantee that I will click roll and I hope you that you will choose In. ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row74": {
+    "idx": 74,
+    "message": "a singer in a smoky room, the smell of wine and cheap perfume",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row75": {
+    "idx": 75,
+    "message": "Hi! I will roll every time.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row76": {
+    "idx": 76,
+    "message": "A classic prisoner's dilemma! Obviously the ideal is A choose In, B choose Roll Die=2,3,4,5,6. But there is a chance with die = 1 that payoff for A is 0, though it is slim. You should select In for at least some of the 10 and I will select Roll for all.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row77": {
+    "idx": 77,
+    "message": "Hi!! I'm promising to choose roll for all 10 decisions; I think it's more fun if we both get something and this gives us the maximum possible net gain ($66 total). Out of the 10 decisions, then, there's like an 80 percent chance of not getting the last outcome, but if you aren't comfortable with the chance of rolling a 1 or don't think I'm trustworthy it's totally cool if you pick out. ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row78": {
+    "idx": 78,
+    "message": "Hi Person A, I think the best outcome would be if you choose In and I choose Roll, as it's likely we'll both get paid at least $30. I tend to trust people more than distrust them, so if you choose In, I will be choosing Roll. hopefully we leave this session with a lot of money!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row79": {
+    "idx": 79,
+    "message": "Hi, please please choose in, and I swear that I'll choose ROLL; therefore you have a 5/6 chance of getting $36 instead of $15 and Ill get $30 instead of $15... it's a win win situation for both of us (unless it lands on 1, but since they choose 1 of 10 decisions that's very unlikely) so pleeease choose in",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row80": {
+    "idx": 80,
+    "message": "A difference of $12 really isn't that much. I'll roll for all the decisions, no matter what, $30 is good enough with me.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row81": {
+    "idx": 81,
+    "message": "Good luck!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row82": {
+    "idx": 82,
+    "message": "I will always choose roll since payoff will most likely be the same for me",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row83": {
+    "idx": 83,
+    "message": "To increase our odds for higher payout I'm going to roll every single time.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row84": {
+    "idx": 84,
+    "message": "Hi A, the way for us to make the most out of this experiment is to work together and trust each other, with you choosing 'In' for all the 10 decisions, and me choosing \"Roll\". Best, B",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row85": {
+    "idx": 85,
+    "message": "Hi there! I'm into game theory and also into sharing, so (in the words of Barry Nalebuff), let's expand this pie! I'll choose \"Roll\" every time, and I hope you choose \"In\" :-)",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row86": {
+    "idx": 86,
+    "message": "Good luck to you.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row87": {
+    "idx": 87,
+    "message": "Since I am starting with 0, willing to take the rolls.  Already a winner as I'm not sitting at my desk.  :0",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row88": {
+    "idx": 88,
+    "message": "I understand that $15 is the safest route to go here, but I am planning on rolling each time. I will be getting money no matter what, and $30 is definitely enough for me. I'd like you to get the opportunity for more than $15 too!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row89": {
+    "idx": 89,
+    "message": "Hi! Looking at the table, it's pretty clear that IN/ROLL is the best combo. If you average out the dice rolls, it's $30 for both A and B, so $60 total. This is the best payoff in the game. I'll choose ROLL for all answers, and I suggest you choose IN for all of them, that way we both can get the most money from the study. ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row90": {
+    "idx": 90,
+    "message": "If you choose IN i will choose ROLL",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row91": {
+    "idx": 91,
+    "message": "Ok, this is simple. I'm not too thrilled by this kind of game-theory-behavior studies fooling people around. I won't pretend I don't prefer 42 to 30 if it's my mother giving me the money, but here I just want to see the case where experimenter have to pay the most, so I will choose \"ROLL\" all along, and I hope you can choose \"IN\" and help us all.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row92": {
+    "idx": 92,
+    "message": "Pick In.  I'll Roll and then you have a 5/6 chance of winning $36, which is an expected $30 payoff, same as me.  It's your best option, game theoretically",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row93": {
+    "idx": 93,
+    "message": "hello how are you",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row94": {
+    "idx": 94,
+    "message": "Hey, I feel like IN and ROLL is our best bet for optimizing each of our payments",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row95": {
+    "idx": 95,
+    "message": "Hello, I plan on making mutually beneficial decisions. ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row96": {
+    "idx": 96,
+    "message": "If you choose IN, I promise to never choose \"don't roll\"...that way we will both have a 5/6 chance of making $30 or more ($36 in your case). ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row97": {
+    "idx": 97,
+    "message": "we both get maximum payout if you pick in and I pick roll",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row98": {
+    "idx": 98,
+    "message": "Hi! If you want, choose to be IN the first 5 times and OUT the next five and I'll choose roll the first 5 and don't roll the next 5. I think that might be fun. Or do what you want! Potstickers are delicious!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row99": {
+    "idx": 99,
+    "message": "if you choose in, I'll choose roll",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row100": {
+    "idx": 100,
+    "message": "Hi! If you were to play it safe, you would go ahead and pick \"OUT.\" But hey, it's a Friday afternoon and you have nothing to lose, so we should work together to increase our chances of winning more money. I'll assume you pick IN and will choose to Roll so we can both earn more money!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row101": {
+    "idx": 101,
+    "message": "Hello",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row102": {
+    "idx": 102,
+    "message": "Who dares wins",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row103": {
+    "idx": 103,
+    "message": "I am more than happy with the 30$ payout. I'm not going to a be a jerk and try to take 12$ more, that's silly. It is up to you if you are willing to risk the 5/6 odds for 36$ or just take the 15$ for both. I will be choosing roll for all 10. ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row104": {
+    "idx": 104,
+    "message": "Hello! I am not strong on logic/math problems, so I will trust you to make the best decisions for both of us. :) ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row105": {
+    "idx": 105,
+    "message": "Here's the best way to make the most for either of us: Choose OUT for the first 8 decisions and we will gamble with the 2,3,4,5,6 for the last 2. You're likely to make a little more but that's alright.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row106": {
+    "idx": 106,
+    "message": "I will always choose roll ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row107": {
+    "idx": 107,
+    "message": "Hi, I believe this is a matter of trust. You have no reason to believe me but all I ask is that you make the decision that works for you and trust me. That said, nice to meet you, sort of. ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row108": {
+    "idx": 108,
+    "message": "hi! make sure to choose, \"IN\" and I'll roll too",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row109": {
+    "idx": 109,
+    "message": "hi this is person B lol",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row110": {
+    "idx": 110,
+    "message": "you choose to be In or Out?",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row111": {
+    "idx": 111,
+    "message": "Hi!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row112": {
+    "idx": 112,
+    "message": "Hello person A. I just wanted to let you know that I plan to act in a way that is mutually beneficial.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row113": {
+    "idx": 113,
+    "message": "I promise to choose roll every time, so choose in.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row114": {
+    "idx": 114,
+    "message": "Hello, ok so this game is based on economics game theory. In order for us to work together and \"win\", you would have to choose in and I choose roll. This guarantees you at least the chance to win 36 dollars and me to win 30, whereas if you choose out you can only ever win 15. The odds are that you'd win 36 dollars and I'm perfectly fine with 30 instead of 42, so I think that you should choose in.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row115": {
+    "idx": 115,
+    "message": "I will choose ROLL on the basis that, if you have chosen IN, you are risking receiving no payoff in order to maximise our collective potential payoff. I therefore think you deserve a good chance of earning $36.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row116": {
+    "idx": 116,
+    "message": "Pick IN -- Let's take a gamble and be generous! The odds are good for 36/30, so let's go for it! ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row117": {
+    "idx": 117,
+    "message": "Hey, I think the best move here would be to roll, it's the highest payoff for both of us, and while $42 is enticing if you don't roll, $30 is still a lot of money and it doesn't leave me high and dry with nothing. Thanks!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row118": {
+    "idx": 118,
+    "message": "Hello Person A, this is a very complicated study, I haven't done one like this before. There's so many different choices to make. and so many different elements of risk. I hope you're having a great day and this works out well for the both of us!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row119": {
+    "idx": 119,
+    "message": "Hello - I promise you that I will choose \"Roll\" in all ten trials. I want to maximize the amount of money that both of us will earn from the experiment. :-)",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row120": {
+    "idx": 120,
+    "message": "Hi there person A partner,  I totally understand if you don't trust someone on the internet and want to choose OUT. however, I am broke and assume you are too if you're here ;) so I figure i'll go for some good karma and roll on all ten picks.Obviously then we both do better if you choose IN. have a great day!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row121": {
+    "idx": 121,
+    "message": "As a person A you are worried right now that I'll promise to choose Roll, and then when I go home and take the survey I will pick \"Don't Roll\" because no-one will be watching. All I can do is promise that I will choose Roll. I don't appreciate time inconsistant behavior in anyone, especially myself, and I would much rather two people walk away from this happy. ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row122": {
+    "idx": 122,
+    "message": "You should opt IN and then if I choose to Roll and theres a good chance you will make 36 dollars which is the highest payout you can get. ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row123": {
+    "idx": 123,
+    "message": "Hello -- shall we try to cooperate and roll?",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row124": {
+    "idx": 124,
+    "message": "If you choose to roll IN for all 10 rolls, I will promise to roll IN as well for all 10 rolls so that you have a 5/6 chance of making $36 instead of $0 or only $15. If you do not roll IN for all 10 rolls, I will choose DONT ROLL and you will for sure make $0. Thanks :) ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row125": {
+    "idx": 125,
+    "message": "Hi Hope we will have some fun doing this experiement",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row126": {
+    "idx": 126,
+    "message": "i will always choose roll",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row127": {
+    "idx": 127,
+    "message": "Hello! I'm trying to mess with the experiment results by showing mutual cooperation (heh) so I'm gonna be choosing ROLL and I think it will be a really interesting case study for the researchers to figure out how 2 strangers can cooperate, so hopefully you choose IN!!! ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row128": {
+    "idx": 128,
+    "message": "I would recommend we max our potential earnings, I will be choosing a roll , since we both get paid the most when the die rolls a 2.3.4.5.6. and as for the die rolling 1 the probability is too low. If you wish to make the most out of the experiment i suggest you play IN and I play ROLL. Thanks. ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row129": {
+    "idx": 129,
+    "message": "I assume you're not acutally a participant in this room that I am paired with, but please choose IN!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row130": {
+    "idx": 130,
+    "message": "It is in your best interest to choose IN because: your expected value, if you think it's 50/50 whether I roll, is $15 either way (5/6th chance for $36, 1/6th for $0). since my expected value increases no matter what if you choose IN, I would like to reward you by guaranteeing a 100% chance I will ROLL.  That raises your expected value to $30. Thanks for choosing in and getting us both more $$ :)",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row131": {
+    "idx": 131,
+    "message": "I will choose roll for all ten ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row132": {
+    "idx": 132,
+    "message": "Since choosing \"roll\" provides a better chance of both of us getting payment, and since the payment will be above zero, I can tell you that I'm much more likey to choose roll over don't roll. Of course, there's still the possibility of you not getting anything if a 1 appears, but that chance is 1/6 every turn. You'd also be earning more than if you choose out if a 2-6 is rolled. :)",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row133": {
+    "idx": 133,
+    "message": "I would really like for both us to maximize our earnings. I would propose that for all 10 decisions, you could choose IN and I could choose ROLL, because there is a very high chance that you'll get $36 and I'll get $30. I know it's hard to trust me, and it seems suspicious especially since I could choose DON'T ROLL, but I would rather get $30 than $15, and I don't mind that you would get more",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row134": {
+    "idx": 134,
+    "message": "I am compassionate to a fault (my mom calls it compassion devoid of wisdom), and therefore have absolutely no intention or desire to screw you over in any way. I will choose ROLL no matter what, because the $12 isn't that important in the grand scheme of things, but it is your choice to play your odds as to whether you want to be IN or OUT. Just know that I pinky promise that I will ROLL.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row135": {
+    "idx": 135,
+    "message": "I will be choosing Don't Roll for all 10 decisions. I recommend that you choose Out for all 10 decisions.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row136": {
+    "idx": 136,
+    "message": "Hi! The way I see it, this money was never mine in the first place. The difference between $42 and $30 is not large enough to constitute a decision for me to choose 'Don't Roll,' therefore I highly encourage you to choose IN rather than OUT so that we can both gain. Thanks! ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row137": {
+    "idx": 137,
+    "message": "Hi! I will be choosing ROLL for all 10 decisions. This gaurantees me $30, which I am very happy with. I understand this means a 1/6 chance you get $0, but you also have a very high chance of getting $36 instead of $15. I understand if you don't want to take this chance, and am happy with $15 as well. I assure you I will choose ROLL every time, however.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row138": {
+    "idx": 138,
+    "message": "Hey, I am going to choose Don't Roll each time and that will garuntee both of us $15.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row139": {
+    "idx": 139,
+    "message": "The best way to maximize payment would be for you to choose IN every turn and then I will respond with ROLL to try to get the $30-$36 payoff for both of us. We have 5/6 chance of getting the max payoff ($66). ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row140": {
+    "idx": 140,
+    "message": "Hey person A! FYI I will always choose Roll (definitely rather have the $30 then $15 and don't want to be greedy). But totally understand if you're not willing to take the risk! ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row141": {
+    "idx": 141,
+    "message": "Ok, here's how I see it. I want us both to get more than $15 so I want you to feel safe to choose IN every time. I will guarantee choosing roll every time, and make a note of it. Then we both have basically a 5/6 chance of getting $30 or more. I know you would get 6 more but I would rather us both feel safe getting more than 15. Thanks, I hope you agree = )",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row142": {
+    "idx": 142,
+    "message": "I will choose roll for all decisions. ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row143": {
+    "idx": 143,
+    "message": "I think that the best way to ensure that we both earn an appreciable amount of money is through trust. If you choose IN for all 10 times, I can roll ten times. Thus the odds that we both receive $30 or $36 are pretty high. You will have only a 1 and 6 chance of earning zero dollaars. a 5 out of 6 chance that you get $36.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row144": {
+    "idx": 144,
+    "message": "Hi! Would you like to work together? If you choose IN everytime I will select roll. This will give us the best chance to make the most money. Since we will only get paid for 1 out of 10 times. This will help you earn $36 and myself $30 most likley. Good luck!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row145": {
+    "idx": 145,
+    "message": "my goal is to earn 50 dollars.good luck to boyh of us!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row146": {
+    "idx": 146,
+    "message": "Hey! I'm taking a game theory class right now and the best outcome for both of us is for you to choose IN and I'll choose to roll (5/6 of the time, we both get a great payoff). I promise to roll all 10 times -- hope you're IN :)",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row147": {
+    "idx": 147,
+    "message": "looking forward to making some money",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row148": {
+    "idx": 148,
+    "message": "working hard or we all go home. There is nothing to it but to do it.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row149": {
+    "idx": 149,
+    "message": "Good luck!  I love Las Vegas so you can figure out what I am going to choose",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row150": {
+    "idx": 150,
+    "message": "Pleased to meet you, virtually. Have a great day! :)",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row151": {
+    "idx": 151,
+    "message": "I will choose ROLL every time, so you should choose IN",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row152": {
+    "idx": 152,
+    "message": "I will choose roll. ",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row153": {
+    "idx": 153,
+    "message": "Hi",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row154": {
+    "idx": 154,
+    "message": "Hello, I understand that if you choose OUT you would be guaranteed a payment, but , I'm hoping that you would be willing to make this gamble with me so that we both receive a higher payout (since at the end of the day, neither of us would be technically losing money). I'm agreeing now to choose ROLL so you have a 5/6 chance of earning more money than if you chose OUT.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row155": {
+    "idx": 155,
+    "message": "Let's roll!!!!!!!!",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row156": {
+    "idx": 156,
+    "message": "Hi - this seems to be a classic game theory experiment. If you choose out, then we both are \"at a loss and get only $15\". Alternatively, if you choose IN, then I will be incentivized to choose Roll because that will result in $30 to each of us (5/6*36 and 1/6*30 + 5/6*30). I wouldn't choose Don't Roll because that will incentivize you to choose Out and nobody gains anything from that.",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row157": {
+    "idx": 157,
+    "message": "Hi",
+    "game": null,
+    "extra": {}
+  },
+  "temp0_row158": {
+    "idx": 158,
+    "message": "If you pick IN, I will roll every time. Your risk but also your reward. I will not choose DON'T ROLL.",
+    "game": null,
+    "extra": {}
+  }
+}

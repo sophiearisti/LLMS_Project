@@ -503,6 +503,146 @@ def get_openai_batch_client(API_KEY):
     if llm_openai_batch is None:
         llm_openai_batch = OpenAI(api_key=API_KEY)
     return llm_openai_batch
+
+
+def _rowmap_path(provider, batch_id):
+    return os.path.join(RESULTS_PATH, provider, f"rowmap_{batch_id}.json")
+
+
+# ──────────────────────────────────────────────────────────────
+# BATCH COLLECTION (Streamlit)
+# ──────────────────────────────────────────────────────────────
+
+def mostrar_estado_batches_st():
+    all_pending = {}
+    for provider in ("claude", "chatgpt"):
+        for batch_id, meta in load_st_batch_status(provider).items():
+            all_pending[batch_id] = meta
+
+    if not all_pending:
+        return
+
+    st.divider()
+    st.subheader("📦 Pending Batch Results")
+    st.caption("Batches submitted earlier. Click **Check & Collect** to retrieve completed results.")
+
+    for batch_id, meta in all_pending.items():
+        provider = meta["provider"]
+        with st.container(border=True):
+            col_info, col_btn = st.columns([3, 1])
+            with col_info:
+                st.markdown(
+                    f"**{provider.upper()}** | Temp `{meta['temperature']}` | "
+                    f"Strategy `{meta['strategy']}` | `{meta['total_rows']}` rows"
+                )
+                st.code(batch_id, language=None)
+            with col_btn:
+                if st.button("Check & Collect", key=f"collect_{batch_id}"):
+                    _collect_batch_results_st(batch_id, meta)
+
+def x_collect_batch_results_st(batch_id, meta):
+    provider = meta["provider"]
+    output_path = meta["output_path"]
+
+    rowmap_file = _rowmap_path(provider, batch_id)
+    if not os.path.exists(rowmap_file):
+        st.error(f"Row map file not found for batch {batch_id}. Cannot collect results.")
+        return
+
+    with open(rowmap_file, encoding="utf-8") as f:
+        row_id_map = json.load(f)
+
+    rows_buffer = []
+    succeeded = 0
+    errored = 0
+
+    try:
+        if provider == "claude":
+            client = get_claude_client()
+            batch = client.messages.batches.retrieve(batch_id)
+            if batch.processing_status != "ended":
+                counts = batch.request_counts
+                st.warning(
+                    f"Batch not finished yet. Status: **{batch.processing_status}** | "
+                    f"succeeded: {counts.succeeded} | processing: {counts.processing} | errored: {counts.errored}"
+                )
+                return
+
+            for result in client.messages.batches.results(batch_id):
+                if result.result.type != "succeeded":
+                    errored += 1
+                    continue
+                entry = row_id_map.get(result.custom_id)
+                if entry is None:
+                    errored += 1
+                    continue
+                parsed = parse_llm_dict(extract_claude_text(result.result.message))
+                parsed["row_id"] = entry["idx"]
+                parsed["original_message"] = entry["message"]
+                for col, val in entry.get("extra", {}).items():
+                    parsed[col] = val
+                rows_buffer.append(parsed)
+                succeeded += 1
+
+        else:  # chatgpt
+            client = get_openai_batch_client()
+            batch = client.batches.retrieve(batch_id)
+            if batch.status not in ("completed", "failed", "expired", "cancelled"):
+                counts = batch.request_counts
+                st.warning(
+                    f"Batch not finished yet. Status: **{batch.status}** | "
+                    f"completed: {counts.completed} | failed: {counts.failed} | total: {counts.total}"
+                )
+                return
+
+            if not batch.output_file_id:
+                st.error(f"Batch ended with status `{batch.status}` and no output file.")
+                _remove_st_batch(provider, batch_id)
+                return
+
+            output_text = get_openai_file_text(client.files.content(batch.output_file_id))
+            for line in output_text.splitlines():
+                if not line.strip():
+                    continue
+                result = json.loads(line)
+                entry = row_id_map.get(result.get("custom_id"))
+                if entry is None:
+                    errored += 1
+                    continue
+                if result.get("error") or result.get("response", {}).get("status_code") != 200:
+                    errored += 1
+                    continue
+                ans = get_openai_response_text(result.get("response", {}).get("body", {}))
+                parsed = parse_llm_dict(ans)
+                parsed["row_id"] = entry["idx"]
+                parsed["original_message"] = entry["message"]
+                for col, val in entry.get("extra", {}).items():
+                    parsed[col] = val
+                rows_buffer.append(parsed)
+                succeeded += 1
+
+    except Exception as e:
+        st.error(f"Error collecting batch results: {e}")
+        return
+
+    if rows_buffer:
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        write_rows_to_csv(output_path, rows_buffer)
+        st.success(f"✅ {succeeded} rows collected. {errored} errors.")
+        mostrar_boton_descarga(rows_buffer, meta["temperature"])
+        _remove_st_batch(provider, batch_id)
+    else:
+        st.warning(f"No results retrieved. Succeeded: {succeeded}, Errored: {errored}.")
+
+def _remove_st_batch(provider, batch_id):
+    status = load_st_batch_status(provider)
+    if batch_id in status:
+        del status[batch_id]
+        save_st_batch_status(provider, status)
+    rowmap = _rowmap_path(provider, batch_id)
+    if os.path.exists(rowmap):
+        os.remove(rowmap)
+
         
 def normalize_temps_for_claude(temps, llm):
     if llm != "claude":
@@ -537,18 +677,20 @@ def ejecutar_procesamiento_crear_st(df, prompt, config_llm, temps, message_col, 
                     # 1. Llamada única al LLM
                     proveedor = config_llm['proveedor']
                     
-                    print(f"api2 {API_KEY}...") 
                     
                     if proveedor == "gemini":
                         # Usamos tu función existente call_llm_for_message pero enviando el bloque completo
                         ans = call_llm_for_message(full_prompt, temp, "gemini", API_KEY)
                         
-                    else:
+                    elif proveedor == "chatgpt":
                         ans = call_llm_for_message(full_prompt, temp, "chatgpt", API_KEY)
+                    elif proveedor == "claude":
+                        ans = call_llm_for_message(full_prompt, temp, "claude", API_KEY)
 
-                    
                     # 2. Parsear el resultado (JSON -> Dict/List)
                     categorias_data = parse_llm_dict(ans)
+                    
+                    print(f"Raw LLM response for Temp {temp}:", categorias_data)
                     
                     # 3. Mostrar de forma "bonita"
                     if categorias_data:

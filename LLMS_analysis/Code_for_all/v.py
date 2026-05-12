@@ -14,16 +14,9 @@ import os
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import shutil
+import anthropic
+from openai import OpenAI
 
-try:
-    import anthropic
-except ImportError:
-    anthropic = None
-
-try:
-    from openai import OpenAI
-except ImportError:
-    OpenAI = None
 
 llm_chatgpt = None
 llm_openai_batch = None
@@ -42,31 +35,6 @@ SELECTED_GEMINI_MODEL = "gemini-3-flash-preview"
 SELECTED_CLAUDE_MODEL = "claude-sonnet-4-6"
 MIN_APPEND_KEY_OVERLAP = 0.90
 
-EXPECTED_LABEL_KEYS = [
-    "any_suggestion",
-    "suggest_safe",
-    "suggest_efficient",
-    "agree_proposal",
-    "discuss_coordinate",
-    "discuss_fairness",
-    "discuss_efficient",
-    "discuss_rules",
-    "explanation",
-    "discuss_howtoplay",
-    "ask_game",
-    "receive_report",
-    "truthful",
-    "falsehood",
-    "contradict",
-    "neither_report",
-]
-
-LEGACY_KEY_ALIASES = {
-    "discuss_coordinte": "discuss_coordinate",
-    "discusscoordinate": "discuss_coordinate",
-    "discusshowtoplay": "discuss_howtoplay",
-}
-
 def seleccionar_llm_st():
     st.markdown("### Model Configuration")
 
@@ -75,26 +43,28 @@ def seleccionar_llm_st():
     with col1:
         proveedor = st.selectbox("Provider", ["ChatGPT", "Gemini", "Claude"], index=0)
 
+    API_KEY = st.text_input("Enter your API Key", type="default")
+    
     with col2:
         if proveedor == "ChatGPT":
-            modelos = ["gpt-5.4-mini", "gpt-5.4", "gpt-5.2"]
+            modelos = gpt_models
+            # El recomendado suele ser el primero o uno específico
             modelo_elegido = st.selectbox("ChatGPT Model", modelos, index=0)
-            return {"proveedor": "chatgpt", "modelo": modelo_elegido}
-
+            return {"proveedor": "chatgpt", "modelo": modelo_elegido}, API_KEY
+            
         elif proveedor == "Gemini":
-            modelos = ["gemini-3.1-pro-preview", "gemini-3.1-pro-preview-customtools",
-                       "gemini-3-flash-preview", "gemini-3-pro-preview", "gemini-3.1-flash-live-preview"]
+            modelos = gemini_models
             modelo_elegido = st.selectbox("Gemini Model", modelos, index=0)
-            return {"proveedor": "gemini", "modelo": modelo_elegido}
-
+            return {"proveedor": "gemini", "modelo": modelo_elegido}, API_KEY
+        
         elif proveedor == "Claude":
-            modelos = ["claude-opus-4-6", "claude-sonnet-4-6", "claude-haiku-4-5-20251001"]
-            modelo_elegido = st.selectbox("Claude Model", modelos, index=1)
-            return {"proveedor": "claude", "modelo": modelo_elegido}
+            modelos = claude_models
+            modelo_elegido = st.selectbox("Claude Model", modelos, index=0)
+            return {"proveedor": "claude", "modelo": modelo_elegido}, API_KEY
 
     return None
 
-def input_prompt_component(label, help_text, example_text):
+def input_prompt_component(label, help_text, example_text, esta_bloqueado):
     # We create a visual container for each section
     with st.container(border=True):
         col_tit, col_help = st.columns([0.8, 0.2])
@@ -113,7 +83,8 @@ def input_prompt_component(label, help_text, example_text):
             f"How would you like to enter the {label}?",
             ["Write text", "Upload .txt file"],
             key=f"radio_{label}",
-            horizontal=True
+            horizontal=True, 
+            disabled = esta_bloqueado
         )
         
         if method == "Write text":
@@ -121,96 +92,127 @@ def input_prompt_component(label, help_text, example_text):
                 f"Enter the {label}:", 
                 placeholder=help_text, 
                 key=f"txt_{label}",
-                height=150 # Fixed height to prevent it from looking too small
+                height=150, # Fixed height to prevent it from looking too small,
+                disabled = esta_bloqueado
             )
         else:
             file = st.file_uploader(
                 f"Upload the file for {label}", 
                 type="txt", 
-                key=f"file_{label}"
+                key=f"file_{label}",
+                disabled = esta_bloqueado
             )
             if file:
                 return file.read().decode("utf-8")
     return ""
 
-def menu_asignacion_st(df):
-    st.markdown("---")
-    st.subheader("Assignment Strategy")
+def menu_st(df, menu_type):
+    
+    estrategia = None
+    
+    if menu_type == 2:
+        st.markdown("---")
+        st.subheader("Assignment Strategy")
 
-    # Selección de estrategia
-    estrategia = st.radio(
-        "Select the prompting strategy::",
-        ["Zero-Shot", "Few-Shot", "Zero-Shot CoT", "Few-Shot CoT"],
-        horizontal=True
-    )
-
-    info_llm = seleccionar_llm_st()
-
-    if info_llm:
-        prompt_resultados(info_llm, estrategia, df)
+        # Selección de estrategia
+        estrategia = st.radio(
+            "Select the prompting strategy::",
+            ["Zero-Shot", "Few-Shot", "Zero-Shot CoT", "Few-Shot CoT"],
+            horizontal=True
+        )
         
-def prompt_resultados(info_llm, estrategia, df):
+    elif menu_type == 1:
+        st.markdown("---")
+        st.subheader("Categories Creation Strategy")
+
+    info_llm, API_KEY = seleccionar_llm_st()
+
+    if info_llm and API_KEY:
+        # Always show pending batches, regardless of whether a file is uploaded
+        crear_prompt_obtener_resultados(info_llm, df, API_KEY, estrategia)
+        
+        mostrar_estado_batches_st(API_KEY)
+             
+def crear_prompt_obtener_resultados(info_llm, df, API_KEY, estrategia):
     
     # 1. Inicializar estados para persistencia
     if 'proceso_finalizado' not in st.session_state:
         st.session_state.proceso_finalizado = False
+        
+    # Creamos una variable corta para no escribir tanto
+    esta_bloqueado = st.session_state.proceso_finalizado # Si el proceso se ha marcado como finalizado, bloqueamos los inputs
     
     st.write(f" **Configured:** {info_llm['proveedor']} ({info_llm['modelo']})")
     st.header("Prompt Configuration")
 
     # --- BLOQUES BÁSICOS ---
-    rol = input_prompt_component("Role", "e.g., You are an economics expert...", HELP_ROLE)
-    contexto = input_prompt_component("Context", "e.g., This data comes from...", HELP_CONTEXTO)
-    clasificacion = input_prompt_component("Classification", "e.g., Classify into A, B, or C...", HELP_CLASIFICACION)
-    formato = input_prompt_component("Format", "e.g., Return a JSON...", HELP_FORMAT)
-    constraints = input_prompt_component("Constraints", "e.g., Do not use adjectives...", HELP_CONSTRAINTS)
+    rol = input_prompt_component("Role", "e.g., You are an economics expert...", HELP_ROLE, esta_bloqueado)
+    contexto = input_prompt_component("Context", "e.g., This data comes from...", HELP_CONTEXTO, esta_bloqueado)
+    clasificacion = input_prompt_component("Classification", "e.g., Classify into A, B, or C...", HELP_CLASIFICACION, esta_bloqueado)
+    formato = input_prompt_component("Format", "e.g., Return a JSON...", HELP_FORMAT, esta_bloqueado)
+    constraints = input_prompt_component("Constraints", "e.g., Do not use adjectives...", HELP_CONSTRAINTS, esta_bloqueado)
 
     extra_content = ""
 
     # --- BLOQUES DINÁMICOS (Corregidos) ---
     # Usamos 'in' correctamente para detectar la estrategia
-    if "Few-Shot" in estrategia:
-        help_text = HELP_FS_COT if "CoT" in estrategia else HELP_FS
-        extra_content += "\n" + input_prompt_component("Examples", "Add examples of input/output...", help_text)
-    
-    # Si la estrategia es "Zero-Shot CoT" o "Few-Shot CoT"
-    if "CoT" in estrategia:
-        extra_content += "\n" + input_prompt_component("Chain of Thought (CoT)", "Reasoning instructions...", HELP_COT)
-    
+    # si estrategia no es None
+    if estrategia:
+        
+        if "Few-Shot" in estrategia:
+            help_text = HELP_FS_COT if "CoT" in estrategia else HELP_FS
+            extra_content += "\n" + input_prompt_component("Examples", "Add examples of input/output...", help_text, esta_bloqueado)
+        
+        # Si la estrategia es "Zero-Shot CoT" o "Few-Shot CoT"
+        if "CoT" in estrategia:
+            extra_content += "\n" + input_prompt_component("Chain of Thought (CoT)", "Reasoning instructions...", HELP_COT, esta_bloqueado)    
+        
     # --- CONFIGURACIÓN EXTRA ---
     st.info("Columns Configuration")
+    
     message_col = st.selectbox(
         "Select the column containing the messages/texts:",
         options=df.columns,
-        help="This is the column the LLM will read for classification."
+        help="This is the column the LLM will read for classification.",
+        disabled=esta_bloqueado
     )
-    game_col_options = ["(none)"] + list(df.columns)
-    game_col_sel = st.selectbox(
-        "Select the game column (optional):",
-        options=game_col_options,
-        help="If your data has a game column, the LLM will receive that context."
-    )
-    game_col = None if game_col_sel == "(none)" else game_col_sel
+    
+    if estrategia:
+        game_col_options = ["(none)"] + list(df.columns)
+        game_col_sel = st.selectbox(
+            "Select the game column (optional):",
+            options=game_col_options,
+            help="If your data has a game column, the LLM will receive that context.",
+            disabled=esta_bloqueado
+        )
+        
+        game_col = None if game_col_sel == "(none)" else game_col_sel
 
-    keep_cols = st.multiselect(
-        "Columns to keep in output (for merging):",
-        options=[c for c in df.columns if c != message_col],
-        help="These columns will be copied from the original dataset into each result row so you can merge later."
-    )
+        keep_cols = st.multiselect(
+            "Columns to keep in output (for merging):",
+            options=[c for c in df.columns if c != message_col],
+            help="These columns will be copied from the original dataset into each result row so you can merge later.",
+            disabled=esta_bloqueado
+        )
 
     st.info("Temperatures Configuration")
-    temps = configuracion_temperaturas()
-
+    temps = configuracion_temperaturas(esta_bloqueado)
+    
     # --- PROCESSING MODE (only for Claude / GPT) ---
     proveedor = info_llm['proveedor']
-    if proveedor in ("claude", "chatgpt"):
+    
+    temps = normalize_temps_for_llm(temps, proveedor)
+    
+    if proveedor in ("claude", "chatgpt") and estrategia:
         st.info("Processing Mode")
         processing_mode = st.radio(
             "How should the LLM process the rows?",
             ["Normal (line by line)", "Batch API (async, ~50% cheaper, up to 24 h)"],
             key="processing_mode_radio",
             horizontal=True,
+            disabled=esta_bloqueado
         )
+        
         if "Batch" in processing_mode:
             if proveedor == "claude":
                 st.caption("📊 Track progress: https://console.anthropic.com/settings/workspaces/default/batches")
@@ -222,74 +224,245 @@ def prompt_resultados(info_llm, estrategia, df):
     # --- CONSTRUCCIÓN DEL PROMPT ---
     partes = [rol, contexto, clasificacion, formato, constraints, extra_content]
     prompt_final = "\n".join([p for p in partes if p.strip()])
+    
+    strategy_folder = estrategia.lower().replace(" ", "_") if estrategia else "default"
 
-    # --- BOTONES DE EJECUCIÓN Y STOP ---
-    col_run, col_stop = st.columns([1, 1])
-    with col_run:
-        if st.button("Generate Prompt and Run"):
-            if prompt_final:
-                st.session_state.proceso_finalizado = True
-                st.session_state.stop_requested = False
+    # --- VALIDACIÓN DE ARCHIVOS PREVIOS ---
+
+    modos_ejecucion = {}
+
+    for temp in temps:
+        if not st.session_state.proceso_finalizado:
+            if processing_mode == "Batch API (async, ~50% cheaper, up to 24 h)":
+                
+                hay_archivos_previos, modos_ejecucion = verify_files_existence(proveedor, strategy_folder, temp, modos_ejecucion, batch_prefix="batch", esta_bloqueado=esta_bloqueado)
+                
+                #tambien para batch existence no solo es eso sino tambien pensar que hay batches que pueden estar procesando la misma informacion
+                #la idea es cogerel row map y evaluar si hay un solapamiento alto entre las filas del row map y el df actual, si es asi avisar que hay un batch en proceso que puede estar procesando la misma informacion y dar la opcion de mantener (esperar a que termine el batch) o eliminar (cancelar el batch y eliminar los archivos)
+                # si se quiere volver a correr, se borra el batch (si existe) y se eliminan los archivos, si se quiere mantener, se espera a que termine el batch y luego se evalua si el resultado es util o no para descargarlo o no
+                hay_archivos_previos_json, batches_a_eliminar = verify_files_existence_json(df, proveedor, message_col, esta_bloqueado)
+
             else:
-                st.error("The prompt is empty. Please configure the blocks.")
-                st.session_state.proceso_finalizado = False
+                
+                hay_archivos_previos, modos_ejecucion = verify_files_existence(proveedor, strategy_folder, temp, modos_ejecucion, batch_prefix="line", esta_bloqueado=esta_bloqueado)
+                
+                hay_archivos_previos_json = False
+                batches_a_eliminar = None
+        else:
+            hay_archivos_previos = False
+            hay_archivos_previos_json = False
+            modos_ejecucion = {}
+            batches_a_eliminar = None
+    
+    # --- VALIDACIÓN FINAL PARA MOSTRAR EL BOTÓN ---
+    confirmado = True
+    
+    if hay_archivos_previos or hay_archivos_previos_json:
+        # Añadimos un checkbox de confirmación final para "frenar" el proceso
+        confirmado = st.checkbox("I confirm the file management actions above.", value=False, disabled=esta_bloqueado)
 
-    with col_stop:
-        if st.session_state.proceso_finalizado and "Normal" in processing_mode:
-            if st.button("⏹ Stop Processing"):
-                st.session_state.stop_requested = True
-                st.session_state.proceso_finalizado = False
-                st.rerun()
-
-    if st.session_state.get('stop_requested') and not st.session_state.proceso_finalizado:
-        st.warning("Processing stopped. Progress has been saved — you can resume by running again.")
-        st.session_state.stop_requested = False
+    # --- BOTÓN DE EJECUCIÓN (Solo si está confirmado) ---
+    if confirmado:
+        # --- BOTONES DE EJECUCIÓN Y STOP ---
+        if st.button("Generate Prompt and Run"):
+            if prompt_final.strip():
+                # 1. Aplicar limpieza de archivos
+                if modos_ejecucion:
+                    for temp, modo in modos_ejecucion.items():
+                        if modo == "overwrite":
+                            out_file = f"results_line_temp{temp}.csv"
+                            output_path = os.path.join(RESULTS_PATH, proveedor, strategy_folder, out_file)
+                            if os.path.exists(output_path):
+                                os.remove(output_path)
+                                
+                if batches_a_eliminar:
+                    for item in batches_a_eliminar:
+                        batch_id = item["id"]
+                        json_path = item["file"]
+                        
+                        # Eliminar el archivo rowmap del disco
+                        if os.path.exists(json_path):
+                            os.remove(json_path)
+                            
+                        # Eliminar la entrada del JSON de estados (memoria de Streamlit)
+                        # Esto evita que el botón DuplicateKey aparezca
+                        _remove_st_batch(proveedor, batch_id)
+                                
+                st.session_state.proceso_finalizado = True
+                st.rerun() # Forzamos recarga para que entre en el bloque de procesamiento
+            else:
+                st.error("The prompt is empty.")
+    else:
+        st.info("Please confirm the file management actions to proceed. If you want to change your selections, please adjust the options above and then check the confirmation box.")
 
     # --- MOSTRAR RESULTADOS Y PROCESAMIENTO ---
+    # si partes no esta empty y el proceso se ha marcado como finalizado, mostramos el prompt y ejecutamos
     if st.session_state.proceso_finalizado:
+        # Opcional: Botón para resetear y volver a configurar
+        if st.button("STOP, reset, and Edit Prompt"):
+            st.session_state.proceso_finalizado = False
+            st.session_state.stop_requested= True
+            st.rerun()
+            
         st.subheader("Final Generated Prompt")
         st.code(prompt_final, language="markdown")
+        
+        # Llamamos a la función de procesamiento. 
+        # Al estar fuera del 'if button', persistirá aunque hagas clic en descargar.
+        if estrategia:
+          
+            if "Batch" in processing_mode:
+                
+                ejecutar_batch_st(
+                    df,
+                    prompt_final,
+                    info_llm,
+                    temps,
+                    message_col,
+                    strategy_folder,
+                    API_KEY,
+                    game_col=game_col,
+                    keep_cols=keep_cols,
+                )
+                st.session_state.proceso_finalizado = False
+                
+            else:
+                st.caption("Processing row by row. To stop, click **⏹ Stop Processing** — it will halt after the current API call finishes.")
+                ejecutar_procesamiento_st(
+                    df,
+                    prompt_final,
+                    info_llm,
+                    temps,
+                    message_col,
+                    strategy_folder,
+                    API_KEY,
+                    game_col=game_col,
+                    keep_cols=keep_cols,
+                )
+                st.session_state.proceso_finalizado = False
 
-        strategy_folder = estrategia.lower().replace(" ", "_")
-
-        if "Batch" in processing_mode:
-            ejecutar_batch_st(
-                df,
-                prompt_final,
-                info_llm,
-                temps,
-                message_col,
-                strategy_folder,
-                game_col=game_col,
-                keep_cols=keep_cols,
+        else:
+            
+            ejecutar_procesamiento_crear_st(
+                df, 
+                prompt_final, 
+                info_llm, 
+                temps, 
+                message_col,  
+                API_KEY
             )
             st.session_state.proceso_finalizado = False
-        else:
-            st.caption("Processing row by row. To stop, click **⏹ Stop Processing** — it will halt after the current API call finishes.")
-            ejecutar_procesamiento_st(
-                df,
-                prompt_final,
-                info_llm,
-                temps,
-                message_col,
-                strategy_folder,
-                game_col=game_col,
-                keep_cols=keep_cols,
-            )
 
         if st.button("Reset and Edit Prompt"):
             st.session_state.proceso_finalizado = False
             st.rerun()
-           
-def configuracion_temperaturas():
+
+def verify_files_existence_json(df, provider, message_col, esta_bloqueado):
+    MIN_APPEND_KEY_OVERLAP = 0.1
+    json_files = []
+    batches_a_eliminar = [] 
+    
+    # 1. Definir la ruta específica del proveedor para buscar solo ahí
+    # Esto evita que si estás en ChatGPT te salten avisos de batches de Claude
+    provider_path = os.path.join(RESULTS_PATH, provider)
+    
+    if not os.path.exists(provider_path):
+        return False, []
+
+    # Buscamos solo en la carpeta del proveedor actual
+    for root, dirs, files in os.walk(provider_path):
+        for file in files:
+            if file.startswith("rowmap_") and file.endswith(".json"):
+                json_files.append(os.path.join(root, file))
+
+    mensajes_df = set(df[message_col].dropna().astype(str).tolist())
+    if not mensajes_df:
+        return False, []
+    
+    hay_solapamiento = False
+
+    for json_file in json_files:
+        try:
+            with open(json_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            
+            mensajes_json = set(str(obj.get("message", "")) for obj in data.values())
+            interseccion = mensajes_df.intersection(mensajes_json)
+            overlap = len(interseccion) / len(mensajes_df) if len(mensajes_df) > 0 else 0
+            
+            if overlap >= MIN_APPEND_KEY_OVERLAP:
+                # Extraer batch_id
+                match = re.search(r"rowmap_(.*?)\.json", os.path.basename(json_file))
+                if not match: continue
+                batch_id = match.group(1)
+
+                hay_solapamiento = True
+                
+                st.warning(f"⚠️ Overlap detected ({int(overlap*100)}%) in **{provider.upper()}** with Batch: `{batch_id}`")
+                
+                opcion = st.radio(
+                    f"Action for batch {batch_id}:",
+                    ["Maintain (Wait for it)", "Delete and Start Fresh"],
+                    key=f"radio_json_{batch_id}",
+                    disabled = esta_bloqueado
+                )
+                
+                if "Delete" in opcion:
+                    batches_a_eliminar.append({
+                        "id": batch_id,
+                        "file": json_file
+                    })
+                else:
+                    st.info(f"Batch `{batch_id}` will be kept.")
+
+        except Exception as e:
+            st.error(f"Error checking {json_file}: {e}")
+            continue
+            
+    return hay_solapamiento, batches_a_eliminar      
+
+def verify_files_existence(proveedor, strategy_folder, temp, modos_ejecucion, batch_prefix, esta_bloqueado):
+    # Definimos el nombre del archivo específico para este prefijo y temperatura
+    out_file = f"results_{batch_prefix}_temp{temp}.csv"
+    output_path = os.path.join(RESULTS_PATH, proveedor, strategy_folder, out_file)
+        
+    hay_archivos_previos = False
+    
+    if os.path.exists(output_path):
+        hay_archivos_previos = True
+        st.warning(f"⚠️ Previous results detected for Temp {temp} (File: {out_file})")
+        
+        opcion = st.radio(
+            f"Action for {out_file}:",
+            ["Maintain (Append)", "Delete and Start Fresh (Overwrite)"],
+            key=f"radio_{batch_prefix}_{strategy_folder}_{temp}"
+        )
+        
+        # Guardamos un diccionario con toda la info necesaria
+        modos_ejecucion[temp] = {
+            "modo": "overwrite" if "Delete" in opcion else "append",
+            "prefix": batch_prefix,
+            "path": output_path
+        }
+    else:
+        # Si es nuevo, también guardamos el prefijo para saber cómo crearlo
+        modos_ejecucion[temp] = {
+            "modo": "new",
+            "prefix": batch_prefix,
+            "path": output_path
+        }
+         
+    return hay_archivos_previos, modos_ejecucion
+             
+def configuracion_temperaturas(esta_bloqueado):
     
     # Sin crear columnas ni usar 'with'
-    temps = st.multiselect("Temperatures", [0, 0.1, 0.5, 1, 1.2], default=[0])
+    temps = st.multiselect("Temperatures", [0, 0.1, 0.5, 1, 1.2], default=[0], help="Select the temperatures to run. You can choose multiple to compare results.", disabled=esta_bloqueado)
     
-        
     return temps
 
-def ejecutar_procesamiento_st(df, prompt, config_llm, temps, message_col, strategy_folder, game_col=None, keep_cols=None):
+def ejecutar_procesamiento_st(df, prompt, config_llm, temps, message_col, strategy_folder, API_KEY, game_col=None, keep_cols=None):
+    
     df_clean = df.dropna(subset=[message_col]).reset_index(drop=True)
     proveedor = config_llm['proveedor']
     model_override = config_llm['modelo']
@@ -351,8 +524,8 @@ def ejecutar_procesamiento_st(df, prompt, config_llm, temps, message_col, strate
                     with ThreadPoolExecutor(max_workers=5) as executor:
                         futures = {
                             executor.submit(
-                                call_llm_for_message, prompt, msg, temp, "gemini",
-                                "user", game, model_override
+                                call_llm_for_message, prompt, msg, temp, "gemini", API_KEY,
+                                game, model_override, "user"
                             ): (idx, msg)
                             for idx, msg, game in pending_rows
                         }
@@ -381,7 +554,7 @@ def ejecutar_procesamiento_st(df, prompt, config_llm, temps, message_col, strate
                             break
                         try:
                             ans = call_llm_for_message(
-                                prompt, msg, temp, "claude", "user", game, model_override
+                                prompt, msg, temp, "claude", "user", game, model_override, API_KEY, "user"
                             )
                             parsed = parse_llm_dict(ans)
                             rows_buffer.append(enrich_row(parsed, idx, msg))
@@ -400,7 +573,7 @@ def ejecutar_procesamiento_st(df, prompt, config_llm, temps, message_col, strate
                             break
                         try:
                             ans = call_llm_for_message(
-                                prompt, msg, temp, "chatgpt", "user", game, model_override
+                                prompt, msg, temp, "chatgpt", API_KEY, game, model_override, "user"
                             )
                             parsed = parse_llm_dict(ans)
                             rows_buffer.append(enrich_row(parsed, idx, msg))
@@ -420,21 +593,23 @@ def ejecutar_procesamiento_st(df, prompt, config_llm, temps, message_col, strate
 
             if rows_buffer:
                 pd.DataFrame(rows_buffer).to_csv(output_path, index=False)
-                mostrar_boton_descarga(rows_buffer, temp)
+                mostrar_boton_descarga(rows_buffer, temp, "results")
 
-def mostrar_boton_descarga(rows, temp):
-    df_temp = pd.DataFrame(rows)
+def mostrar_boton_descarga(df_temp, temp, type):
+    st.session_state.proceso_finalizado = True
+    
     st.success(f"✅ ¡Temp {temp} ready to be downloaded!")
-    st.write("### Preliminary data view:")
-    st.dataframe(df_temp.head())
+    
     csv_temp = df_temp.to_csv(index=False).encode('utf-8')
+    
     st.download_button(
         label=f" Download results Temp {temp}",
         data=csv_temp,
-        file_name=f"resultados_temp_{temp}.csv",
+        file_name=f"{type}_temp_{temp}.csv",
         mime="text/csv",
         key=f"dl_{temp}"
     )
+    
     st.divider()
            
 def write_rows_to_csv(output_path, rows):
@@ -450,42 +625,35 @@ def write_rows_to_csv(output_path, rows):
         encoding="utf-8"
     )
 
-def get_chatgpt_client():
+def get_chatgpt_client(API_KEY):
     global llm_chatgpt
     if llm_chatgpt is None or llm_chatgpt.model_name != SELECTED_CHATGPT_MODEL:
         llm_chatgpt = ChatOpenAI(
             model=SELECTED_CHATGPT_MODEL,
             max_retries=1,
-            api_key=OAI_2
+            api_key=API_KEY
         )
     return llm_chatgpt
 
-def get_gemini_client():
+def get_gemini_client(API_KEY):
     global llm_gemini
     if llm_gemini is None:
-        if not GEMINI:
-            raise ValueError("Missing GEMINI API key. Set GEMINI in your .env file.")
-        llm_gemini = genai.Client(api_key=GEMINI)
+        llm_gemini = genai.Client(api_key=API_KEY)
     return llm_gemini
 
-
-def get_claude_client():
+def get_claude_client(API_KEY):
     global llm_claude
     if llm_claude is None:
-        if not CLAUDE:
-            raise ValueError("Missing CLAUDE API key. Set CLAUDE in your .env file.")
         if anthropic is None:
             raise ImportError("Anthropic SDK is not installed. Run 'pip install anthropic'.")
-        llm_claude = anthropic.Anthropic(api_key=CLAUDE)
+        llm_claude = anthropic.Anthropic(api_key=API_KEY)
     return llm_claude
-
 
 def extract_claude_text(response):
     if hasattr(response, 'content') and response.content:
         text_blocks = [b.text for b in response.content if hasattr(b, 'type') and b.type == 'text']
         return "\n".join(text_blocks) if text_blocks else ""
     return ""
-
 
 def build_classification_user_message(message, game=None):
     preamble = f"The actual game being played this period is: Game {game}\n\n" if game is not None else ""
@@ -496,14 +664,17 @@ def build_classification_user_message(message, game=None):
         f"Message:\n{message}"
     )
 
-
-def call_llm_for_message(base_prompt, message, temp, llm, mode="user", game=None, model_override=None):
-    user_prompt = build_classification_user_message(message, game)
+def call_llm_for_message(base_prompt, message, temp, llm, API_KEY, game= None, model_override=None, mode="user"):
+    
+    if game and model_override:
+        user_prompt = build_classification_user_message(message, game)
+    else:
+        user_prompt = ""
 
     if llm == "gemini":
         model = model_override or SELECTED_GEMINI_MODEL
         full_prompt = base_prompt + "\n\n" + user_prompt
-        response = get_gemini_client().models.generate_content(
+        response = get_gemini_client(API_KEY).models.generate_content(
             model=model,
             contents=full_prompt,
             config=types.GenerateContentConfig(temperature=temp)
@@ -512,7 +683,7 @@ def call_llm_for_message(base_prompt, message, temp, llm, mode="user", game=None
 
     if llm == "claude":
         model = model_override or SELECTED_CLAUDE_MODEL
-        response = get_claude_client().messages.create(
+        response = get_claude_client(API_KEY).messages.create(
             model=model,
             max_tokens=CLAUDE_MAX_TOKENS,
             temperature=temp,
@@ -524,15 +695,15 @@ def call_llm_for_message(base_prompt, message, temp, llm, mode="user", game=None
     model = model_override or SELECTED_CHATGPT_MODEL
     global llm_chatgpt
     if llm_chatgpt is None or llm_chatgpt.model_name != model:
-        llm_chatgpt = get_chatgpt_client()
+        llm_chatgpt = get_chatgpt_client(API_KEY)
 
     if mode == "user":
-        response = get_chatgpt_client().bind(temperature=temp).invoke([
+        response = get_chatgpt_client(API_KEY).bind(temperature=temp).invoke([
             ("system", base_prompt),
             ("user", user_prompt)
         ])
     else:
-        response = get_chatgpt_client().invoke_as_assistant(user_prompt, temperature=temp)
+        response = get_chatgpt_client(API_KEY).invoke_as_assistant(user_prompt, temperature=temp)
 
     return response.content
 
@@ -541,52 +712,85 @@ def parse_llm_dict(ans):
         start = ans.find("{")
         end   = ans.rfind("}") + 1
         raw_dict = ans[start:end]
-        parsed = ast.literal_eval(raw_dict)
-
-        if not isinstance(parsed, dict):
-            return {"error": ans[:300]}
-
-        canonical_to_expected = {
-            re.sub(r"[^a-z_]", "", key.lower()): key for key in EXPECTED_LABEL_KEYS
-        }
-
-        normalized = {}
-        for k, v in parsed.items():
-            key = str(k).strip().lower()
-            key = LEGACY_KEY_ALIASES.get(key, key)
-            canonical = re.sub(r"[^a-z_]", "", key)
-            expected_key = canonical_to_expected.get(canonical)
-            if expected_key is not None:
-                normalized[expected_key] = v
-
-        if normalized:
-            complete = {key: 0 for key in EXPECTED_LABEL_KEYS}
-            complete.update(normalized)
-            return complete
-
-        return {"error": ans[:300]}
+        return ast.literal_eval(raw_dict)
     except:
         return {"error": ans[:300]}
 
+def ejecutar_procesamiento_crear_st(df, prompt, config_llm, temps, message_col, API_KEY):    
+    # Limpiamos el dataframe
+    df_clean = df.dropna(subset=[message_col]).reset_index(drop=True)
+    
+    # Preparamos el bloque de mensajes una sola vez
+    messages = df_clean[message_col].tolist()
+    combined_messages = "\n".join([f"- {m}" for m in messages])
+    
+    full_prompt = (
+        f"{prompt}\n\n"
+        "These are the messages you need to analyze to create the categories:\n"
+        f"{combined_messages}"
+    )
+    
+    for temp in temps:
+        with st.container(border=True):
+            st.subheader(f"Results with temperature: {temp}")
+            
+            with st.spinner(f"The LLM is analyzing and categorizing (Temp {temp})..."):
+                try:
+                    # 1. Llamada única al LLM
+                    proveedor = config_llm['proveedor']
+                    
+                    if proveedor == "gemini":
+                        # Usamos tu función existente call_llm_for_message pero enviando el bloque completo
+                        ans = call_llm_for_message(full_prompt, "", temp, "gemini", API_KEY)
+                        
+                    elif proveedor == "claude":
+                        ans = call_llm_for_message(full_prompt, "", temp, "claude", API_KEY)
+                    else:
+                        ans = call_llm_for_message(full_prompt, "", temp, "chatgpt", API_KEY)
 
+                    
+                    # 2. Parsear el resultado (JSON -> Dict/List)
+                    categorias_data = parse_llm_dict(ans)
+                    
+                    # 3. Mostrar de forma "bonita"
+                    if categorias_data:
+                        res_df = None
+    
+                        if isinstance(categorias_data, dict):
+                            # REVISIÓN PARA TU CASO ESPECÍFICO:
+                            # Convertimos el dict {Llave: Valor} en una lista de tuplas [(Llave, Valor)]
+                            # y le ponemos nombres de columnas claros.
+                            res_df = pd.DataFrame(
+                                list(categorias_data.items()), 
+                                columns=["Category", "Description"]
+                            )
+
+                        # RENDERIZADO FINAL
+                        if res_df is not None:
+                            # Esto imprimirá la tabla estética en vez del JSON
+                            st.table(res_df) 
+                            
+                            # Botón de descarga usando tu función
+                            mostrar_boton_descarga(res_df, temp, "categories")
+                        else:
+                            st.warning("No se pudo estructurar la tabla.")
+                    else:
+                        st.warning("The LLM did not return any data or it could not be parsed.")
+
+                except Exception as e:
+                    st.error(f"Error processing temp {temp}: {e}")    
+   
 # ──────────────────────────────────────────────────────────────
 # BATCH HELPERS
 # ──────────────────────────────────────────────────────────────
-
-def get_openai_batch_client():
+def get_openai_batch_client(API_KEY):
     global llm_openai_batch
     if llm_openai_batch is None:
-        if not OAI_2:
-            raise ValueError("Missing OAI_2 API key. Set OAI_2 in your .env file.")
-        if OpenAI is None:
-            raise ImportError("OpenAI SDK is not installed. Run 'pip install openai'.")
-        llm_openai_batch = OpenAI(api_key=OAI_2)
+        llm_openai_batch = OpenAI(api_key=API_KEY)
     return llm_openai_batch
-
 
 def temp_to_id_token(temp):
     return str(temp).replace(".", "p").replace("-", "m")
-
 
 def normalize_temps_for_llm(temps, llm):
     if llm != "claude":
@@ -596,7 +800,6 @@ def normalize_temps_for_llm(temps, llm):
     if dropped:
         st.warning(f"Claude only supports temperature 0–1. Skipping: {dropped}")
     return valid if valid else [0]
-
 
 def get_openai_response_text(response_body):
     choices = response_body.get("choices", [])
@@ -609,7 +812,6 @@ def get_openai_response_text(response_body):
         return "\n".join(b.get("text", "") for b in content if isinstance(b, dict) and b.get("type") == "text")
     return str(content)
 
-
 def get_openai_file_text(file_response):
     text_attr = getattr(file_response, "text", None)
     if callable(text_attr):
@@ -621,12 +823,10 @@ def get_openai_file_text(file_response):
         return data.decode("utf-8") if isinstance(data, bytes) else str(data)
     return str(file_response)
 
-
 def _st_batch_status_path(provider):
     path = os.path.join(RESULTS_PATH, provider, "batch_status_st.json")
     os.makedirs(os.path.dirname(path), exist_ok=True)
     return path
-
 
 def load_st_batch_status(provider):
     p = _st_batch_status_path(provider)
@@ -638,203 +838,198 @@ def load_st_batch_status(provider):
             pass
     return {}
 
-
 def save_st_batch_status(provider, data):
     with open(_st_batch_status_path(provider), "w") as f:
         json.dump(data, f, indent=2)
 
-
 def _rowmap_path(provider, batch_id):
     return os.path.join(RESULTS_PATH, provider, f"rowmap_{batch_id}.json")
-
 
 # ──────────────────────────────────────────────────────────────
 # BATCH SUBMISSION (Streamlit)
 # ──────────────────────────────────────────────────────────────
 
-def ejecutar_batch_st(df, prompt, config_llm, temps, message_col, strategy_folder, game_col=None, keep_cols=None):
+def _to_native(v):
+    if hasattr(v, "item"):
+        return v.item()
+    return v
+
+def ejecutar_batch_st(df, prompt, config_llm, temps, message_col, strategy_folder, API_KEY, game_col=None, keep_cols=None):
     proveedor = config_llm['proveedor']
     model_override = config_llm['modelo']
     keep_cols = keep_cols or []
-    temps = normalize_temps_for_llm(temps, proveedor)
-
     df_clean = df.dropna(subset=[message_col]).reset_index(drop=True)
-
     submitted = []
 
-    for temp in temps:
-        out_file = f"results_batch_temp{temp}.csv"
-        output_path = os.path.join(RESULTS_PATH, proveedor, strategy_folder, out_file)
-        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    # --- INICIO DEL SPINNER / STATUS ---
+    with st.status("🚀 Preparing and submitting batches...", expanded=True) as status:
+        for temp in temps:
+            st.write(f"Processing temperature {temp}...")
+            
+            out_file = f"results_batch_temp{temp}.csv"
+            output_path = os.path.join(RESULTS_PATH, proveedor, strategy_folder, out_file)
+            os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
-        # Load already-processed IDs to skip them
-        processed_ids = set()
-        if os.path.exists(output_path):
+            processed_ids = set()
+            if os.path.exists(output_path):
+                try:
+                    ex = pd.read_csv(output_path)
+                    if "row_id" in ex.columns:
+                        processed_ids = set(int(float(v)) for v in ex["row_id"].dropna())
+                except Exception: pass
+
+            pending_rows = [
+                (idx, row[message_col], row.get(game_col, None) if game_col else None)
+                for idx, row in df_clean.iterrows()
+                if idx not in processed_ids
+            ]
+
+            if not pending_rows:
+                st.write(f"✅ Temp {temp}: All rows already processed.")
+                continue
+
+            temp_token = temp_to_id_token(temp)
+            row_id_map = {}
+            for i, (idx, msg, game) in enumerate(pending_rows):
+                entry = {
+                    "idx": int(idx),
+                    "message": str(msg),
+                    "game": _to_native(game) if game is not None else None,
+                    "extra": {},
+                }
+                for col in keep_cols:
+                    if col in df_clean.columns:
+                        entry["extra"][col] = _to_native(df_clean.at[idx, col])
+                row_id_map[f"temp{temp_token}_row{i}"] = entry
+
             try:
-                ex = pd.read_csv(output_path)
-                if "row_id" in ex.columns:
-                    processed_ids = set(int(float(v)) for v in ex["row_id"].dropna())
-            except Exception:
-                pass
+                # --- ENVÍO A LAS APIs ---
+                if proveedor == "claude":
+                    st.write(f"📤 Uploading batch to Anthropic (Temp {temp})...")
+                    batch_requests = []
+                    for custom_id, entry in row_id_map.items():
+                        user_message = build_classification_user_message(entry["message"], entry["game"])
+                        batch_requests.append({
+                            "custom_id": custom_id,
+                            "params": {
+                                "model": model_override,
+                                "max_tokens": CLAUDE_MAX_TOKENS,
+                                "temperature": temp,
+                                "system": [{"type": "text", "text": prompt, "cache_control": {"type": "ephemeral"}}],
+                                "messages": [{"role": "user", "content": user_message}],
+                            },
+                        })
+                    client = get_claude_client(API_KEY)
+                    batch_obj = client.messages.batches.create(requests=batch_requests)
+                    batch_id = batch_obj.id
 
-        pending_rows = [
-            (idx, row[message_col], row.get(game_col, None) if game_col else None)
-            for idx, row in df_clean.iterrows()
-            if idx not in processed_ids
-        ]
+                else: # chatgpt
+                    st.write(f"📤 Uploading batch to OpenAI (Temp {temp})...")
+                    client = get_openai_batch_client(API_KEY)
+                    batch_lines = []
+                    for custom_id, entry in row_id_map.items():
+                        user_message = build_classification_user_message(entry["message"], entry["game"])
+                        batch_lines.append(json.dumps({
+                            "custom_id": custom_id,
+                            "method": "POST",
+                            "url": "/v1/chat/completions",
+                            "body": {
+                                "model": model_override,
+                                "temperature": temp,
+                                "messages": [
+                                    {"role": "system", "content": prompt},
+                                    {"role": "user", "content": user_message},
+                                ],
+                            },
+                        }, ensure_ascii=False))
 
-        if not pending_rows:
-            st.info(f"Temp {temp}: all rows already processed. Skipping.")
-            continue
+                    input_path = os.path.join(RESULTS_PATH, proveedor, strategy_folder, f"batch_input_temp{temp}.jsonl")
+                    with open(input_path, "w", encoding="utf-8") as f:
+                        f.write("\n".join(batch_lines) + "\n")
 
-        temp_token = temp_to_id_token(temp)
+                    with open(input_path, "rb") as fh:
+                        input_file = client.files.create(file=fh, purpose="batch")
+                    batch_obj = client.batches.create(
+                        input_file_id=input_file.id,
+                        endpoint="/v1/chat/completions",
+                        completion_window="24h",
+                    )
+                    batch_id = batch_obj.id
 
-        def _to_native(v):
-            if hasattr(v, "item"):
-                return v.item()
-            return v
+                # Persistencia
+                with open(_rowmap_path(proveedor, batch_id), "w", encoding="utf-8") as f:
+                    json.dump(row_id_map, f, ensure_ascii=False, indent=2)
 
-        # Build row_id_map – also store keep_cols so results can be enriched later
-        row_id_map = {}
-        for i, (idx, msg, game) in enumerate(pending_rows):
-            entry = {
-                "idx": int(idx),
-                "message": str(msg),
-                "game": _to_native(game) if game is not None else None,
-                "extra": {},
-            }
-            for col in keep_cols:
-                if col in df_clean.columns:
-                    entry["extra"][col] = _to_native(df_clean.at[idx, col])
-            row_id_map[f"temp{temp_token}_row{i}"] = entry
+                status_data = load_st_batch_status(proveedor)
+                status_data[batch_id] = {
+                    "batch_id": batch_id, "provider": proveedor, "model": model_override,
+                    "temperature": temp, "strategy": strategy_folder,
+                    "output_path": output_path, "total_rows": len(pending_rows),
+                }
+                save_st_batch_status(proveedor, status_data)
+                submitted.append({"temp": temp, "batch_id": batch_id, "rows": len(pending_rows)})
 
-        try:
-            if proveedor == "claude":
-                batch_requests = []
-                for custom_id, entry in row_id_map.items():
-                    user_message = build_classification_user_message(entry["message"], entry["game"])
-                    batch_requests.append({
-                        "custom_id": custom_id,
-                        "params": {
-                            "model": model_override,
-                            "max_tokens": CLAUDE_MAX_TOKENS,
-                            "temperature": temp,
-                            "system": [{"type": "text", "text": prompt, "cache_control": {"type": "ephemeral"}}],
-                            "messages": [{"role": "user", "content": user_message}],
-                        },
-                    })
-                client = get_claude_client()
-                batch_obj = client.messages.batches.create(requests=batch_requests)
-                batch_id = batch_obj.id
+            except Exception as e:
+                st.error(f"Temp {temp}: failed — {e}")
 
-            else:  # chatgpt
-                client = get_openai_batch_client()
-                batch_lines = []
-                for custom_id, entry in row_id_map.items():
-                    user_message = build_classification_user_message(entry["message"], entry["game"])
-                    batch_lines.append(json.dumps({
-                        "custom_id": custom_id,
-                        "method": "POST",
-                        "url": "/v1/chat/completions",
-                        "body": {
-                            "model": model_override,
-                            "temperature": temp,
-                            "messages": [
-                                {"role": "system", "content": prompt},
-                                {"role": "user", "content": user_message},
-                            ],
-                        },
-                    }, ensure_ascii=False))
+        # Actualizar el título del status al terminar
+        status.update(label="✅ Batches Submitted Successfully!", state="complete", expanded=False)
 
-                input_path = os.path.join(RESULTS_PATH, proveedor, strategy_folder, f"batch_input_temp{temp}.jsonl")
-                with open(input_path, "w", encoding="utf-8") as f:
-                    f.write("\n".join(batch_lines) + "\n")
-
-                with open(input_path, "rb") as fh:
-                    input_file = client.files.create(file=fh, purpose="batch")
-                batch_obj = client.batches.create(
-                    input_file_id=input_file.id,
-                    endpoint="/v1/chat/completions",
-                    completion_window="24h",
-                )
-                batch_id = batch_obj.id
-
-            # Persist row_id_map to disk so it survives reruns
-            with open(_rowmap_path(proveedor, batch_id), "w", encoding="utf-8") as f:
-                json.dump(row_id_map, f, ensure_ascii=False, indent=2)
-
-            # Save batch metadata
-            status = load_st_batch_status(proveedor)
-            status[batch_id] = {
-                "batch_id": batch_id,
-                "provider": proveedor,
-                "model": model_override,
-                "temperature": temp,
-                "strategy": strategy_folder,
-                "output_path": output_path,
-                "total_rows": len(pending_rows),
-            }
-            save_st_batch_status(proveedor, status)
-
-            submitted.append({"temp": temp, "batch_id": batch_id, "rows": len(pending_rows)})
-
-        except Exception as e:
-            st.error(f"Temp {temp}: failed to submit batch — {e}")
-
+    # --- FEEDBACK FINAL ---
     if submitted:
+        # Mostramos el éxito general
         st.success(f"✅ {len(submitted)} batch(es) submitted successfully!")
+        
+        # Creamos una pequeña lista con los detalles de lo que se acaba de enviar
         for s in submitted:
-            st.write(f"- **Temp {s['temp']}** → `{s['batch_id']}` ({s['rows']} rows)")
+            st.info(f"**Temp {s['temp']}** | ID: `{s['batch_id']}` | {s['rows']} rows")
 
+        # Mensajes de ayuda según el proveedor
         if proveedor == "claude":
-            st.info(
-                "**Claude Batch API** — up to **50% cheaper** than normal mode. "
-                "Results ready within 24 hours.\n\n"
-                "📊 Track progress at: https://console.anthropic.com/settings/workspaces/default/batches"
-            )
+            st.caption("📊 Track at: [Anthropic Console](https://console.anthropic.com/settings/workspaces/default/batches)")
         else:
-            st.info(
-                "**OpenAI Batch API** — up to **50% cheaper** than normal mode. "
-                "Results ready within 24 hours.\n\n"
-                "📊 Track progress at: https://platform.openai.com/batches"
-            )
+            st.caption("📊 Track at: [OpenAI Dashboard](https://platform.openai.com/batches)")
 
-        st.caption("Scroll down to **Pending Batch Results** to collect results once they are ready.")
-
+        # OPCIONAL: Si quieres que se actualice la lista de abajo automáticamente 
+        # sin perder este mensaje, puedes poner un botón de refresco:
+        if st.button("🔄 Refresh List & View Batches"):
+            st.rerun()
+        
+        # Opcional: st.button("Refresh List", on_click=st.rerun)
 
 # ──────────────────────────────────────────────────────────────
 # BATCH COLLECTION (Streamlit)
 # ──────────────────────────────────────────────────────────────
 
-def mostrar_estado_batches_st():
+def mostrar_estado_batches_st(API_KEY):
     all_pending = {}
+    
     for provider in ("claude", "chatgpt"):
         for batch_id, meta in load_st_batch_status(provider).items():
             all_pending[batch_id] = meta
-
+    
     if not all_pending:
         return
 
     st.divider()
-    st.subheader("📦 Pending Batch Results")
-    st.caption("Batches submitted earlier. Click **Check & Collect** to retrieve completed results.")
-
+    st.subheader("📦 Batches Pending", anchor="pendientes")
+    
+    
+    # Usamos un loop más limpio
     for batch_id, meta in all_pending.items():
-        provider = meta["provider"]
-        with st.container(border=True):
-            col_info, col_btn = st.columns([3, 1])
-            with col_info:
-                st.markdown(
-                    f"**{provider.upper()}** | Temp `{meta['temperature']}` | "
-                    f"Strategy `{meta['strategy']}` | `{meta['total_rows']}` rows"
-                )
-                st.code(batch_id, language=None)
-            with col_btn:
-                if st.button("Check & Collect", key=f"collect_{batch_id}"):
-                    _collect_batch_results_st(batch_id, meta)
-
-
-def _collect_batch_results_st(batch_id, meta):
+        with st.expander(f"🔹 {meta['provider'].upper()} - {meta['total_rows']} filas ({batch_id[:8]}...)", expanded=True):
+            col1, col2, col3 = st.columns([2, 2, 1])
+            
+            col1.caption("Configuration")
+            col1.markdown(f"**Temp:** `{meta['temperature']}` | **Strategy:** `{meta['strategy']}`")
+            
+            col2.caption("Batch ID")
+            col2.code(batch_id, language=None)
+            
+            if col3.button("Check & Collect", key=f"collect_{batch_id}", use_container_width=True):
+                _collect_batch_results_st(batch_id, meta, API_KEY)
+                                
+def _collect_batch_results_st(batch_id, meta, API_KEY):
     provider = meta["provider"]
     output_path = meta["output_path"]
 
@@ -852,7 +1047,7 @@ def _collect_batch_results_st(batch_id, meta):
 
     try:
         if provider == "claude":
-            client = get_claude_client()
+            client = get_claude_client(API_KEY)
             batch = client.messages.batches.retrieve(batch_id)
             if batch.processing_status != "ended":
                 counts = batch.request_counts
@@ -879,7 +1074,7 @@ def _collect_batch_results_st(batch_id, meta):
                 succeeded += 1
 
         else:  # chatgpt
-            client = get_openai_batch_client()
+            client = get_openai_batch_client(API_KEY)
             batch = client.batches.retrieve(batch_id)
             if batch.status not in ("completed", "failed", "expired", "cancelled"):
                 counts = batch.request_counts
@@ -919,16 +1114,28 @@ def _collect_batch_results_st(batch_id, meta):
         st.error(f"Error collecting batch results: {e}")
         return
 
+# Al final, cuando ya tenemos los datos, presentamos el resultado bonito:
     if rows_buffer:
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         write_rows_to_csv(output_path, rows_buffer)
-        st.success(f"✅ {succeeded} rows collected. {errored} errors.")
-        mostrar_boton_descarga(rows_buffer, meta["temperature"])
-        _remove_st_batch(provider, batch_id)
-    else:
-        st.warning(f"No results retrieved. Succeeded: {succeeded}, Errored: {errored}.")
+        
+        # UI limpia de éxito
+        st.toast("Results collected and saved!", icon="✅")
+        
+        with st.container(border=True):
+            
+            c1, c2 = st.columns(2)
+            c1.metric("Successful Rows", succeeded)
+            c2.metric("Errors", errored, delta=errored, delta_color="inverse")
+            
+            # Previsualización opcional en un pequeño dataframe
 
-
+            
+            # Botón de descarga destacado
+            df_results = pd.DataFrame(rows_buffer)
+            mostrar_boton_descarga(df_results, meta["temperature"], "batch_results")
+            _remove_st_batch(meta["provider"], batch_id)
+        
 def _remove_st_batch(provider, batch_id):
     status = load_st_batch_status(provider)
     if batch_id in status:
@@ -938,6 +1145,9 @@ def _remove_st_batch(provider, batch_id):
     if os.path.exists(rowmap):
         os.remove(rowmap)
 
+# ──────────────────────────────────────────────────────────────
+# MAIN STREAMLIT APP
+# ──────────────────────────────────────────────────────────────
 
 def main():
 
@@ -975,28 +1185,26 @@ def main():
         accion = st.segmented_control(
             "What would you like to do?", 
             options=["Create categories", "Assign categories"], 
-            selection_mode="single"
+            selection_mode="single", 
+            disabled=st.session_state.proceso_finalizado
         )
 
         # 3. Lógica de ejecución según la acción seleccionada
         if accion == "Create categories":
             st.subheader("Configuration of new categories")
-            
             #primero obtener categorias, depues hacer el mismo proceso
+            menu_st(df, 1)
 
         elif accion == "Assign categories":
             st.subheader("Assign categories to csv")
+            
+            menu_st(df, 2)
 
-            menu_asignacion_st(df)
 
     else:
         st.info("Waiting for CSV to abilitate actions")
-
-    # Always show pending batches, regardless of whether a file is uploaded
-    mostrar_estado_batches_st()
-
-if __name__ == "__main__":
-    
+        
+if __name__ == "__main__":   
     main()
     
     

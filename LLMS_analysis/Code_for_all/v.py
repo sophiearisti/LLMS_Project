@@ -399,16 +399,29 @@ def crear_prompt_obtener_resultados(info_llm, df, API_KEY, estrategia, menu_type
             if prompt_final.strip():
                 print("Modos de ejecución definidos para borrar CSVs:", modos_ejecucion)
                 
-                # 1. Limpieza de archivos CSV configurados en 'overwrite'
+                # 1. Limpieza de archivos CSV configurados en 'overwrite' y sus JSONL asociados
                 if modos_ejecucion:
                     for t, info_modo in modos_ejecucion.items():
                         if info_modo.get('modo') == "overwrite":
-                            output_path = info_modo.get('path')
-                            if output_path and os.path.exists(output_path):
-                                os.remove(output_path)
-                                print(f"CSV eliminado: {output_path}")
+                            output_path = info_modo.get('path') # 'Results/chatgpt/zero-shot/results_batch_temp0.5.csv'
+                            
+                            if output_path:
+                                # Extrae dinámicamente 'Results/chatgpt/zero-shot/'
+                                base_dir = os.path.dirname(output_path)
                                 
-                # 2. Limpieza de archivos JSON acumulados en el Session State 🔴
+                                # Construye la ruta al archivo .jsonl usando la temperatura t actual
+                                jsonl_file = f"batch_input_temp{t}.jsonl"
+                                jsonl_path = os.path.join(base_dir, jsonl_file)
+                                
+                                if os.path.exists(jsonl_path):
+                                    os.remove(jsonl_path)
+                                    print(f"JSONL eliminado: {jsonl_path}")
+                                
+                               
+                                if os.path.exists(output_path):
+                                    os.remove(output_path)
+                                    print(f"CSV eliminado: {output_path}")
+                                
                 batches_para_borrar = st.session_state.get("batches_a_eliminar_acumulados", [])
                 print("Batches a eliminar definitivos desde el State:", batches_para_borrar)  
                              

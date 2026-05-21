@@ -91,7 +91,10 @@ def load_temp_files(llm: str, paper: str, strategy: str) -> dict[str, pd.DataFra
     for temp, path in found.items():
         df = pd.read_csv(path)
         if "row_id" not in df.columns:
-            continue
+            # Some older exports (notably GPT trust-promises) omit row_id.
+            # Fall back to positional index to preserve temperature alignment.
+            df = df.copy()
+            df["row_id"] = np.arange(len(df))
         # deduplicate row_ids if any (keep first occurrence)
         df = df.drop_duplicates(subset="row_id", keep="first")
         dfs[temp] = df.set_index("row_id")

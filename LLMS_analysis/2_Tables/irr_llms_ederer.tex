@@ -1,0 +1,26 @@
+\begin{table}
+    \centering
+    \caption{Internal consistency across temperature settings -- \citet{ederer_schneider_2022}}
+    \label{tab:temp_irr_trust}
+    \begin{adjustbox}{max width=0.95\linewidth}
+    \small
+    \begin{tabular}{lcccccc}
+        \toprule
+        & \multicolumn{2}{c}{Claude} & \multicolumn{2}{c}{GPT} & \multicolumn{2}{c}{Gemini} \\
+        \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+        Category   & Zero-shot & Few-shot & Zero-shot & Few-shot & Zero-shot & Few-shot \\
+        \midrule
+        Promise    & 1.000 & 0.990 & 0.978 & 0.969 & 0.900 & 0.980 \\
+        Efficiency & 0.982 & 0.983 & 0.984 & 0.957 & 0.962 & 0.902 \\
+        Ethics     & 1.000 & 0.965 & 0.900 & 0.904 & 0.845 & 0.870 \\
+        \midrule
+        \textit{Mean} & \textit{0.994} & \textit{0.979} & \textit{0.954} & \textit{0.943} & \textit{0.902} & \textit{0.918} \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \vspace{0.2cm}
+    \begin{minipage}{0.95\linewidth}
+        \footnotesize
+        \textit{Note:} Krippendorff's alpha treating each temperature run as an independent rater (predictions binarized: ${>}0.5\to 1$, else~0). Claude: 4 temperature settings (0, 0.1, 0.5, 1). GPT and Gemini: 5 settings (0, 0.1, 0.5, 1, 1.2). All values indicate strong agreement ($\alpha\geq0.80$).
+    \end{minipage}
+\end{table}

@@ -205,6 +205,8 @@ prepare_coding_base <- function() {
 
 prepare_classified_base <- function(coding_base) {
   classify <- read.csv(CLASSIFY_FILE, stringsAsFactors = FALSE)
+  # `classify.csv` carries a UTF-8 BOM; base R otherwise renames session to X...session.
+  names(classify)[names(classify) == "X...session"] <- "session"
   for (key in OBS_KEYS) {
     classify[[key]] <- suppressWarnings(as.numeric(classify[[key]]))
   }
@@ -233,6 +235,7 @@ prepare_classified_base <- function(coding_base) {
 
 write_missing_treatment_diagnostic <- function(base) {
   classify <- read.csv(CLASSIFY_FILE, stringsAsFactors = FALSE)
+  names(classify)[names(classify) == "X...session"] <- "session"
   coding <- haven::read_dta(CODING_DTA_FILE)
   coding <- as.data.frame(coding, stringsAsFactors = FALSE)
   for (key in OBS_KEYS) {
@@ -322,14 +325,14 @@ compute_probit_marginal_effects <- function(data, dep, regressors) {
   present <- needed[needed %in% names(data)]
   used <- data[stats::complete.cases(data[present]), , drop = FALSE]
   if (nrow(used) == 0) {
-    return(data.frame(term = character(), coef = numeric(), se = numeric(), p_value = numeric(), n = integer(), stringsAsFactors = FALSE))
+    return(data.frame(term = character(), coef = numeric(), se = numeric(), p_value = numeric(), n = integer(), pseudo_r2 = numeric(), log_likelihood = numeric(), stringsAsFactors = FALSE))
   }
 
   varying_regs <- regressors[sapply(regressors, function(term) {
     term %in% names(used) && length(unique(used[[term]])) > 1
   })]
   if (length(varying_regs) == 0) {
-    return(data.frame(term = character(), coef = numeric(), se = numeric(), p_value = numeric(), n = integer(), stringsAsFactors = FALSE))
+    return(data.frame(term = character(), coef = numeric(), se = numeric(), p_value = numeric(), n = integer(), pseudo_r2 = numeric(), log_likelihood = numeric(), stringsAsFactors = FALSE))
   }
 
   form <- stats::as.formula(paste(dep, "~", paste(c(varying_regs, "factor(game)"), collapse = " + ")))
@@ -338,7 +341,7 @@ compute_probit_marginal_effects <- function(data, dep, regressors) {
     error = function(e) NULL
   )
   if (is.null(fit)) {
-    return(data.frame(term = character(), coef = numeric(), se = numeric(), p_value = numeric(), n = integer(), stringsAsFactors = FALSE))
+    return(data.frame(term = character(), coef = numeric(), se = numeric(), p_value = numeric(), n = integer(), pseudo_r2 = numeric(), log_likelihood = numeric(), stringsAsFactors = FALSE))
   }
 
   vcov_mat <- tryCatch(
@@ -346,30 +349,36 @@ compute_probit_marginal_effects <- function(data, dep, regressors) {
     error = function(e) NULL
   )
   if (is.null(vcov_mat)) {
-    return(data.frame(term = character(), coef = numeric(), se = numeric(), p_value = numeric(), n = integer(), stringsAsFactors = FALSE))
+    return(data.frame(term = character(), coef = numeric(), se = numeric(), p_value = numeric(), n = integer(), pseudo_r2 = numeric(), log_likelihood = numeric(), stringsAsFactors = FALSE))
   }
 
   beta_full <- stats::coef(fit)
   keep_beta <- !is.na(beta_full)
   beta <- beta_full[keep_beta]
   if (length(beta) == 0) {
-    return(data.frame(term = character(), coef = numeric(), se = numeric(), p_value = numeric(), n = integer(), stringsAsFactors = FALSE))
+    return(data.frame(term = character(), coef = numeric(), se = numeric(), p_value = numeric(), n = integer(), pseudo_r2 = numeric(), log_likelihood = numeric(), stringsAsFactors = FALSE))
   }
 
   model_X <- tryCatch(stats::model.matrix(fit), error = function(e) NULL)
   if (is.null(model_X)) {
-    return(data.frame(term = character(), coef = numeric(), se = numeric(), p_value = numeric(), n = integer(), stringsAsFactors = FALSE))
+    return(data.frame(term = character(), coef = numeric(), se = numeric(), p_value = numeric(), n = integer(), pseudo_r2 = numeric(), log_likelihood = numeric(), stringsAsFactors = FALSE))
   }
 
   common_names <- intersect(names(beta), colnames(model_X))
   if (length(common_names) == 0) {
-    return(data.frame(term = character(), coef = numeric(), se = numeric(), p_value = numeric(), n = integer(), stringsAsFactors = FALSE))
+    return(data.frame(term = character(), coef = numeric(), se = numeric(), p_value = numeric(), n = integer(), pseudo_r2 = numeric(), log_likelihood = numeric(), stringsAsFactors = FALSE))
   }
 
   beta <- beta[common_names]
   vcov_mat <- vcov_mat[common_names, common_names, drop = FALSE]
   X <- model_X[, common_names, drop = FALSE]
   xbar <- colMeans(X)
+  pseudo_r2 <- if (is.finite(fit$null.deviance) && fit$null.deviance > 0) {
+    1 - fit$deviance / fit$null.deviance
+  } else {
+    NA_real_
+  }
+  log_likelihood <- as.numeric(stats::logLik(fit))
 
   rows <- list()
   for (term in regressors) {
@@ -403,12 +412,14 @@ compute_probit_marginal_effects <- function(data, dep, regressors) {
       se = unname(se),
       p_value = unname(p_value),
       n = nrow(used),
+      pseudo_r2 = pseudo_r2,
+      log_likelihood = log_likelihood,
       stringsAsFactors = FALSE
     )
   }
 
   if (length(rows) == 0) {
-    return(data.frame(term = character(), coef = numeric(), se = numeric(), p_value = numeric(), n = integer(), stringsAsFactors = FALSE))
+    return(data.frame(term = character(), coef = numeric(), se = numeric(), p_value = numeric(), n = integer(), pseudo_r2 = numeric(), log_likelihood = numeric(), stringsAsFactors = FALSE))
   }
 
   as.data.frame(do.call(rbind, rows), stringsAsFactors = FALSE)
@@ -432,6 +443,8 @@ run_models_for_base <- function(base, model_specs) {
           se = hit$se,
           p_value = hit$p_value,
           n = hit$n,
+          pseudo_r2 = hit$pseudo_r2,
+          log_likelihood = hit$log_likelihood,
           stringsAsFactors = FALSE
         )
       } else {
@@ -444,6 +457,8 @@ run_models_for_base <- function(base, model_specs) {
           se = NA_real_,
           p_value = NA_real_,
           n = nrow(subset),
+          pseudo_r2 = NA_real_,
+          log_likelihood = NA_real_,
           stringsAsFactors = FALSE
         )
       }

@@ -60,11 +60,11 @@ DEGENERATE_SE   = 1e-10
 def sig_stars(p: float) -> str:
     if pd.isna(p):
         return ""
-    if p < 0.01:
+    if p < 0.001:
         return "***"
-    if p < 0.05:
+    if p < 0.01:
         return "**"
-    if p < 0.10:
+    if p < 0.05:
         return "*"
     return ""
 
@@ -78,8 +78,8 @@ def is_degenerate(coef, se) -> bool:
     return False
 
 
-def fmt_cell(coef, se, p) -> str:
-    """Format a single cell for an siunitx S column."""
+def fmt_estimate(coef, se, p) -> str:
+    """Format a marginal effect for an siunitx S column."""
     if is_degenerate(coef, se):
         return ""
     stars = sig_stars(p)
@@ -87,6 +87,13 @@ def fmt_cell(coef, se, p) -> str:
     if stars:
         return f"{num}{{{stars}}}"
     return num
+
+
+def fmt_se(se) -> str:
+    """Format a clustered standard error beneath its marginal effect."""
+    if pd.isna(se) or abs(se) < DEGENERATE_SE:
+        return ""
+    return f"[{se:.3f}]"
 
 
 # ---------------------------------------------------------------------------
@@ -97,19 +104,21 @@ def load_results():
     df = pd.read_csv(BASE_DIR / "table8_r_probit_replication.csv")
     df = df[df["model"].isin([p[0] for p in PANELS])].copy()
     df = df[df["source"].isin(["human", "claude", "gpt", "ensemble_majority"])].copy()
-    df = df[["model", "term", "coef", "se", "p_value", "source"]].copy()
+    df = df[["model", "term", "coef", "se", "p_value", "n", "pseudo_r2", "source"]].copy()
     return df
 
 
 # ---------------------------------------------------------------------------
-# Build lookup: (model, term, source) -> (coef, se, p_value)
+# Build lookup: (model, term, source) -> (coef, se, p_value, n, pseudo_r2)
 # ---------------------------------------------------------------------------
 
 def build_lookup(results_df):
     lut = {}
 
     for _, row in results_df.iterrows():
-        lut[(row["model"], row["term"], row["source"])] = (row["coef"], row["se"], row["p_value"])
+        lut[(row["model"], row["term"], row["source"])] = (
+            row["coef"], row["se"], row["p_value"], row["n"], row["pseudo_r2"]
+        )
 
     return lut
 
@@ -135,31 +144,40 @@ def panel_rows(model_key, lut):
     blank_srcs = PANEL_BLANK_SOURCES.get(model_key, set())
 
     for term in TERM_ORDER:
-        cells = []
+        estimate_cells = []
+        se_cells = []
         non_empty = False
         for src in SOURCES:
             if src in blank_srcs:
-                cells.append("")
+                estimate_cells.append("")
+                se_cells.append("")
                 continue
             entry = lut.get((model_key, term, src))
             if entry is None:
-                cells.append("")
+                estimate_cells.append("")
+                se_cells.append("")
             else:
-                coef, se, p = entry
-                cell = fmt_cell(coef, se, p)
-                cells.append(cell)
-                if cell:
+                coef, se, p, _, _ = entry
+                estimate = fmt_estimate(coef, se, p)
+                estimate_cells.append(estimate)
+                se_cells.append(fmt_se(se) if estimate else "")
+                if estimate:
                     non_empty = True
 
         # Skip rows that are all blank (e.g. ask_game / truthful in chsd panels)
-        if not non_empty and all(c == "" for c in cells):
-            first_cell = cells[0]
+        if not non_empty and all(c == "" for c in estimate_cells):
+            first_cell = estimate_cells[0]
             if not first_cell:
                 continue
 
         label = TERM_LABELS[term]
-        row = f"  {label}\n  & " + " & ".join(c if c else "{}" for c in cells) + " \\\\"
-        rows.append(row)
+        estimate_row = f"  {label}\n  & " + " & ".join(
+            c if c else "{}" for c in estimate_cells
+        ) + " \\\\"
+        se_row = "  & " + " & ".join(
+            rf"\multicolumn{{1}}{{c}}{{{c}}}" if c else "{}" for c in se_cells
+        ) + " \\\\"
+        rows.extend([estimate_row, se_row])
 
     if not rows:
         rows.append(
@@ -169,62 +187,80 @@ def panel_rows(model_key, lut):
     return rows
 
 
-def build_table(results_df):
-    lut = build_lookup(results_df)
-    lines = []
+def panel_fit_rows(model_key, lut):
+    """Return model sample size and McFadden pseudo-R² for each source."""
+    stats = []
+    for src in SOURCES:
+        entries = [
+            entry for (model, _, source), entry in lut.items()
+            if model == model_key and source == src
+        ]
+        if entries:
+            _, _, _, n, pseudo_r2 = entries[0]
+            stats.append((n, pseudo_r2))
+        else:
+            stats.append((float("nan"), float("nan")))
 
-    lines += [
-        r"\begin{table}[!htbp]",
-        r"\centering",
-        r"\scriptsize",
-        r"\caption{Table~8. Probit marginal effects on the restricted shared-data sample: human and LLM codings.}",
-        r"\label{tab:table8-lpm-condensed}",
-        r"\begin{threeparttable}",
-        r"\begin{adjustbox}{width=\textwidth,center}",
-        r"\begin{tabular}{@{}l",
-        r"  *{4}{S[table-format=-1.3, table-space-text-post={***}]}@{}}",
-        r"",
+    n_cells = [str(int(n)) if pd.notna(n) else "{}" for n, _ in stats]
+    r2_cells = [f"{r2:.3f}" if pd.notna(r2) else "{}" for _, r2 in stats]
+    return [
+        "  Observations\n  & " + " & ".join(n_cells) + r" \\",
+        r"  Pseudo-$R^2$" + "\n  & " + " & ".join(r2_cells) + r" \\",
     ]
 
+
+def build_table(results_df):
+    lut = build_lookup(results_df)
     header = (
         r"Dependent variable"
         + "\n  & "
         + " & ".join(f"{{{COL_LABELS[s]}}}" for s in SOURCES)
         + r" \\"
     )
-
-    for i, (model_key, panel_label) in enumerate(PANELS):
-        lines.append(r"\toprule" if i == 0 else r"\midrule[0.3pt]")
-        lines.append(r"\addlinespace[2pt]" if i > 0 else "")
-        lines.append(
-            rf"& \multicolumn{{4}}{{c}}{{{panel_label}}} \\"
-        )
-        lines.append(r"\cmidrule(l){2-5}")
-        if i > 0:
-            lines.append(r"\addlinespace[1pt]")
-        lines.append(header)
-        lines.append(r"\midrule")
-
-        rows = panel_rows(model_key, lut)
-        lines.extend(rows)
-
-    lines += [
-        r"",
-        r"\bottomrule",
-        r"\end{tabular}",
-        r"\end{adjustbox}",
-        r"\begin{minipage}{\textwidth}",
-        r"\begin{tablenotes}[flushleft]",
-        r"\tiny",
-        r"\item \textit{Notes:} Entries are Probit marginal effects (dprobit-style, evaluated at means) with clustered standard errors at the conversation-group level. Significance: $^{***}p<0.01$, $^{**}p<0.05$, $^{*}p<0.10$.",
-        r"\item All columns are estimated on the same restricted shared-data sample; the human column is the apples-to-apples benchmark. LLM estimates use few-shot prompting at temperature~0 (Claude, GPT). CH/A-D is omitted because message-level inputs are not present in the shared classification files. Blank cells indicate regressors dropped due to no within-sample variation.",
-        r"\end{tablenotes}",
-        r"\end{minipage}",
-        r"\end{threeparttable}",
-        r"\end{table}",
+    labels = [
+        "tab:table8-lpm-condensed",
+        "tab:table8-lpm-condensed-chsd-eff",
+        "tab:table8-lpm-condensed-chmc-eff",
     ]
+    tables = []
 
-    return "\n".join(lines) + "\n"
+    for (model_key, panel_label), label in zip(PANELS, labels):
+        lines = [
+            r"\begin{table}[!htbp]",
+            r"\centering",
+            r"\scriptsize",
+            rf"\caption{{Probit marginal effects on the restricted shared-data sample: {panel_label}.}}",
+            rf"\label{{{label}}}",
+            r"\begin{threeparttable}",
+            r"\begin{tabular}{@{}l",
+            r"  *{4}{S[table-format=-1.3, table-space-text-post={***}]}@{}}",
+            r"\toprule",
+            rf"& \multicolumn{{4}}{{c}}{{{panel_label}}} \\",
+            r"\cmidrule(l){2-5}",
+            header,
+            r"\midrule",
+        ]
+        lines.extend(panel_rows(model_key, lut))
+        lines += [
+            r"\midrule",
+        ]
+        lines.extend(panel_fit_rows(model_key, lut))
+        lines += [
+            r"\bottomrule",
+            r"\end{tabular}",
+            r"\begin{minipage}{\textwidth}",
+            r"\begin{tablenotes}[flushleft]",
+            r"\scriptsize",
+            r"\item \textit{Notes:} Entries are Probit marginal effects (evaluated at means) with clustered standard errors at the conversation-group level, reported in brackets. Pseudo-$R^2$ is deviance-based. Significance: $^{*}p<.05$, $^{**}p<.01$, $^{***}p<.001$.",
+            r"\item All columns are estimated on the same restricted shared-data sample; the human column is the apples-to-apples benchmark. LLM estimates use few-shot prompting at temperature~0 (Claude, GPT). CH/A-D is omitted because message-level inputs are not present in the shared classification files. Blank cells indicate regressors dropped due to no within-sample variation.",
+            r"\end{tablenotes}",
+            r"\end{minipage}",
+            r"\end{threeparttable}",
+            r"\end{table}",
+        ]
+        tables.append("\n".join(lines))
+
+    return "\n\n".join(tables) + "\n"
 
 
 # ---------------------------------------------------------------------------
